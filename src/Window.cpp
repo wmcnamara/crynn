@@ -69,7 +69,7 @@ void Window::AfterRender()
 Window::Window()
 {
 	Debug::ClearOutputLogs();
-	Debug::Log("WMEngine Debug Started...", Message);
+	Debug::Log("Crynn Debug Started...", Message);
 
 	//Glfw
 	glfwInit();
@@ -79,7 +79,7 @@ Window::Window()
 	glfwWindowHint(GLFW_SAMPLES, 4);
 
 	//Window //TODO
-	m_window = glfwCreateWindow(DEFAULT_SCR_WIDTH, DEFAULT_SCR_HEIGHT, "WMEngine", NULL, NULL);
+	m_window = glfwCreateWindow(DEFAULT_SCR_WIDTH, DEFAULT_SCR_HEIGHT, "Crynn", NULL, NULL);
 	if (m_window == NULL)
 	{
 		Debug::Log("Failed to create GLFW window", Error);

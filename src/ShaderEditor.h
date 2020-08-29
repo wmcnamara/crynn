@@ -1,5 +1,5 @@
 #pragma once
-#include "GuiWindow.h"
+#include "Gui/GuiWindow.h"
 
 class ShaderEditor : GuiWindow
 {

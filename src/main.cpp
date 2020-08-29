@@ -15,8 +15,8 @@
 #include "ConfigReader.h"
 #include "IO.h"
 
-#include "Gui/Calculator.h"
-#include "Gui/TextureViewer.h"
+#include "Calculator.h"
+#include "TextureViewer.h"
 #include "Gui/GuiWindow.h"
 
 #include <memory>
