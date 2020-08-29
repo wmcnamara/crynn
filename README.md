@@ -1,2 +1,2 @@
-# crynn
-Game Engine Created In C++17 &amp; OpenGL
+# Crynn
+Game Engine Created In C++17 and OpenGL
