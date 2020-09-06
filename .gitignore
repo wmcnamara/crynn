@@ -17,6 +17,7 @@
 mono_crash.*
 
 # Build results
+SpeedCube/
 [Bb]uild/
 [Dd]ebug/
 [Dd]ebugPublic/

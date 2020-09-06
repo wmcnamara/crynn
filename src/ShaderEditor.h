@@ -1,8 +1,15 @@
 #pragma once
 #include "Gui/GuiWindow.h"
+#include "Input.h"
+using namespace Crynn::Windows;
 
-class ShaderEditor : GuiWindow
+namespace Crynn
 {
+	namespace Windows 
+	{
+		class ShaderEditor : GuiWindow
+		{
 
-};
-
+		};
+	}	
+}

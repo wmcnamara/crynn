@@ -1,9 +1,9 @@
 #include "Light.h"
 
-Light::Light()
+Crynn::Rendering::Light::Light()
 {
 }
 
-Light::Light(glm::vec3 color)
+Crynn::Rendering::Light::Light(glm::vec3 color)
 {
 }

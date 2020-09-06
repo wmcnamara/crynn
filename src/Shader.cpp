@@ -1,6 +1,6 @@
 #include "Shader.h"
 
-Shader::Shader(const char * vertexPath, const char * fragmentPath)
+Crynn::Rendering::Shader::Shader(const char * vertexPath, const char * fragmentPath)
 {
 	// Retrieve the vertex/fragment source code from filePath
 	std::string vertexCode;
@@ -34,7 +34,7 @@ Shader::Shader(const char * vertexPath, const char * fragmentPath)
 	}
 	catch (std::ifstream::failure e)
 	{
-		Debug::Log("Shader Not Read", Error);
+		Debug::Log("Shader Not Read", Debug::Error);
 	}
 
 	const char* vShaderCode = vertexCode.c_str();
@@ -61,7 +61,7 @@ Shader::Shader(const char * vertexPath, const char * fragmentPath)
 	ShaderCompileLog(vertex, fragment);
 }
 
-void Shader::ShaderLinkLog(unsigned int shaderProgram)
+void Crynn::Rendering::Shader::ShaderLinkLog(unsigned int shaderProgram)
 {
 	int success;
 	char infoLog[512];
@@ -74,15 +74,15 @@ void Shader::ShaderLinkLog(unsigned int shaderProgram)
 
 		std::stringstream output;
 		output << "Error. Shader linking failed.\n" << infoLog;
-		Debug::Log(output, Error);
+		Debug::Log(output, Debug::Error);
 	}
 	else
 	{
-		Debug::Log("Shader Program Linked Successfully", Success);
+		Debug::Log("Shader Program Linked Successfully", Debug::Success);
 	}
 }
 
-void Shader::ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader)
+void Crynn::Rendering::Shader::ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader)
 {
 	int success;
 	char infoLog[512];
@@ -96,10 +96,10 @@ void Shader::ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentSh
 
 		std::stringstream output;
 		output << "Vertex Compilation Failed\n" << infoLog;
-		Debug::Log(output, Error);
+		Debug::Log(output, Debug::Error);
 	}
 	else
-		Debug::Log("Vertex Shader Compiled Successfully", Success);
+		Debug::Log("Vertex Shader Compiled Successfully", Debug::Success);
 
 	//Fragment Shader
 	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
@@ -108,35 +108,35 @@ void Shader::ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentSh
 	{
 		glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
 		std::stringstream output;
-		output << "Fragment Compilation Failed\n" << infoLog << std::endl;
-		Debug::Log(output, Error);
+		output << "Fragment Compilation Failed\n" << infoLog << '\n';
+		Debug::Log(output, Debug::Error);
 	}
 	else		
-		Debug::Log("Fragment Shader Compiled Successfully", Success);
+		Debug::Log("Fragment Shader Compiled Successfully", Debug::Success);
 }
 
-void Shader::SetBool(const char* name, bool value) const
+void Crynn::Rendering::Shader::SetBool(const char* name, bool value) const
 {
 	glUniform1i(glGetUniformLocation(ID, name), (int)value);
 }
 
-void Shader::SetInt(const char* name, int value) const
+void Crynn::Rendering::Shader::SetInt(const char* name, int value) const
 {
 	glUniform1i(glGetUniformLocation(ID, name), value);
 }
 
-void Shader::SetFloat(const char* name, float value) const
+void Crynn::Rendering::Shader::SetFloat(const char* name, float value) const
 {
 	glUniform1f(glGetUniformLocation(ID, name), value);
 }
 
-void Shader::SetMatrix4(const char* name, glm::mat4* matrix) const
+void Crynn::Rendering::Shader::SetMatrix4(const char* name, glm::mat4* matrix) const
 {
 	glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
 	//LOGERR();
 }
 
-void Shader::SetBoolCurrent(const char* name, bool value)
+void Crynn::Rendering::Shader::SetBoolCurrent(const char* name, bool value)
 {
 	GLint ID;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
@@ -144,7 +144,7 @@ void Shader::SetBoolCurrent(const char* name, bool value)
 	glUniform1i(glGetUniformLocation(ID, name), (int)value);
 }
 
-void Shader::SetIntCurrent(const char* name, int value)
+void Crynn::Rendering::Shader::SetIntCurrent(const char* name, int value)
 {
 	GLint ID;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
@@ -152,7 +152,7 @@ void Shader::SetIntCurrent(const char* name, int value)
 	glUniform1i(glGetUniformLocation(ID, name), value);
 }
 
-void Shader::SetFloatCurrent(const char* name, float value)
+void Crynn::Rendering::Shader::SetFloatCurrent(const char* name, float value)
 {
 	GLint ID;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
@@ -160,7 +160,7 @@ void Shader::SetFloatCurrent(const char* name, float value)
 	glUniform1f(glGetUniformLocation(ID, name), value);
 }
 
-void Shader::SetMatrix4Current(const char* name, glm::mat4* matrix)
+void Crynn::Rendering::Shader::SetMatrix4Current(const char* name, glm::mat4* matrix)
 {
 	GLint ID;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
@@ -168,9 +168,12 @@ void Shader::SetMatrix4Current(const char* name, glm::mat4* matrix)
 	glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
 }
 
-void Shader::Use() { glUseProgram(ID); }
+void Crynn::Rendering::Shader::Use() 
+{ 
+	glUseProgram(ID); 
+}
 
-Shader::~Shader()
+Crynn::Rendering::Shader::~Shader()
 {
 	glDeleteProgram(ID);
 }

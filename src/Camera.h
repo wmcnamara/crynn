@@ -6,47 +6,38 @@
 #include "GLFW/glfw3.h"
 #include "Window.h"
 #include "Shader.h"
+#include "Input.h"
 
-using namespace glm;
+using namespace Crynn::Input;
+using namespace Crynn::Windows;
 
-enum class Projection
+namespace Crynn
 {
-	Orthographic,
-	Perspective
-};
-
-class Camera
-{
-public:
-	Camera(vec3 _position, vec3 _target, Projection projType) :
-		position(position),
-		target(target),
-		m_projType(projType)
+	namespace Rendering
 	{
-		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f)); //TODO
+		using namespace glm;
 
-		UpdatePositionData();
-		UpdateProjectionData();	
+		enum class Projection
+		{
+			Orthographic,
+			Perspective
+		};
+
+		class Camera
+		{
+		public:
+			Camera(Projection projType);	
+
+			mat4 GetProjection() const { return m_projection; }
+			mat4 m_view = mat4(1.0f);
+
+			void Run();
+		private:
+			mat4 m_projection;
+			Projection m_projType;
+
+			void UpdateViewMatrix();
+			void UpdateProjectionData();
+		};
 	}
-
-	// camera Attributes
-	vec3 position;
-	vec3 front;
-	vec3 up;
-	vec3 right;
-	vec3 worldUp;
-	vec3 target;
-
-    mat4 GetProjection() const { return projection; }
-	mat4 view = mat4(1.0f);
-
-	void Run() { UpdatePositionData(); UpdateProjectionData(); }
-	static void Input();
-private:
-	mat4 projection;
-	Projection m_projType;
-
-	void UpdatePositionData();
-	void UpdateProjectionData();
-};
-
+}

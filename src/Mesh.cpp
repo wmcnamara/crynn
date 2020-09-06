@@ -1,6 +1,6 @@
 #include "Mesh.h"
 
-Mesh::Mesh(
+Crynn::Mesh::Mesh(
 	float* vertices,
 	unsigned int* indices,
 	size_t numOfVertices,
@@ -41,7 +41,7 @@ Mesh::Mesh(
 	/////////////////////////////////////////////
 }
 
-Mesh::~Mesh()
+Crynn::Mesh::~Mesh()
 {
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);

@@ -1,0 +1,22 @@
+#include "Behaviour.h"
+
+Behaviour::Behaviour()
+{
+	//Subscribe Update(), and get the handlerID
+	updateHandlerID = Application::Instance().OnUpdate.AddHandler([this](float deltaTime) 
+	{
+		Update(deltaTime);
+	});
+	
+	//Subscribe Start(), and get the handlerID
+	startHandlerID = Application::Instance().OnStart.AddHandler([this]() 
+	{
+		Start();
+	});
+}
+
+Behaviour::~Behaviour()
+{
+	Application::Instance().OnUpdate.RemoveHandler(updateHandlerID);
+	Application::Instance().OnStart.RemoveHandler(startHandlerID);
+}

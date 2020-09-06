@@ -1,5 +1,9 @@
 #include "Texture.h"
 
+//Create implementation according to stb_image docs
+#define STB_IMAGE_IMPLEMENTATION 
+#include "stb_image.h"
+
 Texture::Texture(const char* path) { Load(path); }
 
 Texture::~Texture()
@@ -9,6 +13,8 @@ Texture::~Texture()
 
 void Texture::Load(const char* path)
 {
+	ScopedTimer timer("Texture load");
+
 	if (valid)
 		glDeleteTextures(1, &texture); //Delete old texture memory if one was previously loaded.
 
@@ -35,13 +41,13 @@ void Texture::Load(const char* path)
 		std::stringstream output;
 		output << path << " Loaded Successfully";
 
-		Debug::Log(output, Success);
+		Debug::Log(output, Debug::Success);
 	}
 	else
 	{
 		std::stringstream output;
 		output << "Failed to load texture from " << path << "\n";
-		Debug::Log(output, Error);
+		Debug::Log(output, Debug::Error);
 	}
 	stbi_image_free(data);
 
