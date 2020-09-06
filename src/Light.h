@@ -4,20 +4,11 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-namespace Crynn 
+namespace Crynn
 {
-	namespace Rendering 
+	class Light
 	{
-		class Light
-		{
-		public:
-			Light();
-			Light(glm::vec3 color);
-
-			Light(Mesh mesh, glm::vec3 color)
-			{
-
-			}
-		};
-	}
+	public:
+		Light() = default;
+	};
 }

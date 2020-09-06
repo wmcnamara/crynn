@@ -1,22 +1,25 @@
 #include "Behaviour.h"
 
-Behaviour::Behaviour()
+namespace Crynn
 {
-	//Subscribe Update(), and get the handlerID
-	updateHandlerID = Application::Instance().OnUpdate.AddHandler([this](float deltaTime) 
+	Behaviour::Behaviour()
 	{
-		Update(deltaTime);
-	});
-	
-	//Subscribe Start(), and get the handlerID
-	startHandlerID = Application::Instance().OnStart.AddHandler([this]() 
-	{
-		Start();
-	});
-}
+		//Subscribe Update(), and get the handlerID
+		updateHandlerID = Application::Instance().OnUpdate.AddHandler([this](float deltaTime)
+		{
+			Update(deltaTime);
+		});
 
-Behaviour::~Behaviour()
-{
-	Application::Instance().OnUpdate.RemoveHandler(updateHandlerID);
-	Application::Instance().OnStart.RemoveHandler(startHandlerID);
+		//Subscribe Start(), and get the handlerID
+		startHandlerID = Application::Instance().OnStart.AddHandler([this]()
+		{
+			Start();
+		});
+	}
+
+	Behaviour::~Behaviour()
+	{
+		Application::Instance().OnUpdate.RemoveHandler(updateHandlerID);
+		Application::Instance().OnStart.RemoveHandler(startHandlerID);
+	}
 }

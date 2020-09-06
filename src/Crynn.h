@@ -10,12 +10,9 @@
 #include "MeshRenderer.h"
 #include "Shader.h"
 #include "Behaviour.h"
+#include "Application.h"
 
 #include <memory>
 
 using namespace glm;
 using namespace Crynn;
-using namespace Crynn::Events;
-using namespace Crynn::Windows;
-using namespace Crynn::Rendering;
-using namespace Crynn::IO;

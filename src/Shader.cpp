@@ -1,179 +1,182 @@
 #include "Shader.h"
 
-Crynn::Rendering::Shader::Shader(const char * vertexPath, const char * fragmentPath)
+namespace Crynn
 {
-	// Retrieve the vertex/fragment source code from filePath
-	std::string vertexCode;
-	std::string fragmentCode;
-	std::ifstream vShaderFile;
-	std::ifstream fShaderFile;
-
-	// ensure ifstream objects can throw exceptions:
-	vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-	fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-
-	try
+	Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	{
-		// open files
-		vShaderFile.open(vertexPath);
-		fShaderFile.open(fragmentPath);
+		// Retrieve the vertex/fragment source code from filePath
+		std::string vertexCode;
+		std::string fragmentCode;
+		std::ifstream vShaderFile;
+		std::ifstream fShaderFile;
 
-		std::stringstream vShaderStream, fShaderStream;
+		// ensure ifstream objects can throw exceptions:
+		vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+		fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 
-		// read file's buffer contents into streams
-		vShaderStream << vShaderFile.rdbuf();
-		fShaderStream << fShaderFile.rdbuf();
+		try
+		{
+			// open files
+			vShaderFile.open(vertexPath);
+			fShaderFile.open(fragmentPath);
 
-		// close file handlers
-		vShaderFile.close();
-		fShaderFile.close();
+			std::stringstream vShaderStream, fShaderStream;
 
-		// convert stream into string
-		vertexCode = vShaderStream.str();
-		fragmentCode = fShaderStream.str();
+			// read file's buffer contents into streams
+			vShaderStream << vShaderFile.rdbuf();
+			fShaderStream << fShaderFile.rdbuf();
+
+			// close file handlers
+			vShaderFile.close();
+			fShaderFile.close();
+
+			// convert stream into string
+			vertexCode = vShaderStream.str();
+			fragmentCode = fShaderStream.str();
+		}
+		catch (std::ifstream::failure e)
+		{
+			Debug::Log("Shader Not Read", Debug::Error);
+		}
+
+		const char* vShaderCode = vertexCode.c_str();
+		const char* fShaderCode = fragmentCode.c_str();
+
+		// 2. compile shaders
+		unsigned int vertex, fragment;
+
+		vertex = glCreateShader(GL_VERTEX_SHADER);
+		glShaderSource(vertex, 1, &vShaderCode, NULL);
+		glCompileShader(vertex);
+
+		fragment = glCreateShader(GL_FRAGMENT_SHADER);
+		glShaderSource(fragment, 1, &fShaderCode, NULL);
+		glCompileShader(fragment);
+
+		// shader Program
+		ID = glCreateProgram();
+		glAttachShader(ID, vertex);
+		glAttachShader(ID, fragment);
+		glLinkProgram(ID);
+
+		ShaderLinkLog(ID);
+		ShaderCompileLog(vertex, fragment);
 	}
-	catch (std::ifstream::failure e)
+
+	void Shader::ShaderLinkLog(unsigned int shaderProgram)
 	{
-		Debug::Log("Shader Not Read", Debug::Error);
+		int success;
+		char infoLog[512];
+
+		glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+
+		if (!success)
+		{
+			glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+
+			std::stringstream output;
+			output << "Error. Shader linking failed.\n" << infoLog;
+			Debug::Log(output, Debug::Error);
+		}
+		else
+		{
+			Debug::Log("Shader Program Linked Successfully", Debug::Success);
+		}
 	}
 
-	const char* vShaderCode = vertexCode.c_str();
-	const char* fShaderCode = fragmentCode.c_str();
-
-	// 2. compile shaders
-	unsigned int vertex, fragment;
-
-	vertex = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertex, 1, &vShaderCode, NULL);
-	glCompileShader(vertex);
-
-	fragment = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragment, 1, &fShaderCode, NULL);
-	glCompileShader(fragment);
-
-	// shader Program
-	ID = glCreateProgram();
-	glAttachShader(ID, vertex);
-	glAttachShader(ID, fragment);
-	glLinkProgram(ID);
-
-	ShaderLinkLog(ID);
-	ShaderCompileLog(vertex, fragment);
-}
-
-void Crynn::Rendering::Shader::ShaderLinkLog(unsigned int shaderProgram)
-{
-	int success;
-	char infoLog[512];
-
-	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-
-	if (!success)
+	void Shader::ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader)
 	{
-		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+		int success;
+		char infoLog[512];
 
-		std::stringstream output;
-		output << "Error. Shader linking failed.\n" << infoLog;
-		Debug::Log(output, Debug::Error);
+		//Vertex Shader
+		glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+
+		if (!success)
+		{
+			glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+
+			std::stringstream output;
+			output << "Vertex Compilation Failed\n" << infoLog;
+			Debug::Log(output, Debug::Error);
+		}
+		else
+			Debug::Log("Vertex Shader Compiled Successfully", Debug::Success);
+
+		//Fragment Shader
+		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+
+		if (!success)
+		{
+			glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+			std::stringstream output;
+			output << "Fragment Compilation Failed\n" << infoLog << '\n';
+			Debug::Log(output, Debug::Error);
+		}
+		else
+			Debug::Log("Fragment Shader Compiled Successfully", Debug::Success);
 	}
-	else
+
+	void Shader::SetBool(const char* name, bool value) const
 	{
-		Debug::Log("Shader Program Linked Successfully", Debug::Success);
+		glUniform1i(glGetUniformLocation(ID, name), (int)value);
 	}
-}
 
-void Crynn::Rendering::Shader::ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader)
-{
-	int success;
-	char infoLog[512];
-
-	//Vertex Shader
-	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-
-	if (!success)
+	void Shader::SetInt(const char* name, int value) const
 	{
-		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-
-		std::stringstream output;
-		output << "Vertex Compilation Failed\n" << infoLog;
-		Debug::Log(output, Debug::Error);
+		glUniform1i(glGetUniformLocation(ID, name), value);
 	}
-	else
-		Debug::Log("Vertex Shader Compiled Successfully", Debug::Success);
 
-	//Fragment Shader
-	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
-
-	if (!success)
+	void Shader::SetFloat(const char* name, float value) const
 	{
-		glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-		std::stringstream output;
-		output << "Fragment Compilation Failed\n" << infoLog << '\n';
-		Debug::Log(output, Debug::Error);
+		glUniform1f(glGetUniformLocation(ID, name), value);
 	}
-	else		
-		Debug::Log("Fragment Shader Compiled Successfully", Debug::Success);
-}
 
-void Crynn::Rendering::Shader::SetBool(const char* name, bool value) const
-{
-	glUniform1i(glGetUniformLocation(ID, name), (int)value);
-}
+	void Shader::SetMatrix4(const char* name, glm::mat4* matrix) const
+	{
+		glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
+		//LOGERR();
+	}
 
-void Crynn::Rendering::Shader::SetInt(const char* name, int value) const
-{
-	glUniform1i(glGetUniformLocation(ID, name), value);
-}
+	void Shader::SetBoolCurrent(const char* name, bool value)
+	{
+		GLint ID;
+		glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
 
-void Crynn::Rendering::Shader::SetFloat(const char* name, float value) const
-{
-	glUniform1f(glGetUniformLocation(ID, name), value);
-}
+		glUniform1i(glGetUniformLocation(ID, name), (int)value);
+	}
 
-void Crynn::Rendering::Shader::SetMatrix4(const char* name, glm::mat4* matrix) const
-{
-	glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
-	//LOGERR();
-}
+	void Shader::SetIntCurrent(const char* name, int value)
+	{
+		GLint ID;
+		glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
 
-void Crynn::Rendering::Shader::SetBoolCurrent(const char* name, bool value)
-{
-	GLint ID;
-	glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
+		glUniform1i(glGetUniformLocation(ID, name), value);
+	}
 
-	glUniform1i(glGetUniformLocation(ID, name), (int)value);
-}
+	void Shader::SetFloatCurrent(const char* name, float value)
+	{
+		GLint ID;
+		glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
 
-void Crynn::Rendering::Shader::SetIntCurrent(const char* name, int value)
-{
-	GLint ID;
-	glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
+		glUniform1f(glGetUniformLocation(ID, name), value);
+	}
 
-	glUniform1i(glGetUniformLocation(ID, name), value);
-}
+	void Shader::SetMatrix4Current(const char* name, glm::mat4* matrix)
+	{
+		GLint ID;
+		glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
 
-void Crynn::Rendering::Shader::SetFloatCurrent(const char* name, float value)
-{
-	GLint ID;
-	glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
+		glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
+	}
 
-	glUniform1f(glGetUniformLocation(ID, name), value);
-}
+	void Shader::Use()
+	{
+		glUseProgram(ID);
+	}
 
-void Crynn::Rendering::Shader::SetMatrix4Current(const char* name, glm::mat4* matrix)
-{
-	GLint ID;
-	glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
-
-	glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
-}
-
-void Crynn::Rendering::Shader::Use() 
-{ 
-	glUseProgram(ID); 
-}
-
-Crynn::Rendering::Shader::~Shader()
-{
-	glDeleteProgram(ID);
+	Shader::~Shader()
+	{
+		glDeleteProgram(ID);
+	}
 }

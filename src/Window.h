@@ -16,45 +16,32 @@
 #define UNICODE
 #endif 
 
-struct OnWindowStartArgs
-{
-	ImVec2 windowSize;
-};	
-
-class WindowEventSubscriber 
-{
-	WindowEventSubscriber();
-};
-
-using namespace Crynn;
-using namespace Crynn::Events;
-
 namespace Crynn
 {
-	namespace Windows
-	{		
-		class Window
-		{
-		public:
-			Window(const char* name, int width, int height);
+	struct OnWindowStartArgs
+	{
+		ImVec2 windowSize;
+	};
 
+	class Window
+	{
+	public:
+		Window(const char* name, int width, int height);
 
-			const ImVec2& GetSize();
-			const ImVec2& GetFrameBufSize();
+		const ImVec2& GetSize();
+		const ImVec2& GetFrameBufSize();
 
-			void BeforeRender();
-			void AfterRender();
+		void BeforeRender();
+		void AfterRender();
 
-			void UpdateWindowSize();
+		void UpdateWindowSize();
 
-			bool ShouldClose();
-			~Window();
-		private:			
-			GLFWwindow* glfwWindow;
+		bool ShouldClose();
+		~Window();
+	private:
+		GLFWwindow* glfwWindow;
 
-			ImVec2 m_screenSize;
-			ImVec2 m_frameBufSize;
-		};		
-
-	}
+		ImVec2 m_screenSize;
+		ImVec2 m_frameBufSize;
+	};
 }

@@ -2,17 +2,18 @@
 #include <chrono>
 #include "Debug.h"
 
-using namespace Crynn;
-
-class ScopedTimer
+namespace Crynn 
 {
-public:
-	ScopedTimer(const char* funcName);
-	~ScopedTimer();	
+	class ScopedTimer
+	{
+	public:
+		ScopedTimer(const char* funcName);
+		~ScopedTimer();	
 	
-	void Stop();
-private:
-	std::chrono::high_resolution_clock::time_point m_startPoint;
-	const char* m_funcName;
-};
+		void Stop();
+	private:
+		std::chrono::high_resolution_clock::time_point m_startPoint;
+		const char* m_funcName;
+	};
+}
 

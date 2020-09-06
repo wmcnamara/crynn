@@ -12,18 +12,15 @@
 
 namespace Crynn
 {
-	namespace IO
+	//Contains the filepath retrieved from the picker.
+	struct GetFileArgs
 	{
-		//Contains the filepath retrieved from the picker.
-		struct GetFileArgs
-		{
-			std::string filePath;
-		};
+		std::string filePath;
+	};
 
-		class File
-		{
-		public:
-			static std::string GetFile();
-		};		
-	}
+	class File
+	{
+	public:
+		static std::string GetFile();
+	};
 }

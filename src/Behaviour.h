@@ -1,17 +1,20 @@
 #pragma once
 #include "Application.h"
 
-class Behaviour
+namespace Crynn 
 {
-protected:
-	virtual void Update(double deltaTime) = 0;
-	virtual void Start() = 0;
+	class Behaviour
+	{
+	protected:
+		virtual void Update(double deltaTime) = 0;
+		virtual void Start() = 0;
 
-	Behaviour();
-	~Behaviour();	
+		Behaviour();
+		~Behaviour();
 
-private:
-	int updateHandlerID; //Used to remove the update handler when this object is destructed.
-	int startHandlerID; //Used to remove the start handler when this object is destructed.
-};
+	private:
+		int updateHandlerID; //Used to remove the update handler when this object is destructed.
+		int startHandlerID; //Used to remove the start handler when this object is destructed.
+	};
+}
 

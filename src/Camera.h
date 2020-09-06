@@ -8,36 +8,30 @@
 #include "Shader.h"
 #include "Input.h"
 
-using namespace Crynn::Input;
-using namespace Crynn::Windows;
-
 namespace Crynn
 {
-	namespace Rendering
+	using namespace glm;
+
+	enum class Projection
 	{
-		using namespace glm;
+		Orthographic,
+		Perspective
+	};
 
-		enum class Projection
-		{
-			Orthographic,
-			Perspective
-		};
+	class Camera
+	{
+	public:
+		Camera(Projection projType);
 
-		class Camera
-		{
-		public:
-			Camera(Projection projType);	
+		mat4 GetProjection() const { return m_projection; }
+		mat4 view = mat4(1.0f);
 
-			mat4 GetProjection() const { return m_projection; }
-			mat4 m_view = mat4(1.0f);
+		void Run();
+	private:
+		mat4 m_projection;
+		Projection m_projType;
 
-			void Run();
-		private:
-			mat4 m_projection;
-			Projection m_projType;
-
-			void UpdateViewMatrix();
-			void UpdateProjectionData();
-		};
-	}
+		void UpdateViewMatrix();
+		void UpdateProjectionData();
+	};
 }

@@ -111,7 +111,6 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="MeshRenderer.cpp" />
     <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="ShaderEditor.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureViewer.cpp" />
     <ClCompile Include="Timer.cpp" />
@@ -125,6 +124,7 @@
     <ClInclude Include="Crynn.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="delegate.h" />
+    <ClInclude Include="GUI\GuiWindow.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="File.h" />
     <ClInclude Include="lib\thirdparty\imgui\imconfig.h" />
@@ -136,7 +136,6 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="MeshRenderer.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="ShaderEditor.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureViewer.h" />

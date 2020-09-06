@@ -1,19 +1,21 @@
 #include "Application.h"
-
-void Application::Quit()
+namespace Crynn
 {
-	OnBeforeClose.Invoke();
-	glfwSetWindowShouldClose(glfwWindow, true);
-}
+	void Application::Quit()
+	{
+		OnBeforeClose.Invoke();
+		glfwSetWindowShouldClose(glfwWindow, true);
+	}
 
-void Application::Tick()
-{
-	//Get the deltaTime
-	currentFrameTime = glfwGetTime();
-	double deltaTime = currentFrameTime - previousFrameTime;
+	void Application::Tick()
+	{
+		//Get the deltaTime
+		currentFrameTime = glfwGetTime();
+		double deltaTime = currentFrameTime - previousFrameTime;
 
-	//Invoke update
-	OnUpdate.Invoke(deltaTime);
+		//Invoke update
+		OnUpdate.Invoke(deltaTime);
 
-	previousFrameTime = currentFrameTime; //Update the previousFrameTime
+		previousFrameTime = currentFrameTime; //Update the previousFrameTime
+	}
 }
