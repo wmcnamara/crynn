@@ -1,6 +1,5 @@
 #pragma once
 #include "delegate.h"
-#include "Window.h"
 #include "GLFW/glfw3.h"
 
 /// <summary>
@@ -16,7 +15,9 @@ namespace Crynn
 		Event<void> OnInput;
 		Event<void> OnBeforeClose;
 		Event<float> OnUpdate;
+		Event<void> OnBeforeUpdate; //Used to set uniform buffer data before rendering
 		Event<void> OnStart;
+		Event<int, int> OnWindowResize;
 
 		void Quit();
 

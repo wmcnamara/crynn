@@ -6,15 +6,18 @@ namespace Crynn
 	class Behaviour
 	{
 	protected:
-		virtual void Update(double deltaTime) = 0;
-		virtual void Start() = 0;
+		virtual void Update(double deltaTime) {};
+		virtual void Start() {};
+		virtual void BeforeUpdate() {};
 
 		Behaviour();
 		~Behaviour();
 
 	private:
-		int updateHandlerID; //Used to remove the update handler when this object is destructed.
-		int startHandlerID; //Used to remove the start handler when this object is destructed.
+		//Used to remove handlers when this object is destructed.
+		int updateHandlerID; 
+		int startHandlerID;
+		int beforeUpdateHandlerID;
 	};
 }
 

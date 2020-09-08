@@ -46,5 +46,8 @@ namespace Crynn
 	{
 		glDeleteVertexArrays(1, &VAO);
 		glDeleteBuffers(1, &VBO);
+
+		if (m_useEBO)
+			glDeleteBuffers(1, &EBO);
 	}
 }

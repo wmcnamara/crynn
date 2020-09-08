@@ -14,8 +14,8 @@ namespace Crynn
 		double deltaTime = currentFrameTime - previousFrameTime;
 
 		//Invoke update
+		OnBeforeUpdate.Invoke();
 		OnUpdate.Invoke(deltaTime);
-
 		previousFrameTime = currentFrameTime; //Update the previousFrameTime
 	}
 }

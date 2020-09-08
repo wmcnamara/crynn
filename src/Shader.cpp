@@ -61,6 +61,10 @@ namespace Crynn
 
 		ShaderLinkLog(ID);
 		ShaderCompileLog(vertex, fragment);
+
+		//Setup block bindings
+		UBI = glGetUniformBlockIndex(ID, "CameraMatrices");
+		glUniformBlockBinding(ID, UBI, 0);
 	}
 
 	void Shader::ShaderLinkLog(unsigned int shaderProgram)

@@ -1,22 +1,41 @@
 #include "Camera.h"
 namespace Crynn
 {
-	Camera::Camera(Projection projType) : m_projType(projType)
-	{
-		UpdateViewMatrix();
-		UpdateProjectionData();
-		view = translate(view, vec3(0, 0, -3));
+	Camera::Camera(vec3 position, Projection projType) : m_projType(projType)
+	{		
+		Transform::Translate(position, &view);
+
+		//Generate a UBO
+		glGenBuffers(1, &m_matrixUBO);
+		glBindBuffer(GL_UNIFORM_BUFFER, m_matrixUBO);
+		glBufferData(GL_UNIFORM_BUFFER, 2 * sizeof(glm::mat4), NULL, GL_STATIC_DRAW);
+		glBindBuffer(GL_UNIFORM_BUFFER, 0);
+
+		// Set camera matrix ubo to bind point 0
+		glBindBufferRange(GL_UNIFORM_BUFFER, 0, m_matrixUBO, 0, 2 * sizeof(glm::mat4));
 	}
 
-	void Camera::Run()
+	Camera::~Camera()
 	{
-		UpdateViewMatrix();
-		UpdateProjectionData();
 	}
 
-	void Camera::UpdateViewMatrix()
+	void Camera::BeforeUpdate()
+	{		
+		UpdateProjectionData();
+		SetUniformData();
+	}
+
+	void Camera::InputCommands()
 	{
-		Shader::SetMatrix4Current("view", &view);
+	}
+
+	void Camera::SetUniformData()
+	{	
+		//Bind the UBO, fill and unbind.
+		glBindBuffer(GL_UNIFORM_BUFFER, m_matrixUBO);
+		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(m_projection));
+		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
+		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 	}
 
 	void Camera::UpdateProjectionData()
@@ -43,7 +62,5 @@ namespace Crynn
 				0.1f,
 				100.0f);
 		}
-
-		Shader::SetMatrix4Current("projection", &GetProjection()); //Set the uniform
 	}
 }

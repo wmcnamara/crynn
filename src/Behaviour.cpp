@@ -15,6 +15,12 @@ namespace Crynn
 		{
 			Start();
 		});
+
+		//Subscribe Start(), and get the handlerID
+		beforeUpdateHandlerID = Application::Instance().OnBeforeUpdate.AddHandler([this]()
+		{
+			BeforeUpdate();
+		});
 	}
 
 	Behaviour::~Behaviour()

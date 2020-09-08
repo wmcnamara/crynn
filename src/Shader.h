@@ -38,6 +38,8 @@ namespace Crynn
 		static void SetMatrix4Current(const char* name, glm::mat4* matrix);
 
 	private:
+		unsigned int UBI;
+
 		void ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader);
 		void ShaderLinkLog(unsigned int shaderProgram);
 	};

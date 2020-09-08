@@ -7,7 +7,7 @@ namespace Crynn
 	//TODO Fix
 	void SizeCallback(GLFWwindow* window, int width, int height)
 	{
-		//Window::Instance().UpdateWindowSize();
+		Application::Instance().OnWindowResize.Invoke(width, height);
 	}
 
 	bool Window::ShouldClose()
@@ -37,9 +37,6 @@ namespace Crynn
 	//Processes input, runs glClear and creates an IMGUI frame.
 	void Window::BeforeRender()
 	{
-		//Setup polling, new frames and clear buffers
-		glfwPollEvents();
-
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -51,6 +48,9 @@ namespace Crynn
 		//ImGui::DockSpaceOverViewport(ImGui::GetWindowViewport(), ImGuiDockNodeFlags_None);
 
 		glViewport(0, 0, m_screenSize.x, m_screenSize.y); //Set the default viewport.
+
+		//Setup polling, new frames and clear buffers
+		glfwPollEvents();
 	}
 
 	//Called after rendering code. Ends IMGUI frames, swaps buffers, and polls events.
@@ -64,14 +64,18 @@ namespace Crynn
 
 	void Window::UpdateWindowSize()
 	{
-		int width, height;
+		int width, height, frameBufWidth, frameBufHeight;
 		glfwGetWindowSize(glfwWindow, &width, &height);
+		glfwGetFramebufferSize(glfwWindow, &frameBufWidth, &frameBufHeight);
+
+		m_screenSize = ImVec2(width, height);
+		m_frameBufSize = ImVec2(frameBufWidth, frameBufHeight);
 	}
 
 	Window::Window(const char* name, int width, int height)
 	{
 		Debug::ClearOutputLogs();
-		Debug::Log("Crynn Debug Started...", Debug::Message);
+		Debug::Log("Crynn Debug Started...");
 
 		//Glfw
 		glfwInit();
@@ -83,8 +87,6 @@ namespace Crynn
 		//Window
 		//Set the glfwWindow.
 		glfwWindow = glfwCreateWindow(width, height, name, NULL, NULL);
-
-		Application::Instance().glfwWindow = glfwWindow; //Point to the glfwWindow to provide easy access for this function.
 
 		if (glfwWindow == NULL)
 		{
@@ -105,6 +107,8 @@ namespace Crynn
 		m_screenSize = ImVec2(scrWidth, scrHeight);
 		m_frameBufSize = ImVec2(frameBufWidth, frameBufHeight);
 
+		Application::Instance().glfwWindow = glfwWindow; 
+
 		//Glad
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 		{
@@ -124,6 +128,11 @@ namespace Crynn
 		ImGui_ImplOpenGL3_Init("#version 330 core");
 		// Setup Dear ImGui style
 		ImGui::StyleColorsDark();
+
+		Application::Instance().OnWindowResize.AddHandler([this](int width, int height) 
+		{
+			UpdateWindowSize();
+		});
 	}
 
 	void InputCallback(GLFWwindow* window, int key, int scancode, int action, int mods)

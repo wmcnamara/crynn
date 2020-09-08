@@ -31,6 +31,8 @@ namespace Crynn
 		const ImVec2& GetSize();
 		const ImVec2& GetFrameBufSize();
 
+		GLFWwindow* glfwWindow;
+
 		void BeforeRender();
 		void AfterRender();
 
@@ -39,7 +41,6 @@ namespace Crynn
 		bool ShouldClose();
 		~Window();
 	private:
-		GLFWwindow* glfwWindow;
 
 		ImVec2 m_screenSize;
 		ImVec2 m_frameBufSize;
