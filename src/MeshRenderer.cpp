@@ -2,11 +2,12 @@
 
 namespace Crynn
 {
-	MeshRenderer::MeshRenderer(Mesh* mesh, Texture* texture, Shader* shader) :
+	MeshRenderer::MeshRenderer(Mesh* mesh, Texture* texture, Shader* shader, mat4* modelMatrix) :
 		m_mesh(mesh),
 		m_texture(texture),
 		m_shader(shader),
-		m_indexed(mesh->Indexed())
+		m_indexed(mesh->Indexed()),
+		m_model(modelMatrix)
 	{}
 
 	void MeshRenderer::Render()
@@ -19,7 +20,7 @@ namespace Crynn
 			glUseProgram(m_shader->ID);
 
 			m_shader->SetFloat("time", (float)glfwGetTime()); //Set time uniform on current shader
-			m_shader->SetMatrix4("model", &model);
+			m_shader->SetMatrix4("model", m_model);
 
 			if (m_indexed)
 			{

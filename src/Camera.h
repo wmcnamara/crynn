@@ -26,15 +26,13 @@ namespace Crynn
 	/// This class creates a Uniform Buffer Object you can use to get projection and view matrix data. 
 	/// This UBO will always be at binding point 0, and the block should always be called "CameraMatrices" in the shader.
 	/// </summary>
-	class Camera: protected Behaviour, protected Input
+	class Camera: protected Behaviour, protected Input, public Transform
 	{
 	public:
 		Camera(vec3 position, Projection projType);
 		~Camera();
 
 		mat4 GetProjection() const { return m_projection; }
-		mat4 view = mat4(1.0f);
-
 	private:
 		void BeforeUpdate() override;
 		void Start() override {};

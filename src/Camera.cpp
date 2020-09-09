@@ -3,7 +3,7 @@ namespace Crynn
 {
 	Camera::Camera(vec3 position, Projection projType) : m_projType(projType)
 	{		
-		Transform::Translate(position, &view);
+		Transform::Translate(position);
 
 		//Generate a UBO
 		glGenBuffers(1, &m_matrixUBO);
@@ -34,7 +34,7 @@ namespace Crynn
 		//Bind the UBO, fill and unbind.
 		glBindBuffer(GL_UNIFORM_BUFFER, m_matrixUBO);
 		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(m_projection));
-		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
+		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(transformMatrix));
 		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 	}
 

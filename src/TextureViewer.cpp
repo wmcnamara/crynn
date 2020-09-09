@@ -97,9 +97,9 @@ namespace Crynn
 	void TextureViewer::Update()
 	{
 		//Update Model Matrix
-		m_renderer.model = glm::mat4(1.0f);
-		m_renderer.model = glm::rotate(
-			m_renderer.model,
+		transformMatrix = glm::mat4(1.0f);
+		transformMatrix = glm::rotate(
+			transformMatrix,
 			(float)glfwGetTime() * glm::radians(50.0f),
 			glm::vec3(0.5f, 1.0f, 0.0f));
 
