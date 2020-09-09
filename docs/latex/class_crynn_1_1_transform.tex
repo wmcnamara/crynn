@@ -1,0 +1,123 @@
+\hypertarget{class_crynn_1_1_transform}{}\doxysection{Crynn\+::Transform Class Reference}
+\label{class_crynn_1_1_transform}\index{Crynn::Transform@{Crynn::Transform}}
+
+
+Matrix representation with easy functions to transform it. This class is mostly intended to be inherited from. Any transformations made, (translate, scale rotate) will be applied to the \char`\"{}transform\+Matrix\char`\"{} member. You can use this matrix however you please. Its generally used as a model or view matrix, and works very well with \mbox{\hyperlink{class_crynn_1_1_mesh_renderer}{Mesh\+Renderer}}.  
+
+
+
+
+{\ttfamily \#include $<$Transform.\+h$>$}
+
+Inheritance diagram for Crynn\+::Transform\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crynn_1_1_transform}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crynn_1_1_transform_a1826421a52fb70c75ef780075b7aee46}{Transform}} ()=default
+\item 
+\mbox{\hyperlink{class_crynn_1_1_transform_a40749912fbfda4ca3b857c96094b9312}{Transform}} (const \mbox{\hyperlink{class_crynn_1_1_transform}{Transform}} \&other)
+\item 
+void \mbox{\hyperlink{class_crynn_1_1_transform_ad8e4324ad30a95f6a6d65256ffd5308b}{Translate}} (glm\+::vec3 translation)
+\item 
+void \mbox{\hyperlink{class_crynn_1_1_transform_a4669335e7033f1691b89a3fa869c1d99}{Scale}} (glm\+::vec3 scale)
+\item 
+void \mbox{\hyperlink{class_crynn_1_1_transform_a2461d8ffdbcb30fb75678f78196ba663}{Rotate}} (float rotation\+In\+Degrees, glm\+::vec3 axis)
+\item 
+void \mbox{\hyperlink{class_crynn_1_1_transform_a970b9395777b00f5f166997d590d98ef}{Set\+Position}} (glm\+::vec3 position)
+\item 
+void \mbox{\hyperlink{class_crynn_1_1_transform_a0f077c04f6c88b766e859c09ec3cb839}{Set\+Position}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_crynn_1_1_transform_a1955f627399f483891f695c037d3ef84}{Add\+Child}} ()
+\item 
+void \mbox{\hyperlink{class_crynn_1_1_transform_a382de92ee8838397e84d88a08f258001}{Clear\+Child}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_crynn_1_1_transform_a284b6d48f773f06c6473b450f7a08174}{transform\+Matrix}} = glm\+::mat4(1.\+0f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Matrix representation with easy functions to transform it. This class is mostly intended to be inherited from. Any transformations made, (translate, scale rotate) will be applied to the \char`\"{}transform\+Matrix\char`\"{} member. You can use this matrix however you please. Its generally used as a model or view matrix, and works very well with \mbox{\hyperlink{class_crynn_1_1_mesh_renderer}{Mesh\+Renderer}}. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crynn_1_1_transform_a1826421a52fb70c75ef780075b7aee46}\label{class_crynn_1_1_transform_a1826421a52fb70c75ef780075b7aee46}} 
+\index{Crynn::Transform@{Crynn::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Crynn\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_transform_a40749912fbfda4ca3b857c96094b9312}\label{class_crynn_1_1_transform_a40749912fbfda4ca3b857c96094b9312}} 
+\index{Crynn::Transform@{Crynn::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Crynn\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_crynn_1_1_transform}{Transform}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crynn_1_1_transform_a1955f627399f483891f695c037d3ef84}\label{class_crynn_1_1_transform_a1955f627399f483891f695c037d3ef84}} 
+\index{Crynn::Transform@{Crynn::Transform}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Add\+Child (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_crynn_1_1_transform_a382de92ee8838397e84d88a08f258001}\label{class_crynn_1_1_transform_a382de92ee8838397e84d88a08f258001}} 
+\index{Crynn::Transform@{Crynn::Transform}!ClearChild@{ClearChild}}
+\index{ClearChild@{ClearChild}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{ClearChild()}{ClearChild()}}
+{\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Clear\+Child (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_crynn_1_1_transform_a2461d8ffdbcb30fb75678f78196ba663}\label{class_crynn_1_1_transform_a2461d8ffdbcb30fb75678f78196ba663}} 
+\index{Crynn::Transform@{Crynn::Transform}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Rotate (\begin{DoxyParamCaption}\item[{float}]{rotation\+In\+Degrees,  }\item[{glm\+::vec3}]{axis }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_crynn_1_1_transform_a4669335e7033f1691b89a3fa869c1d99}\label{class_crynn_1_1_transform_a4669335e7033f1691b89a3fa869c1d99}} 
+\index{Crynn::Transform@{Crynn::Transform}!Scale@{Scale}}
+\index{Scale@{Scale}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{Scale()}{Scale()}}
+{\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_crynn_1_1_transform_a0f077c04f6c88b766e859c09ec3cb839}\label{class_crynn_1_1_transform_a0f077c04f6c88b766e859c09ec3cb839}} 
+\index{Crynn::Transform@{Crynn::Transform}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_crynn_1_1_transform_a970b9395777b00f5f166997d590d98ef}\label{class_crynn_1_1_transform_a970b9395777b00f5f166997d590d98ef}} 
+\index{Crynn::Transform@{Crynn::Transform}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_crynn_1_1_transform_ad8e4324ad30a95f6a6d65256ffd5308b}\label{class_crynn_1_1_transform_ad8e4324ad30a95f6a6d65256ffd5308b}} 
+\index{Crynn::Transform@{Crynn::Transform}!Translate@{Translate}}
+\index{Translate@{Translate}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{Translate()}{Translate()}}
+{\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Translate (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{translation }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_crynn_1_1_transform_a284b6d48f773f06c6473b450f7a08174}\label{class_crynn_1_1_transform_a284b6d48f773f06c6473b450f7a08174}} 
+\index{Crynn::Transform@{Crynn::Transform}!transformMatrix@{transformMatrix}}
+\index{transformMatrix@{transformMatrix}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{transformMatrix}{transformMatrix}}
+{\footnotesize\ttfamily glm\+::mat4 Crynn\+::\+Transform\+::transform\+Matrix = glm\+::mat4(1.\+0f)\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Github/crynn/src/\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\item 
+C\+:/\+Github/crynn/src/\mbox{\hyperlink{_transform_8cpp}{Transform.\+cpp}}\end{DoxyCompactItemize}

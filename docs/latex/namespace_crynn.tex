@@ -1,0 +1,103 @@
+\hypertarget{namespace_crynn}{}\doxysection{Crynn Namespace Reference}
+\label{namespace_crynn}\index{Crynn@{Crynn}}
+
+
+Main Engine Namespace  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_application}{Application}}
+\begin{DoxyCompactList}\small\item\em A singleton representation of the application. Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crynn_1_1_behaviour}{Behaviour}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_calculator}{Calculator}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_camera}{Camera}}
+\begin{DoxyCompactList}\small\item\em Creates a camera that can render objects. This class creates a Uniform Buffer Object you can use to get projection and view matrix data. This U\+BO will always be at binding point 0, and the block should always be called \char`\"{}\+Camera\+Matrices\char`\"{} in the shader. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crynn_1_1_debug}{Debug}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_event}{Event}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_event_3_01void_01_4}{Event$<$ void $>$}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_file}{File}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_crynn_1_1_file}{File}} related functions to allow user to open files. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crynn_1_1_input}{Input}}
+\begin{DoxyCompactList}\small\item\em Simple input component. Inherit from this class and override \mbox{\hyperlink{class_crynn_1_1_input_ad049c8702b2f09bcaef6c69178910998}{Input\+Commands()}} to use. Do not instantiate this class manually. Only inherit from it. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crynn_1_1_light}{Light}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_mesh}{Mesh}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_mesh_renderer}{Mesh\+Renderer}}
+\begin{DoxyCompactList}\small\item\em Renders a mesh with a shader and a texture. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_crynn_1_1_on_window_start_args}{On\+Window\+Start\+Args}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_scoped_timer}{Scoped\+Timer}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_shader}{Shader}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_shader_editor}{Shader\+Editor}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_texture}{Texture}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_texture_viewer}{Texture\+Viewer}}
+\item 
+class \mbox{\hyperlink{class_crynn_1_1_transform}{Transform}}
+\begin{DoxyCompactList}\small\item\em Matrix representation with easy functions to transform it. This class is mostly intended to be inherited from. Any transformations made, (translate, scale rotate) will be applied to the \char`\"{}transform\+Matrix\char`\"{} member. You can use this matrix however you please. Its generally used as a model or view matrix, and works very well with \mbox{\hyperlink{class_crynn_1_1_mesh_renderer}{Mesh\+Renderer}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crynn_1_1_window}{Window}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702b}{Projection}} \{ \mbox{\hyperlink{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702ba03424250432f2aa71de95579d2c0eaeb}{Projection\+::\+Orthographic}}, 
+\mbox{\hyperlink{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702baa80420eef88d11f77532f1b9cb467fa3}{Projection\+::\+Perspective}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_crynn_ae4ddbdbb0a669e4384f6082253b84158}{Input\+Callback}} (G\+L\+F\+Wwindow $\ast$window, int key, int scancode, int action, int mods)
+\item 
+void \mbox{\hyperlink{namespace_crynn_abfcb895b150bbc1fdb1782205d42e3db}{Size\+Callback}} (G\+L\+F\+Wwindow $\ast$window, int width, int height)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main Engine Namespace 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702b}\label{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702b}} 
+\index{Crynn@{Crynn}!Projection@{Projection}}
+\index{Projection@{Projection}!Crynn@{Crynn}}
+\doxysubsubsection{\texorpdfstring{Projection}{Projection}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702b}{Crynn\+::\+Projection}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Orthographic@{Orthographic}!Crynn@{Crynn}}\index{Crynn@{Crynn}!Orthographic@{Orthographic}}}\mbox{\Hypertarget{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702ba03424250432f2aa71de95579d2c0eaeb}\label{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702ba03424250432f2aa71de95579d2c0eaeb}} 
+Orthographic&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Perspective@{Perspective}!Crynn@{Crynn}}\index{Crynn@{Crynn}!Perspective@{Perspective}}}\mbox{\Hypertarget{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702baa80420eef88d11f77532f1b9cb467fa3}\label{namespace_crynn_add78edfd0b31f7d94ca71c24a7e0702baa80420eef88d11f77532f1b9cb467fa3}} 
+Perspective&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_crynn_ae4ddbdbb0a669e4384f6082253b84158}\label{namespace_crynn_ae4ddbdbb0a669e4384f6082253b84158}} 
+\index{Crynn@{Crynn}!InputCallback@{InputCallback}}
+\index{InputCallback@{InputCallback}!Crynn@{Crynn}}
+\doxysubsubsection{\texorpdfstring{InputCallback()}{InputCallback()}}
+{\footnotesize\ttfamily void Crynn\+::\+Input\+Callback (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_crynn_abfcb895b150bbc1fdb1782205d42e3db}\label{namespace_crynn_abfcb895b150bbc1fdb1782205d42e3db}} 
+\index{Crynn@{Crynn}!SizeCallback@{SizeCallback}}
+\index{SizeCallback@{SizeCallback}!Crynn@{Crynn}}
+\doxysubsubsection{\texorpdfstring{SizeCallback()}{SizeCallback()}}
+{\footnotesize\ttfamily void Crynn\+::\+Size\+Callback (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+

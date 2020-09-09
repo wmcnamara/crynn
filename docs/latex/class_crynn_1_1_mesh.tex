@@ -1,0 +1,94 @@
+\hypertarget{class_crynn_1_1_mesh}{}\doxysection{Crynn\+::Mesh Class Reference}
+\label{class_crynn_1_1_mesh}\index{Crynn::Mesh@{Crynn::Mesh}}
+
+
+{\ttfamily \#include $<$Mesh.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crynn_1_1_mesh_a6e1b4806696a4915219c6a4545b15f64}{Mesh}} (float $\ast$vertices, unsigned int $\ast$indices, size\+\_\+t num\+Of\+Vertices, size\+\_\+t num\+Of\+Indices, bool use\+E\+BO)
+\begin{DoxyCompactList}\small\item\em Creates a renderable mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crynn_1_1_mesh_a9dd5ac3b8f6ec82a49d7cdb3a85e2b4a}{$\sim$\+Mesh}} ()
+\item 
+const unsigned int \mbox{\hyperlink{class_crynn_1_1_mesh_acb4e873770183b7376c9ccd651a987fc}{Vertex\+Count}} () const
+\item 
+const unsigned int \mbox{\hyperlink{class_crynn_1_1_mesh_ae529289b48bae60157ca152e2cd83b09}{Index\+Count}} () const
+\item 
+const unsigned int \mbox{\hyperlink{class_crynn_1_1_mesh_afd7eb9570eef67c0f87fbbbc25e230a8}{Get\+V\+AO}} () const
+\item 
+const unsigned int \mbox{\hyperlink{class_crynn_1_1_mesh_a1bb95b740ee5988d1c24871c6f2a6771}{Get\+V\+BO}} () const
+\item 
+const bool \mbox{\hyperlink{class_crynn_1_1_mesh_acb00982eb1f53643973ce9ecd64d69db}{Indexed}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crynn_1_1_mesh_a6e1b4806696a4915219c6a4545b15f64}\label{class_crynn_1_1_mesh_a6e1b4806696a4915219c6a4545b15f64}} 
+\index{Crynn::Mesh@{Crynn::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Crynn::Mesh@{Crynn::Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}}
+{\footnotesize\ttfamily Crynn\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{float $\ast$}]{vertices,  }\item[{unsigned int $\ast$}]{indices,  }\item[{size\+\_\+t}]{num\+Of\+Vertices,  }\item[{size\+\_\+t}]{num\+Of\+Indices,  }\item[{bool}]{use\+E\+BO }\end{DoxyParamCaption})}
+
+
+
+Creates a renderable mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Array containing the vertices of your mesh.\\
+\hline
+{\em indices} & Array containing the indices of your mesh. If you do not wish to render with indices, set this to N\+U\+LL, and use\+E\+BO to false.\\
+\hline
+{\em num\+Of\+Vertices} & Number of elements in the vertices array.\\
+\hline
+{\em num\+Of\+Indices} & Number of elements in the indices array.\\
+\hline
+{\em use\+E\+BO} & Setting this to true will generate an element buffer, and render with indices.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crynn_1_1_mesh_a9dd5ac3b8f6ec82a49d7cdb3a85e2b4a}\label{class_crynn_1_1_mesh_a9dd5ac3b8f6ec82a49d7cdb3a85e2b4a}} 
+\index{Crynn::Mesh@{Crynn::Mesh}!````~Mesh@{$\sim$Mesh}}
+\index{````~Mesh@{$\sim$Mesh}!Crynn::Mesh@{Crynn::Mesh}}
+\doxysubsubsection{\texorpdfstring{$\sim$Mesh()}{~Mesh()}}
+{\footnotesize\ttfamily Crynn\+::\+Mesh\+::$\sim$\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crynn_1_1_mesh_afd7eb9570eef67c0f87fbbbc25e230a8}\label{class_crynn_1_1_mesh_afd7eb9570eef67c0f87fbbbc25e230a8}} 
+\index{Crynn::Mesh@{Crynn::Mesh}!GetVAO@{GetVAO}}
+\index{GetVAO@{GetVAO}!Crynn::Mesh@{Crynn::Mesh}}
+\doxysubsubsection{\texorpdfstring{GetVAO()}{GetVAO()}}
+{\footnotesize\ttfamily const unsigned int Crynn\+::\+Mesh\+::\+Get\+V\+AO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_mesh_a1bb95b740ee5988d1c24871c6f2a6771}\label{class_crynn_1_1_mesh_a1bb95b740ee5988d1c24871c6f2a6771}} 
+\index{Crynn::Mesh@{Crynn::Mesh}!GetVBO@{GetVBO}}
+\index{GetVBO@{GetVBO}!Crynn::Mesh@{Crynn::Mesh}}
+\doxysubsubsection{\texorpdfstring{GetVBO()}{GetVBO()}}
+{\footnotesize\ttfamily const unsigned int Crynn\+::\+Mesh\+::\+Get\+V\+BO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_mesh_ae529289b48bae60157ca152e2cd83b09}\label{class_crynn_1_1_mesh_ae529289b48bae60157ca152e2cd83b09}} 
+\index{Crynn::Mesh@{Crynn::Mesh}!IndexCount@{IndexCount}}
+\index{IndexCount@{IndexCount}!Crynn::Mesh@{Crynn::Mesh}}
+\doxysubsubsection{\texorpdfstring{IndexCount()}{IndexCount()}}
+{\footnotesize\ttfamily const unsigned int Crynn\+::\+Mesh\+::\+Index\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_mesh_acb00982eb1f53643973ce9ecd64d69db}\label{class_crynn_1_1_mesh_acb00982eb1f53643973ce9ecd64d69db}} 
+\index{Crynn::Mesh@{Crynn::Mesh}!Indexed@{Indexed}}
+\index{Indexed@{Indexed}!Crynn::Mesh@{Crynn::Mesh}}
+\doxysubsubsection{\texorpdfstring{Indexed()}{Indexed()}}
+{\footnotesize\ttfamily const bool Crynn\+::\+Mesh\+::\+Indexed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_mesh_acb4e873770183b7376c9ccd651a987fc}\label{class_crynn_1_1_mesh_acb4e873770183b7376c9ccd651a987fc}} 
+\index{Crynn::Mesh@{Crynn::Mesh}!VertexCount@{VertexCount}}
+\index{VertexCount@{VertexCount}!Crynn::Mesh@{Crynn::Mesh}}
+\doxysubsubsection{\texorpdfstring{VertexCount()}{VertexCount()}}
+{\footnotesize\ttfamily const unsigned int Crynn\+::\+Mesh\+::\+Vertex\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Github/crynn/src/\mbox{\hyperlink{_mesh_8h}{Mesh.\+h}}\item 
+C\+:/\+Github/crynn/src/\mbox{\hyperlink{_mesh_8cpp}{Mesh.\+cpp}}\end{DoxyCompactItemize}
