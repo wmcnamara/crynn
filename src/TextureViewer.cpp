@@ -5,7 +5,7 @@ namespace Crynn
 	TextureViewer::TextureViewer(ImVec2 size, ImVec2 pos) : GuiWindow(size, pos, "Texture Viewer")
 	{
 		//Subscribe to events
-		onNewTexLoad.AddHandler([this](GetFileArgs args)
+		onNewTexLoad.AddHandler([this](File::GetFileArgs args)
 		{
 			m_texture.Load(args.filePath.c_str());
 		});
@@ -41,13 +41,8 @@ namespace Crynn
 			{
 				if (ImGui::MenuItem("Load Texture..."))
 				{
-					//Create a texture argument structure, and call onNewTexLoad with it.
-					GetFileArgs args =
-					{
-						File::GetFile()
-					};
-
-					onNewTexLoad.Invoke(args);
+					//GetFile returns a structure containing the filePath, so request a new load with the picked texture.
+					onNewTexLoad.Invoke(File::GetFile());
 				}
 				ImGui::EndMenu();
 			}

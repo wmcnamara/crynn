@@ -2,7 +2,7 @@
 namespace Crynn
 {
 	//Allows user to choose an image and returns the filepath after selection.
-	std::string File::GetFile()
+	File::GetFileArgs File::GetFile()
 	{
 		std::string filePath;
 
@@ -74,6 +74,6 @@ namespace Crynn
 			}
 			CoUninitialize();
 		}
-		return filePath;
+		return GetFileArgs{filePath}; //Create a GetFileArgs object and return it.
 	}
 }

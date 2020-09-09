@@ -27,6 +27,7 @@ namespace Crynn
 
 	void Camera::InputCommands()
 	{
+
 	}
 
 	void Camera::SetUniformData()

@@ -53,6 +53,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -65,7 +66,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)src\lib\thirdparty\glad;$(SolutionDir)src\lib\thirdparty\glfw\include;$(SolutionDir)src\lib\thirdparty\glm;$(SolutionDir)src\lib\thirdparty\imgui;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\lib\thirdparty\glad;$(SolutionDir)src\lib\thirdparty\glfw\include;$(SolutionDir)src\lib\thirdparty\glm;$(SolutionDir)src\lib\thirdparty\imgui;$(SolutionDir)src;$(SolutionDir)src\lib\thirdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -133,11 +134,11 @@
     <ClInclude Include="lib\thirdparty\imgui\imgui_impl_glfw.h" />
     <ClInclude Include="lib\thirdparty\imgui\imgui_impl_opengl3.h" />
     <ClInclude Include="lib\thirdparty\imgui\imgui_internal.h" />
+    <ClInclude Include="lib\thirdparty\stb_image.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="MeshRenderer.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="stb_image.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureViewer.h" />
     <ClInclude Include="Timer.h" />

@@ -12,15 +12,22 @@
 
 namespace Crynn
 {
-	//Contains the filepath retrieved from the picker.
-	struct GetFileArgs
-	{
-		std::string filePath;
-	};
-
+	/// <summary>
+	/// File related functions to allow user to open files.
+	/// </summary>
 	class File
-	{
-	public:
-		static std::string GetFile();
+	{		
+	public:	
+		/// Structure containing the filepath retrieved from the picker.///
+		struct GetFileArgs
+		{
+			std::string filePath;
+		};
+
+		/// <summary>
+		/// Opens a picker that allows the user to select a file.
+		/// </summary>
+		/// <returns>A GetFileArgs object containing the selected filepath.</returns>
+		static GetFileArgs GetFile();
 	};
 }

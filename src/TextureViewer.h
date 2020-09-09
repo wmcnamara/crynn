@@ -14,7 +14,7 @@ namespace Crynn
 		TextureViewer(ImVec2 size, ImVec2 pos);
 		~TextureViewer();
 
-		Event<GetFileArgs> onNewTexLoad; //Called when user loads a new file.
+		Event<File::GetFileArgs> onNewTexLoad; //Called when user loads a new file.
 
 		void BeginDraw() override;
 		void EndDraw() override;

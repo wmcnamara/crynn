@@ -120,7 +120,6 @@ namespace Crynn
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
-		ImGuiIO& io = ImGui::GetIO();
 		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 		//ImGui::GetIO().ConfigWindowsMoveFromTitleBarOnly = true;
 		// Setup Platform/Renderer bindings
@@ -137,6 +136,6 @@ namespace Crynn
 
 	void InputCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 	{
-		Application::Instance().OnInput.Invoke();
+		Application::Instance().OnInput.Invoke(window, key, scancode, action, mods);
 	}
 }

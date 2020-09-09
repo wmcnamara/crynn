@@ -7,12 +7,16 @@
 namespace Crynn
 {
 	/// <summary>
-	/// Class to easily track and transform matricies.
+	/// Matrix representation with easy functions to transform it.
+	/// This class is mostly intended to be inherited from.
+	/// Any transformations made, (translate, scale rotate) will be applied to the "transformMatrix" member.
+	/// You can use this matrix however you please. Its generally used as a model or view matrix, and works very well with MeshRenderer.
 	/// </summary>
 	class Transform
 	{
 	public:
 		Transform() = default;
+		Transform(const Transform& other);
 
 		void Translate(glm::vec3 translation);
 		void Scale(glm::vec3 scale);

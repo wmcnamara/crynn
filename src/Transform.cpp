@@ -2,6 +2,11 @@
 
 namespace Crynn
 {
+	Transform::Transform(const Transform& other)
+	{
+
+	}
+
 	void Transform::Translate(glm::vec3 translation)
 	{
 		transformMatrix = glm::translate(transformMatrix, translation);
