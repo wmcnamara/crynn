@@ -2,19 +2,24 @@
 \label{class_crynn_1_1_gui_window}\index{Crynn::GuiWindow@{Crynn::GuiWindow}}
 
 
+Base class for any onscreen G\+UI window. Uses I\+M\+G\+UI and \mbox{\hyperlink{namespace_crynn}{Crynn}} events for rendering.  
+
+
+
+
 {\ttfamily \#include $<$Gui\+Window.\+h$>$}
 
 Inheritance diagram for Crynn\+::Gui\+Window\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_crynn_1_1_gui_window}
+\includegraphics[height=3.000000cm]{class_crynn_1_1_gui_window}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_crynn_1_1_gui_window_aacb1b6b2987ad9abccf9f6a4a14702c0}{Gui\+Window}} (Im\+Vec2 size, Im\+Vec2 pos, const char $\ast$name)
-\begin{DoxyCompactList}\small\item\em Creates an onscreen G\+UI window. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates an onscreen G\+UI window \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_crynn_1_1_gui_window_a7ba2ad72890b6c5029dad9887a4a3b8f}{$\sim$\+Gui\+Window}} ()
 \item 
 void \mbox{\hyperlink{class_crynn_1_1_gui_window_a1629dca4d05ccc0a559fd87f45c76a4a}{Run}} ()
@@ -52,6 +57,12 @@ unsigned int \mbox{\hyperlink{class_crynn_1_1_gui_window_af463cea63fa0a09f8f1277
 \item 
 const char $\ast$ \mbox{\hyperlink{class_crynn_1_1_gui_window_a07cd2d7f2d09bbc84221e7fe209c0e02}{m\+\_\+name}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base class for any onscreen G\+UI window. Uses I\+M\+G\+UI and \mbox{\hyperlink{namespace_crynn}{Crynn}} events for rendering. 
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -63,19 +74,15 @@ const char $\ast$ \mbox{\hyperlink{class_crynn_1_1_gui_window_a07cd2d7f2d09bbc84
 
 
 
-Creates an onscreen G\+UI window. 
+Creates an onscreen G\+UI window 
 
 
 \begin{DoxyParams}{Parameters}
-{\em size} & \mbox{\hyperlink{class_crynn_1_1_window}{Window}} size dimensions.\\
+{\em size} & \mbox{\hyperlink{class_crynn_1_1_window}{Window}} width and height dimensions\\
 \hline
-{\em pos} & \mbox{\hyperlink{class_crynn_1_1_window}{Window}} position on screen relative to the top left corner.\\
+{\em pos} & \mbox{\hyperlink{class_crynn_1_1_window}{Window}} x and y position.\\
 \hline
-{\em name} & Name of the window in the title bar.\\
-\hline
-{\em draw\+O\+G\+L\+Data} & Draw Open\+GL geometry to this window?\\
-\hline
-{\em imgui\+Begin\+Flags} & Im\+Gui\+::\+Begin flags.\\
+{\em name} & \mbox{\hyperlink{class_crynn_1_1_window}{Window}} title\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_crynn_1_1_gui_window_a7ba2ad72890b6c5029dad9887a4a3b8f}\label{class_crynn_1_1_gui_window_a7ba2ad72890b6c5029dad9887a4a3b8f}} 

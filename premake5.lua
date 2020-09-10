@@ -12,6 +12,7 @@ workspace "Crynn"
 project "Crynn"
 	kind "StaticLib"
 	language "C++"
+	runtime "Debug"
 
 	targetdir = "bin"
 	objdir = "bin/obj"
@@ -31,7 +32,9 @@ project "Crynn"
 		"lib/thirdparty/imgui/imgui_impl_opengl3.cpp",
 		"lib/thirdparty/imgui/imgui_impl_opengl3.h",
 		"lib/thirdparty/imgui/imgui_internal.h",
-		"lib/thirdparty/imgui/imgui_widgets.cpp"
+		"lib/thirdparty/imgui/imgui_widgets.cpp",
+		"data/shaders/Standard.vert",
+		"data/shaders/Standard.frag"
 	}
 
 	includedirs
@@ -97,11 +100,6 @@ project "SpeedCube"
 	libdirs
 	{
 		"lib/thirdparty/glfw/lib"
-	}
-
-	postbuildcommands 
-	{
-		("{COPY} SpeedCube/data" )
 	}
 	links { "glfw3.lib", "opengl32.lib", "Crynn" }
 

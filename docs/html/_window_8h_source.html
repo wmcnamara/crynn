@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Crynn: C:/Github/crynn/src/Window.h Source File</title>
+<title>Crynn: C:/Github/crynn/src/Core/Window.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,7 +82,7 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;imgui_impl_opengl3.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_event_8h.html">Event.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_debug_8h.html">Debug.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_debug_8h.html">Utility/Debug.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_application_8h.html">Application.h</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
@@ -116,20 +116,20 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    };</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_crynn_1_1_window_html_a86870fc52d6339c89282baf03ac77496"><div class="ttname"><a href="class_crynn_1_1_window.html#a86870fc52d6339c89282baf03ac77496">Crynn::Window::ShouldClose</a></div><div class="ttdeci">bool ShouldClose()</div><div class="ttdoc">Returns glfwGetWindowShouldClose();</div><div class="ttdef"><b>Definition:</b> Window.cpp:133</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a86870fc52d6339c89282baf03ac77496"><div class="ttname"><a href="class_crynn_1_1_window.html#a86870fc52d6339c89282baf03ac77496">Crynn::Window::ShouldClose</a></div><div class="ttdeci">bool ShouldClose()</div><div class="ttdoc">Returns glfwGetWindowShouldClose();</div><div class="ttdef"><b>Definition:</b> Window.cpp:137</div></div>
 <div class="ttc" id="aclass_crynn_1_1_window_html"><div class="ttname"><a href="class_crynn_1_1_window.html">Crynn::Window</a></div><div class="ttdoc">The window everything is rendered on. Crynn does not support more than 1 monitor.</div><div class="ttdef"><b>Definition:</b> Window.h:26</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_a999f17c74c967d74b1e77708e254c9cb"><div class="ttname"><a href="class_crynn_1_1_window.html#a999f17c74c967d74b1e77708e254c9cb">Crynn::Window::UpdateWindowSize</a></div><div class="ttdeci">void UpdateWindowSize()</div><div class="ttdoc">Updates the framebuffer and screensize with the current data. Somewhat expensive, and should only be ...</div><div class="ttdef"><b>Definition:</b> Window.cpp:123</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a999f17c74c967d74b1e77708e254c9cb"><div class="ttname"><a href="class_crynn_1_1_window.html#a999f17c74c967d74b1e77708e254c9cb">Crynn::Window::UpdateWindowSize</a></div><div class="ttdeci">void UpdateWindowSize()</div><div class="ttdoc">Updates the framebuffer and screensize with the current data. Somewhat expensive, and should only be ...</div><div class="ttdef"><b>Definition:</b> Window.cpp:125</div></div>
 <div class="ttc" id="a_debug_8h_html"><div class="ttname"><a href="_debug_8h.html">Debug.h</a></div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_af97dd72d5dbfce2424abcd9b9f2cbabc"><div class="ttname"><a href="class_crynn_1_1_window.html#af97dd72d5dbfce2424abcd9b9f2cbabc">Crynn::Window::GetFrameBufSize</a></div><div class="ttdeci">const ImVec2 &amp; GetFrameBufSize()</div><div class="ttdoc">Gets the size of the framebuffer.</div><div class="ttdef"><b>Definition:</b> Window.cpp:90</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_aaae7a097070e0565521145bc33ac3cb2"><div class="ttname"><a href="class_crynn_1_1_window.html#aaae7a097070e0565521145bc33ac3cb2">Crynn::Window::AfterRender</a></div><div class="ttdeci">void AfterRender()</div><div class="ttdoc">Called after rendering to render IMGUI data and swap buffers.</div><div class="ttdef"><b>Definition:</b> Window.cpp:115</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_af97dd72d5dbfce2424abcd9b9f2cbabc"><div class="ttname"><a href="class_crynn_1_1_window.html#af97dd72d5dbfce2424abcd9b9f2cbabc">Crynn::Window::GetFrameBufSize</a></div><div class="ttdeci">const ImVec2 &amp; GetFrameBufSize()</div><div class="ttdoc">Gets the size of the framebuffer.</div><div class="ttdef"><b>Definition:</b> Window.cpp:92</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_aaae7a097070e0565521145bc33ac3cb2"><div class="ttname"><a href="class_crynn_1_1_window.html#aaae7a097070e0565521145bc33ac3cb2">Crynn::Window::AfterRender</a></div><div class="ttdeci">void AfterRender()</div><div class="ttdoc">Called after rendering to render IMGUI data and swap buffers.</div><div class="ttdef"><b>Definition:</b> Window.cpp:117</div></div>
 <div class="ttc" id="a_application_8h_html"><div class="ttname"><a href="_application_8h.html">Application.h</a></div></div>
 <div class="ttc" id="a_event_8h_html"><div class="ttname"><a href="_event_8h.html">Event.h</a></div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_a59dd7c00c7f0cf163ecc9d733a56a1e0"><div class="ttname"><a href="class_crynn_1_1_window.html#a59dd7c00c7f0cf163ecc9d733a56a1e0">Crynn::Window::~Window</a></div><div class="ttdeci">~Window()</div><div class="ttdef"><b>Definition:</b> Window.cpp:76</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_a2b7faa1f50588b39b782a8f8c9b649eb"><div class="ttname"><a href="class_crynn_1_1_window.html#a2b7faa1f50588b39b782a8f8c9b649eb">Crynn::Window::BeforeRender</a></div><div class="ttdeci">void BeforeRender()</div><div class="ttdoc">Called before rendering to clear buffers, poll events and setup IMGUI data.</div><div class="ttdef"><b>Definition:</b> Window.cpp:96</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a59dd7c00c7f0cf163ecc9d733a56a1e0"><div class="ttname"><a href="class_crynn_1_1_window.html#a59dd7c00c7f0cf163ecc9d733a56a1e0">Crynn::Window::~Window</a></div><div class="ttdeci">~Window()</div><div class="ttdef"><b>Definition:</b> Window.cpp:78</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a2b7faa1f50588b39b782a8f8c9b649eb"><div class="ttname"><a href="class_crynn_1_1_window.html#a2b7faa1f50588b39b782a8f8c9b649eb">Crynn::Window::BeforeRender</a></div><div class="ttdeci">void BeforeRender()</div><div class="ttdoc">Called before rendering to clear buffers, poll events and setup IMGUI data.</div><div class="ttdef"><b>Definition:</b> Window.cpp:98</div></div>
 <div class="ttc" id="anamespace_crynn_html"><div class="ttname"><a href="namespace_crynn.html">Crynn</a></div><div class="ttdoc">Main Engine Namespace</div><div class="ttdef"><b>Definition:</b> Application.cpp:3</div></div>
 <div class="ttc" id="aclass_crynn_1_1_window_html_a20a22c0acf9f4c7a6eedf77bbe104ebf"><div class="ttname"><a href="class_crynn_1_1_window.html#a20a22c0acf9f4c7a6eedf77bbe104ebf">Crynn::Window::glfwWindow</a></div><div class="ttdeci">GLFWwindow * glfwWindow</div><div class="ttdoc">Raw GLFW window.</div><div class="ttdef"><b>Definition:</b> Window.h:51</div></div>
 <div class="ttc" id="aclass_crynn_1_1_window_html_a0444a14a98632a803c3cd57712534b1f"><div class="ttname"><a href="class_crynn_1_1_window.html#a0444a14a98632a803c3cd57712534b1f">Crynn::Window::Window</a></div><div class="ttdeci">Window(const char *name, int width, int height)</div><div class="ttdoc">Create a new window and display it.</div><div class="ttdef"><b>Definition:</b> Window.cpp:9</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_aa64280a7cebd27b3b5be16ba90fd9954"><div class="ttname"><a href="class_crynn_1_1_window.html#aa64280a7cebd27b3b5be16ba90fd9954">Crynn::Window::GetSize</a></div><div class="ttdeci">const ImVec2 &amp; GetSize()</div><div class="ttdoc">Gets the size of the window.</div><div class="ttdef"><b>Definition:</b> Window.cpp:85</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_aa64280a7cebd27b3b5be16ba90fd9954"><div class="ttname"><a href="class_crynn_1_1_window.html#aa64280a7cebd27b3b5be16ba90fd9954">Crynn::Window::GetSize</a></div><div class="ttdeci">const ImVec2 &amp; GetSize()</div><div class="ttdoc">Gets the size of the window.</div><div class="ttdef"><b>Definition:</b> Window.cpp:87</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

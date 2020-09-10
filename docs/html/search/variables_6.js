@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rbo_342',['RBO',['../class_crynn_1_1_gui_window.html#ae0092df235692d09c1d5a33141cc8793',1,'Crynn::GuiWindow']]]
+  ['rbo_340',['RBO',['../class_crynn_1_1_gui_window.html#ae0092df235692d09c1d5a33141cc8793',1,'Crynn::GuiWindow']]]
 ];

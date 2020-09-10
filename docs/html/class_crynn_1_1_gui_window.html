@@ -77,6 +77,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Base class for any onscreen GUI window. Uses IMGUI and <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> events for rendering.  
+ <a href="class_crynn_1_1_gui_window.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_gui_window_8h_source.html">GuiWindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Crynn::GuiWindow:</div>
@@ -84,14 +87,15 @@ Inheritance diagram for Crynn::GuiWindow:</div>
  <div class="center">
   <img src="class_crynn_1_1_gui_window.png" usemap="#Crynn::GuiWindow_map" alt=""/>
   <map id="Crynn::GuiWindow_map" name="Crynn::GuiWindow_map">
-<area href="class_crynn_1_1_texture_viewer.html" alt="Crynn::TextureViewer" shape="rect" coords="0,56,135,80"/>
+<area href="class_crynn_1_1_behaviour.html" title="Allows interfacing with the Crynn event system. Inherit from this class, and override any function yo..." alt="Crynn::Behaviour" shape="rect" coords="0,0,135,24"/>
+<area href="class_crynn_1_1_texture_viewer.html" alt="Crynn::TextureViewer" shape="rect" coords="0,112,135,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aacb1b6b2987ad9abccf9f6a4a14702c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#aacb1b6b2987ad9abccf9f6a4a14702c0">GuiWindow</a> (ImVec2 size, ImVec2 pos, const char *name)</td></tr>
-<tr class="memdesc:aacb1b6b2987ad9abccf9f6a4a14702c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an onscreen GUI window.  <a href="class_crynn_1_1_gui_window.html#aacb1b6b2987ad9abccf9f6a4a14702c0">More...</a><br /></td></tr>
+<tr class="memdesc:aacb1b6b2987ad9abccf9f6a4a14702c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an onscreen GUI window  <a href="class_crynn_1_1_gui_window.html#aacb1b6b2987ad9abccf9f6a4a14702c0">More...</a><br /></td></tr>
 <tr class="separator:aacb1b6b2987ad9abccf9f6a4a14702c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ba2ad72890b6c5029dad9887a4a3b8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a7ba2ad72890b6c5029dad9887a4a3b8f">~GuiWindow</a> ()</td></tr>
 <tr class="separator:a7ba2ad72890b6c5029dad9887a4a3b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,8 +134,29 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:af463cea63fa0a09f8f127769e085c2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07cd2d7f2d09bbc84221e7fe209c0e02"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a07cd2d7f2d09bbc84221e7fe209c0e02">m_name</a></td></tr>
 <tr class="separator:a07cd2d7f2d09bbc84221e7fe209c0e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_crynn_1_1_behaviour"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_crynn_1_1_behaviour')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_crynn_1_1_behaviour.html">Crynn::Behaviour</a></td></tr>
+<tr class="memitem:a335b2a8c784b109b1600aae410abee17 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a335b2a8c784b109b1600aae410abee17">Behaviour</a> ()</td></tr>
+<tr class="separator:a335b2a8c784b109b1600aae410abee17 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4628f5bf5c0228fd938eaf5b02a03818 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a4628f5bf5c0228fd938eaf5b02a03818">~Behaviour</a> ()</td></tr>
+<tr class="memdesc:a4628f5bf5c0228fd938eaf5b02a03818 inherit pro_methods_class_crynn_1_1_behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically subscribes events to the event system.  <a href="class_crynn_1_1_behaviour.html#a4628f5bf5c0228fd938eaf5b02a03818">More...</a><br /></td></tr>
+<tr class="separator:a4628f5bf5c0228fd938eaf5b02a03818 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">Update</a> (double deltaTime)</td></tr>
+<tr class="memdesc:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes the events.  <a href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">More...</a><br /></td></tr>
+<tr class="separator:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db4355a84112b96a6fb664a121814c8 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a0db4355a84112b96a6fb664a121814c8">Start</a> ()</td></tr>
+<tr class="separator:a0db4355a84112b96a6fb664a121814c8 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d304086c35926e97d36f249ec7c200 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a15d304086c35926e97d36f249ec7c200">BeforeUpdate</a> (double deltaTime)</td></tr>
+<tr class="memdesc:a15d304086c35926e97d36f249ec7c200 inherit pro_methods_class_crynn_1_1_behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once before the game enters its main loop. Will be called before Update.  <a href="class_crynn_1_1_behaviour.html#a15d304086c35926e97d36f249ec7c200">More...</a><br /></td></tr>
+<tr class="separator:a15d304086c35926e97d36f249ec7c200 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa858239c27461924eefbe81a81327d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a5aa858239c27461924eefbe81a81327d">BeforeClose</a> ()</td></tr>
+<tr class="separator:a5aa858239c27461924eefbe81a81327d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for any onscreen GUI window. Uses IMGUI and <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> events for rendering. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aacb1b6b2987ad9abccf9f6a4a14702c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aacb1b6b2987ad9abccf9f6a4a14702c0">&#9670;&nbsp;</a></span>GuiWindow()</h2>
 
@@ -164,14 +189,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates an onscreen GUI window. </p>
+<p>Creates an onscreen GUI window </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td><a class="el" href="class_crynn_1_1_window.html" title="The window everything is rendered on. Crynn does not support more than 1 monitor.">Window</a> size dimensions.</td></tr>
-    <tr><td class="paramname">pos</td><td><a class="el" href="class_crynn_1_1_window.html" title="The window everything is rendered on. Crynn does not support more than 1 monitor.">Window</a> position on screen relative to the top left corner.</td></tr>
-    <tr><td class="paramname">name</td><td>Name of the window in the title bar.</td></tr>
-    <tr><td class="paramname">drawOGLData</td><td>Draw OpenGL geometry to this window?</td></tr>
-    <tr><td class="paramname">imguiBeginFlags</td><td>ImGui::Begin flags.</td></tr>
+    <tr><td class="paramname">size</td><td><a class="el" href="class_crynn_1_1_window.html" title="The window everything is rendered on. Crynn does not support more than 1 monitor.">Window</a> width and height dimensions</td></tr>
+    <tr><td class="paramname">pos</td><td><a class="el" href="class_crynn_1_1_window.html" title="The window everything is rendered on. Crynn does not support more than 1 monitor.">Window</a> x and y position.</td></tr>
+    <tr><td class="paramname">name</td><td><a class="el" href="class_crynn_1_1_window.html" title="The window everything is rendered on. Crynn does not support more than 1 monitor.">Window</a> title</td></tr>
   </table>
   </dd>
 </dl>
