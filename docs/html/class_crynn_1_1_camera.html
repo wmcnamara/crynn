@@ -86,8 +86,8 @@ Inheritance diagram for Crynn::Camera:</div>
  <div class="center">
   <img src="class_crynn_1_1_camera.png" usemap="#Crynn::Camera_map" alt=""/>
   <map id="Crynn::Camera_map" name="Crynn::Camera_map">
-<area href="class_crynn_1_1_behaviour.html" alt="Crynn::Behaviour" shape="rect" coords="0,0,111,24"/>
-<area href="class_crynn_1_1_input.html" title="Simple input component. Inherit from this class and override InputCommands() to use...." alt="Crynn::Input" shape="rect" coords="121,0,232,24"/>
+<area href="class_crynn_1_1_behaviour.html" title="Allows interfacing with the Crynn event system. Inherit from this class, and override any function yo..." alt="Crynn::Behaviour" shape="rect" coords="0,0,111,24"/>
+<area href="class_crynn_1_1_input.html" title="Simple input component that allows interfacing with the Crynn input system. Inherit from this class a..." alt="Crynn::Input" shape="rect" coords="121,0,232,24"/>
 <area href="class_crynn_1_1_transform.html" title="Matrix representation with easy functions to transform it. This class is mostly intended to be inheri..." alt="Crynn::Transform" shape="rect" coords="242,0,353,24"/>
   </map>
 </div></div>
@@ -162,12 +162,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:aaa5969578ce759510b8824e18018dcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keycodes for input commands.  <a href="class_crynn_1_1_input.html#aaa5969578ce759510b8824e18018dcad">More...</a><br /></td></tr>
 <tr class="separator:aaa5969578ce759510b8824e18018dcad inherit pro_types_class_crynn_1_1_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_crynn_1_1_behaviour"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_crynn_1_1_behaviour')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_crynn_1_1_behaviour.html">Crynn::Behaviour</a></td></tr>
-<tr class="memitem:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">Update</a> (double deltaTime)</td></tr>
-<tr class="separator:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a335b2a8c784b109b1600aae410abee17 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a335b2a8c784b109b1600aae410abee17">Behaviour</a> ()</td></tr>
 <tr class="separator:a335b2a8c784b109b1600aae410abee17 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4628f5bf5c0228fd938eaf5b02a03818 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a4628f5bf5c0228fd938eaf5b02a03818">~Behaviour</a> ()</td></tr>
+<tr class="memdesc:a4628f5bf5c0228fd938eaf5b02a03818 inherit pro_methods_class_crynn_1_1_behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically subscribes events to the event system.  <a href="class_crynn_1_1_behaviour.html#a4628f5bf5c0228fd938eaf5b02a03818">More...</a><br /></td></tr>
 <tr class="separator:a4628f5bf5c0228fd938eaf5b02a03818 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">Update</a> (double deltaTime)</td></tr>
+<tr class="memdesc:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes the events.  <a href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">More...</a><br /></td></tr>
+<tr class="separator:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db4355a84112b96a6fb664a121814c8 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a0db4355a84112b96a6fb664a121814c8">Start</a> ()</td></tr>
+<tr class="separator:a0db4355a84112b96a6fb664a121814c8 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa858239c27461924eefbe81a81327d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a5aa858239c27461924eefbe81a81327d">BeforeClose</a> ()</td></tr>
+<tr class="separator:a5aa858239c27461924eefbe81a81327d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a820aaa4140f867fe16116d5822c48d86 inherit pro_methods_class_crynn_1_1_input"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_input.html#a820aaa4140f867fe16116d5822c48d86">Input</a> ()</td></tr>
 <tr class="separator:a820aaa4140f867fe16116d5822c48d86 inherit pro_methods_class_crynn_1_1_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a383efd0505cf0a4fd1bafe5ef460296b inherit pro_methods_class_crynn_1_1_input"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_input.html#a383efd0505cf0a4fd1bafe5ef460296b">~Input</a> ()</td></tr>

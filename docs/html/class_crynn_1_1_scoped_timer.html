@@ -76,18 +76,25 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Simple timer that counts the miliseconds from instantiation to when it goes out of scope. Used to time how long functions take.  
+ <a href="class_crynn_1_1_scoped_timer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_timer_8h_source.html">Timer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acbcb9b730dc91e56ae713bd19372ec84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_scoped_timer.html#acbcb9b730dc91e56ae713bd19372ec84">ScopedTimer</a> (const char *funcName)</td></tr>
+<tr class="memdesc:acbcb9b730dc91e56ae713bd19372ec84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="class_crynn_1_1_scoped_timer.html" title="Simple timer that counts the miliseconds from instantiation to when it goes out of scope....">ScopedTimer</a> that will <a class="el" href="class_crynn_1_1_debug.html#a824e731483dec995a48e8f169234577b">Debug::Log()</a> the time when it stops.  <a href="class_crynn_1_1_scoped_timer.html#acbcb9b730dc91e56ae713bd19372ec84">More...</a><br /></td></tr>
 <tr class="separator:acbcb9b730dc91e56ae713bd19372ec84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc7c7172bc22db30827d3b34165e03e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_scoped_timer.html#adc7c7172bc22db30827d3b34165e03e8">~ScopedTimer</a> ()</td></tr>
 <tr class="separator:adc7c7172bc22db30827d3b34165e03e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4daaba49d755665cf218e9a7671451fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_scoped_timer.html#a4daaba49d755665cf218e9a7671451fe">Stop</a> ()</td></tr>
+<tr class="memdesc:a4daaba49d755665cf218e9a7671451fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops timing early, and outputs logs.  <a href="class_crynn_1_1_scoped_timer.html#a4daaba49d755665cf218e9a7671451fe">More...</a><br /></td></tr>
 <tr class="separator:a4daaba49d755665cf218e9a7671451fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Simple timer that counts the miliseconds from instantiation to when it goes out of scope. Used to time how long functions take. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acbcb9b730dc91e56ae713bd19372ec84"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbcb9b730dc91e56ae713bd19372ec84">&#9670;&nbsp;</a></span>ScopedTimer()</h2>
 
@@ -103,6 +110,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a <a class="el" href="class_crynn_1_1_scoped_timer.html" title="Simple timer that counts the miliseconds from instantiation to when it goes out of scope....">ScopedTimer</a> that will <a class="el" href="class_crynn_1_1_debug.html#a824e731483dec995a48e8f169234577b">Debug::Log()</a> the time when it stops. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">funcName</td><td>The name of the function that will appear in the logs next to the time.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -138,6 +153,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stops timing early, and outputs logs. </p>
 
 </div>
 </div>

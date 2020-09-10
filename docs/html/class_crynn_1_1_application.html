@@ -86,6 +86,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afb52853075716e3bb11ab2f2198a3d7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#afb52853075716e3bb11ab2f2198a3d7d">Quit</a> ()</td></tr>
+<tr class="memdesc:afb52853075716e3bb11ab2f2198a3d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked when the window is resized. Contains the width and height of new window.///.  <a href="class_crynn_1_1_application.html#afb52853075716e3bb11ab2f2198a3d7d">More...</a><br /></td></tr>
 <tr class="separator:afb52853075716e3bb11ab2f2198a3d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3a7b68d385b0e2f2f9d413af3a91be9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#ad3a7b68d385b0e2f2f9d413af3a91be9">Tick</a> ()</td></tr>
 <tr class="memdesc:ad3a7b68d385b0e2f2f9d413af3a91be9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes events to update Behaviours.  <a href="class_crynn_1_1_application.html#ad3a7b68d385b0e2f2f9d413af3a91be9">More...</a><br /></td></tr>
@@ -98,6 +99,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:afa1aa3f4fc2b3a72d28e6ea05bd6f2db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crynn_1_1_application.html">Application</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#afa1aa3f4fc2b3a72d28e6ea05bd6f2db">Instance</a> ()</td></tr>
+<tr class="memdesc:afa1aa3f4fc2b3a72d28e6ea05bd6f2db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the singleton instance of application.  <a href="class_crynn_1_1_application.html#afa1aa3f4fc2b3a72d28e6ea05bd6f2db">More...</a><br /></td></tr>
 <tr class="separator:afa1aa3f4fc2b3a72d28e6ea05bd6f2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -106,16 +108,20 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa9e4306968a495d8f3ec0c82128d7660"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03b7cea177402e726bec45007efc53a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#a03b7cea177402e726bec45007efc53a4">OnBeforeClose</a></td></tr>
 <tr class="separator:a03b7cea177402e726bec45007efc53a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6947983cc581c59eb39aa55fba26a48c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#a6947983cc581c59eb39aa55fba26a48c">OnUpdate</a></td></tr>
-<tr class="separator:a6947983cc581c59eb39aa55fba26a48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00c01fbed085938733f72f954e3ab19a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#a00c01fbed085938733f72f954e3ab19a">OnBeforeUpdate</a></td></tr>
-<tr class="separator:a00c01fbed085938733f72f954e3ab19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8b44c8359dddea1f8492ad9112d465"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#a9f8b44c8359dddea1f8492ad9112d465">OnUpdate</a></td></tr>
+<tr class="memdesc:a9f8b44c8359dddea1f8492ad9112d465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once before quitting to desktop using <a class="el" href="class_crynn_1_1_application.html#afa1aa3f4fc2b3a72d28e6ea05bd6f2db" title="Get the singleton instance of application.">Application::Instance()</a>.<a class="el" href="class_crynn_1_1_application.html#afb52853075716e3bb11ab2f2198a3d7d" title="Invoked when the window is resized. Contains the width and height of new window.///.">Quit()</a>;///.  <a href="class_crynn_1_1_application.html#a9f8b44c8359dddea1f8492ad9112d465">More...</a><br /></td></tr>
+<tr class="separator:a9f8b44c8359dddea1f8492ad9112d465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9e18e940b9fae419e4f0acd0081461b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#af9e18e940b9fae419e4f0acd0081461b">OnBeforeUpdate</a></td></tr>
+<tr class="memdesc:af9e18e940b9fae419e4f0acd0081461b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once every frame///.  <a href="class_crynn_1_1_application.html#af9e18e940b9fae419e4f0acd0081461b">More...</a><br /></td></tr>
+<tr class="separator:af9e18e940b9fae419e4f0acd0081461b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5fe4c7da6ce6d93e433c29228dc603d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#ab5fe4c7da6ce6d93e433c29228dc603d">OnStart</a></td></tr>
+<tr class="memdesc:ab5fe4c7da6ce6d93e433c29228dc603d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to set uniform buffer data before rendering///.  <a href="class_crynn_1_1_application.html#ab5fe4c7da6ce6d93e433c29228dc603d">More...</a><br /></td></tr>
 <tr class="separator:ab5fe4c7da6ce6d93e433c29228dc603d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d63fffd2b941593ed2a719082d3d26c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#a2d63fffd2b941593ed2a719082d3d26c">OnWindowResize</a></td></tr>
+<tr class="memdesc:a2d63fffd2b941593ed2a719082d3d26c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once before entering the main loop. Called before update.///.  <a href="class_crynn_1_1_application.html#a2d63fffd2b941593ed2a719082d3d26c">More...</a><br /></td></tr>
 <tr class="separator:a2d63fffd2b941593ed2a719082d3d26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6af2c4c96063806463dbe92c03d85f41"><td class="memItemLeft" align="right" valign="top">GLFWwindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html#a6af2c4c96063806463dbe92c03d85f41">glfwWindow</a></td></tr>
-<tr class="memdesc:a6af2c4c96063806463dbe92c03d85f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw GLFW window. Assigned by the <a class="el" href="class_crynn_1_1_window.html">Window</a> class when constructed.  <a href="class_crynn_1_1_application.html#a6af2c4c96063806463dbe92c03d85f41">More...</a><br /></td></tr>
+<tr class="memdesc:a6af2c4c96063806463dbe92c03d85f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw GLFW window. Assigned by the <a class="el" href="class_crynn_1_1_window.html" title="The window everything is rendered on. Crynn does not support more than 1 monitor.">Window</a> class when constructed.  <a href="class_crynn_1_1_application.html#a6af2c4c96063806463dbe92c03d85f41">More...</a><br /></td></tr>
 <tr class="separator:a6af2c4c96063806463dbe92c03d85f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -171,6 +177,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Get the singleton instance of application. </p>
+<dl class="section return"><dt>Returns</dt><dd>Instance of application.</dd></dl>
+
 </div>
 </div>
 <a id="a91142b6a413d8ea8c02edf1f0dc661be"></a>
@@ -214,6 +223,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Invoked when the window is resized. Contains the width and height of new window.///. </p>
+<p>Invokes OnBeforeClose, and quits to desktop.</p>
+
 </div>
 </div>
 <a id="ad3a7b68d385b0e2f2f9d413af3a91be9"></a>
@@ -248,7 +260,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Raw GLFW window. Assigned by the <a class="el" href="class_crynn_1_1_window.html">Window</a> class when constructed. </p>
+<p>Raw GLFW window. Assigned by the <a class="el" href="class_crynn_1_1_window.html" title="The window everything is rendered on. Crynn does not support more than 1 monitor.">Window</a> class when constructed. </p>
 
 </div>
 </div>
@@ -266,17 +278,19 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a00c01fbed085938733f72f954e3ab19a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00c01fbed085938733f72f954e3ab19a">&#9670;&nbsp;</a></span>OnBeforeUpdate</h2>
+<a id="af9e18e940b9fae419e4f0acd0081461b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9e18e940b9fae419e4f0acd0081461b">&#9670;&nbsp;</a></span>OnBeforeUpdate</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt;void&gt; Crynn::Application::OnBeforeUpdate</td>
+          <td class="memname"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt;double&gt; Crynn::Application::OnBeforeUpdate</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Called once every frame///. </p>
 
 </div>
 </div>
@@ -291,7 +305,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Used by <a class="el" href="class_crynn_1_1_input.html" title="Simple input component. Inherit from this class and override InputCommands() to use....">Input</a> to subscribe input events. Do not manually invoke(). Parameters determined by the glfwSetKeyCallback parameters. <a href="https://www.glfw.org/docs/latest/group__input.html#ga1caf18159767e761185e49a3be019f8d">https://www.glfw.org/docs/latest/group__input.html#ga1caf18159767e761185e49a3be019f8d</a> </p>
+<p>Used by <a class="el" href="class_crynn_1_1_input.html" title="Simple input component that allows interfacing with the Crynn input system. Inherit from this class a...">Input</a> to subscribe input events. Do not manually invoke(). Parameters determined by the glfwSetKeyCallback parameters. <a href="https://www.glfw.org/docs/latest/group__input.html#ga1caf18159767e761185e49a3be019f8d">https://www.glfw.org/docs/latest/group__input.html#ga1caf18159767e761185e49a3be019f8d</a> </p>
 
 </div>
 </div>
@@ -307,19 +321,23 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to set uniform buffer data before rendering///. </p>
+
 </div>
 </div>
-<a id="a6947983cc581c59eb39aa55fba26a48c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6947983cc581c59eb39aa55fba26a48c">&#9670;&nbsp;</a></span>OnUpdate</h2>
+<a id="a9f8b44c8359dddea1f8492ad9112d465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f8b44c8359dddea1f8492ad9112d465">&#9670;&nbsp;</a></span>OnUpdate</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt;float&gt; Crynn::Application::OnUpdate</td>
+          <td class="memname"><a class="el" href="class_crynn_1_1_event.html">Event</a>&lt;double&gt; Crynn::Application::OnUpdate</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Called once before quitting to desktop using <a class="el" href="class_crynn_1_1_application.html#afa1aa3f4fc2b3a72d28e6ea05bd6f2db" title="Get the singleton instance of application.">Application::Instance()</a>.<a class="el" href="class_crynn_1_1_application.html#afb52853075716e3bb11ab2f2198a3d7d" title="Invoked when the window is resized. Contains the width and height of new window.///.">Quit()</a>;///. </p>
 
 </div>
 </div>
@@ -334,6 +352,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Called once before entering the main loop. Called before update.///. </p>
 
 </div>
 </div>

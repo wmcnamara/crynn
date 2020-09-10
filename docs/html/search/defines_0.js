@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['delegate_5fapi_376',['DELEGATE_API',['../delegate_8h.html#a5d84bcd66f47fc03da85e5bf095bd9ce',1,'delegate.h']]]
+  ['stb_5fimage_5fimplementation_380',['STB_IMAGE_IMPLEMENTATION',['../_texture_8cpp.html#a18372412ad2fc3ce1e3240b3cf0efe78',1,'Texture.cpp']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['windowsize_339',['windowSize',['../struct_crynn_1_1_on_window_start_args.html#a5b2d00a7570482cf31dd4f367e1dd3ae',1,'Crynn::OnWindowStartArgs']]]
+  ['rbo_342',['RBO',['../class_crynn_1_1_gui_window.html#ae0092df235692d09c1d5a33141cc8793',1,'Crynn::GuiWindow']]]
 ];

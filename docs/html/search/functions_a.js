@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quit_284',['Quit',['../class_crynn_1_1_application.html#afb52853075716e3bb11ab2f2198a3d7d',1,'Crynn::Application']]]
+  ['operator_3d_280',['operator=',['../class_crynn_1_1_application.html#a91142b6a413d8ea8c02edf1f0dc661be',1,'Crynn::Application']]]
 ];

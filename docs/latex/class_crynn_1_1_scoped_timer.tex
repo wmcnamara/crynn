@@ -2,17 +2,27 @@
 \label{class_crynn_1_1_scoped_timer}\index{Crynn::ScopedTimer@{Crynn::ScopedTimer}}
 
 
+Simple timer that counts the miliseconds from instantiation to when it goes out of scope. Used to time how long functions take.  
+
+
+
+
 {\ttfamily \#include $<$Timer.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_crynn_1_1_scoped_timer_acbcb9b730dc91e56ae713bd19372ec84}{Scoped\+Timer}} (const char $\ast$func\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{class_crynn_1_1_scoped_timer}{Scoped\+Timer}} that will \mbox{\hyperlink{class_crynn_1_1_debug_a824e731483dec995a48e8f169234577b}{Debug\+::\+Log()}} the time when it stops. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_crynn_1_1_scoped_timer_adc7c7172bc22db30827d3b34165e03e8}{$\sim$\+Scoped\+Timer}} ()
 \item 
 void \mbox{\hyperlink{class_crynn_1_1_scoped_timer_a4daaba49d755665cf218e9a7671451fe}{Stop}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stops timing early, and outputs logs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple timer that counts the miliseconds from instantiation to when it goes out of scope. Used to time how long functions take. 
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -22,6 +32,15 @@ void \mbox{\hyperlink{class_crynn_1_1_scoped_timer_a4daaba49d755665cf218e9a76714
 \doxysubsubsection{\texorpdfstring{ScopedTimer()}{ScopedTimer()}}
 {\footnotesize\ttfamily Crynn\+::\+Scoped\+Timer\+::\+Scoped\+Timer (\begin{DoxyParamCaption}\item[{const char $\ast$}]{func\+Name }\end{DoxyParamCaption})}
 
+
+
+Creates a \mbox{\hyperlink{class_crynn_1_1_scoped_timer}{Scoped\+Timer}} that will \mbox{\hyperlink{class_crynn_1_1_debug_a824e731483dec995a48e8f169234577b}{Debug\+::\+Log()}} the time when it stops. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func\+Name} & The name of the function that will appear in the logs next to the time.\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_crynn_1_1_scoped_timer_adc7c7172bc22db30827d3b34165e03e8}\label{class_crynn_1_1_scoped_timer_adc7c7172bc22db30827d3b34165e03e8}} 
 \index{Crynn::ScopedTimer@{Crynn::ScopedTimer}!````~ScopedTimer@{$\sim$ScopedTimer}}
 \index{````~ScopedTimer@{$\sim$ScopedTimer}!Crynn::ScopedTimer@{Crynn::ScopedTimer}}
@@ -36,6 +55,10 @@ void \mbox{\hyperlink{class_crynn_1_1_scoped_timer_a4daaba49d755665cf218e9a76714
 \index{Stop@{Stop}!Crynn::ScopedTimer@{Crynn::ScopedTimer}}
 \doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
 {\footnotesize\ttfamily void Crynn\+::\+Scoped\+Timer\+::\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stops timing early, and outputs logs. 
 
 
 

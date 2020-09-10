@@ -2,32 +2,42 @@
 \label{class_crynn_1_1_window}\index{Crynn::Window@{Crynn::Window}}
 
 
+The window everything is rendered on. \mbox{\hyperlink{namespace_crynn}{Crynn}} does not support more than 1 monitor.  
+
+
+
+
 {\ttfamily \#include $<$Window.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_crynn_1_1_window_a0444a14a98632a803c3cd57712534b1f}{Window}} (const char $\ast$name, int width, int height)
+\begin{DoxyCompactList}\small\item\em Create a new window and display it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crynn_1_1_window_a59dd7c00c7f0cf163ecc9d733a56a1e0}{$\sim$\+Window}} ()
 \item 
 const Im\+Vec2 \& \mbox{\hyperlink{class_crynn_1_1_window_aa64280a7cebd27b3b5be16ba90fd9954}{Get\+Size}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the size of the window. \end{DoxyCompactList}\item 
 const Im\+Vec2 \& \mbox{\hyperlink{class_crynn_1_1_window_af97dd72d5dbfce2424abcd9b9f2cbabc}{Get\+Frame\+Buf\+Size}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the size of the framebuffer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_crynn_1_1_window_a2b7faa1f50588b39b782a8f8c9b649eb}{Before\+Render}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called before rendering to clear buffers, poll events and setup I\+M\+G\+UI data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_crynn_1_1_window_aaae7a097070e0565521145bc33ac3cb2}{After\+Render}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called after rendering to render I\+M\+G\+UI data and swap buffers. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_crynn_1_1_window_a999f17c74c967d74b1e77708e254c9cb}{Update\+Window\+Size}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the framebuffer and screensize with the current data. Somewhat expensive, and should only be called when you know the data has changed. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_crynn_1_1_window_a86870fc52d6339c89282baf03ac77496}{Should\+Close}} ()
-\item 
-\mbox{\hyperlink{class_crynn_1_1_window_a59dd7c00c7f0cf163ecc9d733a56a1e0}{$\sim$\+Window}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns glfw\+Get\+Window\+Should\+Close(); \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{class_crynn_1_1_window_a20a22c0acf9f4c7a6eedf77bbe104ebf}{glfw\+Window}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Raw G\+L\+FW window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The window everything is rendered on. \mbox{\hyperlink{namespace_crynn}{Crynn}} does not support more than 1 monitor. 
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -37,6 +47,19 @@ G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{class_crynn_1_1_window_a20a22c0acf9f4c7
 \doxysubsubsection{\texorpdfstring{Window()}{Window()}}
 {\footnotesize\ttfamily Crynn\+::\+Window\+::\+Window (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
 
+
+
+Create a new window and display it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \mbox{\hyperlink{class_crynn_1_1_window}{Window}} title seen in the top left\\
+\hline
+{\em width} & Width of the window\\
+\hline
+{\em height} & Height of the window\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_crynn_1_1_window_a59dd7c00c7f0cf163ecc9d733a56a1e0}\label{class_crynn_1_1_window_a59dd7c00c7f0cf163ecc9d733a56a1e0}} 
 \index{Crynn::Window@{Crynn::Window}!````~Window@{$\sim$Window}}
 \index{````~Window@{$\sim$Window}!Crynn::Window@{Crynn::Window}}
@@ -52,11 +75,19 @@ G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{class_crynn_1_1_window_a20a22c0acf9f4c7
 \doxysubsubsection{\texorpdfstring{AfterRender()}{AfterRender()}}
 {\footnotesize\ttfamily void Crynn\+::\+Window\+::\+After\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Called after rendering to render I\+M\+G\+UI data and swap buffers. 
+
 \mbox{\Hypertarget{class_crynn_1_1_window_a2b7faa1f50588b39b782a8f8c9b649eb}\label{class_crynn_1_1_window_a2b7faa1f50588b39b782a8f8c9b649eb}} 
 \index{Crynn::Window@{Crynn::Window}!BeforeRender@{BeforeRender}}
 \index{BeforeRender@{BeforeRender}!Crynn::Window@{Crynn::Window}}
 \doxysubsubsection{\texorpdfstring{BeforeRender()}{BeforeRender()}}
 {\footnotesize\ttfamily void Crynn\+::\+Window\+::\+Before\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called before rendering to clear buffers, poll events and setup I\+M\+G\+UI data. 
 
 \mbox{\Hypertarget{class_crynn_1_1_window_af97dd72d5dbfce2424abcd9b9f2cbabc}\label{class_crynn_1_1_window_af97dd72d5dbfce2424abcd9b9f2cbabc}} 
 \index{Crynn::Window@{Crynn::Window}!GetFrameBufSize@{GetFrameBufSize}}
@@ -64,23 +95,48 @@ G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{class_crynn_1_1_window_a20a22c0acf9f4c7
 \doxysubsubsection{\texorpdfstring{GetFrameBufSize()}{GetFrameBufSize()}}
 {\footnotesize\ttfamily const Im\+Vec2 \& Crynn\+::\+Window\+::\+Get\+Frame\+Buf\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Gets the size of the framebuffer. 
+
+\begin{DoxyReturn}{Returns}
+Im\+Vec2 object with x as the width, and y as the height
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_crynn_1_1_window_aa64280a7cebd27b3b5be16ba90fd9954}\label{class_crynn_1_1_window_aa64280a7cebd27b3b5be16ba90fd9954}} 
 \index{Crynn::Window@{Crynn::Window}!GetSize@{GetSize}}
 \index{GetSize@{GetSize}!Crynn::Window@{Crynn::Window}}
 \doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
 {\footnotesize\ttfamily const Im\+Vec2 \& Crynn\+::\+Window\+::\+Get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Gets the size of the window. 
+
+\begin{DoxyReturn}{Returns}
+Im\+Vec2 object with x as the width, and y as the height
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_crynn_1_1_window_a86870fc52d6339c89282baf03ac77496}\label{class_crynn_1_1_window_a86870fc52d6339c89282baf03ac77496}} 
 \index{Crynn::Window@{Crynn::Window}!ShouldClose@{ShouldClose}}
 \index{ShouldClose@{ShouldClose}!Crynn::Window@{Crynn::Window}}
 \doxysubsubsection{\texorpdfstring{ShouldClose()}{ShouldClose()}}
 {\footnotesize\ttfamily bool Crynn\+::\+Window\+::\+Should\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Returns glfw\+Get\+Window\+Should\+Close(); 
+
+\begin{DoxyReturn}{Returns}
+True if the window should close. Used to hold a game loop.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_crynn_1_1_window_a999f17c74c967d74b1e77708e254c9cb}\label{class_crynn_1_1_window_a999f17c74c967d74b1e77708e254c9cb}} 
 \index{Crynn::Window@{Crynn::Window}!UpdateWindowSize@{UpdateWindowSize}}
 \index{UpdateWindowSize@{UpdateWindowSize}!Crynn::Window@{Crynn::Window}}
 \doxysubsubsection{\texorpdfstring{UpdateWindowSize()}{UpdateWindowSize()}}
 {\footnotesize\ttfamily void Crynn\+::\+Window\+::\+Update\+Window\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the framebuffer and screensize with the current data. Somewhat expensive, and should only be called when you know the data has changed. 
 
 
 
@@ -90,6 +146,10 @@ G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{class_crynn_1_1_window_a20a22c0acf9f4c7
 \index{glfwWindow@{glfwWindow}!Crynn::Window@{Crynn::Window}}
 \doxysubsubsection{\texorpdfstring{glfwWindow}{glfwWindow}}
 {\footnotesize\ttfamily G\+L\+F\+Wwindow$\ast$ Crynn\+::\+Window\+::glfw\+Window}
+
+
+
+Raw G\+L\+FW window. 
 
 
 

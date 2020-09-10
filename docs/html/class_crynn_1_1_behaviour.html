@@ -76,6 +76,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Allows interfacing with the <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> event system. Inherit from this class, and override any function you may need.  
+ <a href="class_crynn_1_1_behaviour.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_behaviour_8h_source.html">Behaviour.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Crynn::Behaviour:</div>
@@ -89,18 +92,25 @@ Inheritance diagram for Crynn::Behaviour:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a97d70532db183d87d6f1ff517972599d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">Update</a> (double deltaTime)</td></tr>
-<tr class="separator:a97d70532db183d87d6f1ff517972599d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0db4355a84112b96a6fb664a121814c8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a0db4355a84112b96a6fb664a121814c8">Start</a> ()</td></tr>
-<tr class="separator:a0db4355a84112b96a6fb664a121814c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb85880deff7cea4cfe5598ddfb76eac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#adb85880deff7cea4cfe5598ddfb76eac">BeforeUpdate</a> ()</td></tr>
-<tr class="separator:adb85880deff7cea4cfe5598ddfb76eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a335b2a8c784b109b1600aae410abee17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a335b2a8c784b109b1600aae410abee17">Behaviour</a> ()</td></tr>
 <tr class="separator:a335b2a8c784b109b1600aae410abee17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4628f5bf5c0228fd938eaf5b02a03818"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a4628f5bf5c0228fd938eaf5b02a03818">~Behaviour</a> ()</td></tr>
+<tr class="memdesc:a4628f5bf5c0228fd938eaf5b02a03818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically subscribes events to the event system.  <a href="class_crynn_1_1_behaviour.html#a4628f5bf5c0228fd938eaf5b02a03818">More...</a><br /></td></tr>
 <tr class="separator:a4628f5bf5c0228fd938eaf5b02a03818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d70532db183d87d6f1ff517972599d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">Update</a> (double deltaTime)</td></tr>
+<tr class="memdesc:a97d70532db183d87d6f1ff517972599d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes the events.  <a href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">More...</a><br /></td></tr>
+<tr class="separator:a97d70532db183d87d6f1ff517972599d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db4355a84112b96a6fb664a121814c8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a0db4355a84112b96a6fb664a121814c8">Start</a> ()</td></tr>
+<tr class="separator:a0db4355a84112b96a6fb664a121814c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d304086c35926e97d36f249ec7c200"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a15d304086c35926e97d36f249ec7c200">BeforeUpdate</a> (double deltaTime)</td></tr>
+<tr class="memdesc:a15d304086c35926e97d36f249ec7c200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once before the game enters its main loop. Will be called before Update.  <a href="class_crynn_1_1_behaviour.html#a15d304086c35926e97d36f249ec7c200">More...</a><br /></td></tr>
+<tr class="separator:a15d304086c35926e97d36f249ec7c200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa858239c27461924eefbe81a81327d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a5aa858239c27461924eefbe81a81327d">BeforeClose</a> ()</td></tr>
+<tr class="separator:a5aa858239c27461924eefbe81a81327d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Allows interfacing with the <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> event system. Inherit from this class, and override any function you may need. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a335b2a8c784b109b1600aae410abee17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a335b2a8c784b109b1600aae410abee17">&#9670;&nbsp;</a></span>Behaviour()</h2>
 
@@ -149,11 +159,13 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Automatically subscribes events to the event system. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adb85880deff7cea4cfe5598ddfb76eac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb85880deff7cea4cfe5598ddfb76eac">&#9670;&nbsp;</a></span>BeforeUpdate()</h2>
+<a id="a5aa858239c27461924eefbe81a81327d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa858239c27461924eefbe81a81327d">&#9670;&nbsp;</a></span>BeforeClose()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,7 +174,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Crynn::Behaviour::BeforeUpdate </td>
+          <td class="memname">virtual void Crynn::Behaviour::BeforeClose </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -174,6 +186,41 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15d304086c35926e97d36f249ec7c200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15d304086c35926e97d36f249ec7c200">&#9670;&nbsp;</a></span>BeforeUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Crynn::Behaviour::BeforeUpdate </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>deltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called once before the game enters its main loop. Will be called before Update. </p>
+<p>Called once every frame before Update. Generally used for setting uniforms, or other things that need to be set before any render calls.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>The time it took the previous frame to render.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -225,6 +272,15 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Unsubscribes the events. </p>
+<p>Called once every frame.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>The time it took the previous frame to render.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

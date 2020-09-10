@@ -1,41 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Crynn", "src\Crynn.vcxproj", "{FAA185C6-0B28-4E93-9877-0E062C4E8472}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpeedCube", "SpeedCube\SpeedCube.vcxproj", "{959ECD64-0109-82DB-4A47-3381B6F05F30}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpeedCube", "SpeedCube\SpeedCube.vcxproj", "{F1D6ECB4-FE1D-406D-BBC2-9053D27520EF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Crynn", "Crynn.vcxproj", "{6FFEFB0C-DB12-24BE-A494-C71D106820EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
+		Debug|Win32 = Debug|Win32
+		Dist|Win32 = Dist|Win32
+		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FAA185C6-0B28-4E93-9877-0E062C4E8472}.Debug|x64.ActiveCfg = Debug|x64
-		{FAA185C6-0B28-4E93-9877-0E062C4E8472}.Debug|x64.Build.0 = Debug|x64
-		{FAA185C6-0B28-4E93-9877-0E062C4E8472}.Debug|x86.ActiveCfg = Debug|Win32
-		{FAA185C6-0B28-4E93-9877-0E062C4E8472}.Debug|x86.Build.0 = Debug|Win32
-		{FAA185C6-0B28-4E93-9877-0E062C4E8472}.Release|x64.ActiveCfg = Release|x64
-		{FAA185C6-0B28-4E93-9877-0E062C4E8472}.Release|x64.Build.0 = Release|x64
-		{FAA185C6-0B28-4E93-9877-0E062C4E8472}.Release|x86.ActiveCfg = Release|Win32
-		{FAA185C6-0B28-4E93-9877-0E062C4E8472}.Release|x86.Build.0 = Release|Win32
-		{F1D6ECB4-FE1D-406D-BBC2-9053D27520EF}.Debug|x64.ActiveCfg = Debug|x64
-		{F1D6ECB4-FE1D-406D-BBC2-9053D27520EF}.Debug|x64.Build.0 = Debug|x64
-		{F1D6ECB4-FE1D-406D-BBC2-9053D27520EF}.Debug|x86.ActiveCfg = Debug|Win32
-		{F1D6ECB4-FE1D-406D-BBC2-9053D27520EF}.Debug|x86.Build.0 = Debug|Win32
-		{F1D6ECB4-FE1D-406D-BBC2-9053D27520EF}.Release|x64.ActiveCfg = Release|x64
-		{F1D6ECB4-FE1D-406D-BBC2-9053D27520EF}.Release|x64.Build.0 = Release|x64
-		{F1D6ECB4-FE1D-406D-BBC2-9053D27520EF}.Release|x86.ActiveCfg = Release|Win32
-		{F1D6ECB4-FE1D-406D-BBC2-9053D27520EF}.Release|x86.Build.0 = Release|Win32
+		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Debug|Win32.ActiveCfg = Debug|Win32
+		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Debug|Win32.Build.0 = Debug|Win32
+		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Dist|Win32.ActiveCfg = Dist|Win32
+		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Dist|Win32.Build.0 = Dist|Win32
+		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Release|Win32.ActiveCfg = Release|Win32
+		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Release|Win32.Build.0 = Release|Win32
+		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Debug|Win32.Build.0 = Debug|Win32
+		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Dist|Win32.ActiveCfg = Dist|Win32
+		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Dist|Win32.Build.0 = Dist|Win32
+		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|Win32.ActiveCfg = Release|Win32
+		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {83EC1855-0445-403B-B432-57CE34087CCF}
 	EndGlobalSection
 EndGlobal

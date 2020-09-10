@@ -13,7 +13,7 @@ A singleton representation of the application. Contains events that many interna
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_crynn_1_1_application_afb52853075716e3bb11ab2f2198a3d7d}{Quit}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Invoked when the window is resized. Contains the width and height of new window.///. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_crynn_1_1_application_ad3a7b68d385b0e2f2f9d413af3a91be9}{Tick}} ()
 \begin{DoxyCompactList}\small\item\em Invokes events to update Behaviours. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_crynn_1_1_application_aa2832f1984a17023b06d08a2c40bd5cb}{Application}} (\mbox{\hyperlink{class_crynn_1_1_application}{Application}} const \&)=delete
@@ -24,7 +24,7 @@ void \mbox{\hyperlink{class_crynn_1_1_application_a91142b6a413d8ea8c02edf1f0dc66
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_crynn_1_1_application}{Application}} \& \mbox{\hyperlink{class_crynn_1_1_application_afa1aa3f4fc2b3a72d28e6ea05bd6f2db}{Instance}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the singleton instance of application. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,14 +32,14 @@ static \mbox{\hyperlink{class_crynn_1_1_application}{Application}} \& \mbox{\hyp
 \item 
 \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$ void $>$ \mbox{\hyperlink{class_crynn_1_1_application_a03b7cea177402e726bec45007efc53a4}{On\+Before\+Close}}
 \item 
-\mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$ float $>$ \mbox{\hyperlink{class_crynn_1_1_application_a6947983cc581c59eb39aa55fba26a48c}{On\+Update}}
-\item 
-\mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$ void $>$ \mbox{\hyperlink{class_crynn_1_1_application_a00c01fbed085938733f72f954e3ab19a}{On\+Before\+Update}}
-\item 
+\mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$ double $>$ \mbox{\hyperlink{class_crynn_1_1_application_a9f8b44c8359dddea1f8492ad9112d465}{On\+Update}}
+\begin{DoxyCompactList}\small\item\em Called once before quitting to desktop using \mbox{\hyperlink{class_crynn_1_1_application_afa1aa3f4fc2b3a72d28e6ea05bd6f2db}{Application\+::\+Instance()}}.\mbox{\hyperlink{class_crynn_1_1_application_afb52853075716e3bb11ab2f2198a3d7d}{Quit()}};///. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$ double $>$ \mbox{\hyperlink{class_crynn_1_1_application_af9e18e940b9fae419e4f0acd0081461b}{On\+Before\+Update}}
+\begin{DoxyCompactList}\small\item\em Called once every frame///. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$ void $>$ \mbox{\hyperlink{class_crynn_1_1_application_ab5fe4c7da6ce6d93e433c29228dc603d}{On\+Start}}
-\item 
+\begin{DoxyCompactList}\small\item\em Used to set uniform buffer data before rendering///. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$ int, int $>$ \mbox{\hyperlink{class_crynn_1_1_application_a2d63fffd2b941593ed2a719082d3d26c}{On\+Window\+Resize}}
-\item 
+\begin{DoxyCompactList}\small\item\em Called once before entering the main loop. Called before update.///. \end{DoxyCompactList}\item 
 G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{class_crynn_1_1_application_a6af2c4c96063806463dbe92c03d85f41}{glfw\+Window}}
 \begin{DoxyCompactList}\small\item\em Raw G\+L\+FW window. Assigned by the \mbox{\hyperlink{class_crynn_1_1_window}{Window}} class when constructed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -65,6 +65,13 @@ A singleton representation of the application. Contains events that many interna
 \doxysubsubsection{\texorpdfstring{Instance()}{Instance()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_crynn_1_1_application}{Application}}\& Crynn\+::\+Application\+::\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+Get the singleton instance of application. 
+
+\begin{DoxyReturn}{Returns}
+Instance of application.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_crynn_1_1_application_a91142b6a413d8ea8c02edf1f0dc661be}\label{class_crynn_1_1_application_a91142b6a413d8ea8c02edf1f0dc661be}} 
 \index{Crynn::Application@{Crynn::Application}!operator=@{operator=}}
 \index{operator=@{operator=}!Crynn::Application@{Crynn::Application}}
@@ -77,7 +84,11 @@ A singleton representation of the application. Contains events that many interna
 \doxysubsubsection{\texorpdfstring{Quit()}{Quit()}}
 {\footnotesize\ttfamily void Crynn\+::\+Application\+::\+Quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_crynn_1_1_application_ad3a7b68d385b0e2f2f9d413af3a91be9}\label{class_crynn_1_1_application_ad3a7b68d385b0e2f2f9d413af3a91be9}} 
+
+
+Invoked when the window is resized. Contains the width and height of new window.///. 
+
+Invokes On\+Before\+Close, and quits to desktop.\mbox{\Hypertarget{class_crynn_1_1_application_ad3a7b68d385b0e2f2f9d413af3a91be9}\label{class_crynn_1_1_application_ad3a7b68d385b0e2f2f9d413af3a91be9}} 
 \index{Crynn::Application@{Crynn::Application}!Tick@{Tick}}
 \index{Tick@{Tick}!Crynn::Application@{Crynn::Application}}
 \doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
@@ -106,11 +117,15 @@ Raw G\+L\+FW window. Assigned by the \mbox{\hyperlink{class_crynn_1_1_window}{Wi
 \doxysubsubsection{\texorpdfstring{OnBeforeClose}{OnBeforeClose}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$void$>$ Crynn\+::\+Application\+::\+On\+Before\+Close}
 
-\mbox{\Hypertarget{class_crynn_1_1_application_a00c01fbed085938733f72f954e3ab19a}\label{class_crynn_1_1_application_a00c01fbed085938733f72f954e3ab19a}} 
+\mbox{\Hypertarget{class_crynn_1_1_application_af9e18e940b9fae419e4f0acd0081461b}\label{class_crynn_1_1_application_af9e18e940b9fae419e4f0acd0081461b}} 
 \index{Crynn::Application@{Crynn::Application}!OnBeforeUpdate@{OnBeforeUpdate}}
 \index{OnBeforeUpdate@{OnBeforeUpdate}!Crynn::Application@{Crynn::Application}}
 \doxysubsubsection{\texorpdfstring{OnBeforeUpdate}{OnBeforeUpdate}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$void$>$ Crynn\+::\+Application\+::\+On\+Before\+Update}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$double$>$ Crynn\+::\+Application\+::\+On\+Before\+Update}
+
+
+
+Called once every frame///. 
 
 \mbox{\Hypertarget{class_crynn_1_1_application_aa9e4306968a495d8f3ec0c82128d7660}\label{class_crynn_1_1_application_aa9e4306968a495d8f3ec0c82128d7660}} 
 \index{Crynn::Application@{Crynn::Application}!OnInput@{OnInput}}
@@ -124,17 +139,29 @@ Used by \mbox{\hyperlink{class_crynn_1_1_input}{Input}} to subscribe input event
 \doxysubsubsection{\texorpdfstring{OnStart}{OnStart}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$void$>$ Crynn\+::\+Application\+::\+On\+Start}
 
-\mbox{\Hypertarget{class_crynn_1_1_application_a6947983cc581c59eb39aa55fba26a48c}\label{class_crynn_1_1_application_a6947983cc581c59eb39aa55fba26a48c}} 
+
+
+Used to set uniform buffer data before rendering///. 
+
+\mbox{\Hypertarget{class_crynn_1_1_application_a9f8b44c8359dddea1f8492ad9112d465}\label{class_crynn_1_1_application_a9f8b44c8359dddea1f8492ad9112d465}} 
 \index{Crynn::Application@{Crynn::Application}!OnUpdate@{OnUpdate}}
 \index{OnUpdate@{OnUpdate}!Crynn::Application@{Crynn::Application}}
 \doxysubsubsection{\texorpdfstring{OnUpdate}{OnUpdate}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$float$>$ Crynn\+::\+Application\+::\+On\+Update}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$double$>$ Crynn\+::\+Application\+::\+On\+Update}
+
+
+
+Called once before quitting to desktop using \mbox{\hyperlink{class_crynn_1_1_application_afa1aa3f4fc2b3a72d28e6ea05bd6f2db}{Application\+::\+Instance()}}.\mbox{\hyperlink{class_crynn_1_1_application_afb52853075716e3bb11ab2f2198a3d7d}{Quit()}};///. 
 
 \mbox{\Hypertarget{class_crynn_1_1_application_a2d63fffd2b941593ed2a719082d3d26c}\label{class_crynn_1_1_application_a2d63fffd2b941593ed2a719082d3d26c}} 
 \index{Crynn::Application@{Crynn::Application}!OnWindowResize@{OnWindowResize}}
 \index{OnWindowResize@{OnWindowResize}!Crynn::Application@{Crynn::Application}}
 \doxysubsubsection{\texorpdfstring{OnWindowResize}{OnWindowResize}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_crynn_1_1_event}{Event}}$<$int, int$>$ Crynn\+::\+Application\+::\+On\+Window\+Resize}
+
+
+
+Called once before entering the main loop. Called before update.///. 
 
 
 

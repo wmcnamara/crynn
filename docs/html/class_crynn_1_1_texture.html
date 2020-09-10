@@ -76,24 +76,34 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>2D texture class.  
+ <a href="class_crynn_1_1_texture.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_texture_8h_source.html">Texture.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b6725ade79be3097e951ea7d411082a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#a8b6725ade79be3097e951ea7d411082a">Texture</a> ()=default</td></tr>
+<tr class="memdesc:a8b6725ade79be3097e951ea7d411082a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a dummy texture object with no data.  <a href="class_crynn_1_1_texture.html#a8b6725ade79be3097e951ea7d411082a">More...</a><br /></td></tr>
 <tr class="separator:a8b6725ade79be3097e951ea7d411082a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4394916ded46856eca6364946508e9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#af4394916ded46856eca6364946508e9f">Texture</a> (const char *path)</td></tr>
+<tr class="memdesc:af4394916ded46856eca6364946508e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture object, and loads texture data into it.  <a href="class_crynn_1_1_texture.html#af4394916ded46856eca6364946508e9f">More...</a><br /></td></tr>
 <tr class="separator:af4394916ded46856eca6364946508e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5634fba18a0f65252837ce87615efd5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#a5634fba18a0f65252837ce87615efd5a">~Texture</a> ()</td></tr>
 <tr class="separator:a5634fba18a0f65252837ce87615efd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0aff6732c643bad319a8b3907ee4322"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#af0aff6732c643bad319a8b3907ee4322">Load</a> (const char *path)</td></tr>
+<tr class="memdesc:af0aff6732c643bad319a8b3907ee4322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a new texture and deletes memory of the old one.  <a href="class_crynn_1_1_texture.html#af0aff6732c643bad319a8b3907ee4322">More...</a><br /></td></tr>
 <tr class="separator:af0aff6732c643bad319a8b3907ee4322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcb10934fad88f975ab20503e5ccceb5"><td class="memItemLeft" align="right" valign="top">const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#adcb10934fad88f975ab20503e5ccceb5">Data</a> ()</td></tr>
+<tr class="memdesc:adcb10934fad88f975ab20503e5ccceb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the OpenGL texture ID  <a href="class_crynn_1_1_texture.html#adcb10934fad88f975ab20503e5ccceb5">More...</a><br /></td></tr>
 <tr class="separator:adcb10934fad88f975ab20503e5ccceb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6df9fec4101610067a3bda0454dd37c3"><td class="memItemLeft" align="right" valign="top">const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#a6df9fec4101610067a3bda0454dd37c3">Valid</a> ()</td></tr>
+<tr class="memdesc:a6df9fec4101610067a3bda0454dd37c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a texture is loaded  <a href="class_crynn_1_1_texture.html#a6df9fec4101610067a3bda0454dd37c3">More...</a><br /></td></tr>
 <tr class="separator:a6df9fec4101610067a3bda0454dd37c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>2D texture class. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8b6725ade79be3097e951ea7d411082a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b6725ade79be3097e951ea7d411082a">&#9670;&nbsp;</a></span>Texture() <span class="overload">[1/2]</span></h2>
 
@@ -117,6 +127,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a dummy texture object with no data. </p>
+
 </div>
 </div>
 <a id="af4394916ded46856eca6364946508e9f"></a>
@@ -134,6 +146,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a texture object, and loads texture data into it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Relative path to the texture file.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -178,6 +198,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets the OpenGL texture ID </p>
+<dl class="section return"><dt>Returns</dt><dd>The OpenGL texture ID</dd></dl>
+
 </div>
 </div>
 <a id="af0aff6732c643bad319a8b3907ee4322"></a>
@@ -195,6 +218,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Loads a new texture and deletes memory of the old one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -220,6 +251,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if a texture is loaded </p>
+<dl class="section return"><dt>Returns</dt><dd>true if valid texture data is loaded in.</dd></dl>
 
 </div>
 </div>

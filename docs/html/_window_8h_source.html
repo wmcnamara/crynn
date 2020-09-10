@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;imgui_impl_glfw.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;imgui_impl_opengl3.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="delegate_8h.html">delegate.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_event_8h.html">Event.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_debug_8h.html">Debug.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_application_8h.html">Application.h</a>&quot;</span></div>
@@ -92,51 +92,44 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_crynn.html">Crynn</a></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_crynn_1_1_on_window_start_args.html">   21</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_crynn_1_1_on_window_start_args.html">OnWindowStartArgs</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_crynn_1_1_on_window_start_args.html#a5b2d00a7570482cf31dd4f367e1dd3ae">   23</a></span>&#160;        ImVec2 <a class="code" href="struct_crynn_1_1_on_window_start_args.html#a5b2d00a7570482cf31dd4f367e1dd3ae">windowSize</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_crynn_1_1_window.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_crynn_1_1_window.html">Window</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_crynn_1_1_window.html#a0444a14a98632a803c3cd57712534b1f">Window</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> ImVec2&amp; <a class="code" href="class_crynn_1_1_window.html#aa64280a7cebd27b3b5be16ba90fd9954">GetSize</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> ImVec2&amp; <a class="code" href="class_crynn_1_1_window.html#af97dd72d5dbfce2424abcd9b9f2cbabc">GetFrameBufSize</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_crynn_1_1_window.html#a20a22c0acf9f4c7a6eedf77bbe104ebf">   34</a></span>&#160;        GLFWwindow* <a class="code" href="class_crynn_1_1_window.html#a20a22c0acf9f4c7a6eedf77bbe104ebf">glfwWindow</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_window.html#a2b7faa1f50588b39b782a8f8c9b649eb">BeforeRender</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_window.html#aaae7a097070e0565521145bc33ac3cb2">AfterRender</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_window.html#a999f17c74c967d74b1e77708e254c9cb">UpdateWindowSize</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_crynn_1_1_window.html#a86870fc52d6339c89282baf03ac77496">ShouldClose</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_crynn_1_1_window.html#a59dd7c00c7f0cf163ecc9d733a56a1e0">~Window</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        ImVec2 m_screenSize;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ImVec2 m_frameBufSize;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    };</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_crynn_1_1_window.html">   25</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_crynn_1_1_window.html">Window</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_crynn_1_1_window.html#a0444a14a98632a803c3cd57712534b1f">Window</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_crynn_1_1_window.html#a59dd7c00c7f0cf163ecc9d733a56a1e0">~Window</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> ImVec2&amp; <a class="code" href="class_crynn_1_1_window.html#aa64280a7cebd27b3b5be16ba90fd9954">GetSize</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">const</span> ImVec2&amp; <a class="code" href="class_crynn_1_1_window.html#af97dd72d5dbfce2424abcd9b9f2cbabc">GetFrameBufSize</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_crynn_1_1_window.html#a20a22c0acf9f4c7a6eedf77bbe104ebf">   51</a></span>&#160;        GLFWwindow* <a class="code" href="class_crynn_1_1_window.html#a20a22c0acf9f4c7a6eedf77bbe104ebf">glfwWindow</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_window.html#a2b7faa1f50588b39b782a8f8c9b649eb">BeforeRender</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_window.html#aaae7a097070e0565521145bc33ac3cb2">AfterRender</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_window.html#a999f17c74c967d74b1e77708e254c9cb">UpdateWindowSize</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_crynn_1_1_window.html#a86870fc52d6339c89282baf03ac77496">ShouldClose</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ImVec2 m_screenSize; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ImVec2 m_frameBufSize; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    };</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_crynn_1_1_window_html_a86870fc52d6339c89282baf03ac77496"><div class="ttname"><a href="class_crynn_1_1_window.html#a86870fc52d6339c89282baf03ac77496">Crynn::Window::ShouldClose</a></div><div class="ttdeci">bool ShouldClose()</div><div class="ttdef"><b>Definition:</b> Window.cpp:13</div></div>
-<div class="ttc" id="adelegate_8h_html"><div class="ttname"><a href="delegate_8h.html">delegate.h</a></div></div>
-<div class="ttc" id="astruct_crynn_1_1_on_window_start_args_html_a5b2d00a7570482cf31dd4f367e1dd3ae"><div class="ttname"><a href="struct_crynn_1_1_on_window_start_args.html#a5b2d00a7570482cf31dd4f367e1dd3ae">Crynn::OnWindowStartArgs::windowSize</a></div><div class="ttdeci">ImVec2 windowSize</div><div class="ttdef"><b>Definition:</b> Window.h:23</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html"><div class="ttname"><a href="class_crynn_1_1_window.html">Crynn::Window</a></div><div class="ttdef"><b>Definition:</b> Window.h:27</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_a999f17c74c967d74b1e77708e254c9cb"><div class="ttname"><a href="class_crynn_1_1_window.html#a999f17c74c967d74b1e77708e254c9cb">Crynn::Window::UpdateWindowSize</a></div><div class="ttdeci">void UpdateWindowSize()</div><div class="ttdef"><b>Definition:</b> Window.cpp:65</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a86870fc52d6339c89282baf03ac77496"><div class="ttname"><a href="class_crynn_1_1_window.html#a86870fc52d6339c89282baf03ac77496">Crynn::Window::ShouldClose</a></div><div class="ttdeci">bool ShouldClose()</div><div class="ttdoc">Returns glfwGetWindowShouldClose();</div><div class="ttdef"><b>Definition:</b> Window.cpp:133</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html"><div class="ttname"><a href="class_crynn_1_1_window.html">Crynn::Window</a></div><div class="ttdoc">The window everything is rendered on. Crynn does not support more than 1 monitor.</div><div class="ttdef"><b>Definition:</b> Window.h:26</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a999f17c74c967d74b1e77708e254c9cb"><div class="ttname"><a href="class_crynn_1_1_window.html#a999f17c74c967d74b1e77708e254c9cb">Crynn::Window::UpdateWindowSize</a></div><div class="ttdeci">void UpdateWindowSize()</div><div class="ttdoc">Updates the framebuffer and screensize with the current data. Somewhat expensive, and should only be ...</div><div class="ttdef"><b>Definition:</b> Window.cpp:123</div></div>
 <div class="ttc" id="a_debug_8h_html"><div class="ttname"><a href="_debug_8h.html">Debug.h</a></div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_af97dd72d5dbfce2424abcd9b9f2cbabc"><div class="ttname"><a href="class_crynn_1_1_window.html#af97dd72d5dbfce2424abcd9b9f2cbabc">Crynn::Window::GetFrameBufSize</a></div><div class="ttdeci">const ImVec2 &amp; GetFrameBufSize()</div><div class="ttdef"><b>Definition:</b> Window.cpp:32</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_aaae7a097070e0565521145bc33ac3cb2"><div class="ttname"><a href="class_crynn_1_1_window.html#aaae7a097070e0565521145bc33ac3cb2">Crynn::Window::AfterRender</a></div><div class="ttdeci">void AfterRender()</div><div class="ttdef"><b>Definition:</b> Window.cpp:57</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_af97dd72d5dbfce2424abcd9b9f2cbabc"><div class="ttname"><a href="class_crynn_1_1_window.html#af97dd72d5dbfce2424abcd9b9f2cbabc">Crynn::Window::GetFrameBufSize</a></div><div class="ttdeci">const ImVec2 &amp; GetFrameBufSize()</div><div class="ttdoc">Gets the size of the framebuffer.</div><div class="ttdef"><b>Definition:</b> Window.cpp:90</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_aaae7a097070e0565521145bc33ac3cb2"><div class="ttname"><a href="class_crynn_1_1_window.html#aaae7a097070e0565521145bc33ac3cb2">Crynn::Window::AfterRender</a></div><div class="ttdeci">void AfterRender()</div><div class="ttdoc">Called after rendering to render IMGUI data and swap buffers.</div><div class="ttdef"><b>Definition:</b> Window.cpp:115</div></div>
 <div class="ttc" id="a_application_8h_html"><div class="ttname"><a href="_application_8h.html">Application.h</a></div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_a59dd7c00c7f0cf163ecc9d733a56a1e0"><div class="ttname"><a href="class_crynn_1_1_window.html#a59dd7c00c7f0cf163ecc9d733a56a1e0">Crynn::Window::~Window</a></div><div class="ttdeci">~Window()</div><div class="ttdef"><b>Definition:</b> Window.cpp:18</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_a2b7faa1f50588b39b782a8f8c9b649eb"><div class="ttname"><a href="class_crynn_1_1_window.html#a2b7faa1f50588b39b782a8f8c9b649eb">Crynn::Window::BeforeRender</a></div><div class="ttdeci">void BeforeRender()</div><div class="ttdef"><b>Definition:</b> Window.cpp:38</div></div>
+<div class="ttc" id="a_event_8h_html"><div class="ttname"><a href="_event_8h.html">Event.h</a></div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a59dd7c00c7f0cf163ecc9d733a56a1e0"><div class="ttname"><a href="class_crynn_1_1_window.html#a59dd7c00c7f0cf163ecc9d733a56a1e0">Crynn::Window::~Window</a></div><div class="ttdeci">~Window()</div><div class="ttdef"><b>Definition:</b> Window.cpp:76</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a2b7faa1f50588b39b782a8f8c9b649eb"><div class="ttname"><a href="class_crynn_1_1_window.html#a2b7faa1f50588b39b782a8f8c9b649eb">Crynn::Window::BeforeRender</a></div><div class="ttdeci">void BeforeRender()</div><div class="ttdoc">Called before rendering to clear buffers, poll events and setup IMGUI data.</div><div class="ttdef"><b>Definition:</b> Window.cpp:96</div></div>
 <div class="ttc" id="anamespace_crynn_html"><div class="ttname"><a href="namespace_crynn.html">Crynn</a></div><div class="ttdoc">Main Engine Namespace</div><div class="ttdef"><b>Definition:</b> Application.cpp:3</div></div>
-<div class="ttc" id="astruct_crynn_1_1_on_window_start_args_html"><div class="ttname"><a href="struct_crynn_1_1_on_window_start_args.html">Crynn::OnWindowStartArgs</a></div><div class="ttdef"><b>Definition:</b> Window.h:22</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_a20a22c0acf9f4c7a6eedf77bbe104ebf"><div class="ttname"><a href="class_crynn_1_1_window.html#a20a22c0acf9f4c7a6eedf77bbe104ebf">Crynn::Window::glfwWindow</a></div><div class="ttdeci">GLFWwindow * glfwWindow</div><div class="ttdef"><b>Definition:</b> Window.h:34</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_a0444a14a98632a803c3cd57712534b1f"><div class="ttname"><a href="class_crynn_1_1_window.html#a0444a14a98632a803c3cd57712534b1f">Crynn::Window::Window</a></div><div class="ttdeci">Window(const char *name, int width, int height)</div><div class="ttdef"><b>Definition:</b> Window.cpp:75</div></div>
-<div class="ttc" id="aclass_crynn_1_1_window_html_aa64280a7cebd27b3b5be16ba90fd9954"><div class="ttname"><a href="class_crynn_1_1_window.html#aa64280a7cebd27b3b5be16ba90fd9954">Crynn::Window::GetSize</a></div><div class="ttdeci">const ImVec2 &amp; GetSize()</div><div class="ttdef"><b>Definition:</b> Window.cpp:27</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a20a22c0acf9f4c7a6eedf77bbe104ebf"><div class="ttname"><a href="class_crynn_1_1_window.html#a20a22c0acf9f4c7a6eedf77bbe104ebf">Crynn::Window::glfwWindow</a></div><div class="ttdeci">GLFWwindow * glfwWindow</div><div class="ttdoc">Raw GLFW window.</div><div class="ttdef"><b>Definition:</b> Window.h:51</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_a0444a14a98632a803c3cd57712534b1f"><div class="ttname"><a href="class_crynn_1_1_window.html#a0444a14a98632a803c3cd57712534b1f">Crynn::Window::Window</a></div><div class="ttdeci">Window(const char *name, int width, int height)</div><div class="ttdoc">Create a new window and display it.</div><div class="ttdef"><b>Definition:</b> Window.cpp:9</div></div>
+<div class="ttc" id="aclass_crynn_1_1_window_html_aa64280a7cebd27b3b5be16ba90fd9954"><div class="ttname"><a href="class_crynn_1_1_window.html#aa64280a7cebd27b3b5be16ba90fd9954">Crynn::Window::GetSize</a></div><div class="ttdeci">const ImVec2 &amp; GetSize()</div><div class="ttdoc">Gets the size of the window.</div><div class="ttdef"><b>Definition:</b> Window.cpp:85</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

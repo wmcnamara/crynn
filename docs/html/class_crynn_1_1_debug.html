@@ -77,6 +77,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Collection of functions to assist with debugging.  
+ <a href="class_crynn_1_1_debug.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_debug_8h_source.html">Debug.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -86,6 +89,7 @@ Public Types</h2></td></tr>
 <a class="el" href="class_crynn_1_1_debug.html#a4732294b4056cb02e0e76e484fa30555ad9432b62ba29a9382b59259d041e735b">Message</a>, 
 <a class="el" href="class_crynn_1_1_debug.html#a4732294b4056cb02e0e76e484fa30555aa4e358844a9b9d5c909bcd898e5efc5e">Success</a>
  }</td></tr>
+<tr class="memdesc:a4732294b4056cb02e0e76e484fa30555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the appearance of your message in the console.  <a href="class_crynn_1_1_debug.html#a4732294b4056cb02e0e76e484fa30555">More...</a><br /></td></tr>
 <tr class="separator:a4732294b4056cb02e0e76e484fa30555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -96,12 +100,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:af557dbbb4f5e69d70e8c26afea11a0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a540ceaaceedda89c75f4c3b69c932963"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_debug.html#a540ceaaceedda89c75f4c3b69c932963">Log</a> (const char *msg)</td></tr>
 <tr class="separator:a540ceaaceedda89c75f4c3b69c932963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fcda68369b2aa59ffb14088c50dd490"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_debug.html#a0fcda68369b2aa59ffb14088c50dd490">LOGGLERR</a> ()</td></tr>
-<tr class="separator:a0fcda68369b2aa59ffb14088c50dd490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4914b566ec6dc0490f64218b1cff6546"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_debug.html#a4914b566ec6dc0490f64218b1cff6546">LogGLErr</a> ()</td></tr>
+<tr class="memdesc:a4914b566ec6dc0490f64218b1cff6546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs glGetError to std::cout and output.log  <a href="class_crynn_1_1_debug.html#a4914b566ec6dc0490f64218b1cff6546">More...</a><br /></td></tr>
+<tr class="separator:a4914b566ec6dc0490f64218b1cff6546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af08c2f5ed0195e31d4ec995e1fa6909f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_debug.html#af08c2f5ed0195e31d4ec995e1fa6909f">ClearOutputLogs</a> ()</td></tr>
+<tr class="memdesc:af08c2f5ed0195e31d4ec995e1fa6909f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears output.log  <a href="class_crynn_1_1_debug.html#af08c2f5ed0195e31d4ec995e1fa6909f">More...</a><br /></td></tr>
 <tr class="separator:af08c2f5ed0195e31d4ec995e1fa6909f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Collection of functions to assist with debugging. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a4732294b4056cb02e0e76e484fa30555"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4732294b4056cb02e0e76e484fa30555">&#9670;&nbsp;</a></span>MsgType</h2>
 
@@ -113,6 +121,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Changes the appearance of your message in the console. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4732294b4056cb02e0e76e484fa30555ac8ccea3dc9f530a9e5827aaef5a9becb"></a>Error&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a4732294b4056cb02e0e76e484fa30555a2b36b9b96135011d3d3ead4e3e982ad0"></a>Warning&#160;</td><td class="fielddoc"></td></tr>
@@ -145,6 +155,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Clears output.log </p>
 
 </div>
 </div>
@@ -246,8 +258,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0fcda68369b2aa59ffb14088c50dd490"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fcda68369b2aa59ffb14088c50dd490">&#9670;&nbsp;</a></span>LOGGLERR()</h2>
+<a id="a4914b566ec6dc0490f64218b1cff6546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4914b566ec6dc0490f64218b1cff6546">&#9670;&nbsp;</a></span>LogGLErr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,7 +268,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Crynn::Debug::LOGGLERR </td>
+          <td class="memname">void Crynn::Debug::LogGLErr </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -268,6 +280,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Logs glGetError to std::cout and output.log </p>
 
 </div>
 </div>

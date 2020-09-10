@@ -89,47 +89,45 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">using namespace </span>glm;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">   18</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">Projection</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        Orthographic,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702ba03424250432f2aa71de95579d2c0eaeb">Perspective</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    };</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_crynn_1_1_camera.html">   29</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_crynn_1_1_camera.html">Camera</a>: <span class="keyword">protected</span> <a class="code" href="class_crynn_1_1_behaviour.html">Behaviour</a>, <span class="keyword">protected</span> <a class="code" href="class_crynn_1_1_input.html">Input</a>, <span class="keyword">public</span> <a class="code" href="class_crynn_1_1_transform.html">Transform</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="class_crynn_1_1_camera.html">Camera</a>(vec3 position, <a class="code" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">Projection</a> projType);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        ~<a class="code" href="class_crynn_1_1_camera.html">Camera</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_crynn_1_1_camera.html#a907898e5750143591db06f68961fe315">   35</a></span>&#160;        mat4 <a class="code" href="class_crynn_1_1_camera.html#a907898e5750143591db06f68961fe315">GetProjection</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_projection; }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> BeforeUpdate() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> Start()<span class="keyword"> override </span>{};</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> InputCommands() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        mat4 m_projection = glm::mat4(1.0f);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">Projection</a> m_projType;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_matrixUBO;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> SetUniformData();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> UpdateProjectionData();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">   21</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">Projection</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        Orthographic,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702ba03424250432f2aa71de95579d2c0eaeb">Perspective</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_crynn_1_1_camera.html">   32</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_crynn_1_1_camera.html">Camera</a>: <span class="keyword">protected</span> <a class="code" href="class_crynn_1_1_behaviour.html">Behaviour</a>, <span class="keyword">protected</span> <a class="code" href="class_crynn_1_1_input.html">Input</a>, <span class="keyword">public</span> <a class="code" href="class_crynn_1_1_transform.html">Transform</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_crynn_1_1_camera.html">Camera</a>(vec3 position, <a class="code" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">Projection</a> projType);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        ~<a class="code" href="class_crynn_1_1_camera.html">Camera</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_crynn_1_1_camera.html#a907898e5750143591db06f68961fe315">   38</a></span>&#160;        mat4 <a class="code" href="class_crynn_1_1_camera.html#a907898e5750143591db06f68961fe315">GetProjection</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_projection; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> BeforeUpdate(<span class="keywordtype">double</span> deltaTime) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> InputCommands() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        mat4 m_projection = glm::mat4(1.0f);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">Projection</a> m_projType;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_matrixUBO;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> SetUniformData();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> UpdateProjectionData();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="a_input_8h_html"><div class="ttname"><a href="_input_8h.html">Input.h</a></div></div>
-<div class="ttc" id="aclass_crynn_1_1_behaviour_html"><div class="ttname"><a href="class_crynn_1_1_behaviour.html">Crynn::Behaviour</a></div><div class="ttdef"><b>Definition:</b> Behaviour.h:7</div></div>
-<div class="ttc" id="aclass_crynn_1_1_camera_html_a907898e5750143591db06f68961fe315"><div class="ttname"><a href="class_crynn_1_1_camera.html#a907898e5750143591db06f68961fe315">Crynn::Camera::GetProjection</a></div><div class="ttdeci">mat4 GetProjection() const</div><div class="ttdef"><b>Definition:</b> Camera.h:35</div></div>
-<div class="ttc" id="anamespace_crynn_html_add78edfd0b31f7d94ca71c24a7e0702b"><div class="ttname"><a href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">Crynn::Projection</a></div><div class="ttdeci">Projection</div><div class="ttdef"><b>Definition:</b> Camera.h:19</div></div>
+<div class="ttc" id="aclass_crynn_1_1_behaviour_html"><div class="ttname"><a href="class_crynn_1_1_behaviour.html">Crynn::Behaviour</a></div><div class="ttdoc">Allows interfacing with the Crynn event system. Inherit from this class, and override any function yo...</div><div class="ttdef"><b>Definition:</b> Behaviour.h:11</div></div>
+<div class="ttc" id="aclass_crynn_1_1_camera_html_a907898e5750143591db06f68961fe315"><div class="ttname"><a href="class_crynn_1_1_camera.html#a907898e5750143591db06f68961fe315">Crynn::Camera::GetProjection</a></div><div class="ttdeci">mat4 GetProjection() const</div><div class="ttdef"><b>Definition:</b> Camera.h:38</div></div>
+<div class="ttc" id="anamespace_crynn_html_add78edfd0b31f7d94ca71c24a7e0702b"><div class="ttname"><a href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">Crynn::Projection</a></div><div class="ttdeci">Projection</div><div class="ttdoc">Projection type.</div><div class="ttdef"><b>Definition:</b> Camera.h:22</div></div>
 <div class="ttc" id="a_shader_8h_html"><div class="ttname"><a href="_shader_8h.html">Shader.h</a></div></div>
 <div class="ttc" id="a_behaviour_8h_html"><div class="ttname"><a href="_behaviour_8h.html">Behaviour.h</a></div></div>
 <div class="ttc" id="aclass_crynn_1_1_transform_html"><div class="ttname"><a href="class_crynn_1_1_transform.html">Crynn::Transform</a></div><div class="ttdoc">Matrix representation with easy functions to transform it. This class is mostly intended to be inheri...</div><div class="ttdef"><b>Definition:</b> Transform.h:16</div></div>
 <div class="ttc" id="a_transform_8h_html"><div class="ttname"><a href="_transform_8h.html">Transform.h</a></div></div>
 <div class="ttc" id="a_window_8h_html"><div class="ttname"><a href="_window_8h.html">Window.h</a></div></div>
 <div class="ttc" id="anamespace_crynn_html"><div class="ttname"><a href="namespace_crynn.html">Crynn</a></div><div class="ttdoc">Main Engine Namespace</div><div class="ttdef"><b>Definition:</b> Application.cpp:3</div></div>
-<div class="ttc" id="aclass_crynn_1_1_input_html"><div class="ttname"><a href="class_crynn_1_1_input.html">Crynn::Input</a></div><div class="ttdoc">Simple input component. Inherit from this class and override InputCommands() to use....</div><div class="ttdef"><b>Definition:</b> Input.h:14</div></div>
-<div class="ttc" id="aclass_crynn_1_1_camera_html"><div class="ttname"><a href="class_crynn_1_1_camera.html">Crynn::Camera</a></div><div class="ttdoc">Creates a camera that can render objects. This class creates a Uniform Buffer Object you can use to g...</div><div class="ttdef"><b>Definition:</b> Camera.h:30</div></div>
+<div class="ttc" id="aclass_crynn_1_1_input_html"><div class="ttname"><a href="class_crynn_1_1_input.html">Crynn::Input</a></div><div class="ttdoc">Simple input component that allows interfacing with the Crynn input system. Inherit from this class a...</div><div class="ttdef"><b>Definition:</b> Input.h:12</div></div>
+<div class="ttc" id="aclass_crynn_1_1_camera_html"><div class="ttname"><a href="class_crynn_1_1_camera.html">Crynn::Camera</a></div><div class="ttdoc">Creates a camera that can render objects. This class creates a Uniform Buffer Object you can use to g...</div><div class="ttdef"><b>Definition:</b> Camera.h:33</div></div>
 <div class="ttc" id="anamespace_crynn_html_add78edfd0b31f7d94ca71c24a7e0702ba03424250432f2aa71de95579d2c0eaeb"><div class="ttname"><a href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702ba03424250432f2aa71de95579d2c0eaeb">Crynn::Projection::Orthographic</a></div><div class="ttdeci">@ Orthographic</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

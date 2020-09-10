@@ -1,0 +1,78 @@
+#pragma once
+#include "glad/glad.h"
+#include <Windows.h>
+#include "GLFW/glfw3.h"
+
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+
+#include "Event.h"
+#include "Utility/Debug.h"
+
+#include "Application.h"
+
+#ifndef UNICODE
+#define UNICODE
+#endif 
+
+namespace Crynn
+{
+	/// <summary>
+	/// The window everything is rendered on.
+	/// Crynn does not support more than 1 monitor.
+	/// </summary>
+	class Window
+	{
+	public:
+		/// <summary>
+		/// Create a new window and display it.
+		/// </summary>
+		/// <param name="name">Window title seen in the top left</param>
+		/// <param name="width">Width of the window</param>
+		/// <param name="height">Height of the window</param>
+		Window(const char* name, int width, int height);
+		~Window();
+
+		/// <summary>
+		/// Gets the size of the window.
+		/// </summary>
+		/// <returns> ImVec2 object with x as the width, and y as the height</returns>
+		const ImVec2& GetSize();
+		/// <summary>
+		/// Gets the size of the framebuffer.
+		/// </summary>
+		/// <returns> ImVec2 object with x as the width, and y as the height</returns>
+		const ImVec2& GetFrameBufSize();
+
+		/// <summary>
+		/// Raw GLFW window.
+		/// </summary>
+		GLFWwindow* glfwWindow;
+
+		/// <summary>
+		/// Called before rendering to clear buffers, poll events and setup IMGUI data.
+		/// </summary>
+		void BeforeRender();
+
+		/// <summary>
+		/// Called after rendering to render IMGUI data and swap buffers.
+		/// </summary>
+		void AfterRender();
+
+		/// <summary>
+		/// Updates the framebuffer and screensize with the current data.
+		/// Somewhat expensive, and should only be called when you know the data has changed.
+		/// </summary>
+		void UpdateWindowSize();
+
+		/// <summary>
+		/// Returns glfwGetWindowShouldClose();
+		/// </summary>
+		/// <returns>True if the window should close. Used to hold a game loop.</returns>
+		bool ShouldClose();
+	private:
+		ImVec2 m_screenSize; ///Size of the window///
+		ImVec2 m_frameBufSize; ///Size of the framebuffer///
+	};
+}

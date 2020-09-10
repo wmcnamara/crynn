@@ -2,6 +2,11 @@
 \label{class_crynn_1_1_behaviour}\index{Crynn::Behaviour@{Crynn::Behaviour}}
 
 
+Allows interfacing with the \mbox{\hyperlink{namespace_crynn}{Crynn}} event system. Inherit from this class, and override any function you may need.  
+
+
+
+
 {\ttfamily \#include $<$Behaviour.\+h$>$}
 
 Inheritance diagram for Crynn\+::Behaviour\+:\begin{figure}[H]
@@ -13,16 +18,23 @@ Inheritance diagram for Crynn\+::Behaviour\+:\begin{figure}[H]
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_crynn_1_1_behaviour_a97d70532db183d87d6f1ff517972599d}{Update}} (double delta\+Time)
-\item 
-virtual void \mbox{\hyperlink{class_crynn_1_1_behaviour_a0db4355a84112b96a6fb664a121814c8}{Start}} ()
-\item 
-virtual void \mbox{\hyperlink{class_crynn_1_1_behaviour_adb85880deff7cea4cfe5598ddfb76eac}{Before\+Update}} ()
-\item 
 \mbox{\hyperlink{class_crynn_1_1_behaviour_a335b2a8c784b109b1600aae410abee17}{Behaviour}} ()
 \item 
 \mbox{\hyperlink{class_crynn_1_1_behaviour_a4628f5bf5c0228fd938eaf5b02a03818}{$\sim$\+Behaviour}} ()
+\begin{DoxyCompactList}\small\item\em Automatically subscribes events to the event system. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_crynn_1_1_behaviour_a97d70532db183d87d6f1ff517972599d}{Update}} (double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Unsubscribes the events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_crynn_1_1_behaviour_a0db4355a84112b96a6fb664a121814c8}{Start}} ()
+\item 
+virtual void \mbox{\hyperlink{class_crynn_1_1_behaviour_a15d304086c35926e97d36f249ec7c200}{Before\+Update}} (double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Called once before the game enters its main loop. Will be called before Update. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_crynn_1_1_behaviour_a5aa858239c27461924eefbe81a81327d}{Before\+Close}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Allows interfacing with the \mbox{\hyperlink{namespace_crynn}{Crynn}} event system. Inherit from this class, and override any function you may need. 
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -40,13 +52,34 @@ virtual void \mbox{\hyperlink{class_crynn_1_1_behaviour_adb85880deff7cea4cfe5598
 
 
 
+Automatically subscribes events to the event system. 
+
+
+
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_crynn_1_1_behaviour_adb85880deff7cea4cfe5598ddfb76eac}\label{class_crynn_1_1_behaviour_adb85880deff7cea4cfe5598ddfb76eac}} 
+\mbox{\Hypertarget{class_crynn_1_1_behaviour_a5aa858239c27461924eefbe81a81327d}\label{class_crynn_1_1_behaviour_a5aa858239c27461924eefbe81a81327d}} 
+\index{Crynn::Behaviour@{Crynn::Behaviour}!BeforeClose@{BeforeClose}}
+\index{BeforeClose@{BeforeClose}!Crynn::Behaviour@{Crynn::Behaviour}}
+\doxysubsubsection{\texorpdfstring{BeforeClose()}{BeforeClose()}}
+{\footnotesize\ttfamily virtual void Crynn\+::\+Behaviour\+::\+Before\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_behaviour_a15d304086c35926e97d36f249ec7c200}\label{class_crynn_1_1_behaviour_a15d304086c35926e97d36f249ec7c200}} 
 \index{Crynn::Behaviour@{Crynn::Behaviour}!BeforeUpdate@{BeforeUpdate}}
 \index{BeforeUpdate@{BeforeUpdate}!Crynn::Behaviour@{Crynn::Behaviour}}
 \doxysubsubsection{\texorpdfstring{BeforeUpdate()}{BeforeUpdate()}}
-{\footnotesize\ttfamily virtual void Crynn\+::\+Behaviour\+::\+Before\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void Crynn\+::\+Behaviour\+::\+Before\+Update (\begin{DoxyParamCaption}\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Called once before the game enters its main loop. Will be called before Update. 
+
+Called once every frame before Update. Generally used for setting uniforms, or other things that need to be set before any render calls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time it took the previous frame to render.\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_crynn_1_1_behaviour_a0db4355a84112b96a6fb664a121814c8}\label{class_crynn_1_1_behaviour_a0db4355a84112b96a6fb664a121814c8}} 
 \index{Crynn::Behaviour@{Crynn::Behaviour}!Start@{Start}}
 \index{Start@{Start}!Crynn::Behaviour@{Crynn::Behaviour}}
@@ -59,6 +92,17 @@ virtual void \mbox{\hyperlink{class_crynn_1_1_behaviour_adb85880deff7cea4cfe5598
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}}
 {\footnotesize\ttfamily virtual void Crynn\+::\+Behaviour\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Unsubscribes the events. 
+
+Called once every frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time it took the previous frame to render.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

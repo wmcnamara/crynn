@@ -1,37 +1,16 @@
 /*
-#include "Window.h"
-#include "Calculator.h"
-#include "Camera.h"
-#include "TextureViewer.h"
+#include "Crynn.h"
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
-
-using namespace Crynn;
-using namespace Crynn::Events;
-using namespace Crynn::Windows;
-using namespace Crynn::Rendering;
-
-int main ()
+int main()
 {
-	
-	Window window();
+	Window window("Crynn", 800, 600);
 
-	Calculator calculator;
-	Camera camera(Projection::Perspective);
-	TextureViewer texViewer(Window::GetFrameBufSize(), ImVec2(0, 0));
-
-	while (!Window::ShouldClose())
+	Application::Instance().OnStart.Invoke(); //Before the while loop, invoke OnStart
+	while (!window.ShouldClose())
 	{
-		Window::BeforeRender();
-
-		calculator.Run();
-		texViewer.Run();
-		camera.Run();
-	
-		Window::AfterRender();
+		window.BeforeRender();
+		Application::Instance().Tick(); //Ticks update events.
+		window.AfterRender();
 	}
-
-	return 0;
-}	
+}
 */

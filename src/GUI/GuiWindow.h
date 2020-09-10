@@ -2,24 +2,27 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 #include <iostream>
-#include "Window.h"
 #include "imgui.h"
-#include "delegate.h"
-#include "IO.h"
+
+#include "Core/Window.h"
+#include "Core/Event.h"
+#include "Core/Behaviour.h"
 
 namespace Crynn
 {
-	class GuiWindow
+	/// <summary>
+	/// Base class for any onscreen GUI window.
+	/// Uses IMGUI and Crynn events for rendering.
+	/// </summary>
+	class GuiWindow : protected Behaviour
 	{
 	public:
 		/// <summary>
-		/// Creates an onscreen GUI window.
+		/// Creates an onscreen GUI window
 		/// </summary>
-		/// <param name="size"> Window size dimensions.</param>
-		/// <param name="pos"> Window position on screen relative to the top left corner.</param>
-		/// <param name="name"> Name of the window in the title bar.</param>
-		/// <param name="drawOGLData"> Draw OpenGL geometry to this window?</param>
-		/// <param name="imguiBeginFlags"> ImGui::Begin flags.</param>
+		/// <param name="size">Window width and height dimensions</param>
+		/// <param name="pos">Window x and y position.</param>
+		/// <param name="name">Window title</param>
 		GuiWindow(ImVec2 size, ImVec2 pos, const char* name);
 		~GuiWindow();
 

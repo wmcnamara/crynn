@@ -2,7 +2,7 @@
 \label{class_crynn_1_1_input}\index{Crynn::Input@{Crynn::Input}}
 
 
-Simple input component. Inherit from this class and override \mbox{\hyperlink{class_crynn_1_1_input_ad049c8702b2f09bcaef6c69178910998}{Input\+Commands()}} to use. Do not instantiate this class manually. Only inherit from it.  
+Simple input component that allows interfacing with the \mbox{\hyperlink{namespace_crynn}{Crynn}} input system. Inherit from this class and override \mbox{\hyperlink{class_crynn_1_1_input_ad049c8702b2f09bcaef6c69178910998}{Input\+Commands()}} to use.  
 
 
 
@@ -70,11 +70,11 @@ static bool \mbox{\hyperlink{class_crynn_1_1_input_a88c073bd86d575385445aff52b33
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{class_crynn_1_1_input_ad049c8702b2f09bcaef6c69178910998}{Input\+Commands}} ()=0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Called every frame when polling events. Override this and add code that checks input. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Simple input component. Inherit from this class and override \mbox{\hyperlink{class_crynn_1_1_input_ad049c8702b2f09bcaef6c69178910998}{Input\+Commands()}} to use. Do not instantiate this class manually. Only inherit from it. 
+Simple input component that allows interfacing with the \mbox{\hyperlink{namespace_crynn}{Crynn}} input system. Inherit from this class and override \mbox{\hyperlink{class_crynn_1_1_input_ad049c8702b2f09bcaef6c69178910998}{Input\+Commands()}} to use. 
 
 
 
@@ -240,6 +240,10 @@ Returns the state of
 \index{InputCommands@{InputCommands}!Crynn::Input@{Crynn::Input}}
 \doxysubsubsection{\texorpdfstring{InputCommands()}{InputCommands()}}
 {\footnotesize\ttfamily virtual void Crynn\+::\+Input\+::\+Input\+Commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Called every frame when polling events. Override this and add code that checks input. 
 
 
 

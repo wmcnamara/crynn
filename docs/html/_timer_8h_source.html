@@ -78,26 +78,26 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_crynn.html">Crynn</a> </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_crynn_1_1_scoped_timer.html">    7</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_crynn_1_1_scoped_timer.html">ScopedTimer</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="class_crynn_1_1_scoped_timer.html#acbcb9b730dc91e56ae713bd19372ec84">ScopedTimer</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* funcName);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="class_crynn_1_1_scoped_timer.html#adc7c7172bc22db30827d3b34165e03e8">~ScopedTimer</a>(); </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_scoped_timer.html#a4daaba49d755665cf218e9a7671451fe">Stop</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        std::chrono::high_resolution_clock::time_point m_startPoint;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* m_funcName;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    };</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_crynn_1_1_scoped_timer.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_crynn_1_1_scoped_timer.html">ScopedTimer</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_crynn_1_1_scoped_timer.html#acbcb9b730dc91e56ae713bd19372ec84">ScopedTimer</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* funcName);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_crynn_1_1_scoped_timer.html#adc7c7172bc22db30827d3b34165e03e8">~ScopedTimer</a>(); </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_scoped_timer.html#a4daaba49d755665cf218e9a7671451fe">Stop</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        std::chrono::high_resolution_clock::time_point m_startPoint;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* m_funcName;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_crynn_1_1_scoped_timer_html"><div class="ttname"><a href="class_crynn_1_1_scoped_timer.html">Crynn::ScopedTimer</a></div><div class="ttdef"><b>Definition:</b> Timer.h:8</div></div>
-<div class="ttc" id="aclass_crynn_1_1_scoped_timer_html_a4daaba49d755665cf218e9a7671451fe"><div class="ttname"><a href="class_crynn_1_1_scoped_timer.html#a4daaba49d755665cf218e9a7671451fe">Crynn::ScopedTimer::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdef"><b>Definition:</b> Timer.cpp:14</div></div>
+<div class="ttc" id="aclass_crynn_1_1_scoped_timer_html"><div class="ttname"><a href="class_crynn_1_1_scoped_timer.html">Crynn::ScopedTimer</a></div><div class="ttdoc">Simple timer that counts the miliseconds from instantiation to when it goes out of scope....</div><div class="ttdef"><b>Definition:</b> Timer.h:12</div></div>
+<div class="ttc" id="aclass_crynn_1_1_scoped_timer_html_a4daaba49d755665cf218e9a7671451fe"><div class="ttname"><a href="class_crynn_1_1_scoped_timer.html#a4daaba49d755665cf218e9a7671451fe">Crynn::ScopedTimer::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stops timing early, and outputs logs.</div><div class="ttdef"><b>Definition:</b> Timer.cpp:14</div></div>
 <div class="ttc" id="a_debug_8h_html"><div class="ttname"><a href="_debug_8h.html">Debug.h</a></div></div>
 <div class="ttc" id="aclass_crynn_1_1_scoped_timer_html_adc7c7172bc22db30827d3b34165e03e8"><div class="ttname"><a href="class_crynn_1_1_scoped_timer.html#adc7c7172bc22db30827d3b34165e03e8">Crynn::ScopedTimer::~ScopedTimer</a></div><div class="ttdeci">~ScopedTimer()</div><div class="ttdef"><b>Definition:</b> Timer.cpp:9</div></div>
 <div class="ttc" id="anamespace_crynn_html"><div class="ttname"><a href="namespace_crynn.html">Crynn</a></div><div class="ttdoc">Main Engine Namespace</div><div class="ttdef"><b>Definition:</b> Application.cpp:3</div></div>
-<div class="ttc" id="aclass_crynn_1_1_scoped_timer_html_acbcb9b730dc91e56ae713bd19372ec84"><div class="ttname"><a href="class_crynn_1_1_scoped_timer.html#acbcb9b730dc91e56ae713bd19372ec84">Crynn::ScopedTimer::ScopedTimer</a></div><div class="ttdeci">ScopedTimer(const char *funcName)</div><div class="ttdef"><b>Definition:</b> Timer.cpp:4</div></div>
+<div class="ttc" id="aclass_crynn_1_1_scoped_timer_html_acbcb9b730dc91e56ae713bd19372ec84"><div class="ttname"><a href="class_crynn_1_1_scoped_timer.html#acbcb9b730dc91e56ae713bd19372ec84">Crynn::ScopedTimer::ScopedTimer</a></div><div class="ttdeci">ScopedTimer(const char *funcName)</div><div class="ttdoc">Creates a ScopedTimer that will Debug::Log() the time when it stops.</div><div class="ttdef"><b>Definition:</b> Timer.cpp:4</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

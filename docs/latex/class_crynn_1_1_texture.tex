@@ -2,23 +2,33 @@
 \label{class_crynn_1_1_texture}\index{Crynn::Texture@{Crynn::Texture}}
 
 
+2D texture class.  
+
+
+
+
 {\ttfamily \#include $<$Texture.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_crynn_1_1_texture_a8b6725ade79be3097e951ea7d411082a}{Texture}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a dummy texture object with no data. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_crynn_1_1_texture_af4394916ded46856eca6364946508e9f}{Texture}} (const char $\ast$path)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a texture object, and loads texture data into it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_crynn_1_1_texture_a5634fba18a0f65252837ce87615efd5a}{$\sim$\+Texture}} ()
 \item 
 void \mbox{\hyperlink{class_crynn_1_1_texture_af0aff6732c643bad319a8b3907ee4322}{Load}} (const char $\ast$path)
-\item 
+\begin{DoxyCompactList}\small\item\em Loads a new texture and deletes memory of the old one. \end{DoxyCompactList}\item 
 const unsigned int \& \mbox{\hyperlink{class_crynn_1_1_texture_adcb10934fad88f975ab20503e5ccceb5}{Data}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the Open\+GL texture ID \end{DoxyCompactList}\item 
 const bool \& \mbox{\hyperlink{class_crynn_1_1_texture_a6df9fec4101610067a3bda0454dd37c3}{Valid}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if a texture is loaded \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D texture class. 
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -28,12 +38,25 @@ const bool \& \mbox{\hyperlink{class_crynn_1_1_texture_a6df9fec4101610067a3bda04
 \doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Crynn\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
+
+
+Creates a dummy texture object with no data. 
+
 \mbox{\Hypertarget{class_crynn_1_1_texture_af4394916ded46856eca6364946508e9f}\label{class_crynn_1_1_texture_af4394916ded46856eca6364946508e9f}} 
 \index{Crynn::Texture@{Crynn::Texture}!Texture@{Texture}}
 \index{Texture@{Texture}!Crynn::Texture@{Crynn::Texture}}
 \doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Crynn\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
 
+
+
+Creates a texture object, and loads texture data into it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Relative path to the texture file.\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_crynn_1_1_texture_a5634fba18a0f65252837ce87615efd5a}\label{class_crynn_1_1_texture_a5634fba18a0f65252837ce87615efd5a}} 
 \index{Crynn::Texture@{Crynn::Texture}!````~Texture@{$\sim$Texture}}
 \index{````~Texture@{$\sim$Texture}!Crynn::Texture@{Crynn::Texture}}
@@ -49,18 +72,41 @@ const bool \& \mbox{\hyperlink{class_crynn_1_1_texture_a6df9fec4101610067a3bda04
 \doxysubsubsection{\texorpdfstring{Data()}{Data()}}
 {\footnotesize\ttfamily const unsigned int\& Crynn\+::\+Texture\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Gets the Open\+GL texture ID 
+
+\begin{DoxyReturn}{Returns}
+The Open\+GL texture ID
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_crynn_1_1_texture_af0aff6732c643bad319a8b3907ee4322}\label{class_crynn_1_1_texture_af0aff6732c643bad319a8b3907ee4322}} 
 \index{Crynn::Texture@{Crynn::Texture}!Load@{Load}}
 \index{Load@{Load}!Crynn::Texture@{Crynn::Texture}}
 \doxysubsubsection{\texorpdfstring{Load()}{Load()}}
 {\footnotesize\ttfamily void Crynn\+::\+Texture\+::\+Load (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
 
+
+
+Loads a new texture and deletes memory of the old one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_crynn_1_1_texture_a6df9fec4101610067a3bda0454dd37c3}\label{class_crynn_1_1_texture_a6df9fec4101610067a3bda0454dd37c3}} 
 \index{Crynn::Texture@{Crynn::Texture}!Valid@{Valid}}
 \index{Valid@{Valid}!Crynn::Texture@{Crynn::Texture}}
 \doxysubsubsection{\texorpdfstring{Valid()}{Valid()}}
 {\footnotesize\ttfamily const bool\& Crynn\+::\+Texture\+::\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Checks if a texture is loaded 
+
+\begin{DoxyReturn}{Returns}
+true if valid texture data is loaded in.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
