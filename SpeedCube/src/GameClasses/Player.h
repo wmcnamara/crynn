@@ -5,8 +5,8 @@ class Player : protected Behaviour, protected Input, public Transform
 {
 public:
 	Player();
-
 	~Player();
+
 	void Render();
 private:	
 	Mesh* m_mesh;
