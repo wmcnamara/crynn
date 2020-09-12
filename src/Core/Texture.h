@@ -34,15 +34,25 @@ namespace Crynn
 		/// Gets the OpenGL texture ID
 		/// </summary>
 		/// <returns>The OpenGL texture ID</returns>
-		const unsigned int& Data() { return texture; } //Returns the texture ID
+		const unsigned int& GetTextureID();
+
+		const unsigned int& GetTextureData();
+
+		/// Returns the width of this texture
+		const unsigned int& Width();
+		/// Returns the height of this texture
+		const unsigned int& Height();
 
 		/// <summary>
 		/// Checks if a texture is loaded
 		/// </summary>
 		/// <returns>true if valid texture data is loaded in.</returns>
-		const bool& Valid() { return valid; }
+		const bool& Valid() { return m_valid; }
 	private:
-		unsigned int texture = 0;
-		bool valid = false; //Is a valid texture loaded?
+		unsigned int m_textureID = 0; ///OpenGL texture ID
+		unsigned char* m_textureData = 0; ///Texture data pointer
+		int m_width, m_height, m_nrChannels;
+
+		bool m_valid = false; //Is a valid texture loaded?
 	};
 }

@@ -29,7 +29,6 @@ namespace Crynn
 		virtual void BeforeUpdate(double deltaTime) {}
 		virtual void BeforeClose() {} ///Called before quitting to desktop with Application::Instance().Quit();
 
-
 	private:
 		//Used to remove handlers when this object is destructed.
 		int updateHandlerID; 

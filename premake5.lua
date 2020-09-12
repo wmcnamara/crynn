@@ -33,6 +33,7 @@ project "Crynn"
 		"lib/thirdparty/imgui/imgui_impl_opengl3.h",
 		"lib/thirdparty/imgui/imgui_internal.h",
 		"lib/thirdparty/imgui/imgui_widgets.cpp",
+		"lib/thirdparty/stb_image.h",
 		"data/shaders/Standard.vert",
 		"data/shaders/Standard.frag"
 	}

@@ -6,34 +6,36 @@
 
 namespace Crynn
 {
-	Texture::Texture(const char* path) { Load(path); }
+	Texture::Texture(const char* path) 
+	{ 
+		Load(path); 
+	}
 
 	Texture::~Texture()
 	{
-		glDeleteTextures(1, &texture);
+		glDeleteTextures(1, &m_textureID);
 	}
 
 	void Texture::Load(const char* path)
 	{
 		ScopedTimer timer("Texture load");
 
-		if (valid)
-			glDeleteTextures(1, &texture); //Delete old texture memory if one was previously loaded.
+		if (m_valid)
+			stbi_image_free(m_textureData); //Delete old stb image texture memory
+			glDeleteTextures(1, &m_textureID); //Delete old texture memory if one was previously loaded.
 
-		glGenTextures(1, &texture);
-		glBindTexture(GL_TEXTURE_2D, texture);
+		glGenTextures(1, &m_textureID);
+		glBindTexture(GL_TEXTURE_2D, m_textureID);
 
 		// set the texture wrapping/filtering options (on the currently bound texture object)
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 		// load and generate the texture
-		int width, height, nrChannels;
-
-		unsigned char* data = stbi_load(path, &width, &height, &nrChannels, 4);
-		if (data)
+		m_textureData = stbi_load(path, &m_width, &m_height, &m_nrChannels, 4);
+		if (m_textureData)
 		{
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_textureData);
 
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
@@ -51,8 +53,22 @@ namespace Crynn
 			output << "Failed to load texture from " << path << "\n";
 			Debug::Log(output, Debug::Error);
 		}
-		stbi_image_free(data);
 
-		valid = true;
+		m_valid = true;
+	}
+
+	const unsigned int& Texture::GetTextureID()
+	{
+		 return m_textureID;
+	}
+
+	const unsigned int& Texture::Width()
+	{
+		return m_width;
+	}
+
+	const unsigned int& Texture::Height()
+	{
+		return m_height;
 	}
 }
