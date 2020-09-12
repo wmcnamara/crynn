@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include "MeshRenderer.h"
 #include "Utility/Debug.h"
+#include "Utility/File.h"
 #include "GUI/GuiWindow.h"
 
 namespace Crynn

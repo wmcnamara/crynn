@@ -1,7 +1,9 @@
 #pragma once
-#include "File.h"
 #include "glad/glad.h"
-#include "Timer.h"
+#include <iostream>
+#include <sstream>
+#include <fstream>
+
 namespace Crynn
 {
 	/// <summary>
@@ -10,30 +12,13 @@ namespace Crynn
 	class Debug
 	{
 	public:
-		/// <summary>
-		/// Changes the appearance of your message in the console.
-		/// </summary>
-		enum MsgType
-		{
-			Error, //Displays in red.
-			Warning, //Displays in yellow.
-			Message, //Meant for any message. No text color modifications.
-			Success //Denotes the success of any operation. Displays in green.
-		};
+		static void Log(const std::stringstream& msg); ///Writes msg to std::cout.
+		static void Log(const char* msg); ///Writes msg to std::cout.
 
-		//Writes msg to output.log, and std::cout.
-		static void Log(const std::stringstream& msg, MsgType msgType);
-		static void Log(const char* msg, MsgType msgType);
-		static void Log(const char* msg); //Logs as MsgType::Message
+		static void LogToFile(const char* msg); /// Logs to output.log in the working directory. This function is not fast.
+		static void logToFile(const std::stringstream& msg); /// Logs to output.log in the working directory. This function is not fast.
 
-		/// <summary>
-		/// Logs glGetError to std::cout and output.log
-		/// </summary>
-		static void LogGLErr();
-
-		/// <summary>
-		/// Clears output.log
-		/// </summary>
-		static void ClearOutputLogs();
+		static void LogGLErr(); /// Logs glGetError to std::cout and output.log
+		static void ClearOutputLogs(); /// Clears output.log
 	};
 }

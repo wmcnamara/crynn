@@ -1,6 +1,3 @@
-#pragma once
-
-
 /*! \mainpage Crynn Game Engine
  *
  * \section intro_sec Introduction
@@ -19,19 +16,22 @@
  *  - <a href="https://github.com/nothings/stb">STB_IMAGE</a> for image loading.
  */
  
-/// Includes almost all necessary engine components. ///
+/// Includes almost all necessary engine components.
+#pragma once
 
 #include "Core/Window.h"
 #include "Core/Camera.h"
 #include "Core/TextureViewer.h"
-#include "Utility/Debug.h"
-#include "Utility/File.h"
 #include "Core/Input.h"
 #include "Core/MeshRenderer.h"
 #include "Core/Shader.h"
 #include "Core/Behaviour.h"
 #include "Core/Application.h"
 #include "Core/Transform.h"
+
+#include "Utility/Debug.h"
+#include "Utility/File.h"
+#include "Utility/Timer.h"
 
 #include <memory>
 

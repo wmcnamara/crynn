@@ -14,14 +14,11 @@ namespace Crynn
 	{
 	public:
 		/// <summary>
-		/// Creates a dummy texture object with no data.
-		/// </summary>
-		Texture() = default;
-		/// <summary>
 		/// Creates a texture object, and loads texture data into it.
 		/// </summary>
 		/// <param name="path">Relative path to the texture file.</param>
-		Texture(const char* path);
+		Texture(const char* path);		
+		Texture() = default; /// Creates a dummy texture object with no data.
 		~Texture();
 
 		/// <summary>
@@ -36,11 +33,15 @@ namespace Crynn
 		/// <returns>The OpenGL texture ID</returns>
 		const unsigned int& GetTextureID();
 
-		const unsigned int& GetTextureData();
+		/// <summary>
+		/// Get a pointer to the raw texture data.
+		/// </summary>
+		/// <returns></returns>
+		unsigned char* GetTextureData();
 
-		/// Returns the width of this texture
+		/// <returns>The width of this texture
 		const unsigned int& Width();
-		/// Returns the height of this texture
+		/// <returns>The height of this texture
 		const unsigned int& Height();
 
 		/// <summary>

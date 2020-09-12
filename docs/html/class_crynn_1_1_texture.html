@@ -94,9 +94,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af0aff6732c643bad319a8b3907ee4322"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#af0aff6732c643bad319a8b3907ee4322">Load</a> (const char *path)</td></tr>
 <tr class="memdesc:af0aff6732c643bad319a8b3907ee4322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a new texture and deletes memory of the old one.  <a href="class_crynn_1_1_texture.html#af0aff6732c643bad319a8b3907ee4322">More...</a><br /></td></tr>
 <tr class="separator:af0aff6732c643bad319a8b3907ee4322"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcb10934fad88f975ab20503e5ccceb5"><td class="memItemLeft" align="right" valign="top">const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#adcb10934fad88f975ab20503e5ccceb5">Data</a> ()</td></tr>
-<tr class="memdesc:adcb10934fad88f975ab20503e5ccceb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the OpenGL texture ID  <a href="class_crynn_1_1_texture.html#adcb10934fad88f975ab20503e5ccceb5">More...</a><br /></td></tr>
-<tr class="separator:adcb10934fad88f975ab20503e5ccceb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2b90c366ebf52c3db8b9f7eeeb662b4"><td class="memItemLeft" align="right" valign="top">const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#af2b90c366ebf52c3db8b9f7eeeb662b4">GetTextureID</a> ()</td></tr>
+<tr class="memdesc:af2b90c366ebf52c3db8b9f7eeeb662b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the OpenGL texture ID  <a href="class_crynn_1_1_texture.html#af2b90c366ebf52c3db8b9f7eeeb662b4">More...</a><br /></td></tr>
+<tr class="separator:af2b90c366ebf52c3db8b9f7eeeb662b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d60a612330bbd610c63369d4c171fe5"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#a1d60a612330bbd610c63369d4c171fe5">GetTextureData</a> ()</td></tr>
+<tr class="memdesc:a1d60a612330bbd610c63369d4c171fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to the raw texture data.  <a href="class_crynn_1_1_texture.html#a1d60a612330bbd610c63369d4c171fe5">More...</a><br /></td></tr>
+<tr class="separator:a1d60a612330bbd610c63369d4c171fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718a494653dc2cf4a75e5ded57deecc4"><td class="memItemLeft" align="right" valign="top">const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#a718a494653dc2cf4a75e5ded57deecc4">Width</a> ()</td></tr>
+<tr class="memdesc:a718a494653dc2cf4a75e5ded57deecc4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><dl class="section return"><dt>Returns</dt><dd>The width of this texture </dd></dl>
+ <a href="class_crynn_1_1_texture.html#a718a494653dc2cf4a75e5ded57deecc4">More...</a><br /></td></tr>
+<tr class="separator:a718a494653dc2cf4a75e5ded57deecc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92b58fefa087ca76b40d5270a1489f4"><td class="memItemLeft" align="right" valign="top">const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#ad92b58fefa087ca76b40d5270a1489f4">Height</a> ()</td></tr>
+<tr class="memdesc:ad92b58fefa087ca76b40d5270a1489f4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><dl class="section return"><dt>Returns</dt><dd>The height of this texture </dd></dl>
+ <a href="class_crynn_1_1_texture.html#ad92b58fefa087ca76b40d5270a1489f4">More...</a><br /></td></tr>
+<tr class="separator:ad92b58fefa087ca76b40d5270a1489f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6df9fec4101610067a3bda0454dd37c3"><td class="memItemLeft" align="right" valign="top">const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_texture.html#a6df9fec4101610067a3bda0454dd37c3">Valid</a> ()</td></tr>
 <tr class="memdesc:a6df9fec4101610067a3bda0454dd37c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a texture is loaded  <a href="class_crynn_1_1_texture.html#a6df9fec4101610067a3bda0454dd37c3">More...</a><br /></td></tr>
 <tr class="separator:a6df9fec4101610067a3bda0454dd37c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,31 +186,63 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adcb10934fad88f975ab20503e5ccceb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcb10934fad88f975ab20503e5ccceb5">&#9670;&nbsp;</a></span>Data()</h2>
+<a id="a1d60a612330bbd610c63369d4c171fe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d60a612330bbd610c63369d4c171fe5">&#9670;&nbsp;</a></span>GetTextureData()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned int&amp; Crynn::Texture::Data </td>
+          <td class="memname">unsigned char * Crynn::Texture::GetTextureData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
+</div><div class="memdoc">
+
+<p>Get a pointer to the raw texture data. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="af2b90c366ebf52c3db8b9f7eeeb662b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2b90c366ebf52c3db8b9f7eeeb662b4">&#9670;&nbsp;</a></span>GetTextureID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int &amp; Crynn::Texture::GetTextureID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 <p>Gets the OpenGL texture ID </p>
 <dl class="section return"><dt>Returns</dt><dd>The OpenGL texture ID</dd></dl>
+
+</div>
+</div>
+<a id="ad92b58fefa087ca76b40d5270a1489f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad92b58fefa087ca76b40d5270a1489f4">&#9670;&nbsp;</a></span>Height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int &amp; Crynn::Texture::Height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><dl class="section return"><dt>Returns</dt><dd>The height of this texture </dd></dl>
+</p>
 
 </div>
 </div>
@@ -254,6 +297,26 @@ Public Member Functions</h2></td></tr>
 
 <p>Checks if a texture is loaded </p>
 <dl class="section return"><dt>Returns</dt><dd>true if valid texture data is loaded in.</dd></dl>
+
+</div>
+</div>
+<a id="a718a494653dc2cf4a75e5ded57deecc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a718a494653dc2cf4a75e5ded57deecc4">&#9670;&nbsp;</a></span>Width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int &amp; Crynn::Texture::Width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><dl class="section return"><dt>Returns</dt><dd>The width of this texture </dd></dl>
+</p>
 
 </div>
 </div>

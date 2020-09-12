@@ -36,7 +36,7 @@ namespace Crynn
 		}
 		catch (std::ifstream::failure e)
 		{
-			Debug::Log("Shader Not Read", Debug::Error);
+			Debug::Log("Shader Not Read");
 		}
 
 		const char* vShaderCode = vertexCode.c_str();
@@ -80,11 +80,11 @@ namespace Crynn
 
 			std::stringstream output;
 			output << "Error. Shader linking failed.\n" << infoLog;
-			Debug::Log(output, Debug::Error);
+			Debug::Log(output);
 		}
 		else
 		{
-			Debug::Log("Shader Program Linked Successfully", Debug::Success);
+			Debug::Log("Shader Program Linked Successfully");
 		}
 	}
 
@@ -102,10 +102,10 @@ namespace Crynn
 
 			std::stringstream output;
 			output << "Vertex Compilation Failed\n" << infoLog;
-			Debug::Log(output, Debug::Error);
+			Debug::Log(output);
 		}
 		else
-			Debug::Log("Vertex Shader Compiled Successfully", Debug::Success);
+			Debug::Log("Vertex Shader Compiled Successfully");
 
 		//Fragment Shader
 		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
@@ -115,10 +115,10 @@ namespace Crynn
 			glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
 			std::stringstream output;
 			output << "Fragment Compilation Failed\n" << infoLog << '\n';
-			Debug::Log(output, Debug::Error);
+			Debug::Log(output);
 		}
 		else
-			Debug::Log("Fragment Shader Compiled Successfully", Debug::Success);
+			Debug::Log("Fragment Shader Compiled Successfully");
 	}
 
 	void Shader::SetBool(const char* name, bool value) const

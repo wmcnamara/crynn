@@ -13,13 +13,15 @@ namespace Crynn
 
 	Texture::~Texture()
 	{
-		glDeleteTextures(1, &m_textureID);
+		if (m_valid)
+		{
+			stbi_image_free(m_textureData);
+			glDeleteTextures(1, &m_textureID);
+		}
 	}
 
 	void Texture::Load(const char* path)
 	{
-		ScopedTimer timer("Texture load");
-
 		if (m_valid)
 			stbi_image_free(m_textureData); //Delete old stb image texture memory
 			glDeleteTextures(1, &m_textureID); //Delete old texture memory if one was previously loaded.
@@ -45,13 +47,13 @@ namespace Crynn
 			std::stringstream output;
 			output << path << " Loaded Successfully";
 
-			Debug::Log(output, Debug::Success);
+			Debug::Log(output);
 		}
 		else
 		{
 			std::stringstream output;
 			output << "Failed to load texture from " << path << "\n";
-			Debug::Log(output, Debug::Error);
+			Debug::Log(output);
 		}
 
 		m_valid = true;
@@ -60,6 +62,11 @@ namespace Crynn
 	const unsigned int& Texture::GetTextureID()
 	{
 		 return m_textureID;
+	}
+
+	unsigned char* Texture::GetTextureData()
+	{
+		return m_textureData;
 	}
 
 	const unsigned int& Texture::Width()

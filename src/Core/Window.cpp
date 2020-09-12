@@ -23,7 +23,7 @@ namespace Crynn
 
 		if (glfwWindow == NULL)
 		{
-			Debug::Log("Failed to create GLFW window", Debug::Error);
+			Debug::Log("Failed to create GLFW window");
 			glfwTerminate();
 			return;
 		}
@@ -50,7 +50,7 @@ namespace Crynn
 		//Load glad
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 		{
-			Debug::Log("Failed to initialize GLAD", Debug::Error);
+			Debug::Log("Failed to initialize GLAD");
 			return;
 		}
 

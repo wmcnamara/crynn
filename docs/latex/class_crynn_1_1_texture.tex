@@ -20,8 +20,20 @@
 \item 
 void \mbox{\hyperlink{class_crynn_1_1_texture_af0aff6732c643bad319a8b3907ee4322}{Load}} (const char $\ast$path)
 \begin{DoxyCompactList}\small\item\em Loads a new texture and deletes memory of the old one. \end{DoxyCompactList}\item 
-const unsigned int \& \mbox{\hyperlink{class_crynn_1_1_texture_adcb10934fad88f975ab20503e5ccceb5}{Data}} ()
+const unsigned int \& \mbox{\hyperlink{class_crynn_1_1_texture_af2b90c366ebf52c3db8b9f7eeeb662b4}{Get\+Texture\+ID}} ()
 \begin{DoxyCompactList}\small\item\em Gets the Open\+GL texture ID \end{DoxyCompactList}\item 
+unsigned char $\ast$ \mbox{\hyperlink{class_crynn_1_1_texture_a1d60a612330bbd610c63369d4c171fe5}{Get\+Texture\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Get a pointer to the raw texture data. \end{DoxyCompactList}\item 
+const unsigned int \& \mbox{\hyperlink{class_crynn_1_1_texture_a718a494653dc2cf4a75e5ded57deecc4}{Width}} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyReturn}{Returns}
+The width of this texture 
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+const unsigned int \& \mbox{\hyperlink{class_crynn_1_1_texture_ad92b58fefa087ca76b40d5270a1489f4}{Height}} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyReturn}{Returns}
+The height of this texture 
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
 const bool \& \mbox{\hyperlink{class_crynn_1_1_texture_a6df9fec4101610067a3bda0454dd37c3}{Valid}} ()
 \begin{DoxyCompactList}\small\item\em Checks if a texture is loaded \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -66,11 +78,24 @@ Creates a texture object, and loads texture data into it.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_crynn_1_1_texture_adcb10934fad88f975ab20503e5ccceb5}\label{class_crynn_1_1_texture_adcb10934fad88f975ab20503e5ccceb5}} 
-\index{Crynn::Texture@{Crynn::Texture}!Data@{Data}}
-\index{Data@{Data}!Crynn::Texture@{Crynn::Texture}}
-\doxysubsubsection{\texorpdfstring{Data()}{Data()}}
-{\footnotesize\ttfamily const unsigned int\& Crynn\+::\+Texture\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_crynn_1_1_texture_a1d60a612330bbd610c63369d4c171fe5}\label{class_crynn_1_1_texture_a1d60a612330bbd610c63369d4c171fe5}} 
+\index{Crynn::Texture@{Crynn::Texture}!GetTextureData@{GetTextureData}}
+\index{GetTextureData@{GetTextureData}!Crynn::Texture@{Crynn::Texture}}
+\doxysubsubsection{\texorpdfstring{GetTextureData()}{GetTextureData()}}
+{\footnotesize\ttfamily unsigned char $\ast$ Crynn\+::\+Texture\+::\+Get\+Texture\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a pointer to the raw texture data. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crynn_1_1_texture_af2b90c366ebf52c3db8b9f7eeeb662b4}\label{class_crynn_1_1_texture_af2b90c366ebf52c3db8b9f7eeeb662b4}} 
+\index{Crynn::Texture@{Crynn::Texture}!GetTextureID@{GetTextureID}}
+\index{GetTextureID@{GetTextureID}!Crynn::Texture@{Crynn::Texture}}
+\doxysubsubsection{\texorpdfstring{GetTextureID()}{GetTextureID()}}
+{\footnotesize\ttfamily const unsigned int \& Crynn\+::\+Texture\+::\+Get\+Texture\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -79,6 +104,19 @@ Gets the Open\+GL texture ID
 \begin{DoxyReturn}{Returns}
 The Open\+GL texture ID
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_crynn_1_1_texture_ad92b58fefa087ca76b40d5270a1489f4}\label{class_crynn_1_1_texture_ad92b58fefa087ca76b40d5270a1489f4}} 
+\index{Crynn::Texture@{Crynn::Texture}!Height@{Height}}
+\index{Height@{Height}!Crynn::Texture@{Crynn::Texture}}
+\doxysubsubsection{\texorpdfstring{Height()}{Height()}}
+{\footnotesize\ttfamily const unsigned int \& Crynn\+::\+Texture\+::\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\begin{DoxyReturn}{Returns}
+The height of this texture 
+\end{DoxyReturn}
+
+
 \mbox{\Hypertarget{class_crynn_1_1_texture_af0aff6732c643bad319a8b3907ee4322}\label{class_crynn_1_1_texture_af0aff6732c643bad319a8b3907ee4322}} 
 \index{Crynn::Texture@{Crynn::Texture}!Load@{Load}}
 \index{Load@{Load}!Crynn::Texture@{Crynn::Texture}}
@@ -107,6 +145,19 @@ Checks if a texture is loaded
 \begin{DoxyReturn}{Returns}
 true if valid texture data is loaded in.
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_crynn_1_1_texture_a718a494653dc2cf4a75e5ded57deecc4}\label{class_crynn_1_1_texture_a718a494653dc2cf4a75e5ded57deecc4}} 
+\index{Crynn::Texture@{Crynn::Texture}!Width@{Width}}
+\index{Width@{Width}!Crynn::Texture@{Crynn::Texture}}
+\doxysubsubsection{\texorpdfstring{Width()}{Width()}}
+{\footnotesize\ttfamily const unsigned int \& Crynn\+::\+Texture\+::\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\begin{DoxyReturn}{Returns}
+The width of this texture 
+\end{DoxyReturn}
+
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
