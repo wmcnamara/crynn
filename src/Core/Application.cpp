@@ -18,4 +18,9 @@ namespace Crynn
 		OnUpdate.Invoke(deltaTime);
 		previousFrameTime = currentFrameTime; //Update the previousFrameTime
 	}
+
+	void Application::Initialise()
+	{
+		OnStart.Invoke();
+	}
 }

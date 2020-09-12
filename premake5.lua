@@ -72,38 +72,3 @@ project "Crynn"
 		}
 		symbols "On"
 		runtime "Debug"
-
-project "SpeedCube"
-	location "SpeedCube"
-	kind "ConsoleApp"
-	language "C++"
-
-	targetdir = "SpeedCube/bin"
-	objdir = "SpeedCube/bin/obj"
-
-	includedirs
-	{
-		"src/",
-		"lib/thirdparty",
-		"lib/thirdparty/glm",
-		"lib/thirdparty/glad",
-		"lib/thirdparty/imgui",
-		"lib/thirdparty/glfw/include"
-	}
-
-	files
-	{
-		"SpeedCube/**.h",
-		"SpeedCube/**.hpp",
-		"SpeedCube/**.cpp"
-	}
-
-	libdirs
-	{
-		"lib/thirdparty/glfw/lib"
-	}
-	links { "glfw3.lib", "opengl32.lib", "Crynn" }
-
-	filter "configurations:Debug"
-		symbols "On"
-		runtime "Debug"
