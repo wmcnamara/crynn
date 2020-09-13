@@ -33,6 +33,9 @@
 #include "Utility/File.h"
 #include "Utility/Timer.h"
 
+#include "GUI/GuiWindow.h"
+#include "GUI/MatrixEditor.h"
+
 #include <memory>
 
 using namespace glm;

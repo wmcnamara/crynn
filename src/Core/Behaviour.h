@@ -19,7 +19,7 @@ namespace Crynn
 		/// </summary>
 		/// <param name="deltaTime">The time it took the previous frame to render.</param>
 		virtual void Update(double deltaTime) {}
-		virtual void Start() {} ///Called once before the game enters its main loop. Will be called before Update.
+		virtual void Start() {} ///Called once before the game enters its main loop. Will be called before the first Update.
 
 		/// <summary>
 		/// Called once every frame before Update.

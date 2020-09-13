@@ -19,7 +19,7 @@ namespace Crynn
 
 		void BeginDraw() override;
 		void EndDraw() override;
-		void Update() override;
+		void Draw() override;
 	private:
 		float m_vertices[180] = {
 	-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,

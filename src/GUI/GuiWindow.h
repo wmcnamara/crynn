@@ -26,11 +26,11 @@ namespace Crynn
 		GuiWindow(ImVec2 size, ImVec2 pos, const char* name);
 		~GuiWindow();
 
-		void Run();
-
-		virtual void BeginDraw() = 0;
+		virtual void BeginDraw() = 0;		
+		virtual void Draw() = 0;
 		virtual void EndDraw() = 0;
-		virtual void Update() = 0;
+
+		void Update(double deltaTime) override;
 
 		const ImVec2 WindowSize(); //Returns the size of the window.
 		const ImVec2 FrameBufferSize(); //Returns the framebuffer size of the window.
@@ -47,6 +47,9 @@ namespace Crynn
 
 		GLuint FBO = 0, RBO = 0;
 		unsigned int m_renderTexture = 0;
-		const char* m_name;
+		const char* m_name;		
+		
+		/// Calls BeginDraw(), Draw() and EndDraw() in that order.
+		void Run();
 	};
 }

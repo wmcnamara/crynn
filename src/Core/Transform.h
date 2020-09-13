@@ -25,12 +25,17 @@ namespace Crynn
 		void SetPosition(glm::vec3 position);
 		void SetPosition(float x, float y, float z);
 
+		static void SetPosition(float x, float y, float z, glm::mat4& matrix);
+		static void SetPosition(glm::vec3 position, glm::mat4& matrix);
+
+		static void SetScale(float x, float y, float z, glm::mat4& matrix);
+		static void SetScale(glm::vec3 scale, glm::mat4& matrix);
 		//TODO
 		void AddChild();
 		void ClearChild(); //Stops inheriting from the object set by InheritFrom()
 
-	protected:
 		glm::mat4 transformMatrix = glm::mat4(1.0f);
+	protected:
 	private:
 		//TODO
 		glm::vec3 m_position = glm::vec3(0, 0, 0);

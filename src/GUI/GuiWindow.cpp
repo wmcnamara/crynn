@@ -13,7 +13,7 @@ namespace Crynn
 	void GuiWindow::Run()
 	{
 		BeginDraw();
-		Update();
+		Draw();
 		EndDraw();
 	}
 
@@ -25,6 +25,11 @@ namespace Crynn
 	const float GuiWindow::FrameBufferAspectRatio()
 	{
 		return (ImGui::GetContentRegionAvail().x / ImGui::GetContentRegionAvail().y);
+	}
+
+	void GuiWindow::Update(double deltaTime)
+	{
+		Run();
 	}
 
 	const ImVec2 GuiWindow::WindowSize()
