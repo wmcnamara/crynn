@@ -35,7 +35,10 @@ project "Crynn"
 		"lib/thirdparty/imgui/imgui_widgets.cpp",
 		"lib/thirdparty/stb_image.h",
 		"data/shaders/Standard.vert",
-		"data/shaders/Standard.frag"
+		"data/shaders/Standard.frag",
+
+		"premake5.lua",
+		"README.md"
 	}
 
 	includedirs
