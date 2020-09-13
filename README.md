@@ -37,8 +37,8 @@ To know more about Premake, and how to generate project files for your IDE pleas
 ## Using Crynn:
 Lets try programming with Crynn! Crynn does not use any sort of standalone editor, so any object creation you do is done programmatically. Keep this in mind when you use Crynn.
 
-1. Naviate to src/main.cpp and open it. You should see something like this:
-```
+Naviate to src/main.cpp and open it. You should see something like this:
+```C++
 #include "Crynn.h" //Get most of Crynns necessary components
 
 int main()
@@ -54,4 +54,4 @@ int main()
 	}
 }
 ```
-This is the most basic entry point to Crynn that everything starts at.
+This is Crynn's most basic entry point.

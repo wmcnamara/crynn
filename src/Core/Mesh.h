@@ -23,6 +23,7 @@ namespace Crynn
 			size_t numOfIndices,
 			bool useEBO);
 		~Mesh();
+		//TODO change parameter order.
 
 		//Returns the amount of vertices this mesh contains.
 		const unsigned int VertexCount() const { return m_numOfVertices; }

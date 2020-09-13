@@ -15,10 +15,12 @@ namespace Crynn
 	{
 	public:
 		MeshRenderer(Mesh* mesh, Texture* texture, Shader* shader, mat4* modelMatrix);
+
+		/// Draws a mesh to the screen with the objects specified int the constructor.
 		void Render();
 
 		const Mesh* GetMesh() const { return m_mesh; }		
-		bool active = true; //Toggle rendering
+		bool active = true; ///Toggle rendering
 	private:		
 		mat4* m_model;
 
