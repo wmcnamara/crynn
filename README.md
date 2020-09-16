@@ -18,6 +18,7 @@ Crynn relies on a multitude of dependencies. They are listed here:
 - [GLM](https://glm.g-truc.net/0.9.8/index.html) for matrix and other graphics related mathematics.
 - [STB_IMAGE](https://github.com/nothings/stb) for image loading.
 - [STB_PERLIN](https://github.com/nothings/stb) for perlin noise generation.
+- [IMGUIZMO](https://github.com/CedricGuillemet/ImGuizmo) gizmo generation.
 
 *As of now, Crynn does not use submodules for all of its dependencies. This will change, but as it stands you can find the dependency files in the lib/thirdparty folder.*
 
@@ -28,7 +29,8 @@ To get started, you will need a copy of the Crynn source. If you have Git instal
 Make sure you use a recursive clone, to fetch all submodules.
 
 ## Building Crynn:
-To manage the build process, Crynn uses <a href="https://premake.github.io/">Premake</a>. Premake does not need to be installed to use it. 
+To manage the build process, Crynn uses <a href="https://premake.github.io/">Premake</a>. 
+
 1. Naviagate to Crynn's base directory, containing the `premake5.exe` file.
 2. Open any command line program, and navigate to that directory.
 3. Launch premake5 with a command line argument corresponding with the IDE you're using. 
