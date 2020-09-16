@@ -14,6 +14,8 @@ namespace Crynn
 		m_numOfIndices(numOfIndices),
 		m_useEBO(useEBO)
 	{
+		ScopedTimer timer("Mesh Construction", TimeFormat::Milliseconds);
+
 		//Setup buffers
 		glGenVertexArrays(1, &VAO);
 		glGenBuffers(1, &VBO);
@@ -40,8 +42,6 @@ namespace Crynn
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 		glEnableVertexAttribArray(1);
 		/////////////////////////////////////////////
-
-		Debug::Log("Mesh Constructed");
 	}
 
 	Mesh::~Mesh()

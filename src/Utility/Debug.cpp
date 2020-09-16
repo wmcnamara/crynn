@@ -27,13 +27,13 @@ namespace Crynn
 #endif
 	}
 
-	void Debug::logToFile(const std::stringstream& msg)
+	void Debug::LogToFile(const std::stringstream& msg)
 	{
 #ifdef CRYNN_DEBUG
 		std::ofstream log;
 
 		log.open("output.log");
-		log << msg.rdbuf() << "\n";
+		log << msg.rdbuf() << '\n';
 		log.close();
 #endif
 	}

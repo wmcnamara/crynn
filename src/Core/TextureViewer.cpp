@@ -13,7 +13,7 @@ namespace Crynn
 
 	TextureViewer::~TextureViewer() {}
 
-	void TextureViewer::EndDraw()
+	void TextureViewer::EndGUIDraw()
 	{
 		//Add the render texture to the draw list to display it.
 		ImGui::GetWindowDrawList()->AddImage(
@@ -28,7 +28,7 @@ namespace Crynn
 		ImGui::End();
 	}
 
-	void TextureViewer::BeginDraw()
+	void TextureViewer::BeginGUIDraw()
 	{
 		glEnable(GL_DEPTH_TEST);
 
@@ -89,7 +89,7 @@ namespace Crynn
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
-	void TextureViewer::Draw()
+	void TextureViewer::GUIDraw()
 	{
 		//Update Model Matrix
 		transformMatrix = glm::mat4(1.0f);

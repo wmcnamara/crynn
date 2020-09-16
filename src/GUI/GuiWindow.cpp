@@ -8,13 +8,20 @@ namespace Crynn
 	{
 		glGenFramebuffers(1, &FBO);
 		glGenTextures(1, &m_renderTexture);
+		SubscribeEvents();
 	}
 
+	GuiWindow::~GuiWindow()
+	{
+		UnsubscribeEvents();
+		glDeleteFramebuffers(1, &FBO);
+		glDeleteTextures(1, &m_renderTexture);
+	}
 	void GuiWindow::Run()
 	{
-		BeginDraw();
-		Draw();
-		EndDraw();
+		BeginGUIDraw();
+		GUIDraw();
+		EndGUIDraw();
 	}
 
 	const float GuiWindow::WindowAspectRatio()
@@ -47,9 +54,5 @@ namespace Crynn
 		return m_renderTexture;
 	}
 
-	GuiWindow::~GuiWindow()
-	{
-		glDeleteFramebuffers(1, &FBO);
-		glDeleteTextures(1, &m_renderTexture);
-	}
+	
 }

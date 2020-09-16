@@ -25,7 +25,7 @@
 #include "Core/Input.h"
 #include "Core/MeshRenderer.h"
 #include "Core/Shader.h"
-#include "Core/Behaviour.h"
+#include "Core/EventListener.h"
 #include "Core/Application.h"
 #include "Core/Transform.h"
 
@@ -37,6 +37,8 @@
 #include "GUI/MatrixEditor.h"
 
 #include <memory>
+#include <future>
+#include <mutex>
 
 using namespace glm;
 using namespace Crynn;

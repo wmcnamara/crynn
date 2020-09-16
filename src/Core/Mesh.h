@@ -2,7 +2,7 @@
 #include "glad/glad.h"
 #include "glm/glm.hpp"
 #include "Utility/Debug.h"
-
+#include "Utility/Timer.h"
 namespace Crynn 
 {
 	class Mesh

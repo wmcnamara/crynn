@@ -1,19 +1,19 @@
 #pragma once
+#include "Utility/Debug.h"
+#include <Utility/Timer.h>
 #include "Application.h"
+#include <assert.h>
 
 namespace Crynn 
 {
 	/// <summary>
 	/// Allows interfacing with the Crynn event system.
 	/// Inherit from this class, and override any function you may need.
+	/// Call Subscribe() to subscribe overridden functions to the Crynn event system.
 	/// </summary>
-	class Behaviour
+	class EventListener
 	{
 	protected:		
-		//This is why this class must be inherited from.
-		Behaviour(); ///Automatically subscribes events to the event system.
-		~Behaviour(); ///Unsubscribes the events
-
 		/// <summary>
 		/// Called once every frame.
 		/// </summary>
@@ -29,12 +29,21 @@ namespace Crynn
 		virtual void BeforeUpdate(double deltaTime) {}
 		virtual void BeforeClose() {} ///Called before quitting to desktop with Application::Instance().Quit();
 
+		///Subscribes the events in this class to the Crynn event system. Call at the end of your constructor.
+		void SubscribeEvents();
+		///Unsubscribes the events in this class from the Crynn event system. Call at the start of your destructor.
+		void UnsubscribeEvents();
+
+		///Returns true if this instance's events are subscribed to the event system.
+		bool IsSubscribed();
 	private:
 		//Used to remove handlers when this object is destructed.
 		int updateHandlerID; 
 		int startHandlerID;
 		int beforeUpdateHandlerID;
 		int beforeCloseHandlerID;
+
+		bool subscribed = false;
 	};
 }
 

@@ -17,9 +17,9 @@ namespace Crynn
 
 		Event<File::GetFileArgs> onNewTexLoad; //Called when user loads a new file.
 
-		void BeginDraw() override;
-		void EndDraw() override;
-		void Draw() override;
+		void BeginGUIDraw() override;
+		void EndGUIDraw() override;
+		void GUIDraw() override;
 	private:
 		float m_vertices[180] = {
 	-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,

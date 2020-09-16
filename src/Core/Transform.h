@@ -16,7 +16,6 @@ namespace Crynn
 	{
 	public:
 		Transform() = default;
-		Transform(const Transform& other);
 
 		void Translate(glm::vec3 translation);
 		void Scale(glm::vec3 scale);
@@ -30,6 +29,10 @@ namespace Crynn
 
 		static void SetScale(float x, float y, float z, glm::mat4& matrix);
 		static void SetScale(glm::vec3 scale, glm::mat4& matrix);
+
+		static void SetRotation(float angle, float x, float y, float z, glm::mat4& matrix);
+		static void SetRotation(float angle, glm::vec3 rotation, glm::mat4& matrix);
+
 		//TODO
 		void AddChild();
 		void ClearChild(); //Stops inheriting from the object set by InheritFrom()

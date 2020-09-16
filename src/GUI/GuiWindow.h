@@ -6,7 +6,7 @@
 
 #include "Core/Window.h"
 #include "Core/Event.h"
-#include "Core/Behaviour.h"
+#include "Core/EventListener.h"
 
 namespace Crynn
 {
@@ -14,7 +14,7 @@ namespace Crynn
 	/// Base class for any onscreen GUI window.
 	/// Uses IMGUI and Crynn events for rendering.
 	/// </summary>
-	class GuiWindow : protected Behaviour
+	class GuiWindow : protected EventListener
 	{
 	public:
 		/// <summary>
@@ -26,17 +26,17 @@ namespace Crynn
 		GuiWindow(ImVec2 size, ImVec2 pos, const char* name);
 		~GuiWindow();
 
-		virtual void BeginDraw() = 0;		
-		virtual void Draw() = 0;
-		virtual void EndDraw() = 0;
+		virtual void BeginGUIDraw() = 0;
+		virtual void GUIDraw() = 0;
+		virtual void EndGUIDraw() = 0;
 
 		void Update(double deltaTime) override;
 
-		const ImVec2 WindowSize(); //Returns the size of the window.
-		const ImVec2 FrameBufferSize(); //Returns the framebuffer size of the window.
+		const ImVec2 WindowSize(); ///Returns the size of the window.
+		const ImVec2 FrameBufferSize(); ///Returns the framebuffer size of the window.
 
-		const float WindowAspectRatio(); //Returns (width/height) of the window.
-		const float FrameBufferAspectRatio(); //Returns (width/height) of the window framebuffer.	
+		const float WindowAspectRatio(); ///Returns (width/height) of the window.
+		const float FrameBufferAspectRatio(); ///Returns (width/height) of the window framebuffer.	
 
 		const unsigned int& GetRenderTexture();
 	protected:

@@ -3,7 +3,7 @@
 
 #include <functional>
 #include <map>
-
+#include "Utility/Timer.h"
 /*
 //Weston McNamara 2020
 //Licensed Under MIT https://mit-license.org/

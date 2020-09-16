@@ -96,7 +96,9 @@ namespace Crynn
 
 	//Processes input, runs glClear and creates an IMGUI frame.
 	void Window::BeforeRender()
-	{
+	{		
+		glfwPollEvents();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -110,7 +112,6 @@ namespace Crynn
 		glViewport(0, 0, m_screenSize.x, m_screenSize.y); //Set the default viewport.
 
 		//Setup polling, new frames and clear buffers
-		glfwPollEvents();
 	}
 
 	//Called after rendering code. Ends IMGUI frames, swaps buffers, and polls events.

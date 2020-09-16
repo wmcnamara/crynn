@@ -32,6 +32,8 @@ namespace Crynn
 		transformMatrix[3][1] = y;
 		transformMatrix[3][2] = z;
 	}
+
+	//Static functions
 	void Transform::SetPosition(float x, float y, float z, glm::mat4& matrix)
 	{
 		//3rd colum, 1st second and 3rd row.
@@ -62,5 +64,18 @@ namespace Crynn
 		matrix[0][0] = scale.x;
 		matrix[1][1] = scale.y;
 		matrix[2][2] = scale.z;
+	}
+
+	void Transform::SetRotation(float angle, float x, float y, float z, glm::mat4& matrix)
+	{
+		float a = angle;
+		float c = cos(angle);
+		float s = sin(angle);
+
+		
+	}
+	void Transform::SetRotation(float angle, glm::vec3 rotation, glm::mat4& matrix)
+	{
+
 	}
 }

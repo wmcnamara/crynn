@@ -16,7 +16,7 @@ namespace Crynn
 		static void Log(const char* msg); ///Writes msg to std::cout.
 
 		static void LogToFile(const char* msg); /// Logs to output.log in the working directory. This function is not fast.
-		static void logToFile(const std::stringstream& msg); /// Logs to output.log in the working directory. This function is not fast.
+		static void LogToFile(const std::stringstream& msg); /// Logs to output.log in the working directory. This function is not fast.
 
 		static void LogGLErr(); /// Logs glGetError to std::cout and output.log
 		static void ClearOutputLogs(); /// Clears output.log

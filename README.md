@@ -9,20 +9,23 @@ Game Engine Created In C++17 and OpenGL
   
 ## Dependencies
 Crynn relies on a multitude of dependencies. They are listed here:
- 
-### Crynn Depends On:	
-- <a href="https://www.glfw.org/">GLFW</a> for windowing, and input.
-- <a href="https://github.com/Dav1dde/glad">GLAD</a> for loading OpenGL functions.
-- <a href="https://github.com/ocornut/imgui">Dear IMGUI</a> for GUI.
-- <a href="https://glm.g-truc.net/0.9.8/index.html">GLM</a> for matrix and other graphics related mathematics.
-- <a href="https://github.com/nothings/stb">STB_IMAGE</a> for image loading.
 
-*As of now, Crynn does not use submodules for its dependencies. This will change, but as it stands you can find the dependency files in the lib/thirdparty folder.*
+### Crynn Depends On:	
+
+- [GLFW](https://www.glfw.org/) for windowing, and input.
+- [GLAD](https://github.com/Dav1dde/glad) for loading OpenGL functions.
+- [Dear IMGUI](https://github.com/ocornut/imguiDear) for GUI.
+- [GLM](https://glm.g-truc.net/0.9.8/index.html) for matrix and other graphics related mathematics.
+- [STB_IMAGE](https://github.com/nothings/stb) for image loading.
+- [STB_PERLIN](https://github.com/nothings/stb) for perlin noise generation.
+
+*As of now, Crynn does not use submodules for all of its dependencies. This will change, but as it stands you can find the dependency files in the lib/thirdparty folder.*
 
 # Getting Started:
 ## Downloading Crynn:
 To get started, you will need a copy of the Crynn source. If you have Git installed, you can download Crynn by running this command in the console:
-`git clone https://github.com/wmcnamara/crynn.git`
+`git clone https://github.com/wmcnamara/crynn.git --recursive`
+Make sure you use a recursive clone, to fetch all submodules.
 
 ## Building Crynn:
 To manage the build process, Crynn uses <a href="https://premake.github.io/">Premake</a>. Premake does not need to be installed to use it. 

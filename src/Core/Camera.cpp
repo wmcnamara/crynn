@@ -13,21 +13,18 @@ namespace Crynn
 
 		// Set camera matrix ubo to bind point 0
 		glBindBufferRange(GL_UNIFORM_BUFFER, 0, m_matrixUBO, 0, 2 * sizeof(glm::mat4));
+		SubscribeEvents();
 	}
 
 	Camera::~Camera()
 	{
+		UnsubscribeEvents();
 	}
 
 	void Camera::BeforeUpdate(double deltaTime)
 	{		
 		UpdateProjectionData();
 		SetUniformData();
-	}
-
-	void Camera::InputCommands()
-	{
-
 	}
 
 	void Camera::SetUniformData()
