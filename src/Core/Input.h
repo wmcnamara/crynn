@@ -6,7 +6,7 @@ namespace Crynn
 {
 	/// <summary>
 	/// Simple input component that allows interfacing with the Crynn input system.
-	/// Inherit from this class and override InputCommands() to use.
+	/// Inherit from this class and override void InputCommands() to use.
 	/// </summary>
 	class Input
 	{

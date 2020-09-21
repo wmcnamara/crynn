@@ -13,7 +13,7 @@ namespace Crynn
 	class MatrixEditor final : public GuiWindow
 	{
 	public:
-		MatrixEditor(glm::mat4* matrix);
+		MatrixEditor(glm::mat4* matrix, const char* matrixname);
 	private:
 		glm::mat4* m_matrix;
 
@@ -22,5 +22,6 @@ namespace Crynn
 		void EndGUIDraw() override;
 
 		bool m_active = true;
+		const char* m_matrixname;
 	};
 }

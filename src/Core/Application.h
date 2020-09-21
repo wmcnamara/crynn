@@ -45,6 +45,9 @@ namespace Crynn
 		/// Raw GLFW window. Assigned by the Window class when constructed.
 		/// </summary>
 		GLFWwindow* glfwWindow;
+
+		///Returns the time elapsed since the application was launched.
+		double GetTime();
 	private:
 		//Used to get deltaTimes.
 		double currentFrameTime = 0;

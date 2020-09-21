@@ -24,4 +24,8 @@ namespace Crynn
 		glfwSetTime(0); //This is done to prevent long startup times from affecting the first frame deltaTime
 		OnStart.Invoke();
 	}
+	double Application::GetTime()
+	{
+		return glfwGetTime();
+	}
 }

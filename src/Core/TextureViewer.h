@@ -65,9 +65,9 @@ namespace Crynn
 	-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
 		};
 
-		Texture m_texture;
-		Shader m_shader = Shader("data/shaders/Standard.vert", "data/shaders/Standard.frag");
-		Mesh m_cube = Mesh(m_vertices, NULL, 180, 0, false);
-		MeshRenderer m_renderer = MeshRenderer(&m_cube, &m_texture, &m_shader, &transformMatrix);
+		Texture* m_texture;
+		Shader* m_shader = new Shader("data/shaders/Standard.vert", "data/shaders/Standard.frag");
+		Mesh* m_cube = new Mesh(m_vertices, NULL, 180, 0, false);
+		MeshRenderer* m_renderer = new MeshRenderer(m_cube, m_texture, m_shader, &transformMatrix);
 	};
 }

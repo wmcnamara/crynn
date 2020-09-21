@@ -22,6 +22,7 @@ namespace Crynn
 
 	void Texture::Load(const char* path)
 	{
+		ScopedTimer timer("Texture Load", TimeFormat::Milliseconds);
 		if (m_valid)
 			stbi_image_free(m_textureData); //Delete old stb image texture memory
 			glDeleteTextures(1, &m_textureID); //Delete old texture memory if one was previously loaded.

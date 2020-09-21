@@ -50,14 +50,14 @@ namespace Crynn
 		inline void RemoveHandler(int ID)
 		{
 			m_handlers.erase(ID);
-		}
+		}		
 
+	private:
 		inline void RemoveAllHandlers()
 		{
 			m_handlers.clear();
 		}
 
-	private:
 		std::map<int, Func_T> m_handlers;
 	};
 
@@ -107,4 +107,5 @@ namespace Crynn
 		std::map<int, Func_T> m_handlers;
 	};
 }
+
 #endif //DELEGATE_INCLUDE

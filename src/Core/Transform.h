@@ -1,8 +1,11 @@
 #pragma once
 #include "glm/glm.hpp"
 #include <glm/gtc/matrix_transform.hpp>
+#include <iostream>
 #include <memory>
 #include <vector>
+
+using namespace glm;
 
 namespace Crynn
 {
@@ -17,34 +20,30 @@ namespace Crynn
 	public:
 		Transform() = default;
 
-		void Translate(glm::vec3 translation);
-		void Scale(glm::vec3 scale);
-		void Rotate(float rotationInDegrees, glm::vec3 axis);
+		void Translate(vec3 translation);
+		void Scale(vec3 scale);
+		void Rotate(float rotationInDegrees, vec3 axis);
 
-		void SetPosition(glm::vec3 position);
+		void SetPosition(vec3 position);
 		void SetPosition(float x, float y, float z);
+		const vec3& GetPosition();
 
-		static void SetPosition(float x, float y, float z, glm::mat4& matrix);
-		static void SetPosition(glm::vec3 position, glm::mat4& matrix);
+		static void SetPosition(float x, float y, float z, mat4& matrix);
+		static void SetPosition(vec3 position, mat4& matrix);
+		
+		static void SetScale(float x, float y, float z, mat4& matrix);
+		static void SetScale(vec3 scale, mat4& matrix);
 
-		static void SetScale(float x, float y, float z, glm::mat4& matrix);
-		static void SetScale(glm::vec3 scale, glm::mat4& matrix);
+		static void SetRotation(float angle, float x, float y, float z, mat4& matrix);
+		static void SetRotation(float angle, vec3 rotation, mat4& matrix);
 
-		static void SetRotation(float angle, float x, float y, float z, glm::mat4& matrix);
-		static void SetRotation(float angle, glm::vec3 rotation, glm::mat4& matrix);
+		/// Prints the content of a 4x4 matrix to the console
+		static void LogMatrix4(const mat4& matrix);
 
-		//TODO
-		void AddChild();
-		void ClearChild(); //Stops inheriting from the object set by InheritFrom()
-
-		glm::mat4 transformMatrix = glm::mat4(1.0f);
-	protected:
+		mat4 transformMatrix = mat4(1.0f);
 	private:
-		//TODO
-		glm::vec3 m_position = glm::vec3(0, 0, 0);
-		glm::vec3 m_scale = glm::vec3(0, 0, 0);
-		glm::vec3 m_rotation = glm::vec3(0, 0, 0);
-
-		//You can use this to inherit matrix transformations from other objects.
+		vec3 m_position = vec3(0, 0, 0);
+		vec3 m_scale = vec3(0, 0, 0);
+		vec3 m_rotation = vec3(0, 0, 0);
 	};
 }

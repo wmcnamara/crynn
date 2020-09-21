@@ -8,12 +8,10 @@ namespace Crynn
 	{
 		glGenFramebuffers(1, &FBO);
 		glGenTextures(1, &m_renderTexture);
-		SubscribeEvents();
 	}
 
 	GuiWindow::~GuiWindow()
 	{
-		UnsubscribeEvents();
 		glDeleteFramebuffers(1, &FBO);
 		glDeleteTextures(1, &m_renderTexture);
 	}

@@ -2,10 +2,18 @@
 
 namespace Crynn
 {
+	EventListener::EventListener()
+	{
+		SubscribeEvents();
+	}
+
+	EventListener::~EventListener()
+	{
+		UnsubscribeEvents();
+	}
+
 	void EventListener::SubscribeEvents()
 	{		
-		ScopedTimer t("Subscribing", TimeFormat::Microseconds);
-
 		assert(!subscribed);
 
 		//TODO move away from lambdas, as they dont look very nice here.
@@ -32,7 +40,7 @@ namespace Crynn
 		Application::Instance().OnBeforeClose.RemoveHandler(beforeCloseHandlerID);
 
 		subscribed = false;
-		Debug::Log("Behaviour Events Unsubscribed...");
+		Debug::Log("Event Listener Unsubscribed");
 	}
 
 	bool EventListener::IsSubscribed()

@@ -7,7 +7,7 @@ namespace Crynn
 		//Subscribe to events
 		onNewTexLoad.AddHandler([this](File::GetFileArgs args)
 		{
-			m_texture.Load(args.filePath.c_str());
+			m_texture->Load(args.filePath.c_str());
 		});
 	}
 
@@ -98,6 +98,6 @@ namespace Crynn
 			(float)glfwGetTime() * glm::radians(50.0f),
 			glm::vec3(0.5f, 1.0f, 0.0f));
 
-		m_renderer.Render();
+		m_renderer->Render();
 	}
 }

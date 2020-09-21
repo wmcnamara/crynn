@@ -2,22 +2,22 @@
 
 namespace Crynn
 {
-	void Transform::Translate(glm::vec3 translation)
+	void Transform::Translate(vec3 translation)
 	{
-		transformMatrix = glm::translate(transformMatrix, translation);
+		transformMatrix = translate(transformMatrix, translation);
 	}
 
-	void Transform::Scale(glm::vec3 scale)
+	void Transform::Scale(vec3 scale)
 	{
 		transformMatrix = glm::scale(transformMatrix, scale);
 	}
 
-	void Transform::Rotate(float rotationInDegrees, glm::vec3 axis)
+	void Transform::Rotate(float rotationInDegrees, vec3 axis)
 	{
-		transformMatrix = glm::rotate(transformMatrix, glm::radians(rotationInDegrees), axis);
+		transformMatrix = rotate(transformMatrix, radians(rotationInDegrees), axis);
 	}
 
-	void Transform::SetPosition(glm::vec3 position)
+	void Transform::SetPosition(vec3 position)
 	{
 		//3rd colum, 1st second and 3rd row.
 		transformMatrix[3][0] = position.x;
@@ -33,8 +33,18 @@ namespace Crynn
 		transformMatrix[3][2] = z;
 	}
 
+	const vec3& Transform::GetPosition()
+	{
+		vec3 pos;
+		pos.x = transformMatrix[3][0];
+		pos.y = transformMatrix[3][1];
+		pos.z = transformMatrix[3][2];
+
+		return pos;
+	}
+
 	//Static functions
-	void Transform::SetPosition(float x, float y, float z, glm::mat4& matrix)
+	void Transform::SetPosition(float x, float y, float z, mat4& matrix)
 	{
 		//3rd colum, 1st second and 3rd row.
 		matrix[3][0] = x;
@@ -42,7 +52,7 @@ namespace Crynn
 		matrix[3][2] = z;
 	}
 
-	void Transform::SetPosition(glm::vec3 position, glm::mat4& matrix)
+	void Transform::SetPosition(vec3 position, mat4& matrix)
 	{
 		//3rd colum, 1st second and 3rd row.
 		matrix[3][0] = position.x;
@@ -50,7 +60,7 @@ namespace Crynn
 		matrix[3][2] = position.z;
 	}
 
-	void Transform::SetScale(float x, float y, float z, glm::mat4& matrix)
+	void Transform::SetScale(float x, float y, float z, mat4& matrix)
 	{
 		//3rd colum, 1st second and 3rd row.
 		matrix[0][0] = x;
@@ -58,7 +68,7 @@ namespace Crynn
 		matrix[2][2] = z;
 	}
 
-	void Transform::SetScale(glm::vec3 scale, glm::mat4& matrix)
+	void Transform::SetScale(vec3 scale, mat4& matrix)
 	{
 		//3rd colum, 1st second and 3rd row.
 		matrix[0][0] = scale.x;
@@ -66,16 +76,27 @@ namespace Crynn
 		matrix[2][2] = scale.z;
 	}
 
-	void Transform::SetRotation(float angle, float x, float y, float z, glm::mat4& matrix)
+	void Transform::SetRotation(float angle, float x, float y, float z, mat4& matrix)
 	{
-		float a = angle;
-		float c = cos(angle);
-		float s = sin(angle);
-
-		
+		//assert(0 && "Dont use Setrotation");
+		matrix = glm::rotate(mat4(1.0f), angle, vec3(x, y, z));	
 	}
-	void Transform::SetRotation(float angle, glm::vec3 rotation, glm::mat4& matrix)
-	{
 
+	void Transform::SetRotation(float angle, vec3 rotation, mat4& matrix)
+	{
+		//assert(0 && "Dont use Setrotation");
+		matrix = glm::rotate(mat4(1.0f), angle, rotation);
+	}
+
+	void Transform::LogMatrix4(const mat4& matrix)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; i < 4; i++)
+			{
+				std::cout << matrix[i][j];
+			}
+			std::cout << "\n";
+		}
 	}
 }

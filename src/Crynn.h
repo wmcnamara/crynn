@@ -29,6 +29,8 @@
 #include "Core/Application.h"
 #include "Core/Transform.h"
 
+#include "Core/Collision/AABB.h"
+
 #include "Utility/Debug.h"
 #include "Utility/File.h"
 #include "Utility/Timer.h"
@@ -39,6 +41,8 @@
 #include <memory>
 #include <future>
 #include <mutex>
+
+#define DATA_PATH "data/"
 
 using namespace glm;
 using namespace Crynn;

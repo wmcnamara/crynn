@@ -5,14 +5,14 @@ namespace Crynn
 	void Debug::Log(const std::stringstream& msg)
 	{
 #ifdef CRYNN_DEBUG
-		std::cout << msg.rdbuf() << '\n';
+		std::cout << std::fixed << msg.rdbuf() << '\n';
 #endif
 	}
 
 	void Debug::Log(const char* msg)
 	{
 #ifdef CRYNN_DEBUG
-		std::cout << msg << '\n';
+		std::cout << std::fixed << msg << '\n';
 #endif
 	}
 
