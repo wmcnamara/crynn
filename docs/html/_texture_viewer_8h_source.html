@@ -78,93 +78,95 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_texture_8h.html">Texture.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mesh_renderer_8h.html">MeshRenderer.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_debug_8h.html">Utility/Debug.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gui_window_8h.html">GUI/GuiWindow.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_crynn.html">Crynn</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_crynn_1_1_texture_viewer.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_crynn_1_1_texture_viewer.html">TextureViewer</a> : <span class="keyword">public</span> <a class="code" href="class_crynn_1_1_gui_window.html">GuiWindow</a>, <span class="keyword">public</span> <a class="code" href="class_crynn_1_1_transform.html">Transform</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_crynn_1_1_texture_viewer.html#a36e5716a51a3d55570162336d835f55b">TextureViewer</a>(ImVec2 size, ImVec2 pos);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="class_crynn_1_1_texture_viewer.html#a805f3e82f6f3b20ba5aad6083cf560aa">~TextureViewer</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_crynn_1_1_texture_viewer.html#a0504a3edc9506f3f00020bae5265f607">   17</a></span>&#160;        <a class="code" href="class_crynn_1_1_event.html">Event&lt;File::GetFileArgs&gt;</a> <a class="code" href="class_crynn_1_1_texture_viewer.html#a0504a3edc9506f3f00020bae5265f607">onNewTexLoad</a>; <span class="comment">//Called when user loads a new file.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_texture_viewer.html#a0ce77697246481481b3c6696d2f9117f">BeginDraw</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_texture_viewer.html#abc36397730d8a3fb8d25e6c6af67d130">EndDraw</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_texture_viewer.html#a70ba9dd8282f159d7b6483b4d5113834">Update</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">float</span> m_vertices[180] = {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_file_8h.html">Utility/File.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gui_window_8h.html">GUI/GuiWindow.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_crynn.html">Crynn</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_crynn_1_1_texture_viewer.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_crynn_1_1_texture_viewer.html">TextureViewer</a> : <span class="keyword">public</span> <a class="code" href="class_crynn_1_1_gui_window.html">GuiWindow</a>, <span class="keyword">public</span> <a class="code" href="class_crynn_1_1_transform.html">Transform</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="class_crynn_1_1_texture_viewer.html#a36e5716a51a3d55570162336d835f55b">TextureViewer</a>(ImVec2 size, ImVec2 pos);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="class_crynn_1_1_texture_viewer.html#a805f3e82f6f3b20ba5aad6083cf560aa">~TextureViewer</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_crynn_1_1_texture_viewer.html#a0504a3edc9506f3f00020bae5265f607">   18</a></span>&#160;        <a class="code" href="class_crynn_1_1_event.html">Event&lt;File::GetFileArgs&gt;</a> <a class="code" href="class_crynn_1_1_texture_viewer.html#a0504a3edc9506f3f00020bae5265f607">onNewTexLoad</a>; <span class="comment">//Called when user loads a new file.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_texture_viewer.html#ae31b2f51e6cf193c493097119fefcfda">BeginGUIDraw</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_texture_viewer.html#a5dded72a98a954dc1dd0563d7c8b853e">EndGUIDraw</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_crynn_1_1_texture_viewer.html#abed73d768c217512030c2abaa139adfd">GUIDraw</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">float</span> m_vertices[180] = {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        };</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="class_crynn_1_1_texture.html">Texture</a> m_texture;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_crynn_1_1_shader.html">Shader</a> m_shader = <a class="code" href="class_crynn_1_1_shader.html">Shader</a>(<span class="stringliteral">&quot;data/shaders/Standard.vert&quot;</span>, <span class="stringliteral">&quot;data/shaders/Standard.frag&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="class_crynn_1_1_mesh.html">Mesh</a> m_cube = <a class="code" href="class_crynn_1_1_mesh.html">Mesh</a>(m_vertices, NULL, 180, 0, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="class_crynn_1_1_mesh_renderer.html">MeshRenderer</a> m_renderer = <a class="code" href="class_crynn_1_1_mesh_renderer.html">MeshRenderer</a>(&amp;m_cube, &amp;m_texture, &amp;m_shader, &amp;<a class="code" href="class_crynn_1_1_transform.html#a284b6d48f773f06c6473b450f7a08174">transformMatrix</a>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    };</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        };</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_crynn_1_1_texture.html">Texture</a>* m_texture;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="class_crynn_1_1_shader.html">Shader</a>* m_shader = <span class="keyword">new</span> <a class="code" href="class_crynn_1_1_shader.html">Shader</a>(<span class="stringliteral">&quot;data/shaders/Standard.vert&quot;</span>, <span class="stringliteral">&quot;data/shaders/Standard.frag&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="class_crynn_1_1_mesh.html">Mesh</a>* m_cube = <span class="keyword">new</span> <a class="code" href="class_crynn_1_1_mesh.html">Mesh</a>(m_vertices, NULL, 180, 0, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="class_crynn_1_1_mesh_renderer.html">MeshRenderer</a>* m_renderer = <span class="keyword">new</span> <a class="code" href="class_crynn_1_1_mesh_renderer.html">MeshRenderer</a>(m_cube, m_texture, m_shader, &amp;<a class="code" href="class_crynn_1_1_transform.html#a8c21bfb5359aa4bc5c171c6e658e4084">transformMatrix</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    };</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_crynn_1_1_transform_html_a284b6d48f773f06c6473b450f7a08174"><div class="ttname"><a href="class_crynn_1_1_transform.html#a284b6d48f773f06c6473b450f7a08174">Crynn::Transform::transformMatrix</a></div><div class="ttdeci">glm::mat4 transformMatrix</div><div class="ttdef"><b>Definition:</b> Transform.h:33</div></div>
+<div class="ttc" id="a_file_8h_html"><div class="ttname"><a href="_file_8h.html">File.h</a></div></div>
 <div class="ttc" id="a_mesh_renderer_8h_html"><div class="ttname"><a href="_mesh_renderer_8h.html">MeshRenderer.h</a></div></div>
+<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_abed73d768c217512030c2abaa139adfd"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#abed73d768c217512030c2abaa139adfd">Crynn::TextureViewer::GUIDraw</a></div><div class="ttdeci">void GUIDraw() override</div><div class="ttdef"><b>Definition:</b> TextureViewer.cpp:92</div></div>
 <div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_a805f3e82f6f3b20ba5aad6083cf560aa"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#a805f3e82f6f3b20ba5aad6083cf560aa">Crynn::TextureViewer::~TextureViewer</a></div><div class="ttdeci">~TextureViewer()</div><div class="ttdef"><b>Definition:</b> TextureViewer.cpp:14</div></div>
 <div class="ttc" id="aclass_crynn_1_1_event_html"><div class="ttname"><a href="class_crynn_1_1_event.html">Crynn::Event</a></div><div class="ttdoc">Creates an event.</div><div class="ttdef"><b>Definition:</b> Event.h:23</div></div>
 <div class="ttc" id="a_debug_8h_html"><div class="ttname"><a href="_debug_8h.html">Debug.h</a></div></div>
-<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_a0ce77697246481481b3c6696d2f9117f"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#a0ce77697246481481b3c6696d2f9117f">Crynn::TextureViewer::BeginDraw</a></div><div class="ttdeci">void BeginDraw() override</div><div class="ttdef"><b>Definition:</b> TextureViewer.cpp:31</div></div>
 <div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_a36e5716a51a3d55570162336d835f55b"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#a36e5716a51a3d55570162336d835f55b">Crynn::TextureViewer::TextureViewer</a></div><div class="ttdeci">TextureViewer(ImVec2 size, ImVec2 pos)</div><div class="ttdef"><b>Definition:</b> TextureViewer.cpp:5</div></div>
 <div class="ttc" id="aclass_crynn_1_1_mesh_renderer_html"><div class="ttname"><a href="class_crynn_1_1_mesh_renderer.html">Crynn::MeshRenderer</a></div><div class="ttdoc">Renders a mesh with a shader and a texture.</div><div class="ttdef"><b>Definition:</b> MeshRenderer.h:15</div></div>
 <div class="ttc" id="a_gui_window_8h_html"><div class="ttname"><a href="_gui_window_8h.html">GuiWindow.h</a></div></div>
 <div class="ttc" id="aclass_crynn_1_1_texture_html"><div class="ttname"><a href="class_crynn_1_1_texture.html">Crynn::Texture</a></div><div class="ttdoc">2D texture class.</div><div class="ttdef"><b>Definition:</b> Texture.h:14</div></div>
 <div class="ttc" id="aclass_crynn_1_1_gui_window_html"><div class="ttname"><a href="class_crynn_1_1_gui_window.html">Crynn::GuiWindow</a></div><div class="ttdoc">Base class for any onscreen GUI window. Uses IMGUI and Crynn events for rendering.</div><div class="ttdef"><b>Definition:</b> GuiWindow.h:18</div></div>
-<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html">Crynn::TextureViewer</a></div><div class="ttdef"><b>Definition:</b> TextureViewer.h:12</div></div>
-<div class="ttc" id="aclass_crynn_1_1_transform_html"><div class="ttname"><a href="class_crynn_1_1_transform.html">Crynn::Transform</a></div><div class="ttdoc">Matrix representation with easy functions to transform it. This class is mostly intended to be inheri...</div><div class="ttdef"><b>Definition:</b> Transform.h:16</div></div>
+<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html">Crynn::TextureViewer</a></div><div class="ttdef"><b>Definition:</b> TextureViewer.h:13</div></div>
+<div class="ttc" id="aclass_crynn_1_1_transform_html"><div class="ttname"><a href="class_crynn_1_1_transform.html">Crynn::Transform</a></div><div class="ttdoc">Matrix representation with easy functions to transform it. This class is mostly intended to be inheri...</div><div class="ttdef"><b>Definition:</b> Transform.h:19</div></div>
 <div class="ttc" id="aclass_crynn_1_1_shader_html"><div class="ttname"><a href="class_crynn_1_1_shader.html">Crynn::Shader</a></div><div class="ttdef"><b>Definition:</b> Shader.h:17</div></div>
+<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_a5dded72a98a954dc1dd0563d7c8b853e"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#a5dded72a98a954dc1dd0563d7c8b853e">Crynn::TextureViewer::EndGUIDraw</a></div><div class="ttdeci">void EndGUIDraw() override</div><div class="ttdef"><b>Definition:</b> TextureViewer.cpp:16</div></div>
 <div class="ttc" id="a_event_8h_html"><div class="ttname"><a href="_event_8h.html">Event.h</a></div></div>
+<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_ae31b2f51e6cf193c493097119fefcfda"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#ae31b2f51e6cf193c493097119fefcfda">Crynn::TextureViewer::BeginGUIDraw</a></div><div class="ttdeci">void BeginGUIDraw() override</div><div class="ttdef"><b>Definition:</b> TextureViewer.cpp:31</div></div>
 <div class="ttc" id="a_mesh_8h_html"><div class="ttname"><a href="_mesh_8h.html">Mesh.h</a></div></div>
-<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_a70ba9dd8282f159d7b6483b4d5113834"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#a70ba9dd8282f159d7b6483b4d5113834">Crynn::TextureViewer::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> TextureViewer.cpp:92</div></div>
 <div class="ttc" id="a_texture_8h_html"><div class="ttname"><a href="_texture_8h.html">Texture.h</a></div></div>
-<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_abc36397730d8a3fb8d25e6c6af67d130"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#abc36397730d8a3fb8d25e6c6af67d130">Crynn::TextureViewer::EndDraw</a></div><div class="ttdeci">void EndDraw() override</div><div class="ttdef"><b>Definition:</b> TextureViewer.cpp:16</div></div>
-<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_a0504a3edc9506f3f00020bae5265f607"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#a0504a3edc9506f3f00020bae5265f607">Crynn::TextureViewer::onNewTexLoad</a></div><div class="ttdeci">Event&lt; File::GetFileArgs &gt; onNewTexLoad</div><div class="ttdef"><b>Definition:</b> TextureViewer.h:17</div></div>
+<div class="ttc" id="aclass_crynn_1_1_transform_html_a8c21bfb5359aa4bc5c171c6e658e4084"><div class="ttname"><a href="class_crynn_1_1_transform.html#a8c21bfb5359aa4bc5c171c6e658e4084">Crynn::Transform::transformMatrix</a></div><div class="ttdeci">mat4 transformMatrix</div><div class="ttdef"><b>Definition:</b> Transform.h:43</div></div>
+<div class="ttc" id="aclass_crynn_1_1_texture_viewer_html_a0504a3edc9506f3f00020bae5265f607"><div class="ttname"><a href="class_crynn_1_1_texture_viewer.html#a0504a3edc9506f3f00020bae5265f607">Crynn::TextureViewer::onNewTexLoad</a></div><div class="ttdeci">Event&lt; File::GetFileArgs &gt; onNewTexLoad</div><div class="ttdef"><b>Definition:</b> TextureViewer.h:18</div></div>
 <div class="ttc" id="anamespace_crynn_html"><div class="ttname"><a href="namespace_crynn.html">Crynn</a></div><div class="ttdoc">Main Engine Namespace</div><div class="ttdef"><b>Definition:</b> Application.cpp:3</div></div>
 <div class="ttc" id="aclass_crynn_1_1_mesh_html"><div class="ttname"><a href="class_crynn_1_1_mesh.html">Crynn::Mesh</a></div><div class="ttdef"><b>Definition:</b> Mesh.h:9</div></div>
 <!-- start footer part -->

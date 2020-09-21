@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['s_377',['S',['../class_crynn_1_1_input.html#aaa5969578ce759510b8824e18018dcada5dbc98dcc983a70728bd082d1a47546e',1,'Crynn::Input']]],
-  ['space_378',['SPACE',['../class_crynn_1_1_input.html#aaa5969578ce759510b8824e18018dcada6506ae39fdca9845e3a6de3865183e57',1,'Crynn::Input']]],
-  ['success_379',['Success',['../class_crynn_1_1_debug.html#a4732294b4056cb02e0e76e484fa30555aa4e358844a9b9d5c909bcd898e5efc5e',1,'Crynn::Debug']]]
+  ['s_409',['S',['../class_crynn_1_1_input.html#aaa5969578ce759510b8824e18018dcada5dbc98dcc983a70728bd082d1a47546e',1,'Crynn::Input']]],
+  ['seconds_410',['Seconds',['../namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99eea8f19a8c7566af54ea8981029730e5465',1,'Crynn']]],
+  ['space_411',['SPACE',['../class_crynn_1_1_input.html#aaa5969578ce759510b8824e18018dcada6506ae39fdca9845e3a6de3865183e57',1,'Crynn::Input']]]
 ];

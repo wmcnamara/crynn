@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['beforeclose_249',['BeforeClose',['../class_crynn_1_1_behaviour.html#a5aa858239c27461924eefbe81a81327d',1,'Crynn::Behaviour']]],
-  ['beforerender_250',['BeforeRender',['../class_crynn_1_1_window.html#a2b7faa1f50588b39b782a8f8c9b649eb',1,'Crynn::Window']]],
-  ['beforeupdate_251',['BeforeUpdate',['../class_crynn_1_1_behaviour.html#a15d304086c35926e97d36f249ec7c200',1,'Crynn::Behaviour']]],
-  ['begindraw_252',['BeginDraw',['../class_crynn_1_1_texture_viewer.html#a0ce77697246481481b3c6696d2f9117f',1,'Crynn::TextureViewer::BeginDraw()'],['../class_crynn_1_1_gui_window.html#a969ce93ccc0e93f3584c0dd7fc6834a6',1,'Crynn::GuiWindow::BeginDraw()']]],
-  ['behaviour_253',['Behaviour',['../class_crynn_1_1_behaviour.html#a335b2a8c784b109b1600aae410abee17',1,'Crynn::Behaviour']]]
+  ['beforeclose_270',['BeforeClose',['../class_crynn_1_1_event_listener.html#ac5cd8f918b66bddd6d5584db3e5e9d91',1,'Crynn::EventListener']]],
+  ['beforerender_271',['BeforeRender',['../class_crynn_1_1_window.html#a2b7faa1f50588b39b782a8f8c9b649eb',1,'Crynn::Window']]],
+  ['beforeupdate_272',['BeforeUpdate',['../class_crynn_1_1_event_listener.html#a897dd0f3e7fa96a521b8e0142306cb63',1,'Crynn::EventListener']]],
+  ['beginguidraw_273',['BeginGUIDraw',['../class_crynn_1_1_texture_viewer.html#ae31b2f51e6cf193c493097119fefcfda',1,'Crynn::TextureViewer::BeginGUIDraw()'],['../class_crynn_1_1_gui_window.html#a94f68bcc3cf7437e918abb90d7626c6a',1,'Crynn::GuiWindow::BeginGUIDraw()']]]
 ];

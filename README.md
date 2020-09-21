@@ -37,7 +37,7 @@ To manage the build process, Crynn uses <a href="https://premake.github.io/">Pre
 - Example: `./premake5 vs2019` for Visual Studio 2019 project files
 - Example: `./premake5 vs2017` for Visual Studio 2017 project files
 
-To know more about Premake, and how to generate project files for your IDE please visit Premake's, <a href="https://github.com/premake/premake-core/wiki/Using-Premake">"Using Premake"</a> section.
+To know more about Premake, and how to generate project files for your IDE please visit Premake's, <a href="https://github.com/premake/premake-core/wiki/Using-Premake">"Using Premake"</a> article
 
 ## Using Crynn:
 Lets try programming with Crynn! Crynn does not use any sort of standalone editor, so any object creation you do is done programmatically. Keep this in mind when you use Crynn.

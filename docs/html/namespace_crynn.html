@@ -78,11 +78,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_crynn_1_1_a_a_b_b.html">AABB</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an aligned axis bounding box.  <a href="struct_crynn_1_1_a_a_b_b.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_a_a_b_b_solver.html">AABBSolver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides functions for testing collisions with <a class="el" href="struct_crynn_1_1_a_a_b_b.html" title="Represents an aligned axis bounding box.">AABB</a>'s  <a href="class_crynn_1_1_a_a_b_b_solver.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_application.html">Application</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A singleton representation of the application. Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components.  <a href="class_crynn_1_1_application.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html">Behaviour</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows interfacing with the <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> event system. Inherit from this class, and override any function you may need.  <a href="class_crynn_1_1_behaviour.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_camera.html">Camera</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a camera that can render objects. This class creates a Uniform Buffer Object you can use to get projection and view matrix data. This UBO will always be at binding point 0, and the block should always be called "CameraMatrices" in the shader.  <a href="class_crynn_1_1_camera.html#details">More...</a><br /></td></tr>
@@ -96,6 +99,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_event_3_01void_01_4.html">Event&lt; void &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an event that takes no parameters  <a href="class_crynn_1_1_event_3_01void_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_event_listener.html">EventListener</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows interfacing with the <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> event system. Inherit from this class, and override any function you may need. Call Subscribe() to subscribe overridden functions to the <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> event system.  <a href="class_crynn_1_1_event_listener.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_file.html">File</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_crynn_1_1_file.html" title="File related functions to allow user to open files.">File</a> related functions to allow user to open files.  <a href="class_crynn_1_1_file.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,7 +109,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for any onscreen GUI window. Uses IMGUI and <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> events for rendering.  <a href="class_crynn_1_1_gui_window.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_input.html">Input</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple input component that allows interfacing with the <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> input system. Inherit from this class and override <a class="el" href="class_crynn_1_1_input.html#ad049c8702b2f09bcaef6c69178910998" title="Called every frame when polling events. Override this and add code that checks input.">InputCommands()</a> to use.  <a href="class_crynn_1_1_input.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple input component that allows interfacing with the <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> input system. Inherit from this class and override void <a class="el" href="class_crynn_1_1_input.html#ad049c8702b2f09bcaef6c69178910998" title="Called every frame when polling events. Override this and add code that checks input.">InputCommands()</a> to use.  <a href="class_crynn_1_1_input.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_matrix_editor.html">MatrixEditor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows GUI editing of any matrix after runtime. Useful for debugging.  <a href="class_crynn_1_1_matrix_editor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_mesh.html">Mesh</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,7 +120,6 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a mesh with a shader and a texture.  <a href="class_crynn_1_1_mesh_renderer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_scoped_timer.html">ScopedTimer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple timer that counts the miliseconds from instantiation to when it goes out of scope. Used to time how long functions take.  <a href="class_crynn_1_1_scoped_timer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_shader.html">Shader</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,6 +142,13 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:add78edfd0b31f7d94ca71c24a7e0702b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projection type.  <a href="namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b">More...</a><br /></td></tr>
 <tr class="separator:add78edfd0b31f7d94ca71c24a7e0702b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a9555343e99f1048c8f6b38a5ab99ee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99ee">TimeFormat</a> { <a class="el" href="namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99eea8f19a8c7566af54ea8981029730e5465">TimeFormat::Seconds</a>, 
+<a class="el" href="namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99eea38f246763036ccaeba7db6d563c4d821">TimeFormat::Milliseconds</a>, 
+<a class="el" href="namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99eea64068ed47d979c5efa036f027d656433">TimeFormat::Microseconds</a>, 
+<a class="el" href="namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99eeafba00bdab687ce01136a86bac8bac578">TimeFormat::Nanoseconds</a>
+ }</td></tr>
+<tr class="memdesc:a5a9555343e99f1048c8f6b38a5ab99ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple timer that counts the time from instantiation to when it goes out of scope. Used to time how long functions take.  <a href="namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99ee">More...</a><br /></td></tr>
+<tr class="separator:a5a9555343e99f1048c8f6b38a5ab99ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -169,6 +184,37 @@ Functions</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="add78edfd0b31f7d94ca71c24a7e0702ba03424250432f2aa71de95579d2c0eaeb"></a>Orthographic&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="add78edfd0b31f7d94ca71c24a7e0702baa80420eef88d11f77532f1b9cb467fa3"></a>Perspective&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a5a9555343e99f1048c8f6b38a5ab99ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a9555343e99f1048c8f6b38a5ab99ee">&#9670;&nbsp;</a></span>TimeFormat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99ee">Crynn::TimeFormat</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Simple timer that counts the time from instantiation to when it goes out of scope. Used to time how long functions take. </p>
+<p>The time format you would like to see the delta displayed in.</p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5a9555343e99f1048c8f6b38a5ab99eea8f19a8c7566af54ea8981029730e5465"></a>Seconds&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5a9555343e99f1048c8f6b38a5ab99eea38f246763036ccaeba7db6d563c4d821"></a>Milliseconds&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5a9555343e99f1048c8f6b38a5ab99eea64068ed47d979c5efa036f027d656433"></a>Microseconds&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5a9555343e99f1048c8f6b38a5ab99eeafba00bdab687ce01136a86bac8bac578"></a>Nanoseconds&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

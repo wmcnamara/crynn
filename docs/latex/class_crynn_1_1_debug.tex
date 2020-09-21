@@ -9,64 +9,26 @@ Collection of functions to assist with debugging.
 
 {\ttfamily \#include $<$Debug.\+h$>$}
 
-\doxysubsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-enum \mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555}{Msg\+Type}} \{ \mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555ac8ccea3dc9f530a9e5827aaef5a9becb}{Error}}, 
-\mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555a2b36b9b96135011d3d3ead4e3e982ad0}{Warning}}, 
-\mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555ad9432b62ba29a9382b59259d041e735b}{Message}}, 
-\mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555aa4e358844a9b9d5c909bcd898e5efc5e}{Success}}
- \}
-\begin{DoxyCompactList}\small\item\em Changes the appearance of your message in the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{class_crynn_1_1_debug_a824e731483dec995a48e8f169234577b}{Log}} (const std\+::stringstream \&msg, \mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555}{Msg\+Type}} msg\+Type)
-\item 
-static void \mbox{\hyperlink{class_crynn_1_1_debug_af557dbbb4f5e69d70e8c26afea11a0c0}{Log}} (const char $\ast$msg, \mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555}{Msg\+Type}} msg\+Type)
+static void \mbox{\hyperlink{class_crynn_1_1_debug_a8a23c3d9b1886ed49ba2e853ae9adf17}{Log}} (const std\+::stringstream \&msg)
 \item 
 static void \mbox{\hyperlink{class_crynn_1_1_debug_a540ceaaceedda89c75f4c3b69c932963}{Log}} (const char $\ast$msg)
-\item 
+\begin{DoxyCompactList}\small\item\em Writes msg to std\+::cout. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crynn_1_1_debug_a6d52881d36d2e566d0b0b9447c832ca2}{Log\+To\+File}} (const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Writes msg to std\+::cout. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crynn_1_1_debug_ac625824dc1ade42ca14896d5fb643079}{Log\+To\+File}} (const std\+::stringstream \&msg)
+\begin{DoxyCompactList}\small\item\em Logs to output.\+log in the working directory. This function is not fast. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_crynn_1_1_debug_a4914b566ec6dc0490f64218b1cff6546}{Log\+G\+L\+Err}} ()
-\begin{DoxyCompactList}\small\item\em Logs gl\+Get\+Error to std\+::cout and output.\+log \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Logs to output.\+log in the working directory. This function is not fast. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_crynn_1_1_debug_af08c2f5ed0195e31d4ec995e1fa6909f}{Clear\+Output\+Logs}} ()
-\begin{DoxyCompactList}\small\item\em Clears output.\+log \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Logs gl\+Get\+Error to std\+::cout and output.\+log. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Collection of functions to assist with debugging. 
 
-
-
-\doxysubsection{Member Enumeration Documentation}
-\mbox{\Hypertarget{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555}\label{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555}} 
-\index{Crynn::Debug@{Crynn::Debug}!MsgType@{MsgType}}
-\index{MsgType@{MsgType}!Crynn::Debug@{Crynn::Debug}}
-\doxysubsubsection{\texorpdfstring{MsgType}{MsgType}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555}{Crynn\+::\+Debug\+::\+Msg\+Type}}}
-
-
-
-Changes the appearance of your message in the console. 
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!Crynn::Debug@{Crynn::Debug}}\index{Crynn::Debug@{Crynn::Debug}!Error@{Error}}}\mbox{\Hypertarget{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555ac8ccea3dc9f530a9e5827aaef5a9becb}\label{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555ac8ccea3dc9f530a9e5827aaef5a9becb}} 
-Error&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Warning@{Warning}!Crynn::Debug@{Crynn::Debug}}\index{Crynn::Debug@{Crynn::Debug}!Warning@{Warning}}}\mbox{\Hypertarget{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555a2b36b9b96135011d3d3ead4e3e982ad0}\label{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555a2b36b9b96135011d3d3ead4e3e982ad0}} 
-Warning&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Message@{Message}!Crynn::Debug@{Crynn::Debug}}\index{Crynn::Debug@{Crynn::Debug}!Message@{Message}}}\mbox{\Hypertarget{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555ad9432b62ba29a9382b59259d041e735b}\label{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555ad9432b62ba29a9382b59259d041e735b}} 
-Message&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Success@{Success}!Crynn::Debug@{Crynn::Debug}}\index{Crynn::Debug@{Crynn::Debug}!Success@{Success}}}\mbox{\Hypertarget{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555aa4e358844a9b9d5c909bcd898e5efc5e}\label{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555aa4e358844a9b9d5c909bcd898e5efc5e}} 
-Success&\\
-\hline
-
-\end{DoxyEnumFields}
 
 
 \doxysubsection{Member Function Documentation}
@@ -78,25 +40,23 @@ Success&\\
 
 
 
-Clears output.\+log 
+Logs gl\+Get\+Error to std\+::cout and output.\+log. 
 
 \mbox{\Hypertarget{class_crynn_1_1_debug_a540ceaaceedda89c75f4c3b69c932963}\label{class_crynn_1_1_debug_a540ceaaceedda89c75f4c3b69c932963}} 
 \index{Crynn::Debug@{Crynn::Debug}!Log@{Log}}
 \index{Log@{Log}!Crynn::Debug@{Crynn::Debug}}
-\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Crynn\+::\+Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{class_crynn_1_1_debug_af557dbbb4f5e69d70e8c26afea11a0c0}\label{class_crynn_1_1_debug_af557dbbb4f5e69d70e8c26afea11a0c0}} 
-\index{Crynn::Debug@{Crynn::Debug}!Log@{Log}}
-\index{Log@{Log}!Crynn::Debug@{Crynn::Debug}}
-\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily void Crynn\+::\+Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg,  }\item[{\mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555}{Msg\+Type}}}]{msg\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{class_crynn_1_1_debug_a824e731483dec995a48e8f169234577b}\label{class_crynn_1_1_debug_a824e731483dec995a48e8f169234577b}} 
+
+Writes msg to std\+::cout. 
+
+\mbox{\Hypertarget{class_crynn_1_1_debug_a8a23c3d9b1886ed49ba2e853ae9adf17}\label{class_crynn_1_1_debug_a8a23c3d9b1886ed49ba2e853ae9adf17}} 
 \index{Crynn::Debug@{Crynn::Debug}!Log@{Log}}
 \index{Log@{Log}!Crynn::Debug@{Crynn::Debug}}
-\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily void Crynn\+::\+Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const std\+::stringstream \&}]{msg,  }\item[{\mbox{\hyperlink{class_crynn_1_1_debug_a4732294b4056cb02e0e76e484fa30555}{Msg\+Type}}}]{msg\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Crynn\+::\+Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const std\+::stringstream \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{class_crynn_1_1_debug_a4914b566ec6dc0490f64218b1cff6546}\label{class_crynn_1_1_debug_a4914b566ec6dc0490f64218b1cff6546}} 
 \index{Crynn::Debug@{Crynn::Debug}!LogGLErr@{LogGLErr}}
@@ -106,7 +66,27 @@ Clears output.\+log
 
 
 
-Logs gl\+Get\+Error to std\+::cout and output.\+log 
+Logs to output.\+log in the working directory. This function is not fast. 
+
+\mbox{\Hypertarget{class_crynn_1_1_debug_a6d52881d36d2e566d0b0b9447c832ca2}\label{class_crynn_1_1_debug_a6d52881d36d2e566d0b0b9447c832ca2}} 
+\index{Crynn::Debug@{Crynn::Debug}!LogToFile@{LogToFile}}
+\index{LogToFile@{LogToFile}!Crynn::Debug@{Crynn::Debug}}
+\doxysubsubsection{\texorpdfstring{LogToFile()}{LogToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Crynn\+::\+Debug\+::\+Log\+To\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes msg to std\+::cout. 
+
+\mbox{\Hypertarget{class_crynn_1_1_debug_ac625824dc1ade42ca14896d5fb643079}\label{class_crynn_1_1_debug_ac625824dc1ade42ca14896d5fb643079}} 
+\index{Crynn::Debug@{Crynn::Debug}!LogToFile@{LogToFile}}
+\index{LogToFile@{LogToFile}!Crynn::Debug@{Crynn::Debug}}
+\doxysubsubsection{\texorpdfstring{LogToFile()}{LogToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Crynn\+::\+Debug\+::\+Log\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::stringstream \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs to output.\+log in the working directory. This function is not fast. 
 
 
 

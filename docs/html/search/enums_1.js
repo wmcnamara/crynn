@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['msgtype_353',['MsgType',['../class_crynn_1_1_debug.html#a4732294b4056cb02e0e76e484fa30555',1,'Crynn::Debug']]]
+  ['projection_384',['Projection',['../namespace_crynn.html#add78edfd0b31f7d94ca71c24a7e0702b',1,'Crynn']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['camera_191',['Camera',['../class_crynn_1_1_camera.html',1,'Crynn']]]
+  ['debug_208',['Debug',['../class_crynn_1_1_debug.html',1,'Crynn']]]
 ];

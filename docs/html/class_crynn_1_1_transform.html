@@ -70,7 +70,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_crynn_1_1_transform-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Crynn::Transform Class Reference</div>  </div>
@@ -96,33 +97,47 @@ Inheritance diagram for Crynn::Transform:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1826421a52fb70c75ef780075b7aee46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a1826421a52fb70c75ef780075b7aee46">Transform</a> ()=default</td></tr>
 <tr class="separator:a1826421a52fb70c75ef780075b7aee46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40749912fbfda4ca3b857c96094b9312"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a40749912fbfda4ca3b857c96094b9312">Transform</a> (const <a class="el" href="class_crynn_1_1_transform.html">Transform</a> &amp;other)</td></tr>
-<tr class="separator:a40749912fbfda4ca3b857c96094b9312"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8e4324ad30a95f6a6d65256ffd5308b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#ad8e4324ad30a95f6a6d65256ffd5308b">Translate</a> (glm::vec3 translation)</td></tr>
-<tr class="separator:ad8e4324ad30a95f6a6d65256ffd5308b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4669335e7033f1691b89a3fa869c1d99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a4669335e7033f1691b89a3fa869c1d99">Scale</a> (glm::vec3 scale)</td></tr>
-<tr class="separator:a4669335e7033f1691b89a3fa869c1d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2461d8ffdbcb30fb75678f78196ba663"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a2461d8ffdbcb30fb75678f78196ba663">Rotate</a> (float rotationInDegrees, glm::vec3 axis)</td></tr>
-<tr class="separator:a2461d8ffdbcb30fb75678f78196ba663"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a970b9395777b00f5f166997d590d98ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a970b9395777b00f5f166997d590d98ef">SetPosition</a> (glm::vec3 position)</td></tr>
-<tr class="separator:a970b9395777b00f5f166997d590d98ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ec941f0af73ea08f2f526d0a5c2cc7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a6ec941f0af73ea08f2f526d0a5c2cc7a">Translate</a> (vec3 translation)</td></tr>
+<tr class="separator:a6ec941f0af73ea08f2f526d0a5c2cc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07923b32504a708a2d34ee1af313c225"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a07923b32504a708a2d34ee1af313c225">Scale</a> (vec3 scale)</td></tr>
+<tr class="separator:a07923b32504a708a2d34ee1af313c225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a304b7258f5c69053c95958874f7f91ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a304b7258f5c69053c95958874f7f91ac">Rotate</a> (float rotationInDegrees, vec3 axis)</td></tr>
+<tr class="separator:a304b7258f5c69053c95958874f7f91ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046157b9e044d4ba0978fa8d03073dc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a046157b9e044d4ba0978fa8d03073dc2">SetPosition</a> (vec3 position)</td></tr>
+<tr class="separator:a046157b9e044d4ba0978fa8d03073dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f077c04f6c88b766e859c09ec3cb839"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a0f077c04f6c88b766e859c09ec3cb839">SetPosition</a> (float x, float y, float z)</td></tr>
 <tr class="separator:a0f077c04f6c88b766e859c09ec3cb839"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1955f627399f483891f695c037d3ef84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a1955f627399f483891f695c037d3ef84">AddChild</a> ()</td></tr>
-<tr class="separator:a1955f627399f483891f695c037d3ef84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a382de92ee8838397e84d88a08f258001"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a382de92ee8838397e84d88a08f258001">ClearChild</a> ()</td></tr>
-<tr class="separator:a382de92ee8838397e84d88a08f258001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93db4f9d530826a63fb47e7a8162bbed"><td class="memItemLeft" align="right" valign="top">const vec3 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a93db4f9d530826a63fb47e7a8162bbed">GetPosition</a> ()</td></tr>
+<tr class="separator:a93db4f9d530826a63fb47e7a8162bbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a284b6d48f773f06c6473b450f7a08174"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a284b6d48f773f06c6473b450f7a08174">transformMatrix</a> = glm::mat4(1.0f)</td></tr>
-<tr class="separator:a284b6d48f773f06c6473b450f7a08174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab9b666299d197faaafcd33dc5602ef22"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#ab9b666299d197faaafcd33dc5602ef22">SetPosition</a> (float x, float y, float z, mat4 &amp;matrix)</td></tr>
+<tr class="separator:ab9b666299d197faaafcd33dc5602ef22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcdefbba01bad525af6d7b857f9f70ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#abcdefbba01bad525af6d7b857f9f70ba">SetPosition</a> (vec3 position, mat4 &amp;matrix)</td></tr>
+<tr class="separator:abcdefbba01bad525af6d7b857f9f70ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac512126895485d9eacb7a2a1b8c99611"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#ac512126895485d9eacb7a2a1b8c99611">SetScale</a> (float x, float y, float z, mat4 &amp;matrix)</td></tr>
+<tr class="separator:ac512126895485d9eacb7a2a1b8c99611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ad920c0b2bbc3c8ad17c20a9b1ff627"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a5ad920c0b2bbc3c8ad17c20a9b1ff627">SetScale</a> (vec3 scale, mat4 &amp;matrix)</td></tr>
+<tr class="separator:a5ad920c0b2bbc3c8ad17c20a9b1ff627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923b07b238d140c5a1f4ad6fd2a6f9e0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a923b07b238d140c5a1f4ad6fd2a6f9e0">SetRotation</a> (float angle, float x, float y, float z, mat4 &amp;matrix)</td></tr>
+<tr class="separator:a923b07b238d140c5a1f4ad6fd2a6f9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab620a52fed34a637e42a434f130d6c87"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#ab620a52fed34a637e42a434f130d6c87">SetRotation</a> (float angle, vec3 rotation, mat4 &amp;matrix)</td></tr>
+<tr class="separator:ab620a52fed34a637e42a434f130d6c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d38c76f1ce168b81542ccddc4004a6d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a1d38c76f1ce168b81542ccddc4004a6d">LogMatrix4</a> (const mat4 &amp;matrix)</td></tr>
+<tr class="memdesc:a1d38c76f1ce168b81542ccddc4004a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the content of a 4x4 matrix to the console.  <a href="class_crynn_1_1_transform.html#a1d38c76f1ce168b81542ccddc4004a6d">More...</a><br /></td></tr>
+<tr class="separator:a1d38c76f1ce168b81542ccddc4004a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a8c21bfb5359aa4bc5c171c6e658e4084"><td class="memItemLeft" align="right" valign="top">mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_transform.html#a8c21bfb5359aa4bc5c171c6e658e4084">transformMatrix</a> = mat4(1.0f)</td></tr>
+<tr class="separator:a8c21bfb5359aa4bc5c171c6e658e4084"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Matrix representation with easy functions to transform it. This class is mostly intended to be inherited from. Any transformations made, (translate, scale rotate) will be applied to the "transformMatrix" member. You can use this matrix however you please. Its generally used as a model or view matrix, and works very well with <a class="el" href="class_crynn_1_1_mesh_renderer.html" title="Renders a mesh with a shader and a texture.">MeshRenderer</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1826421a52fb70c75ef780075b7aee46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1826421a52fb70c75ef780075b7aee46">&#9670;&nbsp;</a></span>Transform() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1826421a52fb70c75ef780075b7aee46">&#9670;&nbsp;</a></span>Transform()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,33 +161,15 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a40749912fbfda4ca3b857c96094b9312"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40749912fbfda4ca3b857c96094b9312">&#9670;&nbsp;</a></span>Transform() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Crynn::Transform::Transform </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_crynn_1_1_transform.html">Transform</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1955f627399f483891f695c037d3ef84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1955f627399f483891f695c037d3ef84">&#9670;&nbsp;</a></span>AddChild()</h2>
+<a id="a93db4f9d530826a63fb47e7a8162bbed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93db4f9d530826a63fb47e7a8162bbed">&#9670;&nbsp;</a></span>GetPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Crynn::Transform::AddChild </td>
+          <td class="memname">const vec3 &amp; Crynn::Transform::GetPosition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -182,25 +179,36 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a382de92ee8838397e84d88a08f258001"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a382de92ee8838397e84d88a08f258001">&#9670;&nbsp;</a></span>ClearChild()</h2>
+<a id="a1d38c76f1ce168b81542ccddc4004a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d38c76f1ce168b81542ccddc4004a6d">&#9670;&nbsp;</a></span>LogMatrix4()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Crynn::Transform::ClearChild </td>
+          <td class="memname">void Crynn::Transform::LogMatrix4 </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const mat4 &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>Prints the content of a 4x4 matrix to the console. </p>
 
 </div>
 </div>
-<a id="a2461d8ffdbcb30fb75678f78196ba663"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2461d8ffdbcb30fb75678f78196ba663">&#9670;&nbsp;</a></span>Rotate()</h2>
+<a id="a304b7258f5c69053c95958874f7f91ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a304b7258f5c69053c95958874f7f91ac">&#9670;&nbsp;</a></span>Rotate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +222,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramtype">vec3&#160;</td>
           <td class="paramname"><em>axis</em>&#160;</td>
         </tr>
         <tr>
@@ -227,8 +235,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4669335e7033f1691b89a3fa869c1d99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4669335e7033f1691b89a3fa869c1d99">&#9670;&nbsp;</a></span>Scale()</h2>
+<a id="a07923b32504a708a2d34ee1af313c225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07923b32504a708a2d34ee1af313c225">&#9670;&nbsp;</a></span>Scale()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,7 +244,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Crynn::Transform::Scale </td>
           <td>(</td>
-          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramtype">vec3&#160;</td>
           <td class="paramname"><em>scale</em></td><td>)</td>
           <td></td>
         </tr>
@@ -246,7 +254,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a0f077c04f6c88b766e859c09ec3cb839"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f077c04f6c88b766e859c09ec3cb839">&#9670;&nbsp;</a></span>SetPosition() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f077c04f6c88b766e859c09ec3cb839">&#9670;&nbsp;</a></span>SetPosition() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,8 +287,56 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a970b9395777b00f5f166997d590d98ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a970b9395777b00f5f166997d590d98ef">&#9670;&nbsp;</a></span>SetPosition() <span class="overload">[2/2]</span></h2>
+<a id="ab9b666299d197faaafcd33dc5602ef22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b666299d197faaafcd33dc5602ef22">&#9670;&nbsp;</a></span>SetPosition() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crynn::Transform::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat4 &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a046157b9e044d4ba0978fa8d03073dc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a046157b9e044d4ba0978fa8d03073dc2">&#9670;&nbsp;</a></span>SetPosition() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +344,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Crynn::Transform::SetPosition </td>
           <td>(</td>
-          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramtype">vec3&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
           <td></td>
         </tr>
@@ -297,8 +353,224 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad8e4324ad30a95f6a6d65256ffd5308b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8e4324ad30a95f6a6d65256ffd5308b">&#9670;&nbsp;</a></span>Translate()</h2>
+<a id="abcdefbba01bad525af6d7b857f9f70ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcdefbba01bad525af6d7b857f9f70ba">&#9670;&nbsp;</a></span>SetPosition() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crynn::Transform::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">vec3&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat4 &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a923b07b238d140c5a1f4ad6fd2a6f9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923b07b238d140c5a1f4ad6fd2a6f9e0">&#9670;&nbsp;</a></span>SetRotation() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crynn::Transform::SetRotation </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat4 &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab620a52fed34a637e42a434f130d6c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab620a52fed34a637e42a434f130d6c87">&#9670;&nbsp;</a></span>SetRotation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crynn::Transform::SetRotation </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vec3&#160;</td>
+          <td class="paramname"><em>rotation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat4 &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac512126895485d9eacb7a2a1b8c99611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac512126895485d9eacb7a2a1b8c99611">&#9670;&nbsp;</a></span>SetScale() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crynn::Transform::SetScale </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat4 &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ad920c0b2bbc3c8ad17c20a9b1ff627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad920c0b2bbc3c8ad17c20a9b1ff627">&#9670;&nbsp;</a></span>SetScale() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crynn::Transform::SetScale </td>
+          <td>(</td>
+          <td class="paramtype">vec3&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat4 &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ec941f0af73ea08f2f526d0a5c2cc7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ec941f0af73ea08f2f526d0a5c2cc7a">&#9670;&nbsp;</a></span>Translate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +578,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Crynn::Transform::Translate </td>
           <td>(</td>
-          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramtype">vec3&#160;</td>
           <td class="paramname"><em>translation</em></td><td>)</td>
           <td></td>
         </tr>
@@ -316,24 +588,16 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a284b6d48f773f06c6473b450f7a08174"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a284b6d48f773f06c6473b450f7a08174">&#9670;&nbsp;</a></span>transformMatrix</h2>
+<a id="a8c21bfb5359aa4bc5c171c6e658e4084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c21bfb5359aa4bc5c171c6e658e4084">&#9670;&nbsp;</a></span>transformMatrix</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 Crynn::Transform::transformMatrix = glm::mat4(1.0f)</td>
+          <td class="memname">mat4 Crynn::Transform::transformMatrix = mat4(1.0f)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>

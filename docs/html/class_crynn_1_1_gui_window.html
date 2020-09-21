@@ -70,6 +70,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_crynn_1_1_gui_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -87,8 +88,9 @@ Inheritance diagram for Crynn::GuiWindow:</div>
  <div class="center">
   <img src="class_crynn_1_1_gui_window.png" usemap="#Crynn::GuiWindow_map" alt=""/>
   <map id="Crynn::GuiWindow_map" name="Crynn::GuiWindow_map">
-<area href="class_crynn_1_1_behaviour.html" title="Allows interfacing with the Crynn event system. Inherit from this class, and override any function yo..." alt="Crynn::Behaviour" shape="rect" coords="0,0,135,24"/>
-<area href="class_crynn_1_1_texture_viewer.html" alt="Crynn::TextureViewer" shape="rect" coords="0,112,135,136"/>
+<area href="class_crynn_1_1_event_listener.html" title="Allows interfacing with the Crynn event system. Inherit from this class, and override any function yo..." alt="Crynn::EventListener" shape="rect" coords="72,0,207,24"/>
+<area href="class_crynn_1_1_matrix_editor.html" title="Allows GUI editing of any matrix after runtime. Useful for debugging." alt="Crynn::MatrixEditor" shape="rect" coords="0,112,135,136"/>
+<area href="class_crynn_1_1_texture_viewer.html" alt="Crynn::TextureViewer" shape="rect" coords="145,112,280,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -99,24 +101,51 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aacb1b6b2987ad9abccf9f6a4a14702c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ba2ad72890b6c5029dad9887a4a3b8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a7ba2ad72890b6c5029dad9887a4a3b8f">~GuiWindow</a> ()</td></tr>
 <tr class="separator:a7ba2ad72890b6c5029dad9887a4a3b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1629dca4d05ccc0a559fd87f45c76a4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a1629dca4d05ccc0a559fd87f45c76a4a">Run</a> ()</td></tr>
-<tr class="separator:a1629dca4d05ccc0a559fd87f45c76a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a969ce93ccc0e93f3584c0dd7fc6834a6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a969ce93ccc0e93f3584c0dd7fc6834a6">BeginDraw</a> ()=0</td></tr>
-<tr class="separator:a969ce93ccc0e93f3584c0dd7fc6834a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae509286bc1ab0e636b8070c83c3f27d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#ae509286bc1ab0e636b8070c83c3f27d6">EndDraw</a> ()=0</td></tr>
-<tr class="separator:ae509286bc1ab0e636b8070c83c3f27d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0f4e366d42e5f4895bcfaa87c3f95f3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#ae0f4e366d42e5f4895bcfaa87c3f95f3">Update</a> ()=0</td></tr>
-<tr class="separator:ae0f4e366d42e5f4895bcfaa87c3f95f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f68bcc3cf7437e918abb90d7626c6a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a94f68bcc3cf7437e918abb90d7626c6a">BeginGUIDraw</a> ()=0</td></tr>
+<tr class="separator:a94f68bcc3cf7437e918abb90d7626c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1256616cfe0acaa16836e7a16cffce"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a7e1256616cfe0acaa16836e7a16cffce">GUIDraw</a> ()=0</td></tr>
+<tr class="separator:a7e1256616cfe0acaa16836e7a16cffce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738eedfb8a89ab434eac2630f8d5ff28"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a738eedfb8a89ab434eac2630f8d5ff28">EndGUIDraw</a> ()=0</td></tr>
+<tr class="separator:a738eedfb8a89ab434eac2630f8d5ff28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6739cd962addf218994b76bfe6d3cc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#ad6739cd962addf218994b76bfe6d3cc5">Update</a> (double deltaTime) override</td></tr>
+<tr class="memdesc:ad6739cd962addf218994b76bfe6d3cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once every frame.  <a href="class_crynn_1_1_gui_window.html#ad6739cd962addf218994b76bfe6d3cc5">More...</a><br /></td></tr>
+<tr class="separator:ad6739cd962addf218994b76bfe6d3cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ce3ae8e66bbd9323182d9bbfd66688a"><td class="memItemLeft" align="right" valign="top">const ImVec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a3ce3ae8e66bbd9323182d9bbfd66688a">WindowSize</a> ()</td></tr>
 <tr class="separator:a3ce3ae8e66bbd9323182d9bbfd66688a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b39ad52b392ec54dca71fb6c9feca81"><td class="memItemLeft" align="right" valign="top">const ImVec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a6b39ad52b392ec54dca71fb6c9feca81">FrameBufferSize</a> ()</td></tr>
+<tr class="memdesc:a6b39ad52b392ec54dca71fb6c9feca81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the window.  <a href="class_crynn_1_1_gui_window.html#a6b39ad52b392ec54dca71fb6c9feca81">More...</a><br /></td></tr>
 <tr class="separator:a6b39ad52b392ec54dca71fb6c9feca81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af43335a1351ab29fa518d4b9f80c3abf"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#af43335a1351ab29fa518d4b9f80c3abf">WindowAspectRatio</a> ()</td></tr>
+<tr class="memdesc:af43335a1351ab29fa518d4b9f80c3abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the framebuffer size of the window.  <a href="class_crynn_1_1_gui_window.html#af43335a1351ab29fa518d4b9f80c3abf">More...</a><br /></td></tr>
 <tr class="separator:af43335a1351ab29fa518d4b9f80c3abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a681a81e467aef1b30e58bb01b9eaf27f"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a681a81e467aef1b30e58bb01b9eaf27f">FrameBufferAspectRatio</a> ()</td></tr>
+<tr class="memdesc:a681a81e467aef1b30e58bb01b9eaf27f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns (width/height) of the window.  <a href="class_crynn_1_1_gui_window.html#a681a81e467aef1b30e58bb01b9eaf27f">More...</a><br /></td></tr>
 <tr class="separator:a681a81e467aef1b30e58bb01b9eaf27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1717ffb75fe074dda802eae7660bf648"><td class="memItemLeft" align="right" valign="top">const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a1717ffb75fe074dda802eae7660bf648">GetRenderTexture</a> ()</td></tr>
+<tr class="memdesc:a1717ffb75fe074dda802eae7660bf648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns (width/height) of the window framebuffer. <br  />
+  <a href="class_crynn_1_1_gui_window.html#a1717ffb75fe074dda802eae7660bf648">More...</a><br /></td></tr>
 <tr class="separator:a1717ffb75fe074dda802eae7660bf648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a1629dca4d05ccc0a559fd87f45c76a4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a1629dca4d05ccc0a559fd87f45c76a4a">Run</a> ()</td></tr>
+<tr class="memdesc:a1629dca4d05ccc0a559fd87f45c76a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls BeginDraw(), Draw() and EndDraw() in that order.  <a href="class_crynn_1_1_gui_window.html#a1629dca4d05ccc0a559fd87f45c76a4a">More...</a><br /></td></tr>
+<tr class="separator:a1629dca4d05ccc0a559fd87f45c76a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_crynn_1_1_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_crynn_1_1_event_listener')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td></tr>
+<tr class="memitem:adde95904d10a6daefca760cabff42fb8 inherit pro_methods_class_crynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_event_listener.html#adde95904d10a6daefca760cabff42fb8">EventListener</a> ()</td></tr>
+<tr class="separator:adde95904d10a6daefca760cabff42fb8 inherit pro_methods_class_crynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd066a13ee6986d639803fe78712f2b inherit pro_methods_class_crynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_event_listener.html#abfd066a13ee6986d639803fe78712f2b">~EventListener</a> ()</td></tr>
+<tr class="separator:abfd066a13ee6986d639803fe78712f2b inherit pro_methods_class_crynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afac5b5ef7a54e9c147abf10939ae45f3 inherit pro_methods_class_crynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_event_listener.html#afac5b5ef7a54e9c147abf10939ae45f3">Start</a> ()</td></tr>
+<tr class="separator:afac5b5ef7a54e9c147abf10939ae45f3 inherit pro_methods_class_crynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897dd0f3e7fa96a521b8e0142306cb63 inherit pro_methods_class_crynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_event_listener.html#a897dd0f3e7fa96a521b8e0142306cb63">BeforeUpdate</a> (double deltaTime)</td></tr>
+<tr class="memdesc:a897dd0f3e7fa96a521b8e0142306cb63 inherit pro_methods_class_crynn_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once before the game enters its main loop. Will be called before the first Update.  <a href="class_crynn_1_1_event_listener.html#a897dd0f3e7fa96a521b8e0142306cb63">More...</a><br /></td></tr>
+<tr class="separator:a897dd0f3e7fa96a521b8e0142306cb63 inherit pro_methods_class_crynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5cd8f918b66bddd6d5584db3e5e9d91 inherit pro_methods_class_crynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_event_listener.html#ac5cd8f918b66bddd6d5584db3e5e9d91">BeforeClose</a> ()</td></tr>
+<tr class="separator:ac5cd8f918b66bddd6d5584db3e5e9d91 inherit pro_methods_class_crynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30113749ad3b4355e5dc0f4b06025a1d inherit pro_methods_class_crynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_event_listener.html#a30113749ad3b4355e5dc0f4b06025a1d">IsSubscribed</a> ()</td></tr>
+<tr class="memdesc:a30113749ad3b4355e5dc0f4b06025a1d inherit pro_methods_class_crynn_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before quitting to desktop with <a class="el" href="class_crynn_1_1_application.html#afa1aa3f4fc2b3a72d28e6ea05bd6f2db" title="Get the singleton instance of application.">Application::Instance()</a>.Quit();.  <a href="class_crynn_1_1_event_listener.html#a30113749ad3b4355e5dc0f4b06025a1d">More...</a><br /></td></tr>
+<tr class="separator:a30113749ad3b4355e5dc0f4b06025a1d inherit pro_methods_class_crynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -134,25 +163,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:af463cea63fa0a09f8f127769e085c2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07cd2d7f2d09bbc84221e7fe209c0e02"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_gui_window.html#a07cd2d7f2d09bbc84221e7fe209c0e02">m_name</a></td></tr>
 <tr class="separator:a07cd2d7f2d09bbc84221e7fe209c0e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_class_crynn_1_1_behaviour"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_crynn_1_1_behaviour')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_crynn_1_1_behaviour.html">Crynn::Behaviour</a></td></tr>
-<tr class="memitem:a335b2a8c784b109b1600aae410abee17 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a335b2a8c784b109b1600aae410abee17">Behaviour</a> ()</td></tr>
-<tr class="separator:a335b2a8c784b109b1600aae410abee17 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4628f5bf5c0228fd938eaf5b02a03818 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a4628f5bf5c0228fd938eaf5b02a03818">~Behaviour</a> ()</td></tr>
-<tr class="memdesc:a4628f5bf5c0228fd938eaf5b02a03818 inherit pro_methods_class_crynn_1_1_behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically subscribes events to the event system.  <a href="class_crynn_1_1_behaviour.html#a4628f5bf5c0228fd938eaf5b02a03818">More...</a><br /></td></tr>
-<tr class="separator:a4628f5bf5c0228fd938eaf5b02a03818 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">Update</a> (double deltaTime)</td></tr>
-<tr class="memdesc:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes the events.  <a href="class_crynn_1_1_behaviour.html#a97d70532db183d87d6f1ff517972599d">More...</a><br /></td></tr>
-<tr class="separator:a97d70532db183d87d6f1ff517972599d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0db4355a84112b96a6fb664a121814c8 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a0db4355a84112b96a6fb664a121814c8">Start</a> ()</td></tr>
-<tr class="separator:a0db4355a84112b96a6fb664a121814c8 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15d304086c35926e97d36f249ec7c200 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a15d304086c35926e97d36f249ec7c200">BeforeUpdate</a> (double deltaTime)</td></tr>
-<tr class="memdesc:a15d304086c35926e97d36f249ec7c200 inherit pro_methods_class_crynn_1_1_behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once before the game enters its main loop. Will be called before Update.  <a href="class_crynn_1_1_behaviour.html#a15d304086c35926e97d36f249ec7c200">More...</a><br /></td></tr>
-<tr class="separator:a15d304086c35926e97d36f249ec7c200 inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa858239c27461924eefbe81a81327d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crynn_1_1_behaviour.html#a5aa858239c27461924eefbe81a81327d">BeforeClose</a> ()</td></tr>
-<tr class="separator:a5aa858239c27461924eefbe81a81327d inherit pro_methods_class_crynn_1_1_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for any onscreen GUI window. Uses IMGUI and <a class="el" href="namespace_crynn.html" title="Main Engine Namespace">Crynn</a> events for rendering. </p>
@@ -219,8 +229,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a969ce93ccc0e93f3584c0dd7fc6834a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a969ce93ccc0e93f3584c0dd7fc6834a6">&#9670;&nbsp;</a></span>BeginDraw()</h2>
+<a id="a94f68bcc3cf7437e918abb90d7626c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f68bcc3cf7437e918abb90d7626c6a">&#9670;&nbsp;</a></span>BeginGUIDraw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +239,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Crynn::GuiWindow::BeginDraw </td>
+          <td class="memname">virtual void Crynn::GuiWindow::BeginGUIDraw </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -242,12 +252,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_crynn_1_1_texture_viewer.html#a0ce77697246481481b3c6696d2f9117f">Crynn::TextureViewer</a>.</p>
+<p>Implemented in <a class="el" href="class_crynn_1_1_texture_viewer.html#ae31b2f51e6cf193c493097119fefcfda">Crynn::TextureViewer</a>.</p>
 
 </div>
 </div>
-<a id="ae509286bc1ab0e636b8070c83c3f27d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae509286bc1ab0e636b8070c83c3f27d6">&#9670;&nbsp;</a></span>EndDraw()</h2>
+<a id="a738eedfb8a89ab434eac2630f8d5ff28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a738eedfb8a89ab434eac2630f8d5ff28">&#9670;&nbsp;</a></span>EndGUIDraw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,7 +266,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Crynn::GuiWindow::EndDraw </td>
+          <td class="memname">virtual void Crynn::GuiWindow::EndGUIDraw </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -269,7 +279,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_crynn_1_1_texture_viewer.html#abc36397730d8a3fb8d25e6c6af67d130">Crynn::TextureViewer</a>.</p>
+<p>Implemented in <a class="el" href="class_crynn_1_1_texture_viewer.html#a5dded72a98a954dc1dd0563d7c8b853e">Crynn::TextureViewer</a>.</p>
 
 </div>
 </div>
@@ -288,6 +298,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns (width/height) of the window. </p>
+
 </div>
 </div>
 <a id="a6b39ad52b392ec54dca71fb6c9feca81"></a>
@@ -304,6 +316,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the size of the window. </p>
 
 </div>
 </div>
@@ -322,27 +336,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a1629dca4d05ccc0a559fd87f45c76a4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1629dca4d05ccc0a559fd87f45c76a4a">&#9670;&nbsp;</a></span>Run()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Crynn::GuiWindow::Run </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Returns (width/height) of the window framebuffer. <br  />
+ </p>
 
 </div>
 </div>
-<a id="ae0f4e366d42e5f4895bcfaa87c3f95f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0f4e366d42e5f4895bcfaa87c3f95f3">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="a7e1256616cfe0acaa16836e7a16cffce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e1256616cfe0acaa16836e7a16cffce">&#9670;&nbsp;</a></span>GUIDraw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -351,7 +351,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Crynn::GuiWindow::Update </td>
+          <td class="memname">virtual void Crynn::GuiWindow::GUIDraw </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -364,7 +364,70 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_crynn_1_1_texture_viewer.html#a70ba9dd8282f159d7b6483b4d5113834">Crynn::TextureViewer</a>.</p>
+<p>Implemented in <a class="el" href="class_crynn_1_1_texture_viewer.html#abed73d768c217512030c2abaa139adfd">Crynn::TextureViewer</a>.</p>
+
+</div>
+</div>
+<a id="a1629dca4d05ccc0a559fd87f45c76a4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1629dca4d05ccc0a559fd87f45c76a4a">&#9670;&nbsp;</a></span>Run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crynn::GuiWindow::Run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calls BeginDraw(), Draw() and EndDraw() in that order. </p>
+
+</div>
+</div>
+<a id="ad6739cd962addf218994b76bfe6d3cc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6739cd962addf218994b76bfe6d3cc5">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crynn::GuiWindow::Update </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>deltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called once every frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>The time it took the previous frame to render.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_crynn_1_1_event_listener.html#a24e9b797811e03f305b3af865563a219">Crynn::EventListener</a>.</p>
 
 </div>
 </div>
@@ -382,6 +445,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the framebuffer size of the window. </p>
 
 </div>
 </div>

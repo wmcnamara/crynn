@@ -1,0 +1,121 @@
+\hypertarget{class_crynn_1_1_event_listener}{}\doxysection{Crynn\+::Event\+Listener Class Reference}
+\label{class_crynn_1_1_event_listener}\index{Crynn::EventListener@{Crynn::EventListener}}
+
+
+Allows interfacing with the \mbox{\hyperlink{namespace_crynn}{Crynn}} event system. Inherit from this class, and override any function you may need. Call Subscribe() to subscribe overridden functions to the \mbox{\hyperlink{namespace_crynn}{Crynn}} event system.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Listener.\+h$>$}
+
+Inheritance diagram for Crynn\+::Event\+Listener\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crynn_1_1_event_listener}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crynn_1_1_event_listener_adde95904d10a6daefca760cabff42fb8}{Event\+Listener}} ()
+\item 
+\mbox{\hyperlink{class_crynn_1_1_event_listener_abfd066a13ee6986d639803fe78712f2b}{$\sim$\+Event\+Listener}} ()
+\item 
+virtual void \mbox{\hyperlink{class_crynn_1_1_event_listener_a24e9b797811e03f305b3af865563a219}{Update}} (double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Called once every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_crynn_1_1_event_listener_afac5b5ef7a54e9c147abf10939ae45f3}{Start}} ()
+\item 
+virtual void \mbox{\hyperlink{class_crynn_1_1_event_listener_a897dd0f3e7fa96a521b8e0142306cb63}{Before\+Update}} (double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Called once before the game enters its main loop. Will be called before the first Update. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_crynn_1_1_event_listener_ac5cd8f918b66bddd6d5584db3e5e9d91}{Before\+Close}} ()
+\item 
+bool \mbox{\hyperlink{class_crynn_1_1_event_listener_a30113749ad3b4355e5dc0f4b06025a1d}{Is\+Subscribed}} ()
+\begin{DoxyCompactList}\small\item\em Called before quitting to desktop with \mbox{\hyperlink{class_crynn_1_1_application_afa1aa3f4fc2b3a72d28e6ea05bd6f2db}{Application\+::\+Instance()}}.Quit();. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Allows interfacing with the \mbox{\hyperlink{namespace_crynn}{Crynn}} event system. Inherit from this class, and override any function you may need. Call Subscribe() to subscribe overridden functions to the \mbox{\hyperlink{namespace_crynn}{Crynn}} event system. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crynn_1_1_event_listener_adde95904d10a6daefca760cabff42fb8}\label{class_crynn_1_1_event_listener_adde95904d10a6daefca760cabff42fb8}} 
+\index{Crynn::EventListener@{Crynn::EventListener}!EventListener@{EventListener}}
+\index{EventListener@{EventListener}!Crynn::EventListener@{Crynn::EventListener}}
+\doxysubsubsection{\texorpdfstring{EventListener()}{EventListener()}}
+{\footnotesize\ttfamily Crynn\+::\+Event\+Listener\+::\+Event\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_event_listener_abfd066a13ee6986d639803fe78712f2b}\label{class_crynn_1_1_event_listener_abfd066a13ee6986d639803fe78712f2b}} 
+\index{Crynn::EventListener@{Crynn::EventListener}!````~EventListener@{$\sim$EventListener}}
+\index{````~EventListener@{$\sim$EventListener}!Crynn::EventListener@{Crynn::EventListener}}
+\doxysubsubsection{\texorpdfstring{$\sim$EventListener()}{~EventListener()}}
+{\footnotesize\ttfamily Crynn\+::\+Event\+Listener\+::$\sim$\+Event\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crynn_1_1_event_listener_ac5cd8f918b66bddd6d5584db3e5e9d91}\label{class_crynn_1_1_event_listener_ac5cd8f918b66bddd6d5584db3e5e9d91}} 
+\index{Crynn::EventListener@{Crynn::EventListener}!BeforeClose@{BeforeClose}}
+\index{BeforeClose@{BeforeClose}!Crynn::EventListener@{Crynn::EventListener}}
+\doxysubsubsection{\texorpdfstring{BeforeClose()}{BeforeClose()}}
+{\footnotesize\ttfamily virtual void Crynn\+::\+Event\+Listener\+::\+Before\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_event_listener_a897dd0f3e7fa96a521b8e0142306cb63}\label{class_crynn_1_1_event_listener_a897dd0f3e7fa96a521b8e0142306cb63}} 
+\index{Crynn::EventListener@{Crynn::EventListener}!BeforeUpdate@{BeforeUpdate}}
+\index{BeforeUpdate@{BeforeUpdate}!Crynn::EventListener@{Crynn::EventListener}}
+\doxysubsubsection{\texorpdfstring{BeforeUpdate()}{BeforeUpdate()}}
+{\footnotesize\ttfamily virtual void Crynn\+::\+Event\+Listener\+::\+Before\+Update (\begin{DoxyParamCaption}\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called once before the game enters its main loop. Will be called before the first Update. 
+
+Called once every frame before Update. Generally used for setting uniforms, or other things that need to be set before any render calls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time it took the previous frame to render.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crynn_1_1_event_listener_a30113749ad3b4355e5dc0f4b06025a1d}\label{class_crynn_1_1_event_listener_a30113749ad3b4355e5dc0f4b06025a1d}} 
+\index{Crynn::EventListener@{Crynn::EventListener}!IsSubscribed@{IsSubscribed}}
+\index{IsSubscribed@{IsSubscribed}!Crynn::EventListener@{Crynn::EventListener}}
+\doxysubsubsection{\texorpdfstring{IsSubscribed()}{IsSubscribed()}}
+{\footnotesize\ttfamily bool Crynn\+::\+Event\+Listener\+::\+Is\+Subscribed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Called before quitting to desktop with \mbox{\hyperlink{class_crynn_1_1_application_afa1aa3f4fc2b3a72d28e6ea05bd6f2db}{Application\+::\+Instance()}}.Quit();. 
+
+Returns true if this instance\textquotesingle{}s events are subscribed to the event system. \mbox{\Hypertarget{class_crynn_1_1_event_listener_afac5b5ef7a54e9c147abf10939ae45f3}\label{class_crynn_1_1_event_listener_afac5b5ef7a54e9c147abf10939ae45f3}} 
+\index{Crynn::EventListener@{Crynn::EventListener}!Start@{Start}}
+\index{Start@{Start}!Crynn::EventListener@{Crynn::EventListener}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily virtual void Crynn\+::\+Event\+Listener\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_event_listener_a24e9b797811e03f305b3af865563a219}\label{class_crynn_1_1_event_listener_a24e9b797811e03f305b3af865563a219}} 
+\index{Crynn::EventListener@{Crynn::EventListener}!Update@{Update}}
+\index{Update@{Update}!Crynn::EventListener@{Crynn::EventListener}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Crynn\+::\+Event\+Listener\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called once every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time it took the previous frame to render.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_crynn_1_1_gui_window_ad6739cd962addf218994b76bfe6d3cc5}{Crynn\+::\+Gui\+Window}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Github/crynn/src/\+Core/\mbox{\hyperlink{_event_listener_8h}{Event\+Listener.\+h}}\item 
+C\+:/\+Github/crynn/src/\+Core/\mbox{\hyperlink{_event_listener_8cpp}{Event\+Listener.\+cpp}}\end{DoxyCompactItemize}
