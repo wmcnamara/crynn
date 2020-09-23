@@ -18,4 +18,25 @@ namespace Crynn
         // collision only if on both axes
         return collisionX && collisionY && collisionZ;
     }
+
+    bool AABBSolver::Compare(const AABB& one, const AABB& two, std::function<void(const AABB& one, const AABB& two)> func)
+    {
+        if (Compare(one, two))
+        {
+            func(one, two);
+            return true;
+        }
+
+        return false;
+    }
+    bool AABBSolver::Compare(const AABB& one, const AABB& two, std::function<void()> func)
+    {
+        if (Compare(one, two))
+        {
+            func();
+            return true;
+        }
+
+        return false;
+    }
 }
