@@ -26,7 +26,11 @@ namespace Crynn
 
 		void SetPosition(vec3 position);
 		void SetPosition(float x, float y, float z);
-		const vec3& GetPosition();
+		vec3 GetPosition();
+
+		void SetScale(vec3 scale);
+		void SetScale(float x, float y, float z);
+		vec3 GetScale();
 
 		static void SetPosition(float x, float y, float z, mat4& matrix);
 		static void SetPosition(vec3 position, mat4& matrix);
@@ -42,8 +46,5 @@ namespace Crynn
 
 		mat4 transformMatrix = mat4(1.0f);
 	private:
-		vec3 m_position = vec3(0, 0, 0);
-		vec3 m_scale = vec3(0, 0, 0);
-		vec3 m_rotation = vec3(0, 0, 0);
 	};
 }

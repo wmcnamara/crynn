@@ -33,7 +33,7 @@ namespace Crynn
 		transformMatrix[3][2] = z;
 	}
 
-	const vec3& Transform::GetPosition()
+	vec3 Transform::GetPosition()
 	{
 		vec3 pos;
 		pos.x = transformMatrix[3][0];
@@ -41,6 +41,33 @@ namespace Crynn
 		pos.z = transformMatrix[3][2];
 
 		return pos;
+	}
+
+	void Transform::SetScale(vec3 scale)
+	{
+		//3rd colum, 1st second and 3rd row.
+		transformMatrix[0][0] = scale.x;
+		transformMatrix[1][1] = scale.y;
+		transformMatrix[2][2] = scale.z;
+	}
+
+	void Transform::SetScale(float x, float y, float z)
+	{
+		//3rd colum, 1st second and 3rd row.
+		transformMatrix[0][0] = x;
+		transformMatrix[1][1] = y;
+		transformMatrix[2][2] = z;
+	}
+
+	vec3 Transform::GetScale()
+	{
+		glm::vec3 scale;
+		//3rd colum, 1st second and 3rd row.
+		scale.x = transformMatrix[0][0];
+		scale.y = transformMatrix[1][1];
+		scale.z = transformMatrix[2][2];
+
+		return scale;
 	}
 
 	//Static functions

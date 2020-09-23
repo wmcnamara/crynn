@@ -29,6 +29,7 @@ namespace Crynn
 
         return false;
     }
+
     bool AABBSolver::Compare(const AABB& one, const AABB& two, std::function<void()> func)
     {
         if (Compare(one, two))
