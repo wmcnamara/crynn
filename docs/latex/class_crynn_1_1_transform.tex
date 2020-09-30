@@ -30,7 +30,13 @@ void \mbox{\hyperlink{class_crynn_1_1_transform_a046157b9e044d4ba0978fa8d03073dc
 \item 
 void \mbox{\hyperlink{class_crynn_1_1_transform_a0f077c04f6c88b766e859c09ec3cb839}{Set\+Position}} (float x, float y, float z)
 \item 
-const vec3 \& \mbox{\hyperlink{class_crynn_1_1_transform_a93db4f9d530826a63fb47e7a8162bbed}{Get\+Position}} ()
+vec3 \mbox{\hyperlink{class_crynn_1_1_transform_adb67c18b783c46d11782816912a2eb4f}{Get\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_crynn_1_1_transform_a5967ae3dc0d6d0ad1dae57c937d6120b}{Set\+Scale}} (vec3 scale)
+\item 
+void \mbox{\hyperlink{class_crynn_1_1_transform_a9dd2548fa91dd056c3328737e4de31ed}{Set\+Scale}} (float x, float y, float z)
+\item 
+vec3 \mbox{\hyperlink{class_crynn_1_1_transform_a872608696dddb0b93a6f5be9ca646ec1}{Get\+Scale}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -71,11 +77,17 @@ Matrix representation with easy functions to transform it. This class is mostly 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_crynn_1_1_transform_a93db4f9d530826a63fb47e7a8162bbed}\label{class_crynn_1_1_transform_a93db4f9d530826a63fb47e7a8162bbed}} 
+\mbox{\Hypertarget{class_crynn_1_1_transform_adb67c18b783c46d11782816912a2eb4f}\label{class_crynn_1_1_transform_adb67c18b783c46d11782816912a2eb4f}} 
 \index{Crynn::Transform@{Crynn::Transform}!GetPosition@{GetPosition}}
 \index{GetPosition@{GetPosition}!Crynn::Transform@{Crynn::Transform}}
 \doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
-{\footnotesize\ttfamily const vec3 \& Crynn\+::\+Transform\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vec3 Crynn\+::\+Transform\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_crynn_1_1_transform_a872608696dddb0b93a6f5be9ca646ec1}\label{class_crynn_1_1_transform_a872608696dddb0b93a6f5be9ca646ec1}} 
+\index{Crynn::Transform@{Crynn::Transform}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{GetScale()}{GetScale()}}
+{\footnotesize\ttfamily vec3 Crynn\+::\+Transform\+::\+Get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_crynn_1_1_transform_a1d38c76f1ce168b81542ccddc4004a6d}\label{class_crynn_1_1_transform_a1d38c76f1ce168b81542ccddc4004a6d}} 
 \index{Crynn::Transform@{Crynn::Transform}!LogMatrix4@{LogMatrix4}}
@@ -135,16 +147,28 @@ Prints the content of a 4x4 matrix to the console.
 \doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{vec3}]{rotation,  }\item[{mat4 \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+\mbox{\Hypertarget{class_crynn_1_1_transform_a9dd2548fa91dd056c3328737e4de31ed}\label{class_crynn_1_1_transform_a9dd2548fa91dd056c3328737e4de31ed}} 
+\index{Crynn::Transform@{Crynn::Transform}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_crynn_1_1_transform_ac512126895485d9eacb7a2a1b8c99611}\label{class_crynn_1_1_transform_ac512126895485d9eacb7a2a1b8c99611}} 
 \index{Crynn::Transform@{Crynn::Transform}!SetScale@{SetScale}}
 \index{SetScale@{SetScale}!Crynn::Transform@{Crynn::Transform}}
-\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{mat4 \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_transform_a5967ae3dc0d6d0ad1dae57c937d6120b}\label{class_crynn_1_1_transform_a5967ae3dc0d6d0ad1dae57c937d6120b}} 
+\index{Crynn::Transform@{Crynn::Transform}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!Crynn::Transform@{Crynn::Transform}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{vec3}]{scale }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_crynn_1_1_transform_a5ad920c0b2bbc3c8ad17c20a9b1ff627}\label{class_crynn_1_1_transform_a5ad920c0b2bbc3c8ad17c20a9b1ff627}} 
 \index{Crynn::Transform@{Crynn::Transform}!SetScale@{SetScale}}
 \index{SetScale@{SetScale}!Crynn::Transform@{Crynn::Transform}}
-\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily void Crynn\+::\+Transform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{vec3}]{scale,  }\item[{mat4 \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{class_crynn_1_1_transform_a6ec941f0af73ea08f2f526d0a5c2cc7a}\label{class_crynn_1_1_transform_a6ec941f0af73ea08f2f526d0a5c2cc7a}} 

@@ -9,10 +9,58 @@ Provides functions for testing collisions with \mbox{\hyperlink{struct_crynn_1_1
 
 {\ttfamily \#include $<$A\+A\+B\+B.\+h$>$}
 
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_crynn_1_1_a_a_b_b_solver_af45742afaa64ad863cc08b09a418c680}{Compare}} (const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&one, const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&two)
+\begin{DoxyCompactList}\small\item\em Compares two \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}}\textquotesingle{}s for collisions. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_crynn_1_1_a_a_b_b_solver_a947ce74be2ae4556572c8d1d25aadf83}{Compare}} (const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&one, const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&two, std\+::function$<$ void(const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&one, const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&two)$>$ func)
+\begin{DoxyCompactList}\small\item\em Returns true if 2 \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}}\textquotesingle{}s are colliding, and runs func with the two \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}}\textquotesingle{}s if they are collidiing. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_crynn_1_1_a_a_b_b_solver_a469b96875f0f94ff10d8b912a2610e62}{Compare}} (const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&one, const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&two, std\+::function$<$ void()$>$ func)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Provides functions for testing collisions with \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}}\textquotesingle{}s 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crynn_1_1_a_a_b_b_solver_af45742afaa64ad863cc08b09a418c680}\label{class_crynn_1_1_a_a_b_b_solver_af45742afaa64ad863cc08b09a418c680}} 
+\index{Crynn::AABBSolver@{Crynn::AABBSolver}!Compare@{Compare}}
+\index{Compare@{Compare}!Crynn::AABBSolver@{Crynn::AABBSolver}}
+\doxysubsubsection{\texorpdfstring{Compare()}{Compare()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Crynn\+::\+A\+A\+B\+B\+Solver\+::\+Compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&}]{one,  }\item[{const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&}]{two }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compares two \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}}\textquotesingle{}s for collisions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em one} & The first \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} to compare.\\
+\hline
+{\em two} & The second \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the two \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}}\textquotesingle{}s are colliding.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crynn_1_1_a_a_b_b_solver_a469b96875f0f94ff10d8b912a2610e62}\label{class_crynn_1_1_a_a_b_b_solver_a469b96875f0f94ff10d8b912a2610e62}} 
+\index{Crynn::AABBSolver@{Crynn::AABBSolver}!Compare@{Compare}}
+\index{Compare@{Compare}!Crynn::AABBSolver@{Crynn::AABBSolver}}
+\doxysubsubsection{\texorpdfstring{Compare()}{Compare()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Crynn\+::\+A\+A\+B\+B\+Solver\+::\+Compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&}]{one,  }\item[{const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&}]{two,  }\item[{std\+::function$<$ void()$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_crynn_1_1_a_a_b_b_solver_a947ce74be2ae4556572c8d1d25aadf83}\label{class_crynn_1_1_a_a_b_b_solver_a947ce74be2ae4556572c8d1d25aadf83}} 
+\index{Crynn::AABBSolver@{Crynn::AABBSolver}!Compare@{Compare}}
+\index{Compare@{Compare}!Crynn::AABBSolver@{Crynn::AABBSolver}}
+\doxysubsubsection{\texorpdfstring{Compare()}{Compare()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Crynn\+::\+A\+A\+B\+B\+Solver\+::\+Compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&}]{one,  }\item[{const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&}]{two,  }\item[{std\+::function$<$ void(const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&one, const \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}} \&two)$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns true if 2 \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}}\textquotesingle{}s are colliding, and runs func with the two \mbox{\hyperlink{struct_crynn_1_1_a_a_b_b}{A\+A\+BB}}\textquotesingle{}s if they are collidiing. 
 
 
 

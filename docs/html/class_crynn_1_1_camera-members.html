@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.15</span>
    </div>
    <div id="projectbrief">3D C++ Game Engine</div>
   </td>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_crynn_1_1_camera.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,11 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespace_crynn.html">Crynn</a></li><li class="navelem"><a class="el" href="class_crynn_1_1_camera.html">Camera</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Crynn::Camera Member List</div>  </div>
@@ -79,34 +95,40 @@ $(function() {
   <tr><td class="entry"><a class="el" href="class_crynn_1_1_camera.html#a1ec5912c895edb3d5ff41ce7eea6d076">Camera</a>(vec3 position, Projection projType)</td><td class="entry"><a class="el" href="class_crynn_1_1_camera.html">Crynn::Camera</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html#adde95904d10a6daefca760cabff42fb8">EventListener</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_crynn_1_1_input.html#a88c073bd86d575385445aff52b33ce8c">GetKey</a>(KeyCode key)</td><td class="entry"><a class="el" href="class_crynn_1_1_input.html">Crynn::Input</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a93db4f9d530826a63fb47e7a8162bbed">GetPosition</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#adb67c18b783c46d11782816912a2eb4f">GetPosition</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_crynn_1_1_camera.html#a907898e5750143591db06f68961fe315">GetProjection</a>() const</td><td class="entry"><a class="el" href="class_crynn_1_1_camera.html">Crynn::Camera</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_input.html#a820aaa4140f867fe16116d5822c48d86">Input</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_input.html">Crynn::Input</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html#a30113749ad3b4355e5dc0f4b06025a1d">IsSubscribed</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_input.html#aaa5969578ce759510b8824e18018dcad">KeyCode</a> enum name</td><td class="entry"><a class="el" href="class_crynn_1_1_input.html">Crynn::Input</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a1d38c76f1ce168b81542ccddc4004a6d">LogMatrix4</a>(const mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a304b7258f5c69053c95958874f7f91ac">Rotate</a>(float rotationInDegrees, vec3 axis)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a07923b32504a708a2d34ee1af313c225">Scale</a>(vec3 scale)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a046157b9e044d4ba0978fa8d03073dc2">SetPosition</a>(vec3 position)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a0f077c04f6c88b766e859c09ec3cb839">SetPosition</a>(float x, float y, float z)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#ab9b666299d197faaafcd33dc5602ef22">SetPosition</a>(float x, float y, float z, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#abcdefbba01bad525af6d7b857f9f70ba">SetPosition</a>(vec3 position, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a923b07b238d140c5a1f4ad6fd2a6f9e0">SetRotation</a>(float angle, float x, float y, float z, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#ab620a52fed34a637e42a434f130d6c87">SetRotation</a>(float angle, vec3 rotation, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#ac512126895485d9eacb7a2a1b8c99611">SetScale</a>(float x, float y, float z, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a5ad920c0b2bbc3c8ad17c20a9b1ff627">SetScale</a>(vec3 scale, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html#afac5b5ef7a54e9c147abf10939ae45f3">Start</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a1826421a52fb70c75ef780075b7aee46">Transform</a>()=default</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a8c21bfb5359aa4bc5c171c6e658e4084">transformMatrix</a></td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a6ec941f0af73ea08f2f526d0a5c2cc7a">Translate</a>(vec3 translation)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html#a24e9b797811e03f305b3af865563a219">Update</a>(double deltaTime)</td><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_camera.html#a2a301f9c528aa46afa7f978e4597492e">~Camera</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_camera.html">Crynn::Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html#abfd066a13ee6986d639803fe78712f2b">~EventListener</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_crynn_1_1_input.html#a383efd0505cf0a4fd1bafe5ef460296b">~Input</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_input.html">Crynn::Input</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a872608696dddb0b93a6f5be9ca646ec1">GetScale</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_input.html#a820aaa4140f867fe16116d5822c48d86">Input</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_input.html">Crynn::Input</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html#a30113749ad3b4355e5dc0f4b06025a1d">IsSubscribed</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_input.html#aaa5969578ce759510b8824e18018dcad">KeyCode</a> enum name</td><td class="entry"><a class="el" href="class_crynn_1_1_input.html">Crynn::Input</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a1d38c76f1ce168b81542ccddc4004a6d">LogMatrix4</a>(const mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a304b7258f5c69053c95958874f7f91ac">Rotate</a>(float rotationInDegrees, vec3 axis)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a07923b32504a708a2d34ee1af313c225">Scale</a>(vec3 scale)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a046157b9e044d4ba0978fa8d03073dc2">SetPosition</a>(vec3 position)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a0f077c04f6c88b766e859c09ec3cb839">SetPosition</a>(float x, float y, float z)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#ab9b666299d197faaafcd33dc5602ef22">SetPosition</a>(float x, float y, float z, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#abcdefbba01bad525af6d7b857f9f70ba">SetPosition</a>(vec3 position, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a923b07b238d140c5a1f4ad6fd2a6f9e0">SetRotation</a>(float angle, float x, float y, float z, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#ab620a52fed34a637e42a434f130d6c87">SetRotation</a>(float angle, vec3 rotation, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a5967ae3dc0d6d0ad1dae57c937d6120b">SetScale</a>(vec3 scale)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a9dd2548fa91dd056c3328737e4de31ed">SetScale</a>(float x, float y, float z)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#ac512126895485d9eacb7a2a1b8c99611">SetScale</a>(float x, float y, float z, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a5ad920c0b2bbc3c8ad17c20a9b1ff627">SetScale</a>(vec3 scale, mat4 &amp;matrix)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html#afac5b5ef7a54e9c147abf10939ae45f3">Start</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a1826421a52fb70c75ef780075b7aee46">Transform</a>()=default</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a8c21bfb5359aa4bc5c171c6e658e4084">transformMatrix</a></td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_transform.html#a6ec941f0af73ea08f2f526d0a5c2cc7a">Translate</a>(vec3 translation)</td><td class="entry"><a class="el" href="class_crynn_1_1_transform.html">Crynn::Transform</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html#a24e9b797811e03f305b3af865563a219">Update</a>(double deltaTime)</td><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_camera.html#a2a301f9c528aa46afa7f978e4597492e">~Camera</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_camera.html">Crynn::Camera</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html#abfd066a13ee6986d639803fe78712f2b">~EventListener</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_event_listener.html">Crynn::EventListener</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_crynn_1_1_input.html#a383efd0505cf0a4fd1bafe5ef460296b">~Input</a>()</td><td class="entry"><a class="el" href="class_crynn_1_1_input.html">Crynn::Input</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
 </body>
 </html>

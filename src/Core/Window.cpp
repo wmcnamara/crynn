@@ -34,9 +34,7 @@ namespace Crynn
 		glfwSetKeyCallback(glfwWindow, InputCallback);
 
 		//Retrieve and set window size data
-		int winWidth = 0, winHeight = 0;
-		glfwGetWindowSize(glfwWindow, &winWidth, &winHeight);
-		m_screenSize = ImVec2(winWidth, winHeight);
+		m_screenSize = ImVec2(width, height);
 
 		//Retrieve and set framebuffer size data
 		int frameBufWidth = 0, frameBufHeight = 0;

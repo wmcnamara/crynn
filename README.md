@@ -40,23 +40,4 @@ To manage the build process, Crynn uses <a href="https://premake.github.io/">Pre
 To know more about Premake, and how to generate project files for your IDE please visit Premake's, <a href="https://github.com/premake/premake-core/wiki/Using-Premake">"Using Premake"</a> article
 
 ## Using Crynn:
-Lets try programming with Crynn! Crynn does not use any sort of standalone editor, so any object creation you do is done programmatically. Keep this in mind when you use Crynn.
-
-Naviate to src/main.cpp and open it. You should see something like this:
-```C++
-#include "Crynn.h" //Get most of Crynns necessary components
-
-int main()
-{
-	Window window("Crynn", 800, 600); //Create the window
-
-	Application::Instance().Initialise(); //Initialise Crynn
-	while (!window.ShouldClose())
-	{
-		window.BeforeRender(); //Clears buffers and sets up GUI data
-		Application::Instance().Tick(); //Ticks update events.
-		window.AfterRender(); //Renders GUI and swaps buffers.
-	}
-}
-```
-This is Crynn's most basic entry point.
+Navigate to the docs/html directory, and open index.html. It will bring you to the introduction page, explaining how to use Crynn.

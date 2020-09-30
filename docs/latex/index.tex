@@ -1,13 +1,33 @@
-\hypertarget{index_intro_sec}{}\doxysection{Introduction}\label{index_intro_sec}
-\mbox{\hyperlink{namespace_crynn}{Crynn}} is an open source game engine created with C++17 and Open\+GL. The source code for \mbox{\hyperlink{namespace_crynn}{Crynn}} can be found on \href{https://github.com/wmcnamara/crynn}{\texttt{ Github.}}\hypertarget{index_dependencies_sec}{}\doxysection{Dependencies}\label{index_dependencies_sec}
-\mbox{\hyperlink{namespace_crynn}{Crynn}} relies on a multitude of dependencies. They are listed here\+:
+Game Engine Created In C++17 and Open\+GL
 
-\mbox{\hyperlink{namespace_crynn}{Crynn}} Depends On\+: ~\newline
+\hypertarget{index_autotoc_md0}{}\doxysubsection{Introduction}\label{index_autotoc_md0}
+\mbox{\hyperlink{namespace_crynn}{Crynn}} is an open source game engine created with C++17 and Open\+GL. It is very barebones as it stands. \mbox{\hyperlink{namespace_crynn}{Crynn}} is not overtly user friendly. Knowledge of matrix math, event systems, Open\+GL and G\+L\+FW is required.\hypertarget{index_autotoc_md1}{}\doxysubsection{Dependencies}\label{index_autotoc_md1}
+\hypertarget{index_autotoc_md2}{}\doxysubsubsection{Crynn Depends On\+:}\label{index_autotoc_md2}
 
 \begin{DoxyItemize}
 \item \href{https://www.glfw.org/}{\texttt{ G\+L\+FW}} for windowing, and input.
 \item \href{https://github.com/Dav1dde/glad}{\texttt{ G\+L\+AD}} for loading Open\+GL functions.
-\item \href{https://github.com/ocornut/imgui}{\texttt{ Dear I\+M\+G\+UI}} for G\+UI.
+\item \href{https://github.com/ocornut/imguiDear}{\texttt{ Dear I\+M\+G\+UI}} for G\+UI.
 \item \href{https://glm.g-truc.net/0.9.8/index.html}{\texttt{ G\+LM}} for matrix and other graphics related mathematics.
-\item \href{https://github.com/nothings/stb}{\texttt{ S\+T\+B\+\_\+\+I\+M\+A\+GE}} for image loading. 
+\item \href{https://github.com/nothings/stb}{\texttt{ S\+T\+B\+\_\+\+I\+M\+A\+GE}} for image loading.
+\item \href{https://github.com/nothings/stb}{\texttt{ S\+T\+B\+\_\+\+P\+E\+R\+L\+IN}} for perlin noise generation.
+\item \href{https://github.com/CedricGuillemet/ImGuizmo}{\texttt{ I\+M\+G\+U\+I\+Z\+MO}} gizmo generation.
 \end{DoxyItemize}
+
+{\itshape As of now, \mbox{\hyperlink{namespace_crynn}{Crynn}} does not use submodules for all of its dependencies. This will change, but as it stands you can find the dependency files in the lib/thirdparty folder.}\hypertarget{index_autotoc_md3}{}\doxysection{Getting Started\+:}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md4}{}\doxysubsection{Downloading Crynn\+:}\label{index_autotoc_md4}
+To get started, you will need a copy of the \mbox{\hyperlink{namespace_crynn}{Crynn}} source. If you have Git installed, you can download \mbox{\hyperlink{namespace_crynn}{Crynn}} by running this command in the console\+: {\ttfamily git clone \href{https://github.com/wmcnamara/crynn.git}{\texttt{ https\+://github.\+com/wmcnamara/crynn.\+git}} -\/-\/recursive} Make sure you use a recursive clone, to fetch all submodules.\hypertarget{index_autotoc_md5}{}\doxysubsection{Building Crynn\+:}\label{index_autotoc_md5}
+To manage the build process, \mbox{\hyperlink{namespace_crynn}{Crynn}} uses \href{https://premake.github.io/}{\texttt{ Premake}}.
+
+
+\begin{DoxyEnumerate}
+\item Naviagate to \mbox{\hyperlink{namespace_crynn}{Crynn}}\textquotesingle{}s base directory, containing the {\ttfamily premake5.\+exe} file.
+\item Open any command line program, and navigate to that directory.
+\item Launch premake5 with a command line argument corresponding with the I\+DE you\textquotesingle{}re using.
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Example\+: {\ttfamily ./premake5 vs2019} for Visual Studio 2019 project files
+\item Example\+: {\ttfamily ./premake5 vs2017} for Visual Studio 2017 project files
+\end{DoxyItemize}
+
+To know more about Premake, and how to generate project files for your I\+DE please visit Premake\textquotesingle{}s, \href{https://github.com/premake/premake-core/wiki/Using-Premake}{\texttt{ \char`\"{}\+Using Premake\char`\"{}}} article 

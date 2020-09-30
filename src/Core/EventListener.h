@@ -33,7 +33,7 @@ namespace Crynn
 		virtual void BeforeClose() {} ///Called before quitting to desktop with Application::Instance().Quit();
 
 		///Returns true if this instance's events are subscribed to the event system.
-		bool IsSubscribed();
+		bool IsSubscribed() { return subscribed; }
 	private:		
 		///Subscribes the events in this class to the Crynn event system. Call at the end of your constructor.
 		void SubscribeEvents();

@@ -41,9 +41,4 @@ namespace Crynn
 		subscribed = false;
 		Debug::Log("Event Listener Unsubscribed");
 	}
-
-	bool EventListener::IsSubscribed()
-	{
-		return subscribed;
-	}
 }
