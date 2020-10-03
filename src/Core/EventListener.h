@@ -9,7 +9,7 @@ namespace Crynn
 	/// <summary>
 	/// Allows interfacing with the Crynn event system.
 	/// Inherit from this class, and override any function you may need.
-	/// Call Subscribe() to subscribe overridden functions to the Crynn event system.
+	/// Events are subscribed automatically with this classes constructor.
 	/// </summary>
 	class EventListener
 	{

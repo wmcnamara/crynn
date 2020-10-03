@@ -114,16 +114,4 @@ namespace Crynn
 		//assert(0 && "Dont use Setrotation");
 		matrix = glm::rotate(mat4(1.0f), angle, rotation);
 	}
-
-	void Transform::LogMatrix4(const mat4& matrix)
-	{
-		for (int i = 0; i < 4; i++)
-		{
-			for (int j = 0; i < 4; i++)
-			{
-				std::cout << matrix[i][j];
-			}
-			std::cout << "\n";
-		}
-	}
 }

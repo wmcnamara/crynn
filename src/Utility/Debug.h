@@ -1,5 +1,6 @@
 #pragma once
 #include "glad/glad.h"
+#include "glm/glm.hpp"
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -19,6 +20,7 @@ namespace Crynn
 		static void LogToFile(const char* msg); /// Logs to output.log in the working directory. This function is not fast.
 		static void LogToFile(const std::stringstream& msg); /// Logs to output.log in the working directory. This function is not fast.
 
+		static void LogMatrix4(const glm::mat4& matrix);
 		static void LogGLErr(); /// Logs glGetError to std::cout and output.log
 		static void ClearOutputLogs(); /// Clears output.log
 	};

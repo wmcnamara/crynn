@@ -38,6 +38,20 @@ namespace Crynn
 #endif
 	}
 
+	void Debug::LogMatrix4(const glm::mat4& matrix)
+	{
+#ifdef CRYNN_DEBUG
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; i < 4; i++)
+			{
+				std::cout << matrix[i][j];
+			}
+			std::cout << "\n";
+		}
+#endif
+	}
+
 	void Debug::LogGLErr()
 	{
 #ifdef CRYNN_DEBUG

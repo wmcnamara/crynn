@@ -15,7 +15,7 @@ namespace Crynn
         bool z = one.transform.GetPosition().z + one.Size.z >= two.transform.GetPosition().z &&
             two.transform.GetPosition().z + two.Size.z >= one.transform.GetPosition().z;
 
-        // collision only if on both axes
+        // collision only if on every axes
         return x && y && z;
     }
 
