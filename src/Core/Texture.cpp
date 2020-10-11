@@ -35,6 +35,7 @@ namespace Crynn
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 		// load and generate the texture
+		stbi_set_flip_vertically_on_load(true);
 		m_textureData = stbi_load(path, &m_width, &m_height, &m_nrChannels, 4);
 		if (m_textureData)
 		{

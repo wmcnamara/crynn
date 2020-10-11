@@ -1,5 +1,6 @@
 //This class is a basic example of getting up and running with Crynn.
 #include "Crynn.h"
+using namespace Crynn;
 
 int main()
 {
