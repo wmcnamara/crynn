@@ -1,6 +1,4 @@
 # Crynn Game Engine
-Game Engine Created In C++17 and OpenGL
-
 ![Crynn Logo](docs/CrynnSmall.png)
 
 ## Introduction
