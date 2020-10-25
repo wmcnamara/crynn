@@ -14,10 +14,11 @@ namespace Crynn
 
 	void EventListener::SubscribeEvents()
 	{		
-		assert(!subscribed);
-
 		//TODO move away from lambdas, as they dont look very nice here.
-		//Subscribe events. 		
+		//Subscribe events. 	
+
+		if (subscribed)
+			return;
 
 		updateHandlerID = Application::Instance().OnUpdate.AddHandler([this](double deltaTime) { Update(deltaTime); });
 		startHandlerID = Application::Instance().OnStart.AddHandler([this]() { Start(); });		
@@ -30,7 +31,8 @@ namespace Crynn
 
 	void EventListener::UnsubscribeEvents()
 	{
-		assert(subscribed);
+		if (!subscribed)
+			return;
 
 		//Unsubscribe events
 		Application::Instance().OnUpdate.RemoveHandler(updateHandlerID);

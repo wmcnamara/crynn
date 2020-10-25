@@ -13,6 +13,10 @@ namespace Crynn
 	/// </summary>
 	class EventListener
 	{
+	public: 		
+		///Unsubscribes the events in this class from the Crynn event system. Call at the start of your destructor.
+		void UnsubscribeEvents();
+
 	protected:		
 		EventListener();
 		~EventListener();
@@ -37,8 +41,8 @@ namespace Crynn
 	private:		
 		///Subscribes the events in this class to the Crynn event system. Call at the end of your constructor.
 		void SubscribeEvents();
-		///Unsubscribes the events in this class from the Crynn event system. Call at the start of your destructor.
-		void UnsubscribeEvents();
+
+		friend class CrynnObject;
 
 		//Used to remove handlers when this object is destructed.
 		int updateHandlerID; 

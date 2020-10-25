@@ -48,6 +48,9 @@ namespace Crynn
 
 		///Returns the time elapsed since the application was launched.
 		double GetTime();
+
+		//Multiplied by deltaTime before being passed to Update. Used to speed up and slowdown time.
+		inline static double timeScale = 1.0;
 	private:
 		//Used to get deltaTimes.
 		double currentFrameTime = 0;

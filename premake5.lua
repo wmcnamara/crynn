@@ -50,6 +50,7 @@ project "Crynn"
 		"lib/thirdparty/glad",
 		"lib/thirdparty/imgui",
 		"lib/thirdparty/glfw/include"
+		"lib\thirdparty\openal\include"
 	}
 
 	libdirs
@@ -57,7 +58,7 @@ project "Crynn"
 		"lib/thirdparty/glfw/lib"
 	}
 
-	links { "glfw3.lib", "opengl32.lib" }
+	links { "glfw3.lib", "opengl32.lib"}
 
 	filter "system:Windows"
 		cppdialect "C++17"

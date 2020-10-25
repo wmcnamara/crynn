@@ -41,9 +41,9 @@ namespace Crynn
 		static void SetRotation(float angle, float x, float y, float z, mat4& matrix);
 		static void SetRotation(float angle, vec3 rotation, mat4& matrix);
 
-		/// Prints the content of a 4x4 matrix to the console
-		static void LogMatrix4(const mat4& matrix);
-
+		//Returns a non-const reference to the low level matrix struct this class is represented with
+		glm::mat4 GetMatrix() { return transformMatrix; }
+		
 		mat4 transformMatrix = mat4(1.0f);
 	private:
 	};
