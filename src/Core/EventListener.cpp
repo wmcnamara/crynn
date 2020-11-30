@@ -20,10 +20,10 @@ namespace Crynn
 		if (subscribed)
 			return;
 
-		updateHandlerID = Application::Instance().OnUpdate.AddHandler([this](double deltaTime) { Update(deltaTime); });
-		startHandlerID = Application::Instance().OnStart.AddHandler([this]() { Start(); });		
-		beforeUpdateHandlerID = Application::Instance().OnBeforeUpdate.AddHandler([this](double deltaTime) { BeforeUpdate(deltaTime); });
-		beforeCloseHandlerID = Application::Instance().OnBeforeClose.AddHandler([this]() { BeforeClose(); });
+		updateHandlerID = Application::OnUpdate.AddHandler([this](double deltaTime) { Update(deltaTime); });
+		startHandlerID = Application::OnStart.AddHandler([this]() { Start(); });		
+		beforeUpdateHandlerID = Application::OnBeforeUpdate.AddHandler([this](double deltaTime) { BeforeUpdate(deltaTime); });
+		beforeCloseHandlerID = Application::OnBeforeClose.AddHandler([this]() { BeforeClose(); });
 
 		subscribed = true;
 		///Debug::Log("Behaviour Events Subscribed...");
@@ -35,10 +35,10 @@ namespace Crynn
 			return;
 
 		//Unsubscribe events
-		Application::Instance().OnUpdate.RemoveHandler(updateHandlerID);
-		Application::Instance().OnStart.RemoveHandler(startHandlerID);
-		Application::Instance().OnBeforeUpdate.RemoveHandler(beforeUpdateHandlerID);
-		Application::Instance().OnBeforeClose.RemoveHandler(beforeCloseHandlerID);
+		Application::OnUpdate.RemoveHandler(updateHandlerID);
+		Application::OnStart.RemoveHandler(startHandlerID);
+		Application::OnBeforeUpdate.RemoveHandler(beforeUpdateHandlerID);
+		Application::OnBeforeClose.RemoveHandler(beforeCloseHandlerID);
 
 		subscribed = false;
 		Debug::Log("Event Listener Unsubscribed");

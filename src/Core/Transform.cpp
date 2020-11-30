@@ -6,6 +6,11 @@ namespace Crynn
 	{
 		transformMatrix = translate(transformMatrix, translation);
 	}
+	
+	void Transform::Translate(float x, float y, float z)
+	{
+		transformMatrix = translate(transformMatrix, glm::vec3(x, y, z));
+	}
 
 	void Transform::Scale(vec3 scale)
 	{

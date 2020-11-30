@@ -92,12 +92,12 @@ namespace Crynn
 	void TextureViewer::GUIDraw()
 	{
 		//Update Model Matrix
-		transformMatrix = glm::mat4(1.0f);
-		transformMatrix = glm::rotate(
-			transformMatrix,
+		GetMatrix() = glm::mat4(1.0f);
+		GetMatrix() = glm::rotate(
+			GetMatrix(),
 			(float)glfwGetTime() * glm::radians(50.0f),
 			glm::vec3(0.5f, 1.0f, 0.0f));
 
-		m_renderer->Render();
+		//m_renderer->Render();
 	}
 }

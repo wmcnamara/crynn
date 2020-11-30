@@ -12,7 +12,7 @@ namespace Crynn
 		CrynnObject();
 		int GetID() const { return ID; }
 	private:
-		int ID;
+		int ID = 0;
 		static int GenerateID();
 
 		friend class EventListener;

@@ -17,7 +17,7 @@ namespace Crynn
 
 	void MatrixEditor::GUIDraw()
 	{
-		static glm::vec3 position = glm::vec3(0, -2, -15);
+		static glm::vec3 position = glm::vec3(0, 3, -15);
 		static glm::vec3 rotation = glm::vec3(0, 0, 0);
 		static glm::vec3 scale = glm::vec3(1, 1, 1);
 		static float angle = 0;

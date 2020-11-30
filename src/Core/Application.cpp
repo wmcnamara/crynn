@@ -5,7 +5,7 @@ namespace Crynn
 	void Application::Quit()
 	{
 		OnBeforeClose.Invoke();
-		glfwSetWindowShouldClose(glfwWindow, true);
+		glfwSetWindowShouldClose(Window::GetGLFWWin(), true);
 	}
 
 	void Application::Tick()
@@ -13,24 +13,23 @@ namespace Crynn
 		//Get the deltaTime
 		currentFrameTime = glfwGetTime();
 		double deltaTime = currentFrameTime - previousFrameTime;
+		previousFrameTime = currentFrameTime; //Update the previousFrameTime
 
 		//Invoke update
 		OnBeforeUpdate.Invoke(deltaTime);
-		OnUpdate.Invoke(deltaTime * timeScale);
-		previousFrameTime = currentFrameTime; //Update the previousFrameTime
+		OnUpdate.Invoke(deltaTime);
 	}
 
 	void Application::Initialise()
 	{
 		glfwSetTime(0); //This is done to prevent long startup times from affecting the first frame deltaTime
-		glfwSetWindowUserPointer(glfwWindow, this);
 
 		auto func = [](GLFWwindow* w)
 		{
 			static_cast<Application*>(glfwGetWindowUserPointer(w))->OnBeforeClose.Invoke();
 		};
 
-		glfwSetWindowCloseCallback(glfwWindow, func);
+		glfwSetWindowCloseCallback(Window::GetGLFWWin(), func);
 		OnStart.Invoke();
 	}
 

@@ -32,4 +32,8 @@ namespace Crynn
 			}
 		}
 	}
+	void MeshRenderer::Update(double deltaTime)
+	{
+		Render();
+	}
 }

@@ -29,6 +29,7 @@ namespace Crynn
 		}
 
 		glfwMakeContextCurrent(glfwWindow);
+		glfwSetWindowUserPointer(glfwWindow, this); //Set this as the user pointer
 
 		glfwSetFramebufferSizeCallback(glfwWindow, SizeCallback);
 		glfwSetKeyCallback(glfwWindow, InputCallback);
@@ -40,10 +41,6 @@ namespace Crynn
 		int frameBufWidth = 0, frameBufHeight = 0;
 		glfwGetFramebufferSize(glfwWindow, &frameBufWidth, &frameBufHeight);
 		m_frameBufSize = ImVec2(frameBufWidth, frameBufHeight);
-
-		//Set the application instance to point to the window we just created. 
-		//This is for easy cross engine access.
-		Application::Instance().glfwWindow = glfwWindow;
 
 		//Load glad
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -65,7 +62,7 @@ namespace Crynn
 		ImGui::StyleColorsDark();
 
 		//Subscribe the window resize event. 
-		Application::Instance().OnWindowResize.AddHandler([this](int width, int height)
+		Application::OnWindowResize.AddHandler([this](int width, int height)
 		{
 			UpdateWindowSize();
 		});
@@ -141,11 +138,11 @@ namespace Crynn
 	//GLFW event functions
 	void InputCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 	{
-		Application::Instance().OnInput.Invoke(window, key, scancode, action, mods);
+		Application::OnInput.Invoke(window, key, scancode, action, mods);
 	}
 
 	void SizeCallback(GLFWwindow* window, int width, int height)
 	{
-		Application::Instance().OnWindowResize.Invoke(width, height);
+		Application::OnWindowResize.Invoke(width, height);
 	}
 }

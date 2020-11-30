@@ -45,13 +45,6 @@ namespace Crynn
 						{
 							//Convert from wide string to const char*.
 							//wcslen gets wide string length
-
-							//Setup logging
-							std::ofstream log;
-							log.open("output.log");
-							if (log.is_open())
-								log << "Size of file path: " << *pszFilePath << '\n';
-
 							//Convert the string:
 
 							//Create a buffer to hold it. Add one for null term char.
@@ -61,10 +54,6 @@ namespace Crynn
 							wcstombs_s(&retVal, buf.get(), wcslen(pszFilePath) + 1, pszFilePath, _TRUNCATE); //Copy the data into buf
 
 							filePath = buf.get(); //Update filePath
-
-							//Finalize resources
-							log << filePath.c_str() << '\n';
-							log.close();
 							CoTaskMemFree(pszFilePath);
 						}
 						pItem->Release();

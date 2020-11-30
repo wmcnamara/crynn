@@ -92,7 +92,7 @@ namespace Crynn
 			return nextID++;
 		}
 
-		//Removes a single function from the delegate
+		//Removes a single function from the delegate using its ID
 		inline void RemoveHandler(int ID)
 		{
 			m_handlers.erase(ID);

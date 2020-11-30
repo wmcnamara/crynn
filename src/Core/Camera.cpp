@@ -30,7 +30,7 @@ namespace Crynn
 		//Bind the UBO, fill and unbind.
 		glBindBuffer(GL_UNIFORM_BUFFER, m_matrixUBO);
 		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(m_projection));
-		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(transformMatrix));
+		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(GetMatrix()));
 		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 	}
 
@@ -44,6 +44,7 @@ namespace Crynn
 
 		if (m_projType == Projection::Perspective)
 		{
+			glEnable(GL_DEPTH_TEST);
 			m_projection = glm::perspective(
 				glm::radians(60.0f),
 				viewportDat[2] / viewportDat[3], //The first 2 elements of GL_VIEWPORT are irrelevant here.

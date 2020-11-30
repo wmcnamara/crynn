@@ -39,16 +39,12 @@ namespace Crynn
 		/// </summary>
 		/// <returns> ImVec2 object with x as the width, and y as the height</returns>
 		static const ImVec2& GetSize();
+
 		/// <summary>
 		/// Gets the size of the framebuffer.
 		/// </summary>
 		/// <returns> ImVec2 object with x as the width, and y as the height</returns>
 		static const ImVec2& GetFrameBufSize();
-
-		/// <summary>
-		/// Raw GLFW window.
-		/// </summary>
-		GLFWwindow* glfwWindow;
 
 		/// <summary>
 		/// Called before rendering to clear buffers, poll events and setup IMGUI data.
@@ -71,7 +67,14 @@ namespace Crynn
 		/// </summary>
 		/// <returns>True if the window should close. Used to hold a game loop.</returns>
 		bool ShouldClose();
+
+		static GLFWwindow* GetGLFWWin() { return reinterpret_cast<GLFWwindow*>(glfwGetWindowUserPointer(glfwWindow)); }
 	private:
+		/// <summary>
+		/// Raw GLFW window.
+		/// </summary>
+		inline static GLFWwindow* glfwWindow = NULL;
+
 		static inline ImVec2 m_screenSize = ImVec2(0, 0); ///Size of the window///
 		static inline ImVec2 m_frameBufSize = ImVec2(0, 0); ///Size of the framebuffer///
 	};

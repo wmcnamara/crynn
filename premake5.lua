@@ -50,7 +50,8 @@ project "Crynn"
 		"lib/thirdparty/glad",
 		"lib/thirdparty/imgui",
 		"lib/thirdparty/glfw/include"
-		"lib\thirdparty\openal\include"
+		"lib/thirdparty/openal/include"
+		"lib/thirdparty/audiofile"
 	}
 
 	libdirs

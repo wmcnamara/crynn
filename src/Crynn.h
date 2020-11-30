@@ -12,6 +12,7 @@
 #include "Core/Application.h"
 #include "Core/Transform.h"
 #include "Core/Mesh.h"
+#include "Core/CrynnObject.h"
 
 #include "Core/Collision/AABB.h"
 

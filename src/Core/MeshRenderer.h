@@ -5,23 +5,25 @@
 #include "Shader.h"
 #include "Camera.h"
 #include "Utility/Debug.h"
+#include "EventListener.h"
 
 namespace Crynn
 {
 	/// <summary>
 	/// Renders a mesh with a shader and a texture.
 	/// </summary>
-	class MeshRenderer
+	class MeshRenderer : EventListener
 	{
 	public:
 		MeshRenderer(Mesh* mesh, Texture* texture, Shader* shader, mat4* modelMatrix);
 
-		/// Draws a mesh to the screen with the objects specified int the constructor.
-		void Render();
-
 		const Mesh* GetMesh() const { return m_mesh; }
 		bool active = true; ///Toggle rendering
 	private:		
+		/// Draws a mesh to the screen with the objects specified int the constructor.
+		void Render();
+
+		void Update(double deltaTime) override;
 		mat4* m_model;
 		
 		Mesh* m_mesh;

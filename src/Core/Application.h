@@ -2,11 +2,15 @@
 #include "Event.h"
 #include "GLFW/glfw3.h"
 
+//class Window; //Forward declare window
+#include "Window.h"
+
 /// <summary>
 /// Main Engine Namespace
 /// </summary>
 namespace Crynn 
 {
+
 	/// <summary>
 	/// A singleton representation of the application.
 	/// Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components.
@@ -14,49 +18,49 @@ namespace Crynn
 	class Application
 	{
 	public:
-		///
 		///Used by Input to subscribe input events. Do not manually invoke().
 		///Parameters determined by the glfwSetKeyCallback parameters.
 		///https://www.glfw.org/docs/latest/group__input.html#ga1caf18159767e761185e49a3be019f8d
-		Event<GLFWwindow*, int, int, int, int> OnInput;
+		inline static Event<GLFWwindow*, int, int, int, int> OnInput;
 
-		Event<void> OnBeforeClose; ///Called once before quitting to desktop using Application::Instance().Quit();///
-		Event<double> OnUpdate; ///Called once every frame///
-		Event<double> OnBeforeUpdate; ///Used to set uniform buffer data before rendering///
-		Event<void> OnStart; ///Called once before entering the main loop. Called before update.///
-		Event<int, int> OnWindowResize; ///Invoked when the window is resized. Contains the width and height of new window.///
+		inline static Event<void> OnBeforeClose; ///Called once before quitting to desktop using Application::Instance().Quit();///
+		inline static Event<double> OnUpdate; ///Called once every frame///
+		inline static Event<double> OnBeforeUpdate; ///Used to set uniform buffer data before rendering///
+		inline static Event<void> OnStart; ///Called once before entering the main loop. Called before update.///
+		inline static Event<int, int> OnWindowResize; ///Invoked when the window is resized. Contains the width and height of new window.///
 
 		/// <summary>
 		/// Invokes OnBeforeClose, and quits to desktop.
 		/// </summary>
-		void Quit();
+		static void Quit();
 
 		/// <summary>
 		/// Invokes events to update Behaviours.
 		/// </summary>
-		void Tick();
+		static void Tick();
 
 		/// <summary>
 		/// Invokes OnStart()
 		/// </summary>
-		void Initialise();
+		static void Initialise();
 
 		/// <summary>
 		/// Raw GLFW window. Assigned by the Window class when constructed.
 		/// </summary>
-		GLFWwindow* glfwWindow;
+		//GLFWwindow* glfwWindow;
 
 		///Returns the time elapsed since the application was launched.
-		double GetTime();
+		static double GetTime();
 
 		//Multiplied by deltaTime before being passed to Update. Used to speed up and slowdown time.
 		inline static double timeScale = 1.0;
 	private:
 		//Used to get deltaTimes.
-		double currentFrameTime = 0;
-		double previousFrameTime = 0;
+		inline static double currentFrameTime = 0;
+		inline static double previousFrameTime = 0;
 	//SINGLETON//
 	public:
+		/*
 		/// <summary>
 		/// Get the singleton instance of application.
 		/// </summary>
@@ -69,7 +73,8 @@ namespace Crynn
 
 		Application(Application const&) = delete;
 		void operator=(Application const&) = delete;
+		*/
 	private:
-		Application() = default;
+		//Application() = default;
 	};
 }

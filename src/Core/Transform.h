@@ -21,6 +21,7 @@ namespace Crynn
 		Transform() = default;
 
 		void Translate(vec3 translation);
+		void Translate(float x, float y, float z);
 		void Scale(vec3 scale);
 		void Rotate(float rotationInDegrees, vec3 axis);
 
@@ -42,9 +43,8 @@ namespace Crynn
 		static void SetRotation(float angle, vec3 rotation, mat4& matrix);
 
 		//Returns a non-const reference to the low level matrix struct this class is represented with
-		glm::mat4 GetMatrix() { return transformMatrix; }
-		
-		mat4 transformMatrix = mat4(1.0f);
+		glm::mat4& GetMatrix() { return transformMatrix; }
 	private:
+		mat4 transformMatrix = mat4(1.0f);
 	};
 }
