@@ -12,10 +12,6 @@
 
 #include "Application.h"
 
-#ifndef UNICODE
-#define UNICODE
-#endif 
-
 namespace Crynn
 {
 	/// <summary>
@@ -32,6 +28,8 @@ namespace Crynn
 		/// <param name="width">Width of the window</param>
 		/// <param name="height">Height of the window</param>
 		Window(const char* name, int width, int height);
+		Window(const Window& other) = delete; //There should only ever be one window.
+		Window(const Window&& other) = delete; //There should only ever be one window.
 		~Window();
 
 		/// <summary>
@@ -68,7 +66,11 @@ namespace Crynn
 		/// <returns>True if the window should close. Used to hold a game loop.</returns>
 		bool ShouldClose();
 
-		static GLFWwindow* GetGLFWWin() { return reinterpret_cast<GLFWwindow*>(glfwGetWindowUserPointer(glfwWindow)); }
+		static GLFWwindow* GetGLFWWin() 
+		{ 
+			assert(glfwWindow != NULL);
+			return glfwWindow; 
+		}
 	private:
 		/// <summary>
 		/// Raw GLFW window.

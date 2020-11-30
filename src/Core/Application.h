@@ -5,12 +5,15 @@
 //class Window; //Forward declare window
 #include "Window.h"
 
+#ifndef UNICODE
+#define UNICODE
+#endif 
+
 /// <summary>
 /// Main Engine Namespace
 /// </summary>
 namespace Crynn 
 {
-
 	/// <summary>
 	/// A singleton representation of the application.
 	/// Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components.
@@ -18,6 +21,12 @@ namespace Crynn
 	class Application
 	{
 	public:
+		//This class is totally static. You cannot copy this class, or instantiate it.
+		Application() = delete;
+		~Application() = default;
+		Application(const Application&) = delete;
+		Application(const Application&&) = delete;
+
 		///Used by Input to subscribe input events. Do not manually invoke().
 		///Parameters determined by the glfwSetKeyCallback parameters.
 		///https://www.glfw.org/docs/latest/group__input.html#ga1caf18159767e761185e49a3be019f8d
@@ -58,23 +67,5 @@ namespace Crynn
 		//Used to get deltaTimes.
 		inline static double currentFrameTime = 0;
 		inline static double previousFrameTime = 0;
-	//SINGLETON//
-	public:
-		/*
-		/// <summary>
-		/// Get the singleton instance of application.
-		/// </summary>
-		/// <returns>Instance of application.</returns>
-		static Application& Instance()
-		{
-			static Application instance;
-			return instance;
-		}
-
-		Application(Application const&) = delete;
-		void operator=(Application const&) = delete;
-		*/
-	private:
-		//Application() = default;
 	};
 }
