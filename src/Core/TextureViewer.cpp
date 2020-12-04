@@ -1,6 +1,6 @@
 #include "TextureViewer.h"
 
-namespace Crynn
+namespace crynn
 {
 	TextureViewer::TextureViewer(ImVec2 size, ImVec2 pos) : GuiWindow(size, pos, "Texture Viewer")
 	{

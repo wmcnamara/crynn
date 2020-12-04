@@ -2,7 +2,7 @@
 #include "Window.h"
 #include "Application.h"
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// Simple input component that allows interfacing with the Crynn input system.

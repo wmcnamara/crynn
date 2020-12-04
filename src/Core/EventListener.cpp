@@ -1,6 +1,6 @@
 #include "EventListener.h"
 
-namespace Crynn
+namespace crynn
 {
 	EventListener::EventListener()
 	{

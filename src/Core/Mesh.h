@@ -3,7 +3,7 @@
 #include "glm/glm.hpp"
 #include "Utility/Debug.h"
 #include "Utility/Timer.h"
-namespace Crynn 
+namespace crynn 
 {
 	class Mesh
 	{

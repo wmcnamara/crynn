@@ -1,6 +1,6 @@
 #include "Transform.h"
 
-namespace Crynn
+namespace crynn
 {
 	void Transform::Translate(vec3 translation)
 	{

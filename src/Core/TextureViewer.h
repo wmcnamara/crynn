@@ -7,7 +7,7 @@
 #include "Utility/File.h"
 #include "GUI/GuiWindow.h"
 
-namespace Crynn
+namespace crynn
 {
 	class TextureViewer : public GuiWindow, public Transform
 	{

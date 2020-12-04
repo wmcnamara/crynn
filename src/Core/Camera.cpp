@@ -1,5 +1,5 @@
 #include "Camera.h"
-namespace Crynn
+namespace crynn
 {
 	Camera::Camera(vec3 position, Projection projType) : m_projType(projType)
 	{		
@@ -17,6 +17,7 @@ namespace Crynn
 
 	Camera::~Camera()
 	{
+		glDeleteBuffers(1, &m_matrixUBO);
 	}
 
 	void Camera::BeforeUpdate(double deltaTime)

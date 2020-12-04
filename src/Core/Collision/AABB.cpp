@@ -1,5 +1,5 @@
 #include "AABB.h"
-namespace Crynn
+namespace crynn
 {
     bool AABBSolver::Compare(const AABB& one, const AABB& two)
     {

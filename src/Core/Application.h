@@ -12,7 +12,7 @@
 /// <summary>
 /// Main Engine Namespace
 /// </summary>
-namespace Crynn 
+namespace crynn 
 {
 	/// <summary>
 	/// A singleton representation of the application.

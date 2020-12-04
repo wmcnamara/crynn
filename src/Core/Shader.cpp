@@ -1,6 +1,6 @@
 #include "Shader.h"
 
-namespace Crynn
+namespace crynn
 {
 	Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	{

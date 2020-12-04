@@ -2,7 +2,7 @@
 #include <chrono>
 #include "Debug.h"
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// Simple timer that counts the time from instantiation to when it goes out of scope.

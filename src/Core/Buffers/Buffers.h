@@ -4,7 +4,7 @@ class Buffers
 };
 #include "glad/glad.h"
 
-namespace Crynn
+namespace crynn
 {
 	class VBO
 	{

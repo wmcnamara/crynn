@@ -1,6 +1,6 @@
 #include "MeshRenderer.h"
 
-namespace Crynn
+namespace crynn
 {
 	MeshRenderer::MeshRenderer(Mesh* mesh, Texture* texture, Shader* shader, mat4* modelMatrix) :
 		m_mesh(mesh),

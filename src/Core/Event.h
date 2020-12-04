@@ -12,7 +12,7 @@
 This class is a modification of delegate intended for use in the Crynn game engine.
 */
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// Creates an event.

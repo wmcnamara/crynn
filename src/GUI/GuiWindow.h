@@ -8,7 +8,7 @@
 #include "Core/Event.h"
 #include "Core/EventListener.h"
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// Base class for any onscreen GUI window.

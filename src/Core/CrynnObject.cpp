@@ -1,5 +1,5 @@
 #include "CrynnObject.h"
-namespace Crynn
+namespace crynn
 {
 	CrynnObject::CrynnObject() : ID(GenerateID()) {}
 

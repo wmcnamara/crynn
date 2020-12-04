@@ -4,7 +4,7 @@
 #include "EventListener.h"
 #include "Transform.h"
 
-namespace Crynn
+namespace crynn
 {
 	class CrynnObject : public EventListener, public Transform
 	{

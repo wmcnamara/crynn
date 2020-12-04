@@ -1,5 +1,5 @@
 #include "Timer.h"
-namespace Crynn
+namespace crynn
 {
 	ScopedTimer::ScopedTimer(const char* funcName, TimeFormat format) :
 		m_startPoint(std::chrono::high_resolution_clock::now()),

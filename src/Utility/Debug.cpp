@@ -1,6 +1,6 @@
 #include "Debug.h"
 
-namespace Crynn
+namespace crynn
 {
 	void Debug::Log(const std::stringstream& msg)
 	{

@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iomanip>
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// Collection of functions to assist with debugging.

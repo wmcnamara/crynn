@@ -1,5 +1,5 @@
 #include "File.h"
-namespace Crynn
+namespace crynn
 {
 	//Allows user to choose an image and returns the filepath after selection.
 	File::GetFileArgs File::GetFile()

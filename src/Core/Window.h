@@ -11,8 +11,9 @@
 #include "Utility/Debug.h"
 
 #include "Application.h"
+#include "Core/Math/Vec2.h"
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// The window everything is rendered on.
@@ -27,7 +28,7 @@ namespace Crynn
 		/// <param name="name">Window title seen in the top left</param>
 		/// <param name="width">Width of the window</param>
 		/// <param name="height">Height of the window</param>
-		Window(const char* name, int width, int height);
+		Window(const char* name, unsigned int width, unsigned int height);
 		Window(const Window& other) = delete; //There should only ever be one window.
 		Window(const Window&& other) = delete; //There should only ever be one window.
 		~Window();
@@ -77,6 +78,7 @@ namespace Crynn
 		/// </summary>
 		inline static GLFWwindow* glfwWindow = NULL;
 
+		//TODO change constructor
 		static inline ImVec2 m_screenSize = ImVec2(0, 0); ///Size of the window///
 		static inline ImVec2 m_frameBufSize = ImVec2(0, 0); ///Size of the framebuffer///
 	};

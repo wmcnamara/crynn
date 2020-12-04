@@ -4,7 +4,7 @@
 #include "Application.h"
 #include <assert.h>
 
-namespace Crynn 
+namespace crynn 
 {
 	/// <summary>
 	/// Allows interfacing with the Crynn event system.

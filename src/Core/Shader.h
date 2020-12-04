@@ -11,7 +11,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "Utility/Debug.h"
 
-namespace Crynn
+namespace crynn
 {
 	class Shader
 	{

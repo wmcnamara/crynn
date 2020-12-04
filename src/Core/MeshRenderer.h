@@ -7,7 +7,7 @@
 #include "Utility/Debug.h"
 #include "EventListener.h"
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// Renders a mesh with a shader and a texture.

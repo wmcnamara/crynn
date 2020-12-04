@@ -1,6 +1,6 @@
 #include "Application.h"
 
-namespace Crynn
+namespace crynn
 {
 	void Application::Quit()
 	{

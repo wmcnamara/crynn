@@ -11,7 +11,7 @@
 #include "Input.h"
 #include "Transform.h"
 
-namespace Crynn 
+namespace crynn 
 {
 	using namespace glm;
 

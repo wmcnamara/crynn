@@ -3,7 +3,7 @@
 #include "Core/Transform.h"
 #include "glm/glm.hpp"
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// Represents an aligned axis bounding box.

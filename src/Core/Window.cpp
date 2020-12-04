@@ -1,12 +1,12 @@
 #include "Window.h"
 
-namespace Crynn
+namespace crynn
 {
 	//Forward declarations of GLFW event functions
 	void InputCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 	void SizeCallback(GLFWwindow* window, int width, int height);
 
-	Window::Window(const char* name, int width, int height)
+	Window::Window(const char* name, unsigned int width, unsigned int height)
 	{
 		Debug::ClearOutputLogs();
 

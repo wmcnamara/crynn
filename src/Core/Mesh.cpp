@@ -1,5 +1,5 @@
 #include "Mesh.h"
-namespace Crynn
+namespace crynn
 {
 	Mesh::Mesh(
 		float* vertices,

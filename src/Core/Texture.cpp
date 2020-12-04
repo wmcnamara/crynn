@@ -4,7 +4,7 @@
 #define STB_IMAGE_IMPLEMENTATION 
 #include "stb_image.h"
 
-namespace Crynn
+namespace crynn
 {
 	Texture::Texture(const char* path) 
 	{ 

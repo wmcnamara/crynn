@@ -1,6 +1,6 @@
 #include "Input.h"
 
-namespace Crynn
+namespace crynn
 {
 	bool Input::GetKey(KeyCode key)
 	{

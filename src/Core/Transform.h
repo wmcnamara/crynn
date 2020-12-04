@@ -7,7 +7,7 @@
 
 using namespace glm;
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// Matrix representation with easy functions to transform it.

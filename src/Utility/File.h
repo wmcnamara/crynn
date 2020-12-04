@@ -10,7 +10,7 @@
 #include <sstream>
 #include <memory>
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// File related functions to allow user to open files.

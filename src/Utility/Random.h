@@ -1,6 +1,6 @@
 #pragma once
 #include <random>
-namespace Crynn
+namespace crynn
 {
 	/// Class used for generating random numbers
 	class Random

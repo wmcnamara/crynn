@@ -1,5 +1,5 @@
 #include "GuiWindow.h"
-namespace Crynn
+namespace crynn
 {
 	GuiWindow::GuiWindow(ImVec2 size, ImVec2 pos, const char* name) :
 		m_name(name),

@@ -5,7 +5,7 @@
 #include "glm/gtc/type_ptr.hpp"
 #include "Core/Transform.h"
 
-namespace Crynn
+namespace crynn
 {
 	/// <summary>
 	/// Allows GUI editing of any matrix after runtime. Useful for debugging.

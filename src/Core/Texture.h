@@ -5,7 +5,7 @@
 #include "Window.h"
 #include "Utility/Debug.h"
 
-namespace Crynn 
+namespace crynn 
 {
 	/// <summary>
 	/// 2D texture class.

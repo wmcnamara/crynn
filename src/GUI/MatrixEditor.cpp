@@ -1,6 +1,6 @@
 #include "MatrixEditor.h"
 
-namespace Crynn
+namespace crynn
 {
 	MatrixEditor::MatrixEditor(glm::mat4* matrix, const char* matrixname) : 
 		m_matrix(matrix), 
