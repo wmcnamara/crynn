@@ -31,8 +31,8 @@ namespace crynn
 
 	Vec2Int& Vec2Int::operator=(Vec2Int& other)
 	{
-		std::swap(x, other.x);
-		std::swap(y, other.y);
+		x = other.x;
+		y = other.y;
 
 		return *this;
 	}
@@ -42,6 +42,6 @@ namespace crynn
 		int xSqr = x * x;
 		int ySqr = y * y;
 
-		return std::sqrt(x + y);
+		return std::sqrt(xSqr + ySqr);
 	}
 }

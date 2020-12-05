@@ -34,8 +34,9 @@ namespace crynn
 		Vec2Int operator*(int other) const { return Vec2Int(x * other, y * other); }
 		Vec2Int operator/(int other) const { return Vec2Int(x / other, y / other); }
 
-		operator ImVec2() { return ImVec2(x, y); } //Convert to ImVec2
+		operator ImVec2() { return ImVec2(static_cast<float>(x), static_cast<float>(y)); } //Convert to ImVec2
 
+		//Euclidean distance of this vector.
 		float GetMagnitude() const;
 
 		int x = 0, y = 0;
