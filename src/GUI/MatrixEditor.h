@@ -8,7 +8,7 @@
 namespace crynn
 {
 	/// <summary>
-	/// Allows GUI editing of any matrix after runtime. Useful for debugging.
+	/// Allows GUI editing of any matrix at runtime. Useful for debugging.
 	/// </summary>
 	class MatrixEditor final : public GuiWindow
 	{
