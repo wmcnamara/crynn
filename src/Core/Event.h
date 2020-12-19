@@ -2,8 +2,8 @@
 #define DELEGATE_INCLUDE
 
 #include <functional>
-#include <map>
-#include "Utility/Timer.h"
+#include <unordered_map>
+
 /*
 //Weston McNamara 2020
 //Licensed Under MIT https://mit-license.org/
@@ -58,7 +58,7 @@ namespace crynn
 			m_handlers.clear();
 		}
 
-		std::map<int, Func_T> m_handlers;
+		std::unordered_map<int, Func_T> m_handlers;
 	};
 
 	/// <summary>
@@ -104,7 +104,7 @@ namespace crynn
 		}
 
 	private:
-		std::map<int, Func_T> m_handlers;
+		std::unordered_map<int, Func_T> m_handlers;
 	};
 }
 #endif //DELEGATE_INCLUDE
