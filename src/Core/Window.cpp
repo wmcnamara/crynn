@@ -20,7 +20,7 @@ namespace crynn
 		//Window
 		//Set the glfwWindow.
 		glfwWindow = glfwCreateWindow(width, height, name, NULL, NULL);
-
+		
 		if (glfwWindow == NULL)
 		{
 			Debug::Log("Failed to create GLFW window");

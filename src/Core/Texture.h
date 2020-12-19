@@ -1,10 +1,9 @@
 #pragma once
-#include "glad/glad.h"
 #include <iostream>
 #include "Shader.h"
 #include "Window.h"
 #include "Utility/Debug.h"
-
+#include "Utility/Timer.h"
 namespace crynn 
 {
 	/// <summary>
