@@ -44,4 +44,8 @@ namespace crynn
 
 		return std::sqrt(xSqr + ySqr);
 	}
+	int Vec2Int::Dot(const Vec2Int vec1, const Vec2Int vec2)
+	{
+		return (vec1.x * vec2.x) + (vec1.y + vec2.y);
+	}
 }

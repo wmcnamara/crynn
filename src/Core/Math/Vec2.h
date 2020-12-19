@@ -18,34 +18,30 @@ namespace crynn
 		Vec2Int() = default;
 		Vec2Int(int x, int y);
 
-		//Move/copy stuff
+		//Move
 		Vec2Int(Vec2Int&& other) noexcept;
 		Vec2Int& operator=(Vec2Int&& other) noexcept;
 
-		Vec2Int& operator=(Vec2Int& other);
+		//Copy
 		Vec2Int(const Vec2Int& other) = default;
+		Vec2Int& operator=(Vec2Int& other);
 
 		//arithmetic overloads
 		Vec2Int operator+(const Vec2Int& other) const { return Vec2Int(x + other.x, y + other.y); }
 		Vec2Int operator-(const Vec2Int& other) const { return Vec2Int(x - other.x, y - other.y); }
-		Vec2Int operator*(const Vec2Int& other) const { return Vec2Int(x * other.x, y * other.y); }
 		Vec2Int operator/(const Vec2Int& other) const { return Vec2Int(x / other.x, y / other.y); }
 
-		Vec2Int operator+(int other) const { return Vec2Int(x + other, y + other); }
-		Vec2Int operator-(int other) const { return Vec2Int(x - other, y - other); }
-		Vec2Int operator*(int other) const { return Vec2Int(x * other, y * other); }
-		Vec2Int operator/(int other) const { return Vec2Int(x / other, y / other); }
-		
-		Vec2Int operator+=(int other) { x += other; y += other; }
-		Vec2Int operator-=(int other) { x -= other; y -= other; }
-		Vec2Int operator*=(int other) { x *= other; y *= other; }
-		Vec2Int operator/=(int other) { x /= other; y /= other; }
-						
+		Vec2Int operator+(int n) const { return Vec2Int(x + n, y + n); }
+		Vec2Int operator-(int n) const { return Vec2Int(x - n, y - n); }
+		Vec2Int operator*(int n) const { return Vec2Int(x * n, y * n); }
+		Vec2Int operator/(int n) const { return Vec2Int(x / n, y / n); }
+
 		operator ImVec2() { return ImVec2(static_cast<float>(x), static_cast<float>(y)); } //Convert to ImVec2
 
 		//Euclidean distance of this vector.
 		float GetMagnitude() const;
 
+		static int Dot(const Vec2Int vec1, const Vec2Int vec2);
 		int x = 0, y = 0;
 	};
 }
