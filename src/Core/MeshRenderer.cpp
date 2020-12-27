@@ -15,8 +15,8 @@ namespace crynn
 		if (active)
 		{
 			glBindTexture(GL_TEXTURE_2D, m_texture->GetTextureID());
-			m_mesh->GetVAO().Bind();
-			
+			//m_mesh->GetVAO().Bind();
+			glBindBuffer(GL_ARRAY_BUFFER, m_mesh->GetVAO());
 			glUseProgram(m_shader->ID);
 
 			m_shader->SetFloat("time", (float)glfwGetTime()); //Set time uniform on current shader

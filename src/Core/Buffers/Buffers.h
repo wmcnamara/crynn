@@ -16,7 +16,7 @@ namespace crynn
 		GLuint GetID() { return ID; }
 		void Bind() { glBindBuffer(GL_ARRAY_BUFFER, ID); }
 	private:
-		GLuint ID;
+		GLuint ID = 0;
 	};
 
 	class VAO
@@ -31,7 +31,7 @@ namespace crynn
 		void Bind() const { glBindVertexArray(ID); }
 		GLuint GetID() { return ID; }
 	private:
-		GLuint ID;
+		GLuint ID = 0;
 	};
 
 	class EBO
@@ -47,6 +47,6 @@ namespace crynn
 		void Bind() { glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ID); }
 		GLuint GetID() { return ID; }
 	private:
-		GLuint ID;
+		GLuint ID = 0;
 	};
 }
