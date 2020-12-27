@@ -4,7 +4,10 @@
 ## Introduction
    Crynn is an open source game engine created with C++17 and OpenGL. It is very barebones as it stands.
    Crynn is not overtly user friendly. Knowledge of matrix math, event systems, OpenGL and GLFW is required.
-  
+   
+### Disclaimer
+This engine is mostly intended as a personal project to learn more about computer graphics, and as such I will not make any guarantees about master branch stability. I'm not always consistent with my styling, and some of the implemented code is poor, and unfinished. 
+
 ## Dependencies
 Crynn relies on a multitude of dependencies. They are listed here:
 
