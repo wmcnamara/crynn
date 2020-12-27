@@ -13,8 +13,8 @@ namespace crynn
 		/// Creates a renderable mesh.
 		/// </summary>
 		/// <param name="vertices">Array containing the vertices of your mesh.</param>
-		/// <param name="indices">Array containing the indices of your mesh. If you do not wish to render with indices, set this to NULL, and useEBO to false.</param>
 		/// <param name="numOfVertices">Number of elements in the vertices array.</param>
+		/// <param name="indices">Array containing the indices of your mesh. If you do not wish to render with indices, set this to NULL, and useEBO to false.</param>
 		/// <param name="numOfIndices">Number of elements in the indices array.</param>
 		/// <param name="useEBO">Setting this to true will generate an element buffer, and render with indices.</param>
 		Mesh(
