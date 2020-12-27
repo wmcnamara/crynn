@@ -12,25 +12,22 @@ namespace crynn
 		m_indices(indices),
 		m_numOfVertices(numOfVertices),
 		m_numOfIndices(numOfIndices),
-		m_useEBO(useEBO)
+		m_useEBO(useEBO),
+		m_vbo(vertices, numOfVertices),
+		m_vao()
+		
 	{
+#ifdef CRYNN_DEBUG
 		ScopedTimer timer("Mesh Construction", TimeFormat::Milliseconds);
+#endif
 
-		//Setup buffers
-		glGenVertexArrays(1, &VAO);
-		glGenBuffers(1, &VBO);
+		m_vao.Bind();
 
-		glBindVertexArray(VAO);
-
+		//If they chose to use an EBO, construct it now after binding the vao
 		if (useEBO)
 		{
-			glGenBuffers(1, &EBO);
-			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-			glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices) * numOfIndices, indices, GL_STATIC_DRAW);
+			m_ebo = EBO(indices, numOfIndices);
 		}
-
-		glBindBuffer(GL_ARRAY_BUFFER, VBO);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices) * numOfVertices, vertices, GL_STATIC_DRAW);
 
 		//Vertex Attributes
 		/////////////////////////////////////////////
@@ -46,10 +43,5 @@ namespace crynn
 
 	Mesh::~Mesh()
 	{
-		glDeleteVertexArrays(1, &VAO);
-		glDeleteBuffers(1, &VBO);
-
-		if (m_useEBO)
-			glDeleteBuffers(1, &EBO);
 	}
 }

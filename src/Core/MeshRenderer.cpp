@@ -15,7 +15,7 @@ namespace crynn
 		if (active)
 		{
 			glBindTexture(GL_TEXTURE_2D, m_texture->GetTextureID());
-			glBindVertexArray(m_mesh->GetVAO());
+			m_mesh->GetVAO().Bind();
 			
 			glUseProgram(m_shader->ID);
 

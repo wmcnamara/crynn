@@ -1,6 +1,7 @@
 #pragma once
 #include "glad/glad.h"
 #include "glm/glm.hpp"
+#include "Buffers/Buffers.h"
 #include "Utility/Debug.h"
 #include "Utility/Timer.h"
 namespace crynn 
@@ -36,12 +37,14 @@ namespace crynn
 			return 0;
 		}
 
-		const unsigned int GetVAO() const { return VAO; }
-		const unsigned int GetVBO() const { return VBO; }
+		const VAO& GetVAO() const { return m_vao; }
+		const VBO& GetVBO() const { return m_vbo; }
 
 		const bool Indexed() const { return m_useEBO; } //Is this mesh using an EBO?
 	private:
-		unsigned int VBO = 0, VAO = 0, EBO = 0;
+		VBO m_vbo;
+		VAO m_vao;
+		EBO m_ebo;
 
 		float* m_vertices;
 		size_t m_numOfVertices;

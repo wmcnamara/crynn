@@ -1,7 +1,4 @@
 #pragma once
-class Buffers
-{
-};
 #include "glad/glad.h"
 
 namespace crynn
@@ -9,20 +6,12 @@ namespace crynn
 	class VBO
 	{
 	public:
-		VBO(float* vertexData, size_t size)
-		{
-			glGenBuffers(1, &ID);
-			glBindBuffer(GL_ARRAY_BUFFER, ID);
-			glBufferData(GL_ARRAY_BUFFER, size, vertexData, GL_STATIC_DRAW);
-		}
+		VBO(float* vertexData, size_t size);
+		VBO() = default;
+		~VBO();
 
 		//TODO Implement real copy constructor
 		VBO(const VBO& other) = delete;
-
-		~VBO()
-		{
-			glDeleteBuffers(1, &ID);
-		}
 
 		GLuint GetID() { return ID; }
 		void Bind() { glBindBuffer(GL_ARRAY_BUFFER, ID); }
@@ -33,17 +22,29 @@ namespace crynn
 	class VAO
 	{
 	public:
-		VAO()
-		{
-			glGenVertexArrays(1, &ID);
-		}
+		VAO();
+		~VAO();
 
-		~VAO()
-		{
-			glDeleteBuffers(1, &ID);
-		}
+		//TODO Implement real copy constructor
+		VAO(const VAO& other) = delete;
 
-		void Bind() { glBindVertexArray(ID); }
+		void Bind() const { glBindVertexArray(ID); }
+		GLuint GetID() { return ID; }
+	private:
+		GLuint ID;
+	};
+
+	class EBO
+	{
+	public:
+		EBO(unsigned int* indices, unsigned int numOfIndices);
+		EBO() = default;
+		~EBO();
+
+		//TODO Implement real copy constructor
+		EBO(const EBO& other) = delete;
+
+		void Bind() { glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ID); }
 		GLuint GetID() { return ID; }
 	private:
 		GLuint ID;
