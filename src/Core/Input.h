@@ -60,7 +60,7 @@ namespace crynn
 		/// Called every frame when polling events.
 		/// Override this and add code that checks input.
 		/// </summary>
-		virtual void InputCommands() = 0;
+		virtual void Inputs() = 0;
 	private:
 		int handlerID; //Used to remove the handler when this object is destructed.
 	};

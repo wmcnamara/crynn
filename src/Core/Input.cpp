@@ -10,7 +10,7 @@ namespace crynn
 
 	Input::Input()
 	{
-		handlerID = Application::OnInput.AddHandler(std::bind(&Input::InputCommands, this));
+		handlerID = Application::OnInput.AddHandler(std::bind(&Input::Inputs, this));
 	}
 
 	Input::~Input()

@@ -38,7 +38,7 @@ namespace crynn
 		mat4 GetProjection() const { return m_projection; }
 	private:
 		void BeforeUpdate(double deltaTime) override;
-		void InputCommands() override {}
+		void Inputs() override {}
 
 		mat4 m_projection = glm::mat4(1.0f);
 		Projection m_projType;
