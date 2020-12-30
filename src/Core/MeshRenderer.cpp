@@ -6,7 +6,6 @@ namespace crynn
 		m_mesh(mesh),
 		m_texture(texture),
 		m_shader(shader),
-		m_indexed(mesh->Indexed()),
 		m_model(modelMatrix)
 	{}
 
@@ -21,7 +20,7 @@ namespace crynn
 			m_shader->SetFloat("time", (float)glfwGetTime()); //Set time uniform on current shader
 			m_shader->SetMatrix4("model", m_model);
 
-			if (m_indexed)
+			if (m_mesh->Indexed())
 			{
 				glDrawElements(GL_TRIANGLES, m_mesh->IndexCount(), GL_UNSIGNED_INT, 0);
 			}
