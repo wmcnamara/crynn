@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['q_131',['Q',['../class_crynn_1_1_input.html#aaa5969578ce759510b8824e18018dcadaf09564c9ca56850d4cd6b3319e541aee',1,'Crynn::Input']]],
-  ['quit_132',['Quit',['../class_crynn_1_1_application.html#afb52853075716e3bb11ab2f2198a3d7d',1,'Crynn::Application']]]
+  ['scopedtimer_57',['ScopedTimer',['../classcrynn_1_1_scoped_timer.html',1,'crynn::ScopedTimer'],['../classcrynn_1_1_scoped_timer.html#ab12c8d95838a78fa515d7ff3a4bb8886',1,'crynn::ScopedTimer::ScopedTimer()']]],
+  ['shader_58',['Shader',['../classcrynn_1_1_shader.html',1,'crynn']]],
+  ['shouldclose_59',['ShouldClose',['../classcrynn_1_1_window.html#ad29379056faed3e3026702fecb984f76',1,'crynn::Window']]],
+  ['stop_60',['Stop',['../classcrynn_1_1_scoped_timer.html#a2d93ba0f86cb4a62d3497d6dd579e9de',1,'crynn::ScopedTimer']]]
 ];

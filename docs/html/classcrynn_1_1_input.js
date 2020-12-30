@@ -1,0 +1,35 @@
+var classcrynn_1_1_input =
+[
+    [ "KeyCode", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1", [
+      [ "A", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a7fc56270e7a70fa81a5935b72eacbe29", null ],
+      [ "B", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a9d5ed678fe57bcca610140957afab571", null ],
+      [ "C", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a0d61f8370cad1d412f80b84d143e1257", null ],
+      [ "D", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1af623e75af30e62bbd73d6df5b50bb7b5", null ],
+      [ "E", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a3a3ea00cfc35332cedf6e5e9a32e94da", null ],
+      [ "F", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a800618943025315f869e4e1f09471012", null ],
+      [ "G", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1adfcf28d0734569a6a693bc8194de62bf", null ],
+      [ "H", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1ac1d9f50f86825a1a2302ec2449c17196", null ],
+      [ "I", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1add7536794b63bf90eccfd37f9b147d7f", null ],
+      [ "J", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1aff44570aca8241914870afbc310cdb85", null ],
+      [ "K", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1aa5f3c6a11b03839d46af9fb43c97c188", null ],
+      [ "L", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1ad20caec3b48a1eef164cb4ca81ba2587", null ],
+      [ "M", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a69691c7bdcc3ce6d5d8a1361f22d04ac", null ],
+      [ "N", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a8d9c307cb7f3c4a32822a51922d1ceaa", null ],
+      [ "P", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a44c29edb103a2872f519ad0c9a0fdaaa", null ],
+      [ "Q", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1af09564c9ca56850d4cd6b3319e541aee", null ],
+      [ "R", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1ae1e1d3d40573127e9ee0480caf1283d6", null ],
+      [ "S", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a5dbc98dcc983a70728bd082d1a47546e", null ],
+      [ "T", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1ab9ece18c950afbfa6b0fdbfa4ff731d3", null ],
+      [ "U", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a4c614360da93c0a041b22e537de151eb", null ],
+      [ "V", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a5206560a306a2e085a437fd258eb57ce", null ],
+      [ "W", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a61e9c06ea9a85a5088a499df6458d276", null ],
+      [ "X", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a02129bb861061d1a052c592e2dc6b383", null ],
+      [ "Y", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a57cec4137b614c87cb4e24a3d003a3e0", null ],
+      [ "Z", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a21c2e59531c8710156d34a3c30ac81d5", null ],
+      [ "ESC", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a6351aefd1e5e1b62c76f8580116964be", null ],
+      [ "SPACE", "classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1a6506ae39fdca9845e3a6de3865183e57", null ]
+    ] ],
+    [ "Input", "classcrynn_1_1_input.html#aba64571c43fb81b3b32c817d042ddb37", null ],
+    [ "~Input", "classcrynn_1_1_input.html#acb41f8b72bcfcf82c6b1ac7d975f12c3", null ],
+    [ "Inputs", "classcrynn_1_1_input.html#afbe7ea81fd75c6a66688ad9a8559b28f", null ]
+];

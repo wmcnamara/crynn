@@ -16,7 +16,7 @@
 namespace crynn 
 {
 	/// <summary>
-	/// A singleton representation of the application.
+	/// A class containing static functions to represent application functions, states, and events.
 	/// Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components.
 	/// </summary>
 	class Application
@@ -33,7 +33,7 @@ namespace crynn
 		///https://www.glfw.org/docs/latest/group__input.html#ga1caf18159767e761185e49a3be019f8d
 		inline static Event<GLFWwindow*, int, int, int, int> OnInput;
 
-		inline static Event<void> OnBeforeClose; ///Called once before quitting to desktop using Application::Instance().Quit();///
+		inline static Event<void> OnBeforeClose; ///Called once before quitting to desktop using Application::Quit();///
 		inline static Event<double> OnUpdate; ///Called once every frame///
 		inline static Event<double> OnBeforeUpdate; ///Used to set uniform buffer data before rendering///
 		inline static Event<void> OnStart; ///Called once before entering the main loop. Called before update.///

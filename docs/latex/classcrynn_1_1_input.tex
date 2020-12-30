@@ -1,0 +1,121 @@
+\hypertarget{classcrynn_1_1_input}{}\doxysection{crynn\+::Input Class Reference}
+\label{classcrynn_1_1_input}\index{crynn::Input@{crynn::Input}}
+
+
+Simple input component that allows interfacing with the Crynn input system. Inherit from this class and override void Input\+Commands() to use.  
+
+
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
+Inheritance diagram for crynn\+::Input\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcrynn_1_1_input}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classcrynn_1_1_input_afdb9d89da1cf405830c901a92ad6e4c1}{Key\+Code}} \{ \newline
+{\bfseries A} = GLFW\+\_\+\+KEY\+\_\+A
+, {\bfseries B} = GLFW\+\_\+\+KEY\+\_\+B
+, {\bfseries C} = GLFW\+\_\+\+KEY\+\_\+C
+, {\bfseries D} = GLFW\+\_\+\+KEY\+\_\+D
+, \newline
+{\bfseries E} = GLFW\+\_\+\+KEY\+\_\+E
+, {\bfseries F} = GLFW\+\_\+\+KEY\+\_\+F
+, {\bfseries G} = GLFW\+\_\+\+KEY\+\_\+G
+, {\bfseries H} = GLFW\+\_\+\+KEY\+\_\+H
+, \newline
+{\bfseries I} = GLFW\+\_\+\+KEY\+\_\+I
+, {\bfseries J} = GLFW\+\_\+\+KEY\+\_\+J
+, {\bfseries K} = GLFW\+\_\+\+KEY\+\_\+K
+, {\bfseries L} = GLFW\+\_\+\+KEY\+\_\+L
+, \newline
+{\bfseries M} = GLFW\+\_\+\+KEY\+\_\+M
+, {\bfseries N} = GLFW\+\_\+\+KEY\+\_\+O
+, {\bfseries P} = GLFW\+\_\+\+KEY\+\_\+P
+, {\bfseries Q} = GLFW\+\_\+\+KEY\+\_\+Q
+, \newline
+{\bfseries R} = GLFW\+\_\+\+KEY\+\_\+R
+, {\bfseries S} = GLFW\+\_\+\+KEY\+\_\+S
+, {\bfseries T} = GLFW\+\_\+\+KEY\+\_\+T
+, {\bfseries U} = GLFW\+\_\+\+KEY\+\_\+U
+, \newline
+{\bfseries V} = GLFW\+\_\+\+KEY\+\_\+T
+, {\bfseries W} = GLFW\+\_\+\+KEY\+\_\+W
+, {\bfseries X} = GLFW\+\_\+\+KEY\+\_\+X
+, {\bfseries Y} = GLFW\+\_\+\+KEY\+\_\+Y
+, \newline
+{\bfseries Z} = GLFW\+\_\+\+KEY\+\_\+Z
+, {\bfseries ESC} = GLFW\+\_\+\+KEY\+\_\+\+ESCAPE
+, {\bfseries SPACE} = GLFW\+\_\+\+KEY\+\_\+\+SPACE
+ \}
+\begin{DoxyCompactList}\small\item\em Keycodes for input commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classcrynn_1_1_input_a524a44a25801214398001790675e3635}{Get\+Key}} (\mbox{\hyperlink{classcrynn_1_1_input_afdb9d89da1cf405830c901a92ad6e4c1}{Key\+Code}} key)
+\begin{DoxyCompactList}\small\item\em Returns the state of \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classcrynn_1_1_input_afbe7ea81fd75c6a66688ad9a8559b28f}{Inputs}} ()=0
+\begin{DoxyCompactList}\small\item\em Called every frame when polling events. Override this and add code that checks input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple input component that allows interfacing with the Crynn input system. Inherit from this class and override void Input\+Commands() to use. 
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classcrynn_1_1_input_afdb9d89da1cf405830c901a92ad6e4c1}\label{classcrynn_1_1_input_afdb9d89da1cf405830c901a92ad6e4c1}} 
+\index{crynn::Input@{crynn::Input}!KeyCode@{KeyCode}}
+\index{KeyCode@{KeyCode}!crynn::Input@{crynn::Input}}
+\doxysubsubsection{\texorpdfstring{KeyCode}{KeyCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classcrynn_1_1_input_afdb9d89da1cf405830c901a92ad6e4c1}{crynn\+::\+Input\+::\+Key\+Code}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Keycodes for input commands. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcrynn_1_1_input_a524a44a25801214398001790675e3635}\label{classcrynn_1_1_input_a524a44a25801214398001790675e3635}} 
+\index{crynn::Input@{crynn::Input}!GetKey@{GetKey}}
+\index{GetKey@{GetKey}!crynn::Input@{crynn::Input}}
+\doxysubsubsection{\texorpdfstring{GetKey()}{GetKey()}}
+{\footnotesize\ttfamily bool crynn\+::\+Input\+::\+Get\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcrynn_1_1_input_afdb9d89da1cf405830c901a92ad6e4c1}{Key\+Code}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the state of 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcrynn_1_1_input_afbe7ea81fd75c6a66688ad9a8559b28f}\label{classcrynn_1_1_input_afbe7ea81fd75c6a66688ad9a8559b28f}} 
+\index{crynn::Input@{crynn::Input}!Inputs@{Inputs}}
+\index{Inputs@{Inputs}!crynn::Input@{crynn::Input}}
+\doxysubsubsection{\texorpdfstring{Inputs()}{Inputs()}}
+{\footnotesize\ttfamily virtual void crynn\+::\+Input\+::\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Called every frame when polling events. Override this and add code that checks input. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/Input.\+h\item 
+Core/Input.\+cpp\end{DoxyCompactItemize}

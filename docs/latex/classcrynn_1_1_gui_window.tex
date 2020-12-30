@@ -1,0 +1,134 @@
+\hypertarget{classcrynn_1_1_gui_window}{}\doxysection{crynn\+::Gui\+Window Class Reference}
+\label{classcrynn_1_1_gui_window}\index{crynn::GuiWindow@{crynn::GuiWindow}}
+
+
+Base class for any onscreen GUI window. Uses IMGUI and Crynn events for rendering.  
+
+
+
+
+{\ttfamily \#include $<$Gui\+Window.\+h$>$}
+
+Inheritance diagram for crynn\+::Gui\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcrynn_1_1_gui_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcrynn_1_1_gui_window_a4a0ccac4c48ed8b57efb21c6dccbbc0c}{Gui\+Window}} (Im\+Vec2 size, Im\+Vec2 pos, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Creates an onscreen GUI window \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a017a167ffbe536c5d3875fb4d3abc2ee}\label{classcrynn_1_1_gui_window_a017a167ffbe536c5d3875fb4d3abc2ee}} 
+virtual void {\bfseries Begin\+GUIDraw} ()=0
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a5942f5c699a08dcc0124a1e675eb7a18}\label{classcrynn_1_1_gui_window_a5942f5c699a08dcc0124a1e675eb7a18}} 
+virtual void {\bfseries GUIDraw} ()=0
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_aac53609c0a8fffc596ad41c01899ca32}\label{classcrynn_1_1_gui_window_aac53609c0a8fffc596ad41c01899ca32}} 
+virtual void {\bfseries End\+GUIDraw} ()=0
+\item 
+void \mbox{\hyperlink{classcrynn_1_1_gui_window_a8bb5b64832093cc1915d34246971c0a3}{Update}} (double delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Called once every frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a3dd8b3c0c23dc9501a713791249dbede}\label{classcrynn_1_1_gui_window_a3dd8b3c0c23dc9501a713791249dbede}} 
+const Im\+Vec2 {\bfseries Window\+Size} ()
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a21e0b773a27c026ad3c0b1377736cd6c}\label{classcrynn_1_1_gui_window_a21e0b773a27c026ad3c0b1377736cd6c}} 
+const Im\+Vec2 \mbox{\hyperlink{classcrynn_1_1_gui_window_a21e0b773a27c026ad3c0b1377736cd6c}{Frame\+Buffer\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of the window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_ad3c98f2cba93cca865dd2381da84258a}\label{classcrynn_1_1_gui_window_ad3c98f2cba93cca865dd2381da84258a}} 
+const float \mbox{\hyperlink{classcrynn_1_1_gui_window_ad3c98f2cba93cca865dd2381da84258a}{Window\+Aspect\+Ratio}} ()
+\begin{DoxyCompactList}\small\item\em Returns the framebuffer size of the window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a06ed1390ce132d208ce3e678aa32f398}\label{classcrynn_1_1_gui_window_a06ed1390ce132d208ce3e678aa32f398}} 
+const float \mbox{\hyperlink{classcrynn_1_1_gui_window_a06ed1390ce132d208ce3e678aa32f398}{Frame\+Buffer\+Aspect\+Ratio}} ()
+\begin{DoxyCompactList}\small\item\em Returns (width/height) of the window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a2e3ec85df35a925a3f99501ba58be3d0}\label{classcrynn_1_1_gui_window_a2e3ec85df35a925a3f99501ba58be3d0}} 
+const unsigned int \& \mbox{\hyperlink{classcrynn_1_1_gui_window_a2e3ec85df35a925a3f99501ba58be3d0}{Get\+Render\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Returns (width/height) of the window framebuffer. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_acaccc2c27d8206aa084c89bd4534c31d}\label{classcrynn_1_1_gui_window_acaccc2c27d8206aa084c89bd4534c31d}} 
+void \mbox{\hyperlink{classcrynn_1_1_gui_window_acaccc2c27d8206aa084c89bd4534c31d}{Run}} ()
+\begin{DoxyCompactList}\small\item\em Calls Begin\+Draw(), Draw() and End\+Draw() in that order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a516d643df95fedbc8ca273c3ce02789f}\label{classcrynn_1_1_gui_window_a516d643df95fedbc8ca273c3ce02789f}} 
+bool {\bfseries active} = true
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_ac4987ae0d7e78cb88d1a508c7c2a8ce9}\label{classcrynn_1_1_gui_window_ac4987ae0d7e78cb88d1a508c7c2a8ce9}} 
+Im\+Vec2 {\bfseries m\+\_\+size}
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a03c3f1914188a2c0bcc8ee3bd0eb73df}\label{classcrynn_1_1_gui_window_a03c3f1914188a2c0bcc8ee3bd0eb73df}} 
+Im\+Vec2 {\bfseries m\+\_\+pos}
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a9f49e6f0d63f1a99f77db668f4429ec2}\label{classcrynn_1_1_gui_window_a9f49e6f0d63f1a99f77db668f4429ec2}} 
+GLuint {\bfseries FBO} = 0
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a7b78e281f0d37c3ecbafbd70dc62d49b}\label{classcrynn_1_1_gui_window_a7b78e281f0d37c3ecbafbd70dc62d49b}} 
+GLuint {\bfseries RBO} = 0
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a57b780972b1b6a5a1a3788fc58d70f4c}\label{classcrynn_1_1_gui_window_a57b780972b1b6a5a1a3788fc58d70f4c}} 
+unsigned int {\bfseries m\+\_\+render\+Texture} = 0
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a13e2bb73f2ce3401136c20cf30fe8160}\label{classcrynn_1_1_gui_window_a13e2bb73f2ce3401136c20cf30fe8160}} 
+const char $\ast$ {\bfseries m\+\_\+name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for any onscreen GUI window. Uses IMGUI and Crynn events for rendering. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a4a0ccac4c48ed8b57efb21c6dccbbc0c}\label{classcrynn_1_1_gui_window_a4a0ccac4c48ed8b57efb21c6dccbbc0c}} 
+\index{crynn::GuiWindow@{crynn::GuiWindow}!GuiWindow@{GuiWindow}}
+\index{GuiWindow@{GuiWindow}!crynn::GuiWindow@{crynn::GuiWindow}}
+\doxysubsubsection{\texorpdfstring{GuiWindow()}{GuiWindow()}}
+{\footnotesize\ttfamily crynn\+::\+Gui\+Window\+::\+Gui\+Window (\begin{DoxyParamCaption}\item[{Im\+Vec2}]{size,  }\item[{Im\+Vec2}]{pos,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Creates an onscreen GUI window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \mbox{\hyperlink{classcrynn_1_1_window}{Window}} width and height dimensions\\
+\hline
+{\em pos} & \mbox{\hyperlink{classcrynn_1_1_window}{Window}} x and y position.\\
+\hline
+{\em name} & \mbox{\hyperlink{classcrynn_1_1_window}{Window}} title\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcrynn_1_1_gui_window_a8bb5b64832093cc1915d34246971c0a3}\label{classcrynn_1_1_gui_window_a8bb5b64832093cc1915d34246971c0a3}} 
+\index{crynn::GuiWindow@{crynn::GuiWindow}!Update@{Update}}
+\index{Update@{Update}!crynn::GuiWindow@{crynn::GuiWindow}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void crynn\+::\+Gui\+Window\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called once every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time it took the previous frame to render.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classcrynn_1_1_event_listener_a7a08cc264248ffbb3a22ca9785965ecb}{crynn\+::\+Event\+Listener}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+GUI/Gui\+Window.\+h\item 
+GUI/Gui\+Window.\+cpp\end{DoxyCompactItemize}

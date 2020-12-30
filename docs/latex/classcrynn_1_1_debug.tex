@@ -1,0 +1,46 @@
+\hypertarget{classcrynn_1_1_debug}{}\doxysection{crynn\+::Debug Class Reference}
+\label{classcrynn_1_1_debug}\index{crynn::Debug@{crynn::Debug}}
+
+
+Collection of functions to assist with debugging.  
+
+
+
+
+{\ttfamily \#include $<$Debug.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_debug_aa88599596cc16fda27d105584907fee1}\label{classcrynn_1_1_debug_aa88599596cc16fda27d105584907fee1}} 
+static void {\bfseries Log} (const std\+::stringstream \&msg)
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_debug_ac6bdfa41e36150b5fbb91685d84fd06f}\label{classcrynn_1_1_debug_ac6bdfa41e36150b5fbb91685d84fd06f}} 
+static void \mbox{\hyperlink{classcrynn_1_1_debug_ac6bdfa41e36150b5fbb91685d84fd06f}{Log}} (const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Writes msg to std\+::cout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_debug_a662b6247e5fe8e1a89f325b01868c592}\label{classcrynn_1_1_debug_a662b6247e5fe8e1a89f325b01868c592}} 
+static void \mbox{\hyperlink{classcrynn_1_1_debug_a662b6247e5fe8e1a89f325b01868c592}{Log\+To\+File}} (const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Writes msg to std\+::cout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_debug_a1aab6dc62e199a90614651abc4c0a884}\label{classcrynn_1_1_debug_a1aab6dc62e199a90614651abc4c0a884}} 
+static void \mbox{\hyperlink{classcrynn_1_1_debug_a1aab6dc62e199a90614651abc4c0a884}{Log\+To\+File}} (const std\+::stringstream \&msg)
+\begin{DoxyCompactList}\small\item\em Logs to output.\+log in the working directory. This function is not fast. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_debug_a79c287017e73f3af7fdc6c2de715ede6}\label{classcrynn_1_1_debug_a79c287017e73f3af7fdc6c2de715ede6}} 
+static void \mbox{\hyperlink{classcrynn_1_1_debug_a79c287017e73f3af7fdc6c2de715ede6}{Log\+Matrix4}} (const glm\+::mat4 \&matrix)
+\begin{DoxyCompactList}\small\item\em Logs to output.\+log in the working directory. This function is not fast. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_debug_af391d17d1b93e54e0b837edcc62eadba}\label{classcrynn_1_1_debug_af391d17d1b93e54e0b837edcc62eadba}} 
+static void {\bfseries Log\+GLErr} ()
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_debug_a0574a60dccd416f8ecbbbcbd04434213}\label{classcrynn_1_1_debug_a0574a60dccd416f8ecbbbcbd04434213}} 
+static void \mbox{\hyperlink{classcrynn_1_1_debug_a0574a60dccd416f8ecbbbcbd04434213}{Clear\+Output\+Logs}} ()
+\begin{DoxyCompactList}\small\item\em Logs gl\+Get\+Error to std\+::cout and output.\+log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Collection of functions to assist with debugging. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Utility/Debug.\+h\item 
+Utility/Debug.\+cpp\end{DoxyCompactItemize}

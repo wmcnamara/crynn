@@ -1,0 +1,59 @@
+\hypertarget{_c_1_2_github_2crynn_2src_2_core_2_camera_8h-example}{}\doxysection{C\+:/\+Github/crynn/src/\+Core/\+Camera.\+h}
+Creates a camera that can render objects. This class creates a Uniform Buffer Object you can use to get projection and view matrix data. This UBO will always be at binding point 0, and the block should always be called \char`\"{}\+Camera\+Matrices\char`\"{} in the shader. 
+
+version 330 core layout(location = 0) in vec3 a\+Pos; layout(location = 1) in vec2 a\+Tex\+Coord;
+
+out vec2 tex\+Coord;
+
+uniform mat4 model;
+
+layout(std140) uniform Matrices \{ mat4 projection; mat4 view; \}; void main() \{ tex\+Coord = a\+Tex\+Coord; gl\+\_\+\+Position = projection $\ast$ view $\ast$ model $\ast$ vec4(a\+Pos, 1.\+0); \} This example showcases a basic perspective projection shader.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <glm/gtc/type\_ptr.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}glad/glad.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}GLFW/glfw3.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}EventListener.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}Window.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}Shader.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}Input.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}Transform.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{namespace }\mbox{\hyperlink{namespacecrynn}{crynn}} }
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keyword}{using namespace }glm;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{enum class} \mbox{\hyperlink{namespacecrynn_ad3edb46f8f1b121349afb44f8dc8d792}{Projection}}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        Orthographic,}
+\DoxyCodeLine{        Perspective}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{class }Camera: \textcolor{keyword}{protected} EventListener, \textcolor{keyword}{protected} Input, \textcolor{keyword}{public} Transform}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keyword}{public}:}
+\DoxyCodeLine{        Camera(vec3 position, \mbox{\hyperlink{namespacecrynn_ad3edb46f8f1b121349afb44f8dc8d792}{Projection}} projType);}
+\DoxyCodeLine{        \string~Camera();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        mat4 GetProjection()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_projection; \}}
+\DoxyCodeLine{    \textcolor{keyword}{private}:}
+\DoxyCodeLine{        \textcolor{keywordtype}{void} BeforeUpdate(\textcolor{keywordtype}{double} deltaTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{        \textcolor{keywordtype}{void} Inputs()\textcolor{keyword}{ override }\{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        mat4 m\_projection = glm::mat4(1.0f);}
+\DoxyCodeLine{        \mbox{\hyperlink{namespacecrynn_ad3edb46f8f1b121349afb44f8dc8d792}{Projection}} m\_projType;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_matrixUBO;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordtype}{void} SetUniformData();}
+\DoxyCodeLine{        \textcolor{keywordtype}{void} UpdateProjectionData();}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

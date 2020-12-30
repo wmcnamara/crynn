@@ -1,0 +1,108 @@
+\hypertarget{classcrynn_1_1_application}{}\doxysection{crynn\+::Application Class Reference}
+\label{classcrynn_1_1_application}\index{crynn::Application@{crynn::Application}}
+
+
+A class containing static functions to represent application functions, states, and events. Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_application_a8fb795e3eb8ada21b0214127624457e0}\label{classcrynn_1_1_application_a8fb795e3eb8ada21b0214127624457e0}} 
+{\bfseries Application} (const \mbox{\hyperlink{classcrynn_1_1_application}{Application}} \&)=delete
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_application_ac3a3da4b19ef53f3ea6425894ba393f5}\label{classcrynn_1_1_application_ac3a3da4b19ef53f3ea6425894ba393f5}} 
+{\bfseries Application} (const \mbox{\hyperlink{classcrynn_1_1_application}{Application}} \&\&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classcrynn_1_1_application_a0dff81a533fcee5fc94e030a545fa7d5}{Quit}} ()
+\begin{DoxyCompactList}\small\item\em Invoked when the window is resized. Contains the width and height of new window.///. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classcrynn_1_1_application_a363e0bc254b283e1727b27b1eef50d2f}{Tick}} ()
+\begin{DoxyCompactList}\small\item\em Invokes events to update Behaviours. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classcrynn_1_1_application_a25d15631133a6f1995ce702ba36a1d69}{Initialise}} ()
+\begin{DoxyCompactList}\small\item\em Invokes \mbox{\hyperlink{classcrynn_1_1_application_a954794b062ad6aeaa0a5c562afe3503b}{On\+Start()}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_application_ac9d66fa37134b1e83647d584c5c4379d}\label{classcrynn_1_1_application_ac9d66fa37134b1e83647d584c5c4379d}} 
+static double \mbox{\hyperlink{classcrynn_1_1_application_ac9d66fa37134b1e83647d584c5c4379d}{Get\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Returns the time elapsed since the application was launched. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classcrynn_1_1_event}{Event}}$<$ GLFWwindow $\ast$, int, int, int, int $>$ \mbox{\hyperlink{classcrynn_1_1_application_a9b57402ae76c248e372a0e54571b2020}{On\+Input}}
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_application_aa1c92fa54139f2c4a4f947bae70c7b3b}\label{classcrynn_1_1_application_aa1c92fa54139f2c4a4f947bae70c7b3b}} 
+static \mbox{\hyperlink{classcrynn_1_1_event}{Event}}$<$ void $>$ {\bfseries On\+Before\+Close}
+\item 
+\mbox{\Hypertarget{classcrynn_1_1_application_a4dc0cab3ba853ce3ee3ae1b6e3f66783}\label{classcrynn_1_1_application_a4dc0cab3ba853ce3ee3ae1b6e3f66783}} 
+static \mbox{\hyperlink{classcrynn_1_1_event}{Event}}$<$ double $>$ \mbox{\hyperlink{classcrynn_1_1_application_a4dc0cab3ba853ce3ee3ae1b6e3f66783}{On\+Update}}
+\begin{DoxyCompactList}\small\item\em Called once before quitting to desktop using Application\+::\+Instance().\mbox{\hyperlink{classcrynn_1_1_application_a0dff81a533fcee5fc94e030a545fa7d5}{Quit()}};///. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_application_ad49dfc1b63485a681e44be4eaaba5c4f}\label{classcrynn_1_1_application_ad49dfc1b63485a681e44be4eaaba5c4f}} 
+static \mbox{\hyperlink{classcrynn_1_1_event}{Event}}$<$ double $>$ \mbox{\hyperlink{classcrynn_1_1_application_ad49dfc1b63485a681e44be4eaaba5c4f}{On\+Before\+Update}}
+\begin{DoxyCompactList}\small\item\em Called once every frame///. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_application_a954794b062ad6aeaa0a5c562afe3503b}\label{classcrynn_1_1_application_a954794b062ad6aeaa0a5c562afe3503b}} 
+static \mbox{\hyperlink{classcrynn_1_1_event}{Event}}$<$ void $>$ \mbox{\hyperlink{classcrynn_1_1_application_a954794b062ad6aeaa0a5c562afe3503b}{On\+Start}}
+\begin{DoxyCompactList}\small\item\em Used to set uniform buffer data before rendering///. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_application_ae8cc454b02e6df07e202e4496145001d}\label{classcrynn_1_1_application_ae8cc454b02e6df07e202e4496145001d}} 
+static \mbox{\hyperlink{classcrynn_1_1_event}{Event}}$<$ int, int $>$ \mbox{\hyperlink{classcrynn_1_1_application_ae8cc454b02e6df07e202e4496145001d}{On\+Window\+Resize}}
+\begin{DoxyCompactList}\small\item\em Called once before entering the main loop. Called before update.///. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcrynn_1_1_application_adae437e294665106f7a5ccc7c7c42972}\label{classcrynn_1_1_application_adae437e294665106f7a5ccc7c7c42972}} 
+static double {\bfseries time\+Scale} = 1.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class containing static functions to represent application functions, states, and events. Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcrynn_1_1_application_a25d15631133a6f1995ce702ba36a1d69}\label{classcrynn_1_1_application_a25d15631133a6f1995ce702ba36a1d69}} 
+\index{crynn::Application@{crynn::Application}!Initialise@{Initialise}}
+\index{Initialise@{Initialise}!crynn::Application@{crynn::Application}}
+\doxysubsubsection{\texorpdfstring{Initialise()}{Initialise()}}
+{\footnotesize\ttfamily void crynn\+::\+Application\+::\+Initialise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invokes \mbox{\hyperlink{classcrynn_1_1_application_a954794b062ad6aeaa0a5c562afe3503b}{On\+Start()}} 
+
+\mbox{\Hypertarget{classcrynn_1_1_application_a0dff81a533fcee5fc94e030a545fa7d5}\label{classcrynn_1_1_application_a0dff81a533fcee5fc94e030a545fa7d5}} 
+\index{crynn::Application@{crynn::Application}!Quit@{Quit}}
+\index{Quit@{Quit}!crynn::Application@{crynn::Application}}
+\doxysubsubsection{\texorpdfstring{Quit()}{Quit()}}
+{\footnotesize\ttfamily void crynn\+::\+Application\+::\+Quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invoked when the window is resized. Contains the width and height of new window.///. 
+
+Invokes On\+Before\+Close, and quits to desktop.\mbox{\Hypertarget{classcrynn_1_1_application_a363e0bc254b283e1727b27b1eef50d2f}\label{classcrynn_1_1_application_a363e0bc254b283e1727b27b1eef50d2f}} 
+\index{crynn::Application@{crynn::Application}!Tick@{Tick}}
+\index{Tick@{Tick}!crynn::Application@{crynn::Application}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void crynn\+::\+Application\+::\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invokes events to update Behaviours. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcrynn_1_1_application_a9b57402ae76c248e372a0e54571b2020}\label{classcrynn_1_1_application_a9b57402ae76c248e372a0e54571b2020}} 
+\index{crynn::Application@{crynn::Application}!OnInput@{OnInput}}
+\index{OnInput@{OnInput}!crynn::Application@{crynn::Application}}
+\doxysubsubsection{\texorpdfstring{OnInput}{OnInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcrynn_1_1_event}{Event}}$<$GLFWwindow$\ast$, int, int, int, int$>$ crynn\+::\+Application\+::\+On\+Input\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Used by \mbox{\hyperlink{classcrynn_1_1_input}{Input}} to subscribe input events. Do not manually invoke(). Parameters determined by the glfw\+Set\+Key\+Callback parameters. \href{https://www.glfw.org/docs/latest/group__input.html\#ga1caf18159767e761185e49a3be019f8d}{\texttt{ https\+://www.\+glfw.\+org/docs/latest/group\+\_\+\+\_\+input.\+html\#ga1caf18159767e761185e49a3be019f8d}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/Application.\+h\item 
+Core/Application.\+cpp\end{DoxyCompactItemize}

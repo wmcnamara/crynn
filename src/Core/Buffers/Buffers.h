@@ -16,6 +16,7 @@ namespace crynn
 		UnbindAfterAllocation //Used in VBO/EBO/FBO to unbind the buffer after allocating in the constructor.
 	}; 
 
+	//A vertex buffer object with simple memory management functions.
 	class VBO
 	{
 	public:
@@ -28,11 +29,12 @@ namespace crynn
 		VBO(const VBO& other) = delete;
 
 		GLuint GetID() const { return ID; }
-		void Bind() const { glBindBuffer(GL_ARRAY_BUFFER, ID); }
+		void Bind() const { glBindBuffer(GL_ARRAY_BUFFER, ID); } //Calls glBindBuffer
 	private:
 		GLuint ID = 0;
 	};
 
+	//A vertex array object with simple memory management functions. This class's default constructor will allocate memory.
 	class VAO
 	{
 	public:
@@ -43,12 +45,13 @@ namespace crynn
 		//TODO Implement real copy constructor
 		VAO(const VAO& other) = delete;
 
-		void Bind() const { glBindVertexArray(ID); }
 		GLuint GetID() const { return ID; }
+		void Bind() const { glBindVertexArray(ID); } //Calls glBindBuffer
 	private:
 		GLuint ID = 0;
 	};
 
+	//An element array buffer object with simple memory managment functions.
 	class EBO
 	{
 	public:

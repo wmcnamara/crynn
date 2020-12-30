@@ -1,0 +1,7 @@
+\#version 330 core layout (location = 0) in vec3 a\+Pos; layout (location = 1) in vec2 a\+Tex\+Coord;
+
+out vec2 tex\+Coord;
+
+uniform mat4 model;
+
+layout (std140) uniform Matrices \{ mat4 projection; mat4 view; \}; void main () \{ tex\+Coord = a\+Tex\+Coord; gl\+\_\+\+Position = projection $\ast$ view $\ast$ model $\ast$ vec4(a\+Pos, 1.\+0); \} 

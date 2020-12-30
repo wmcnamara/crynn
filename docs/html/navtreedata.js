@@ -35,12 +35,13 @@ var NAVTREE =
         [ "Building Crynn:", "index.html#autotoc_md5", null ]
       ] ]
     ] ],
-    [ "Programming In Crynn", "md__c___github_crynn_src_docsource_introprog.html", null ],
+    [ "Programming In Crynn", "md_docsource_introprog.html", [
+      [ "Introduction", "md_docsource_introprog.html#autotoc_md7", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
@@ -56,20 +57,15 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_a_a_b_b_8cpp.html",
-"main_8cpp.html"
+"_a_a_b_b_8h_source.html",
+"namespacemembers.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

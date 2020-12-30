@@ -1,21 +1,8 @@
 var searchData=
 [
-  ['m_98',['M',['../class_crynn_1_1_input.html#aaa5969578ce759510b8824e18018dcada69691c7bdcc3ce6d5d8a1361f22d04ac',1,'Crynn::Input']]],
-  ['m_5fname_99',['m_name',['../class_crynn_1_1_gui_window.html#a07cd2d7f2d09bbc84221e7fe209c0e02',1,'Crynn::GuiWindow']]],
-  ['m_5fpos_100',['m_pos',['../class_crynn_1_1_gui_window.html#acf4ceab23bcfa6c5f1bbb4034bab7fcb',1,'Crynn::GuiWindow']]],
-  ['m_5frendertexture_101',['m_renderTexture',['../class_crynn_1_1_gui_window.html#af463cea63fa0a09f8f127769e085c2d9',1,'Crynn::GuiWindow']]],
-  ['m_5fsize_102',['m_size',['../class_crynn_1_1_gui_window.html#a03ac0ceaf841c23377ce160520c6613a',1,'Crynn::GuiWindow']]],
-  ['main_103',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_104',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['matrixeditor_105',['MatrixEditor',['../class_crynn_1_1_matrix_editor.html',1,'Crynn::MatrixEditor'],['../class_crynn_1_1_matrix_editor.html#a72e63e920a4c0c1b224b868ad7e60f53',1,'Crynn::MatrixEditor::MatrixEditor()']]],
-  ['matrixeditor_2ecpp_106',['MatrixEditor.cpp',['../_matrix_editor_8cpp.html',1,'']]],
-  ['matrixeditor_2eh_107',['MatrixEditor.h',['../_matrix_editor_8h.html',1,'']]],
-  ['mesh_108',['Mesh',['../class_crynn_1_1_mesh.html',1,'Crynn::Mesh'],['../class_crynn_1_1_mesh.html#a6e1b4806696a4915219c6a4545b15f64',1,'Crynn::Mesh::Mesh()']]],
-  ['mesh_2ecpp_109',['Mesh.cpp',['../_mesh_8cpp.html',1,'']]],
-  ['mesh_2eh_110',['Mesh.h',['../_mesh_8h.html',1,'']]],
-  ['meshrenderer_111',['MeshRenderer',['../class_crynn_1_1_mesh_renderer.html',1,'Crynn::MeshRenderer'],['../class_crynn_1_1_mesh_renderer.html#a4267e95b0b4ee1b4be707dc113170b4c',1,'Crynn::MeshRenderer::MeshRenderer()']]],
-  ['meshrenderer_2ecpp_112',['MeshRenderer.cpp',['../_mesh_renderer_8cpp.html',1,'']]],
-  ['meshrenderer_2eh_113',['MeshRenderer.h',['../_mesh_renderer_8h.html',1,'']]],
-  ['microseconds_114',['Microseconds',['../namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99eea64068ed47d979c5efa036f027d656433',1,'Crynn']]],
-  ['milliseconds_115',['Milliseconds',['../namespace_crynn.html#a5a9555343e99f1048c8f6b38a5ab99eea38f246763036ccaeba7db6d563c4d821',1,'Crynn']]]
+  ['onbeforeupdate_46',['OnBeforeUpdate',['../classcrynn_1_1_application.html#ad49dfc1b63485a681e44be4eaaba5c4f',1,'crynn::Application']]],
+  ['oninput_47',['OnInput',['../classcrynn_1_1_application.html#a9b57402ae76c248e372a0e54571b2020',1,'crynn::Application']]],
+  ['onstart_48',['OnStart',['../classcrynn_1_1_application.html#a954794b062ad6aeaa0a5c562afe3503b',1,'crynn::Application']]],
+  ['onupdate_49',['OnUpdate',['../classcrynn_1_1_application.html#a4dc0cab3ba853ce3ee3ae1b6e3f66783',1,'crynn::Application']]],
+  ['onwindowresize_50',['OnWindowResize',['../classcrynn_1_1_application.html#ae8cc454b02e6df07e202e4496145001d',1,'crynn::Application']]]
 ];
