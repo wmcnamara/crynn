@@ -1,9 +1,9 @@
 #include "Window.h"
+#include "Input.h"
 
 namespace crynn
 {
 	//Forward declarations of GLFW event functions
-	void InputCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 	void SizeCallback(GLFWwindow* window, int width, int height);
 
 	Window::Window(const char* name, unsigned int width, unsigned int height)
@@ -32,7 +32,7 @@ namespace crynn
 		glfwSetWindowUserPointer(glfwWindow, this); //Set this as the user pointer
 
 		glfwSetFramebufferSizeCallback(glfwWindow, SizeCallback);
-		glfwSetKeyCallback(glfwWindow, InputCallback);
+		Input::Init();
 
 		//Retrieve and set window size data
 		m_screenSize = ImVec2(width, height);
@@ -133,12 +133,6 @@ namespace crynn
 	bool Window::ShouldClose()
 	{
 		return glfwWindowShouldClose(glfwWindow);
-	}
-
-	//GLFW event functions
-	void InputCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
-	{
-		Application::OnInput.Invoke(window, key, scancode, action, mods);
 	}
 
 	void SizeCallback(GLFWwindow* window, int width, int height)

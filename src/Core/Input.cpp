@@ -2,19 +2,31 @@
 
 namespace crynn
 {
+	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+	{
+		if (action == GLFW_PRESS) //If its a press, update the keystate
+			crynn::Input::UpdateKeyState(key, true);
+		else if (action == GLFW_RELEASE)
+			crynn::Input::UpdateKeyState(key, false);
+	}
+
 	bool Input::GetKey(KeyCode key)
 	{
-		//Cast keycode to its underlying type because it is a strong enum.
-		return glfwGetKey(Window::GetGLFWWin(), static_cast<typename std::underlying_type<KeyCode>::type>(key)) == GLFW_PRESS;
+		//Cast keycode to its underlying int type because it is a strong enum.
+		return states[std::underlying_type<KeyCode>::type(key)];
 	}
 
-	Input::Input()
+	bool Input::GetKeyDown(KeyCode key)
 	{
-		handlerID = Application::OnInput.AddHandler(std::bind(&Input::Inputs, this));
+		return false;
 	}
 
-	Input::~Input()
+	void Input::Init()
 	{
-		Application::OnInput.RemoveHandler(handlerID);
+		if (m_initialised)
+			return;
+
+		glfwSetKeyCallback(Window::GetGLFWWin(), key_callback);
+		m_initialised = true;
 	}
 }

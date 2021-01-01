@@ -9,6 +9,10 @@
 #include <memory>
 
 #define SHARED_MESHRENDERER std::shared_ptr<MeshRenderer>
+#define UNIQUE_MESHRENDERER std::unique_ptr<MeshRenderer>
+#define MKUNIQUE_MESHRENDERER std::make_unique<MeshRenderer>
+#define MKSHARED_MESHRENDERER std::make_shared<MeshRenderer>
+
 namespace crynn
 {
 	/// <summary>

@@ -20,10 +20,8 @@ namespace crynn
 
 		//If they want an ebo, make one
 		if (useEBO)
-		{
 			m_ebo = EBO(indices, numOfIndices);
-		}
-
+		
 		//Vertex Attributes
 		/////////////////////////////////////////////
 		//Positon
