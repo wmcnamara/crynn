@@ -27,13 +27,23 @@ namespace crynn
 		/// <returns></returns>
 		static bool GetKeyDown(KeyCode key);
 
+		/// <summary>
+		/// Used in GLFW events to update the keystate of a key in the current frame. This function should only be ever used in GLFW events.
+		/// </summary>
+		/// <param name="key">The GLFW keycode of the key you're updating</param>
+		/// <param name="state">The boolean state of the key</param>
 		inline static void UpdateKeyState(int key, bool state)
 		{
-			states[key] = state;
+			previousKeyStates[key] = currentKeyStates[key]; //Update previous keystate
+			currentKeyStates[key] = state; //Update current keystate
 		}
+
 	private:
-		inline static bool states[348]; //Unfortunately most of this is wasted because of how glfw chooses to handle input keycodes.
-		inline static bool m_initialised = false;
+		inline static bool currentKeyStates[349]; //The states of each key in the current frame.
+		inline static bool previousKeyStates[349]; //The states of each key from the previous frame. Needed for GetKeyDown
+
+		inline static bool m_initialised = false; //Is input initialised?
+
 		int handlerID; //Used to remove the handler when this object is destructed.
 	};
 
