@@ -24,11 +24,9 @@ namespace crynn
 		/// <param name="pos">Window x and y position.</param>
 		/// <param name="name">Window title</param>
 		GuiWindow(ImVec2 size, ImVec2 pos, const char* name);
-		~GuiWindow();
+		virtual ~GuiWindow();
 
-		virtual void BeginGUIDraw() = 0;
 		virtual void GUIDraw() = 0;
-		virtual void EndGUIDraw() = 0;
 
 		void Update(double deltaTime) override;
 
@@ -48,8 +46,5 @@ namespace crynn
 		GLuint FBO = 0, RBO = 0;
 		unsigned int m_renderTexture = 0;
 		const char* m_name;		
-		
-		/// Calls BeginDraw(), Draw() and EndDraw() in that order.
-		void Run();
 	};
 }

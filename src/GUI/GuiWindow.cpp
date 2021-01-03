@@ -15,12 +15,6 @@ namespace crynn
 		glDeleteFramebuffers(1, &FBO);
 		glDeleteTextures(1, &m_renderTexture);
 	}
-	void GuiWindow::Run()
-	{
-		BeginGUIDraw();
-		GUIDraw();
-		EndGUIDraw();
-	}
 
 	const float GuiWindow::WindowAspectRatio()
 	{
@@ -34,7 +28,7 @@ namespace crynn
 
 	void GuiWindow::Update(double deltaTime)
 	{
-		Run();
+		GUIDraw();
 	}
 
 	const ImVec2 GuiWindow::WindowSize()
@@ -51,6 +45,4 @@ namespace crynn
 	{
 		return m_renderTexture;
 	}
-
-	
 }

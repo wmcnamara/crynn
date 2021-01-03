@@ -10,13 +10,10 @@ namespace crynn
 		Debug::Log("Matrix Editor Constructed");
 	}
 
-	void MatrixEditor::BeginGUIDraw()
-	{
-		ImGui::Begin(m_matrixname, &m_active, ImGuiWindowFlags_None);
-	}
-
 	void MatrixEditor::GUIDraw()
 	{
+		ImGui::Begin(m_matrixname, &m_active, ImGuiWindowFlags_None);
+
 		static glm::vec3 position = glm::vec3(0, 3, -15);
 		static glm::vec3 rotation = glm::vec3(0, 0, 0);
 		static glm::vec3 scale = glm::vec3(1, 1, 1);
@@ -30,10 +27,7 @@ namespace crynn
 		Transform::SetPosition(position, *m_matrix);
 	//	Transform::SetRotation(angle, rotation, *m_matrix);
 		Transform::SetScale(scale, *m_matrix);
-	}
-
-	void MatrixEditor::EndGUIDraw()
-	{
 		ImGui::End();
+
 	}
 }

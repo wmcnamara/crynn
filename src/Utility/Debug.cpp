@@ -19,6 +19,7 @@ namespace crynn
 	void Debug::LogToFile(const char* msg)
 	{
 #ifdef CRYNN_DEBUG
+		//TODO safely cache the log stream so that it doesnt need to be reopened and closed all the time
 		std::ofstream log;
 
 		log.open("output.log");
@@ -59,6 +60,7 @@ namespace crynn
 		output << "GL ERROR: " << glGetError() << '\n';
 
 		std::cout << output.rdbuf() << '\n';
+		LogToFile(output);
 #endif
 	}
 

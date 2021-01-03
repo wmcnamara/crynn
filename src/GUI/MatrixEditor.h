@@ -17,9 +17,7 @@ namespace crynn
 	private:
 		glm::mat4* m_matrix;
 
-		void BeginGUIDraw() override;		
 		void GUIDraw() override;
-		void EndGUIDraw() override;
 
 		bool m_active = true;
 		const char* m_matrixname;
