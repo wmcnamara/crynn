@@ -11,6 +11,7 @@ namespace crynn
 	/// <summary>
 	/// Collection of functions to assist with debugging.
 	/// These are only ran in debug configurations, or when the CRYNN_DEBUG macro is defined.
+	/// File log functions are very slow.
 	/// </summary>
 	class Debug
 	{
@@ -24,8 +25,5 @@ namespace crynn
 		static void LogMatrix4(const glm::mat4& matrix);
 		static void LogGLErr(); /// Logs glGetError to std::cout and output.log
 		static void ClearOutputLogs(); /// Clears output.log
-
-	private:
-		inline static std::ofstream logFile;
 	};
 }
