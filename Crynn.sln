@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpeedCube", "SpeedCube\SpeedCube.vcxproj", "{959ECD64-0109-82DB-4A47-3381B6F05F30}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Crynn", "Crynn.vcxproj", "{6FFEFB0C-DB12-24BE-A494-C71D106820EF}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Physics", "Physics\Physics.vcxproj", "{D097F144-5066-4B72-BD08-245E7C362038}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,26 +13,12 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Debug|Win32.ActiveCfg = Debug|Win32
-		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Debug|Win32.Build.0 = Debug|Win32
-		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Debug|x64.ActiveCfg = Debug|Win32
-		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Release|Win32.ActiveCfg = Release|Win32
-		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Release|Win32.Build.0 = Release|Win32
-		{959ECD64-0109-82DB-4A47-3381B6F05F30}.Release|x64.ActiveCfg = Release|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Debug|Win32.ActiveCfg = Debug|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Debug|Win32.Build.0 = Debug|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Debug|x64.ActiveCfg = Debug|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|Win32.ActiveCfg = Release|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|Win32.Build.0 = Release|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|x64.ActiveCfg = Release|Win32
-		{D097F144-5066-4B72-BD08-245E7C362038}.Debug|Win32.ActiveCfg = Debug|Win32
-		{D097F144-5066-4B72-BD08-245E7C362038}.Debug|Win32.Build.0 = Debug|Win32
-		{D097F144-5066-4B72-BD08-245E7C362038}.Debug|x64.ActiveCfg = Debug|x64
-		{D097F144-5066-4B72-BD08-245E7C362038}.Debug|x64.Build.0 = Debug|x64
-		{D097F144-5066-4B72-BD08-245E7C362038}.Release|Win32.ActiveCfg = Release|Win32
-		{D097F144-5066-4B72-BD08-245E7C362038}.Release|Win32.Build.0 = Release|Win32
-		{D097F144-5066-4B72-BD08-245E7C362038}.Release|x64.ActiveCfg = Release|x64
-		{D097F144-5066-4B72-BD08-245E7C362038}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
