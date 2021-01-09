@@ -31,9 +31,7 @@ class \mbox{\hyperlink{classcrynn_1_1_event_3_01void_01_4}{Event$<$ void $>$}}
 class \mbox{\hyperlink{classcrynn_1_1_event_listener}{Event\+Listener}}
 \begin{DoxyCompactList}\small\item\em Allows interfacing with the Crynn event system. Inherit from this class, and override any function you may need. Events are subscribed automatically with this classes constructor. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classcrynn_1_1_input}{Input}}
-\begin{DoxyCompactList}\small\item\em Simple input component that allows interfacing with the Crynn input system. Inherit from this class and override void Input\+Commands() to use. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classcrynn_1_1_vec2}{Vec2}}
-\item 
+\begin{DoxyCompactList}\small\item\em Simple input component that allows interfacing with the Crynn input system. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classcrynn_1_1_vec2_int}{Vec2\+Int}}
 \item 
 class \mbox{\hyperlink{classcrynn_1_1_mesh}{Mesh}}
@@ -53,7 +51,7 @@ class \mbox{\hyperlink{classcrynn_1_1_gui_window}{Gui\+Window}}
 class \mbox{\hyperlink{classcrynn_1_1_matrix_editor}{Matrix\+Editor}}
 \begin{DoxyCompactList}\small\item\em Allows GUI editing of any matrix at runtime. Useful for debugging. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classcrynn_1_1_debug}{Debug}}
-\begin{DoxyCompactList}\small\item\em Collection of functions to assist with debugging. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Collection of functions to assist with debugging. These are only ran in debug configurations, or when the CRYNN\+\_\+\+DEBUG macro is defined. \mbox{\hyperlink{classcrynn_1_1_file}{File}} log functions are very slow. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classcrynn_1_1_file}{File}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcrynn_1_1_file}{File}} related functions to allow user to open files. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classcrynn_1_1_random}{Random}}
@@ -72,6 +70,42 @@ enum class \mbox{\hyperlink{namespacecrynn_ad3edb46f8f1b121349afb44f8dc8d792}{Pr
 , {\bfseries Perspective}
  \}
 \begin{DoxyCompactList}\small\item\em Projection type. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespacecrynn_a63771b45869b7ebe7615586d3b6dfe17}{Key\+Code}} \{ \newline
+{\bfseries A} = GLFW\+\_\+\+KEY\+\_\+A
+, {\bfseries B} = GLFW\+\_\+\+KEY\+\_\+B
+, {\bfseries C} = GLFW\+\_\+\+KEY\+\_\+C
+, {\bfseries D} = GLFW\+\_\+\+KEY\+\_\+D
+, \newline
+{\bfseries E} = GLFW\+\_\+\+KEY\+\_\+E
+, {\bfseries F} = GLFW\+\_\+\+KEY\+\_\+F
+, {\bfseries G} = GLFW\+\_\+\+KEY\+\_\+G
+, {\bfseries H} = GLFW\+\_\+\+KEY\+\_\+H
+, \newline
+{\bfseries I} = GLFW\+\_\+\+KEY\+\_\+I
+, {\bfseries J} = GLFW\+\_\+\+KEY\+\_\+J
+, {\bfseries K} = GLFW\+\_\+\+KEY\+\_\+K
+, {\bfseries L} = GLFW\+\_\+\+KEY\+\_\+L
+, \newline
+{\bfseries M} = GLFW\+\_\+\+KEY\+\_\+M
+, {\bfseries N} = GLFW\+\_\+\+KEY\+\_\+O
+, {\bfseries P} = GLFW\+\_\+\+KEY\+\_\+P
+, {\bfseries Q} = GLFW\+\_\+\+KEY\+\_\+Q
+, \newline
+{\bfseries R} = GLFW\+\_\+\+KEY\+\_\+R
+, {\bfseries S} = GLFW\+\_\+\+KEY\+\_\+S
+, {\bfseries T} = GLFW\+\_\+\+KEY\+\_\+T
+, {\bfseries U} = GLFW\+\_\+\+KEY\+\_\+U
+, \newline
+{\bfseries V} = GLFW\+\_\+\+KEY\+\_\+T
+, {\bfseries W} = GLFW\+\_\+\+KEY\+\_\+W
+, {\bfseries X} = GLFW\+\_\+\+KEY\+\_\+X
+, {\bfseries Y} = GLFW\+\_\+\+KEY\+\_\+Y
+, \newline
+{\bfseries Z} = GLFW\+\_\+\+KEY\+\_\+Z
+, {\bfseries ESC} = GLFW\+\_\+\+KEY\+\_\+\+ESCAPE
+, {\bfseries SPACE} = GLFW\+\_\+\+KEY\+\_\+\+SPACE
+ \}
+\begin{DoxyCompactList}\small\item\em Keycodes for input commands. \end{DoxyCompactList}\item 
 enum class \mbox{\hyperlink{namespacecrynn_a2ea10d41b0e5f2b8d4a704f0db6817c0}{Time\+Format}} \{ {\bfseries Seconds}
 , {\bfseries Milliseconds}
 , {\bfseries Microseconds}
@@ -81,8 +115,8 @@ enum class \mbox{\hyperlink{namespacecrynn_a2ea10d41b0e5f2b8d4a704f0db6817c0}{Ti
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{namespacecrynn_a1ae37de0d0b729829d4b6492b8d40145}\label{namespacecrynn_a1ae37de0d0b729829d4b6492b8d40145}} 
-void {\bfseries Input\+Callback} (GLFWwindow $\ast$window, int key, int scancode, int action, int mods)
+\mbox{\Hypertarget{namespacecrynn_abc4b4c63ecd4cf78f1b184ca989a6b0f}\label{namespacecrynn_abc4b4c63ecd4cf78f1b184ca989a6b0f}} 
+void {\bfseries key\+\_\+callback} (GLFWwindow $\ast$window, int key, int scancode, int action, int mods)
 \item 
 \mbox{\Hypertarget{namespacecrynn_a56952d7a10b606e49a97f218b9742f52}\label{namespacecrynn_a56952d7a10b606e49a97f218b9742f52}} 
 void {\bfseries Size\+Callback} (GLFWwindow $\ast$window, int width, int height)
@@ -97,6 +131,16 @@ This class contains object oriented implementations of various buffers used in O
 The default constructor for \mbox{\hyperlink{classcrynn_1_1_v_a_o}{VAO}} allocates memory. They all call the corresponding gl\+Gen function for the buffer they represent, when you construct them.
 
 \doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacecrynn_a63771b45869b7ebe7615586d3b6dfe17}\label{namespacecrynn_a63771b45869b7ebe7615586d3b6dfe17}} 
+\index{crynn@{crynn}!KeyCode@{KeyCode}}
+\index{KeyCode@{KeyCode}!crynn@{crynn}}
+\doxysubsubsection{\texorpdfstring{KeyCode}{KeyCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacecrynn_a63771b45869b7ebe7615586d3b6dfe17}{crynn\+::\+Key\+Code}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Keycodes for input commands. 
+
 \mbox{\Hypertarget{namespacecrynn_ad3edb46f8f1b121349afb44f8dc8d792}\label{namespacecrynn_ad3edb46f8f1b121349afb44f8dc8d792}} 
 \index{crynn@{crynn}!Projection@{Projection}}
 \index{Projection@{Projection}!crynn@{crynn}}

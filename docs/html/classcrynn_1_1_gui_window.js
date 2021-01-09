@@ -2,13 +2,10 @@ var classcrynn_1_1_gui_window =
 [
     [ "GuiWindow", "classcrynn_1_1_gui_window.html#a4a0ccac4c48ed8b57efb21c6dccbbc0c", null ],
     [ "~GuiWindow", "classcrynn_1_1_gui_window.html#a7462ae84f296ee68901b8050b8ed1ef7", null ],
-    [ "BeginGUIDraw", "classcrynn_1_1_gui_window.html#a017a167ffbe536c5d3875fb4d3abc2ee", null ],
-    [ "EndGUIDraw", "classcrynn_1_1_gui_window.html#aac53609c0a8fffc596ad41c01899ca32", null ],
     [ "FrameBufferAspectRatio", "classcrynn_1_1_gui_window.html#a06ed1390ce132d208ce3e678aa32f398", null ],
     [ "FrameBufferSize", "classcrynn_1_1_gui_window.html#a21e0b773a27c026ad3c0b1377736cd6c", null ],
     [ "GetRenderTexture", "classcrynn_1_1_gui_window.html#a2e3ec85df35a925a3f99501ba58be3d0", null ],
     [ "GUIDraw", "classcrynn_1_1_gui_window.html#a5942f5c699a08dcc0124a1e675eb7a18", null ],
-    [ "Run", "classcrynn_1_1_gui_window.html#acaccc2c27d8206aa084c89bd4534c31d", null ],
     [ "Update", "classcrynn_1_1_gui_window.html#a8bb5b64832093cc1915d34246971c0a3", null ],
     [ "WindowAspectRatio", "classcrynn_1_1_gui_window.html#ad3c98f2cba93cca865dd2381da84258a", null ],
     [ "WindowSize", "classcrynn_1_1_gui_window.html#a3dd8b3c0c23dc9501a713791249dbede", null ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Crynn: Core/Mesh.h Source File</title>
+<title>Crynn: C:/Github/crynn/src/Core/Mesh.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Game Engine Created In C++ &amp; OpenGL</div>
   </td>
@@ -94,51 +94,57 @@ $(document).ready(function(){initNavTree('_mesh_8h_source.html',''); initResizab
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Utility/Debug.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Utility/Timer.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Buffers/Buffers.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecrynn.html">crynn</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classcrynn_1_1_mesh.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classcrynn_1_1_mesh.html">Mesh</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classcrynn_1_1_mesh.html#ad89737caf0f4cc940f30711573059082">Mesh</a>(</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">float</span>* vertices,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordtype">size_t</span> numOfVertices,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* indices,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordtype">size_t</span> numOfIndices,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordtype">bool</span> useEBO);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        ~<a class="code" href="classcrynn_1_1_mesh.html">Mesh</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">//TODO change parameter order.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">//Returns the amount of vertices this mesh contains.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VertexCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_numOfVertices; }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">//Returns the amount of indices this mesh contains. Returns 0 if you are not using an EBO.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> IndexCount()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span> (m_useEBO)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">return</span> m_numOfIndices;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">const</span> <a class="code" href="classcrynn_1_1_v_a_o.html">VAO</a>&amp; GetVAO()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_vao; }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> <a class="code" href="classcrynn_1_1_v_b_o.html">VBO</a>&amp; GetVBO()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_vbo; }</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define SHARED_MESH std::shared_ptr&lt;Mesh&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define UNIQUE_MESH std::unique_ptr&lt;Mesh&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define MKUNIQUE_MESH std::make_unique&lt;Mesh&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define MKSHARED_MESH std::make_shared&lt;Mesh&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecrynn.html">crynn</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classcrynn_1_1_mesh.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classcrynn_1_1_mesh.html">Mesh</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classcrynn_1_1_mesh.html#ad89737caf0f4cc940f30711573059082">Mesh</a>(</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordtype">float</span>* vertices,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordtype">size_t</span> numOfVertices,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* indices,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordtype">size_t</span> numOfIndices,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">bool</span> useEBO);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        ~<a class="code" href="classcrynn_1_1_mesh.html">Mesh</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">//TODO change parameter order.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">//Returns the amount of vertices this mesh contains.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VertexCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_numOfVertices; }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">//Returns the amount of indices this mesh contains. Returns 0 if you are not using an EBO.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> IndexCount()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (m_useEBO)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> m_numOfIndices;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> Indexed()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_useEBO; } <span class="comment">//Is this mesh using an EBO?</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="classcrynn_1_1_e_b_o.html">EBO</a> m_ebo; <span class="comment">//EBO is optional</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classcrynn_1_1_v_a_o.html">VAO</a> m_vao;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classcrynn_1_1_v_b_o.html">VBO</a> m_vbo;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">const</span> <a class="code" href="classcrynn_1_1_v_a_o.html">VAO</a>&amp; GetVAO()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_vao; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">const</span> <a class="code" href="classcrynn_1_1_v_b_o.html">VBO</a>&amp; GetVBO()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_vbo; }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">float</span>* m_vertices;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">size_t</span> m_numOfVertices;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* m_indices;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">size_t</span> m_numOfIndices;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> Indexed()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_useEBO; } <span class="comment">//Is this mesh using an EBO?</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classcrynn_1_1_e_b_o.html">EBO</a> m_ebo; <span class="comment">//EBO is optional</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classcrynn_1_1_v_a_o.html">VAO</a> m_vao;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classcrynn_1_1_v_b_o.html">VBO</a> m_vbo;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">bool</span> m_useEBO;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    };</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">float</span>* m_vertices;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">size_t</span> m_numOfVertices;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* m_indices;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">size_t</span> m_numOfIndices;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">bool</span> m_useEBO;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="ttc" id="aclasscrynn_1_1_e_b_o_html"><div class="ttname"><a href="classcrynn_1_1_e_b_o.html">crynn::EBO</a></div><div class="ttdef"><b>Definition:</b> Buffers.h:56</div></div>
-<div class="ttc" id="aclasscrynn_1_1_mesh_html"><div class="ttname"><a href="classcrynn_1_1_mesh.html">crynn::Mesh</a></div><div class="ttdef"><b>Definition:</b> Mesh.h:10</div></div>
+<div class="ttc" id="aclasscrynn_1_1_mesh_html"><div class="ttname"><a href="classcrynn_1_1_mesh.html">crynn::Mesh</a></div><div class="ttdef"><b>Definition:</b> Mesh.h:16</div></div>
 <div class="ttc" id="aclasscrynn_1_1_mesh_html_ad89737caf0f4cc940f30711573059082"><div class="ttname"><a href="classcrynn_1_1_mesh.html#ad89737caf0f4cc940f30711573059082">crynn::Mesh::Mesh</a></div><div class="ttdeci">Mesh(float *vertices, size_t numOfVertices, unsigned int *indices, size_t numOfIndices, bool useEBO)</div><div class="ttdoc">Creates a renderable mesh.</div><div class="ttdef"><b>Definition:</b> Mesh.cpp:4</div></div>
 <div class="ttc" id="aclasscrynn_1_1_v_a_o_html"><div class="ttname"><a href="classcrynn_1_1_v_a_o.html">crynn::VAO</a></div><div class="ttdef"><b>Definition:</b> Buffers.h:39</div></div>
 <div class="ttc" id="aclasscrynn_1_1_v_b_o_html"><div class="ttname"><a href="classcrynn_1_1_v_b_o.html">crynn::VBO</a></div><div class="ttdef"><b>Definition:</b> Buffers.h:21</div></div>
@@ -148,7 +154,7 @@ $(document).ready(function(){initNavTree('_mesh_8h_source.html',''); initResizab
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><b>Mesh.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li><li class="navelem"><b>Mesh.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
   </ul>
 </div>

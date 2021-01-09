@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Crynn: Core/Input.h Source File</title>
+<title>Crynn: C:/Github/crynn/src/Core/Input.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Game Engine Created In C++ &amp; OpenGL</div>
   </td>
@@ -90,66 +90,79 @@ $(document).ready(function(){initNavTree('_input_8h_source.html',''); initResiza
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;Window.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;Application.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecrynn.html">crynn</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classcrynn_1_1_input.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classcrynn_1_1_input.html">Input</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classcrynn_1_1_input.html">Input</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        ~<a class="code" href="classcrynn_1_1_input.html">Input</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">   20</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">KeyCode</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            A = GLFW_KEY_A,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            B = GLFW_KEY_B,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            C = GLFW_KEY_C,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            D = GLFW_KEY_D,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            E = GLFW_KEY_E,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            F = GLFW_KEY_F,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            G = GLFW_KEY_G,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            H = GLFW_KEY_H,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            I = GLFW_KEY_I,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            J = GLFW_KEY_J,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            K = GLFW_KEY_K,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            L = GLFW_KEY_L,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            M = GLFW_KEY_M,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            N = GLFW_KEY_O,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            P = GLFW_KEY_P,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Q = GLFW_KEY_Q,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            R = GLFW_KEY_R,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            S = GLFW_KEY_S,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            T = GLFW_KEY_T,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            U = GLFW_KEY_U,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            V = GLFW_KEY_T,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            W = GLFW_KEY_W,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            X = GLFW_KEY_X,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            Y = GLFW_KEY_Y,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Z = GLFW_KEY_Z,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            ESC = GLFW_KEY_ESCAPE,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            SPACE = GLFW_KEY_SPACE</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">GetKey</a>(<a class="code" href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">KeyCode</a> key);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classcrynn_1_1_input.html#afbe7ea81fd75c6a66688ad9a8559b28f">   63</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcrynn_1_1_input.html#afbe7ea81fd75c6a66688ad9a8559b28f">Inputs</a>() = 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">int</span> handlerID; <span class="comment">//Used to remove the handler when this object is destructed.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    };</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="ttc" id="aclasscrynn_1_1_input_html"><div class="ttname"><a href="classcrynn_1_1_input.html">crynn::Input</a></div><div class="ttdoc">Simple input component that allows interfacing with the Crynn input system. Inherit from this class a...</div><div class="ttdef"><b>Definition:</b> Input.h:12</div></div>
-<div class="ttc" id="aclasscrynn_1_1_input_html_a524a44a25801214398001790675e3635"><div class="ttname"><a href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">crynn::Input::GetKey</a></div><div class="ttdeci">static bool GetKey(KeyCode key)</div><div class="ttdoc">Returns the state of</div><div class="ttdef"><b>Definition:</b> Input.cpp:5</div></div>
-<div class="ttc" id="aclasscrynn_1_1_input_html_afbe7ea81fd75c6a66688ad9a8559b28f"><div class="ttname"><a href="classcrynn_1_1_input.html#afbe7ea81fd75c6a66688ad9a8559b28f">crynn::Input::Inputs</a></div><div class="ttdeci">virtual void Inputs()=0</div><div class="ttdoc">Called every frame when polling events. Override this and add code that checks input.</div></div>
-<div class="ttc" id="aclasscrynn_1_1_input_html_afdb9d89da1cf405830c901a92ad6e4c1"><div class="ttname"><a href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">crynn::Input::KeyCode</a></div><div class="ttdeci">KeyCode</div><div class="ttdoc">Keycodes for input commands.</div><div class="ttdef"><b>Definition:</b> Input.h:21</div></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecrynn.html">crynn</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">enum class</span> <a class="code" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a>; <span class="comment">//forward declare</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classcrynn_1_1_input.html">   10</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="classcrynn_1_1_input.html">Input</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="comment">//Initialises input, and sets up polling events.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> Init();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">GetKey</a>(<a class="code" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a> key);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classcrynn_1_1_input.html#ac58a43250c58db76431daf78f63c2597">GetKeyDown</a>(<a class="code" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a> key);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classcrynn_1_1_input.html#aa814ae8e9e9a4274f85fa073512a15ed">   35</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcrynn_1_1_input.html#aa814ae8e9e9a4274f85fa073512a15ed">UpdateKeyState</a>(<span class="keywordtype">int</span> key, <span class="keywordtype">bool</span> state)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            previousKeyStates[key] = currentKeyStates[key]; <span class="comment">//Update previous keystate</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            currentKeyStates[key] = state; <span class="comment">//Update current keystate</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> currentKeyStates[349]; <span class="comment">//The states of each key in the current frame.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> previousKeyStates[349]; <span class="comment">//The states of each key from the previous frame. Needed for GetKeyDown</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> m_initialised = <span class="keyword">false</span>; <span class="comment">//Is input initialised?</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">int</span> handlerID; <span class="comment">//Used to remove the handler when this object is destructed.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    };</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">   53</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        A = GLFW_KEY_A,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        B = GLFW_KEY_B,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        C = GLFW_KEY_C,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        D = GLFW_KEY_D,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        E = GLFW_KEY_E,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        F = GLFW_KEY_F,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        G = GLFW_KEY_G,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        H = GLFW_KEY_H,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        I = GLFW_KEY_I,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        J = GLFW_KEY_J,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        K = GLFW_KEY_K,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        L = GLFW_KEY_L,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        M = GLFW_KEY_M,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        N = GLFW_KEY_O,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        P = GLFW_KEY_P,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        Q = GLFW_KEY_Q,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        R = GLFW_KEY_R,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        S = GLFW_KEY_S,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        T = GLFW_KEY_T,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        U = GLFW_KEY_U,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        V = GLFW_KEY_T,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        W = GLFW_KEY_W,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        X = GLFW_KEY_X,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        Y = GLFW_KEY_Y,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        Z = GLFW_KEY_Z,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        ESC = GLFW_KEY_ESCAPE,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        SPACE = GLFW_KEY_SPACE</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="ttc" id="aclasscrynn_1_1_input_html"><div class="ttname"><a href="classcrynn_1_1_input.html">crynn::Input</a></div><div class="ttdoc">Simple input component that allows interfacing with the Crynn input system.</div><div class="ttdef"><b>Definition:</b> Input.h:11</div></div>
+<div class="ttc" id="aclasscrynn_1_1_input_html_a524a44a25801214398001790675e3635"><div class="ttname"><a href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">crynn::Input::GetKey</a></div><div class="ttdeci">static bool GetKey(KeyCode key)</div><div class="ttdoc">Returns the state of a key.</div><div class="ttdef"><b>Definition:</b> Input.cpp:14</div></div>
+<div class="ttc" id="aclasscrynn_1_1_input_html_aa814ae8e9e9a4274f85fa073512a15ed"><div class="ttname"><a href="classcrynn_1_1_input.html#aa814ae8e9e9a4274f85fa073512a15ed">crynn::Input::UpdateKeyState</a></div><div class="ttdeci">static void UpdateKeyState(int key, bool state)</div><div class="ttdoc">Used in GLFW events to update the keystate of a key in the current frame. This function should only b...</div><div class="ttdef"><b>Definition:</b> Input.h:35</div></div>
+<div class="ttc" id="aclasscrynn_1_1_input_html_ac58a43250c58db76431daf78f63c2597"><div class="ttname"><a href="classcrynn_1_1_input.html#ac58a43250c58db76431daf78f63c2597">crynn::Input::GetKeyDown</a></div><div class="ttdeci">static bool GetKeyDown(KeyCode key)</div><div class="ttdoc">Returns the state of a key once per press, in a toggle style.</div><div class="ttdef"><b>Definition:</b> Input.cpp:20</div></div>
 <div class="ttc" id="anamespacecrynn_html"><div class="ttname"><a href="namespacecrynn.html">crynn</a></div><div class="ttdoc">Main Engine Namespace</div><div class="ttdef"><b>Definition:</b> Application.cpp:4</div></div>
+<div class="ttc" id="anamespacecrynn_html_a63771b45869b7ebe7615586d3b6dfe17"><div class="ttname"><a href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">crynn::KeyCode</a></div><div class="ttdeci">KeyCode</div><div class="ttdoc">Keycodes for input commands.</div><div class="ttdef"><b>Definition:</b> Input.h:54</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><b>Input.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li><li class="navelem"><b>Input.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
   </ul>
 </div>

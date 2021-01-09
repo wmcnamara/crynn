@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Crynn: Core/Camera.h Source File</title>
+<title>Crynn: C:/Github/crynn/src/Core/Camera.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Game Engine Created In C++ &amp; OpenGL</div>
   </td>
@@ -120,20 +120,19 @@ $(document).ready(function(){initNavTree('_camera_8h_source.html',''); initResiz
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        mat4 GetProjection()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_projection; }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> BeforeUpdate(<span class="keywordtype">double</span> deltaTime) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> Inputs()<span class="keyword"> override </span>{}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        mat4 m_projection = glm::mat4(1.0f);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="namespacecrynn.html#ad3edb46f8f1b121349afb44f8dc8d792">Projection</a> m_projType;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_matrixUBO;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> SetUniformData();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> UpdateProjectionData();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        mat4 m_projection = glm::mat4(1.0f);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="namespacecrynn.html#ad3edb46f8f1b121349afb44f8dc8d792">Projection</a> m_projType;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_matrixUBO;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> SetUniformData();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> UpdateProjectionData();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="ttc" id="aclasscrynn_1_1_camera_html"><div class="ttname"><a href="classcrynn_1_1_camera.html">crynn::Camera</a></div><div class="ttdoc">Creates a camera that can render objects. This class creates a Uniform Buffer Object you can use to g...</div><div class="ttdef"><b>Definition:</b> Camera.h:33</div></div>
 <div class="ttc" id="aclasscrynn_1_1_event_listener_html"><div class="ttname"><a href="classcrynn_1_1_event_listener.html">crynn::EventListener</a></div><div class="ttdoc">Allows interfacing with the Crynn event system. Inherit from this class, and override any function yo...</div><div class="ttdef"><b>Definition:</b> EventListener.h:15</div></div>
-<div class="ttc" id="aclasscrynn_1_1_input_html"><div class="ttname"><a href="classcrynn_1_1_input.html">crynn::Input</a></div><div class="ttdoc">Simple input component that allows interfacing with the Crynn input system. Inherit from this class a...</div><div class="ttdef"><b>Definition:</b> Input.h:12</div></div>
+<div class="ttc" id="aclasscrynn_1_1_input_html"><div class="ttname"><a href="classcrynn_1_1_input.html">crynn::Input</a></div><div class="ttdoc">Simple input component that allows interfacing with the Crynn input system.</div><div class="ttdef"><b>Definition:</b> Input.h:11</div></div>
 <div class="ttc" id="aclasscrynn_1_1_transform_html"><div class="ttname"><a href="classcrynn_1_1_transform.html">crynn::Transform</a></div><div class="ttdoc">Matrix representation with easy functions to transform it. This class is mostly intended to be inheri...</div><div class="ttdef"><b>Definition:</b> Transform.h:19</div></div>
 <div class="ttc" id="anamespacecrynn_html"><div class="ttname"><a href="namespacecrynn.html">crynn</a></div><div class="ttdoc">Main Engine Namespace</div><div class="ttdef"><b>Definition:</b> Application.cpp:4</div></div>
 <div class="ttc" id="anamespacecrynn_html_ad3edb46f8f1b121349afb44f8dc8d792"><div class="ttname"><a href="namespacecrynn.html#ad3edb46f8f1b121349afb44f8dc8d792">crynn::Projection</a></div><div class="ttdeci">Projection</div><div class="ttdoc">Projection type.</div><div class="ttdef"><b>Definition:</b> Camera.h:22</div></div>
@@ -142,7 +141,7 @@ $(document).ready(function(){initNavTree('_camera_8h_source.html',''); initResiz
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><b>Camera.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li><li class="navelem"><b>Camera.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
   </ul>
 </div>

@@ -34,7 +34,6 @@ var hierarchy =
     ] ],
     [ "crynn::VAO", "classcrynn_1_1_v_a_o.html", null ],
     [ "crynn::VBO", "classcrynn_1_1_v_b_o.html", null ],
-    [ "crynn::Vec2", "classcrynn_1_1_vec2.html", null ],
     [ "crynn::Vec2Int", "classcrynn_1_1_vec2_int.html", null ],
     [ "crynn::Window", "classcrynn_1_1_window.html", null ]
 ];

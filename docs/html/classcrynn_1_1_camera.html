@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Game Engine Created In C++ &amp; OpenGL</div>
   </td>
@@ -103,7 +103,7 @@ Inheritance diagram for crynn::Camera:</div>
   <img src="classcrynn_1_1_camera.png" usemap="#crynn::Camera_map" alt=""/>
   <map id="crynn::Camera_map" name="crynn::Camera_map">
 <area href="classcrynn_1_1_event_listener.html" title="Allows interfacing with the Crynn event system. Inherit from this class, and override any function yo..." alt="crynn::EventListener" shape="rect" coords="0,0,128,24"/>
-<area href="classcrynn_1_1_input.html" title="Simple input component that allows interfacing with the Crynn input system. Inherit from this class a..." alt="crynn::Input" shape="rect" coords="138,0,266,24"/>
+<area href="classcrynn_1_1_input.html" title="Simple input component that allows interfacing with the Crynn input system." alt="crynn::Input" shape="rect" coords="138,0,266,24"/>
 <area href="classcrynn_1_1_transform.html" title="Matrix representation with easy functions to transform it. This class is mostly intended to be inheri..." alt="crynn::Transform" shape="rect" coords="276,0,404,24"/>
   </map>
 </div></div>
@@ -172,45 +172,6 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>SetRotation</b
 <tr class="memitem:a85ac0afc9ba897892528de68edf2deb5 inherit pub_static_methods_classcrynn_1_1_transform"><td class="memItemLeft" align="right" valign="top"><a id="a85ac0afc9ba897892528de68edf2deb5"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>SetRotation</b> (float angle, vec3 rotation, mat4 &amp;matrix)</td></tr>
 <tr class="separator:a85ac0afc9ba897892528de68edf2deb5 inherit pub_static_methods_classcrynn_1_1_transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_types_classcrynn_1_1_input"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classcrynn_1_1_input')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classcrynn_1_1_input.html">crynn::Input</a></td></tr>
-<tr class="memitem:afdb9d89da1cf405830c901a92ad6e4c1 inherit pro_types_classcrynn_1_1_input"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">KeyCode</a> { <br />
-&#160;&#160;<b>A</b> = GLFW_KEY_A
-, <b>B</b> = GLFW_KEY_B
-, <b>C</b> = GLFW_KEY_C
-, <b>D</b> = GLFW_KEY_D
-, <br />
-&#160;&#160;<b>E</b> = GLFW_KEY_E
-, <b>F</b> = GLFW_KEY_F
-, <b>G</b> = GLFW_KEY_G
-, <b>H</b> = GLFW_KEY_H
-, <br />
-&#160;&#160;<b>I</b> = GLFW_KEY_I
-, <b>J</b> = GLFW_KEY_J
-, <b>K</b> = GLFW_KEY_K
-, <b>L</b> = GLFW_KEY_L
-, <br />
-&#160;&#160;<b>M</b> = GLFW_KEY_M
-, <b>N</b> = GLFW_KEY_O
-, <b>P</b> = GLFW_KEY_P
-, <b>Q</b> = GLFW_KEY_Q
-, <br />
-&#160;&#160;<b>R</b> = GLFW_KEY_R
-, <b>S</b> = GLFW_KEY_S
-, <b>T</b> = GLFW_KEY_T
-, <b>U</b> = GLFW_KEY_U
-, <br />
-&#160;&#160;<b>V</b> = GLFW_KEY_T
-, <b>W</b> = GLFW_KEY_W
-, <b>X</b> = GLFW_KEY_X
-, <b>Y</b> = GLFW_KEY_Y
-, <br />
-&#160;&#160;<b>Z</b> = GLFW_KEY_Z
-, <b>ESC</b> = GLFW_KEY_ESCAPE
-, <b>SPACE</b> = GLFW_KEY_SPACE
-<br />
- }</td></tr>
-<tr class="memdesc:afdb9d89da1cf405830c901a92ad6e4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keycodes for input commands.  <a href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">More...</a><br /></td></tr>
-<tr class="separator:afdb9d89da1cf405830c901a92ad6e4c1 inherit pro_types_classcrynn_1_1_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classcrynn_1_1_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classcrynn_1_1_event_listener')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classcrynn_1_1_event_listener.html">crynn::EventListener</a></td></tr>
 <tr class="memitem:a7a08cc264248ffbb3a22ca9785965ecb inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_event_listener.html#a7a08cc264248ffbb3a22ca9785965ecb">Update</a> (double deltaTime)</td></tr>
 <tr class="memdesc:a7a08cc264248ffbb3a22ca9785965ecb inherit pro_methods_classcrynn_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once every frame.  <a href="classcrynn_1_1_event_listener.html#a7a08cc264248ffbb3a22ca9785965ecb">More...</a><br /></td></tr>
@@ -263,9 +224,18 @@ vec3&#160;</td><td class="memItemRight" valign="bottom"><b>GetScale</b> ()</td><
 glm::mat4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetMatrix</b> ()</td></tr>
 <tr class="separator:a9390fb3536b929409d6e3b22eeb535fe inherit pro_methods_classcrynn_1_1_transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_methods_classcrynn_1_1_input"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classcrynn_1_1_input')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="classcrynn_1_1_input.html">crynn::Input</a></td></tr>
-<tr class="memitem:a524a44a25801214398001790675e3635 inherit pro_static_methods_classcrynn_1_1_input"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">GetKey</a> (<a class="el" href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">KeyCode</a> key)</td></tr>
-<tr class="memdesc:a524a44a25801214398001790675e3635 inherit pro_static_methods_classcrynn_1_1_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the state of  <a href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">More...</a><br /></td></tr>
+<tr class="memitem:aa4d17e69492ff6ae839d9b6657284c65 inherit pro_static_methods_classcrynn_1_1_input"><td class="memItemLeft" align="right" valign="top"><a id="aa4d17e69492ff6ae839d9b6657284c65"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
+<tr class="separator:aa4d17e69492ff6ae839d9b6657284c65 inherit pro_static_methods_classcrynn_1_1_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a524a44a25801214398001790675e3635 inherit pro_static_methods_classcrynn_1_1_input"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">GetKey</a> (<a class="el" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a> key)</td></tr>
+<tr class="memdesc:a524a44a25801214398001790675e3635 inherit pro_static_methods_classcrynn_1_1_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the state of a key.  <a href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">More...</a><br /></td></tr>
 <tr class="separator:a524a44a25801214398001790675e3635 inherit pro_static_methods_classcrynn_1_1_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58a43250c58db76431daf78f63c2597 inherit pro_static_methods_classcrynn_1_1_input"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#ac58a43250c58db76431daf78f63c2597">GetKeyDown</a> (<a class="el" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a> key)</td></tr>
+<tr class="memdesc:ac58a43250c58db76431daf78f63c2597 inherit pro_static_methods_classcrynn_1_1_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the state of a key once per press, in a toggle style.  <a href="classcrynn_1_1_input.html#ac58a43250c58db76431daf78f63c2597">More...</a><br /></td></tr>
+<tr class="separator:ac58a43250c58db76431daf78f63c2597 inherit pro_static_methods_classcrynn_1_1_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa814ae8e9e9a4274f85fa073512a15ed inherit pro_static_methods_classcrynn_1_1_input"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#aa814ae8e9e9a4274f85fa073512a15ed">UpdateKeyState</a> (int key, bool state)</td></tr>
+<tr class="memdesc:aa814ae8e9e9a4274f85fa073512a15ed inherit pro_static_methods_classcrynn_1_1_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in GLFW events to update the keystate of a key in the current frame. This function should only be ever used in GLFW events.  <a href="classcrynn_1_1_input.html#aa814ae8e9e9a4274f85fa073512a15ed">More...</a><br /></td></tr>
+<tr class="separator:aa814ae8e9e9a4274f85fa073512a15ed inherit pro_static_methods_classcrynn_1_1_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_methods_classcrynn_1_1_transform"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classcrynn_1_1_transform')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="classcrynn_1_1_transform.html">crynn::Transform</a></td></tr>
 <tr class="memitem:ab1362c2df206de3bcf02c444f3b45a57 inherit pro_static_methods_classcrynn_1_1_transform"><td class="memItemLeft" align="right" valign="top"><a id="ab1362c2df206de3bcf02c444f3b45a57"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>SetPosition</b> (float x, float y, float z, mat4 &amp;matrix)</td></tr>
@@ -289,8 +259,8 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>SetRotation</b
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Creates a camera that can render objects. This class creates a Uniform Buffer Object you can use to get projection and view matrix data. This UBO will always be at binding point 0, and the block should always be called "CameraMatrices" in the shader. </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>Core/<a class="el" href="_camera_8h_source.html">Camera.h</a></li>
-<li>Core/Camera.cpp</li>
+<li>C:/Github/crynn/src/Core/<a class="el" href="_camera_8h_source.html">Camera.h</a></li>
+<li>C:/Github/crynn/src/Core/Camera.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

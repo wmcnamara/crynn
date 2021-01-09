@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Game Engine Created In C++ &amp; OpenGL</div>
   </td>
@@ -88,11 +88,10 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">Crynn Game Engine </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Game Engine Created In C++17 and OpenGL</p>
-<p><img src="docs/CrynnSmall.png" alt="Crynn Logo" class="inline"/></p>
+<div class="textblock"><p>Game Engine Created In C++ and OpenGL</p>
 <h2><a class="anchor" id="autotoc_md0"></a>
 Introduction</h2>
-<p>Crynn is an open source game engine created with C++17 and OpenGL. It is very barebones as it stands. Crynn is not overtly user friendly. Knowledge of matrix math, event systems, OpenGL and GLFW is required.</p>
+<p>Crynn is an open source game engine created with C++ and OpenGL. It is very barebones as it stands. Crynn is not overtly user friendly. Knowledge of matrix math, event systems, OpenGL and GLFW is required.</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Dependencies</h2>
 <h3><a class="anchor" id="autotoc_md2"></a>
@@ -103,28 +102,21 @@ Crynn Depends On:</h3>
 <li><a href="https://github.com/ocornut/imguiDear">Dear IMGUI</a> for GUI.</li>
 <li><a href="https://glm.g-truc.net/0.9.8/index.html">GLM</a> for matrix and other graphics related mathematics.</li>
 <li><a href="https://github.com/nothings/stb">STB_IMAGE</a> for image loading.</li>
-<li><a href="https://github.com/nothings/stb">STB_PERLIN</a> for perlin noise generation.</li>
-<li><a href="https://github.com/CedricGuillemet/ImGuizmo">IMGUIZMO</a> gizmo generation.</li>
 </ul>
-<p><em>As of now, Crynn does not use submodules for all of its dependencies. This will change, but as it stands you can find the dependency files in the lib/thirdparty folder.</em></p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Getting Started:</h1>
 <h2><a class="anchor" id="autotoc_md4"></a>
 Downloading Crynn:</h2>
-<p>To get started, you will need a copy of the Crynn source. If you have Git installed, you can download Crynn by running this command in the console: <code>git clone <a href="https://github.com/wmcnamara/crynn.git">https://github.com/wmcnamara/crynn.git</a> --recursive</code> Make sure you use a recursive clone, to fetch all submodules.</p>
+<p>To get started, you will need a copy of the Crynn source. If you have Git installed, you can download Crynn by running this command in the console: <code>git clone <a href="https://github.com/wmcnamara/crynn.git">https://github.com/wmcnamara/crynn.git</a></code> The dependencies for Crynn are in the lib folder, and do not use submodules.</p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Building Crynn:</h2>
-<p>To manage the build process, Crynn uses <a href="https://premake.github.io/">Premake</a>.</p>
-<ol type="1">
-<li>Naviagate to Crynn's base directory, containing the <code>premake5.exe</code> file.</li>
-<li>Open any command line program, and navigate to that directory.</li>
-<li>Launch premake5 with a command line argument corresponding with the IDE you're using.</li>
+<p>Crynn previously supported Premake for building the engine, but now only supports building for Visual Studio.</p>
+<p>You can download Visual Studio <a href="https://visualstudio.microsoft.com/downloads/">here.</a> Visual Studio 2019 is officially recommended.</p>
+<p>Once everything is installed, you can follow these steps to build Crynn:</p><ol type="1">
+<li>Clone Crynn</li>
+<li>Open <code>Crynn.sln</code> in Visual Studio</li>
+<li>Right clikc the Crynn solution in the solution explorer, and select build. </li>
 </ol>
-<ul>
-<li>Example: <code>./premake5 vs2019</code> for Visual Studio 2019 project files</li>
-<li>Example: <code>./premake5 vs2017</code> for Visual Studio 2017 project files</li>
-</ul>
-<p>To know more about Premake, and how to generate project files for your IDE please visit Premake's, <a href="https://github.com/premake/premake-core/wiki/Using-Premake">"Using Premake"</a> article </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

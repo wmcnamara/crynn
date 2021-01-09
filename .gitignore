@@ -9,9 +9,6 @@
 *.user
 *.userosscache
 *.sln.docstates
-*.sln
-*.vcxproj
-*.vcxproj.filters
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -20,8 +17,6 @@
 mono_crash.*
 
 # Build results
-SpeedCube/
-Physics/
 [Bb]inint/
 [Bb]uild/
 [Dd]ebug/

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keycode_38',['KeyCode',['../classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1',1,'crynn::Input']]]
+  ['keycode_38',['KeyCode',['../namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17',1,'crynn']]]
 ];
