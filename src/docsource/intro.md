@@ -1,10 +1,8 @@
 \mainpage Crynn Game Engine
-Game Engine Created In C++17 and OpenGL
-
-![Crynn Logo](docs/CrynnSmall.png)
+Game Engine Created In C++ and OpenGL
 
 ## Introduction
-   Crynn is an open source game engine created with C++17 and OpenGL. It is very barebones as it stands.
+   Crynn is an open source game engine created with C++ and OpenGL. It is very barebones as it stands.
    Crynn is not overtly user friendly. Knowledge of matrix math, event systems, OpenGL and GLFW is required.
   
 ## Dependencies
