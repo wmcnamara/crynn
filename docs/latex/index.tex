@@ -1,7 +1,5 @@
-Game Engine Created In C++17 and Open\+GL
-
-\hypertarget{index_autotoc_md0}{}\doxysubsection{Introduction}\label{index_autotoc_md0}
-Crynn is an open source game engine created with C++17 and Open\+GL. It is very barebones as it stands. Crynn is not overtly user friendly. Knowledge of matrix math, event systems, Open\+GL and GLFW is required.\hypertarget{index_autotoc_md1}{}\doxysubsection{Dependencies}\label{index_autotoc_md1}
+Game Engine Created In C++ and Open\+GL\hypertarget{index_autotoc_md0}{}\doxysubsection{Introduction}\label{index_autotoc_md0}
+Crynn is an open source game engine created with C++ and Open\+GL. It is very barebones as it stands. Crynn is not overtly user friendly. Knowledge of matrix math, event systems, Open\+GL and GLFW is required.\hypertarget{index_autotoc_md1}{}\doxysubsection{Dependencies}\label{index_autotoc_md1}
 \hypertarget{index_autotoc_md2}{}\doxysubsubsection{Crynn Depends On\+:}\label{index_autotoc_md2}
 
 \begin{DoxyItemize}
@@ -10,24 +8,16 @@ Crynn is an open source game engine created with C++17 and Open\+GL. It is very 
 \item \href{https://github.com/ocornut/imguiDear}{\texttt{ Dear IMGUI}} for GUI.
 \item \href{https://glm.g-truc.net/0.9.8/index.html}{\texttt{ GLM}} for matrix and other graphics related mathematics.
 \item \href{https://github.com/nothings/stb}{\texttt{ STB\+\_\+\+IMAGE}} for image loading.
-\item \href{https://github.com/nothings/stb}{\texttt{ STB\+\_\+\+PERLIN}} for perlin noise generation.
-\item \href{https://github.com/CedricGuillemet/ImGuizmo}{\texttt{ IMGUIZMO}} gizmo generation.
-\end{DoxyItemize}
-
-{\itshape As of now, Crynn does not use submodules for all of its dependencies. This will change, but as it stands you can find the dependency files in the lib/thirdparty folder.}\hypertarget{index_autotoc_md3}{}\doxysection{Getting Started\+:}\label{index_autotoc_md3}
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{Getting Started\+:}\label{index_autotoc_md3}
 \hypertarget{index_autotoc_md4}{}\doxysubsection{Downloading Crynn\+:}\label{index_autotoc_md4}
-To get started, you will need a copy of the Crynn source. If you have Git installed, you can download Crynn by running this command in the console\+: {\ttfamily git clone \href{https://github.com/wmcnamara/crynn.git}{\texttt{ https\+://github.\+com/wmcnamara/crynn.\+git}} -\/-\/recursive} Make sure you use a recursive clone, to fetch all submodules.\hypertarget{index_autotoc_md5}{}\doxysubsection{Building Crynn\+:}\label{index_autotoc_md5}
-To manage the build process, Crynn uses \href{https://premake.github.io/}{\texttt{ Premake}}.
+To get started, you will need a copy of the Crynn source. If you have Git installed, you can download Crynn by running this command in the console\+: {\ttfamily git clone \href{https://github.com/wmcnamara/crynn.git}{\texttt{ https\+://github.\+com/wmcnamara/crynn.\+git}}} The dependencies for Crynn are in the lib folder, and do not use submodules.\hypertarget{index_autotoc_md5}{}\doxysubsection{Building Crynn\+:}\label{index_autotoc_md5}
+Crynn previously supported Premake for building the engine, but now only supports building for Visual Studio.
 
+You can download Visual Studio \href{https://visualstudio.microsoft.com/downloads/}{\texttt{ here.}} Visual Studio 2019 is officially recommended.
 
+Once everything is installed, you can follow these steps to build Crynn\+:
 \begin{DoxyEnumerate}
-\item Naviagate to Crynn\textquotesingle{}s base directory, containing the {\ttfamily premake5.\+exe} file.
-\item Open any command line program, and navigate to that directory.
-\item Launch premake5 with a command line argument corresponding with the IDE you\textquotesingle{}re using.
+\item Clone Crynn
+\item Open {\ttfamily Crynn.\+sln} in Visual Studio
+\item Right clikc the Crynn solution in the solution explorer, and select build. 
 \end{DoxyEnumerate}
-\begin{DoxyItemize}
-\item Example\+: {\ttfamily ./premake5 vs2019} for Visual Studio 2019 project files
-\item Example\+: {\ttfamily ./premake5 vs2017} for Visual Studio 2017 project files
-\end{DoxyItemize}
-
-To know more about Premake, and how to generate project files for your IDE please visit Premake\textquotesingle{}s, \href{https://github.com/premake/premake-core/wiki/Using-Premake}{\texttt{ \char`\"{}\+Using Premake\char`\"{}}} article 

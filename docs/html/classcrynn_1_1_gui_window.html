@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Game Engine Created In C++ &amp; OpenGL</div>
   </td>
@@ -86,7 +86,6 @@ $(document).ready(function(){initNavTree('classcrynn_1_1_gui_window.html',''); i
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classcrynn_1_1_gui_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -114,15 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a0ccac4c48ed8b57efb21c6dccbbc0c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_gui_window.html#a4a0ccac4c48ed8b57efb21c6dccbbc0c">GuiWindow</a> (ImVec2 size, ImVec2 pos, const char *name)</td></tr>
 <tr class="memdesc:a4a0ccac4c48ed8b57efb21c6dccbbc0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an onscreen GUI window  <a href="classcrynn_1_1_gui_window.html#a4a0ccac4c48ed8b57efb21c6dccbbc0c">More...</a><br /></td></tr>
 <tr class="separator:a4a0ccac4c48ed8b57efb21c6dccbbc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a017a167ffbe536c5d3875fb4d3abc2ee"><td class="memItemLeft" align="right" valign="top"><a id="a017a167ffbe536c5d3875fb4d3abc2ee"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginGUIDraw</b> ()=0</td></tr>
-<tr class="separator:a017a167ffbe536c5d3875fb4d3abc2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5942f5c699a08dcc0124a1e675eb7a18"><td class="memItemLeft" align="right" valign="top"><a id="a5942f5c699a08dcc0124a1e675eb7a18"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>GUIDraw</b> ()=0</td></tr>
 <tr class="separator:a5942f5c699a08dcc0124a1e675eb7a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac53609c0a8fffc596ad41c01899ca32"><td class="memItemLeft" align="right" valign="top"><a id="aac53609c0a8fffc596ad41c01899ca32"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>EndGUIDraw</b> ()=0</td></tr>
-<tr class="separator:aac53609c0a8fffc596ad41c01899ca32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bb5b64832093cc1915d34246971c0a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_gui_window.html#a8bb5b64832093cc1915d34246971c0a3">Update</a> (double deltaTime) override</td></tr>
 <tr class="memdesc:a8bb5b64832093cc1915d34246971c0a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once every frame.  <a href="classcrynn_1_1_gui_window.html#a8bb5b64832093cc1915d34246971c0a3">More...</a><br /></td></tr>
 <tr class="separator:a8bb5b64832093cc1915d34246971c0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,30 +140,6 @@ const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a c
  <br /></td></tr>
 <tr class="separator:a2e3ec85df35a925a3f99501ba58be3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:acaccc2c27d8206aa084c89bd4534c31d"><td class="memItemLeft" align="right" valign="top"><a id="acaccc2c27d8206aa084c89bd4534c31d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_gui_window.html#acaccc2c27d8206aa084c89bd4534c31d">Run</a> ()</td></tr>
-<tr class="memdesc:acaccc2c27d8206aa084c89bd4534c31d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls BeginDraw(), Draw() and EndDraw() in that order. <br /></td></tr>
-<tr class="separator:acaccc2c27d8206aa084c89bd4534c31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classcrynn_1_1_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classcrynn_1_1_event_listener')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classcrynn_1_1_event_listener.html">crynn::EventListener</a></td></tr>
-<tr class="memitem:aad51c5a992bf3fbb3b1ae95cdacb4191 inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top"><a id="aad51c5a992bf3fbb3b1ae95cdacb4191"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> ()</td></tr>
-<tr class="separator:aad51c5a992bf3fbb3b1ae95cdacb4191 inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa457e14d1f02b9bf5787f05df39cc46f inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_event_listener.html#aa457e14d1f02b9bf5787f05df39cc46f">BeforeUpdate</a> (double deltaTime)</td></tr>
-<tr class="memdesc:aa457e14d1f02b9bf5787f05df39cc46f inherit pro_methods_classcrynn_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once before the game enters its main loop. Will be called before the first Update.  <a href="classcrynn_1_1_event_listener.html#aa457e14d1f02b9bf5787f05df39cc46f">More...</a><br /></td></tr>
-<tr class="separator:aa457e14d1f02b9bf5787f05df39cc46f inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af70d88790196ff336414c383c97474dd inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top"><a id="af70d88790196ff336414c383c97474dd"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>BeforeClose</b> ()</td></tr>
-<tr class="separator:af70d88790196ff336414c383c97474dd inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef23959fb0200cb9a0c828f18f92c637 inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_event_listener.html#aef23959fb0200cb9a0c828f18f92c637">IsSubscribed</a> ()</td></tr>
-<tr class="memdesc:aef23959fb0200cb9a0c828f18f92c637 inherit pro_methods_classcrynn_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before quitting to desktop with Application::Instance().Quit();.  <a href="classcrynn_1_1_event_listener.html#aef23959fb0200cb9a0c828f18f92c637">More...</a><br /></td></tr>
-<tr class="separator:aef23959fb0200cb9a0c828f18f92c637 inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad62155c35070f75d0b93c4ce0c6c3c9e inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top"><a id="ad62155c35070f75d0b93c4ce0c6c3c9e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_event_listener.html#ad62155c35070f75d0b93c4ce0c6c3c9e">UnsubscribeEvents</a> ()</td></tr>
-<tr class="memdesc:ad62155c35070f75d0b93c4ce0c6c3c9e inherit pro_methods_classcrynn_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes the events in this class from the Crynn event system. Call at the start of your destructor. <br /></td></tr>
-<tr class="separator:ad62155c35070f75d0b93c4ce0c6c3c9e inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a516d643df95fedbc8ca273c3ce02789f"><td class="memItemLeft" align="right" valign="top"><a id="a516d643df95fedbc8ca273c3ce02789f"></a>
@@ -194,6 +163,26 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>m_renderTextu
 <tr class="memitem:a13e2bb73f2ce3401136c20cf30fe8160"><td class="memItemLeft" align="right" valign="top"><a id="a13e2bb73f2ce3401136c20cf30fe8160"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>m_name</b></td></tr>
 <tr class="separator:a13e2bb73f2ce3401136c20cf30fe8160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classcrynn_1_1_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classcrynn_1_1_event_listener')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classcrynn_1_1_event_listener.html">crynn::EventListener</a></td></tr>
+<tr class="memitem:aad51c5a992bf3fbb3b1ae95cdacb4191 inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top"><a id="aad51c5a992bf3fbb3b1ae95cdacb4191"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> ()</td></tr>
+<tr class="separator:aad51c5a992bf3fbb3b1ae95cdacb4191 inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa457e14d1f02b9bf5787f05df39cc46f inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_event_listener.html#aa457e14d1f02b9bf5787f05df39cc46f">BeforeUpdate</a> (double deltaTime)</td></tr>
+<tr class="memdesc:aa457e14d1f02b9bf5787f05df39cc46f inherit pro_methods_classcrynn_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once before the game enters its main loop. Will be called before the first Update.  <a href="classcrynn_1_1_event_listener.html#aa457e14d1f02b9bf5787f05df39cc46f">More...</a><br /></td></tr>
+<tr class="separator:aa457e14d1f02b9bf5787f05df39cc46f inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af70d88790196ff336414c383c97474dd inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top"><a id="af70d88790196ff336414c383c97474dd"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>BeforeClose</b> ()</td></tr>
+<tr class="separator:af70d88790196ff336414c383c97474dd inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef23959fb0200cb9a0c828f18f92c637 inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_event_listener.html#aef23959fb0200cb9a0c828f18f92c637">IsSubscribed</a> ()</td></tr>
+<tr class="memdesc:aef23959fb0200cb9a0c828f18f92c637 inherit pro_methods_classcrynn_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before quitting to desktop with Application::Instance().Quit();.  <a href="classcrynn_1_1_event_listener.html#aef23959fb0200cb9a0c828f18f92c637">More...</a><br /></td></tr>
+<tr class="separator:aef23959fb0200cb9a0c828f18f92c637 inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62155c35070f75d0b93c4ce0c6c3c9e inherit pro_methods_classcrynn_1_1_event_listener"><td class="memItemLeft" align="right" valign="top"><a id="ad62155c35070f75d0b93c4ce0c6c3c9e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_event_listener.html#ad62155c35070f75d0b93c4ce0c6c3c9e">UnsubscribeEvents</a> ()</td></tr>
+<tr class="memdesc:ad62155c35070f75d0b93c4ce0c6c3c9e inherit pro_methods_classcrynn_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes the events in this class from the Crynn event system. Call at the start of your destructor. <br /></td></tr>
+<tr class="separator:ad62155c35070f75d0b93c4ce0c6c3c9e inherit pro_methods_classcrynn_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for any onscreen GUI window. Uses IMGUI and Crynn events for rendering. </p>
@@ -280,8 +269,8 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>m_name</b></t
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>GUI/<a class="el" href="_gui_window_8h_source.html">GuiWindow.h</a></li>
-<li>GUI/GuiWindow.cpp</li>
+<li>C:/Github/crynn/src/GUI/<a class="el" href="_gui_window_8h_source.html">GuiWindow.h</a></li>
+<li>C:/Github/crynn/src/GUI/GuiWindow.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

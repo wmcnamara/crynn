@@ -20,14 +20,8 @@ Inheritance diagram for crynn\+::Gui\+Window\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classcrynn_1_1_gui_window_a4a0ccac4c48ed8b57efb21c6dccbbc0c}{Gui\+Window}} (Im\+Vec2 size, Im\+Vec2 pos, const char $\ast$name)
 \begin{DoxyCompactList}\small\item\em Creates an onscreen GUI window \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classcrynn_1_1_gui_window_a017a167ffbe536c5d3875fb4d3abc2ee}\label{classcrynn_1_1_gui_window_a017a167ffbe536c5d3875fb4d3abc2ee}} 
-virtual void {\bfseries Begin\+GUIDraw} ()=0
-\item 
 \mbox{\Hypertarget{classcrynn_1_1_gui_window_a5942f5c699a08dcc0124a1e675eb7a18}\label{classcrynn_1_1_gui_window_a5942f5c699a08dcc0124a1e675eb7a18}} 
 virtual void {\bfseries GUIDraw} ()=0
-\item 
-\mbox{\Hypertarget{classcrynn_1_1_gui_window_aac53609c0a8fffc596ad41c01899ca32}\label{classcrynn_1_1_gui_window_aac53609c0a8fffc596ad41c01899ca32}} 
-virtual void {\bfseries End\+GUIDraw} ()=0
 \item 
 void \mbox{\hyperlink{classcrynn_1_1_gui_window_a8bb5b64832093cc1915d34246971c0a3}{Update}} (double delta\+Time) override
 \begin{DoxyCompactList}\small\item\em Called once every frame. \end{DoxyCompactList}\item 
@@ -47,12 +41,6 @@ const float \mbox{\hyperlink{classcrynn_1_1_gui_window_a06ed1390ce132d208ce3e678
 const unsigned int \& \mbox{\hyperlink{classcrynn_1_1_gui_window_a2e3ec85df35a925a3f99501ba58be3d0}{Get\+Render\+Texture}} ()
 \begin{DoxyCompactList}\small\item\em Returns (width/height) of the window framebuffer. ~\newline
  \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classcrynn_1_1_gui_window_acaccc2c27d8206aa084c89bd4534c31d}\label{classcrynn_1_1_gui_window_acaccc2c27d8206aa084c89bd4534c31d}} 
-void \mbox{\hyperlink{classcrynn_1_1_gui_window_acaccc2c27d8206aa084c89bd4534c31d}{Run}} ()
-\begin{DoxyCompactList}\small\item\em Calls Begin\+Draw(), Draw() and End\+Draw() in that order. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -77,6 +65,7 @@ unsigned int {\bfseries m\+\_\+render\+Texture} = 0
 \mbox{\Hypertarget{classcrynn_1_1_gui_window_a13e2bb73f2ce3401136c20cf30fe8160}\label{classcrynn_1_1_gui_window_a13e2bb73f2ce3401136c20cf30fe8160}} 
 const char $\ast$ {\bfseries m\+\_\+name}
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -130,5 +119,5 @@ Reimplemented from \mbox{\hyperlink{classcrynn_1_1_event_listener_a7a08cc264248f
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-GUI/Gui\+Window.\+h\item 
-GUI/Gui\+Window.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Github/crynn/src/\+GUI/Gui\+Window.\+h\item 
+C\+:/\+Github/crynn/src/\+GUI/Gui\+Window.\+cpp\end{DoxyCompactItemize}

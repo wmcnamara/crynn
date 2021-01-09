@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Game Engine Created In C++ &amp; OpenGL</div>
   </td>
@@ -128,9 +128,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows interfacing with the Crynn event system. Inherit from this class, and override any function you may need. Events are subscribed automatically with this classes constructor.  <a href="classcrynn_1_1_event_listener.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html">Input</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple input component that allows interfacing with the Crynn input system. Inherit from this class and override void InputCommands() to use.  <a href="classcrynn_1_1_input.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_vec2.html">Vec2</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple input component that allows interfacing with the Crynn input system.  <a href="classcrynn_1_1_input.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_vec2_int.html">Vec2Int</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,7 +155,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows GUI editing of any matrix at runtime. Useful for debugging.  <a href="classcrynn_1_1_matrix_editor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_debug.html">Debug</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of functions to assist with debugging.  <a href="classcrynn_1_1_debug.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of functions to assist with debugging. These are only ran in debug configurations, or when the CRYNN_DEBUG macro is defined. <a class="el" href="classcrynn_1_1_file.html" title="File related functions to allow user to open files.">File</a> log functions are very slow.  <a href="classcrynn_1_1_debug.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_file.html">File</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcrynn_1_1_file.html" title="File related functions to allow user to open files.">File</a> related functions to allow user to open files.  <a href="classcrynn_1_1_file.html#details">More...</a><br /></td></tr>
@@ -179,6 +177,44 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ad3edb46f8f1b121349afb44f8dc8d792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projection type.  <a href="namespacecrynn.html#ad3edb46f8f1b121349afb44f8dc8d792">More...</a><br /></td></tr>
 <tr class="separator:ad3edb46f8f1b121349afb44f8dc8d792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63771b45869b7ebe7615586d3b6dfe17"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a> { <br />
+&#160;&#160;<b>A</b> = GLFW_KEY_A
+, <b>B</b> = GLFW_KEY_B
+, <b>C</b> = GLFW_KEY_C
+, <b>D</b> = GLFW_KEY_D
+, <br />
+&#160;&#160;<b>E</b> = GLFW_KEY_E
+, <b>F</b> = GLFW_KEY_F
+, <b>G</b> = GLFW_KEY_G
+, <b>H</b> = GLFW_KEY_H
+, <br />
+&#160;&#160;<b>I</b> = GLFW_KEY_I
+, <b>J</b> = GLFW_KEY_J
+, <b>K</b> = GLFW_KEY_K
+, <b>L</b> = GLFW_KEY_L
+, <br />
+&#160;&#160;<b>M</b> = GLFW_KEY_M
+, <b>N</b> = GLFW_KEY_O
+, <b>P</b> = GLFW_KEY_P
+, <b>Q</b> = GLFW_KEY_Q
+, <br />
+&#160;&#160;<b>R</b> = GLFW_KEY_R
+, <b>S</b> = GLFW_KEY_S
+, <b>T</b> = GLFW_KEY_T
+, <b>U</b> = GLFW_KEY_U
+, <br />
+&#160;&#160;<b>V</b> = GLFW_KEY_T
+, <b>W</b> = GLFW_KEY_W
+, <b>X</b> = GLFW_KEY_X
+, <b>Y</b> = GLFW_KEY_Y
+, <br />
+&#160;&#160;<b>Z</b> = GLFW_KEY_Z
+, <b>ESC</b> = GLFW_KEY_ESCAPE
+, <b>SPACE</b> = GLFW_KEY_SPACE
+<br />
+ }</td></tr>
+<tr class="memdesc:a63771b45869b7ebe7615586d3b6dfe17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keycodes for input commands.  <a href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">More...</a><br /></td></tr>
+<tr class="separator:a63771b45869b7ebe7615586d3b6dfe17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ea10d41b0e5f2b8d4a704f0db6817c0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrynn.html#a2ea10d41b0e5f2b8d4a704f0db6817c0">TimeFormat</a> { <b>Seconds</b>
 , <b>Milliseconds</b>
 , <b>Microseconds</b>
@@ -189,9 +225,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1ae37de0d0b729829d4b6492b8d40145"><td class="memItemLeft" align="right" valign="top"><a id="a1ae37de0d0b729829d4b6492b8d40145"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>InputCallback</b> (GLFWwindow *window, int key, int scancode, int action, int mods)</td></tr>
-<tr class="separator:a1ae37de0d0b729829d4b6492b8d40145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc4b4c63ecd4cf78f1b184ca989a6b0f"><td class="memItemLeft" align="right" valign="top"><a id="abc4b4c63ecd4cf78f1b184ca989a6b0f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>key_callback</b> (GLFWwindow *window, int key, int scancode, int action, int mods)</td></tr>
+<tr class="separator:abc4b4c63ecd4cf78f1b184ca989a6b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56952d7a10b606e49a97f218b9742f52"><td class="memItemLeft" align="right" valign="top"><a id="a56952d7a10b606e49a97f218b9742f52"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SizeCallback</b> (GLFWwindow *window, int width, int height)</td></tr>
 <tr class="separator:a56952d7a10b606e49a97f218b9742f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,6 +237,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SizeCallback</b> (GLF
 <p>This class contains object oriented implementations of various buffers used in OpenGL.</p>
 <p>The default constructor for <a class="el" href="classcrynn_1_1_v_a_o.html">VAO</a> allocates memory. They all call the corresponding glGen function for the buffer they represent, when you construct them.</p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a63771b45869b7ebe7615586d3b6dfe17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63771b45869b7ebe7615586d3b6dfe17">&#9670;&nbsp;</a></span>KeyCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">crynn::KeyCode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Keycodes for input commands. </p>
+
+</div>
+</div>
 <a id="ad3edb46f8f1b121349afb44f8dc8d792"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3edb46f8f1b121349afb44f8dc8d792">&#9670;&nbsp;</a></span>Projection</h2>
 

@@ -5,7 +5,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_application}{crynn\+::\+Application}} \\*A class containing static functions to represent application functions, states, and events. Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components }{\pageref{classcrynn_1_1_application}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_camera}{crynn\+::\+Camera}} \\*Creates a camera that can render objects. This class creates a Uniform Buffer Object you can use to get projection and view matrix data. This UBO will always be at binding point 0, and the block should always be called \char`\"{}\+Camera\+Matrices\char`\"{} in the shader }{\pageref{classcrynn_1_1_camera}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_crynn_object}{crynn\+::\+Crynn\+Object}} }{\pageref{classcrynn_1_1_crynn_object}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_debug}{crynn\+::\+Debug}} \\*Collection of functions to assist with debugging }{\pageref{classcrynn_1_1_debug}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_debug}{crynn\+::\+Debug}} \\*Collection of functions to assist with debugging. These are only ran in debug configurations, or when the CRYNN\+\_\+\+DEBUG macro is defined. \mbox{\hyperlink{classcrynn_1_1_file}{File}} log functions are very slow }{\pageref{classcrynn_1_1_debug}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_e_b_o}{crynn\+::\+EBO}} }{\pageref{classcrynn_1_1_e_b_o}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_event}{crynn\+::\+Event$<$ T $>$}} \\*Creates an event }{\pageref{classcrynn_1_1_event}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_event_3_01void_01_4}{crynn\+::\+Event$<$ void $>$}} \\*Creates an event that takes no parameters }{\pageref{classcrynn_1_1_event_3_01void_01_4}}{}
@@ -13,7 +13,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_file}{crynn\+::\+File}} \\*\mbox{\hyperlink{classcrynn_1_1_file}{File}} related functions to allow user to open files }{\pageref{classcrynn_1_1_file}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structcrynn_1_1_file_1_1_get_file_args}{crynn\+::\+File\+::\+Get\+File\+Args}} \\*Structure containing the filepath retrieved from the picker }{\pageref{structcrynn_1_1_file_1_1_get_file_args}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_gui_window}{crynn\+::\+Gui\+Window}} \\*Base class for any onscreen GUI window. Uses IMGUI and Crynn events for rendering }{\pageref{classcrynn_1_1_gui_window}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_input}{crynn\+::\+Input}} \\*Simple input component that allows interfacing with the Crynn input system. Inherit from this class and override void Input\+Commands() to use }{\pageref{classcrynn_1_1_input}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_input}{crynn\+::\+Input}} \\*Simple input component that allows interfacing with the Crynn input system }{\pageref{classcrynn_1_1_input}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_matrix_editor}{crynn\+::\+Matrix\+Editor}} \\*Allows GUI editing of any matrix at runtime. Useful for debugging }{\pageref{classcrynn_1_1_matrix_editor}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_mesh}{crynn\+::\+Mesh}} }{\pageref{classcrynn_1_1_mesh}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_mesh_renderer}{crynn\+::\+Mesh\+Renderer}} \\*Renders a mesh with a shader and a texture }{\pageref{classcrynn_1_1_mesh_renderer}}{}
@@ -24,7 +24,6 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_transform}{crynn\+::\+Transform}} \\*Matrix representation with easy functions to transform it. This class is mostly intended to be inherited from. Any transformations made, (translate, scale rotate) will be applied to the \char`\"{}transform\+Matrix\char`\"{} member. You can use this matrix however you please. Its generally used as a model or view matrix, and works very well with \mbox{\hyperlink{classcrynn_1_1_mesh_renderer}{Mesh\+Renderer}} }{\pageref{classcrynn_1_1_transform}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_v_a_o}{crynn\+::\+VAO}} }{\pageref{classcrynn_1_1_v_a_o}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_v_b_o}{crynn\+::\+VBO}} }{\pageref{classcrynn_1_1_v_b_o}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_vec2}{crynn\+::\+Vec2}} }{\pageref{classcrynn_1_1_vec2}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_vec2_int}{crynn\+::\+Vec2\+Int}} }{\pageref{classcrynn_1_1_vec2_int}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classcrynn_1_1_window}{crynn\+::\+Window}} \\*The window everything is rendered on. Crynn does not support more than 1 monitor }{\pageref{classcrynn_1_1_window}}{}
 \end{DoxyCompactList}

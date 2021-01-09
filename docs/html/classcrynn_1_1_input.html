@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Game Engine Created In C++ &amp; OpenGL</div>
   </td>
@@ -85,16 +85,14 @@ $(document).ready(function(){initNavTree('classcrynn_1_1_input.html',''); initRe
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classcrynn_1_1_input-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">crynn::Input Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">crynn::Input Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Simple input component that allows interfacing with the Crynn input system. Inherit from this class and override void InputCommands() to use.  
+<p>Simple input component that allows interfacing with the Crynn input system.  
  <a href="classcrynn_1_1_input.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_input_8h_source.html">Input.h</a>&gt;</code></p>
@@ -108,87 +106,24 @@ Inheritance diagram for crynn::Input:</div>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:afdb9d89da1cf405830c901a92ad6e4c1"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">KeyCode</a> { <br />
-&#160;&#160;<b>A</b> = GLFW_KEY_A
-, <b>B</b> = GLFW_KEY_B
-, <b>C</b> = GLFW_KEY_C
-, <b>D</b> = GLFW_KEY_D
-, <br />
-&#160;&#160;<b>E</b> = GLFW_KEY_E
-, <b>F</b> = GLFW_KEY_F
-, <b>G</b> = GLFW_KEY_G
-, <b>H</b> = GLFW_KEY_H
-, <br />
-&#160;&#160;<b>I</b> = GLFW_KEY_I
-, <b>J</b> = GLFW_KEY_J
-, <b>K</b> = GLFW_KEY_K
-, <b>L</b> = GLFW_KEY_L
-, <br />
-&#160;&#160;<b>M</b> = GLFW_KEY_M
-, <b>N</b> = GLFW_KEY_O
-, <b>P</b> = GLFW_KEY_P
-, <b>Q</b> = GLFW_KEY_Q
-, <br />
-&#160;&#160;<b>R</b> = GLFW_KEY_R
-, <b>S</b> = GLFW_KEY_S
-, <b>T</b> = GLFW_KEY_T
-, <b>U</b> = GLFW_KEY_U
-, <br />
-&#160;&#160;<b>V</b> = GLFW_KEY_T
-, <b>W</b> = GLFW_KEY_W
-, <b>X</b> = GLFW_KEY_X
-, <b>Y</b> = GLFW_KEY_Y
-, <br />
-&#160;&#160;<b>Z</b> = GLFW_KEY_Z
-, <b>ESC</b> = GLFW_KEY_ESCAPE
-, <b>SPACE</b> = GLFW_KEY_SPACE
-<br />
- }</td></tr>
-<tr class="memdesc:afdb9d89da1cf405830c901a92ad6e4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keycodes for input commands.  <a href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">More...</a><br /></td></tr>
-<tr class="separator:afdb9d89da1cf405830c901a92ad6e4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a524a44a25801214398001790675e3635"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">GetKey</a> (<a class="el" href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">KeyCode</a> key)</td></tr>
-<tr class="memdesc:a524a44a25801214398001790675e3635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the state of  <a href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">More...</a><br /></td></tr>
+<tr class="memitem:aa4d17e69492ff6ae839d9b6657284c65"><td class="memItemLeft" align="right" valign="top"><a id="aa4d17e69492ff6ae839d9b6657284c65"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
+<tr class="separator:aa4d17e69492ff6ae839d9b6657284c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a524a44a25801214398001790675e3635"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">GetKey</a> (<a class="el" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a> key)</td></tr>
+<tr class="memdesc:a524a44a25801214398001790675e3635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the state of a key.  <a href="classcrynn_1_1_input.html#a524a44a25801214398001790675e3635">More...</a><br /></td></tr>
 <tr class="separator:a524a44a25801214398001790675e3635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:afbe7ea81fd75c6a66688ad9a8559b28f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#afbe7ea81fd75c6a66688ad9a8559b28f">Inputs</a> ()=0</td></tr>
-<tr class="memdesc:afbe7ea81fd75c6a66688ad9a8559b28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame when polling events. Override this and add code that checks input.  <a href="classcrynn_1_1_input.html#afbe7ea81fd75c6a66688ad9a8559b28f">More...</a><br /></td></tr>
-<tr class="separator:afbe7ea81fd75c6a66688ad9a8559b28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58a43250c58db76431daf78f63c2597"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#ac58a43250c58db76431daf78f63c2597">GetKeyDown</a> (<a class="el" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a> key)</td></tr>
+<tr class="memdesc:ac58a43250c58db76431daf78f63c2597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the state of a key once per press, in a toggle style.  <a href="classcrynn_1_1_input.html#ac58a43250c58db76431daf78f63c2597">More...</a><br /></td></tr>
+<tr class="separator:ac58a43250c58db76431daf78f63c2597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa814ae8e9e9a4274f85fa073512a15ed"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrynn_1_1_input.html#aa814ae8e9e9a4274f85fa073512a15ed">UpdateKeyState</a> (int key, bool state)</td></tr>
+<tr class="memdesc:aa814ae8e9e9a4274f85fa073512a15ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in GLFW events to update the keystate of a key in the current frame. This function should only be ever used in GLFW events.  <a href="classcrynn_1_1_input.html#aa814ae8e9e9a4274f85fa073512a15ed">More...</a><br /></td></tr>
+<tr class="separator:aa814ae8e9e9a4274f85fa073512a15ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Simple input component that allows interfacing with the Crynn input system. Inherit from this class and override void InputCommands() to use. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="afdb9d89da1cf405830c901a92ad6e4c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdb9d89da1cf405830c901a92ad6e4c1">&#9670;&nbsp;</a></span>KeyCode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">crynn::Input::KeyCode</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Keycodes for input commands. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<div class="textblock"><p>Simple input component that allows interfacing with the Crynn input system. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a524a44a25801214398001790675e3635"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a524a44a25801214398001790675e3635">&#9670;&nbsp;</a></span>GetKey()</h2>
 
@@ -201,7 +136,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool crynn::Input::GetKey </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classcrynn_1_1_input.html#afdb9d89da1cf405830c901a92ad6e4c1">KeyCode</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a>&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
@@ -213,7 +148,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the state of </p>
+<p>Returns the state of a key. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td></td></tr>
@@ -224,8 +159,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afbe7ea81fd75c6a66688ad9a8559b28f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbe7ea81fd75c6a66688ad9a8559b28f">&#9670;&nbsp;</a></span>Inputs()</h2>
+<a id="ac58a43250c58db76431daf78f63c2597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac58a43250c58db76431daf78f63c2597">&#9670;&nbsp;</a></span>GetKeyDown()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,26 +169,79 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void crynn::Input::Inputs </td>
+          <td class="memname">bool crynn::Input::GetKeyDown </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17">KeyCode</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Called every frame when polling events. Override this and add code that checks input. </p>
+<p>Returns the state of a key once per press, in a toggle style. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="aa814ae8e9e9a4274f85fa073512a15ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa814ae8e9e9a4274f85fa073512a15ed">&#9670;&nbsp;</a></span>UpdateKeyState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void crynn::Input::UpdateKeyState </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used in GLFW events to update the keystate of a key in the current frame. This function should only be ever used in GLFW events. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The GLFW keycode of the key you're updating</td></tr>
+    <tr><td class="paramname">state</td><td>The boolean state of the key</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Core/<a class="el" href="_input_8h_source.html">Input.h</a></li>
-<li>Core/Input.cpp</li>
+<li>C:/Github/crynn/src/Core/<a class="el" href="_input_8h_source.html">Input.h</a></li>
+<li>C:/Github/crynn/src/Core/Input.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

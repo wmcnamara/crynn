@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Crynn: GUI/GuiWindow.h Source File</title>
+<title>Crynn: C:/Github/crynn/src/GUI/GuiWindow.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CrynnSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Crynn
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Game Engine Created In C++ &amp; OpenGL</div>
   </td>
@@ -104,50 +104,45 @@ $(document).ready(function(){initNavTree('_gui_window_8h_source.html',''); initR
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classcrynn_1_1_gui_window.html#a4a0ccac4c48ed8b57efb21c6dccbbc0c">GuiWindow</a>(ImVec2 size, ImVec2 pos, <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        ~<a class="code" href="classcrynn_1_1_gui_window.html">GuiWindow</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classcrynn_1_1_gui_window.html">GuiWindow</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> BeginGUIDraw() = 0;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> GUIDraw() = 0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> EndGUIDraw() = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> GUIDraw() = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcrynn_1_1_gui_window.html#a8bb5b64832093cc1915d34246971c0a3">Update</a>(<span class="keywordtype">double</span> deltaTime) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcrynn_1_1_gui_window.html#a8bb5b64832093cc1915d34246971c0a3">Update</a>(<span class="keywordtype">double</span> deltaTime) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">const</span> ImVec2 WindowSize(); </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> ImVec2 <a class="code" href="classcrynn_1_1_gui_window.html#a21e0b773a27c026ad3c0b1377736cd6c">FrameBufferSize</a>(); </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classcrynn_1_1_gui_window.html#ad3c98f2cba93cca865dd2381da84258a">WindowAspectRatio</a>(); </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classcrynn_1_1_gui_window.html#a06ed1390ce132d208ce3e678aa32f398">FrameBufferAspectRatio</a>(); </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; <a class="code" href="classcrynn_1_1_gui_window.html#a2e3ec85df35a925a3f99501ba58be3d0">GetRenderTexture</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span> active = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        ImVec2 m_size;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ImVec2 m_pos;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        GLuint FBO = 0, RBO = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_renderTexture = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* m_name;     </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcrynn_1_1_gui_window.html#acaccc2c27d8206aa084c89bd4534c31d">Run</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> ImVec2 WindowSize(); </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> ImVec2 <a class="code" href="classcrynn_1_1_gui_window.html#a21e0b773a27c026ad3c0b1377736cd6c">FrameBufferSize</a>(); </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classcrynn_1_1_gui_window.html#ad3c98f2cba93cca865dd2381da84258a">WindowAspectRatio</a>(); </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classcrynn_1_1_gui_window.html#a06ed1390ce132d208ce3e678aa32f398">FrameBufferAspectRatio</a>(); </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; <a class="code" href="classcrynn_1_1_gui_window.html#a2e3ec85df35a925a3f99501ba58be3d0">GetRenderTexture</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span> active = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ImVec2 m_size;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        ImVec2 m_pos;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        GLuint FBO = 0, RBO = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_renderTexture = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* m_name;     </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="ttc" id="aclasscrynn_1_1_event_listener_html"><div class="ttname"><a href="classcrynn_1_1_event_listener.html">crynn::EventListener</a></div><div class="ttdoc">Allows interfacing with the Crynn event system. Inherit from this class, and override any function yo...</div><div class="ttdef"><b>Definition:</b> EventListener.h:15</div></div>
 <div class="ttc" id="aclasscrynn_1_1_gui_window_html"><div class="ttname"><a href="classcrynn_1_1_gui_window.html">crynn::GuiWindow</a></div><div class="ttdoc">Base class for any onscreen GUI window. Uses IMGUI and Crynn events for rendering.</div><div class="ttdef"><b>Definition:</b> GuiWindow.h:18</div></div>
-<div class="ttc" id="aclasscrynn_1_1_gui_window_html_a06ed1390ce132d208ce3e678aa32f398"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#a06ed1390ce132d208ce3e678aa32f398">crynn::GuiWindow::FrameBufferAspectRatio</a></div><div class="ttdeci">const float FrameBufferAspectRatio()</div><div class="ttdoc">Returns (width/height) of the window.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:30</div></div>
-<div class="ttc" id="aclasscrynn_1_1_gui_window_html_a21e0b773a27c026ad3c0b1377736cd6c"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#a21e0b773a27c026ad3c0b1377736cd6c">crynn::GuiWindow::FrameBufferSize</a></div><div class="ttdeci">const ImVec2 FrameBufferSize()</div><div class="ttdoc">Returns the size of the window.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:45</div></div>
-<div class="ttc" id="aclasscrynn_1_1_gui_window_html_a2e3ec85df35a925a3f99501ba58be3d0"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#a2e3ec85df35a925a3f99501ba58be3d0">crynn::GuiWindow::GetRenderTexture</a></div><div class="ttdeci">const unsigned int &amp; GetRenderTexture()</div><div class="ttdoc">Returns (width/height) of the window framebuffer.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:50</div></div>
+<div class="ttc" id="aclasscrynn_1_1_gui_window_html_a06ed1390ce132d208ce3e678aa32f398"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#a06ed1390ce132d208ce3e678aa32f398">crynn::GuiWindow::FrameBufferAspectRatio</a></div><div class="ttdeci">const float FrameBufferAspectRatio()</div><div class="ttdoc">Returns (width/height) of the window.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:24</div></div>
+<div class="ttc" id="aclasscrynn_1_1_gui_window_html_a21e0b773a27c026ad3c0b1377736cd6c"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#a21e0b773a27c026ad3c0b1377736cd6c">crynn::GuiWindow::FrameBufferSize</a></div><div class="ttdeci">const ImVec2 FrameBufferSize()</div><div class="ttdoc">Returns the size of the window.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:39</div></div>
+<div class="ttc" id="aclasscrynn_1_1_gui_window_html_a2e3ec85df35a925a3f99501ba58be3d0"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#a2e3ec85df35a925a3f99501ba58be3d0">crynn::GuiWindow::GetRenderTexture</a></div><div class="ttdeci">const unsigned int &amp; GetRenderTexture()</div><div class="ttdoc">Returns (width/height) of the window framebuffer.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:44</div></div>
 <div class="ttc" id="aclasscrynn_1_1_gui_window_html_a4a0ccac4c48ed8b57efb21c6dccbbc0c"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#a4a0ccac4c48ed8b57efb21c6dccbbc0c">crynn::GuiWindow::GuiWindow</a></div><div class="ttdeci">GuiWindow(ImVec2 size, ImVec2 pos, const char *name)</div><div class="ttdoc">Creates an onscreen GUI window</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:4</div></div>
-<div class="ttc" id="aclasscrynn_1_1_gui_window_html_a8bb5b64832093cc1915d34246971c0a3"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#a8bb5b64832093cc1915d34246971c0a3">crynn::GuiWindow::Update</a></div><div class="ttdeci">void Update(double deltaTime) override</div><div class="ttdoc">Called once every frame.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:35</div></div>
-<div class="ttc" id="aclasscrynn_1_1_gui_window_html_acaccc2c27d8206aa084c89bd4534c31d"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#acaccc2c27d8206aa084c89bd4534c31d">crynn::GuiWindow::Run</a></div><div class="ttdeci">void Run()</div><div class="ttdoc">Calls BeginDraw(), Draw() and EndDraw() in that order.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:18</div></div>
-<div class="ttc" id="aclasscrynn_1_1_gui_window_html_ad3c98f2cba93cca865dd2381da84258a"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#ad3c98f2cba93cca865dd2381da84258a">crynn::GuiWindow::WindowAspectRatio</a></div><div class="ttdeci">const float WindowAspectRatio()</div><div class="ttdoc">Returns the framebuffer size of the window.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:25</div></div>
+<div class="ttc" id="aclasscrynn_1_1_gui_window_html_a8bb5b64832093cc1915d34246971c0a3"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#a8bb5b64832093cc1915d34246971c0a3">crynn::GuiWindow::Update</a></div><div class="ttdeci">void Update(double deltaTime) override</div><div class="ttdoc">Called once every frame.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:29</div></div>
+<div class="ttc" id="aclasscrynn_1_1_gui_window_html_ad3c98f2cba93cca865dd2381da84258a"><div class="ttname"><a href="classcrynn_1_1_gui_window.html#ad3c98f2cba93cca865dd2381da84258a">crynn::GuiWindow::WindowAspectRatio</a></div><div class="ttdeci">const float WindowAspectRatio()</div><div class="ttdoc">Returns the framebuffer size of the window.</div><div class="ttdef"><b>Definition:</b> GuiWindow.cpp:19</div></div>
 <div class="ttc" id="anamespacecrynn_html"><div class="ttname"><a href="namespacecrynn.html">crynn</a></div><div class="ttdoc">Main Engine Namespace</div><div class="ttdef"><b>Definition:</b> Application.cpp:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_171b764decf33d63a7df2fab4f4bc6d8.html">GUI</a></li><li class="navelem"><b>GuiWindow.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4e4e2e75df7fa6971448b424c011c8b5.html">GUI</a></li><li class="navelem"><b>GuiWindow.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
   </ul>
 </div>

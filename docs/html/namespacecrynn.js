@@ -11,8 +11,7 @@ var namespacecrynn =
     [ "Event", "classcrynn_1_1_event.html", "classcrynn_1_1_event" ],
     [ "Event< void >", "classcrynn_1_1_event_3_01void_01_4.html", "classcrynn_1_1_event_3_01void_01_4" ],
     [ "EventListener", "classcrynn_1_1_event_listener.html", "classcrynn_1_1_event_listener" ],
-    [ "Input", "classcrynn_1_1_input.html", "classcrynn_1_1_input" ],
-    [ "Vec2", "classcrynn_1_1_vec2.html", null ],
+    [ "Input", "classcrynn_1_1_input.html", null ],
     [ "Vec2Int", "classcrynn_1_1_vec2_int.html", "classcrynn_1_1_vec2_int" ],
     [ "Mesh", "classcrynn_1_1_mesh.html", "classcrynn_1_1_mesh" ],
     [ "MeshRenderer", "classcrynn_1_1_mesh_renderer.html", "classcrynn_1_1_mesh_renderer" ],
@@ -30,6 +29,35 @@ var namespacecrynn =
       [ "BindAfterAllocation", "namespacecrynn.html#a4835c022c56afcbae15732dc557e1cf9af5f6459eed328d156408249e57e034b5", null ],
       [ "UnbindAfterAllocation", "namespacecrynn.html#a4835c022c56afcbae15732dc557e1cf9a9eab283a60491d755d37ff84952b3a8a", null ]
     ] ],
+    [ "KeyCode", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17", [
+      [ "A", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a7fc56270e7a70fa81a5935b72eacbe29", null ],
+      [ "B", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a9d5ed678fe57bcca610140957afab571", null ],
+      [ "C", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a0d61f8370cad1d412f80b84d143e1257", null ],
+      [ "D", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17af623e75af30e62bbd73d6df5b50bb7b5", null ],
+      [ "E", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a3a3ea00cfc35332cedf6e5e9a32e94da", null ],
+      [ "F", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a800618943025315f869e4e1f09471012", null ],
+      [ "G", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17adfcf28d0734569a6a693bc8194de62bf", null ],
+      [ "H", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17ac1d9f50f86825a1a2302ec2449c17196", null ],
+      [ "I", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17add7536794b63bf90eccfd37f9b147d7f", null ],
+      [ "J", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17aff44570aca8241914870afbc310cdb85", null ],
+      [ "K", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17aa5f3c6a11b03839d46af9fb43c97c188", null ],
+      [ "L", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17ad20caec3b48a1eef164cb4ca81ba2587", null ],
+      [ "M", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a69691c7bdcc3ce6d5d8a1361f22d04ac", null ],
+      [ "N", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a8d9c307cb7f3c4a32822a51922d1ceaa", null ],
+      [ "P", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a44c29edb103a2872f519ad0c9a0fdaaa", null ],
+      [ "Q", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17af09564c9ca56850d4cd6b3319e541aee", null ],
+      [ "R", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17ae1e1d3d40573127e9ee0480caf1283d6", null ],
+      [ "S", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a5dbc98dcc983a70728bd082d1a47546e", null ],
+      [ "T", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17ab9ece18c950afbfa6b0fdbfa4ff731d3", null ],
+      [ "U", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a4c614360da93c0a041b22e537de151eb", null ],
+      [ "V", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a5206560a306a2e085a437fd258eb57ce", null ],
+      [ "W", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a61e9c06ea9a85a5088a499df6458d276", null ],
+      [ "X", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a02129bb861061d1a052c592e2dc6b383", null ],
+      [ "Y", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a57cec4137b614c87cb4e24a3d003a3e0", null ],
+      [ "Z", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a21c2e59531c8710156d34a3c30ac81d5", null ],
+      [ "ESC", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a6351aefd1e5e1b62c76f8580116964be", null ],
+      [ "SPACE", "namespacecrynn.html#a63771b45869b7ebe7615586d3b6dfe17a6506ae39fdca9845e3a6de3865183e57", null ]
+    ] ],
     [ "Projection", "namespacecrynn.html#ad3edb46f8f1b121349afb44f8dc8d792", [
       [ "Orthographic", "namespacecrynn.html#ad3edb46f8f1b121349afb44f8dc8d792a03424250432f2aa71de95579d2c0eaeb", null ],
       [ "Perspective", "namespacecrynn.html#ad3edb46f8f1b121349afb44f8dc8d792aa80420eef88d11f77532f1b9cb467fa3", null ]
@@ -40,6 +68,6 @@ var namespacecrynn =
       [ "Microseconds", "namespacecrynn.html#a2ea10d41b0e5f2b8d4a704f0db6817c0a64068ed47d979c5efa036f027d656433", null ],
       [ "Nanoseconds", "namespacecrynn.html#a2ea10d41b0e5f2b8d4a704f0db6817c0afba00bdab687ce01136a86bac8bac578", null ]
     ] ],
-    [ "InputCallback", "namespacecrynn.html#a1ae37de0d0b729829d4b6492b8d40145", null ],
+    [ "key_callback", "namespacecrynn.html#abc4b4c63ecd4cf78f1b184ca989a6b0f", null ],
     [ "SizeCallback", "namespacecrynn.html#a56952d7a10b606e49a97f218b9742f52", null ]
 ];
