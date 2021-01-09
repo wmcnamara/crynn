@@ -153,7 +153,6 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\Assets\Assets\Models\trash.fbx" />
     <None Include="README.md" />
     <None Include="src\docsource\intro.md" />
     <None Include="src\docsource\introprog.md" />

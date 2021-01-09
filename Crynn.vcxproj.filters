@@ -31,9 +31,6 @@
     <Filter Include="src\Core\Collision">
       <UniqueIdentifier>{3b01738a-87d5-4405-ad11-125609d614e0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Data">
-      <UniqueIdentifier>{bf9b3b59-bf69-40ba-b390-cc391ddb0eb9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Core\Audio">
       <UniqueIdentifier>{5460fada-74b6-4589-9371-92299128bdad}</UniqueIdentifier>
     </Filter>
@@ -221,9 +218,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
-    <None Include="D:\Assets\Assets\Models\trash.fbx">
-      <Filter>Data</Filter>
-    </None>
     <None Include="src\docsource\intro.md">
       <Filter>docs</Filter>
     </None>
