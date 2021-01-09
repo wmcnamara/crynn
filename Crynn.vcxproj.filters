@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="lib">
+      <UniqueIdentifier>{3C8C880B-A895-887C-3111-9F7C9D19947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\thirdparty">
+      <UniqueIdentifier>{B6FBD419-A2C9-C81F-8B5D-394677CAA484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\thirdparty\glad">
+      <UniqueIdentifier>{7D904189-E9F1-1E97-725F-6549DEBF5556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\thirdparty\glad\glad">
+      <UniqueIdentifier>{A439DD87-905E-2C08-B9A9-1198A52D2B26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\thirdparty\imgui">
+      <UniqueIdentifier>{A07998B1-8C08-227B-3527-367621953221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{A5D31CCF-91A0-77DA-BAB9-6582A6E5AC68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GUI">
+      <UniqueIdentifier>{C1782FA9-2D58-AE44-3670-391BA2CE14A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Utility">
+      <UniqueIdentifier>{70464FB2-DCFB-C7A7-65F0-C17ED1A4BEAB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Collision">
+      <UniqueIdentifier>{3b01738a-87d5-4405-ad11-125609d614e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{bf9b3b59-bf69-40ba-b390-cc391ddb0eb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Audio">
+      <UniqueIdentifier>{5460fada-74b6-4589-9371-92299128bdad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Buffers">
+      <UniqueIdentifier>{c4b7e9ca-7118-4cc4-b616-90562dba5fe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Math">
+      <UniqueIdentifier>{205baedb-48a3-4bc9-a839-0a26972e904d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="docs">
+      <UniqueIdentifier>{699f3ae6-2a81-417a-b0f9-31a8a2408482}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\thirdparty\imgui\imconfig.h">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\imgui\imgui.h">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\imgui\imgui_impl_glfw.h">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\imgui\imgui_impl_opengl3.h">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\imgui\imgui_internal.h">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Application.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Camera.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Event.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Input.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Mesh.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\MeshRenderer.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Shader.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Texture.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Transform.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Window.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Crynn.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\GuiWindow.h">
+      <Filter>src\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\Debug.h">
+      <Filter>src\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\File.h">
+      <Filter>src\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\Timer.h">
+      <Filter>src\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\stb_image.h">
+      <Filter>lib\thirdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\MatrixEditor.h">
+      <Filter>src\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\stb_perlin.h">
+      <Filter>lib\thirdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\EventListener.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Collision\AABB.h">
+      <Filter>src\Core\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\Random.h">
+      <Filter>src\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\CrynnObject.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Buffers\Buffers.h">
+      <Filter>src\Core\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Math\Vec2.h">
+      <Filter>src\Core\Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\thirdparty\glad\glad\glad.c">
+      <Filter>lib\thirdparty\glad\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\thirdparty\imgui\imgui.cpp">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\thirdparty\imgui\imgui_draw.cpp">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\thirdparty\imgui\imgui_impl_glfw.cpp">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\thirdparty\imgui\imgui_impl_opengl3.cpp">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\thirdparty\imgui\imgui_widgets.cpp">
+      <Filter>lib\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Camera.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Input.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Mesh.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\MeshRenderer.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Shader.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Texture.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Transform.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Window.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\GuiWindow.cpp">
+      <Filter>src\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\Debug.cpp">
+      <Filter>src\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\File.cpp">
+      <Filter>src\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\Timer.cpp">
+      <Filter>src\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\MatrixEditor.cpp">
+      <Filter>src\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\EventListener.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Collision\AABB.cpp">
+      <Filter>src\Core\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\Random.cpp">
+      <Filter>src\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\CrynnObject.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Application.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Buffers\Buffers.cpp">
+      <Filter>src\Core\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Math\Vec2.cpp">
+      <Filter>src\Core\Math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="D:\Assets\Assets\Models\trash.fbx">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="src\docsource\intro.md">
+      <Filter>docs</Filter>
+    </None>
+    <None Include="src\docsource\introprog.md">
+      <Filter>docs</Filter>
+    </None>
+  </ItemGroup>
+</Project>
