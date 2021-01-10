@@ -1,5 +1,6 @@
 #include "Window.h"
 #include "Input.h"
+#include "Utility/IO.h"
 
 namespace crynn
 {
@@ -32,7 +33,9 @@ namespace crynn
 		glfwSetWindowUserPointer(glfwWindow, this); //Set this as the user pointer
 
 		glfwSetFramebufferSizeCallback(glfwWindow, SizeCallback);
+
 		Input::Init();
+		IO::Init();
 
 		//Retrieve and set window size data
 		m_screenSize = ImVec2(width, height);

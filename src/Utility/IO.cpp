@@ -2,6 +2,17 @@
 
 namespace crynn
 {
+	void drop_callback(GLFWwindow* window, int count, const char** paths)
+	{
+		for (int i = 0; i < count; i++)
+			IO::OnFileDrop.Invoke(paths[i]);
+	}
+
+	void IO::Init()
+	{
+		glfwSetDropCallback(Window::GetGLFWWin(), drop_callback);
+	}
+
 	//Allows user to choose an image and returns the filepath after selection.
 	IO::GetFileArgs IO::GetFile()
 	{

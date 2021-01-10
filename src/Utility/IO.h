@@ -10,6 +10,8 @@
 #include <sstream>
 #include <memory>
 #include "Core/Event.h"
+#include "Core/Window.h"
+#include "GLFW/glfw3.h"
 
 namespace crynn
 {
@@ -24,6 +26,8 @@ namespace crynn
 		{
 			std::string filePath;
 		};
+
+		static void Init();
 
 		/// <summary>
 		/// Opens a picker that allows the user to select a file.

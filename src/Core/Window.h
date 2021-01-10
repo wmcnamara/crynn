@@ -14,6 +14,8 @@
 
 namespace crynn
 {
+	class Input;
+
 	/// <summary>
 	/// The window everything is rendered on.
 	/// Crynn does not support more than 1 monitor.
