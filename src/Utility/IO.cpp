@@ -1,8 +1,9 @@
-#include "File.h"
+#include "IO.h"
+
 namespace crynn
 {
 	//Allows user to choose an image and returns the filepath after selection.
-	File::GetFileArgs File::GetFile()
+	IO::GetFileArgs IO::GetFile()
 	{
 		std::string filePath;
 

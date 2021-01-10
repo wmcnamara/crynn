@@ -99,9 +99,6 @@
     <ClInclude Include="src\Utility\Debug.h">
       <Filter>src\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\File.h">
-      <Filter>src\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="src\Utility\Timer.h">
       <Filter>src\Utility</Filter>
     </ClInclude>
@@ -123,14 +120,17 @@
     <ClInclude Include="src\Utility\Random.h">
       <Filter>src\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\CrynnObject.h">
-      <Filter>src\Core</Filter>
-    </ClInclude>
     <ClInclude Include="src\Core\Buffers\Buffers.h">
       <Filter>src\Core\Buffers</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Math\Vec2.h">
       <Filter>src\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\CrynnObject.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\IO.h">
+      <Filter>src\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -182,9 +182,6 @@
     <ClCompile Include="src\Utility\Debug.cpp">
       <Filter>src\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\File.cpp">
-      <Filter>src\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="src\Utility\Timer.cpp">
       <Filter>src\Utility</Filter>
     </ClCompile>
@@ -203,9 +200,6 @@
     <ClCompile Include="src\Utility\Random.cpp">
       <Filter>src\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\CrynnObject.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
     <ClCompile Include="src\Core\Application.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
@@ -214,6 +208,12 @@
     </ClCompile>
     <ClCompile Include="src\Core\Math\Vec2.cpp">
       <Filter>src\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\CrynnObject.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\IO.cpp">
+      <Filter>src\Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

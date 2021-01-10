@@ -41,7 +41,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)bin\Debug</OutDir>
+    <OutDir>$(SolutionDir)bin\Debug\</OutDir>
     <IntDir>$(SolutionDir)bin\obj\Debug\</IntDir>
     <TargetName>Crynn</TargetName>
     <TargetExt>.lib</TargetExt>
@@ -57,7 +57,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CRYNN_PLATFORM_WINDOWS;CRYNN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)lib\thirdparty;$(SolutionDir)lib\thirdparty\glm;$(SolutionDir)lib\thirdparty\glad;$(SolutionDir)lib\thirdparty\imgui;$(SolutionDir)lib\thirdparty\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)lib\thirdparty;$(SolutionDir)lib\thirdparty\glad;$(SolutionDir)lib\thirdparty\imgui;$(SolutionDir)lib\thirdparty\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -119,7 +119,7 @@
     <ClInclude Include="src\GUI\GuiWindow.h" />
     <ClInclude Include="src\GUI\MatrixEditor.h" />
     <ClInclude Include="src\Utility\Debug.h" />
-    <ClInclude Include="src\Utility\File.h" />
+    <ClInclude Include="src\Utility\IO.h" />
     <ClInclude Include="src\Utility\Random.h" />
     <ClInclude Include="src\Utility\Timer.h" />
   </ItemGroup>
@@ -147,7 +147,7 @@
     <ClCompile Include="src\GUI\GuiWindow.cpp" />
     <ClCompile Include="src\GUI\MatrixEditor.cpp" />
     <ClCompile Include="src\Utility\Debug.cpp" />
-    <ClCompile Include="src\Utility\File.cpp" />
+    <ClCompile Include="src\Utility\IO.cpp" />
     <ClCompile Include="src\Utility\Random.cpp" />
     <ClCompile Include="src\Utility\Timer.cpp" />
     <ClCompile Include="src\main.cpp" />
