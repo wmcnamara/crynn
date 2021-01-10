@@ -13,7 +13,7 @@ namespace crynn
 	
 	void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 	{
-		Input::OnMouseScroll.Invoke(yoffset);
+		Input::OnMouseScroll.Invoke(yoffset); //Invoke the OnMouseScroll when GLFW reports a mouse scroll
 	}
 
 	bool Input::GetKey(KeyCode key)

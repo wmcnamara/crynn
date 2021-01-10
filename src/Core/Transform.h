@@ -4,9 +4,6 @@
 #include <iostream>
 #include <memory>
 #include <vector>
-
-using namespace glm;
-
 namespace crynn
 {
 	/// <summary>
@@ -20,31 +17,28 @@ namespace crynn
 	public:
 		Transform() = default;
 
-		void Translate(vec3 translation);
+		void Translate(glm::vec3 translation);
 		void Translate(float x, float y, float z);
-		void Scale(vec3 scale);
-		void Rotate(float rotationInDegrees, vec3 axis);
 
-		void SetPosition(vec3 position);
+		void Scale(glm::vec3 scale);
+
+		void Rotate(float rotationInDegrees, glm::vec3 axis);
+
+		void SetPosition(glm::vec3 position);
 		void SetPosition(float x, float y, float z);
-		vec3 GetPosition();
+		glm::vec3 GetPosition();
 
-		void SetScale(vec3 scale);
+		void SetScale(glm::vec3 scale);
 		void SetScale(float x, float y, float z);
-		vec3 GetScale();
+		glm::vec3 GetScale();
 
-		static void SetPosition(float x, float y, float z, mat4& matrix);
-		static void SetPosition(vec3 position, mat4& matrix);
-		
-		static void SetScale(float x, float y, float z, mat4& matrix);
-		static void SetScale(vec3 scale, mat4& matrix);
-
-		static void SetRotation(float angle, float x, float y, float z, mat4& matrix);
-		static void SetRotation(float angle, vec3 rotation, mat4& matrix);
+		void SetRotation(glm::vec3 rotation);
+		void SetRotation(float x, float y, float z);
+		void GetRotation();
 
 		//Returns a non-const reference to the matrix struct this class is represented with
 		glm::mat4& GetMatrix() { return transformMatrix; }
 	private:
-		mat4 transformMatrix = mat4(1.0f);
+		glm::mat4 transformMatrix = glm::mat4(1.0f);
 	};
 }
