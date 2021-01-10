@@ -15,7 +15,7 @@ This class is a modification of delegate intended for use in the Crynn game engi
 namespace crynn
 {
 	/// <summary>
-	/// Creates an event.
+	/// Simple event class
 	/// </summary>
 	/// <typeparam name="...T">Parameter types</typeparam>
 	template<typename ... T>

@@ -104,7 +104,7 @@ namespace crynn
 		//Create dockspace
 		//ImGui::DockSpaceOverViewport(ImGui::GetWindowViewport(), ImGuiDockNodeFlags_None);
 
-		glViewport(0, 0, m_screenSize.x, m_screenSize.y); //Set the default viewport.
+		glViewport(0, 0, (int)m_screenSize.x, (int)m_screenSize.y); //Set the default viewport.
 
 		//Setup polling, new frames and clear buffers
 	}

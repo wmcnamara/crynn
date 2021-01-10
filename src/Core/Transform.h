@@ -37,7 +37,7 @@ namespace crynn
 		void GetRotation();
 
 		//Returns a non-const reference to the matrix struct this class is represented with
-		glm::mat4& GetMatrix() { return transformMatrix; }
+		inline glm::mat4& GetMatrix() { return transformMatrix; }
 	private:
 		glm::mat4 transformMatrix = glm::mat4(1.0f);
 	};
