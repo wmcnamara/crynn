@@ -10,6 +10,11 @@ namespace crynn
 		else if (action == GLFW_RELEASE)
 			crynn::Input::UpdateKeyState(key, false);
 	}
+	
+	void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+	{
+		Input::OnMouseScroll.Invoke(yoffset);
+	}
 
 	bool Input::GetKey(KeyCode key)
 	{
@@ -41,6 +46,8 @@ namespace crynn
 			return;
 
 		glfwSetKeyCallback(Window::GetGLFWWin(), key_callback);
+		glfwSetScrollCallback(Window::GetGLFWWin(), scroll_callback);
+
 		m_initialised = true;
 
 		std::cout << "Input initialised\n";

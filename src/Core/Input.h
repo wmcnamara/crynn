@@ -28,7 +28,7 @@ namespace crynn
 		static bool GetKeyDown(KeyCode key);
 
 		/// <summary>
-		/// Used in GLFW events to update the keystate of a key in the current frame. This function should only be ever used in GLFW events.
+		/// Used in GLFW events to update the keystate of a key in the current frame. This function should only be ever used in GLFW events, or internal input function
 		/// </summary>
 		/// <param name="key">The GLFW keycode of the key you're updating</param>
 		/// <param name="state">The boolean state of the key</param>
@@ -38,6 +38,8 @@ namespace crynn
 			currentKeyStates[key] = state; //Update current keystate
 		}
 
+		//Dispatched when the user scrolls the mouse wheel.
+		inline static Event<float> OnMouseScroll;
 	private:
 		inline static bool currentKeyStates[349]; //The states of each key in the current frame.
 		inline static bool previousKeyStates[349]; //The states of each key from the previous frame. Needed for GetKeyDown
