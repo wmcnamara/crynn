@@ -29,7 +29,7 @@ namespace crynn
 	/// This class creates a Uniform Buffer Object you can use to get projection and view matrix data. 
 	/// This UBO will always be at binding point 0, and the block should always be called "CameraMatrices" in the shader.
 	/// </summary>
-	class Camera: protected EventListener, protected Input, public Transform
+	class Camera: protected EventListener, public Transform
 	{
 	public:
 		Camera(vec3 position, Projection projType);
@@ -42,7 +42,7 @@ namespace crynn
 		mat4 m_projection = glm::mat4(1.0f);
 		Projection m_projType;
 
-		unsigned int m_matrixUBO;
+		unsigned int m_matrixUBO = 0;
 
 		void SetUniformData();
 		void UpdateProjectionData();
