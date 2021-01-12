@@ -11,10 +11,11 @@ namespace crynn
 	void IO::Init()
 	{
 		glfwSetDropCallback(Window::GetGLFWWin(), drop_callback);
+		Debug::Log("IO Initialised");
 	}
 
 	//Allows user to choose an image and returns the filepath after selection.
-	IO::GetFileArgs IO::GetFile()
+	std::string IO::GetFile()
 	{
 		std::string filePath;
 
@@ -75,6 +76,6 @@ namespace crynn
 			}
 			CoUninitialize();
 		}
-		return GetFileArgs{filePath}; //Create a GetFileArgs object and return it.
+		return filePath; //Create a GetFileArgs object and return it.
 	}
 }
