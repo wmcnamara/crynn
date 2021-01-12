@@ -2,9 +2,9 @@
 #include "glad/glad.h"
 #include <Windows.h>
 
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
-#include "imgui_impl_opengl3.h"
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_glfw.h"
+#include "imgui/imgui_impl_opengl3.h"
 
 #include "Event.h"
 #include "Utility/Debug.h"

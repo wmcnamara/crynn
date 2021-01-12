@@ -2,7 +2,7 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 #include <iostream>
-#include "imgui.h"
+#include "imgui/imgui.h"
 
 #include "Core/Window.h"
 #include "Core/Event.h"

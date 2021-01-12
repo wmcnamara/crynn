@@ -1,6 +1,6 @@
 #pragma once
 #include "stb_image.h"
-#include "imgui.h"
+#include "imgui/imgui.h"
 #include <string>
 #include <iostream>
 #include <Windows.h>
@@ -16,25 +16,23 @@
 namespace crynn
 {
 	/// <summary>
-	/// File related functions to allow user to open files.
+	/// IO related functions to allow user to open and manipulate files
 	/// </summary>
 	class IO
 	{		
 	public:	
-		/// Structure containing the filepath retrieved from the picker.
-		struct GetFileArgs
-		{
-			std::string filePath;
-		};
-
+		/// <summary>
+		/// Initialises IO events like OnFileDrop, and must be called before they work.
+		/// Called in the constructor for the window.
+		/// </summary>
 		static void Init();
 
 		/// <summary>
 		/// Opens a picker that allows the user to select a file.
 		/// Works on windows exclusively.
 		/// </summary>
-		/// <returns>A GetFileArgs object containing the selected filepath.</returns>
-		static GetFileArgs GetFile();
+		/// <returns>string containing the selected filepath.</returns>
+		static std::string GetFile();
 
 		/// <summary>
 		/// Event called when the user drags files from the operating system into the application. Useful for imports.

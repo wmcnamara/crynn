@@ -1,6 +1,6 @@
 #pragma once
 #include <cmath>
-#include "imgui.h" //Needed for conversion constructors
+#include "imgui/imgui.h" //Needed for conversion constructors
 
 namespace crynn
 {

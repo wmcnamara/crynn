@@ -71,7 +71,7 @@
     </Link>
     <Lib>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>lib\thirdparty\glfw\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,7 +124,7 @@
     <ClInclude Include="src\Utility\Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lib\thirdparty\glad\glad\glad.c" />
+    <ClCompile Include="lib\thirdparty\glad\glad.c" />
     <ClCompile Include="lib\thirdparty\imgui\imgui.cpp" />
     <ClCompile Include="lib\thirdparty\imgui\imgui_draw.cpp" />
     <ClCompile Include="lib\thirdparty\imgui\imgui_impl_glfw.cpp" />
@@ -150,7 +150,7 @@
     <ClCompile Include="src\Utility\IO.cpp" />
     <ClCompile Include="src\Utility\Random.cpp" />
     <ClCompile Include="src\Utility\Timer.cpp" />
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Example.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
