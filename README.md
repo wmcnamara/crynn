@@ -7,7 +7,7 @@
    Currently only supports building to Windows.
    
 ### Disclaimer
-This engine is mostly intended as a personal project to learn more about computer graphics, and as such I will not make any guarantees about master branch stability. I'm not always consistent with my styling, and some of the implemented code is poor, and unfinished. 
+This engine is mostly intended as a personal project to learn more about computer graphics, and create personal games. As such I will not make any guarantees about master branch stability. I'm not always consistent with my styling, and some of the implemented code is poor, and unfinished. 
 
 ## Dependencies
 Crynn relies on a multitude of dependencies. They are listed here:
@@ -20,7 +20,7 @@ Crynn relies on a multitude of dependencies. They are listed here:
 - [GLM](https://glm.g-truc.net/0.9.8/index.html) for matrix and other graphics related mathematics.
 - [STB_IMAGE](https://github.com/nothings/stb) for image loading.
 
-*As of now, Crynn does not use submodules for all of its dependencies. This will change, but as it stands you can find the dependency files in the lib/thirdparty folder.*
+*Crynn does not use submodules for its dependencies. You can find the dependency files in the lib/thirdparty folder.*
 
 # Getting Started:
 ## Downloading Crynn:
@@ -37,7 +37,7 @@ Visual Studio 2019 is officially recommended.
 Once everything is installed, you can follow these steps to build Crynn:
 1. Clone Crynn
 2. Open `Crynn.sln` in Visual Studio
-3. Right clikc the Crynn solution in the solution explorer, and select build.
+3. Right click the Crynn solution in the solution explorer, and select build.
 
 ## Using Crynn:
 Navigate to the docs/html directory, and open index.html. It will bring you to the introduction page, explaining how to use Crynn.
