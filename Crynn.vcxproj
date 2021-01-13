@@ -117,7 +117,6 @@
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\Crynn.h" />
     <ClInclude Include="src\GUI\GuiWindow.h" />
-    <ClInclude Include="src\GUI\MatrixEditor.h" />
     <ClInclude Include="src\Utility\Debug.h" />
     <ClInclude Include="src\Utility\IO.h" />
     <ClInclude Include="src\Utility\Random.h" />
@@ -145,7 +144,6 @@
     <ClCompile Include="src\Core\Transform.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
     <ClCompile Include="src\GUI\GuiWindow.cpp" />
-    <ClCompile Include="src\GUI\MatrixEditor.cpp" />
     <ClCompile Include="src\Utility\Debug.cpp" />
     <ClCompile Include="src\Utility\IO.cpp" />
     <ClCompile Include="src\Utility\Random.cpp" />

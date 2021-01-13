@@ -105,9 +105,6 @@
     <ClInclude Include="lib\thirdparty\stb_image.h">
       <Filter>lib\thirdparty</Filter>
     </ClInclude>
-    <ClInclude Include="src\GUI\MatrixEditor.h">
-      <Filter>src\GUI</Filter>
-    </ClInclude>
     <ClInclude Include="lib\thirdparty\stb_perlin.h">
       <Filter>lib\thirdparty</Filter>
     </ClInclude>
@@ -181,9 +178,6 @@
     </ClCompile>
     <ClCompile Include="src\Utility\Timer.cpp">
       <Filter>src\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GUI\MatrixEditor.cpp">
-      <Filter>src\GUI</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\EventListener.cpp">
       <Filter>src\Core</Filter>

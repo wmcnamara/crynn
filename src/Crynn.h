@@ -1,5 +1,6 @@
 /// Includes almost all necessary engine components.
 #pragma once
+
 #define IMGUI_DEFINE_MATH_OPERATORS
 
 #include "Core/Window.h"
@@ -21,7 +22,6 @@
 #include "Utility/Random.h"
 
 #include "GUI/GuiWindow.h"
-#include "GUI/MatrixEditor.h"
 
 #include "imgui/imgui.h"
 #include "imgui/imgui_internal.h"
