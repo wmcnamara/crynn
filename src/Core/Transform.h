@@ -1,9 +1,17 @@
 #pragma once
 #include "glm/glm.hpp"
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/euler_angles.hpp>
 #include <iostream>
 #include <memory>
 #include <vector>
+#include <math.h> //for fmod (float modulus)
+#include "Utility/Debug.h"
+
+#define PI 3.14159f
+#define DEG2RAD PI / 180.0f //Converts an angle in degrees to radians
+#define RAD2DEG 180.0f / PI //Converts an angle in radians to degrees
+
 namespace crynn
 {
 	/// <summary>
@@ -18,27 +26,26 @@ namespace crynn
 		Transform() = default;
 
 		void Translate(glm::vec3 translation);
-		void Translate(float x, float y, float z);
-
 		void Scale(glm::vec3 scale);
-
-		void Rotate(float rotationInDegrees, glm::vec3 axis);
+		void Rotate(glm::vec3 rotation);
 
 		void SetPosition(glm::vec3 position);
-		void SetPosition(float x, float y, float z);
 		glm::vec3 GetPosition();
 
 		void SetScale(glm::vec3 scale);
-		void SetScale(float x, float y, float z);
 		glm::vec3 GetScale();
 
 		void SetRotation(glm::vec3 rotation);
-		void SetRotation(float x, float y, float z);
-		void GetRotation();
+		glm::vec3 GetRotation();
 
 		//Returns a non-const reference to the matrix struct this class is represented with
 		inline glm::mat4& GetMatrix() { return transformMatrix; }
 	private:
+		//Updated when matrix transformations occur, used to easily return and track rotation scale and pos data.
+		glm::vec3 currentRot = glm::vec3(0.0); 
+		glm::vec3 currentScale = glm::vec3(0.0); 
+		glm::vec3 currentPos = glm::vec3(0.0);
+
 		glm::mat4 transformMatrix = glm::mat4(1.0f);
 	};
 }
