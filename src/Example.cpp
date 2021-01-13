@@ -1,5 +1,5 @@
-/*
 //This class is a basic example of getting up and running with Crynn.
+//Use it as a playground when learning about Crynn.
 #include "Crynn.h"
 
 using namespace crynn;
@@ -15,5 +15,6 @@ int main()
 		Application::Tick(); //Ticks update events.
 		window.AfterRender(); //Renders GUI and swaps buffers.
 	}
+
+	return 0;
 }
-*/
