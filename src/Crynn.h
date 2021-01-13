@@ -31,6 +31,5 @@
 #include <mutex>
 
 #define DATA_PATH "data/"
-#define CRYNN_EVENT static inline Event<void>
 
 using namespace glm;
