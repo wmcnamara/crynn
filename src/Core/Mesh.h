@@ -5,11 +5,6 @@
 #include "Utility/Timer.h"
 #include "Buffers/Buffers.h"
 
-#define SHARED_MESH std::shared_ptr<Mesh>
-#define UNIQUE_MESH std::unique_ptr<Mesh>
-#define MKUNIQUE_MESH std::make_unique<Mesh>
-#define MKSHARED_MESH std::make_shared<Mesh>
-
 namespace crynn
 {
 	class Mesh
