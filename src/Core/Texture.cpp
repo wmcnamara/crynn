@@ -37,6 +37,7 @@ namespace crynn
 		// load and generate the texture
 		stbi_set_flip_vertically_on_load(true);
 		m_textureData = stbi_load(path, &m_width, &m_height, &m_nrChannels, 4);
+
 		if (m_textureData)
 		{
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_textureData);
@@ -45,17 +46,15 @@ namespace crynn
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 			glGenerateMipmap(GL_TEXTURE_2D);
 
+#ifdef CRYNN_DEBUG
 			//Debug logging
-			std::stringstream output;
-			output << path << " Loaded Successfully";
-
-			Debug::Log(output);
+			std::cout << path << " Loaded Successfully\n";
+#endif
 		}
 		else
 		{
-			std::stringstream output;
-			output << "Failed to load texture from " << path << "\n";
-			Debug::Log(output);
+			std::cout << "Failed to load texture from " << path << "\n";
+			return;
 		}
 
 		m_valid = true;
