@@ -70,12 +70,12 @@ namespace crynn
 		return m_textureData;
 	}
 
-	const unsigned int& Texture::Width()
+	unsigned int Texture::Width()
 	{
 		return m_width;
 	}
 
-	const unsigned int& Texture::Height()
+	unsigned int Texture::Height()
 	{
 		return m_height;
 	}

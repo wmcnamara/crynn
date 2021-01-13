@@ -39,9 +39,9 @@ namespace crynn
 		unsigned char* GetTextureData();
 
 		/// <returns>The width of this texture
-		const unsigned int& Width();
+		unsigned int Width();
 		/// <returns>The height of this texture
-		const unsigned int& Height();
+		unsigned int Height();
 
 		/// <summary>
 		/// Checks if a texture is loaded
