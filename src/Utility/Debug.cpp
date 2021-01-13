@@ -42,14 +42,16 @@ namespace crynn
 	void Debug::LogMatrix4(const glm::mat4& matrix)
 	{
 #ifdef CRYNN_DEBUG
+		std::cout << "Matrix 4:" << "\n";
 		for (int i = 0; i < 4; i++)
 		{
-			for (int j = 0; i < 4; i++)
+			for (int j = 0; j < 4; j++)
 			{
-				std::cout << matrix[i][j];
+				std::cout << matrix[j][i] << " ";;
 			}
 			std::cout << "\n";
 		}
+		std::cout << "\n\n";
 #endif
 	}
 
