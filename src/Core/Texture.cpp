@@ -88,15 +88,7 @@ namespace crynn
 
 	Color Texture::operator()(unsigned int x, unsigned int y)
 	{
-		unsigned bytePerPixel = m_nrChannels;
-		unsigned char* pixelOffset = m_textureData + (x + m_height * y) * bytePerPixel;
-
-		unsigned char r = pixelOffset[0];
-		unsigned char g = pixelOffset[1];
-		unsigned char b = pixelOffset[2];
-		unsigned char a = m_nrChannels >= 4 ? pixelOffset[3] : 0xff;
-
-		return Color{ r, g, b, a };
+		return GetPixelColor(x, y);
 	}
 
 	Color Texture::GetPixelColor(unsigned int x, unsigned int y)
