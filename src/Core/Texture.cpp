@@ -66,7 +66,7 @@ namespace crynn
 		m_valid = true;
 	}
 
-	const unsigned int& Texture::GetTextureID()
+	unsigned int Texture::GetTextureID()
 	{
 		 return m_textureID;
 	}

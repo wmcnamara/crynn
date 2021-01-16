@@ -39,7 +39,7 @@ namespace crynn
 		/// Gets the OpenGL texture ID
 		/// </summary>
 		/// <returns>The OpenGL texture ID</returns>
-		const unsigned int& GetTextureID();
+		unsigned int GetTextureID();
 
 		/// <summary>
 		/// Get a pointer to the raw texture data.
