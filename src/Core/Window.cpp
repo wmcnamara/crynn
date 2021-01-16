@@ -108,8 +108,6 @@ namespace crynn
 		//ImGui::DockSpaceOverViewport(ImGui::GetWindowViewport(), ImGuiDockNodeFlags_None);
 
 		glViewport(0, 0, (int)m_screenSize.x, (int)m_screenSize.y); //Set the default viewport.
-
-		//Setup polling, new frames and clear buffers
 	}
 
 	//Called after rendering code. Ends IMGUI frames, swaps buffers, and polls events.

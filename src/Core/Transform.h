@@ -5,7 +5,6 @@
 #include <iostream>
 #include <memory>
 #include <vector>
-#include <math.h> //for fmod (float modulus)
 #include "Utility/Debug.h"
 
 #define PI 3.14159f
@@ -39,7 +38,7 @@ namespace crynn
 		glm::vec3 GetRotation();
 
 		//Returns a non-const reference to the matrix struct this class is represented with
-		inline glm::mat4& GetMatrix() { return transformMatrix; }
+		inline const glm::mat4& GetMatrix() { return transformMatrix; }
 	private:
 		//Updated when matrix transformations occur, used to easily return and track rotation scale and pos data.
 		glm::vec3 currentRot = glm::vec3(0.0); 
