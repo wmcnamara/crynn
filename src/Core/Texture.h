@@ -6,6 +6,15 @@
 #include "Utility/Timer.h"
 namespace crynn 
 {
+	//Represents an RGBA color
+	struct Color
+	{
+		unsigned char red = 0;
+		unsigned char green = 0;
+		unsigned char blue = 0;
+		unsigned char alpha = 0;
+	};
+
 	/// <summary>
 	/// 2D texture class.
 	/// </summary>
@@ -40,6 +49,7 @@ namespace crynn
 
 		/// <returns>The width of this texture
 		unsigned int Width();
+
 		/// <returns>The height of this texture
 		unsigned int Height();
 
@@ -47,12 +57,15 @@ namespace crynn
 		/// Checks if a texture is loaded
 		/// </summary>
 		/// <returns>true if valid texture data is loaded in.</returns>
-		const bool& Valid() { return m_valid; }
+		bool Valid() { return m_valid; }
+
+		Color operator () (unsigned int x, unsigned int y);	//Get a pixel color from the texture
+		Color GetPixelColor(unsigned int x, unsigned int y); //Get a pixel color from the texture.
 	private:
 		unsigned int m_textureID = 0; ///OpenGL texture ID
-		unsigned char* m_textureData = 0; ///Texture data pointer
-		int m_width, m_height, m_nrChannels;
+		unsigned char* m_textureData = nullptr; ///Texture data pointer
 
+		int m_width = 0, m_height = 0, m_nrChannels = 4;
 		bool m_valid = false; //Is a valid texture loaded?
 	};
 }

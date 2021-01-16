@@ -6,9 +6,15 @@
 
 namespace crynn
 {
-	Texture::Texture(const char* path) 
-	{ 
-		Load(path); 
+	Texture::Texture(const char* path)
+	{
+		if (path == NULL || path == "")
+		{
+			std::cout << "Texture path is null";
+			return;
+		}
+
+		Load(path);
 	}
 
 	Texture::~Texture()
@@ -78,5 +84,37 @@ namespace crynn
 	unsigned int Texture::Height()
 	{
 		return m_height;
+	}
+
+	Color Texture::operator()(unsigned int x, unsigned int y)
+	{
+		unsigned bytePerPixel = m_nrChannels;
+		unsigned char* pixelOffset = m_textureData + (x + m_height * y) * bytePerPixel;
+
+		unsigned char r = pixelOffset[0];
+		unsigned char g = pixelOffset[1];
+		unsigned char b = pixelOffset[2];
+		unsigned char a = m_nrChannels >= 4 ? pixelOffset[3] : 0xff;
+
+		return Color{ r, g, b, a };
+	}
+
+	Color Texture::GetPixelColor(unsigned int x, unsigned int y)
+	{
+		assert(x < m_width || y < m_height); //assert in bounds
+		
+		//If they input an out of bounds data, return a black pixel
+		if (x > m_width || y > m_height) 
+			return Color{ 0, 0, 0, 1 }; 
+
+		unsigned bytePerPixel = m_nrChannels;
+		unsigned char* pixelOffset = m_textureData + (x + m_height * y) * bytePerPixel;
+
+		unsigned char r = pixelOffset[0];
+		unsigned char g = pixelOffset[1];
+		unsigned char b = pixelOffset[2];
+		unsigned char a = m_nrChannels >= 4 ? pixelOffset[3] : 0xff;
+
+		return Color{ r, g, b, a };
 	}
 }
