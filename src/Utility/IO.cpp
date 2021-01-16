@@ -5,7 +5,12 @@ namespace crynn
 	void drop_callback(GLFWwindow* window, int count, const char** paths)
 	{
 		for (int i = 0; i < count; i++)
+		{
+#ifdef CRYNN_DEBUG
+			std::cout << "Dispatching File Drop For Path: " << paths[i] << "\n";
+#endif
 			IO::OnFileDrop.Invoke(paths[i]);
+		}
 	}
 
 	void IO::Init()
@@ -19,8 +24,8 @@ namespace crynn
 	{
 		std::string filePath;
 
-		HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED |
-			COINIT_DISABLE_OLE1DDE);
+		HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+
 		if (SUCCEEDED(hr))
 		{
 			IFileOpenDialog* pFileOpen;
