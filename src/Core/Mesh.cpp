@@ -23,7 +23,7 @@ namespace crynn
 			m_ebo = EBO(indices, numOfIndices);
 		
 		//Vertex Attributes
-		/////////////////////////////////////////////
+
 		//Positon
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
@@ -31,7 +31,6 @@ namespace crynn
 		//Texture coords
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 		glEnableVertexAttribArray(1);
-		/////////////////////////////////////////////
 	}
 
 	Mesh::~Mesh()
