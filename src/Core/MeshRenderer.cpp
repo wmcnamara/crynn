@@ -2,7 +2,7 @@
 
 namespace crynn
 {
-	MeshRenderer::MeshRenderer(Mesh* mesh, Texture* texture, Shader* shader, mat4* modelMatrix) :
+	MeshRenderer::MeshRenderer(const Mesh& mesh, const Texture& texture, const Shader& shader, mat4& modelMatrix) :
 		m_mesh(mesh),
 		m_texture(texture),
 		m_shader(shader),
@@ -13,20 +13,20 @@ namespace crynn
 	{
 		if (active)
 		{
-			glBindTexture(GL_TEXTURE_2D, m_texture->GetTextureID());
-			m_mesh->GetVAO().Bind();
-			m_shader->Use();
+			m_texture.Bind();
+			m_mesh.GetVAO().Bind();
+			m_shader.Use();
 
-			m_shader->SetFloat("time", (float)glfwGetTime()); //Set time uniform on current shader
-			m_shader->SetMatrix4("model", m_model);
+			m_shader.SetFloat("time", (float)glfwGetTime()); //Set time uniform on current shader
+			m_shader.SetMatrix4("model", &m_model);
 
-			if (m_mesh->Indexed())
+			if (m_mesh.Indexed())
 			{
-				glDrawElements(GL_TRIANGLES, m_mesh->IndexCount(), GL_UNSIGNED_INT, 0);
+				glDrawElements(GL_TRIANGLES, m_mesh.IndexCount(), GL_UNSIGNED_INT, 0);
 			}
 			else
 			{
-				glDrawArrays(GL_TRIANGLES, 0, m_mesh->VertexCount());
+				glDrawArrays(GL_TRIANGLES, 0, m_mesh.VertexCount());
 			}
 		}
 	}

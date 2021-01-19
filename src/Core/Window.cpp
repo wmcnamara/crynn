@@ -1,6 +1,6 @@
 #include "Window.h"
 #include "Input.h"
-#include "Utility/IO.h"
+#include "../Utility/IO.h"
 
 namespace crynn
 {

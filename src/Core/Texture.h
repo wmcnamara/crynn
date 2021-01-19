@@ -2,8 +2,8 @@
 #include <iostream>
 #include "Shader.h"
 #include "Window.h"
-#include "Utility/Debug.h"
-#include "Utility/Timer.h"
+#include "../Utility/Debug.h"
+#include "../Utility/Timer.h"
 namespace crynn 
 {
 	//Represents an RGBA color
@@ -58,6 +58,11 @@ namespace crynn
 		/// </summary>
 		/// <returns>true if valid texture data is loaded in.</returns>
 		bool Valid() { return m_valid; }
+
+		/// <summary>
+		/// Binds texture to opengl context
+		/// </summary>
+		void Bind() const { glBindTexture(GL_TEXTURE_2D, m_textureID); }
 
 		Color operator () (unsigned int x, unsigned int y);	//Get a pixel color from the texture
 		Color GetPixelColor(unsigned int x, unsigned int y); //Get a pixel color from the texture.

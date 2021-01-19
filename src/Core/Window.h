@@ -1,5 +1,5 @@
 #pragma once
-#include "glad/glad.h"
+#include <glad/glad.h>
 #include <Windows.h>
 
 #include "imgui/imgui.h"
@@ -7,10 +7,10 @@
 #include "imgui/imgui_impl_opengl3.h"
 
 #include "Event.h"
-#include "Utility/Debug.h"
+#include "../Utility/Debug.h"
 
 #include "Application.h"
-#include "Core/Math/Vec2.h"
+#include "../Core/Math/Vec2.h"
 
 namespace crynn
 {

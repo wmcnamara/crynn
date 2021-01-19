@@ -4,9 +4,9 @@
 #include <iostream>
 #include "imgui/imgui.h"
 
-#include "Core/Window.h"
-#include "Core/Event.h"
-#include "Core/EventListener.h"
+#include "../Core/Window.h"
+#include "../Core/Event.h"
+#include "../Core/EventListener.h"
 
 namespace crynn
 {

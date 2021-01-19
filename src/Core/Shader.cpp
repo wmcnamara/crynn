@@ -174,7 +174,7 @@ namespace crynn
 		glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
 	}
 
-	void Shader::Use()
+	void Shader::Use() const
 	{
 		glUseProgram(ID);
 	}

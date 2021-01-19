@@ -9,8 +9,8 @@
 #include <fstream>
 #include <sstream>
 #include <memory>
-#include "Core/Event.h"
-#include "Core/Window.h"
+#include "../Core/Event.h"
+#include "../Core/Window.h"
 #include "GLFW/glfw3.h"
 
 namespace crynn

@@ -4,7 +4,7 @@
 #include "Texture.h"
 #include "Shader.h"
 #include "Camera.h"
-#include "Utility/Debug.h"
+#include "../Utility/Debug.h"
 #include "EventListener.h"
 #include <memory>
 
@@ -16,11 +16,11 @@ namespace crynn
 	class MeshRenderer : EventListener
 	{
 	public:
-		MeshRenderer(Mesh* mesh, Texture* texture, Shader* shader, mat4* modelMatrix);
+		MeshRenderer(const Mesh& mesh, const Texture& texture, const Shader& shader, mat4& modelMatrix);
 
-		const Mesh* GetMesh() const { return m_mesh; }
-		const Texture* GetTexture() const { return m_texture; }
-		const Shader* GetShader() const { return m_shader; }
+		inline const Mesh& GetMesh() const { return m_mesh; }
+		inline const Texture& GetTexture() const { return m_texture; }
+		inline const Shader& GetShader() const { return m_shader; }
 
 		bool active = true; ///Toggle rendering
 	private:		
@@ -28,10 +28,10 @@ namespace crynn
 		void Render();
 
 		void Update(double deltaTime) override;
-		mat4* m_model;
-		
-		Mesh* m_mesh;
-		Texture* m_texture;
-		Shader* m_shader;
+		mat4& m_model;
+		 
+		const Mesh& m_mesh;
+		const Texture& m_texture;
+		const Shader& m_shader;
 	};
 }

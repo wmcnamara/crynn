@@ -9,7 +9,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include "Utility/Debug.h"
+#include "../Utility/Debug.h"
 
 namespace crynn
 {
@@ -23,7 +23,7 @@ namespace crynn
 		~Shader();
 
 		// use/activate the shader
-		void Use();
+		void Use() const;
 
 		// Set Uniforms
 		void SetBool(const char* name, bool value) const;

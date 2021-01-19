@@ -1,8 +1,8 @@
 #pragma once
 #include "glad/glad.h"
 #include "glm/glm.hpp"
-#include "Utility/Debug.h"
-#include "Utility/Timer.h"
+#include "../Utility/Debug.h"
+#include "../Utility/Timer.h"
 #include "Buffers/Buffers.h"
 
 namespace crynn

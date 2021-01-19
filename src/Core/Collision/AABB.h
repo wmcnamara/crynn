@@ -1,6 +1,6 @@
 #pragma once
-#include "Core/EventListener.h"
-#include "Core/Transform.h"
+#include "../../Core/EventListener.h"
+#include "../../Core/Transform.h"
 #include "glm/glm.hpp"
 
 namespace crynn

@@ -1,6 +1,6 @@
 #pragma once
-#include "Utility/Debug.h"
-#include <Utility/Timer.h>
+#include "../Utility/Debug.h"
+#include "../Utility/Timer.h"
 #include "Application.h"
 #include <assert.h>
 
