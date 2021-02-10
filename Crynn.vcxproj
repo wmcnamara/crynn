@@ -108,6 +108,7 @@
     <ClInclude Include="src\Core\Camera.h" />
     <ClInclude Include="src\Core\Event.h" />
     <ClInclude Include="src\Core\Input.h" />
+    <ClInclude Include="src\Core\Math\Math.h" />
     <ClInclude Include="src\Core\Math\Vec2.h" />
     <ClInclude Include="src\Core\Mesh.h" />
     <ClInclude Include="src\Core\MeshRenderer.h" />
@@ -136,6 +137,7 @@
     <ClCompile Include="src\Core\EventListener.cpp" />
     <ClCompile Include="src\Core\Camera.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
+    <ClCompile Include="src\Core\Math\Math.cpp" />
     <ClCompile Include="src\Core\Math\Vec2.cpp" />
     <ClCompile Include="src\Core\Mesh.cpp" />
     <ClCompile Include="src\Core\MeshRenderer.cpp" />

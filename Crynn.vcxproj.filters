@@ -129,6 +129,9 @@
     <ClInclude Include="src\Utility\IO.h">
       <Filter>src\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Math\Math.h">
+      <Filter>src\Core\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\thirdparty\imgui\imgui.cpp">
@@ -208,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="lib\thirdparty\glad\glad.c">
       <Filter>lib\thirdparty\glad\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Math\Math.cpp">
+      <Filter>src\Core\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
