@@ -7,8 +7,11 @@
 #include <shobjidl.h> 
 #include <stdlib.h>
 #include <fstream>
+#include <exception>
+#include <ostream>
 #include <sstream>
 #include <memory>
+#include <filesystem>
 #include "../Core/Event.h"
 #include "../Core/Window.h"
 #include "GLFW/glfw3.h"
@@ -27,6 +30,9 @@ namespace crynn
 		/// </summary>
 		static void Init();
 
+		//Returns a boolean indicating whether a file at a given path exists
+		static bool FileExists(const char* relativePath);
+
 		/// <summary>
 		/// Opens a picker that allows the user to select a file.
 		/// Works on windows exclusively.
@@ -40,5 +46,8 @@ namespace crynn
 		/// For exmaple, if the user drops 3 files, OnFileDrop will be invoked 3 times with the corresponding paths.
 		/// </summary>
 		static inline Event<const char*> OnFileDrop;
+
+		//Loads a file into a string
+		static std::string LoadFileStr(const char* relativePath);
 	};
 }

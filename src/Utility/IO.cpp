@@ -19,10 +19,15 @@ namespace crynn
 		Debug::Log("IO Initialised");
 	}
 
+	bool IO::FileExists(const char* relativePath)
+	{
+		return std::filesystem::exists(relativePath);
+	}
+
 	//Allows user to choose an image and returns the filepath after selection.
 	std::string IO::GetFile()
 	{
-		std::string filePath;
+		std::string filePath = "";
 
 		HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
 
@@ -82,5 +87,29 @@ namespace crynn
 			CoUninitialize();
 		}
 		return filePath; //Create a GetFileArgs object and return it.
+	}
+
+	std::string IO::LoadFileStr(const char* relativePath)
+	{
+		//Error checking 
+
+		if (!FileExists(relativePath))
+		{
+			std::stringstream output;
+			output << "Attemped to load file that doesnt exist at directory: " << relativePath << "\n";
+
+			throw std::runtime_error(output.str());
+		}
+
+		//Create streams to hold data
+		std::stringstream text;
+		std::ifstream stream;
+
+		//Load path, load data from it and close
+		stream.open(relativePath);
+		text << stream.rdbuf();	
+		stream.close();
+
+		return text.str();
 	}
 }
