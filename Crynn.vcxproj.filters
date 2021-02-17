@@ -43,6 +43,9 @@
     <Filter Include="docs">
       <UniqueIdentifier>{699f3ae6-2a81-417a-b0f9-31a8a2408482}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Utility\Structures">
+      <UniqueIdentifier>{e91b091d-24cb-44bc-9d02-381f3c591a11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\thirdparty\imgui\imconfig.h">
@@ -132,6 +135,9 @@
     <ClInclude Include="src\Core\Math\Math.h">
       <Filter>src\Core\Math</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Scene.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\thirdparty\imgui\imgui.cpp">
@@ -214,6 +220,9 @@
     </ClCompile>
     <ClCompile Include="src\Core\Math\Math.cpp">
       <Filter>src\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

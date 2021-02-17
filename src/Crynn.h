@@ -21,6 +21,8 @@
 #include "Utility/Timer.h"
 #include "Utility/Random.h"
 
+#include "Core/Scene.h"
+
 #include "GUI/GuiWindow.h"
 
 #include "imgui/imgui.h"
