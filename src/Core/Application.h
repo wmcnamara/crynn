@@ -3,7 +3,6 @@
 #include "glad/glad.h"
 #include <GLFW/glfw3.h>
 
-//class Window; //Forward declare window
 #include "Window.h"
 
 #ifndef UNICODE
@@ -15,18 +14,20 @@
 /// </summary>
 namespace crynn 
 {
+	class Window;
+
 	/// <summary>
 	/// A class containing static functions to represent application functions, states, and events.
 	/// Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components.
 	/// </summary>
-	class Application
+	static class Application final
 	{
 	public:
 		//This class is totally static. You cannot copy this class, or instantiate it.
 		Application() = delete;
 		~Application() = default;
-		Application(const Application&) = delete;
-		Application(const Application&&) = delete;
+		Application(const Application& other) = delete;
+		Application(const Application&& other) = delete;
 
 		///Used by Input to subscribe input events. Do not manually invoke().
 		///Parameters determined by the glfwSetKeyCallback parameters.
@@ -58,7 +59,7 @@ namespace crynn
 		static double GetTime();
 
 		//Multiplied by deltaTime before being passed to Update. Used to speed up and slowdown time.
-		inline static double timeScale = 1.0;
+		inline static double TimeScale = 1.0;
 	private:
 		//Used to get deltaTimes.
 		inline static double currentFrameTime = 0;

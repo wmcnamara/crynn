@@ -10,14 +10,14 @@ namespace crynn
 
 	void Application::Tick()
 	{
-		//Get the deltaTime
+		//calculate the deltaTime
 		currentFrameTime = glfwGetTime();
 		double deltaTime = currentFrameTime - previousFrameTime;
 		previousFrameTime = currentFrameTime; //Update the previousFrameTime
 
-		//Invoke update
-		OnBeforeUpdate.Invoke(deltaTime);
-		OnUpdate.Invoke(deltaTime);
+		//Invoke update and OnBeforeUpdate
+		OnBeforeUpdate.Invoke(deltaTime * Application::TimeScale);
+		OnUpdate.Invoke(deltaTime * Application::TimeScale);
 	}
 
 	void Application::Initialise()
