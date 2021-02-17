@@ -10,11 +10,20 @@ namespace crynn
 	{
 	public:
 		CrynnObject();
+		CrynnObject(const CrynnObject& other);
+		CrynnObject& operator=(const CrynnObject& other);
+
+		Transform& GetTransform() { return *reinterpret_cast<Transform*>(this); }
+		inline bool operator== (CrynnObject& other);
+
 		int GetID() const { return ID; }
+
+		friend class Scene;
 	private:
 		int ID = 0;
-		static int GenerateID();
+		void* operator new(size_t size);
+		void operator delete(void* obj);
 
-		friend class EventListener;
+		static int GenerateID();
 	};
 }
