@@ -23,28 +23,34 @@ namespace crynn
 	{
 	public:
 		Transform() = default;
-
-		void Translate(glm::vec3 translation);
-		void Scale(glm::vec3 scale);
-		void Rotate(glm::vec3 rotation);
-
-		void SetPosition(glm::vec3 position);
-		glm::vec3 GetPosition();
-
-		void SetScale(glm::vec3 scale);
-		glm::vec3 GetScale();
-
-		void SetRotation(glm::vec3 rotation);
-		glm::vec3 GetRotation();
+	    ~Transform() = default;
+	   
+	    void Translate(glm::vec3 translation);
+	    void Scale(glm::vec3 scale);
+	    void Rotate(glm::vec3 rotation);
+	   
+	    void SetPosition(glm::vec3 position);
+	    glm::vec3 GetPosition();
+	   
+	    void SetScale(glm::vec3 scale);
+	    glm::vec3 GetScale();
+	   
+	    void SetRotation(glm::vec3 rotation);
+	    glm::vec3 GetRotation();
+	   
+		Transform* GetParent() { return m_parent; }
+		void SetParent(Transform* parent) { m_parent = parent; }
 
 		//Returns a non-const reference to the matrix struct this class is represented with
 		inline glm::mat4& GetMatrix() { return transformMatrix; }
 	private:
 		//Updated when matrix transformations occur, used to easily return and track rotation scale and pos data.
 		glm::vec3 currentRot = glm::vec3(0.0); 
-		glm::vec3 currentScale = glm::vec3(0.0); 
+		glm::vec3 currentScale = glm::vec3(1.0); 
 		glm::vec3 currentPos = glm::vec3(0.0);
 
 		glm::mat4 transformMatrix = glm::mat4(1.0f);
+
+		Transform* m_parent = nullptr;
 	};
 }

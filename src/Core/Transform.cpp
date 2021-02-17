@@ -7,8 +7,7 @@ namespace crynn
 		transformMatrix = glm::translate(transformMatrix, translation);
 
 		currentPos += translation;
-	}
-	
+	}	
 
 	void Transform::Scale(glm::vec3 scale)
 	{
@@ -59,12 +58,12 @@ namespace crynn
 	{
 		glm::mat4 rot = glm::mat4(1.0f);
 
-		//Scale matrix. first 3 columns and rows.
+		//Set scale
 		rot[0][0] = transformMatrix[0][0];
 		rot[1][1] = transformMatrix[1][1];
 		rot[2][2] = transformMatrix[2][2];
 
-		//Create the new rotation matrix
+		//Create and apply the new rotation
 		rot *= glm::eulerAngleXYZ(glm::radians(rotation.x), glm::radians(rotation.y), glm::radians(rotation.z));
 
 		//Apply transform
