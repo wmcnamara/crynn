@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #include <vector>
 #include <memory>
 #include "Transform.h"
@@ -6,7 +7,7 @@
 
 namespace crynn
 {
-	class SceneNode : CrynnObject, std::enable_shared_from_this<SceneNode>
+	class SceneNode : public CrynnObject, std::enable_shared_from_this<SceneNode>
 	{
 	public:		
 		SceneNode() = default;
@@ -22,9 +23,7 @@ namespace crynn
 		void AddChild(std::shared_ptr<SceneNode> child);
 		void ReparentTo(std::shared_ptr<SceneNode> parent);
 
-		CrynnObject& GetCrynnObj() { return *reinterpret_cast<CrynnObject*>(this); }
-
-		bool operator==(std::shared_ptr<SceneNode> other) { return GetCrynnObj() == other->GetCrynnObj(); }
+		bool operator==(std::shared_ptr<SceneNode> other) { return GetID() == other->GetID(); }
 	private:
 		std::vector<std::shared_ptr<SceneNode>> m_children;
 		std::shared_ptr<SceneNode> m_parent = nullptr;
