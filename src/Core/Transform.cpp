@@ -43,7 +43,7 @@ namespace crynn
 		currentPos = position; //Update currentPos
 	}
 
-	glm::vec3 Transform::GetPosition()
+	glm::vec3 Transform::GetPosition() const
 	{
 		return currentPos;
 	}
@@ -65,7 +65,7 @@ namespace crynn
 		currentScale = scale;
 	}
 
-	glm::vec3 Transform::GetScale()
+	glm::vec3 Transform::GetScale() const
 	{
 		return currentScale;
 	}
@@ -92,8 +92,30 @@ namespace crynn
 		currentRot = rotation;
 	}
 
-	glm::vec3 Transform::GetRotation()
+	glm::vec3 Transform::GetRotation() const
 	{
 		return currentRot;
+	}
+	glm::mat4 Transform::GetWorldMatrix() const
+	{
+		if (m_parent != nullptr) 
+		{
+			return m_parent->GetWorldMatrix() * GetLocalMatrix();
+		}
+		else 
+		{
+			return GetLocalMatrix();
+		}
+	}
+	glm::mat4 Transform::GetLocalMatrix() const
+	{
+		if (m_parent != nullptr) 
+		{
+			return GetLocalMatrix() * m_parent->GetWorldMatrix();
+		}
+		else 
+		{
+			return GetLocalMatrix();
+		}
 	}
 }

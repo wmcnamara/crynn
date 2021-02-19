@@ -27,16 +27,19 @@ namespace crynn
 	    void Rotate(glm::vec3 rotation);
 	   
 	    void SetPosition(glm::vec3 position);
-	    glm::vec3 GetPosition();
+	    glm::vec3 GetPosition() const;
 	   
 	    void SetScale(glm::vec3 scale);
-	    glm::vec3 GetScale();
+	    glm::vec3 GetScale() const;
 	   
 	    void SetRotation(glm::vec3 rotation);
-	    glm::vec3 GetRotation();
-	   
-		bool HasParent() { return m_parent != nullptr; }
-		Transform* GetParent() { return m_parent; }
+	    glm::vec3 GetRotation() const;
+		
+		glm::mat4 GetWorldMatrix() const;
+		glm::mat4 GetLocalMatrix() const;
+
+		bool HasParent() const { return m_parent != nullptr; }
+		Transform* GetParent() const { return m_parent; }
 		void SetParent(Transform* parent) { m_parent = parent; }
 
 		//Returns a non-const reference to the matrix struct this class is represented with
