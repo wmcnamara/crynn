@@ -22,9 +22,6 @@ namespace crynn
 	class Transform
 	{
 	public:
-		Transform() = default;
-	    ~Transform() = default;
-	   
 	    void Translate(glm::vec3 translation);
 	    void Scale(glm::vec3 scale);
 	    void Rotate(glm::vec3 rotation);
@@ -38,18 +35,19 @@ namespace crynn
 	    void SetRotation(glm::vec3 rotation);
 	    glm::vec3 GetRotation();
 	   
+		bool HasParent() { return m_parent != nullptr; }
 		Transform* GetParent() { return m_parent; }
 		void SetParent(Transform* parent) { m_parent = parent; }
 
 		//Returns a non-const reference to the matrix struct this class is represented with
-		inline glm::mat4& GetMatrix() { return transformMatrix; }
+		inline glm::mat4& GetMatrix() { return m_matrix; }
 	private:
 		//Updated when matrix transformations occur, used to easily return and track rotation scale and pos data.
 		glm::vec3 currentRot = glm::vec3(0.0); 
-		glm::vec3 currentScale = glm::vec3(1.0); 
+		glm::vec3 currentScale = glm::vec3(1.0, 1.0f, 1.0f); 
 		glm::vec3 currentPos = glm::vec3(0.0);
 
-		glm::mat4 transformMatrix = glm::mat4(1.0f);
+		glm::mat4 m_matrix = glm::mat4(1.0f);
 
 		Transform* m_parent = nullptr;
 	};

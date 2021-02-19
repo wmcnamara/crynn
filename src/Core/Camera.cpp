@@ -3,7 +3,7 @@ namespace crynn
 {
 	Camera::Camera(vec3 position, Projection projType) : m_projType(projType)
 	{		
-		Transform::Translate(position);
+		Translate(position);
 
 		//Generate a UBO
 		glGenBuffers(1, &m_matrixUBO);
@@ -42,7 +42,7 @@ namespace crynn
 		//viewportDat[2] and [3] will have the width and height of the viewport
 		float viewportDat[4] = { 0, 0, 0, 0 };
 		glGetFloatv(GL_VIEWPORT, viewportDat);
-
+		
 		if (m_projType == Projection::Perspective)
 		{
 			glEnable(GL_DEPTH_TEST);
