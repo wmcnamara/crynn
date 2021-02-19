@@ -20,7 +20,7 @@ namespace crynn
 	/// A class containing static functions to represent application functions, states, and events.
 	/// Contains events that many internal classes use to operate, and allows easy interfacing with lower level engine components.
 	/// </summary>
-	static class Application final
+	class Application final
 	{
 	public:
 		//This class is totally static. You cannot copy this class, or instantiate it.
