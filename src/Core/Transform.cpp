@@ -96,6 +96,7 @@ namespace crynn
 	{
 		return currentRot;
 	}
+
 	glm::mat4 Transform::GetWorldMatrix() const
 	{
 		if (m_parent != nullptr) 
@@ -107,6 +108,7 @@ namespace crynn
 			return GetLocalMatrix();
 		}
 	}
+
 	glm::mat4 Transform::GetLocalMatrix() const
 	{
 		if (m_parent != nullptr) 
