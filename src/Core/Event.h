@@ -37,19 +37,24 @@ namespace crynn
 		}
 
 		//Adds a single function to the delegate.
-		inline uint16_t AddHandler(Func_T func)
+		inline unsigned int AddHandler(Func_T func)
 		{
-			static uint16_t nextID = 0;
-			m_handlers.insert(std::pair<uint16_t, Func_T>(nextID, func));
+			static unsigned int nextID = 1; //0 is reserved
+			m_handlers.insert(std::pair<unsigned int, Func_T>(nextID, func));
 
 			//Return the ID, and increment it.
 			return nextID++;
 		}
 
 		//Removes a single function from the delegate
-		inline void RemoveHandler(uint16_t ID)
+		inline void RemoveHandler(unsigned int& ID)
 		{
+			if (ID == 0)
+				return;
+
 			m_handlers.erase(ID);
+
+			ID = 0;
 		}
 
 	private:
@@ -58,7 +63,7 @@ namespace crynn
 			m_handlers.clear();
 		}
 
-		std::unordered_map<uint16_t, Func_T> m_handlers;
+		std::unordered_map<unsigned int, Func_T> m_handlers;
 	};
 
 	/// <summary>
@@ -83,19 +88,24 @@ namespace crynn
 		}
 
 		//Adds a single function to the delegate.
-		inline uint16_t AddHandler(Func_T func)
+		inline unsigned int AddHandler(Func_T func)
 		{
-			static uint16_t nextID = 0;
-			m_handlers.insert(std::pair<uint16_t, Func_T>(nextID, func));
+			static unsigned int nextID = 0;
+			m_handlers.insert(std::pair<unsigned int, Func_T>(nextID, func));
 
 			//Return the ID, and increment it.
 			return nextID++;
 		}
 
 		//Removes a single function from the delegate using its ID
-		inline void RemoveHandler(uint16_t ID)
+		inline void RemoveHandler(unsigned int& ID)
 		{
+			if (ID == 0)
+				return;
+
 			m_handlers.erase(ID);
+
+			ID = 0;
 		}
 
 		inline void RemoveAllHandlers()
@@ -104,7 +114,7 @@ namespace crynn
 		}
 
 	private:
-		std::unordered_map<uint16_t, Func_T> m_handlers;
+		std::unordered_map<unsigned int, Func_T> m_handlers;
 	};
 }
 #endif //DELEGATE_INCLUDE

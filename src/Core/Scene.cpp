@@ -1,30 +1,33 @@
 #include "Scene.h"
+#include <exception>
 
-namespace crynn 
+namespace crynn
 {
-	SceneNode::SceneNode(
-		std::vector<std::shared_ptr<SceneNode>> children,
-		std::shared_ptr<SceneNode> parent) : m_children(children), m_parent(parent)
-	{}
-
-	SceneNode::SceneNode(const SceneNode& other)
+	void Scene::RemoveObject(int& ID)
 	{
-		//Copy m_children from other into this object
-		for (std::shared_ptr<SceneNode> ptr : other.m_children)
-			m_children.push_back(std::make_shared<SceneNode>(*ptr));
-		
-		m_parent = other.m_parent;
+		if (!managedObjects.contains(ID))
+			throw std::runtime_error("Attempting to remove destroyed object");
+
+		markedForDealloc.insert(ID);
+
+		ID = 0;
 	}
 
-	void SceneNode::AddChild(std::shared_ptr<SceneNode> child)
+	void Scene::ClearObjects()
 	{
-		child->ReparentTo(std::make_shared<SceneNode>(shared_from_this()));
-		m_children.push_back(child);
+		managedObjects.clear();
 	}
 
-	void SceneNode::ReparentTo(std::shared_ptr<SceneNode> parent)
+	int Scene::GetObjectCount()
 	{
-		m_parent = parent;
-		parent->m_children.push_back(shared_from_this());
+		return managedObjects.size();
+	}
+
+	void Scene::Clean()
+	{
+		for (int ID : markedForDealloc) 
+		{
+			managedObjects.erase(ID);
+		}
 	}
 }
