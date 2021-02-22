@@ -14,12 +14,12 @@ namespace crynn
 	class EventListener
 	{
 	public: 		
-		///Unsubscribes the events in this class from the Crynn event system. Call at the start of your destructor.
+		///Unsubscribes the events in this class from the Crynn event system.
 		void UnsubscribeEvents();
 
 	protected:		
 		EventListener();
-		~EventListener();
+		virtual ~EventListener();
 
 		/// <summary>
 		/// Called once every frame.
@@ -35,9 +35,6 @@ namespace crynn
 		/// <param name="deltaTime">The time it took the previous frame to render.</param>
 		virtual void BeforeUpdate(double deltaTime) {}
 		virtual void BeforeClose() {} ///Called before quitting to desktop with Application::Instance().Quit();
-
-		///Returns true if this instance's events are subscribed to the event system.
-		bool IsSubscribed() { return subscribed; }
 	private:		
 		///Subscribes the events in this class to the Crynn event system. Call at the end of your constructor.
 		void SubscribeEvents();
@@ -45,12 +42,10 @@ namespace crynn
 		friend class CrynnObject;
 
 		//Used to remove handlers when this object is destructed.
-		int updateHandlerID; 
-		int startHandlerID;
-		int beforeUpdateHandlerID;
-		int beforeCloseHandlerID;
-
-		bool subscribed = false;
+		unsigned int updateHandlerID = 0; 
+		unsigned int startHandlerID = 0;
+		unsigned int beforeUpdateHandlerID = 0;
+		unsigned int beforeCloseHandlerID = 0;
 	};
 }
 

@@ -14,7 +14,7 @@ namespace crynn
 	int CrynnObject::GenerateID()
 	{
 		Debug::Log("Crynn Object Created");
-		static uint64_t id = 0;
+		static unsigned int id = 0;
 		return id++;
 	}
 }
