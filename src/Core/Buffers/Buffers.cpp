@@ -1,13 +1,13 @@
 #include "Buffers.h"
 
-crynn::VBO::VBO(float* vertexData, size_t size)
+crynn::VBO::VBO(float* vertexData, size_t size) : m_vertexData(vertexData), m_size(size)
 {
 	glGenBuffers(1, &ID);
 	glBindBuffer(GL_ARRAY_BUFFER, ID);
 	glBufferData(GL_ARRAY_BUFFER, size, vertexData, GL_STATIC_DRAW);
 }
 
-crynn::VBO::VBO(float* vertexData, size_t size, ConstructionBehaviour behaviour)
+crynn::VBO::VBO(float* vertexData, size_t size, ConstructionBehaviour behaviour) : m_vertexData(vertexData), m_size(size)
 {
 	switch (behaviour)
 	{
@@ -17,7 +17,6 @@ crynn::VBO::VBO(float* vertexData, size_t size, ConstructionBehaviour behaviour)
 		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData) * size, vertexData, GL_STATIC_DRAW);
 		break;
 
-	case UnbindAfterAllocation:
 		glGenBuffers(1, &ID);
 		glBindBuffer(GL_ARRAY_BUFFER, ID);
 		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData) * size, vertexData, GL_STATIC_DRAW);
@@ -27,9 +26,36 @@ crynn::VBO::VBO(float* vertexData, size_t size, ConstructionBehaviour behaviour)
 	}
 }
 
+crynn::VBO& crynn::VBO::operator=(const VBO& other)
+{
+	m_size = other.m_size;
+	m_vertexData = new float[m_size];
+
+	std::memcpy(m_vertexData, other.m_vertexData, m_size);
+
+	glGenBuffers(1, &ID);
+	glBindBuffer(GL_ARRAY_BUFFER, ID);
+	glBufferData(GL_ARRAY_BUFFER, other.m_size, other.m_vertexData, GL_STATIC_DRAW);
+
+	return *this;
+}
+
+crynn::VBO::VBO(const VBO& other)
+{
+	m_size = other.m_size;
+	m_vertexData = new float[m_size];
+
+	std::memcpy(m_vertexData, other.m_vertexData, m_size);
+
+	glGenBuffers(1, &ID);
+	glBindBuffer(GL_ARRAY_BUFFER, ID);
+	glBufferData(GL_ARRAY_BUFFER, other.m_size, other.m_vertexData, GL_STATIC_DRAW);
+}
+
 crynn::VBO::~VBO()
 {
 	glDeleteBuffers(1, &ID);
+	delete[] m_vertexData;
 }
 
 crynn::VAO::VAO()

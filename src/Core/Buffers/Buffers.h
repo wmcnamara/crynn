@@ -1,5 +1,6 @@
-#pragma once
+ #pragma once
 #include "glad/glad.h"
+#include <memory>
 #pragma warning( disable : 26812)
 
 /// <summary>
@@ -22,15 +23,22 @@ namespace crynn
 	public:
 		VBO(float* vertexData, size_t size);
 		VBO(float* vertexData, size_t size, ConstructionBehaviour behaviour);
+		VBO& operator= (const VBO& other);
+
 		VBO() = default;
 		~VBO();
 
 		//TODO Implement real copy constructor
-		VBO(const VBO& other) = delete;
+		VBO(const VBO& other);
+
+		float* VertexData() { return m_vertexData; }
+		size_t VertexCount() { return m_size; }
 
 		GLuint GetID() const { return ID; }
 		void Bind() const { glBindBuffer(GL_ARRAY_BUFFER, ID); } //Calls glBindBuffer
 	private:
+		float* m_vertexData = nullptr;
+		size_t m_size = 0;
 		GLuint ID = 0;
 	};
 
