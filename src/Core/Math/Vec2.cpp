@@ -37,6 +37,11 @@ namespace crynn
 		return *this;
 	}
 
+	int Vec2Int::Dot(const Vec2Int& other)
+	{
+		return (m_x * other.m_x) + (m_y * other.m_y);
+	}
+
 	float Vec2Int::GetMagnitude() const
 	{
 		int xSqr = m_x * m_x;

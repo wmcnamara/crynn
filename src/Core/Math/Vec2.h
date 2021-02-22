@@ -21,12 +21,11 @@ namespace crynn
 		//arithmetic overloads
 		Vec2Int operator+(const Vec2Int& other) const { return Vec2Int(m_x + other.m_x, m_y + other.m_y); }
 		Vec2Int operator-(const Vec2Int& other) const { return Vec2Int(m_x - other.m_x, m_y - other.m_y); }
-		Vec2Int operator/(const Vec2Int& other) const { return Vec2Int(m_x / other.m_x, m_y / other.m_y); }
 
-		Vec2Int operator+(int n) const { return Vec2Int(m_x + n, m_y + n); }
-		Vec2Int operator-(int n) const { return Vec2Int(m_x - n, m_y - n); }
 		Vec2Int operator*(int n) const { return Vec2Int(m_x * n, m_y * n); }
 		Vec2Int operator/(int n) const { return Vec2Int(m_x / n, m_y / n); }
+
+		int Dot(const Vec2Int& other);
 
 		operator ImVec2() { return ImVec2(static_cast<float>(m_x), static_cast<float>(m_y)); } //Convert to ImVec2
 
@@ -34,6 +33,7 @@ namespace crynn
 		float GetMagnitude() const;
 
 		static int Dot(const Vec2Int vec1, const Vec2Int vec2);
+
 		int m_x = 0, m_y = 0;
 	};
 }
