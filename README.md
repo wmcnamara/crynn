@@ -1,5 +1,7 @@
-# Crynn Game Engine
-![Crynn Logo](docs/CrynnSmall.png)
+<h1 align="center">Crynn Game Engine</h1>
+   <p align="center">
+  <img src="docs/CrynnSmall.png" alt="Crynn Logo">
+</p>
 
 ## Introduction
    Crynn is an open source game engine created with C++17 and OpenGL. It is very barebones as it stands.
