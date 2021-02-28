@@ -10,14 +10,6 @@ namespace crynn
 		Vec2Int() = default;
 		Vec2Int(int x, int y);
 
-		//Move
-		Vec2Int(Vec2Int&& other) noexcept;
-		Vec2Int& operator=(Vec2Int&& other) noexcept;
-
-		//Copy
-		Vec2Int(const Vec2Int& other) = default;
-		Vec2Int& operator=(Vec2Int& other);
-
 		//arithmetic overloads
 		Vec2Int operator+(const Vec2Int& other) const { return Vec2Int(m_x + other.m_x, m_y + other.m_y); }
 		Vec2Int operator-(const Vec2Int& other) const { return Vec2Int(m_x - other.m_x, m_y - other.m_y); }
@@ -30,7 +22,7 @@ namespace crynn
 		operator ImVec2() { return ImVec2(static_cast<float>(m_x), static_cast<float>(m_y)); } //Convert to ImVec2
 
 		//Euclidean distance of this vector.
-		float GetMagnitude() const;
+		float Length() const;
 
 		static int Dot(const Vec2Int vec1, const Vec2Int vec2);
 
