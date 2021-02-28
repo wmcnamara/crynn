@@ -4,22 +4,22 @@ namespace crynn
     bool AABBSolver::Compare(const AABB& one, const AABB& two)
     {
         //x collision
-        bool x = one.transform.GetPosition().x + one.Size.x >= two.transform.GetPosition().x &&
-            two.transform.GetPosition().x + two.Size.x >= one.transform.GetPosition().x;
+        bool x = one.Transform.GetPosition().x + one.Size.x >= two.Transform.GetPosition().x &&
+            two.Transform.GetPosition().x + two.Size.x >= one.Transform.GetPosition().x;
 
         if (!x)
             return false;
 
         //y collision
-        bool y = one.transform.GetPosition().y + one.Size.y >= two.transform.GetPosition().y &&
-            two.transform.GetPosition().y + two.Size.y >= one.transform.GetPosition().y;
+        bool y = one.Transform.GetPosition().y + one.Size.y >= two.Transform.GetPosition().y &&
+            two.Transform.GetPosition().y + two.Size.y >= one.Transform.GetPosition().y;
 
         if (!y)
             return false;
 
         //z collision
-        bool z = one.transform.GetPosition().z + one.Size.z >= two.transform.GetPosition().z &&
-            two.transform.GetPosition().z + two.Size.z >= one.transform.GetPosition().z;
+        bool z = one.Transform.GetPosition().z + one.Size.z >= two.Transform.GetPosition().z &&
+            two.Transform.GetPosition().z + two.Size.z >= one.Transform.GetPosition().z;
 
         if (!z)
             return false;

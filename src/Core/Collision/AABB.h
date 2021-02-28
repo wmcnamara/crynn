@@ -10,7 +10,9 @@ namespace crynn
 	/// </summary>
 	struct AABB
 	{
-		Transform& transform;
+		AABB(Transform& transform, glm::vec3 size) : Transform(transform), Size(size) {}
+		
+		Transform& Transform;
 		glm::vec3 Size;
 	};
 
