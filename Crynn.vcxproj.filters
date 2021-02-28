@@ -138,6 +138,9 @@
     <ClInclude Include="src\Core\Scene.h">
       <Filter>src\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Math\Vec3.h">
+      <Filter>src\Core\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\thirdparty\imgui\imgui.cpp">
@@ -223,6 +226,12 @@
     </ClCompile>
     <ClCompile Include="src\Core\Scene.cpp">
       <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Crynn.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Math\Vec3.cpp">
+      <Filter>src\Core\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
