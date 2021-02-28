@@ -6,7 +6,7 @@ using namespace crynn;
 
 int main()
 {
-	Window window("Crynn", 800, 600); //Initialise crynn, and the window
+	Window window("Crynn Game Engine", 800, 600); //Initialise crynn, and the window
 	Application::Initialise(); //Calls OnStart events. Should be right before the while loop.
 
 	while (!window.ShouldClose())
