@@ -32,10 +32,21 @@ namespace crynn
 		/// </summary>
 		/// <param name="key">The GLFW keycode of the key you're updating</param>
 		/// <param name="state">The boolean state of the key</param>
-		inline static void UpdateKeyState(int key, bool state)
+		inline static void UpdateKeyStateInternal (int key, bool state)
 		{
 			previousKeyStates[key] = currentKeyStates[key]; //Update previous keystate
 			currentKeyStates[key] = state; //Update current keystate
+		}
+
+		static void UpdateMousePosInternal(int xPos, int yPos);
+
+		static Vec2Int GetMouseDelta() 
+		{ 
+			return Vec2Int
+			(
+				m_xPos - m_prevXPos, 
+				m_yPos - m_prevYPos
+			); 
 		}
 
 		//Dispatched when the user scrolls the mouse wheel.
@@ -46,7 +57,11 @@ namespace crynn
 
 		inline static bool m_initialised = false; //Is input initialised?
 
-		int handlerID; //Used to remove the handler when this object is destructed.
+		inline static int m_xPos = 0; //Current x pixel coordinate position of the cursor
+		inline static int m_prevXPos = 0; //x pixel coordinate position of the cursor in the previous frame
+
+		inline static int m_yPos = 0; //Current y pixel coordinate position of the cursor
+		inline static int m_prevYPos = 0; //y pixel coordinate position of the cursor in the previous frame
 	};
 
 	/// <summary>
@@ -81,6 +96,7 @@ namespace crynn
 		Z = GLFW_KEY_Z,
 
 		ESC = GLFW_KEY_ESCAPE,
-		SPACE = GLFW_KEY_SPACE
+		SPACE = GLFW_KEY_SPACE,
+		ENTER = GLFW_KEY_ENTER
 	};
 }

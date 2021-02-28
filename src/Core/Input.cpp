@@ -6,14 +6,19 @@ namespace crynn
 	{
 		//Update keystate according to action
 		if (action == GLFW_PRESS)
-			crynn::Input::UpdateKeyState(key, true);
+			crynn::Input::UpdateKeyStateInternal(key, true);
 		else if (action == GLFW_RELEASE)
-			crynn::Input::UpdateKeyState(key, false);
+			crynn::Input::UpdateKeyStateInternal(key, false);
 	}
 	
 	void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 	{
 		Input::OnMouseScroll.Invoke((float)yoffset); //Invoke the OnMouseScroll when GLFW reports a mouse scroll
+	}
+
+	void cursor_pos_callback(GLFWwindow* window, double xPos, double yPos) 
+	{
+		Input::UpdateMousePosInternal(xPos, yPos);
 	}
 
 	bool Input::GetKey(KeyCode key)
@@ -28,16 +33,25 @@ namespace crynn
 
 		if (previousKeyStates[keyCode] == false && currentKeyStates[keyCode] == true) //If they werent holding before, but are now.
 		{
-			UpdateKeyState(keyCode, false);
+			UpdateKeyStateInternal(keyCode, false);
 			return true;
 		}
 		else if (previousKeyStates[keyCode] == true && currentKeyStates[keyCode] == true) //If they were holding before, and still are
 		{
-			UpdateKeyState(keyCode, true);
+			UpdateKeyStateInternal(keyCode, true);
 			return false;
 		}
 		else
 			return false;
+	}
+
+	inline void Input::UpdateMousePosInternal(int xPos, int yPos)
+	{
+		m_prevXPos = m_xPos;
+		m_prevYPos = m_yPos;
+
+		m_xPos = xPos;
+		m_yPos = yPos;
 	}
 
 	void Input::Init()
@@ -47,9 +61,10 @@ namespace crynn
 
 		glfwSetKeyCallback(Window::GetGLFWWin(), key_callback);
 		glfwSetScrollCallback(Window::GetGLFWWin(), scroll_callback);
+		glfwSetCursorPosCallback(Window::GetGLFWWin(), cursor_pos_callback);
 
 		m_initialised = true;
 
-		std::cout << "Input initialised\n";
+		Debug::Log("Input Initialised");
 	}
 }
