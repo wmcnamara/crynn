@@ -110,6 +110,7 @@
     <ClInclude Include="src\Core\Input.h" />
     <ClInclude Include="src\Core\Math\Math.h" />
     <ClInclude Include="src\Core\Math\Vec2.h" />
+    <ClInclude Include="src\Core\Math\Vec3.h" />
     <ClInclude Include="src\Core\Mesh.h" />
     <ClInclude Include="src\Core\MeshRenderer.h" />
     <ClInclude Include="src\Core\Scene.h" />
@@ -140,6 +141,7 @@
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\Math\Math.cpp" />
     <ClCompile Include="src\Core\Math\Vec2.cpp" />
+    <ClCompile Include="src\Core\Math\Vec3.cpp" />
     <ClCompile Include="src\Core\Mesh.cpp" />
     <ClCompile Include="src\Core\MeshRenderer.cpp" />
     <ClCompile Include="src\Core\Scene.cpp" />
@@ -147,6 +149,7 @@
     <ClCompile Include="src\Core\Texture.cpp" />
     <ClCompile Include="src\Core\Transform.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
+    <ClCompile Include="src\Crynn.cpp" />
     <ClCompile Include="src\GUI\GuiWindow.cpp" />
     <ClCompile Include="src\Utility\Debug.cpp" />
     <ClCompile Include="src\Utility\IO.cpp" />
