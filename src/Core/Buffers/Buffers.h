@@ -23,13 +23,11 @@ namespace crynn
 	public:
 		VBO(float* vertexData, size_t size);
 		VBO(float* vertexData, size_t size, ConstructionBehaviour behaviour);
-		VBO& operator= (const VBO& other);
-
 		VBO() = default;
 		~VBO();
 
 		//TODO Implement real copy constructor
-		VBO(const VBO& other);
+		VBO(const VBO& other) = delete;
 
 		float* VertexData() { return m_vertexData; }
 		size_t VertexCount() { return m_size; }
