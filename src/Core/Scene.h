@@ -27,7 +27,7 @@ namespace crynn
 		//Frees unused memory marked for deallocation.
 		static void Clean();
 
-		//Returns a const reference to the list of managed objects
+		//Returns a const reference to the map of managed objects
 		static const std::unordered_map<int, std::shared_ptr<CrynnObject>>& GetManagedObjects() { return managedObjects; }
 	private:
 		//List of objects managed by the scene class
