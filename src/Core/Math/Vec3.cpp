@@ -2,27 +2,52 @@
 #include "Vec3.h"
 namespace crynn
 {
-	Vec3::Vec3(float x, float y, float z) : m_x(x), m_y(y), m_z(z)
+	Vec3::Vec3(float _x, float _y, float _z) : x(_x), y(_y), z(_z)
 	{
 
 	}
 
 	float Vec3::Dot(const Vec3& other) const
 	{
-		return (m_x * other.m_x) + (m_y + other.m_y) + (m_z + other.m_z);
+		return (x * other.x) + (y + other.y) + (z + other.z);
 	}
 
 	float Vec3::Length() const
 	{
-		float xSqr = m_x * m_x;
-		float ySqr = m_y * m_y;
-		float zSqr = m_z * m_z;
+		float xSqr = x * x;
+		float ySqr = y * y;
+		float zSqr = z * z;
 
 		return std::sqrt(xSqr + ySqr + zSqr);
 	}
 
-	int Vec3::Dot(const Vec3 vec1, const Vec3 vec2)
+	float Vec3::Dot(const Vec3 vec1, const Vec3 vec2)
 	{
-		return (vec1.m_x * vec2.m_x) + (vec1.m_y * vec2.m_y) + (vec1.m_z * vec2.m_z);
+		return (vec1.x * vec2.x) + (vec1.y * vec2.y) + (vec1.z * vec2.z);
+	}
+
+	/////////////
+	///VEC3INT///
+	/////////////
+
+	Vec3Int::Vec3Int(int _x, int _y, int _z) : x(_x), y(_y), z(_z) { }
+
+	int Vec3Int::Dot(const Vec3Int& other) const
+	{
+		return (x * other.x) + (y * other.y) + (z * other.z);
+	}
+
+	float Vec3Int::Length() const
+	{
+		int xSqr = x * x;
+		int ySqr = y * y;
+		int zSqr = z * z;
+
+		return std::sqrtf(xSqr + ySqr + zSqr);
+	}
+
+	int Vec3Int::Dot(const Vec3Int vec1, const Vec3Int vec2)
+	{
+		return (vec1.x * vec2.x) + (vec1.y * vec2.y) + (vec1.z * vec2.z);
 	}
 }
