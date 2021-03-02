@@ -22,15 +22,8 @@ namespace crynn
 
 	void Application::Initialise()
 	{
-		glfwSetTime(0); //This is done to prevent long startup times from affecting the first frame deltaTime
-
-		//Lambda for OnBeforeClose
-		auto func = [](GLFWwindow* w)
-		{
-			static_cast<Application*>(glfwGetWindowUserPointer(w))->OnBeforeClose.Invoke();
-		};
-
-		glfwSetWindowCloseCallback(Window::GetGLFWWin(), func);
+		//This is done to prevent long startup times from affecting the first frame deltaTime
+		glfwSetTime(0); 
 		OnStart.Invoke();
 	}
 

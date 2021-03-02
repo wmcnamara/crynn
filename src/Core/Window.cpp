@@ -70,8 +70,17 @@ namespace crynn
 			UpdateWindowSize();
 		});
 
+		//Lambda for OnBeforeClose
+		auto func = [](GLFWwindow* w)
+		{
+			static_cast<Application*>(glfwGetWindowUserPointer(w))->OnBeforeClose.Invoke();
+		};
+
+		glfwSetWindowCloseCallback(glfwWindow, func);
+
 		Debug::Log("Window Created");
 	}
+
 
 	Window::~Window()
 	{
@@ -108,6 +117,8 @@ namespace crynn
 		//ImGui::DockSpaceOverViewport(ImGui::GetWindowViewport(), ImGuiDockNodeFlags_None);
 
 		glViewport(0, 0, (int)m_screenSize.x, (int)m_screenSize.y); //Set the default viewport.
+
+		Input::UpdateMousePosInternal();
 	}
 
 	//Called after rendering code. Ends IMGUI frames, swaps buffers, and polls events.
