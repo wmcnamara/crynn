@@ -11,6 +11,7 @@
 #include "Input.h"
 #include "Transform.h"
 
+#include "Math/Math.h"
 namespace crynn 
 {
 	using namespace glm;
@@ -36,6 +37,12 @@ namespace crynn
 		~Camera();
 
 		mat4 GetProjection() const { return m_projection; }
+
+		float farClipPlane = 100.0f;
+		float nearClipPlane = 0.1f;
+
+		//Sets the camera FOV in degrees. Clamped between 0 and 180
+		void SetFOV(float newFOV);
 	private:
 		void BeforeUpdate(double deltaTime) override;
 
@@ -46,5 +53,7 @@ namespace crynn
 
 		void SetUniformData();
 		void UpdateProjectionData();
+
+		float m_fov = 60.0f;
 	};
 }

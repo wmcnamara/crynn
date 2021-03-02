@@ -20,6 +20,12 @@ namespace crynn
 		glDeleteBuffers(1, &m_matrixUBO);
 	}
 
+	void Camera::SetFOV(float newFOV)
+	{
+		newFOV = Math::Clamp(0.0f, 180.0f, newFOV);
+		m_fov = newFOV;
+	}
+
 	void Camera::BeforeUpdate(double deltaTime)
 	{		
 		UpdateProjectionData();
@@ -49,16 +55,16 @@ namespace crynn
 			m_projection = glm::perspective(
 				glm::radians(60.0f),
 				viewportDat[2] / viewportDat[3], //The first 2 elements of GL_VIEWPORT are irrelevant here.
-				0.1f,
-				100.0f);
+				nearClipPlane,
+				farClipPlane);
 		}
 		else if (m_projType == Projection::Orthographic)
 		{
 			m_projection = glm::ortho(
 				glm::radians(60.0f),
 				viewportDat[2] / viewportDat[3], //The first 2 elements of GL_VIEWPORT are irrelevant here.
-				0.1f,
-				100.0f);
+				nearClipPlane,
+				farClipPlane);
 		}
 	}
 }

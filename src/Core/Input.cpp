@@ -13,12 +13,16 @@ namespace crynn
 	
 	void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 	{
-		Input::OnMouseScroll.Invoke((float)yoffset); //Invoke the OnMouseScroll when GLFW reports a mouse scroll
+		Input::OnMouseScroll.Invoke(yoffset); //Invoke the OnMouseScroll when GLFW reports a mouse scroll
 	}
 
-	void cursor_pos_callback(GLFWwindow* window, double xPos, double yPos) 
+	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) 
 	{
-		Input::UpdateMousePosInternal(xPos, yPos);
+		//Update mousebutton keystate according to action
+		if (action == GLFW_PRESS)
+			crynn::Input::UpdateKeyStateInternal(button, true);
+		else if (action == GLFW_RELEASE)
+			crynn::Input::UpdateKeyStateInternal(button, false);
 	}
 
 	bool Input::GetKey(KeyCode key)
@@ -45,15 +49,6 @@ namespace crynn
 			return false;
 	}
 
-	inline void Input::UpdateMousePosInternal(int xPos, int yPos)
-	{
-		m_prevXPos = m_xPos;
-		m_prevYPos = m_yPos;
-
-		m_xPos = xPos;
-		m_yPos = yPos;
-	}
-
 	void Input::Init()
 	{
 		if (m_initialised)
@@ -61,7 +56,7 @@ namespace crynn
 
 		glfwSetKeyCallback(Window::GetGLFWWin(), key_callback);
 		glfwSetScrollCallback(Window::GetGLFWWin(), scroll_callback);
-		glfwSetCursorPosCallback(Window::GetGLFWWin(), cursor_pos_callback);
+		glfwSetMouseButtonCallback(Window::GetGLFWWin(), mouse_button_callback);
 
 		m_initialised = true;
 

@@ -3,7 +3,6 @@
 #include <unordered_set>
 #include "CrynnObject.h"
 #include "EventListener.h"
-#include "CrynnObject.h"
 
 namespace crynn 
 {

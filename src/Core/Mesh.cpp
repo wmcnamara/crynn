@@ -13,8 +13,8 @@ namespace crynn
 		m_numOfVertices(numOfVertices),
 		m_numOfIndices(numOfIndices),
 		m_useEBO(useEBO),
-		m_vao(BindAfterAllocation),
-		m_vbo(vertices, numOfVertices, BindAfterAllocation)
+		m_vao(),
+		m_vbo(vertices, numOfVertices)
 	{
 		ScopedTimer timer("Mesh Construction", TimeFormat::Milliseconds);
 

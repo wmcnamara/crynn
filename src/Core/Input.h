@@ -4,6 +4,7 @@
 namespace crynn
 {
 	enum class KeyCode; //forward declare
+
 	/// <summary>
 	/// Simple input component that allows interfacing with the Crynn input system.
 	/// </summary>
@@ -38,15 +39,25 @@ namespace crynn
 			currentKeyStates[key] = state; //Update current keystate
 		}
 
-		static void UpdateMousePosInternal(int xPos, int yPos);
+		inline static void UpdateMousePosInternal() 
+		{
+			double xPos = 0, yPos = 0;
+			glfwGetCursorPos(Window::GetGLFWWin(), &xPos, &yPos);
 
-		static Vec2Int GetMouseDelta() 
-		{ 
-			return Vec2Int
+			m_prevXPos = m_xPos;
+			m_prevYPos = m_yPos;
+
+			m_xPos = xPos;
+			m_yPos = yPos;
+		}
+
+		static Vec2 GetMouseDelta()
+		{
+			return Vec2
 			(
-				m_xPos - m_prevXPos, 
+				m_xPos - m_prevXPos,
 				m_yPos - m_prevYPos
-			); 
+			);
 		}
 
 		//Dispatched when the user scrolls the mouse wheel.
@@ -57,11 +68,11 @@ namespace crynn
 
 		inline static bool m_initialised = false; //Is input initialised?
 
-		inline static int m_xPos = 0; //Current x pixel coordinate position of the cursor
-		inline static int m_prevXPos = 0; //x pixel coordinate position of the cursor in the previous frame
-
-		inline static int m_yPos = 0; //Current y pixel coordinate position of the cursor
-		inline static int m_prevYPos = 0; //y pixel coordinate position of the cursor in the previous frame
+		inline static double m_xPos = 0; //Current x pixel coordinate position of the cursor
+		inline static double m_prevXPos = 0; //x pixel coordinate position of the cursor in the previous frame
+					  
+		inline static double m_yPos = 0; //Current y pixel coordinate position of the cursor
+		inline static double m_prevYPos = 0; //y pixel coordinate position of the cursor in the previous frame
 	};
 
 	/// <summary>
