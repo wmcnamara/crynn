@@ -13,8 +13,8 @@
 #include "Core/Transform.h"
 #include "Core/Mesh.h"
 #include "Core/CrynnObject.h"
-
-#include "Core/Collision/AABB.h"
+#include "Core/Scene.h"
+#include "Core/Physics/Collision/AABB.h"
 
 #include "Utility/Debug.h"
 #include "Utility/IO.h"
@@ -33,3 +33,27 @@
 #define DATA_PATH "data/"
 
 using namespace glm;
+
+namespace crynn
+{
+	//Encapsulates window creation and running the game.
+	class Engine
+	{
+	public:
+		Engine
+		(
+			int windowWidth,
+			int windowHeight,
+			const char* winName
+		);
+
+		~Engine();
+
+		//Calls onstart, and begins calling the main game loop.
+		void Run();
+		void SetClearColor(float r, float g, float b, float a) const;
+
+	private:
+		Window m_window;
+	};
+}
