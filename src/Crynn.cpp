@@ -14,7 +14,11 @@ namespace crynn
 			m_window.BeforeRender();
 			Application::Tick();
 			m_window.AfterRender();
+
+			Scene::Clean();
 		}
+
+		Scene::ClearObjects();
 	}
 
 	void Engine::SetClearColor(float r, float g, float b, float a) const
