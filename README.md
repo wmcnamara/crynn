@@ -1,6 +1,6 @@
 <h1 align="center">Crynn Game Engine</h1>
    <p align="center">
-  <img src="docs/CrynnSmall.png" alt="Crynn Logo">
+  <img src="CrynnSmall.png" alt="Crynn Logo">
 </p>
 
 ## Introduction
