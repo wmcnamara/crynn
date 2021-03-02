@@ -4,13 +4,6 @@ crynn::VBO::VBO(float* vertexData, size_t size) : m_vertexData(vertexData), m_si
 {
 	glGenBuffers(1, &ID);
 	glBindBuffer(GL_ARRAY_BUFFER, ID);
-	glBufferData(GL_ARRAY_BUFFER, size, vertexData, GL_STATIC_DRAW);
-}
-
-crynn::VBO::VBO(float* vertexData, size_t size, ConstructionBehaviour behaviour) : m_vertexData(vertexData), m_size(size)
-{
-	glGenBuffers(1, &ID);
-	glBindBuffer(GL_ARRAY_BUFFER, ID);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData) * size, vertexData, GL_STATIC_DRAW);
 }
 
@@ -22,21 +15,7 @@ crynn::VBO::~VBO()
 crynn::VAO::VAO()
 {
 	glGenVertexArrays(1, &ID);
-}
-
-crynn::VAO::VAO(ConstructionBehaviour behaviour)
-{
-	switch (behaviour) 
-	{
-	case BindAfterAllocation:
-		glGenVertexArrays(1, &ID);
-		glBindVertexArray(ID); //bind 
-		break;
-
-	case UnbindAfterAllocation:
-		glGenVertexArrays(1, &ID);
-		break;
-	}
+	glBindVertexArray(ID); //bind 
 }
 
 crynn::VAO::~VAO()

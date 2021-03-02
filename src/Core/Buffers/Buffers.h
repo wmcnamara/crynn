@@ -10,19 +10,11 @@
 /// </summary>
 namespace crynn
 {
-	//Allows custom behaviour to automatically take place when creating the buffers.
-	enum ConstructionBehaviour 
-	{ 
-		BindAfterAllocation, //Used in VAO to bind the VAO after allocating in the constructor.
-		UnbindAfterAllocation //Used in VBO/EBO/FBO to unbind the buffer after allocating in the constructor.
-	}; 
-
 	//A vertex buffer object with simple memory management functions.
 	class VBO
 	{
 	public:
 		VBO(float* vertexData, size_t size);
-		VBO(float* vertexData, size_t size, ConstructionBehaviour behaviour);
 		VBO() = default;
 		~VBO();
 
@@ -45,7 +37,6 @@ namespace crynn
 	{
 	public:
 		VAO(); //Calls glGenVertexArrays.
-		VAO(ConstructionBehaviour behaviour);
 		~VAO();
 
 		//TODO Implement real copy constructor
