@@ -1,5 +1,5 @@
 #pragma once
-#include "../../Core/EventListener.h"
+#include <functional>
 #include "../../Core/Transform.h"
 #include "glm/glm.hpp"
 
@@ -8,20 +8,14 @@ namespace crynn
 	/// <summary>
 	/// Represents an aligned axis bounding box.
 	/// </summary>
-	struct AABB
+	class AABB
 	{
+	public:
 		AABB(Transform& transform, glm::vec3 size) : Transform(transform), Size(size) {}
 		
 		Transform& Transform;
 		glm::vec3 Size;
-	};
 
-	/// <summary>
-	/// Provides functions for testing collisions with AABB's
-	/// </summary>
-	class AABBSolver
-	{
-	public:
 		/// <summary>
 		/// Compares two AABB's for collisions.
 		/// </summary>
@@ -32,6 +26,5 @@ namespace crynn
 
 		/// Returns true if 2 AABB's are colliding, and runs func with the two AABB's if they are collidiing.
 		static bool Compare(const AABB& one, const AABB& two, std::function<void(const AABB& one, const AABB& two)> func);
-		static bool Compare(const AABB& one, const AABB& two, std::function<void()> func);
 	};
 }

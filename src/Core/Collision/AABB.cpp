@@ -1,7 +1,7 @@
 #include "AABB.h"
 namespace crynn
 {
-    bool AABBSolver::Compare(const AABB& one, const AABB& two)
+    bool AABB::Compare(const AABB& one, const AABB& two)
     {
         //x collision
         bool x = one.Transform.GetPosition().x + one.Size.x >= two.Transform.GetPosition().x &&
@@ -27,23 +27,11 @@ namespace crynn
         // collision only if on every axes
         return true;
     }
-
-    bool AABBSolver::Compare(const AABB& one, const AABB& two, std::function<void(const AABB& one, const AABB& two)> func)
+    bool AABB::Compare(const AABB& one, const AABB& two, std::function<void(const AABB& one, const AABB& two)> func)
     {
         if (Compare(one, two))
         {
             func(one, two);
-            return true;
-        }
-
-        return false;
-    }
-
-    bool AABBSolver::Compare(const AABB& one, const AABB& two, std::function<void()> func)
-    {
-        if (Compare(one, two))
-        {
-            func();
             return true;
         }
 
