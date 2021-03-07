@@ -26,6 +26,27 @@ namespace crynn
 		return (vec1.x * vec2.x) + (vec1.y * vec2.y) + (vec1.z * vec2.z);
 	}
 
+	Vec3 Vec3::Parse(const char* vertexTextStart)
+	{
+		//Get vector components
+		float x = 0.0f, y = 0.0f, z = 0.0f;
+		char* nextFloatEnd; //used in strtof. check strtof docs to understand
+
+		//Parse the vertex values
+		x = strtof(vertexTextStart, &nextFloatEnd);
+		y = strtof(nextFloatEnd, &nextFloatEnd);
+		z = strtof(nextFloatEnd, NULL);
+
+		//Create Vec3
+		return Vec3(x, y, z);
+	}
+
+	std::ostream& operator<< (std::ostream& out, const Vec3& other)
+	{
+		out << "X: " << other.x << " Y: " << other.y << " Z: " << other.z;
+
+		return out;
+	}
 	/////////////
 	///VEC3INT///
 	/////////////
