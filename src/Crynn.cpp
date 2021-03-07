@@ -3,12 +3,13 @@
 
 namespace crynn
 {
-	Engine::Engine(int windowWidth, int windowHeight, const char* winName) : 
-		m_window(Window(winName, windowWidth, windowHeight)) {}
+	Engine::Engine(int windowWidth, int windowHeight, const char* windowName) :
+		m_window(Window(windowName, windowWidth, windowHeight)) {}
 
 	void Engine::Run()
 	{
 		Application::Initialise();
+
 		while (!m_window.ShouldClose())
 		{
 			m_window.BeforeRender();
