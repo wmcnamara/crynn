@@ -89,27 +89,23 @@ namespace crynn
 		return filePath; //Create a GetFileArgs object and return it.
 	}
 
-	std::string IO::LoadFileStr(const char* relativePath)
+	std::shared_ptr<std::string> IO::LoadFileStr(const char* relativePath)
 	{
-		//Error checking 
-
+		//Error check
 		if (!FileExists(relativePath))
-		{
-			std::stringstream output;
-			output << "Attemped to load file that doesnt exist at directory: " << relativePath << "\n";
+			std::cerr << "Tried loading file that does not exist: " << relativePath << "\n";
+		
+		//Create stream
+		std::ifstream t(relativePath);
 
-			throw std::runtime_error(output.str());
-		}
-
-		//Create streams to hold data
-		std::stringstream text;
-		std::ifstream stream;
-
-		//Load path, load data from it and close
-		stream.open(relativePath);
-		text << stream.rdbuf();	
-		stream.close();
-
-		return text.str();
+		//This looks funky but its just constructing an std::string with a streambuf iterator
+		return std::make_shared<std::string>
+		(
+			std::string
+			(
+				std::istreambuf_iterator<char>(t), 
+				std::istreambuf_iterator<char>()
+			)
+		);
 	}
 }
