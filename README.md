@@ -21,6 +21,7 @@ Crynn relies on a multitude of dependencies. They are listed here:
 - [Dear IMGUI](https://github.com/ocornut/imguiDear) for GUI.
 - [GLM](https://glm.g-truc.net/0.9.8/index.html) for matrix and other graphics related mathematics.
 - [STB_IMAGE](https://github.com/nothings/stb) for image loading.
+- [SFML](https://github.com/SFML/sfml) for audio.
 
 *Crynn does not use submodules for its dependencies. You can find the dependency files in the lib/thirdparty folder.*
 
