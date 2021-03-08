@@ -4,9 +4,23 @@
 #include "../Utility/Debug.h"
 #include "../Utility/Timer.h"
 #include "Buffers/Buffers.h"
+#include "../Core/Math/Vec3.h"
 
 namespace crynn
 {
+	class Vertex 
+	{
+	public:
+		Vec3 vertex;
+		Vec3 normal;
+	};
+
+	enum VertexAttribFlags
+	{
+		VertexAttribNone = (1 << 0),
+		VertexAttribTexCoords = (1 << 2),
+	};
+
 	class Mesh
 	{
 	public:
@@ -23,7 +37,8 @@ namespace crynn
 			size_t numOfVertices,
 			unsigned int* indices,
 			size_t numOfIndices,
-			bool useEBO);
+			bool useEBO,
+			VertexAttribFlags flags);
 		~Mesh();
 		//TODO change parameter order.
 
@@ -48,10 +63,10 @@ namespace crynn
 		VBO m_vbo;
 
 		float* m_vertices;
-		size_t m_numOfVertices;
+		size_t m_numOfVertices = 0;
 
 		unsigned int* m_indices;
-		size_t m_numOfIndices;
+		size_t m_numOfIndices = 0;
 
 		bool m_useEBO;
 	};
