@@ -28,9 +28,6 @@
     <Filter Include="src\Utility">
       <UniqueIdentifier>{70464FB2-DCFB-C7A7-65F0-C17ED1A4BEAB}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Core\Collision">
-      <UniqueIdentifier>{3b01738a-87d5-4405-ad11-125609d614e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Core\Audio">
       <UniqueIdentifier>{5460fada-74b6-4589-9371-92299128bdad}</UniqueIdentifier>
     </Filter>
@@ -43,8 +40,14 @@
     <Filter Include="docs">
       <UniqueIdentifier>{699f3ae6-2a81-417a-b0f9-31a8a2408482}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Utility\Structures">
-      <UniqueIdentifier>{e91b091d-24cb-44bc-9d02-381f3c591a11}</UniqueIdentifier>
+    <Filter Include="src\Utility\Parsers">
+      <UniqueIdentifier>{3b1b2083-bd17-494f-9164-343ade56ad02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Physics">
+      <UniqueIdentifier>{efdef0b3-f4f1-424f-b6c9-a2618d0d3c93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Physics\Collision">
+      <UniqueIdentifier>{3b01738a-87d5-4405-ad11-125609d614e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -115,7 +118,7 @@
       <Filter>src\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Collision\AABB.h">
-      <Filter>src\Core\Collision</Filter>
+      <Filter>src\Core\Physics\Collision</Filter>
     </ClInclude>
     <ClInclude Include="src\Utility\Random.h">
       <Filter>src\Utility</Filter>
@@ -135,11 +138,23 @@
     <ClInclude Include="src\Core\Math\Math.h">
       <Filter>src\Core\Math</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utility\Parsers\STLParser.h">
+      <Filter>src\Utility\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Physics\Physics.h">
+      <Filter>src\Core\Physics</Filter>
+    </ClInclude>
     <ClInclude Include="src\Core\Scene.h">
       <Filter>src\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Math\Vec3.h">
       <Filter>src\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Buffers\Cache.h">
+      <Filter>src\Core\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Audio\Audio.h">
+      <Filter>src\Core\Audio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -195,7 +210,7 @@
       <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Collision\AABB.cpp">
-      <Filter>src\Core\Collision</Filter>
+      <Filter>src\Core\Physics\Collision</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\Random.cpp">
       <Filter>src\Utility</Filter>
@@ -224,14 +239,26 @@
     <ClCompile Include="src\Core\Math\Math.cpp">
       <Filter>src\Core\Math</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Scene.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
     <ClCompile Include="src\Crynn.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Math\Vec3.cpp">
       <Filter>src\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\Parsers\STLParser.cpp">
+      <Filter>src\Utility\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Physics\Physics.cpp">
+      <Filter>src\Core\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Buffers\Cache.cpp">
+      <Filter>src\Core\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Audio\Audio.cpp">
+      <Filter>src\Core\Audio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

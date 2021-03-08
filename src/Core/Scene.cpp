@@ -3,14 +3,12 @@
 
 namespace crynn
 {
-	void Scene::RemoveObject(int& ID)
+	void Scene::RemoveObject(OBJID ID)
 	{
 		if (!managedObjects.contains(ID))
 			throw std::runtime_error("Attempting to remove destroyed object");
 
 		markedForDealloc.insert(ID);
-
-		ID = 0;
 	}
 
 	void Scene::ClearObjects()
@@ -18,14 +16,14 @@ namespace crynn
 		managedObjects.clear();
 	}
 
-	int Scene::GetObjectCount()
+	uint64_t Scene::GetObjectCount()
 	{
 		return managedObjects.size();
 	}
 
 	void Scene::Clean()
 	{
-		for (int ID : markedForDealloc) 
+		for (uint64_t ID : markedForDealloc) 
 		{
 			managedObjects.erase(ID);
 		}

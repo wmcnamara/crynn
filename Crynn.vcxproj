@@ -57,7 +57,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CRYNN_PLATFORM_WINDOWS;CRYNN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)lib\thirdparty\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib\thirdparty\;$(ProjectDir)lib\thirdparty\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -71,7 +71,7 @@
     </Link>
     <Lib>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -101,7 +101,9 @@
     <ClInclude Include="lib\thirdparty\stb_image.h" />
     <ClInclude Include="lib\thirdparty\stb_perlin.h" />
     <ClInclude Include="src\Core\Application.h" />
+    <ClInclude Include="src\Core\Audio\Audio.h" />
     <ClInclude Include="src\Core\Buffers\Buffers.h" />
+    <ClInclude Include="src\Core\Buffers\Cache.h" />
     <ClInclude Include="src\Core\Collision\AABB.h" />
     <ClInclude Include="src\Core\CrynnObject.h" />
     <ClInclude Include="src\Core\EventListener.h" />
@@ -113,6 +115,7 @@
     <ClInclude Include="src\Core\Math\Vec3.h" />
     <ClInclude Include="src\Core\Mesh.h" />
     <ClInclude Include="src\Core\MeshRenderer.h" />
+    <ClInclude Include="src\Core\Physics\Physics.h" />
     <ClInclude Include="src\Core\Scene.h" />
     <ClInclude Include="src\Core\Shader.h" />
     <ClInclude Include="src\Core\Texture.h" />
@@ -122,6 +125,7 @@
     <ClInclude Include="src\GUI\GuiWindow.h" />
     <ClInclude Include="src\Utility\Debug.h" />
     <ClInclude Include="src\Utility\IO.h" />
+    <ClInclude Include="src\Utility\Parsers\STLParser.h" />
     <ClInclude Include="src\Utility\Random.h" />
     <ClInclude Include="src\Utility\Timer.h" />
   </ItemGroup>
@@ -133,7 +137,9 @@
     <ClCompile Include="lib\thirdparty\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="lib\thirdparty\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\Core\Application.cpp" />
+    <ClCompile Include="src\Core\Audio\Audio.cpp" />
     <ClCompile Include="src\Core\Buffers\Buffers.cpp" />
+    <ClCompile Include="src\Core\Buffers\Cache.cpp" />
     <ClCompile Include="src\Core\Collision\AABB.cpp" />
     <ClCompile Include="src\Core\CrynnObject.cpp" />
     <ClCompile Include="src\Core\EventListener.cpp" />
@@ -144,6 +150,7 @@
     <ClCompile Include="src\Core\Math\Vec3.cpp" />
     <ClCompile Include="src\Core\Mesh.cpp" />
     <ClCompile Include="src\Core\MeshRenderer.cpp" />
+    <ClCompile Include="src\Core\Physics\Physics.cpp" />
     <ClCompile Include="src\Core\Scene.cpp" />
     <ClCompile Include="src\Core\Shader.cpp" />
     <ClCompile Include="src\Core\Texture.cpp" />
@@ -153,6 +160,7 @@
     <ClCompile Include="src\GUI\GuiWindow.cpp" />
     <ClCompile Include="src\Utility\Debug.cpp" />
     <ClCompile Include="src\Utility\IO.cpp" />
+    <ClCompile Include="src\Utility\Parsers\STLParser.cpp" />
     <ClCompile Include="src\Utility\Random.cpp" />
     <ClCompile Include="src\Utility\Timer.cpp" />
     <ClCompile Include="src\Example.cpp" />

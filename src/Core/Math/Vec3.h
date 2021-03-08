@@ -1,5 +1,9 @@
 #pragma once
 #include <cmath>
+#include <ostream>
+
+#define VEC3_ZERO Vec3(0.0f, 0.0f, 0.0f)
+#define VEC3INT_ZERO Vec3Int(0, 0, 0)
 
 namespace crynn
 {
@@ -15,7 +19,8 @@ namespace crynn
 
 		Vec3 operator*(float n) const { return Vec3(x * n, y * n, z * n); }
 		Vec3 operator/(float n) const { return Vec3(x / n, y / n, z / n); }
-
+		
+		//Performs a dot product between this vector and other
 		float Dot(const Vec3& other) const;
 
 		//Euclidean length of this vector.
@@ -23,6 +28,19 @@ namespace crynn
 
 		//Performs a dot product between vec1 and vec2
 		static float Dot(const Vec3 vec1, const Vec3 vec2);
+
+		/// <summary>
+		/// Parses vertexTextStart for three floating point variables, and constructs a Vec3 from them.
+		/// Expected in the general format: "-1.0 1.0 1.0", or something similar.
+		/// Cannot contain other text like letters. Spaces between letters is ok.
+		/// </summary>
+		/// <param name="vertexTextStart">String to parse for a Vec3</param>
+		/// <returns>A Vec3 constructed from the parameters. Will return 0.0 for any component (xyz)
+		/// that fails to properly parse.
+		/// </returns>
+		static Vec3 Parse(const char* vertexTextStart);
+
+		friend std::ostream& operator<< (std::ostream& out, const Vec3& other);
 
 		float x = 0, y = 0, z;
 	};

@@ -36,15 +36,21 @@ using namespace glm;
 
 namespace crynn
 {
-	//Encapsulates window creation and running the game.
+	//Encapsulates the Crynn game engine.
 	class Engine
 	{
 	public:
+		/// <summary>
+		/// Creates an instance of the Crynn Game Engine
+		/// </summary>
+		/// <param name="windowWidth">Width of the window</param>
+		/// <param name="windowHeight">Height of the window</param>
+		/// <param name="windowName">Name of the window</param>
 		Engine
 		(
 			int windowWidth,
 			int windowHeight,
-			const char* winName
+			const char* windowName
 		);
 
 		~Engine();

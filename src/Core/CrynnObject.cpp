@@ -4,17 +4,11 @@ namespace crynn
 	CrynnObject::CrynnObject() : ID(GenerateID()) {}
 	CrynnObject::CrynnObject(const CrynnObject& other) : ID(GenerateID()) {}
 
-	CrynnObject& CrynnObject::operator=(const CrynnObject& other)
-	{
-		ID = other.ID;
-
-		return *this;
-	}
-
-	int CrynnObject::GenerateID()
+	OBJID CrynnObject::GenerateID()
 	{
 		Debug::Log("Crynn Object Created");
-		static unsigned int id = 0;
-		return id++;
+
+		static std::atomic_uint64_t nextID = 0;
+		return nextID++;
 	}
 }
