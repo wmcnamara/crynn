@@ -153,6 +153,9 @@
     <ClInclude Include="src\Core\Buffers\Cache.h">
       <Filter>src\Core\Buffers</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Audio\Audio.h">
+      <Filter>src\Core\Audio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\thirdparty\imgui\imgui.cpp">
@@ -253,6 +256,9 @@
     </ClCompile>
     <ClCompile Include="src\Core\Buffers\Cache.cpp">
       <Filter>src\Core\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Audio\Audio.cpp">
+      <Filter>src\Core\Audio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
