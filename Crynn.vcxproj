@@ -44,7 +44,6 @@
     <OutDir>$(SolutionDir)bin\Debug\</OutDir>
     <IntDir>$(SolutionDir)bin\obj\Debug\</IntDir>
     <TargetName>Crynn</TargetName>
-    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>bin\Release\</OutDir>
@@ -118,6 +117,7 @@
     <ClInclude Include="src\Core\Physics\Physics.h" />
     <ClInclude Include="src\Core\Scene.h" />
     <ClInclude Include="src\Core\Shader.h" />
+    <ClInclude Include="src\Core\Skybox.h" />
     <ClInclude Include="src\Core\Texture.h" />
     <ClInclude Include="src\Core\Transform.h" />
     <ClInclude Include="src\Core\Window.h" />
@@ -127,6 +127,7 @@
     <ClInclude Include="src\Utility\IO.h" />
     <ClInclude Include="src\Utility\Parsers\STLParser.h" />
     <ClInclude Include="src\Utility\Random.h" />
+    <ClInclude Include="src\Utility\Shapes.h" />
     <ClInclude Include="src\Utility\Timer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClCompile Include="src\Core\Physics\Physics.cpp" />
     <ClCompile Include="src\Core\Scene.cpp" />
     <ClCompile Include="src\Core\Shader.cpp" />
+    <ClCompile Include="src\Core\Skybox.cpp" />
     <ClCompile Include="src\Core\Texture.cpp" />
     <ClCompile Include="src\Core\Transform.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
