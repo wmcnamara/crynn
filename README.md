@@ -43,4 +43,4 @@ Once everything is installed, you can follow these steps to build Crynn:
 3. Right click the Crynn solution in the solution explorer, and select build.
 
 ## Using Crynn:
-Navigate to the docs/html directory, and open index.html. It will bring you to the introduction page, explaining how to use Crynn.
+Navigate to the [Github Wiki Page](https://github.com/wmcnamara/crynn/wiki). It will bring you to the introduction page, explaining how to use Crynn.
