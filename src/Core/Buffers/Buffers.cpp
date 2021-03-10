@@ -1,6 +1,6 @@
 #include "Buffers.h"
 
-crynn::VBO::VBO(float* vertexData, size_t size) : m_vertexData(vertexData), m_size(size)
+crynn::VBO::VBO(float* vertexData, size_t size) : m_size(size)
 {
 	glGenBuffers(1, &ID);
 	glBindBuffer(GL_ARRAY_BUFFER, ID);

@@ -21,13 +21,11 @@ namespace crynn
 		//TODO Implement real copy constructor
 		VBO(const VBO& other) = delete;
 
-		float* VertexData() { return m_vertexData; }
 		size_t VertexCount() { return m_size; }
 
 		GLuint GetID() const { return ID; }
 		void Bind() const { glBindBuffer(GL_ARRAY_BUFFER, ID); } //Calls glBindBuffer
 	private:
-		float* m_vertexData = nullptr;
 		size_t m_size = 0;
 		GLuint ID = 0;
 	};
