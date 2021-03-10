@@ -3,7 +3,7 @@
 namespace crynn
 {
 	std::shared_ptr<STLData> STLParser::Load(const char* path)
-	{
+	{		
 		//Create an object to hold the STL data
 		std::shared_ptr<STLData> stlData = std::make_shared<STLData>();
 
@@ -14,7 +14,7 @@ namespace crynn
 		std::stringstream strStream(*str); //to use getline
 
 		for (std::string line; std::getline(strStream, line); )
-		{					
+		{
 			const char* lineStart = line.c_str();
 
 			/*
@@ -22,12 +22,16 @@ namespace crynn
 				If it starts with "facet normal" it denotes a normal vector.
 			*/
 
+			if (line[0] != 'v' && line[0] != 'f')
+				continue;
+
 			if (strstr(line.c_str(), "vertex") != NULL)
-			{					
+			{
 				//Parse vertex
 				lineStart += sizeof("vertex"); //offset pointer to the floating point data
 
 				Vec3 vertex = Vec3::Parse(lineStart);
+
 				stlData->vertices.push_back(vertex.x);
 				stlData->vertices.push_back(vertex.y);
 				stlData->vertices.push_back(vertex.z);
@@ -38,14 +42,13 @@ namespace crynn
 				lineStart += sizeof("facet normal"); //offset pointer to the floating point data
 
 				Vec3 normal = Vec3::Parse(lineStart);
+
 				stlData->normals.push_back(normal.x);
 				stlData->normals.push_back(normal.y);
 				stlData->normals.push_back(normal.z);
 			}
-			else
-				continue;
 		}
 
-		return stlData;	
+		return stlData;
 	}
 }

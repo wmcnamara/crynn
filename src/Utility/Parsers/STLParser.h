@@ -2,7 +2,6 @@
 #include "../IO.h"
 #include "../../Core/Math/Vec3.h"
 #include "../../Core/Mesh.h"
-
 namespace crynn
 {
 	/// <summary>
