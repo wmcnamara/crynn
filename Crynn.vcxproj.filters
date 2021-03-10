@@ -156,6 +156,12 @@
     <ClInclude Include="src\Core\Audio\Audio.h">
       <Filter>src\Core\Audio</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Skybox.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\Shapes.h">
+      <Filter>src\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\thirdparty\imgui\imgui.cpp">
@@ -259,6 +265,9 @@
     </ClCompile>
     <ClCompile Include="src\Core\Audio\Audio.cpp">
       <Filter>src\Core\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Skybox.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
