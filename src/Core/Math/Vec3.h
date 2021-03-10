@@ -42,7 +42,7 @@ namespace crynn
 
 		friend std::ostream& operator<< (std::ostream& out, const Vec3& other);
 
-		float x = 0, y = 0, z;
+		float x = 0, y = 0, z = 0;
 	};
 
 	class Vec3Int 
@@ -59,6 +59,16 @@ namespace crynn
 		Vec3Int operator/(int n) const { return Vec3Int(x / n, y / n, z / n); }
 
 		int Dot(const Vec3Int& other) const;
+
+		/// <summary>
+		/// Parses textStart for three integer variables, and constructs a Vec3Int from them.
+		/// Expected in the general format: "-1 1 1", or something similar.
+		/// Cannot contain other text like letters. Spaces between letters is ok.
+		/// </summary>
+		/// <param name="vertexTextStart">String to parse for a Vec3Int</param>
+		/// <returns>A Vec3Int constructed from the parameters. Will return 0.0 for any component (xyz) that fails to properly parse.
+		/// </returns>
+		Vec3Int Parse(const char* textStart);
 
 		//Euclidean length of this vector.
 		float Length() const;

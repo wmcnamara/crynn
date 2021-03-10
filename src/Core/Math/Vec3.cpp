@@ -1,5 +1,6 @@
 #include "Vec2.h"
 #include "Vec3.h"
+
 namespace crynn
 {
 	Vec3::Vec3(float _x, float _y, float _z) : x(_x), y(_y), z(_z)
@@ -26,6 +27,7 @@ namespace crynn
 		return (vec1.x * vec2.x) + (vec1.y * vec2.y) + (vec1.z * vec2.z);
 	}
 
+
 	Vec3 Vec3::Parse(const char* vertexTextStart)
 	{
 		//Get vector components
@@ -47,6 +49,7 @@ namespace crynn
 
 		return out;
 	}
+
 	/////////////
 	///VEC3INT///
 	/////////////
@@ -56,6 +59,22 @@ namespace crynn
 	int Vec3Int::Dot(const Vec3Int& other) const
 	{
 		return (x * other.x) + (y * other.y) + (z * other.z);
+	}
+
+	Vec3Int Vec3Int::Parse(const char* textStart)
+	{
+		//Get vector components
+		int x = 0, y = 0, z = 0;
+		char* nextIntEnd; //used in strtof. check strtof docs to understand
+
+		//Parse the vertex values.
+		//These are casted to integers because the data is generally specified as floats, so its retrieved as a float and converted.
+		x = (int)strtof(textStart, &nextIntEnd);
+		y = (int)strtof(nextIntEnd, &nextIntEnd);
+		z = (int)strtof(nextIntEnd, NULL);
+
+		//Create Vec3
+		return Vec3Int(x, y, z);
 	}
 
 	float Vec3Int::Length() const
