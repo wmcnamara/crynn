@@ -12,7 +12,7 @@ namespace crynn
 	class Cache
 	{
 		//Constructs a cache object.
-		Cache(T& obj, std::function<void(T&)> recalculate) : m_recalculate(recalculate)
+		Cache(T& obj, std::function<void(T&)> recalculate) : m_recalculate(recalculate) {}
 
 		inline void Invalidate() { valid = false; }
 		inline void Validate() { valid = true; }
