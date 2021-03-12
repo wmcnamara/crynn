@@ -1,7 +1,7 @@
 #pragma once
 #include "../IO.h"
 #include "../../Core/Math/Vec3.h"
-#include "../../Core/Mesh.h"
+
 namespace crynn
 {
 	/// <summary>
@@ -32,4 +32,6 @@ namespace crynn
 	public:
 		static std::shared_ptr<STLData> Load(const char* path);
 	};
+	
+	using STLDataPtr = std::shared_ptr<STLData>;
 }
