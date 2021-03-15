@@ -2,10 +2,10 @@
 
 namespace crynn
 {
-	std::shared_ptr<STLData> STLParser::Load(const char* path)
+	STLDataPtr STLParser::Load(const char* path)
 	{		
 		//Create an object to hold the STL data
-		std::shared_ptr<STLData> stlData = std::make_shared<STLData>();
+		STLDataPtr stlData = std::make_shared<STLData>();
 
 		//Load the STL file into a string
 		std::shared_ptr<std::string> str = IO::LoadFileStr(path);

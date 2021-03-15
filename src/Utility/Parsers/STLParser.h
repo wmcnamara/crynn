@@ -13,8 +13,8 @@ namespace crynn
 		//Returns a boolean indicating if this STLData object contains no data.
 		bool Empty() const { return vertices.empty() && normals.empty(); }
 
-		size_t VertexCount() { return vertices.size(); }
-		size_t NormalCount() { return normals.size(); }
+		size_t VertexCount() const { return vertices.size(); }
+		size_t NormalCount() const { return normals.size(); }
 
 		//Returns the vertices in an OpenGL supported format.
 		//This function is relatively slow and should only be called when constructing objects.
@@ -24,14 +24,14 @@ namespace crynn
 		std::vector<float> normals;
 	};
 
+	using STLDataPtr = std::shared_ptr<STLData>;
+
 	/// <summary>
 	/// A class providing static functions to assist with loading Stereolithography files (STL)
 	/// </summary>
 	class STLParser
 	{
 	public:
-		static std::shared_ptr<STLData> Load(const char* path);
+		static STLDataPtr Load(const char* path);
 	};
-	
-	using STLDataPtr = std::shared_ptr<STLData>;
 }
