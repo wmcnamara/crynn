@@ -28,7 +28,7 @@ namespace crynn
 		/// </summary>
 		/// <param name="funcName">The name of the function that will appear in the logs next to the time.</param>
 		/// <param name="format">The format you would like the time displayed in.</param>
-		ScopedTimer(const char* funcName, TimeFormat format);
+		ScopedTimer(const char* funcName, TimeFormat format = TimeFormat::Milliseconds);
 		~ScopedTimer();
 
 		/// <summary>
