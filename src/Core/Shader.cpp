@@ -136,10 +136,15 @@ namespace crynn
 		glUniform1f(glGetUniformLocation(ID, name), value);
 	}
 
+	void Shader::SetVec2(const char* name, glm::vec3 vec) const
+	{		
+		glUniform2fv(glGetUniformLocation(ID, name), 1, glm::value_ptr(vec));
+	}
+
+
 	void Shader::SetMatrix4(const char* name, glm::mat4* matrix) const
 	{
 		glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
-		//LOGERR();
 	}
 
 	void Shader::SetBoolCurrent(const char* name, bool value)
@@ -164,6 +169,14 @@ namespace crynn
 		glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
 
 		glUniform1f(glGetUniformLocation(ID, name), value);
+	}
+
+	void Shader::SetVec2Current(const char* name, glm::vec3 vec)
+	{
+		GLint ID;
+		glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
+
+		glUniform2fv(glGetUniformLocation(ID, name), 1, glm::value_ptr(vec));
 	}
 
 	void Shader::SetMatrix4Current(const char* name, glm::mat4* matrix)
