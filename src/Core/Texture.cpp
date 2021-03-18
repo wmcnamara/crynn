@@ -101,7 +101,7 @@ namespace crynn
 
 		//Allocate memory for the new texture
 		size_t texBytes = m_width * m_height * m_nrChannels;
-		m_textureData = new unsigned char[texBytes];
+		m_textureData = (unsigned char*)malloc(texBytes); //malloc because stbi dellocates with free()
 
 		//copy texture memory
 		std::memcpy(m_textureData, other.m_textureData, m_width * m_height * m_nrChannels);
