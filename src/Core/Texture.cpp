@@ -33,9 +33,11 @@ namespace crynn
 #endif
 
 		if (m_valid)
+		{
 			stbi_image_free(m_textureData); //Delete old stb image texture memory
 			glDeleteTextures(1, &m_textureID); //Delete old texture memory if one was previously loaded.
-
+		}
+			
 		glGenTextures(1, &m_textureID);
 		glBindTexture(GL_TEXTURE_2D, m_textureID);
 
@@ -87,6 +89,46 @@ namespace crynn
 	unsigned int Texture::Height()
 	{
 		return m_height;
+	}
+
+	Texture::Texture(const Texture& other)
+	{
+		m_width = other.m_width;
+		m_height = other.m_height;
+		m_nrChannels = other.m_nrChannels;
+
+		m_valid = other.m_valid;
+
+		//Allocate memory for the new texture
+		size_t texBytes = m_width * m_height * m_nrChannels;
+		m_textureData = new unsigned char[texBytes];
+
+		//copy texture memory
+		std::memcpy(m_textureData, other.m_textureData, m_width * m_height * m_nrChannels);
+
+		//Create opengl data
+		glGenTextures(1, &m_textureID);
+		glBindTexture(GL_TEXTURE_2D, m_textureID);
+
+		// set the texture wrapping/filtering options (on the currently bound texture object)
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+		if (m_textureData)
+		{
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_textureData);
+
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+			glGenerateMipmap(GL_TEXTURE_2D);
+		}
+		else
+		{
+			std::cout << "Failed to load texture from copy constructor\n";
+			return;
+		}
+
+		m_valid = true;
 	}
 
 	Color Texture::operator()(unsigned int x, unsigned int y)

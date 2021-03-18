@@ -53,6 +53,9 @@ namespace crynn
 		/// <returns>The height of this texture
 		unsigned int Height();
 
+		//Copy constructor
+		Texture(const Texture& other);
+
 		/// <summary>
 		/// Checks if a texture is loaded
 		/// </summary>
