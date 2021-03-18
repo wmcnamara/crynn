@@ -26,6 +26,8 @@ namespace crynn
 		/// </summary>
 		/// <param name="path">Relative path to the texture file.</param>
 		Texture(const char* path);		
+		Texture(const Texture& other); //Copy constructor
+
 		Texture() = default; /// Creates a dummy texture object with no data.
 		~Texture();
 
@@ -52,9 +54,6 @@ namespace crynn
 
 		/// <returns>The height of this texture
 		unsigned int Height();
-
-		//Copy constructor
-		Texture(const Texture& other);
 
 		/// <summary>
 		/// Checks if a texture is loaded
