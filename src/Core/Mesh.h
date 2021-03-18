@@ -5,6 +5,7 @@
 #include "../Utility/Timer.h"
 #include "Buffers/Buffers.h"
 #include "../Core/Math/Vec3.h"
+#include "../Utility/Parsers/STLParser.h"
 
 namespace crynn
 {
@@ -19,6 +20,7 @@ namespace crynn
 	{
 		VertexAttribNone = (1 << 0),
 		VertexAttribTexCoords = (1 << 2),
+		VertexAttribNormVec = (1 << 3),
 	};
 
 	class Mesh
@@ -37,9 +39,10 @@ namespace crynn
 			size_t numOfVertices,
 			unsigned int* indices,
 			size_t numOfIndices,
-			bool useEBO,
 			VertexAttribFlags flags);
+
 		~Mesh();
+
 		//TODO change parameter order.
 
 		//Returns the amount of vertices this mesh contains.
@@ -53,6 +56,7 @@ namespace crynn
 			return 0;
 		}
 
+		bool IsReady() const { return m_ready; }
 		const VAO& GetVAO() const { return m_vao; }
 		const VBO& GetVBO() const { return m_vbo; }
 
@@ -62,12 +66,11 @@ namespace crynn
 		VAO m_vao;
 		VBO m_vbo;
 
-		float* m_vertices;
 		size_t m_numOfVertices = 0;
-
-		unsigned int* m_indices;
 		size_t m_numOfIndices = 0;
 
-		bool m_useEBO;
+		bool m_useEBO = false;
+
+		bool m_ready = true; //used to prevent render calls for uninitialized meshes
 	};
 }
