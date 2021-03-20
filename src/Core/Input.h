@@ -42,6 +42,9 @@ namespace crynn
 		//In screen coordinates.
 		static Vec2 GetMouseDelta();
 
+		//Returns a Vec2 with the current xy coordinate of the mouse in screen space.
+		static Vec2 GetMousePosition();
+
 		//Dispatched when the user scrolls the mouse wheel.
 		inline static Event<float> OnMouseScroll;
 	private:

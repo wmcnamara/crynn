@@ -76,6 +76,11 @@ namespace crynn
 		);
 	}
 
+	Vec2 Input::GetMousePosition()
+	{
+		return Vec2(m_xPos, m_yPos);
+	}
+
 	void Input::Init()
 	{
 		if (m_initialised)
