@@ -82,7 +82,7 @@ namespace crynn
 		//Create and apply the new rotation
 		rot *= glm::eulerAngleXYZ(glm::radians(rotation.x), glm::radians(rotation.y), glm::radians(rotation.z));
 
-		//Apply transform
+		//Apply translation
 		rot[3][0] = currentPos.x;
 		rot[3][1] = currentPos.y;
 		rot[3][2] = currentPos.z;
