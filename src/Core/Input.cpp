@@ -49,6 +49,33 @@ namespace crynn
 			return false;
 	}
 
+	void Input::UpdateKeyStateInternal(int key, bool state)
+	{
+		previousKeyStates[key] = currentKeyStates[key]; //Update previous keystate
+		currentKeyStates[key] = state; //Update current keystate
+	}
+
+	void Input::UpdateMousePosInternal()
+	{
+		double xPos = 0, yPos = 0;
+		glfwGetCursorPos(Window::GetGLFWWin(), &xPos, &yPos);
+
+		m_prevXPos = m_xPos;
+		m_prevYPos = m_yPos;
+
+		m_xPos = xPos;
+		m_yPos = yPos;
+	}
+
+	Vec2 Input::GetMouseDelta()
+	{
+		return Vec2
+		(
+			m_xPos - m_prevXPos,
+			m_yPos - m_prevYPos
+		);
+	}
+
 	void Input::Init()
 	{
 		if (m_initialised)

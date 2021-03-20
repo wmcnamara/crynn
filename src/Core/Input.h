@@ -33,32 +33,14 @@ namespace crynn
 		/// </summary>
 		/// <param name="key">The GLFW keycode of the key you're updating</param>
 		/// <param name="state">The boolean state of the key</param>
-		inline static void UpdateKeyStateInternal (int key, bool state)
-		{
-			previousKeyStates[key] = currentKeyStates[key]; //Update previous keystate
-			currentKeyStates[key] = state; //Update current keystate
-		}
+		static void UpdateKeyStateInternal(int key, bool state);
 
-		inline static void UpdateMousePosInternal() 
-		{
-			double xPos = 0, yPos = 0;
-			glfwGetCursorPos(Window::GetGLFWWin(), &xPos, &yPos);
-
-			m_prevXPos = m_xPos;
-			m_prevYPos = m_yPos;
-
-			m_xPos = xPos;
-			m_yPos = yPos;
-		}
-
-		static Vec2 GetMouseDelta()
-		{
-			return Vec2
-			(
-				m_xPos - m_prevXPos,
-				m_yPos - m_prevYPos
-			);
-		}
+		//Internally sets the mouse position for tracking
+		static void UpdateMousePosInternal();
+		
+		//Returns a Vector2 representing the difference in mouse position from the previous frame.
+		//In screen coordinates.
+		static Vec2 GetMouseDelta();
 
 		//Dispatched when the user scrolls the mouse wheel.
 		inline static Event<float> OnMouseScroll;
