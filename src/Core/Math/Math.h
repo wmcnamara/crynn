@@ -34,6 +34,6 @@ public:
 	//Returns a bool indicating if n is between min and max.
 	static constexpr bool Between(float min, float max, float n)
 	{
-		return n < max&& n > min;
+		return n < max && n > min;
 	}
 };
