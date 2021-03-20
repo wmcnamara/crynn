@@ -19,31 +19,15 @@ namespace crynn
 
 	Texture::~Texture()
 	{
-		if (m_valid)
-		{
-			stbi_image_free(m_textureData);
-			glDeleteTextures(1, &m_textureID);
-		}
+		stbi_image_free(m_textureData);
+		glDeleteTextures(1, &m_textureID);
 	}
 
 	void Texture::Load(const char* path)
 	{
 #ifdef CRYNN_DEBUG
-		ScopedTimer timer("Texture Load", TimeFormat::Milliseconds);
+		ScopedTimer timer("Texture Load");
 #endif
-
-		if (m_valid)
-		{
-			stbi_image_free(m_textureData); //Delete old stb image texture memory
-			glDeleteTextures(1, &m_textureID); //Delete old texture memory if one was previously loaded.
-		}
-			
-		glGenTextures(1, &m_textureID);
-		glBindTexture(GL_TEXTURE_2D, m_textureID);
-
-		// set the texture wrapping/filtering options (on the currently bound texture object)
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 		// load and generate the texture
 		stbi_set_flip_vertically_on_load(true);
@@ -51,6 +35,13 @@ namespace crynn
 
 		if (m_textureData)
 		{
+			glGenTextures(1, &m_textureID);
+			glBindTexture(GL_TEXTURE_2D, m_textureID);
+
+			// set the texture wrapping/filtering options (on the currently bound texture object)
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_textureData);
 
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -64,11 +55,9 @@ namespace crynn
 		}
 		else
 		{
-			std::cout << "Failed to load texture from " << path << "\n";
+			std::cout << "ERROR: Failed to load texture from " << path << "\n";
 			return;
 		}
-
-		m_valid = true;
 	}
 
 	unsigned int Texture::GetTextureID()
@@ -97,11 +86,9 @@ namespace crynn
 		m_height = other.m_height;
 		m_nrChannels = other.m_nrChannels;
 
-		m_valid = other.m_valid;
-
 		//Allocate memory for the new texture
 		size_t texBytes = m_width * m_height * m_nrChannels;
-		m_textureData = (unsigned char*)malloc(texBytes); //malloc because stbi dellocates with free()
+		m_textureData = (unsigned char*)STBI_MALLOC(texBytes); //malloc because stbi dellocates with free()
 
 		//copy texture memory
 		std::memcpy(m_textureData, other.m_textureData, m_width * m_height * m_nrChannels);
@@ -127,8 +114,6 @@ namespace crynn
 			std::cout << "Failed to load texture from copy constructor\n";
 			return;
 		}
-
-		m_valid = true;
 	}
 
 	Color Texture::operator()(unsigned int x, unsigned int y)
