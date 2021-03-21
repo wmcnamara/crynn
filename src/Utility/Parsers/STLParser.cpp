@@ -75,18 +75,17 @@ namespace crynn
 
 		for (int i = 0; i < vertices.size() / 3; i++)
 		{
+			//Every three vertices get a new normal vector
+			if (i % 3 == 0 && i != 0)
+				normIter +=3;
+
 			vertData.push_back(vertices[vertIter]);
 			vertData.push_back(vertices[vertIter +1]);
 			vertData.push_back(vertices[vertIter +2]);
 
 			vertData.push_back(normals[normIter]);
 			vertData.push_back(normals[normIter + 1]);
-			vertData.push_back(normals[normIter + 2]);
-
-			std::cout << "norm " << "x: " << normals[normIter] << " y: " << normals[normIter + 1] << " z: " << normals[normIter + 2] << "\n";
-			//Every three vertices get a new normal vector
-			if (i % 3 == 0 && i != 0)
-				normIter +=3;
+			vertData.push_back(normals[normIter + 2]);			
 
 			vertIter += 3;
 		}	
