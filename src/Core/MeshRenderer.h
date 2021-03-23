@@ -30,6 +30,7 @@ namespace crynn
 		void Update(double deltaTime) override;
 		mat4& m_model;
 		 
+		const glm::mat3 m_normalMat;
 		const Mesh& m_mesh;
 		const Texture& m_texture;
 		const Shader& m_shader;
