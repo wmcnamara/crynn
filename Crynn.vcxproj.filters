@@ -162,6 +162,12 @@
     <ClInclude Include="src\Core\Physics\Collision\AABB.h">
       <Filter>src\Core\Physics\Collision</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utility\Parsers\OBJParser.h">
+      <Filter>src\Utility\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\Defines.h">
+      <Filter>src\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\thirdparty\imgui\imgui.cpp">

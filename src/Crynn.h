@@ -2,6 +2,7 @@
 #pragma once
 
 #define IMGUI_DEFINE_MATH_OPERATORS
+#include "Utility/Defines.h"
 
 #include "Core/Window.h"
 #include "Core/Camera.h"
@@ -23,8 +24,8 @@
 
 #include "GUI/GuiWindow.h"
 
-#include "imgui/imgui.h"
-#include "imgui/imgui_internal.h"
+#include "../lib/thirdparty/imgui/imgui.h"
+#include "../lib/thirdparty/imgui/imgui_internal.h"
 
 #include <memory>
 #include <future>
