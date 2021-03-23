@@ -16,9 +16,15 @@ namespace crynn
 		virtual ~CrynnObject() = default;
 
 		CrynnObject(const CrynnObject& other);
+		CrynnObject& operator=(const CrynnObject& other);
 
-		Transform& GetTransform() { return *reinterpret_cast<Transform*>(this); }
+		CrynnObject(CrynnObject&& other) noexcept;
+		CrynnObject& operator=(CrynnObject&& other) noexcept;
+
+		Transform& GetTransform() { return *this; }
+
 		inline bool operator== (CrynnObject& other) const { return ID == other.ID; }
+		bool Compare(CrynnObject& other) const { return ID == other.ID; }
 
 		OBJID GetID() { return ID; }
 
