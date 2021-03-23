@@ -141,13 +141,17 @@ namespace crynn
 		glUniform2fv(glGetUniformLocation(ID, name), 1, glm::value_ptr(vec));
 	}
 
-	void Shader::SetVec3(const char* name, glm::vec3 vec) const
+	void Shader::SetVec3(const char* name, const glm::vec3 vec) const
 	{
 		glUniform3fv(glGetUniformLocation(ID, name), 1, glm::value_ptr(vec));
 	}
 
+	void Shader::SetMatrix3(const char* name, const glm::mat3* matrix) const
+	{
+		glUniformMatrix3fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
+	}
 
-	void Shader::SetMatrix4(const char* name, glm::mat4* matrix) const
+	void Shader::SetMatrix4(const char* name, const glm::mat4* matrix) const
 	{
 		glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
 	}
@@ -192,7 +196,15 @@ namespace crynn
 		glUniform3fv(glGetUniformLocation(ID, name), 1, glm::value_ptr(vec));
 	}
 
-	void Shader::SetMatrix4Current(const char* name, glm::mat4* matrix)
+	void Shader::SetMatrix3Current(const char* name, const glm::mat3* matrix)
+	{
+		GLint ID;
+		glGetIntegerv(GL_CURRENT_PROGRAM, &ID);
+
+		glUniformMatrix3fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(*matrix));
+	}
+
+	void Shader::SetMatrix4Current(const char* name, const glm::mat4* matrix)
 	{
 		GLint ID;
 		glGetIntegerv(GL_CURRENT_PROGRAM, &ID);

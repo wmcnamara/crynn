@@ -31,7 +31,8 @@ namespace crynn
 		void SetFloat(const char* name, float value) const;
 		void SetVec2(const char* name, glm::vec2 vec) const;
 		void SetVec3(const char* name, glm::vec3 vec) const;
-		void SetMatrix4(const char* name, glm::mat4* matrix) const;
+		void SetMatrix3(const char* name, const glm::mat3* matrix) const;
+		void SetMatrix4(const char* name, const glm::mat4* matrix) const;
 
 		//Static uniform functions. Will set value for the currently bound shader.
 		static void SetBoolCurrent(const char* name, bool value);
@@ -39,7 +40,8 @@ namespace crynn
 		static void SetFloatCurrent(const char* name, float value);
 		static void SetVec2Current(const char* name, glm::vec2 vec);
 		static void SetVec3Current(const char* name, glm::vec3 vec);
-		static void SetMatrix4Current(const char* name, glm::mat4* matrix);
+		static void SetMatrix3Current(const char* name, const glm::mat3* matrix);
+		static void SetMatrix4Current(const char* name, const glm::mat4* matrix);
 
 	private:
 		unsigned int UBI;
