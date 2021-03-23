@@ -66,12 +66,12 @@ namespace crynn
 		return stlData;
 	}
 
-	std::vector<GLfloat> STLData::ComputeGLFormat()
+	std::vector<GLfloat> STLData::ComputeGLFormat() const
 	{
 		std::vector<GLfloat> vertData;
+
 		int normIter = 0;
 		int vertIter = 0;
-
 
 		for (int i = 0; i < vertices.size() / 3; i++)
 		{

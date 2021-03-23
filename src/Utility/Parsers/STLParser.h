@@ -1,4 +1,5 @@
 #pragma once
+#include "../Defines.h"
 #include "../IO.h"
 
 namespace crynn
@@ -10,19 +11,19 @@ namespace crynn
 	{
 	public:
 		//Returns a boolean indicating if this STLData object contains no data.
-		bool Empty() const { return vertices.empty() && normals.empty(); }
+		NODISCARD bool Empty() const { return vertices.empty() && normals.empty(); }
 
 		//Returns the number of vertex elements loaded from the model. 
-		size_t VertexCount() const { return vertices.size(); }
+		NODISCARD size_t VertexCount() const { return vertices.size(); }
 
 		//Returns the number of normal vector elements loaded from the model.
-		size_t NormalCount() const { return normals.size(); }
+		NODISCARD size_t NormalCount() const { return normals.size(); }
 
 		//Returns the vertices in an OpenGL supported format.
-		GLfloat* GetVertices() { return vertices.data(); }
+		NODISCARD GLfloat* GetVertices() { return vertices.data(); }
 
 		//Returns the normals in an OpenGL supported format.
-		GLfloat* GetNormals() { return normals.data(); }
+		NODISCARD GLfloat* GetNormals() { return normals.data(); }
 		
 		/*
 		//Computes an array that can be passed to a mesh with the vertices and normals aligned correctly.
@@ -33,8 +34,17 @@ namespace crynn
 		//Example vertex memory layout: 1.0f, 2.0f, 1.0f, 0.5f, 0.5f, 0.5f, 
 		//6 floats per vertex
 		*/
-		std::vector<GLfloat> ComputeGLFormat();
+		[[nodiscard("This function returns an std::vector with the data. Do not discard the return value.")]]
+		std::vector<GLfloat> ComputeGLFormat() const;
 
+		STLData() = default;
+		~STLData() = default;
+
+		STLData (const STLData& other) = default;
+		STLData& operator=(const STLData& other) = default;
+
+		STLData (STLData&& other) = default;
+		STLData& operator=(STLData&& other) = default;
 	private:
 		std::vector<float> vertices;
 		std::vector<float> normals;
@@ -50,6 +60,8 @@ namespace crynn
 	class STLParser
 	{
 	public:
+		//Loads an ASCII STL file into an STLDataPtr object.
+		//WILL NOT LOAD BINARY STL.
 		static STLDataPtr Load(const char* path);
 	};
 }
