@@ -54,6 +54,11 @@ namespace crynn
 		void SetUniformData();
 		void UpdateProjectionData();
 
+		vec3 m_target = vec3(0, 0, 0);
+		vec3 m_camInvDir = vec3(0, 0, 0);
+		vec3 m_right = vec3(0, 0, 0);
+		vec3 m_up = vec3(0, 0, 0);
+
 		float m_fov = 60.0f;
 	};
 }
