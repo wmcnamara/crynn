@@ -9,18 +9,13 @@
 
 namespace crynn
 {
-	class Vertex 
-	{
-	public:
-		Vec3 vertex;
-		Vec3 normal;
-	};
-
 	enum VertexAttribFlags
 	{
 		VertexAttribNone = (1 << 0),
 		VertexAttribTexCoords = (1 << 2),
 		VertexAttribNormVec = (1 << 3),
+
+		VertexAttribSTL = VertexAttribNormVec //Vertex attributes for an STL file
 	};
 
 	class Mesh
