@@ -1,10 +1,10 @@
 #pragma once
-#include "glad/glad.h"
 #include "glm/glm.hpp"
 #include "../Utility/Debug.h"
 #include "../Utility/Timer.h"
 #include "Buffers/Buffers.h"
 #include "../Utility/Parsers/STLParser.h"
+#include "glad/glad.h"
 
 namespace crynn
 {

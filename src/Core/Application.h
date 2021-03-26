@@ -1,9 +1,12 @@
 #pragma once
+#pragma warning (disable : 4005)
+
 #include "Event.h"
+#include "Window.h"
+
 #include "glad/glad.h"
 #include <GLFW/glfw3.h>
 
-#include "Window.h"
 
 #ifndef UNICODE
 #define UNICODE

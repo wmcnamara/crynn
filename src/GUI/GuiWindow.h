@@ -1,12 +1,15 @@
 #pragma once
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
+#pragma warning (disable : 4005)
+
 #include <iostream>
 #include "imgui/imgui.h"
 
 #include "../Core/Window.h"
 #include "../Core/Event.h"
 #include "../Core/EventListener.h"
+
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 namespace crynn
 {

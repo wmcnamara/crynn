@@ -1,9 +1,12 @@
 #pragma once
+#pragma warning (disable : 4005)
+
+#include <Windows.h>
 #include "stb_image.h"
 #include "imgui/imgui.h"
 #include <string>
 #include <iostream>
-#include <Windows.h>
+
 #include <shobjidl.h> 
 #include <stdlib.h>
 #include <fstream>

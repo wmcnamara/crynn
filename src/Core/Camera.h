@@ -1,8 +1,8 @@
 #pragma once
+#pragma warning (disable : 4005)
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
 
 #include "EventListener.h"
 #include "Window.h"
@@ -12,6 +12,8 @@
 
 #include "Math/Math.h"
 
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 namespace crynn 
 {
 	/// <summary>

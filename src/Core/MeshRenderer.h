@@ -1,4 +1,6 @@
 #pragma once
+#pragma warning (disable : 4005)
+
 #include "glad/glad.h"
 #include "Mesh.h"
 #include "Texture.h"

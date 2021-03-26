@@ -1,6 +1,7 @@
 #pragma once
-#include <glad/glad.h>
 #include <Windows.h>
+#include <glad/glad.h>
+#pragma warning (disable : 4005)
 
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
@@ -10,7 +11,6 @@
 #include "../Utility/Debug.h"
 
 #include "Application.h"
-#include "../Core/Math/Vec2.h"
 
 namespace crynn
 {

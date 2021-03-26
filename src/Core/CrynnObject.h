@@ -1,9 +1,11 @@
 #pragma once
+#pragma warning (disable : 4005)
+
 #include <memory>
 #include <unordered_map>
 #include <atomic>
-#include "EventListener.h"
 #include "Transform.h"
+#include "EventListener.h"
 
 namespace crynn
 {

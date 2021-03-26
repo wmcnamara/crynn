@@ -122,6 +122,7 @@
     <ClInclude Include="src\Crynn.h" />
     <ClInclude Include="src\GUI\GuiWindow.h" />
     <ClInclude Include="src\Utility\Debug.h" />
+    <ClInclude Include="src\Utility\Defines.h" />
     <ClInclude Include="src\Utility\IO.h" />
     <ClInclude Include="src\Utility\Parsers\STLParser.h" />
     <ClInclude Include="src\Utility\Random.h" />
