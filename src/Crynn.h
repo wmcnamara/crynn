@@ -1,5 +1,6 @@
 /// Includes almost all necessary engine components.
 #pragma once
+#pragma warning (disable : 4005)
 
 #define IMGUI_DEFINE_MATH_OPERATORS
 #include "Utility/Defines.h"
@@ -26,6 +27,8 @@
 
 #include "../lib/thirdparty/imgui/imgui.h"
 #include "../lib/thirdparty/imgui/imgui_internal.h"
+
+#include "Core/Math/Math.h"
 
 #include <memory>
 #include <future>
