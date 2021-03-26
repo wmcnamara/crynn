@@ -33,8 +33,6 @@
 
 #define DATA_PATH "data/"
 
-using namespace glm;
-
 namespace crynn
 {
 	//Encapsulates the Crynn game engine.
