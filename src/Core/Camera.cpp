@@ -1,13 +1,9 @@
 #include "Camera.h"
 namespace crynn
 {
-	Camera::Camera(vec3 position, Projection projType) : m_projType(projType)
+	Camera::Camera(Vec3 position, Projection projType) : m_projType(projType)
 	{
 		Translate(position);
-
-		m_camInvDir = glm::normalize(position - m_target);
-		m_right = glm::normalize(glm::cross(vec3(0.0f, 1.0f, 0.0f), m_camInvDir));
-		m_up = glm::cross(m_camInvDir, m_right);
 
 		//Generate a UBO
 		glGenBuffers(1, &m_matrixUBO);
@@ -41,8 +37,8 @@ namespace crynn
 	{
 		//Bind the UBO, fill and unbind.
 		glBindBuffer(GL_UNIFORM_BUFFER, m_matrixUBO);
-		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(m_projection));
-		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(GetMatrix()));
+		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr((glm::mat4)m_projection));
+		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr((glm::mat4)GetMatrix()));
 		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
 		Shader::SetVec3Current("cameraPos", GetPosition());
@@ -55,6 +51,13 @@ namespace crynn
 		//viewportDat[2] and [3] will have the width and height of the viewport
 		float viewportDat[4] = { 0, 0, 0, 0 };
 		glGetFloatv(GL_VIEWPORT, viewportDat);
+
+		//Dont construct a projection with a zero size width/height
+		if (viewportDat[2] < 1 || viewportDat[3] < 1)
+		{
+			viewportDat[2] = 1; 
+			viewportDat[3] = 1;
+		}
 
 		if (m_projType == Projection::Perspective)
 		{
