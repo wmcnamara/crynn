@@ -26,7 +26,7 @@ namespace crynn
 
 	void Transform::SetPosition(glm::vec3 position)
 	{
-		glm::mat4 posMat = glm::mat4(1.0f);
+		glm::mat4 posMat(1.0f);
 
 		//Set scale
 		posMat[0][0] = currentScale.x;
@@ -50,7 +50,7 @@ namespace crynn
 
 	void Transform::SetScale(glm::vec3 scale)
 	{
-		glm::mat4 scaleMat = glm::mat4(1.0f);
+		glm::mat4 scaleMat(1.0f);
 		scaleMat = glm::scale(scaleMat, scale);
 
 		//Create and apply the new rotation
@@ -72,7 +72,7 @@ namespace crynn
 
 	void Transform::SetRotation(glm::vec3 rotation)
 	{
-		glm::mat4 rot = glm::mat4(1.0f);
+		glm::mat4 rot(1.0f);
 
 		//Set scale
 		rot[0][0] = currentScale.x;
@@ -95,29 +95,5 @@ namespace crynn
 	glm::vec3 Transform::GetRotation() const
 	{
 		return currentRot;
-	}
-
-	glm::mat4 Transform::GetWorldMatrix() const
-	{
-		if (m_parent != nullptr) 
-		{
-			return m_parent->GetWorldMatrix() * GetLocalMatrix();
-		}
-		else 
-		{
-			return GetLocalMatrix();
-		}
-	}
-
-	glm::mat4 Transform::GetLocalMatrix() const
-	{
-		if (m_parent != nullptr) 
-		{
-			return GetLocalMatrix() * m_parent->GetWorldMatrix();
-		}
-		else 
-		{
-			return GetLocalMatrix();
-		}
 	}
 }

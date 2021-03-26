@@ -16,7 +16,7 @@ namespace crynn
 	class MeshRenderer : EventListener
 	{
 	public:
-		MeshRenderer(const Mesh& mesh, const Texture& texture, const Shader& shader, mat4& modelMatrix);
+		MeshRenderer(const Mesh& mesh, const Texture& texture, const Shader& shader, Mat4& modelMatrix);
 
 		inline const Mesh& GetMesh() const { return m_mesh; }
 		inline const Texture& GetTexture() const { return m_texture; }
@@ -28,9 +28,9 @@ namespace crynn
 		void Render();
 
 		void Update(double deltaTime) override;
-		mat4& m_model;
+		Mat4& m_model;
 		 
-		const glm::mat3 m_normalMat;
+		const Mat3 m_normalMat;
 		const Mesh& m_mesh;
 		const Texture& m_texture;
 		const Shader& m_shader;

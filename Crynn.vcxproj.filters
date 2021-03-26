@@ -123,9 +123,6 @@
     <ClInclude Include="src\Core\Buffers\Buffers.h">
       <Filter>src\Core\Buffers</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Math\Vec2.h">
-      <Filter>src\Core\Math</Filter>
-    </ClInclude>
     <ClInclude Include="src\Core\CrynnObject.h">
       <Filter>src\Core</Filter>
     </ClInclude>
@@ -144,9 +141,6 @@
     <ClInclude Include="src\Core\Scene.h">
       <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Math\Vec3.h">
-      <Filter>src\Core\Math</Filter>
-    </ClInclude>
     <ClInclude Include="src\Core\Buffers\Cache.h">
       <Filter>src\Core\Buffers</Filter>
     </ClInclude>
@@ -161,12 +155,6 @@
     </ClInclude>
     <ClInclude Include="src\Core\Physics\Collision\AABB.h">
       <Filter>src\Core\Physics\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utility\Parsers\OBJParser.h">
-      <Filter>src\Utility\Parsers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utility\Defines.h">
-      <Filter>src\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -230,9 +218,6 @@
     <ClCompile Include="src\Core\Buffers\Buffers.cpp">
       <Filter>src\Core\Buffers</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Math\Vec2.cpp">
-      <Filter>src\Core\Math</Filter>
-    </ClCompile>
     <ClCompile Include="src\Core\CrynnObject.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
@@ -250,9 +235,6 @@
     </ClCompile>
     <ClCompile Include="src\Crynn.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Math\Vec3.cpp">
-      <Filter>src\Core\Math</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\Parsers\STLParser.cpp">
       <Filter>src\Utility\Parsers</Filter>

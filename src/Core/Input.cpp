@@ -76,9 +76,9 @@ namespace crynn
 		);
 	}
 
-	Vec2 Input::GetMousePosition()
+	Vec2Int Input::GetMousePosition()
 	{
-		return Vec2(m_xPos, m_yPos);
+		return Vec2Int(m_xPos, m_yPos);
 	}
 
 	void Input::Init()

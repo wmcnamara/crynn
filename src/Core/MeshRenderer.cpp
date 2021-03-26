@@ -2,12 +2,12 @@
 
 namespace crynn
 {
-	MeshRenderer::MeshRenderer(const Mesh& mesh, const Texture& texture, const Shader& shader, mat4& modelMatrix) :
+	MeshRenderer::MeshRenderer(const Mesh& mesh, const Texture& texture, const Shader& shader, Mat4& modelMatrix) :
 		m_mesh(mesh),
 		m_texture(texture),
 		m_shader(shader),
 		m_model(modelMatrix),
-		m_normalMat(mat3(transpose(inverse(modelMatrix)))) //Calculate normal matrix
+		m_normalMat(Mat4(transpose(inverse(modelMatrix)))) //Calculate normal matrix
 	{}
 
 	void MeshRenderer::Render()

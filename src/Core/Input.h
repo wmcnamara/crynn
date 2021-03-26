@@ -1,5 +1,6 @@
 #pragma once
 #include "Window.h"
+#include "Math/Math.h"
 
 namespace crynn
 {
@@ -43,7 +44,7 @@ namespace crynn
 		static Vec2 GetMouseDelta();
 
 		//Returns a Vec2 with the current xy coordinate of the mouse in screen space.
-		static Vec2 GetMousePosition();
+		static Vec2Int GetMousePosition();
 
 		//Dispatched when the user scrolls the mouse wheel.
 		inline static Event<float> OnMouseScroll;

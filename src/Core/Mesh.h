@@ -4,7 +4,6 @@
 #include "../Utility/Debug.h"
 #include "../Utility/Timer.h"
 #include "Buffers/Buffers.h"
-#include "../Core/Math/Vec3.h"
 #include "../Utility/Parsers/STLParser.h"
 
 namespace crynn
