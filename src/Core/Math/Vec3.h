@@ -1,33 +1,18 @@
 #pragma once
 #include <cmath>
 #include <ostream>
+#include <glm/glm.hpp>
 
 #define VEC3_ZERO Vec3(0.0f, 0.0f, 0.0f)
 #define VEC3INT_ZERO Vec3Int(0, 0, 0)
 
 namespace crynn
 {
-	class Vec3
+	class Vec3 : public glm::vec3
 	{
 	public:
-		Vec3() = default;
+		Vec3() : glm::vec3(0, 0, 0) {}
 		Vec3(float _x, float _y, float _z);
-
-		//arithmetic overloads
-		Vec3 operator+(const Vec3& other) const { return Vec3(x + other.x, y + other.y, z + other.z); }
-		Vec3 operator-(const Vec3& other) const { return Vec3(x - other.x, y - other.y, z - other.z); }
-
-		Vec3 operator*(float n) const { return Vec3(x * n, y * n, z * n); }
-		Vec3 operator/(float n) const { return Vec3(x / n, y / n, z / n); }
-		
-		//Performs a dot product between this vector and other
-		float Dot(const Vec3& other) const;
-
-		//Euclidean length of this vector.
-		float Length() const;
-
-		//Performs a dot product between vec1 and vec2
-		static float Dot(const Vec3 vec1, const Vec3 vec2);
 
 		/// <summary>
 		/// Parses vertexTextStart for three floating point variables, and constructs a Vec3 from them.
@@ -41,11 +26,9 @@ namespace crynn
 		static Vec3 Parse(const char* vertexTextStart);
 
 		friend std::ostream& operator<< (std::ostream& out, const Vec3& other);
-
-		float x = 0, y = 0, z = 0;
 	};
 
-	class Vec3Int 
+	class Vec3Int : glm::ivec3
 	{
 	public:
 		Vec3Int() = default;
