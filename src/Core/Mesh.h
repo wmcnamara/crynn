@@ -36,6 +36,8 @@ namespace crynn
 			VertexAttribFlags flags);
 
 		~Mesh();
+		Mesh(Mesh& other) = delete;
+		Mesh operator=(Mesh& other) = delete;
 
 		//TODO change parameter order.
 
