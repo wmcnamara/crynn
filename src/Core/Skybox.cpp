@@ -2,7 +2,9 @@
 
 namespace crynn
 {
-    Skybox::Skybox(SkyboxFaceFilePathData sbData)
+    Skybox::Skybox(const SkyboxFilePathData& sbData) : 
+        m_shader(sbData.skyShader), 
+        Mesh(skyboxVertices, skyboxVerticesSize, 0, 0, VertexAttribNone)
     {
         glGenTextures(1, &m_id);
         glBindTexture(GL_TEXTURE_CUBE_MAP, m_id);
@@ -11,6 +13,7 @@ namespace crynn
         unsigned char* data;
         for (unsigned int i = 0; i < 6; i++)
         {
+            stbi_set_flip_vertically_on_load(false);
             data = stbi_load(sbData.filepaths[i], &width, &height, &nrChannels, 0);
             glTexImage2D(
                 GL_TEXTURE_CUBE_MAP_POSITIVE_X + i,
@@ -30,5 +33,17 @@ namespace crynn
     Skybox::~Skybox()
     {
         glDeleteTextures(1, &m_id);
+    }
+    
+    void Skybox::BeforeUpdate(double dt)
+    {
+        glDepthMask(GL_FALSE);
+
+        m_shader.Use();
+        GetVAO().Bind();
+
+        glBindTexture(GL_TEXTURE_CUBE_MAP, m_id);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glDepthMask(GL_TRUE);
     }
 }

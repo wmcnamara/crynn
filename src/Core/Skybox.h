@@ -3,27 +3,31 @@
 #include <array>
 #include "stb_image.h"
 #include "Shader.h"
+#include "EventListener.h"
+#include "../Utility/Shapes.h" //skybox vertices
+#include "../Core/Mesh.h"
 
 namespace crynn
 {
 	/// <summary>
 	/// Filepaths to the corresponding skybox texture
 	/// </summary>
-	struct SkyboxFaceFilePathData
+	struct SkyboxFilePathData
 	{
 		std::array<const char*, 6> filepaths;
 		Shader& skyShader;
 	};
 
-	class Skybox
+	class Skybox : EventListener, Mesh
 	{
 	public:
-		Skybox(SkyboxFaceFilePathData sbData);
+		Skybox(const SkyboxFilePathData& sbData);
 		~Skybox();
 
-
 	private:
-		static Skybox currentSkybox;
+		void BeforeUpdate(double dt) override;
+		
+		const Shader& m_shader;
 		GLuint m_id;
 	};
 }
