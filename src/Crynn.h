@@ -17,6 +17,7 @@
 #include "Core/CrynnObject.h"
 #include "Core/Scene.h"
 #include "Core/Physics/Collision/AABB.h"
+#include "Core/Skybox.h"
 
 #include "Utility/Debug.h"
 #include "Utility/IO.h"
