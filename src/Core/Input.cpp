@@ -37,12 +37,12 @@ namespace crynn
 
 		if (previousKeyStates[keyCode] == false && currentKeyStates[keyCode] == true) //If they werent holding before, but are now.
 		{
-			UpdateKeyStateInternal(keyCode, false);
+			UpdateKeyDownStateInternal(keyCode, false);
 			return true;
 		}
 		else if (previousKeyStates[keyCode] == true && currentKeyStates[keyCode] == true) //If they were holding before, and still are
 		{
-			UpdateKeyStateInternal(keyCode, true);
+			UpdateKeyDownStateInternal(keyCode, true);
 			return false;
 		}
 		else
@@ -79,6 +79,12 @@ namespace crynn
 	Vec2Int Input::GetMousePosition()
 	{
 		return Vec2Int(m_xPos, m_yPos);
+	}
+
+	void Input::UpdateKeyDownStateInternal(int key, bool state)
+	{
+		previousKeyStates[key] = getKeyDownStates[key]; //Update previous keystate
+		getKeyDownStates[key] = state; //Update current keystate
 	}
 
 	void Input::Init()

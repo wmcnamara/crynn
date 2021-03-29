@@ -49,8 +49,11 @@ namespace crynn
 		//Dispatched when the user scrolls the mouse wheel.
 		inline static Event<float> OnMouseScroll;
 	private:
+		static void UpdateKeyDownStateInternal(int key, bool state);
+
 		inline static bool currentKeyStates[349]; //The states of each key in the current frame.
 		inline static bool previousKeyStates[349]; //The states of each key from the previous frame. Needed for GetKeyDown
+		inline static bool getKeyDownStates[349]; //The states of each key from the previous frame for comparison. Needed for GetKeyDown
 
 		inline static bool m_initialised = false; //Is input initialised?
 
