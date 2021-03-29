@@ -1,6 +1,10 @@
 #pragma once
 #include <glm/glm.hpp>
 
+#define PI 3.14159f
+#define DEG2RAD PI / 180.0f //Converts an angle in degrees to radians
+#define RAD2DEG 180.0f / PI //Converts an angle in radians to degrees
+
 namespace crynn
 {		
 	//GLM Math typedefs

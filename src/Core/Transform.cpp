@@ -2,21 +2,21 @@
 
 namespace crynn
 {
-	void Transform::Translate(glm::vec3 translation)
+	void Transform::Translate(Vec3 translation)
 	{
 		m_matrix = glm::translate(m_matrix, translation);
 
 		currentPos += translation;
 	}	
 
-	void Transform::Scale(glm::vec3 scale)
+	void Transform::Scale(Vec3 scale)
 	{
 		m_matrix = glm::scale(m_matrix, scale);
 
 		currentScale += scale;
 	}
 
-	void Transform::Rotate(glm::vec3 rotation)
+	void Transform::Rotate(Vec3 rotation)
 	{
 		rotation *= DEG2RAD;
 		m_matrix *= glm::eulerAngleXYZ(rotation.x, rotation.y, rotation.z);
@@ -24,9 +24,9 @@ namespace crynn
 		currentRot += (rotation * RAD2DEG); //Convert back and add the new rotation
 	}
 
-	void Transform::SetPosition(glm::vec3 position)
+	void Transform::SetPosition(Vec3 position)
 	{
-		glm::mat4 posMat(1.0f);
+		Mat4 posMat(1.0f);
 
 		//Set scale
 		posMat[0][0] = currentScale.x;
@@ -43,14 +43,14 @@ namespace crynn
 		currentPos = position; //Update currentPos
 	}
 
-	glm::vec3 Transform::GetPosition() const
+	Vec3 Transform::GetPosition() const
 	{
 		return currentPos;
 	}
 
-	void Transform::SetScale(glm::vec3 scale)
+	void Transform::SetScale(Vec3 scale)
 	{
-		glm::mat4 scaleMat(1.0f);
+		Mat4 scaleMat(1.0f);
 		scaleMat = glm::scale(scaleMat, scale);
 
 		//Create and apply the new rotation
@@ -65,14 +65,14 @@ namespace crynn
 		currentScale = scale;
 	}
 
-	glm::vec3 Transform::GetScale() const
+	Vec3 Transform::GetScale() const
 	{
 		return currentScale;
 	}
 
-	void Transform::SetRotation(glm::vec3 rotation)
+	void Transform::SetRotation(Vec3 rotation)
 	{
-		glm::mat4 rot(1.0f);
+		Mat4 rot(1.0f);
 
 		//Set scale
 		rot[0][0] = currentScale.x;
@@ -92,7 +92,7 @@ namespace crynn
 		currentRot = rotation;
 	}
 
-	glm::vec3 Transform::GetRotation() const
+	Vec3 Transform::GetRotation() const
 	{
 		return currentRot;
 	}
