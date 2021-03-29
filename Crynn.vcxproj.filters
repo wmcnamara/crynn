@@ -49,6 +49,9 @@
     <Filter Include="src\Core\Physics\Collision">
       <UniqueIdentifier>{3b01738a-87d5-4405-ad11-125609d614e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Shaders">
+      <UniqueIdentifier>{440f7e93-c3c1-4d86-8b00-57728be55e5e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\thirdparty\imgui\imconfig.h">
@@ -268,6 +271,18 @@
     </None>
     <None Include="src\docsource\introprog.md">
       <Filter>docs</Filter>
+    </None>
+    <None Include="src\Shaders\Standard.frag">
+      <Filter>src\Shaders</Filter>
+    </None>
+    <None Include="src\Shaders\Standard.vert">
+      <Filter>src\Shaders</Filter>
+    </None>
+    <None Include="src\Shaders\Skybox.frag">
+      <Filter>src\Shaders</Filter>
+    </None>
+    <None Include="src\Shaders\Skybox.vert">
+      <Filter>src\Shaders</Filter>
     </None>
   </ItemGroup>
 </Project>
