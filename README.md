@@ -7,7 +7,25 @@
    Crynn is an open source game engine created with C++20 and OpenGL.
    Crynn is not overtly user friendly. Knowledge of matrix math, OpenGL and GLFW is required.
    Currently only supports building to Windows.
-   
+
+## Features
+- Made with C++20
+- Fast rendering with OpenGL
+- Robust Event System
+- Easy Setup
+- Texture Mapping
+- Built in Phong lighting/shading with easily extendable shading options
+- Simple collision detection
+- Skybox/Cubemapping
+- Audio with SFML
+- Simple IMGUI integration
+- A robust and varied utility library
+
+*Example scene in Crynn*
+<p align="left" width="100%">
+    <img width="50%" src="crynn_showcase.PNG"> 
+</p>
+
 ### Disclaimer
 This engine is mostly intended as a personal project to learn more about computer graphics, and create personal games. As such I will not make any guarantees about master branch stability. I'm not always consistent with my styling, and some of the implemented code is poor, and unfinished. 
 
