@@ -21,7 +21,8 @@
 - Simple IMGUI integration
 - A robust and varied utility library
 
-*Example scene in Crynn*
+#### Example Scene Rendered With Crynn
+
 <p align="left" width="100%">
     <img width="50%" src="crynn_showcase.PNG"> 
 </p>
