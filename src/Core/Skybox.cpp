@@ -15,6 +15,8 @@ namespace crynn
         {
             stbi_set_flip_vertically_on_load(false);
             data = stbi_load(sbData.filepaths[i], &width, &height, &nrChannels, 0);
+            if (!data)
+                std::cout << "ERROR: Sky Texture at path: " << sbData.filepaths[i] << " failed to load\n";
             glTexImage2D(
                 GL_TEXTURE_CUBE_MAP_POSITIVE_X + i,
                 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data
