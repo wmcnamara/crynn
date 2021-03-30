@@ -11,7 +11,7 @@
 ## Features
 - Made with C++20
 - Fast rendering with OpenGL
-- Robust Event System
+- Robust Event and Input System
 - Easy Setup
 - Texture Mapping
 - Built in Phong lighting/shading with easily extendable shading options
