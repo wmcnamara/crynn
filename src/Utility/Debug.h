@@ -17,7 +17,7 @@ namespace crynn
 	class Debug
 	{
 	public:
-		static void Log(const std::stringstream& msg); ///Writes msg to std::cout.
+		static void Log(const std::stringstream& msg); ///Writes msg to std::cout. Only works if CRYNN_DEBUG is defined
 		static void Log(const char* msg); ///Writes msg to std::cout.
 
 		static void LogToFile(const char* msg); /// Logs to output.log in the working directory. This function is not fast.
