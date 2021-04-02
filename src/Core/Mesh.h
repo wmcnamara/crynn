@@ -39,6 +39,9 @@ namespace crynn
 		Mesh(Mesh& other) = delete;
 		Mesh operator=(Mesh& other) = delete;
 
+		Mesh(Mesh&& other) = delete;
+		Mesh operator=(Mesh&& other) = delete;
+
 		//TODO change parameter order.
 
 		//Returns the amount of vertices this mesh contains.
