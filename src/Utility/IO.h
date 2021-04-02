@@ -51,6 +51,7 @@ namespace crynn
 		static inline Event<const char*> OnFileDrop;
 
 		//Allocates and loads a file into a string.
-		static std::shared_ptr<std::string> LoadFileStr(const char* relativePath);
+		//Returns an empty string if the file fails to load
+		static std::string LoadFileStr(const char* relativePath);
 	};
 }

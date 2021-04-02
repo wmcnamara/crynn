@@ -4,61 +4,30 @@ namespace crynn
 {
 	Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	{
-		// Retrieve the vertex/fragment source code from filePath
-		std::string vertexCode;
-		std::string fragmentCode;
-		std::ifstream vShaderFile;
-		std::ifstream fShaderFile;
+		std::string vertCode = IO::LoadFileStr(vertexPath);
+		std::string fragCode = IO::LoadFileStr(fragmentPath);
 
-		// ensure ifstream objects can throw exceptions:
-		vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-		fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-
-		try
-		{
-			// open files
-			vShaderFile.open(vertexPath);
-			fShaderFile.open(fragmentPath);
-
-			std::stringstream vShaderStream, fShaderStream;
-
-			// read file's buffer contents into streams
-			vShaderStream << vShaderFile.rdbuf();
-			fShaderStream << fShaderFile.rdbuf();
-
-			// close file handlers
-			vShaderFile.close();
-			fShaderFile.close();
-
-			// convert stream into string
-			vertexCode = vShaderStream.str();
-			fragmentCode = fShaderStream.str();
-		}
-		catch (std::ifstream::failure e)
-		{
-			Debug::Log("Shader Not Read");
-		}
-
-		const char* vShaderCode = vertexCode.c_str();
-		const char* fShaderCode = fragmentCode.c_str();
-
-		// 2. compile shaders
 		unsigned int vertex, fragment;
 
+		const char* vertCodePtr = vertCode.c_str();
+		const char* fragCodePtr = fragCode.c_str();
+
+		//compile
 		vertex = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(vertex, 1, &vShaderCode, NULL);
+		glShaderSource(vertex, 1, &vertCodePtr, NULL);
 		glCompileShader(vertex);
 
 		fragment = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(fragment, 1, &fShaderCode, NULL);
+		glShaderSource(fragment, 1, &fragCodePtr, NULL);
 		glCompileShader(fragment);
 
-		// shader Program
+		//link shader program
 		ID = glCreateProgram();
 		glAttachShader(ID, vertex);
 		glAttachShader(ID, fragment);
 		glLinkProgram(ID);
 
+		//debugging
 		ShaderLinkLog(ID);
 		ShaderCompileLog(vertex, fragment);
 

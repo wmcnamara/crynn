@@ -8,10 +8,10 @@ namespace crynn
 		STLDataPtr stlData = std::make_shared<STLData>();
 
 		//Load the STL file into a string
-		std::shared_ptr<std::string> str = IO::LoadFileStr(path);
+		std::string str = IO::LoadFileStr(path);
 
 		//Iterate through and get vertex/normal data into the data object
-		std::stringstream strStream(*str); //to use getline
+		std::stringstream strStream(str); //to use getline
 
 		for (std::string line; std::getline(strStream, line); )
 		{
