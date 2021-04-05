@@ -168,6 +168,10 @@
     <None Include="README.md" />
     <None Include="src\docsource\intro.md" />
     <None Include="src\docsource\introprog.md" />
+    <None Include="src\Shaders\Skybox.frag" />
+    <None Include="src\Shaders\Skybox.vert" />
+    <None Include="src\Shaders\Standard.frag" />
+    <None Include="src\Shaders\Standard.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
