@@ -16,3 +16,7 @@
 #ifdef _WIN64
 #define CRYNN_WINDOWS
 #endif
+
+#ifdef NDEBUG
+#define CRYNN_RELEASE
+#endif
