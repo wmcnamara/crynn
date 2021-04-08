@@ -55,8 +55,12 @@ namespace crynn
 		}
 		else
 		{
-			std::cout << "ERROR: Failed to load texture from " << path << "\n";
-			return;
+#ifdef CRYNN_DEBUG
+			std::cerr << "ERROR: Failed to load texture from " << path << "\n";
+			Debug::LogToFile("Failed to Load: ");
+			Debug::LogToFile(path);
+			throw std::runtime_error("Failed to load texture. Check output.log for details");
+#endif	
 		}
 	}
 
