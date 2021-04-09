@@ -14,6 +14,9 @@
 
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
+
+#include "../Utility/Defines.h"
+
 namespace crynn 
 {
 	/// <summary>
@@ -47,7 +50,7 @@ namespace crynn
 		void BeforeUpdate(double deltaTime) override;
 
 		Mat4 m_projection = Mat4(1.0f);
-		Projection m_projType;
+		Projection m_projType = Projection::Perspective;
 
 		unsigned int m_matrixUBO = 0;
 
