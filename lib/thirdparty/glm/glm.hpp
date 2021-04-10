@@ -134,3 +134,13 @@
 #include "matrix.hpp"
 #include "vector_relational.hpp"
 #include "integer.hpp"
+//GLM Math typedefs
+using Vec2 = glm::vec2;
+using Vec3 = glm::vec3;
+using Vec4 = glm::vec4;
+
+using Mat3 = glm::mat3;
+using Mat4 = glm::mat4;
+
+using Vec3Int = glm::ivec3;
+using Vec2Int = glm::ivec2;

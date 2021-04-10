@@ -173,6 +173,11 @@
     <None Include="src\Shaders\Standard.frag" />
     <None Include="src\Shaders\Standard.vert" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="lib\thirdparty\qu3e\qu3e\qu3e.vcxproj">
+      <Project>{6dcf1679-2ac7-4829-a3a4-d171f68c11d7}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

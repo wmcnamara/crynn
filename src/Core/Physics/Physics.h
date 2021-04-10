@@ -7,12 +7,12 @@ namespace crynn
 	/// <summary>
 	/// This class manages q3 physics scenes. It is not meant to be instantiated
 	/// </summary>
-	class Physics
+	class Physics 
 	{
 	public:
 		Physics() = delete;
 		~Physics() = delete;
-
+		
 		static void Init(); //Initialises the physics engine
 		static void UnInit(); //Deinitialises the physics engine
 

@@ -14,8 +14,8 @@
 - Robust Event and Input System
 - Easy Setup
 - Texture Mapping
+- Full rigidbody dynamics with [qu3e](https://github.com/RandyGaul/qu3e).
 - Built in Phong lighting/shading with easily extendable shading options
-- Simple collision detection
 - Skybox/Cubemapping
 - Audio with SFML
 - Simple IMGUI integration
@@ -38,6 +38,7 @@ Crynn relies on a multitude of dependencies. They are listed here:
 - [GLM](https://glm.g-truc.net/0.9.8/index.html) for matrix and other graphics related mathematics.
 - [STB_IMAGE](https://github.com/nothings/stb) for image loading.
 - [SFML](https://github.com/SFML/sfml) for audio.
+- [qu3e](https://github.com/RandyGaul/qu3e) for rigidbody dynamics.
 
 *Crynn does not use submodules for its dependencies. You can find the dependency files in the lib/thirdparty folder.*
 
