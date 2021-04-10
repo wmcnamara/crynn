@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Crynn", "Crynn.vcxproj", "{6FFEFB0C-DB12-24BE-A494-C71D106820EF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qu3e", "lib\thirdparty\qu3e\qu3e\qu3e.vcxproj", "{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,6 +27,18 @@ Global
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|Win32.ActiveCfg = Release|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|Win32.Build.0 = Release|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|x64.ActiveCfg = Release|Win32
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Debug|Win32.Build.0 = Debug|Win32
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Debug|x64.ActiveCfg = Debug|x64
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Debug|x64.Build.0 = Debug|x64
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Dist|Win32.ActiveCfg = Debug|Win32
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Dist|Win32.Build.0 = Debug|Win32
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Dist|x64.ActiveCfg = Debug|x64
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Dist|x64.Build.0 = Debug|x64
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Release|Win32.ActiveCfg = Release|Win32
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Release|Win32.Build.0 = Release|Win32
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Release|x64.ActiveCfg = Release|x64
+		{6DCF1679-2AC7-4829-A3A4-D171F68C11D7}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
