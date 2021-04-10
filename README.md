@@ -44,6 +44,7 @@ Crynn relies on a multitude of dependencies. They are listed here:
 ## Downloading Crynn:
 To get started, you will need a copy of the Crynn source. If you have Git installed, you can download Crynn by running this command in the console:
 `git clone https://github.com/wmcnamara/crynn.git --recursive`
+
 The dependencies for Crynn are in the lib folder. Make sure you do a recursive clone to fetch submodules.
 
 ## Building Crynn:
