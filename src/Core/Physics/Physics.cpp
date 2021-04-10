@@ -2,33 +2,27 @@
 
 namespace crynn
 {
-	Ray::Ray(Vec3 origin, Vec3 direction, float length) : 
-		m_origin(origin), 
-		m_dir(direction),
-		m_length(length) {}
-
-	bool Ray::CompAABB(AABB& other)
+	void Physics::Init()
 	{
-		const float maxSteps = m_length;
-		const float step = 0.1;
+		scene = new q3Scene(1.0 / 60.0);
 
-		for (float len = 0; len < maxSteps; len += step)
-		{
-			Vec3 p = m_origin + (m_dir * len);
+		initialised = true;
+	}
 
-			//check x
-			bool x = p.x >= other.Transform.GetPosition().x + other.Size.x;
-			
-			//check y
-			bool y = p.y >= other.Transform.GetPosition().y + other.Size.y;
-			
-			//check z
-			bool z = p.z >= other.Transform.GetPosition().z + other.Size.z;
+	void Physics::UnInit()
+	{
+		delete scene;
 
-			if (x && y && z)
-				return true;
-		}
+		initialised = false;
+	}
 
-		return false;
+	bool Physics::IsInit()
+	{
+		return initialised;
+	}
+
+	q3Scene* Physics::GetScene()
+	{
+		return scene;
 	}
 }
