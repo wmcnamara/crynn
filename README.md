@@ -27,9 +27,6 @@
     <img width="50%" src="crynn_showcase.PNG"> 
 </p>
 
-### Disclaimer
-This engine is mostly intended as a personal project to learn more about computer graphics, and create personal games. As such I will not make any guarantees about master branch stability. I'm not always consistent with my styling, and some of the implemented code is poor, and unfinished. 
-
 ## Dependencies
 Crynn relies on a multitude of dependencies. They are listed here:
 
@@ -63,3 +60,6 @@ Once everything is installed, you can follow these steps to build Crynn:
 
 ## Using Crynn:
 Navigate to the [Github Wiki Page](https://github.com/wmcnamara/crynn/wiki). It will bring you to the introduction page, explaining how to use Crynn.
+
+### Disclaimer
+This engine is mostly intended as a personal project to learn more about computer graphics, and create personal games. As such I will not make any guarantees about master branch stability. I'm not always consistent with my styling, and some of the implemented code is poor, and unfinished. 
