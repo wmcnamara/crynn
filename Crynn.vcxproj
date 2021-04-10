@@ -112,7 +112,6 @@
     <ClInclude Include="src\Core\Mesh.h" />
     <ClInclude Include="src\Core\MeshRenderer.h" />
     <ClInclude Include="src\Core\Physics\Collision\AABB.h" />
-    <ClInclude Include="src\Core\Physics\Collision\Collider.h" />
     <ClInclude Include="src\Core\Physics\Physics.h" />
     <ClInclude Include="src\Core\Physics\Rigidbody.h" />
     <ClInclude Include="src\Core\Scene.h" />
@@ -150,7 +149,6 @@
     <ClCompile Include="src\Core\Mesh.cpp" />
     <ClCompile Include="src\Core\MeshRenderer.cpp" />
     <ClCompile Include="src\Core\Physics\Collision\AABB.cpp" />
-    <ClCompile Include="src\Core\Physics\Collision\Collider.cpp" />
     <ClCompile Include="src\Core\Physics\Physics.cpp" />
     <ClCompile Include="src\Core\Physics\Rigidbody.cpp" />
     <ClCompile Include="src\Core\Scene.cpp" />

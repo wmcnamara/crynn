@@ -162,9 +162,6 @@
     <ClInclude Include="src\Utility\Defines.h">
       <Filter>src\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Physics\Collision\Collider.h">
-      <Filter>src\Core\Physics\Collision</Filter>
-    </ClInclude>
     <ClInclude Include="src\Core\Physics\Rigidbody.h">
       <Filter>src\Core\Physics</Filter>
     </ClInclude>
@@ -267,9 +264,6 @@
       <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Physics\Collision\AABB.cpp">
-      <Filter>src\Core\Physics\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Physics\Collision\Collider.cpp">
       <Filter>src\Core\Physics\Collision</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Physics\Rigidbody.cpp">
