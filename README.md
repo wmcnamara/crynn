@@ -40,13 +40,11 @@ Crynn relies on a multitude of dependencies. They are listed here:
 - [SFML](https://github.com/SFML/sfml) for audio.
 - [qu3e](https://github.com/RandyGaul/qu3e) for rigidbody dynamics.
 
-*Crynn does not use submodules for its dependencies. You can find the dependency files in the lib/thirdparty folder.*
-
 # Getting Started:
 ## Downloading Crynn:
 To get started, you will need a copy of the Crynn source. If you have Git installed, you can download Crynn by running this command in the console:
-`git clone https://github.com/wmcnamara/crynn.git`
-The dependencies for Crynn are in the lib folder, and do not use submodules.
+`git clone https://github.com/wmcnamara/crynn.git --recursive`
+The dependencies for Crynn are in the lib folder. Make sure you do a recursive clone to fetch submodules.
 
 ## Building Crynn:
 Crynn previously supported Premake for building the engine, but now only supports building for Visual Studio.
