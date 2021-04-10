@@ -3,6 +3,18 @@
 #include "../../../Core/Transform.h"
 #include "glm/glm.hpp"
 
+/*
+	File: AABB.h
+
+	Author:	Weston McNamara
+	Last Revised: 4/10/2021
+
+	Copyright (c) 2021 Weston McNamara https://www.wmcnamara.com/
+
+	This file is subject to the terms and conditions defined in the MIT License.
+	https://mit-license.org/
+*/
+
 namespace crynn
 {
 	/// <summary>
@@ -11,7 +23,7 @@ namespace crynn
 	class AABB
 	{
 	public:
-		AABB(Transform& transform, glm::vec3 size) : Transform(transform), Size(size) {}
+		AABB(const Transform& transform, glm::vec3 size) : Transform(transform), Size(size) {}
 
 		/// <summary>
 		/// Compares two AABB's for collisions.
@@ -24,7 +36,7 @@ namespace crynn
 		/// Returns true if 2 AABB's are colliding, and runs func with the two AABB's passed as parameters if they are collidiing.
 		static bool Compare(const AABB& one, const AABB& two, std::function<void(const AABB& one, const AABB& two)> func);
 
-		Transform& Transform;
+		const Transform& Transform;
 		glm::vec3 Size;
 	};
 }
