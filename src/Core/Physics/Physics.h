@@ -1,6 +1,6 @@
 #pragma once
 #include "../Physics/Collision/AABB.h"
-#include "qu3e/src/q3.h"
+#include "physics/src/q3.h"
 
 namespace crynn
 {
