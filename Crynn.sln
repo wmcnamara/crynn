@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Crynn", "Crynn.vcxproj", "{6FFEFB0C-DB12-24BE-A494-C71D106820EF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Physics", "lib\thirdparty\crynn\physics\Physics\Physics.vcxproj", "{0A45B8E0-4753-4D69-B762-3E7561F5E85F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Physics", "lib\thirdparty\physics\Physics\Physics.vcxproj", "{956F9F8B-7FCB-4F31-B804-95DAEC164D27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +21,14 @@ Global
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|Win32.ActiveCfg = Release|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|Win32.Build.0 = Release|Win32
 		{6FFEFB0C-DB12-24BE-A494-C71D106820EF}.Release|x64.ActiveCfg = Release|Win32
-		{0A45B8E0-4753-4D69-B762-3E7561F5E85F}.Debug|Win32.ActiveCfg = Debug|Win32
-		{0A45B8E0-4753-4D69-B762-3E7561F5E85F}.Debug|Win32.Build.0 = Debug|Win32
-		{0A45B8E0-4753-4D69-B762-3E7561F5E85F}.Debug|x64.ActiveCfg = Debug|x64
-		{0A45B8E0-4753-4D69-B762-3E7561F5E85F}.Debug|x64.Build.0 = Debug|x64
-		{0A45B8E0-4753-4D69-B762-3E7561F5E85F}.Release|Win32.ActiveCfg = Release|Win32
-		{0A45B8E0-4753-4D69-B762-3E7561F5E85F}.Release|Win32.Build.0 = Release|Win32
-		{0A45B8E0-4753-4D69-B762-3E7561F5E85F}.Release|x64.ActiveCfg = Release|x64
-		{0A45B8E0-4753-4D69-B762-3E7561F5E85F}.Release|x64.Build.0 = Release|x64
+		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Debug|Win32.ActiveCfg = Debug|Win32
+		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Debug|Win32.Build.0 = Debug|Win32
+		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Debug|x64.ActiveCfg = Debug|x64
+		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Debug|x64.Build.0 = Debug|x64
+		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Release|Win32.ActiveCfg = Release|Win32
+		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Release|Win32.Build.0 = Release|Win32
+		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Release|x64.ActiveCfg = Release|x64
+		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

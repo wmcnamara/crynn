@@ -1,0 +1,3 @@
+[submodule "lib/thirdparty/physics"]
+	path = lib/thirdparty/physics
+	url = https://github.com/wmcnamara/physics

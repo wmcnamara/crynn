@@ -176,8 +176,8 @@
     <None Include="src\Shaders\Standard.vert" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="lib\thirdparty\crynn\physics\Physics\Physics.vcxproj">
-      <Project>{0a45b8e0-4753-4d69-b762-3e7561f5e85f}</Project>
+    <ProjectReference Include="lib\thirdparty\physics\Physics\Physics.vcxproj">
+      <Project>{956f9f8b-7fcb-4f31-b804-95daec164d27}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
