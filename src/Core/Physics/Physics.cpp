@@ -6,6 +6,8 @@ namespace crynn
 	{
 		scene = new q3Scene(1.0 / 60.0);
 
+		stepID = Application::OnBeforeUpdate.AddHandler([](double dt) { Physics::Step(); }); //step the physics engine
+
 		initialised = true;
 	}
 
@@ -13,6 +15,7 @@ namespace crynn
 	{
 		delete scene;
 
+		Application::OnBeforeUpdate.RemoveHandler(stepID);
 		initialised = false;
 	}
 
@@ -24,5 +27,10 @@ namespace crynn
 	q3Scene* Physics::GetScene()
 	{
 		return scene;
+	}
+
+	void Physics::Step()
+	{
+		scene->Step();
 	}
 }
