@@ -9,7 +9,7 @@ namespace crynn
 	class Rigidbody
 	{
 	public:
-		//Construct a rigidbody. transform is the transform of the object you would like to be simulated. It also acts as default values.
+		//Constructs a rigidbody. The transform paramater should be the transform of the object you're simulating. It also acts as default values.
 		Rigidbody(RigidbodyDef def, Transform& transform);
  		virtual ~Rigidbody();
 

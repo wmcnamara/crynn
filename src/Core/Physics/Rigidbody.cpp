@@ -3,7 +3,7 @@ namespace crynn
 {
 	Rigidbody::Rigidbody(RigidbodyDef def, Transform& transform) : m_transform(transform)
 	{
-		assert(Physics::IsInit() && "Please initialise the physics engine with Physics::Init()");
+		assert(Physics::IsInit()); //Please initialise the physics engine with Physics::Init()
 
 		body = Physics::GetScene()->CreateBody(def);
 	}
