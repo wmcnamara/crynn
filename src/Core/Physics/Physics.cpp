@@ -13,6 +13,8 @@ namespace crynn
 
 	void Physics::UnInit()
 	{
+		assert(Physics::IsInit()); //assert to prevent double uninit
+
 		delete scene;
 
 		Application::OnBeforeUpdate.RemoveHandler(stepID);
