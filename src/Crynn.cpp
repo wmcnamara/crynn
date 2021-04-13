@@ -4,7 +4,10 @@
 namespace crynn
 {
 	Engine::Engine(int windowWidth, int windowHeight, const char* windowName) :
-		m_window(Window(windowName, windowWidth, windowHeight)) {}
+		m_window(Window(windowName, windowWidth, windowHeight)) 
+	{
+		Physics::Init(); //initialise physics
+	}
 
 	void Engine::Run()
 	{

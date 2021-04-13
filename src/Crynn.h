@@ -18,8 +18,7 @@
 #include "Core/Scene.h"
 #include "Core/Physics/Collision/AABB.h"
 #include "Core/Skybox.h"
-#include "physics/src/q3.h"
-
+#include "Core/Physics/Rigidbody.h"
 
 #include "Utility/Debug.h"
 #include "Utility/IO.h"
