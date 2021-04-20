@@ -18,6 +18,7 @@ namespace crynn
 		//Invoke update and OnBeforeUpdate
 		OnBeforeUpdate.Invoke(deltaTime * Application::TimeScale);
 		OnUpdate.Invoke(deltaTime * Application::TimeScale);
+		OnRender.Invoke();
 	}
 
 	void Application::Initialise()

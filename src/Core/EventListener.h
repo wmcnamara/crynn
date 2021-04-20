@@ -28,6 +28,9 @@ namespace crynn
 		virtual void Update(double deltaTime) {}
 		virtual void Start() {} ///Called once before the game enters its main loop. Will be called before the first Update.
 
+		//Called when the engine is going to render a frame
+		virtual void Render() {}
+
 		/// <summary>
 		/// Called once every frame before Update.
 		/// Generally used for setting uniforms, or other things that need to be set before any render calls.
@@ -46,6 +49,7 @@ namespace crynn
 		unsigned int startHandlerID = 0;
 		unsigned int beforeUpdateHandlerID = 0;
 		unsigned int beforeCloseHandlerID = 0;
+		unsigned int renderID = 0;
 	};
 }
 

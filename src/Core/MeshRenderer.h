@@ -27,9 +27,8 @@ namespace crynn
 		bool active = true; ///Toggle rendering
 	private:		
 		/// Draws a mesh to the screen with the objects specified int the constructor.
-		void Render();
+		void Render() override;
 
-		void Update(double deltaTime) override;
 		Mat4& m_model;
 		 
 		const Mat3 m_normalMat;

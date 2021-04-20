@@ -21,6 +21,7 @@ namespace crynn
 		startHandlerID = Application::OnStart.AddHandler([this]() { Start(); });		
 		beforeUpdateHandlerID = Application::OnBeforeUpdate.AddHandler([this](double deltaTime) { BeforeUpdate(deltaTime); });
 		beforeCloseHandlerID = Application::OnBeforeClose.AddHandler([this]() { BeforeClose(); });
+		renderID = Application::OnRender.AddHandler([this]() {Render(); });
 	}
 
 	void EventListener::UnsubscribeEvents()
@@ -30,5 +31,6 @@ namespace crynn
 		Application::OnStart.RemoveHandler(startHandlerID);
 		Application::OnBeforeUpdate.RemoveHandler(beforeUpdateHandlerID);
 		Application::OnBeforeClose.RemoveHandler(beforeCloseHandlerID);
+		Application::OnRender.RemoveHandler(renderID);
 	}
 }
