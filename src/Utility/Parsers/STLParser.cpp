@@ -62,7 +62,10 @@ namespace crynn
 				stlData->normals.push_back(z);
 			}
 		}
-
+			
+#ifdef CRYNN_DEBUG
+		std::cout << "Model loaded succesfully from " << path << "\n";
+#endif
 		return stlData;
 	}
 
