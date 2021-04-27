@@ -25,7 +25,7 @@ namespace crynn
 	}
 
 	//Allows user to choose an image and returns the filepath after selection.
-	std::string IO::GetFile()
+	std::string IO::OpenImageFilePicker()
 	{
 		std::string filePath = "";
 
@@ -107,5 +107,51 @@ namespace crynn
 		str = std::string(std::istreambuf_iterator<char>(t), std::istreambuf_iterator<char>());
 
 		return str;
+	}
+
+	bool IO::AddMediaPath(const char* pathStr)
+	{
+		fs::path path = fs::current_path() /= (pathStr);
+
+		if (fs::exists(path))
+		{
+			mediaPaths.push_back(pathStr);
+			return true;
+		}
+		else
+			return false;
+	}
+
+	GetFileData IO::GetMediaFile(const char* name)
+	{
+		GetFileData data;
+
+		for (fs::path mediaPath : mediaPaths) 
+		{
+			std::cout << "Looking in Media Path: " << mediaPath.string() << "\n";
+
+			//loop through files in media paths
+			for (auto& filePath : fs::directory_iterator(mediaPath))
+			{
+				//create a path relative to the media path for easy comparison
+				fs::path relativeFilePath = fs::relative(filePath, mediaPath);
+
+				//If we found the file, create an absolute path and use that.
+				if (relativeFilePath.string() == name)
+				{
+					data.succeeded = true;
+					data.absoluteFilePath = fs::absolute(relativeFilePath).string();
+					break;
+				}
+			}
+
+		}
+
+		if (data.succeeded)
+			std::cout << "File found at: " << data.absoluteFilePath << "\n";
+		else
+			std::cout << "File: " << name << " not found in media paths\n";
+
+		return data;
 	}
 }
