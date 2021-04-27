@@ -105,20 +105,23 @@ namespace crynn
 	void Window::BeforeRender()
 	{		
 		glfwPollEvents();
+		Input::StartPoll();
 
+		//setup IMGUI
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
+		//clear buffers
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		//TODO Move this out
 		//Create dockspace
 		//ImGui::DockSpaceOverViewport(ImGui::GetWindowViewport(), ImGuiDockNodeFlags_None);
 
+		//Setup viewport
 		glViewport(0, 0, (int)m_screenSize.x, (int)m_screenSize.y); //Set the default viewport.
 
-		Input::UpdateMousePosInternal();
 	}
 
 	//Called after rendering code. Ends IMGUI frames, swaps buffers, and polls events.

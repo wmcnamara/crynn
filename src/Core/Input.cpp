@@ -6,9 +6,12 @@ namespace crynn
 	{
 		//Update keystate according to action
 		if (action == GLFW_PRESS)
-			crynn::Input::UpdateKeyStateInternal(key, true);
+			crynn::Input::currentKeyStates[key] = true;
 		else if (action == GLFW_RELEASE)
-			crynn::Input::UpdateKeyStateInternal(key, false);
+		{
+			crynn::Input::currentKeyStates[key] = false;
+			crynn::Input::getKeyDownStates[key] = false;
+		}
 	}
 	
 	void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
@@ -20,43 +23,42 @@ namespace crynn
 	{
 		//Update mousebutton keystate according to action
 		if (action == GLFW_PRESS)
-			crynn::Input::UpdateKeyStateInternal(button, true);
+			crynn::Input::currentKeyStates[button] = true;
 		else if (action == GLFW_RELEASE)
-			crynn::Input::UpdateKeyStateInternal(button, false);
+		{
+			crynn::Input::currentKeyStates[button] = true;
+			crynn::Input::getKeyDownStates[button] = false;
+		}
 	}
 
 	bool Input::GetKey(KeyCode key)
 	{
 		//Cast keycode to its underlying int type because it is a strong enum.
-		return currentKeyStates[std::underlying_type<KeyCode>::type(key)];
+		int keyCode = std::underlying_type<KeyCode>::type(key);
+
+		return currentKeyStates[keyCode];
 	}
 
 	bool Input::GetKeyDown(KeyCode key)
 	{
-		int keyCode = std::underlying_type<KeyCode>::type(key);	//Cast keycode to its underlying int type because it is a strong enum.
+		//Cast keycode to its underlying int type because it is a strong enum.
+		int keyCode = std::underlying_type<KeyCode>::type(key);
+		bool keyCurrentlyPressed = currentKeyStates[keyCode];
 
-		if (previousKeyStates[keyCode] == false && currentKeyStates[keyCode] == true) //If they werent holding before, but are now.
+		if (keyCurrentlyPressed && !getKeyDownStates[keyCode])
 		{
-			UpdateKeyDownStateInternal(keyCode, false);
+			getKeyDownStates[keyCode] = true;
 			return true;
-		}
-		else if (previousKeyStates[keyCode] == true && currentKeyStates[keyCode] == true) //If they were holding before, and still are
-		{
-			UpdateKeyDownStateInternal(keyCode, true);
-			return false;
 		}
 		else
 			return false;
 	}
 
-	void Input::UpdateKeyStateInternal(int key, bool state)
-	{
-		previousKeyStates[key] = currentKeyStates[key]; //Update previous keystate
-		currentKeyStates[key] = state; //Update current keystate
-	}
-
 	void Input::UpdateMousePosInternal()
 	{
+		if (!Input::m_initialised)
+			return;
+
 		double xPos = 0, yPos = 0;
 		glfwGetCursorPos(Window::GetGLFWWin(), &xPos, &yPos);
 
@@ -81,12 +83,6 @@ namespace crynn
 		return Vec2Int(m_xPos, m_yPos);
 	}
 
-	void Input::UpdateKeyDownStateInternal(int key, bool state)
-	{
-		previousKeyStates[key] = getKeyDownStates[key]; //Update previous keystate
-		getKeyDownStates[key] = state; //Update current keystate
-	}
-
 	void Input::Init()
 	{
 		if (m_initialised)
@@ -95,9 +91,14 @@ namespace crynn
 		glfwSetKeyCallback(Window::GetGLFWWin(), key_callback);
 		glfwSetScrollCallback(Window::GetGLFWWin(), scroll_callback);
 		glfwSetMouseButtonCallback(Window::GetGLFWWin(), mouse_button_callback);
-
+		
 		m_initialised = true;
 
-		Debug::Log("Input Initialised");
+		std::cout << "Input Initialised\n";
+	}
+
+	void Input::StartPoll()
+	{
+		Input::UpdateMousePosInternal(); //update mouse data	
 	}
 }
