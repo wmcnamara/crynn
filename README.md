@@ -56,10 +56,10 @@ Visual Studio 2019 is officially recommended.
 Once everything is installed, you can follow these steps to build Crynn:
 1. Clone Crynn
 2. Open `Crynn.sln` in Visual Studio
-3. Right click the Crynn solution in the solution explorer, and select build.
+3. Right click the Crynn solution in the solution explorer, and select build. Do not launch the debugger, as it builds Crynn to a lib file by default, not an executable.
 
 ## Using Crynn:
 Navigate to the [Github Wiki Page](https://github.com/wmcnamara/crynn/wiki). It will bring you to the introduction page, explaining how to use Crynn.
 
 ### Disclaimer
-This engine is mostly intended as a personal project to learn more about computer graphics, and create personal games. As such I will not make any guarantees about master branch stability. I'm not always consistent with my styling, and some of the implemented code is poor, and unfinished. 
+This engine is mostly intended as a personal project to learn more about computer graphics, and create personal games. As such I will not make any guarantees about master branch stability. I'm not always consistent with my styling, and there are some unfinished parts of the engine.
