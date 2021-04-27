@@ -22,7 +22,7 @@ namespace crynn
 	class VBO
 	{
 	public:
-		VBO(float* vertices, size_t numOfVertices);
+		VBO(void* vertices, size_t numOfVertices);
 		VBO() = default;
 		~VBO();
 
@@ -38,7 +38,7 @@ namespace crynn
 		//Constructs the VBO with the data provided by the two parameters.
 		//Intended to allow delayed construction if you used the default constructor.
 		//Do not call Set unless you used the default constructor to create this object, it may result in memory leaks.
-		void Set(float* vertices, size_t numOfVertices);
+		void Set(void* vertices, size_t numOfVertices);
 
 		GLuint GetID() const { return ID; }
 		void Bind() const { glBindBuffer(GL_ARRAY_BUFFER, ID); } //Calls glBindBuffer

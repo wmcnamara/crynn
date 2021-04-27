@@ -1,6 +1,6 @@
 #include "Buffers.h"
 
-crynn::VBO::VBO(float* vertices, size_t numOfVertices) : m_size(numOfVertices)
+crynn::VBO::VBO(void* vertices, size_t numOfVertices) : m_size(numOfVertices)
 {
 	glGenBuffers(1, &ID);
 	glBindBuffer(GL_ARRAY_BUFFER, ID);
@@ -14,7 +14,7 @@ crynn::VBO::~VBO()
 	glDeleteBuffers(1, &ID);
 }
 
-void crynn::VBO::Set(float* vertices, size_t numOfVertices)
+void crynn::VBO::Set(void* vertices, size_t numOfVertices)
 {
 	//DO NOT call Set unless the object was constructed with the default constructor. 
 	//DO NOT call Set twice.
