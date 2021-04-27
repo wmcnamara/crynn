@@ -23,7 +23,7 @@ namespace crynn
 {
 	namespace fs = std::filesystem;
 
-	//Relevant data returned fro GetMediaFile.
+	//Relevant file data returned from GetMediaFile.
 	struct GetFileData 
 	{
 		bool succeeded = false; //does the file exist?
