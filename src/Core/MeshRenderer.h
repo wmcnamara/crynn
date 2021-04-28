@@ -18,13 +18,17 @@ namespace crynn
 	class MeshRenderer : EventListener
 	{
 	public:
-		MeshRenderer(const Mesh& mesh, const Texture& texture, const Shader& shader, Mat4& modelMatrix);
+		MeshRenderer(const Mesh& mesh, const Shader& shader, Mat4& modelMatrix);
 
 		inline const Mesh& GetMesh() const { return m_mesh; }
-		inline const Texture& GetTexture() const { return m_texture; }
 		inline const Shader& GetShader() const { return m_shader; }
 
 		bool active = true; ///Toggle rendering
+
+		//When true, all mesh renderers will bind and use their m_shader member variable as a shader to render with. If false, they will use the currently bound one.
+		//This should usually be true.
+		//Useful to easily apply a global shader to all meshrenderers without actually changing the member shader.
+		static inline bool UseMemberShader = true; 
 	private:		
 		/// Draws a mesh to the screen with the objects specified int the constructor.
 		void Render() override;
@@ -33,7 +37,6 @@ namespace crynn
 		 
 		const Mat3 m_normalMat;
 		const Mesh& m_mesh;
-		const Texture& m_texture;
 		const Shader& m_shader;
 	};
 }

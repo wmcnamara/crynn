@@ -33,8 +33,11 @@ namespace crynn
 		Vec3 GetRotation() const;
 
 		//Returns a non-const reference to the matrix struct this class is represented with
+		//The matrix represents the model relative to the world
 		inline Mat4& GetMatrix() { return m_matrix; }
 	private:
+		Mat4* parent;
+
 		//Updated when matrix transformations occur, used to easily return and track rotation scale and pos data.
 		Vec3 currentRot = Vec3(0.0);
 		Vec3 currentScale = Vec3(1.0, 1.0f, 1.0f);

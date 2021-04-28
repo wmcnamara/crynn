@@ -5,6 +5,7 @@
 #include "Buffers/Buffers.h"
 #include "../Utility/Parsers/STLParser.h"
 #include "glad/glad.h"
+#include "assimp/scene.h"
 
 namespace crynn
 {
@@ -17,8 +18,22 @@ namespace crynn
 		VertexAttribSTL = VertexAttribNormVec //Vertex attributes for an STL file
 	};
 
+	struct Vertex 
+	{
+		Vec3 Pos;
+		Vec3 Normal;
+		Vec2 TexCoord;
+	};
+
+	struct MeshTexData 
+	{
+		unsigned int id;
+		std::string type;
+	};
+
 	class Mesh
 	{
+
 	public:
 		/// <summary>
 		/// Creates a renderable mesh.
@@ -29,11 +44,9 @@ namespace crynn
 		/// <param name="numOfIndices">Number of elements in the indices array.</param>
 		/// <param name="useEBO">Setting this to true will generate an element buffer, and render with indices.</param>
 		Mesh(
-			float* vertices,
-			size_t numOfVertices,
-			unsigned int* indices,
-			size_t numOfIndices,
-			VertexAttribFlags flags);
+			std::vector<Vertex> _vertices,
+			std::vector<unsigned int> _indices,
+			std::vector<MeshTexData> _textures);
 
 		~Mesh();
 		Mesh(Mesh& other) = delete;
@@ -42,34 +55,37 @@ namespace crynn
 		Mesh(Mesh&& other) = delete;
 		Mesh operator=(Mesh&& other) = delete;
 
-		//TODO change parameter order.
-
-		//Returns the amount of vertices this mesh contains.
-		const unsigned int VertexCount() const { return m_numOfVertices; }
-		//Returns the amount of indices this mesh contains. Returns 0 if you are not using an EBO.
-		const unsigned int IndexCount() const
-		{
-			if (m_useEBO)
-				return m_numOfIndices;
-
-			return 0;
-		}
-
+		std::vector<Vertex> vertices;
+		std::vector<unsigned int> indices;
+		std::vector<MeshTexData> textures;
+		
 		bool IsReady() const { return m_ready; }
 		const VAO& GetVAO() const { return m_vao; }
 		const VBO& GetVBO() const { return m_vbo; }
 
-		const bool Indexed() const { return m_useEBO; } //Is this mesh using an EBO?
 	private:
-		EBO m_ebo; //EBO is optional
+		EBO m_ebo;
 		VAO m_vao;
 		VBO m_vbo;
 
-		size_t m_numOfVertices = 0;
-		size_t m_numOfIndices = 0;
-
-		bool m_useEBO = false;
-
 		bool m_ready = true; //used to prevent render calls for uninitialized meshes
+	};
+
+	class Model
+	{
+	public:
+		Model(const char* path);
+
+		//TODO move to MeshRenderer
+		void Render();
+
+	private:
+		std::vector<Mesh> m_meshes;
+		const char* directory;
+
+		void LoadModel(const char* path);
+		void ProcessNode(aiNode* node, const aiScene* scene);
+		Mesh ProcessMesh(aiMesh* mesh, const aiScene* scene);
+		std::vector<MeshTexData> LoadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);
 	};
 }

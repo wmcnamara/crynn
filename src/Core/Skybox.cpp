@@ -1,5 +1,5 @@
 #include "Skybox.h"
-
+/*
 namespace crynn
 {
     Skybox::Skybox(const SkyboxFilePathData& sbData) : 
@@ -49,3 +49,4 @@ namespace crynn
         glDepthMask(GL_TRUE);
     }
 }
+*/

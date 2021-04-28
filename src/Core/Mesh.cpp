@@ -1,53 +1,36 @@
 #include "Mesh.h"
+
 namespace crynn
 {
 	Mesh::Mesh(
-		float* vertices,
-		size_t numOfVertices,
-		unsigned int* indices,
-		size_t numOfIndices,
-		VertexAttribFlags flags) :
+		std::vector<Vertex> _vertices,
+		std::vector<unsigned int> _indices,
+		std::vector<MeshTexData> _textures) :
 
-		m_numOfVertices(numOfVertices),
-		m_numOfIndices(numOfIndices),
-		m_useEBO(indices != nullptr),
-		m_vao(),
-		m_vbo(vertices, numOfVertices)
+		vertices(_vertices),
+		indices(_indices),
+		textures(_textures),
+		m_vao() //binds the VAO
 	{
+#ifdef CRYNN_DEBUG
 		ScopedTimer timer("Mesh Construction", TimeFormat::Milliseconds);
-
-		//If they want an ebo, make one
-		if (m_useEBO)
-			m_ebo = EBO(indices, numOfIndices);
-		
-		size_t dataFieldCount = 3; // number of data fields for vertex attributes from the flags. Starts with 3 for xyz vertex.
-		size_t attribArrayCount = 0;
-
+#endif
 		//Vertex Attributes
-
-		if (flags & VertexAttribNormVec)
-		{
-			dataFieldCount += 3; //normal vector size
-			attribArrayCount++;
-		}
-
-		if (flags & VertexAttribTexCoords)
-		{
-			dataFieldCount += 2; //uv coord
-			attribArrayCount++;		
-		}
-	
-		//Texture coords
-		glVertexAttribPointer(attribArrayCount, 2, GL_FLOAT, GL_FALSE, dataFieldCount * sizeof(float), (void*)(3 * sizeof(float)));
-		glEnableVertexAttribArray(attribArrayCount);
-
-		//normal vec
-		glVertexAttribPointer(attribArrayCount, 3, GL_FLOAT, GL_FALSE, dataFieldCount * sizeof(float), (void*)(3 * sizeof(float)));
-		glEnableVertexAttribArray(attribArrayCount);
+		m_vbo.Set(vertices.data(), vertices.size());
+		m_ebo.Set(indices.data(), indices.size());
 
 		//Positon
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, dataFieldCount * sizeof(float), (void*)0);
-		glEnableVertexAttribArray(0);	
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
+		glEnableVertexAttribArray(0);
+
+		//normal vec
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, Normal));
+		glEnableVertexAttribArray(1);
+
+		//Texture coords
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, TexCoord));
+		glEnableVertexAttribArray(2);
+
 	}
 
 	Mesh::~Mesh()

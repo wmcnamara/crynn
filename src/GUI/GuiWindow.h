@@ -31,8 +31,6 @@ namespace crynn
 
 		virtual void GUIDraw() = 0;
 
-		void Update(double deltaTime) override;
-
 		const ImVec2 WindowSize(); ///Returns the size of the window.
 		const ImVec2 FrameBufferSize(); ///Returns the framebuffer size of the window.
 
@@ -40,6 +38,8 @@ namespace crynn
 		const float FrameBufferAspectRatio(); ///Returns (width/height) of the window framebuffer.	
 
 		const unsigned int& GetRenderTexture();
+
+		void AddFBOToDrawList();
 	protected:
 		bool active = true;
 
