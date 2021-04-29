@@ -1,5 +1,6 @@
 #pragma once
 #include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
 
 #define PI 3.14159f
 #define DEG2RAD PI / 180.0f //Converts an angle in degrees to radians
@@ -18,6 +19,7 @@ namespace crynn
 	using Vec3Int = glm::ivec3;
 	using Vec2Int = glm::ivec2;
 
+	using Quat = glm::quat;
 
 	/*
 		Creates a glm::vec3 from a string starting at parameter textStart.
