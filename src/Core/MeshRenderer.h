@@ -13,7 +13,7 @@
 namespace crynn
 {
 	/// <summary>
-	/// Renders a mesh with a shader and a texture.
+	/// Renders a mesh/model with a shader.
 	/// </summary>
 	class MeshRenderer : EventListener
 	{

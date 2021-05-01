@@ -21,6 +21,7 @@ namespace crynn
 		VertexAttribSTL = VertexAttribNormVec //Vertex attributes for an STL file
 	};
 
+	//Model vertex data
 	struct Vertex 
 	{
 		Vec3 Pos;
@@ -28,9 +29,10 @@ namespace crynn
 		Vec2 TexCoord;
 	};
 
+	//Internal model mesh texture data
 	struct MeshTexData 
 	{
-		unsigned int id;
+		unsigned int id = 0;
 		std::string type;
 		std::string path;
 	};
@@ -51,8 +53,6 @@ namespace crynn
 			std::vector<Vertex> _vertices,
 			std::vector<unsigned int> _indices,
 			std::vector<MeshTexData> _textures);
-
-		~Mesh();
 
 		std::vector<Vertex> vertices;
 		std::vector<unsigned int> indices;

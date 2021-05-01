@@ -142,8 +142,6 @@ namespace crynn
 
 		m_screenSize = ImVec2(width, height);
 		m_frameBufSize = ImVec2(frameBufWidth, frameBufHeight);
-
-		Debug::Log("OnWindowResize Dispatched!");
 	}
 
 	bool Window::ShouldClose()

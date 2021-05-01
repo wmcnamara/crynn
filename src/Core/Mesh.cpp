@@ -7,9 +7,9 @@ namespace crynn
 		std::vector<unsigned int> _indices,
 		std::vector<MeshTexData> _textures) :
 
-		vertices(_vertices),
-		indices(_indices),
-		textures(_textures)
+		vertices(std::move(_vertices)),
+		indices(std::move(_indices)),
+		textures(std::move(_textures))
 	{
 		glGenVertexArrays(1, &m_vao);
 		glGenBuffers(1, &m_vbo);
@@ -38,14 +38,6 @@ namespace crynn
 		//Texture coords
 		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, TexCoord));
 		glEnableVertexAttribArray(2);
-	}
-
-	Mesh::~Mesh()
-	{
-		//TODO Get the deletion done
-		//glDeleteBuffers(1, &m_vbo);
-		//glDeleteBuffers(1, &m_ebo);
-		//glDeleteVertexArrays(1, &m_vao);
 	}
 
 	unsigned int TextureFromFile(const char* path, const std::string& directory, bool gamma = false)
