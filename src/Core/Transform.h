@@ -34,15 +34,21 @@ namespace crynn
 		const Quat& GetRotation() const; //Returns a quaternion representing the objects rotation. If you would like euler angles, use GetRotationEuler().
 		Vec3 GetRotationEuler() const; //Returns a Vec3 with the euler angle rotation state.
 
-		//Returns a non-const reference to the matrix struct this class is represented with
-		//The matrix represents the model relative to the world
+		//Returns a non-const reference to the model matrix struct this class is represented with.
 		Mat4& GetMatrix() const;
+
+		Transform* parent = nullptr;
 	private:
 		Quat m_rotation = Quat(Vec3(0.0f, 0.0f, 0.0f));
 		Vec3 m_position = Vec3(0, 0, 0);
 		Vec3 m_scale = Vec3(1, 1, 1);
 
 		mutable Vec3 m_eulerRotation = Vec3(0, 0, 0); //Cache for the euler rotation of the object. Not used in any calculation. Degrees
-		mutable Mat4 m_matrix = Mat4(1.0f);
+		mutable Mat4 m_matrix = Mat4(1.0f); //model matrix with transformations relative to the world origin
+		mutable Mat4 m_localMatrix = Mat4(1.0f); //model matrix with transformations relative to the parents of this transform.
+
+		//Recursively computes a matrix that applies transformations from this matrice's parents, instead of the world.
+		//The matrix parameter passed to this function will have all the transformations from its parent transforms applied to it.
+		Mat4& ComputeLocalMatrixRecursive(Mat4& matrix, const Transform* const transform) const;
 	};
 }

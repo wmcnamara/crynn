@@ -58,13 +58,29 @@ namespace crynn
 		return m_eulerRotation;
 	}
 
+	//My own little implementation of a transformation hierarchy.
+	//Its a bit complicated, so take a moment to look through if you're confused.
+	//TODO implement matrix caching
+
 	Mat4& Transform::GetMatrix() const
 	{
+		//Apply this matrices world transformations
 		m_matrix = Mat4(1.0f);
 		m_matrix = glm::scale(m_matrix, m_scale);
 		m_matrix *= glm::mat4_cast(m_rotation);
 		m_matrix = glm::translate(m_matrix, m_position);
 
-		return m_matrix;
+		//Apply parent transformations to it aswell
+		m_localMatrix = m_matrix * ComputeLocalMatrixRecursive(m_matrix, this);
+
+		return m_localMatrix;
+	}
+
+	Mat4& Transform::ComputeLocalMatrixRecursive(Mat4& matrix, const Transform* const transform) const
+	{
+		if (transform->parent == nullptr)
+			return matrix;
+
+		return ComputeLocalMatrixRecursive(matrix *= parent->m_matrix, transform->parent);
 	}
 }
