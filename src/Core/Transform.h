@@ -15,13 +15,14 @@ namespace crynn
 	/// This class is mostly intended to be inherited from.
 	/// Any transformations made, (translate, scale rotate) will be applied to the "transformMatrix" member.
 	/// You can use this matrix however you please. Its generally used as a model or view matrix, and works very well with MeshRenderer.
+	/// Inspired from the Unity transform class.
 	/// </summary>
 	class Transform
 	{
 	public:
 	    void Translate(Vec3 translation);
 	    void Scale(Vec3 scale);
-	    void Rotate(Vec3 rotation);
+	    void Rotate(Vec3 rot);
 	   
 	    void SetPosition(Vec3 position);
 		Vec3 GetPosition() const;
@@ -29,20 +30,17 @@ namespace crynn
 	    void SetScale(Vec3 scale);
 		Vec3 GetScale() const;
 	   
-	    void SetRotation(Vec3 rotation);
-		Vec3 GetRotation() const;
+	    void SetRotation(Vec3 rot);
+		const Quat& GetRotation() const;
 
 		//Returns a non-const reference to the matrix struct this class is represented with
 		//The matrix represents the model relative to the world
-		inline Mat4& GetMatrix() { return m_matrix; }
+		Mat4& GetMatrix() const;
 	private:
-		Mat4* parent;
+		Quat m_rotation = Quat(Vec3(0.0f, 0.0f, 0.0f));
+		Vec3 m_position = Vec3(0, 0, 0);
+		Vec3 m_scale = Vec3(1, 1, 1);
 
-		//Updated when matrix transformations occur, used to easily return and track rotation scale and pos data.
-		Vec3 currentRot = Vec3(0.0);
-		Vec3 currentScale = Vec3(1.0, 1.0f, 1.0f);
-		Vec3 currentPos = Vec3(0.0);
-
-		Mat4 m_matrix = Mat4(1.0f);
+		mutable Mat4 m_matrix = Mat4(1.0f);
 	};
 }
