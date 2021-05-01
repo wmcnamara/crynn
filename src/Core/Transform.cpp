@@ -71,7 +71,7 @@ namespace crynn
 		m_matrix = glm::translate(m_matrix, m_position);
 
 		//Apply parent transformations to it aswell
-		m_localMatrix = m_matrix * ComputeLocalMatrixRecursive(m_matrix, this);
+		m_localMatrix = std::move(ComputeLocalMatrixRecursive(m_matrix, this));
 
 		return m_localMatrix;
 	}
