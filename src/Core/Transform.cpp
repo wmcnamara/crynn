@@ -16,6 +16,8 @@ namespace crynn
 	{		
 		rot *= DEG2RAD; //convert to radians
 		m_rotation *= glm::quat(rot);
+
+		m_eulerRotation += rot;
 	}
 
 	void Transform::SetPosition(Vec3 pos)
@@ -42,11 +44,18 @@ namespace crynn
 	{
 		rot *= DEG2RAD; //convert to radians
 		m_rotation = glm::quat(rot);
+
+		m_eulerRotation = rot;
 	}
 
 	const Quat& Transform::GetRotation() const
 	{
 		return m_rotation;
+	}
+
+	Vec3 Transform::GetRotationEuler() const
+	{
+		return m_eulerRotation;
 	}
 
 	Mat4& Transform::GetMatrix() const

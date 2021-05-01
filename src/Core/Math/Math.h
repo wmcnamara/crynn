@@ -49,6 +49,17 @@ namespace crynn
 			return ((max - min) * t) + min;
 		}
 
+		static constexpr float NormalizeAngle(float a)
+		{
+			if (a > 360)
+				return a - 360;
+
+			if (a < 0)
+				return 360 + a;
+
+			return a;
+		}
+
 		//Performs a linear interpolation of min and max with t. This function clamps t to 0 - 1.
 		static constexpr float LerpClamped(float min, float max, float t)
 		{
