@@ -71,6 +71,7 @@ namespace crynn
 		});
 
 		//Lambda for OnBeforeClose
+		//This is a workaround the C style function pointers GLFW requires I pass
 		auto func = [](GLFWwindow* w)
 		{
 			static_cast<Application*>(glfwGetWindowUserPointer(w))->OnBeforeClose.Invoke();
