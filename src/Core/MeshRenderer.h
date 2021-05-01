@@ -18,9 +18,9 @@ namespace crynn
 	class MeshRenderer : EventListener
 	{
 	public:
-		MeshRenderer(const Mesh& mesh, const Shader& shader, Mat4& modelMatrix);
+		MeshRenderer(const Model& mesh, const Shader& shader, const Transform& transform);
 
-		inline const Mesh& GetMesh() const { return m_mesh; }
+		inline const Model& GetModel() const { return m_model; }
 		inline const Shader& GetShader() const { return m_shader; }
 
 		bool active = true; ///Toggle rendering
@@ -33,10 +33,10 @@ namespace crynn
 		/// Draws a mesh to the screen with the objects specified int the constructor.
 		void Render() override;
 
-		Mat4& m_model;
+		const Transform& m_transform;
 		 
 		const Mat3 m_normalMat;
-		const Mesh& m_mesh;
+		const Model& m_model;
 		const Shader& m_shader;
 	};
 }

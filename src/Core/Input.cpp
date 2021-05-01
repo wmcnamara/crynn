@@ -35,6 +35,9 @@ namespace crynn
 	{
 		//Cast keycode to its underlying int type because it is a strong enum.
 		int keyCode = std::underlying_type<KeyCode>::type(key);
+		
+		if (keyCode >= KEYSTATE_BUFFER_SIZE) //prevent out of bounds
+			return false;
 
 		return currentKeyStates[keyCode];
 	}
@@ -43,6 +46,10 @@ namespace crynn
 	{
 		//Cast keycode to its underlying int type because it is a strong enum.
 		int keyCode = std::underlying_type<KeyCode>::type(key);
+
+		if (keyCode >= KEYSTATE_BUFFER_SIZE) //prevent out of bounds
+			return false;
+
 		bool keyCurrentlyPressed = currentKeyStates[keyCode];
 
 		if (keyCurrentlyPressed && !getKeyDownStates[keyCode])

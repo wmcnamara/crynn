@@ -5,7 +5,10 @@
 #include "Buffers/Buffers.h"
 #include "../Utility/Parsers/STLParser.h"
 #include "glad/glad.h"
-#include "assimp/scene.h"
+#include "Shader.h"
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
 namespace crynn
 {
@@ -29,6 +32,7 @@ namespace crynn
 	{
 		unsigned int id;
 		std::string type;
+		std::string path;
 	};
 
 	class Mesh
@@ -49,43 +53,39 @@ namespace crynn
 			std::vector<MeshTexData> _textures);
 
 		~Mesh();
-		Mesh(Mesh& other) = delete;
-		Mesh operator=(Mesh& other) = delete;
-
-		Mesh(Mesh&& other) = delete;
-		Mesh operator=(Mesh&& other) = delete;
 
 		std::vector<Vertex> vertices;
 		std::vector<unsigned int> indices;
 		std::vector<MeshTexData> textures;
 		
-		bool IsReady() const { return m_ready; }
-		const VAO& GetVAO() const { return m_vao; }
-		const VBO& GetVBO() const { return m_vbo; }
+		const GLuint& GetVAOID() const { return m_vao; }
+		const GLuint& GetVBOID() const { return m_vbo; }
 
+		void Render(const Shader& shader) const;
 	private:
-		EBO m_ebo;
-		VAO m_vao;
-		VBO m_vbo;
-
-		bool m_ready = true; //used to prevent render calls for uninitialized meshes
+		GLuint m_ebo = 0;
+		GLuint m_vao = 0;
+		GLuint m_vbo = 0;
 	};
+
+	//Adapted model loading from
+	//https://learnopengl.com/Model-Loading/Model
 
 	class Model
 	{
 	public:
 		Model(const char* path);
 
-		//TODO move to MeshRenderer
-		void Render();
+		void Render(const Shader& shader) const;
 
 	private:
 		std::vector<Mesh> m_meshes;
-		const char* directory;
+		std::string directory;
 
-		void LoadModel(const char* path);
+		void LoadModel(std::string path);
 		void ProcessNode(aiNode* node, const aiScene* scene);
 		Mesh ProcessMesh(aiMesh* mesh, const aiScene* scene);
 		std::vector<MeshTexData> LoadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);
+		std::vector<MeshTexData> textures_loaded;
 	};
 }

@@ -2,43 +2,20 @@
 
 namespace crynn
 {
-	MeshRenderer::MeshRenderer(const Mesh& mesh, const Shader& shader, Mat4& modelMatrix) :
-		m_mesh(mesh),
+	MeshRenderer::MeshRenderer(const Model& mesh, const Shader& shader, const Transform& transform) :
+		m_model(mesh),
 		m_shader(shader),
-		m_model(modelMatrix),
-		m_normalMat(Mat4(transpose(inverse(modelMatrix)))) //Calculate normal matrix
+		m_transform(transform),
+		m_normalMat(Mat4(transpose(inverse(transform.GetMatrix())))) //Calculate normal matrix //TODO calculate this before setting model
 	{}
 
 	void MeshRenderer::Render()
 	{
-		//https://learnopengl.com/Model-Loading/Mesh
+		m_shader.Use();
+		m_shader.SetFloat("time", (float)glfwGetTime()); //Set time uniform on current shader
+		m_shader.SetMatrix4("model", &m_transform.GetMatrix());
+		m_shader.SetMatrix3("normalMatrix", &m_normalMat);
 
-		if (!m_mesh.IsReady())
-			return;
-
-		unsigned int diffuseNr = 1;
-		unsigned int specularNr = 1;
-		for (unsigned int i = 0; i < m_mesh.textures.size(); i++)
-		{
-			glActiveTexture(GL_TEXTURE0 + i); // activate proper texture unit before binding
-
-			// retrieve texture number (the N in diffuse_textureN)
-			std::string number;
-			std::string name = m_mesh.textures[i].type;
-
-			if (name == "texture_diffuse")
-				number = std::to_string(diffuseNr++);
-			else if (name == "texture_specular")
-				number = std::to_string(specularNr++);
-
-			m_shader.SetFloat(("material." + name + number).c_str(), i);
-			glBindTexture(GL_TEXTURE_2D, m_mesh.textures[i].id);
-		}
-		glActiveTexture(GL_TEXTURE0);
-
-		// draw mesh
-		m_mesh.GetVAO().Bind();
-		glDrawElements(GL_TRIANGLES, m_mesh.indices.size(), GL_UNSIGNED_INT, 0);
-		glBindVertexArray(0);
+		m_model.Render(m_shader);
 	}
 }
