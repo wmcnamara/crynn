@@ -26,14 +26,17 @@ namespace crynn
 		return (ImGui::GetContentRegionAvail().x / ImGui::GetContentRegionAvail().y);
 	}
 
-	void GuiWindow::Update(double deltaTime)
-	{
-		GUIDraw();
-	}
-
 	const ImVec2 GuiWindow::WindowSize()
 	{
 		return ImGui::GetWindowSize();
+	}
+
+	void GuiWindow::AddFBOToDrawList()
+	{
+		ImGui::GetWindowDrawList()->AddImage(
+			(void*)m_renderTexture, ImVec2(ImGui::GetItemRectMin().x + m_pos.x,
+				ImGui::GetItemRectMin().y + m_pos.y),
+			ImVec2(m_pos.x + m_size.x / 2, m_pos.y + m_size.y / 2), ImVec2(0, 1), ImVec2(1, 0));
 	}
 
 	const ImVec2 GuiWindow::FrameBufferSize()

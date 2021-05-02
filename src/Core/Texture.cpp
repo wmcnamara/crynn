@@ -56,6 +56,7 @@ namespace crynn
 		else
 		{
 #ifdef CRYNN_DEBUG
+			m_textureData = nullptr; //prevents crash when deallocating
 			std::cerr << "ERROR: Failed to load texture from " << path << "\n";
 			Debug::LogToFile("Failed to Load: ");
 			Debug::LogToFile(path);
@@ -82,84 +83,6 @@ namespace crynn
 	unsigned int Texture::Height()
 	{
 		return m_height;
-	}
-
-	Texture::Texture(const Texture& other)
-	{
-		m_width = other.m_width;
-		m_height = other.m_height;
-		m_nrChannels = other.m_nrChannels;
-
-		//Allocate memory for the new texture
-		size_t texBytes = m_width * m_height * m_nrChannels;
-		m_textureData = (unsigned char*)STBI_MALLOC(texBytes); //malloc because stbi dellocates with free()
-
-		//copy texture memory
-		std::memcpy(m_textureData, other.m_textureData, texBytes);
-
-		//Create opengl data
-		glGenTextures(1, &m_textureID);
-		glBindTexture(GL_TEXTURE_2D, m_textureID);
-
-		// set the texture wrapping/filtering options (on the currently bound texture object)
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-		if (m_textureData)
-		{
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_textureData);
-
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-			glGenerateMipmap(GL_TEXTURE_2D);
-		}
-		else
-		{
-			std::cerr << "Failed to load texture from copy constructor\n";
-			return;
-		}
-
-		std::cout << "Copied Texture\n";
-
-	}
-
-	Texture& Texture::operator=(Texture other)
-	{
-		m_width = other.m_width;
-		m_height = other.m_height;
-		m_nrChannels = other.m_nrChannels;
-
-		//Allocate memory for the new texture
-		size_t texBytes = m_width * m_height * m_nrChannels;
-		m_textureData = new unsigned char(texBytes); //malloc because stbi dellocates with free()
-
-		//copy texture memory
-		std::memcpy(m_textureData, other.m_textureData, texBytes);
-
-		//Create opengl data
-		glGenTextures(1, &m_textureID);
-		glBindTexture(GL_TEXTURE_2D, m_textureID);
-
-		// set the texture wrapping/filtering options (on the currently bound texture object)
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-		if (m_textureData)
-		{
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_textureData);
-
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-			glGenerateMipmap(GL_TEXTURE_2D);
-		}
-		else
-		{
-			std::cerr << "Failed to load texture from copy constructor\n";
-		}
-
-		std::cout << "Copied Texture\n";
-
-		return *this;
 	}
 
 	Color Texture::operator()(unsigned int x, unsigned int y)

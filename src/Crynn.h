@@ -27,8 +27,8 @@
 
 #include "GUI/GuiWindow.h"
 
-#include "../lib/thirdparty/imgui/imgui.h"
-#include "../lib/thirdparty/imgui/imgui_internal.h"
+#include "imgui/imgui.h"
+#include "imgui/imgui_internal.h"
 
 #include "Core/Math/Math.h"
 

@@ -6,7 +6,7 @@ namespace crynn
 	void Scene::RemoveObject(OBJID ID)
 	{
 		if (!managedObjects.contains(ID))
-			throw std::runtime_error("Attempting to remove destroyed object");
+			throw std::runtime_error("Attempting to remove destroyed or nonexistent object");
 
 		markedForDealloc.insert(ID);
 	}

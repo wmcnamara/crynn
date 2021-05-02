@@ -32,4 +32,9 @@ namespace crynn
 	{
 		return glfwGetTime();
 	}
+
+	void Application::ForceSceneRender()
+	{
+		OnRender.Invoke();
+	}
 }

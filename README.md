@@ -9,17 +9,19 @@
    Currently only supports building to Windows.
 
 ## Features
-- Made with C++20
-- Fast rendering with OpenGL
-- Robust Event and Input System
 - Easy Setup
-- Texture Mapping
+- Transformation hierarchy (parent child relationships)
+- Quaternion rotations. 
+- 3D Model loading with [assimp](https://assimp.org/)
 - Full rigidbody dynamics with [qu3e](https://github.com/RandyGaul/qu3e).
-- Built in Phong lighting/shading with easily extendable shading options
+- Built in Blinn Phong lighting/shading with easily extendable shading options
 - Skybox/Cubemapping
 - Audio with SFML
 - Simple IMGUI integration
 - A robust and varied utility library
+- Made with C++20
+- Fast rendering with OpenGL
+- Robust Event and Input System
 
 #### Example Scene Rendered With Crynn
 
@@ -39,6 +41,7 @@ Crynn relies on a multitude of dependencies. They are listed here:
 - [STB_IMAGE](https://github.com/nothings/stb) for image loading.
 - [SFML](https://github.com/SFML/sfml) for audio.
 - [qu3e](https://github.com/RandyGaul/qu3e) for rigidbody dynamics.
+- [ASSIMP](https://assimp.org/) for 3D model file loading.
 
 # Getting Started:
 ## Downloading Crynn:

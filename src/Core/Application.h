@@ -64,6 +64,11 @@ namespace crynn
 
 		//Multiplied by deltaTime before being passed to Update. Used to speed up and slowdown time.
 		inline static double TimeScale = 1.0;
+
+		//Calls OnRender immediatly.
+		//OnRender will still be called during this frame even if this is called before.
+		//Useful for lighting passes
+		void static ForceSceneRender();
 	private:
 		//Used to get deltaTimes.
 		inline static double currentFrameTime = 0;

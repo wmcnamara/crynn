@@ -2,33 +2,20 @@
 
 namespace crynn
 {
-	MeshRenderer::MeshRenderer(const Mesh& mesh, const Texture& texture, const Shader& shader, Mat4& modelMatrix) :
-		m_mesh(mesh),
-		m_texture(texture),
+	MeshRenderer::MeshRenderer(const Model& mesh, const Shader& shader, const Transform& transform) :
+		m_model(mesh),
 		m_shader(shader),
-		m_model(modelMatrix),
-		m_normalMat(Mat4(transpose(inverse(modelMatrix)))) //Calculate normal matrix
+		m_transform(transform),
+		m_normalMat(Mat4(transpose(inverse(transform.GetMatrix())))) //Calculate normal matrix //TODO calculate this before setting model
 	{}
 
 	void MeshRenderer::Render()
 	{
-		if (active)
-		{
-			m_texture.Bind();
-			m_mesh.GetVAO().Bind();
-			m_shader.Use();
+		m_shader.Use();
+		m_shader.SetFloat("time", (float)glfwGetTime()); //Set time uniform on current shader
+		m_shader.SetMatrix4("model", &m_transform.GetMatrix());
+		m_shader.SetMatrix3("normalMatrix", &m_normalMat);
 
-			m_shader.SetFloat("time", (float)glfwGetTime()); //Set time uniform on current shader
-			m_shader.SetMatrix4("model", &m_model);
-			m_shader.SetMatrix3("normalMatrix", &m_normalMat);
-			if (m_mesh.Indexed())
-			{
-				glDrawElements(GL_TRIANGLES, m_mesh.IndexCount(), GL_UNSIGNED_INT, 0);
-			}
-			else
-			{
-				glDrawArrays(GL_TRIANGLES, 0, m_mesh.VertexCount());
-			}
-		}
+		m_model.Render(m_shader);
 	}
 }

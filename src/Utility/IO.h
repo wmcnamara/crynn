@@ -21,6 +21,15 @@
 
 namespace crynn
 {
+	namespace fs = std::filesystem;
+
+	//Relevant file data returned from GetMediaFile.
+	struct GetFileData 
+	{
+		bool succeeded = false; //does the file exist?
+		std::string absoluteFilePath = "";
+	};
+
 	/// <summary>
 	/// IO related functions to allow user to open and manipulate files
 	/// </summary>
@@ -34,14 +43,14 @@ namespace crynn
 		static void Init();
 
 		//Returns a boolean indicating whether a file at a given path exists
-		static bool FileExists(const char* relativePath);
+		static [[nodiscard]] bool FileExists(const char* relativePath);
 
 		/// <summary>
-		/// Opens a picker that allows the user to select a file.
+		/// Opens a picker that allows the user to select an image.
 		/// Works on windows exclusively.
 		/// </summary>
-		/// <returns>string containing the selected filepath.</returns>
-		static std::string GetFile();
+		/// <returns>string containing the selected image filepath.</returns>
+		static [[nodiscard]] std::string OpenImageFilePicker();
 
 		/// <summary>
 		/// Event called when the user drags files from the operating system into the application. Useful for imports.
@@ -49,9 +58,23 @@ namespace crynn
 		/// For exmaple, if the user drops 3 files, OnFileDrop will be invoked 3 times with the corresponding paths.
 		/// </summary>
 		static inline Event<const char*> OnFileDrop;
-
+		 
 		//Allocates and loads a file into a string.
 		//Returns an empty string if the file fails to load
-		static std::string LoadFileStr(const char* relativePath);
+		static [[nodiscard]] std::string LoadFileStr(const char* relativePath);
+
+		//Adds a directory that will be searched for a file
+		//Expects a path relative to the exe / working directory.
+		//Returns a boolean indicating if the suggested path was found.
+		static bool AddMediaPath(const char* path);
+
+		//Searches working directory and media paths for a file with the relative path @param name. 
+		//Returns the first file found matching the given name.
+		//Avoid duplicate filenames to avoid clashes from this function
+		//Returnsa GetFileData object with info about the requested file.
+		static [[nodiscard]] GetFileData GetMediaFile(const char* name);
+
+	private:
+		static inline std::vector<fs::path> mediaPaths;
 	};
 }

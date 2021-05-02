@@ -1,5 +1,6 @@
 #pragma once
 #include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
 
 #define PI 3.14159f
 #define DEG2RAD PI / 180.0f //Converts an angle in degrees to radians
@@ -18,6 +19,7 @@ namespace crynn
 	using Vec3Int = glm::ivec3;
 	using Vec2Int = glm::ivec2;
 
+	using Quat = glm::quat;
 
 	/*
 		Creates a glm::vec3 from a string starting at parameter textStart.
@@ -45,6 +47,17 @@ namespace crynn
 		static constexpr float Lerp(float min, float max, float t)
 		{
 			return ((max - min) * t) + min;
+		}
+
+		static constexpr float NormalizeAngle(float a)
+		{
+			if (a > 360)
+				return a - 360;
+
+			if (a < 0)
+				return 360 + a;
+
+			return a;
 		}
 
 		//Performs a linear interpolation of min and max with t. This function clamps t to 0 - 1.

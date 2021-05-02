@@ -2,98 +2,112 @@
 
 namespace crynn
 {
+	Transform::Transform()
+	{
+		
+	}
+
+	Transform::~Transform()
+	{			
+		//Remove this node from the parent transforms children
+		if (m_parent != nullptr)
+			m_parent->m_children.erase(this);
+		
+		//Remove links in children
+		for (Transform* child : m_children)
+		{
+			child->m_parent = nullptr;
+		}
+	}
+
 	void Transform::Translate(Vec3 translation)
 	{
-		m_matrix = glm::translate(m_matrix, translation);
-
-		currentPos += translation;
+		m_position += translation;
 	}	
 
 	void Transform::Scale(Vec3 scale)
 	{
-		m_matrix = glm::scale(m_matrix, scale);
-
-		currentScale += scale;
+		m_scale += scale;
 	}
 
-	void Transform::Rotate(Vec3 rotation)
-	{
-		rotation *= DEG2RAD;
-		m_matrix *= glm::eulerAngleXYZ(rotation.x, rotation.y, rotation.z);
+	void Transform::Rotate(Vec3 rot)
+	{		
+		rot *= DEG2RAD; //convert to radians
+		m_rotation *= glm::quat(rot);
 
-		currentRot += (rotation * RAD2DEG); //Convert back and add the new rotation
+		m_eulerRotation += rot;
 	}
 
-	void Transform::SetPosition(Vec3 position)
+	void Transform::SetPosition(Vec3 pos)
 	{
-		Mat4 posMat(1.0f);
-
-		//Set scale
-		posMat[0][0] = currentScale.x;
-		posMat[1][1] = currentScale.y;
-		posMat[2][2] = currentScale.z;
-
-		//Create and apply the new rotation
-		posMat *= glm::eulerAngleXYZ(glm::radians(currentRot.x), glm::radians(currentRot.y), glm::radians(currentRot.z));
-
-		//Apply transform
-		posMat = glm::translate(posMat, position);
-
-		m_matrix = posMat;
-		currentPos = position; //Update currentPos
+		m_position = pos; //Update currentPos
 	}
 
 	Vec3 Transform::GetPosition() const
 	{
-		return currentPos;
+		return m_position;
 	}
 
-	void Transform::SetScale(Vec3 scale)
+	void Transform::SetScale(Vec3 newScale)
 	{
-		Mat4 scaleMat(1.0f);
-		scaleMat = glm::scale(scaleMat, scale);
-
-		//Create and apply the new rotation
-		scaleMat *= glm::eulerAngleXYZ(glm::radians(currentRot.x), glm::radians(currentRot.y), glm::radians(currentRot.z));
-
-		//Apply transform
-		scaleMat[3][0] = currentPos.x;
-		scaleMat[3][1] = currentPos.y;
-		scaleMat[3][2] = currentPos.z;
-
-		m_matrix = scaleMat;	
-		currentScale = scale;
+		m_scale = newScale;
 	}
 
 	Vec3 Transform::GetScale() const
 	{
-		return currentScale;
+		return m_scale;
 	}
 
-	void Transform::SetRotation(Vec3 rotation)
+	void Transform::SetRotation(Vec3 rot)
 	{
-		Mat4 rot(1.0f);
+		rot *= DEG2RAD; //convert to radians
+		m_rotation = glm::quat(rot);
 
-		//Set scale
-		rot[0][0] = currentScale.x;
-		rot[1][1] = currentScale.y;
-		rot[2][2] = currentScale.z;
-
-		//Create and apply the new rotation
-		rot *= glm::eulerAngleXYZ(glm::radians(rotation.x), glm::radians(rotation.y), glm::radians(rotation.z));
-
-		//Apply translation
-		rot[3][0] = currentPos.x;
-		rot[3][1] = currentPos.y;
-		rot[3][2] = currentPos.z;
-
-		m_matrix = rot;
-
-		currentRot = rotation;
+		m_eulerRotation = rot;
 	}
 
-	Vec3 Transform::GetRotation() const
+	const Quat& Transform::GetRotation() const
 	{
-		return currentRot;
+		return m_rotation;
+	}
+
+	Vec3 Transform::GetRotationEuler() const
+	{
+		return m_eulerRotation;
+	}
+
+	//My own little implementation of a transformation hierarchy.
+	//Its a bit complicated, so take a moment to look through if you're confused.
+	//TODO implement matrix caching
+
+	Mat4& Transform::GetMatrix() const
+	{
+		//Apply this matrices world transformations
+		m_matrix = Mat4(1.0f);
+		m_matrix = glm::scale(m_matrix, m_scale);
+		m_matrix *= glm::mat4_cast(m_rotation);
+		m_matrix = glm::translate(m_matrix, m_position);
+
+		//Apply parent transformations to it aswell
+		m_localMatrix = std::move(ComputeLocalMatrixRecursive(m_matrix, this));
+
+		return m_localMatrix;
+	}
+
+	void Transform::SetParent(Transform* parent)
+	{
+		if (parent == nullptr)
+			return;
+
+		m_parent = parent;
+		parent->m_children.insert(this);
+	}
+
+	Mat4& Transform::ComputeLocalMatrixRecursive(Mat4& matrix, const Transform* const transform) const
+	{
+		if (transform->m_parent == nullptr)
+			return matrix;
+
+		return ComputeLocalMatrixRecursive(matrix *= m_parent->m_matrix, transform->m_parent);
 	}
 }

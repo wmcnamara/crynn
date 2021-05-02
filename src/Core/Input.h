@@ -1,6 +1,7 @@
 #pragma once
 #include "Window.h"
-#include "Math/Math.h"
+
+#define KEYSTATE_BUFFER_SIZE 350
 
 namespace crynn
 {
@@ -15,28 +16,25 @@ namespace crynn
 		//Initialises input, and sets up polling events.
 		static void Init();
 
+		//Call after glfwPollevents, and before accepting input.
+		static void StartPoll();
+
 		/// <summary>
 		/// Returns the state of a key.
 		/// </summary>
-		/// <param name="key"></param>
-		/// <returns></returns>
+		/// <param name="key">KeyCode of the key you would like the state of</param>
+		/// <returns>True if the key is pressed</returns>
 		static bool GetKey(KeyCode key);
 
 		/// <summary>
 		/// Returns the state of a key once per press, in a toggle style.
 		/// </summary>
-		/// <param name="key"></param>
-		/// <returns></returns>
+		/// <param name="key">KeyCode of the key you would like the state of</param>
+		/// <returns>True if the key has been toggled.</returns>
 		static bool GetKeyDown(KeyCode key);
 
-		/// <summary>
-		/// Used in GLFW events to update the keystate of a key in the current frame. This function should only be ever used in GLFW events, or internal input function
-		/// </summary>
-		/// <param name="key">The GLFW keycode of the key you're updating</param>
-		/// <param name="state">The boolean state of the key</param>
-		static void UpdateKeyStateInternal(int key, bool state);
-
 		//Internally sets the mouse position for tracking
+		//Only call if you really know what you're doing.
 		static void UpdateMousePosInternal();
 		
 		//Returns a Vector2 representing the difference in mouse position from the previous frame.
@@ -48,12 +46,15 @@ namespace crynn
 
 		//Dispatched when the user scrolls the mouse wheel.
 		inline static Event<float> OnMouseScroll;
-	private:
-		static void UpdateKeyDownStateInternal(int key, bool state);
 
-		inline static bool currentKeyStates[349]; //The states of each key in the current frame.
-		inline static bool previousKeyStates[349]; //The states of each key from the previous frame. Needed for GetKeyDown
-		inline static bool getKeyDownStates[349]; //The states of each key from the previous frame for comparison. Needed for GetKeyDown
+	private:
+		//glfw friend function callbacks
+		friend void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+		friend void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+		friend void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+
+		inline static bool currentKeyStates[KEYSTATE_BUFFER_SIZE]; //The states of each key in the current frame.
+		inline static bool getKeyDownStates[KEYSTATE_BUFFER_SIZE]; //The states of each key for GetKeyDown.
 
 		inline static bool m_initialised = false; //Is input initialised?
 

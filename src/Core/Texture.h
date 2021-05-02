@@ -16,7 +16,9 @@ namespace crynn
 	};
 
 	/// <summary>
-	/// 2D texture class.
+	/// 2D texture class to load external textures.
+	/// This texture should not be used as a render texture.
+	/// If you want to render to a texture, check the RenderTexture class.
 	/// </summary>
 	class Texture
 	{
@@ -26,13 +28,14 @@ namespace crynn
 		/// </summary>
 		/// <param name="path">Relative path to the texture file.</param>
 		Texture(const char* path);		
-		Texture(const Texture& other); //Copy constructor
-		Texture& operator= (Texture other); //copy assignment operator
-
-		Texture(Texture&& other) = default; //Move constructor
-
-		Texture() = default; /// Creates a dummy texture object with no data.
 		~Texture();
+
+		//No copying or moving textures for now
+		Texture(const Texture& other) = delete;
+		Texture& operator= (Texture other) = delete; 
+
+		Texture(Texture&& other) = delete;
+		Texture& operator=(Texture&& other) = delete;
 
 		/// <summary>
 		/// Gets the OpenGL texture ID
@@ -71,5 +74,10 @@ namespace crynn
 		unsigned char* m_textureData = nullptr; ///Texture data pointer
 
 		int m_width = 0, m_height = 0, m_nrChannels = 4;
+	};
+
+	class RenderTexture 
+	{
+	
 	};
 }

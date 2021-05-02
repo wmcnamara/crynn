@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
+    <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
+    <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -18,13 +18,13 @@
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
@@ -33,31 +33,29 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)bin\Debug\</OutDir>
-    <IntDir>$(SolutionDir)bin\obj\Debug\</IntDir>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>Crynn</TargetName>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\binint\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>bin\Release\</OutDir>
-    <IntDir>obj\Release\</IntDir>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>Crynn</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)lib\thirdparty\;$(ProjectDir)lib\thirdparty\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib\thirdparty\sfml\include;$(ProjectDir)lib\thirdparty\assimp\include;$(ProjectDir)lib\thirdparty\glad\include;$(ProjectDir)lib\thirdparty\glfw\include;$(ProjectDir)lib\thirdparty\glm\include;$(ProjectDir)lib\thirdparty\imgui\include;$(ProjectDir)lib\thirdparty\stb;$(ProjectDir)lib\thirdparty\physics\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -69,11 +67,11 @@
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;$(ProjectDir)lib\thirdparty\assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -92,22 +90,25 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="lib\thirdparty\imgui\imconfig.h" />
-    <ClInclude Include="lib\thirdparty\imgui\imgui.h" />
-    <ClInclude Include="lib\thirdparty\imgui\imgui_impl_glfw.h" />
-    <ClInclude Include="lib\thirdparty\imgui\imgui_impl_opengl3.h" />
-    <ClInclude Include="lib\thirdparty\imgui\imgui_internal.h" />
-    <ClInclude Include="lib\thirdparty\stb_image.h" />
-    <ClInclude Include="lib\thirdparty\stb_perlin.h" />
+    <ClInclude Include="lib\thirdparty\imgui\include\imgui\imconfig.h" />
+    <ClInclude Include="lib\thirdparty\imgui\include\imgui\imgui.h" />
+    <ClInclude Include="lib\thirdparty\imgui\include\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="lib\thirdparty\imgui\include\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="lib\thirdparty\imgui\include\imgui\imgui_internal.h" />
+    <ClInclude Include="lib\thirdparty\imgui\include\imgui\imstb_rectpack.h" />
+    <ClInclude Include="lib\thirdparty\imgui\include\imgui\imstb_textedit.h" />
+    <ClInclude Include="lib\thirdparty\imgui\include\imgui\imstb_truetype.h" />
+    <ClInclude Include="lib\thirdparty\stb\stb_image.h" />
+    <ClInclude Include="lib\thirdparty\stb\stb_image_write.h" />
     <ClInclude Include="src\Core\Application.h" />
     <ClInclude Include="src\Core\Audio\Audio.h" />
     <ClInclude Include="src\Core\Buffers\Buffers.h" />
-    <ClInclude Include="src\Core\Buffers\Cache.h" />
     <ClInclude Include="src\Core\CrynnObject.h" />
     <ClInclude Include="src\Core\EventListener.h" />
     <ClInclude Include="src\Core\Camera.h" />
     <ClInclude Include="src\Core\Event.h" />
     <ClInclude Include="src\Core\Input.h" />
+    <ClInclude Include="src\Core\Lighting\Light.h" />
     <ClInclude Include="src\Core\Math\Math.h" />
     <ClInclude Include="src\Core\Mesh.h" />
     <ClInclude Include="src\Core\MeshRenderer.h" />
@@ -131,20 +132,21 @@
     <ClInclude Include="src\Utility\Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lib\thirdparty\glad\glad.c" />
-    <ClCompile Include="lib\thirdparty\imgui\imgui.cpp" />
-    <ClCompile Include="lib\thirdparty\imgui\imgui_draw.cpp" />
-    <ClCompile Include="lib\thirdparty\imgui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="lib\thirdparty\imgui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="lib\thirdparty\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="lib\thirdparty\glad\include\glad\glad.c" />
+    <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui.cpp" />
+    <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\Core\Application.cpp" />
     <ClCompile Include="src\Core\Audio\Audio.cpp" />
     <ClCompile Include="src\Core\Buffers\Buffers.cpp" />
-    <ClCompile Include="src\Core\Buffers\Cache.cpp" />
     <ClCompile Include="src\Core\CrynnObject.cpp" />
     <ClCompile Include="src\Core\EventListener.cpp" />
     <ClCompile Include="src\Core\Camera.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
+    <ClCompile Include="src\Core\Lighting\Light.cpp" />
     <ClCompile Include="src\Core\Math\Math.cpp" />
     <ClCompile Include="src\Core\Mesh.cpp" />
     <ClCompile Include="src\Core\MeshRenderer.cpp" />
@@ -170,6 +172,8 @@
     <None Include="README.md" />
     <None Include="src\docsource\intro.md" />
     <None Include="src\docsource\introprog.md" />
+    <None Include="src\Shaders\DepthShader.frag" />
+    <None Include="src\Shaders\DepthShader.vert" />
     <None Include="src\Shaders\Skybox.frag" />
     <None Include="src\Shaders\Skybox.vert" />
     <None Include="src\Shaders\Standard.frag" />
