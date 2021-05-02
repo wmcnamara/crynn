@@ -6,6 +6,7 @@
 
 namespace crynn 
 {
+	//Manages allocation for scene object
 	class Scene
 	{
 	public:
@@ -13,6 +14,8 @@ namespace crynn
 		template<typename CrynnObjT, typename... ParamT>
 		inline static std::weak_ptr<CrynnObjT> CreateObject(ParamT... params)
 		{
+			static_assert(std::is_base_of <CrynnObject, CrynnObjT>(), "Create object can only be called on CrynnObjects");
+
 			std::shared_ptr<CrynnObjT> newPtr = std::make_shared<CrynnObjT>(params...);
 			managedObjects.insert({ newPtr->GetID(), newPtr });
 
@@ -20,8 +23,8 @@ namespace crynn
 		}
 
 		static void RemoveObject(OBJID ID); ///Removes an object from the managed list
-		static void ClearObjects(); ///Removes every object from the managed list.
-		static uint64_t GetObjectCount();
+		static void ClearObjects(); //Removes every object from the managed list.
+		static uint64_t GetObjectCount(); //returns the number of managed objects in the scene
 
 		//Frees unused memory marked for deallocation.
 		static void Clean();
