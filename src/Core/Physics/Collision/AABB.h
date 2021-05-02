@@ -3,25 +3,13 @@
 #include "../../../Core/Transform.h"
 #include "glm/glm.hpp"
 
-/*
-	File: AABB.h
-
-	Author:	Weston McNamara
-	Last Revised: 4/10/2021
-
-	Copyright (c) 2021 Weston McNamara https://www.wmcnamara.com/
-
-	This file is subject to the terms and conditions defined in the MIT License.
-	https://mit-license.org/
-*/
-
 namespace crynn
 {
 	/// <summary>
 	/// Represents an aligned axis bounding box, and provides a set of functions to compare collisions.
-	/// Useful for simple, rudimentary and fast AABB collision in simple use cases.
+	/// Useful for simple, rudimentary and fast AABB collision detection in simple use cases.
 	/// 
-	/// Does not work with Rigidbody, and collision resolution. It will just detect collisions. For full
+	/// Does not work with Rigidbody, and provides no collision resolution. It will just detect collisions. For full
 	/// rigidbody dynamics and hit resolution, check Rigidbody.h, and the "Physics" page on the Crynn Github wiki.
 	/// </summary>
 	class AABB

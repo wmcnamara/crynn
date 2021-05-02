@@ -1,16 +1,29 @@
 #include "Rigidbody.h"
 namespace crynn
 {
-	Rigidbody::Rigidbody(q3BodyType bodyT, Transform& transform) : m_transform(transform)
+	Rigidbody::Rigidbody(q3BodyType bodyT, Transform& transform, const Box& defaultBox) : m_transform(transform)
 	{
 		assert(Physics::IsInit()); //Please initialise the physics engine with Physics::Init()
 
+		//Add state update event
 		eventID = Application::OnBeforeUpdate.AddHandler([this](double dt) { Rigidbody::UpdateTransformData(); });
+
+		//Create the q3Body
 		q3BodyDef def;
 		def.position = transform.GetPosition();
 		def.bodyType = bodyT;
-
 		body = Physics::GetScene()->CreateBody(def);
+
+		//Create the q3Box
+		q3BoxDef bdef;
+
+		q3Transform tr;
+		tr.position = defaultBox.position;
+		tr.rotation = defaultBox.defaultRotation;
+
+		bdef.Set(tr, defaultBox.extents);
+
+		body->AddBox(bdef);
 	}
 
 	Rigidbody::~Rigidbody()
@@ -20,14 +33,14 @@ namespace crynn
 		Physics::GetScene()->RemoveBody(body);
 	}
 
-	void Rigidbody::AddBox(Vec3 offset, Vec3 extents, Mat3 rotation)
+	void Rigidbody::AddBox(const Box& box)
 	{
 		BoxDef def;
 		q3Transform tx;
 
-		tx.position = offset;
-		tx.rotation = rotation;
-		def.Set(tx, extents);
+		tx.position = box.position;
+		tx.rotation = box.defaultRotation;
+		def.Set(tx, box.extents);
 
 		body->AddBox(def);
 	}
