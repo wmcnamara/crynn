@@ -8,5 +8,7 @@ int main()
 {
 	Engine engine = Engine(800, 600, "Crynn Example");
 
+	Transform tr;
+	Rigidbody rb(eDynamicBody, tr, Box(Vec3(0, 0, 0), Vec3(1, 1, 1)));
 	engine.Run();
 }

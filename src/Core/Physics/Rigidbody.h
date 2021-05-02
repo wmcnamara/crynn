@@ -15,6 +15,7 @@ namespace crynn
 		Vec3 position = Vec3(0, 0, 0); //Offset relative to rigidbody. NOT relative to world. This should generally be Vec3(0, 0, 0) to have it centered on your object.
 		Vec3 extents = Vec3(1, 1, 1); //XYZ size of the bounding box.
 		Mat3 defaultRotation = Mat3(1.0f); //identity matrix
+
 	};
 
 	class Rigidbody
