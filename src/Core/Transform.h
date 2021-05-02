@@ -4,9 +4,10 @@
 #include <glm/gtx/euler_angles.hpp>
 #include <iostream>
 #include <memory>
-#include <vector>
+#include <unordered_set>
 #include "../Utility/Debug.h"
 #include "Math/Math.h"
+#include <memory>
 
 namespace crynn
 {
@@ -20,6 +21,14 @@ namespace crynn
 	class Transform
 	{
 	public:
+		Transform();
+		virtual ~Transform();
+
+		Transform(const Transform& other) = default;
+		Transform& operator=(const Transform& other) = default;
+		Transform(Transform&& other) = default;
+		Transform& operator=(Transform&& other) = default;
+
 	    void Translate(Vec3 translation); //Applies a translation to this object.
 	    void Scale(Vec3 scale); //Applies a scale to the object
 	    void Rotate(Vec3 rot); //Applies a rotation to the object. rot is the XYZ euler angle rotation. Angles should be in degrees
@@ -37,10 +46,10 @@ namespace crynn
 		//Returns a non-const reference to the model matrix struct this class is represented with.
 		Mat4& GetMatrix() const;
 
-		Transform* parent = nullptr;
+		void SetParent(Transform* parent);
 	private:
-		Quat m_rotation = Quat(Vec3(0.0f, 0.0f, 0.0f));
 		Vec3 m_position = Vec3(0, 0, 0);
+		Quat m_rotation = Quat(Vec3(0.0f, 0.0f, 0.0f));
 		Vec3 m_scale = Vec3(1, 1, 1);
 
 		mutable Vec3 m_eulerRotation = Vec3(0, 0, 0); //Cache for the euler rotation of the object. Not used in any calculation. Degrees
@@ -50,5 +59,8 @@ namespace crynn
 		//Recursively computes a matrix that applies transformations from this matrice's parents, instead of the world.
 		//The matrix parameter passed to this function will have all the transformations from its parent transforms applied to it.
 		Mat4& ComputeLocalMatrixRecursive(Mat4& matrix, const Transform* const transform) const;
+
+		Transform* m_parent = nullptr;
+		std::unordered_set<Transform*> m_children; //pointers to this objects children.
 	};
 }

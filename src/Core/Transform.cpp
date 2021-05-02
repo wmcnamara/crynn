@@ -2,6 +2,24 @@
 
 namespace crynn
 {
+	Transform::Transform()
+	{
+		
+	}
+
+	Transform::~Transform()
+	{			
+		//Remove this node from the parent transforms children
+		if (m_parent != nullptr)
+			m_parent->m_children.erase(this);
+		
+		//Remove links in children
+		for (Transform* child : m_children)
+		{
+			child->m_parent = nullptr;
+		}
+	}
+
 	void Transform::Translate(Vec3 translation)
 	{
 		m_position += translation;
@@ -76,11 +94,20 @@ namespace crynn
 		return m_localMatrix;
 	}
 
+	void Transform::SetParent(Transform* parent)
+	{
+		if (parent == nullptr)
+			return;
+
+		m_parent = parent;
+		parent->m_children.insert(this);
+	}
+
 	Mat4& Transform::ComputeLocalMatrixRecursive(Mat4& matrix, const Transform* const transform) const
 	{
-		if (transform->parent == nullptr)
+		if (transform->m_parent == nullptr)
 			return matrix;
 
-		return ComputeLocalMatrixRecursive(matrix *= parent->m_matrix, transform->parent);
+		return ComputeLocalMatrixRecursive(matrix *= m_parent->m_matrix, transform->m_parent);
 	}
 }
