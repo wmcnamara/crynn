@@ -122,29 +122,37 @@ namespace crynn
 			return false;
 	}
 
+	/*
 	GetFileData IO::GetMediaFile(const char* name)
 	{
 		GetFileData data;
 
-		for (fs::path mediaPath : mediaPaths) 
+		try
 		{
-			std::cout << "Looking in Media Path: " << mediaPath.string() << "\n";
-
-			//loop through files in media paths
-			for (auto& filePath : fs::directory_iterator(mediaPath))
+			for (fs::path mediaPath : mediaPaths)
 			{
-				//create a path relative to the media path for easy comparison
-				fs::path relativeFilePath = fs::relative(filePath, mediaPath);
+				std::cout << "Looking in Media Path: " << mediaPath.string() << "\n";
 
-				//If we found the file, create an absolute path and use that.
-				if (relativeFilePath.string() == name)
+				//loop through files in media paths
+				for (auto& filePath : fs::directory_iterator(mediaPath))
 				{
-					data.succeeded = true;
-					data.absoluteFilePath = fs::absolute(relativeFilePath).string();
-					break;
-				}
-			}
+					//create a path relative to the media path for easy comparison
+					fs::path relativeFilePath = fs::relative(filePath, mediaPath);
 
+					//If we found the file, create an absolute path and use that.
+					if (relativeFilePath.string() == name)
+					{
+						data.succeeded = true;
+						data.absoluteFilePath = fs::absolute(relativeFilePath).string();
+						break;
+					}
+				}
+
+			}
+		}
+		catch(std::exception e) 
+		{
+			std::cout << "Error Occured Searching For File: " << e.what() << "\n";
 		}
 
 		if (data.succeeded)
@@ -154,4 +162,5 @@ namespace crynn
 
 		return data;
 	}
+	*/
 }

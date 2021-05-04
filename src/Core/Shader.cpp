@@ -47,13 +47,11 @@ namespace crynn
 		{
 			glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
 
-			std::stringstream output;
-			output << "Error. Shader linking failed.\n" << infoLog;
-			Debug::Log(output);
+			std::cout << "Error. Shader linking failed.\n" << infoLog;
 		}
 		else
 		{
-			Debug::Log("Shader Program Linked Successfully");
+			std::cout << "Shader Program Linked Successfully\n";
 		}
 	}
 
@@ -69,12 +67,10 @@ namespace crynn
 		{
 			glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
 
-			std::stringstream output;
-			output << "Vertex Compilation Failed\n" << infoLog;
-			Debug::Log(output);
+			std::cout << "Vertex Compilation Failed\n" << infoLog;
 		}
 		else
-			Debug::Log("Vertex Shader Compiled Successfully");
+			std::cout << "Vertex Shader Compiled Successfully\n";
 
 		//Fragment Shader
 		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
@@ -82,12 +78,10 @@ namespace crynn
 		if (!success)
 		{
 			glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-			std::stringstream output;
-			output << "Fragment Compilation Failed\n" << infoLog << '\n';
-			Debug::Log(output);
+			std::cout << "Fragment Compilation Failed\n" << infoLog << '\n';
 		}
 		else
-			Debug::Log("Fragment Shader Compiled Successfully");
+			std::cout << "Fragment Shader Compiled Successfully\n";
 	}
 
 	void Shader::SetBool(const char* name, bool value) const

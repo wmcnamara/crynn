@@ -79,6 +79,7 @@ namespace crynn
 			stbi_image_free(data);
 		}
 
+		std::cout << "Loaded texture from: " << filename << "\n";
 		return textureID;
 	}
 

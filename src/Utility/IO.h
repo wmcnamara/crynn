@@ -72,7 +72,7 @@ namespace crynn
 		//Returns the first file found matching the given name.
 		//Avoid duplicate filenames to avoid clashes from this function
 		//Returnsa GetFileData object with info about the requested file.
-		static [[nodiscard]] GetFileData GetMediaFile(const char* name);
+		static [[nodiscard]] GetFileData GetMediaFile(const char* name) = delete;
 
 	private:
 		static inline std::vector<fs::path> mediaPaths;

@@ -44,11 +44,13 @@
     <TargetName>Crynn</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\binint\$(Platform)\$(Configuration)\</IntDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>Crynn</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\binint\$(Platform)\$(Configuration)\</IntDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -71,12 +73,21 @@
       <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;$(ProjectDir)lib\thirdparty\assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
+    <PostBuildEvent>
+      <Command>mkdir "$(OutDir)Shaders\"
+mkdir "$(OutDir)Assets\"
+
+xcopy "$(SolutionDir)src\Shaders\" "$(OutDir)Shaders\" /y /e
+xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e
+xcopy "$(SolutionDir)lib\thirdparty\dll\$(Configuration)" "$(OutDir)" /y /e</Command>
+      <Message>Copy assets, shaders and assimp DLL files to output.</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CRYNN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CRYNN_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)lib\thirdparty\sfml\include;$(ProjectDir)lib\thirdparty\assimp\include;$(ProjectDir)lib\thirdparty\glad\include;$(ProjectDir)lib\thirdparty\glfw\include;$(ProjectDir)lib\thirdparty\glm\include;$(ProjectDir)lib\thirdparty\imgui\include;$(ProjectDir)lib\thirdparty\stb;$(ProjectDir)lib\thirdparty\physics\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -93,6 +104,15 @@
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;$(ProjectDir)lib\thirdparty\assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
+    <PostBuildEvent>
+      <Command>mkdir "$(OutDir)Shaders\"
+mkdir "$(OutDir)Assets\"
+
+xcopy "$(SolutionDir)src\Shaders\" "$(OutDir)Shaders\" /y /e
+xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e
+xcopy "$(SolutionDir)lib\thirdparty\dll\$(Configuration)" "$(OutDir)" /y /e</Command>
+      <Message>Copy assets, shaders and assimp DLL files to output.</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="lib\thirdparty\imgui\include\imgui\imconfig.h" />
