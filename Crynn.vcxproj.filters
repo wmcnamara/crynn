@@ -10,9 +10,6 @@
     <Filter Include="lib\thirdparty\glad">
       <UniqueIdentifier>{7D904189-E9F1-1E97-725F-6549DEBF5556}</UniqueIdentifier>
     </Filter>
-    <Filter Include="lib\thirdparty\glad\glad">
-      <UniqueIdentifier>{A439DD87-905E-2C08-B9A9-1198A52D2B26}</UniqueIdentifier>
-    </Filter>
     <Filter Include="lib\thirdparty\imgui">
       <UniqueIdentifier>{A07998B1-8C08-227B-3527-367621953221}</UniqueIdentifier>
     </Filter>
@@ -263,9 +260,6 @@
     <ClCompile Include="src\Core\Lighting\Light.cpp">
       <Filter>src\Core\Lighting</Filter>
     </ClCompile>
-    <ClCompile Include="lib\thirdparty\glad\include\glad\glad.c">
-      <Filter>lib\thirdparty\glad\glad</Filter>
-    </ClCompile>
     <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui.cpp">
       <Filter>lib\thirdparty\imgui</Filter>
     </ClCompile>
@@ -283,6 +277,9 @@
     </ClCompile>
     <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui_widgets.cpp">
       <Filter>lib\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\thirdparty\glad\src\glad.c">
+      <Filter>lib\thirdparty\glad</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

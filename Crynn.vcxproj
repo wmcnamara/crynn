@@ -47,12 +47,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>Crynn</TargetName>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\binint\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CRYNN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)lib\thirdparty\sfml\include;$(ProjectDir)lib\thirdparty\assimp\include;$(ProjectDir)lib\thirdparty\glad\include;$(ProjectDir)lib\thirdparty\glfw\include;$(ProjectDir)lib\thirdparty\glm\include;$(ProjectDir)lib\thirdparty\imgui\include;$(ProjectDir)lib\thirdparty\stb;$(ProjectDir)lib\thirdparty\physics\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -74,18 +76,22 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;lib\thirdparty;lib\thirdparty\glm;lib\thirdparty\glad;lib\thirdparty\imgui;lib\thirdparty\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CRYNN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib\thirdparty\sfml\include;$(ProjectDir)lib\thirdparty\assimp\include;$(ProjectDir)lib\thirdparty\glad\include;$(ProjectDir)lib\thirdparty\glfw\include;$(ProjectDir)lib\thirdparty\glm\include;$(ProjectDir)lib\thirdparty\imgui\include;$(ProjectDir)lib\thirdparty\stb;$(ProjectDir)lib\thirdparty\physics\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\thirdparty\glfw;$(SolutionDir)lib\thirdparty\assimp\lib;$(SolutionDir)lib\thirdparty\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>lib\thirdparty\glfw\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;$(ProjectDir)lib\thirdparty\assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -131,7 +137,7 @@
     <ClInclude Include="src\Utility\Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lib\thirdparty\glad\include\glad\glad.c" />
+    <ClCompile Include="lib\thirdparty\glad\src\glad.c" />
     <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui.cpp" />
     <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui_demo.cpp" />
     <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui_draw.cpp" />
@@ -179,6 +185,9 @@
     <None Include="src\Shaders\Standard.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="lib\thirdparty\assimp\bin\code\assimp.vcxproj">
+      <Project>{3d56baf3-a1a7-36e5-94da-075917e1b51a}</Project>
+    </ProjectReference>
     <ProjectReference Include="lib\thirdparty\physics\Physics\Physics.vcxproj">
       <Project>{956f9f8b-7fcb-4f31-b804-95daec164d27}</Project>
     </ProjectReference>

@@ -33,7 +33,7 @@ namespace crynn
 		glfwSetWindowUserPointer(glfwWindow, this); //Set this as the user pointer
 
 		glfwSetFramebufferSizeCallback(glfwWindow, SizeCallback);
-
+			
 		Input::Init();
 		IO::Init();
 
