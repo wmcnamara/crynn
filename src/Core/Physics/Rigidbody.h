@@ -16,6 +16,10 @@ namespace crynn
 		Vec3 extents = Vec3(1, 1, 1); //XYZ size of the bounding box.
 		Mat3 defaultRotation = Mat3(1.0f); //identity matrix
 
+		Box(Vec3 _pos, Vec3 _extents, Mat3 _defaultRot = Mat3(1.0f)) : 
+			position(_pos), 
+			extents(_extents), 
+			defaultRotation(_defaultRot) {}
 	};
 
 	class Rigidbody
@@ -23,7 +27,7 @@ namespace crynn
 	public:
 		//Constructs a rigidbody. The transform paramater should be the transform of the object you're simulating. It also acts as default values.
 		//defaultBox is the default collision object.
-		Rigidbody(q3BodyType bodyT, Transform& transform, const Box& defaultBox);
+		Rigidbody(q3BodyType bodyT, Transform& transform, Box defaultBox);
  		virtual ~Rigidbody();
 
 		//Adds a box collider to the rigidbody.
@@ -34,6 +38,14 @@ namespace crynn
 
 		//Updates the current rigidbody transform data into the tracked transform
 		void UpdateTransformData();
+
+		//Adds a force to the rigidbody in the direction forceVector.
+		//The vector should represent a world space direction
+		//forceVector is not a unit vector. To apply a larger force, simply multiply the vector by a larger number before passing it.
+		//Example: AddForce(someVector * 10);
+		void AddForceWorld(Vec3 worldForceVector);
+
+	
 	private:
 		unsigned int eventID = 0;
 

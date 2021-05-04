@@ -1,7 +1,7 @@
 #include "Rigidbody.h"
 namespace crynn
 {
-	Rigidbody::Rigidbody(q3BodyType bodyT, Transform& transform, const Box& defaultBox) : m_transform(transform)
+	Rigidbody::Rigidbody(q3BodyType bodyT, Transform& transform, Box defaultBox) : m_transform(transform)
 	{
 		assert(Physics::IsInit()); //Please initialise the physics engine with Physics::Init()
 
@@ -30,6 +30,7 @@ namespace crynn
 	{
 		Application::OnBeforeUpdate.RemoveHandler(eventID);
 
+		body->RemoveAllBoxes();
 		Physics::GetScene()->RemoveBody(body);
 	}
 
@@ -37,7 +38,7 @@ namespace crynn
 	{
 		BoxDef def;
 		q3Transform tx;
-
+		q3Identity(tx);
 		tx.position = box.position;
 		tx.rotation = box.defaultRotation;
 		def.Set(tx, box.extents);
@@ -49,5 +50,11 @@ namespace crynn
 	{
 		const q3Transform& tr = body->GetTransform();
 		m_transform.SetPosition(tr.position);
+		m_transform.GetMatrix() *= (Mat4)tr.rotation;
+	}
+
+	void Rigidbody::AddForceWorld(Vec3 worldForceVector)
+	{
+		body->ApplyLinearForce(worldForceVector);
 	}
 }
