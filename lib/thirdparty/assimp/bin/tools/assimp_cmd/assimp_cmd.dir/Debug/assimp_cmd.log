@@ -1,0 +1,8 @@
+﻿  Building Custom Rule C:/Github/crynn/lib/thirdparty/assimp/tools/assimp_cmd/CMakeLists.txt
+  CompareDump.cpp
+  ImageExtractor.cpp
+  Main.cpp
+  WriteDump.cpp
+  Info.cpp
+  Export.cpp
+  assimp_cmd.vcxproj -> C:\Github\crynn\lib\thirdparty\assimp\bin\bin\Debug\assimpd.exe

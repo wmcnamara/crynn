@@ -1,0 +1,10 @@
+^C:\GITHUB\CRYNN\LIB\THIRDPARTY\ASSIMP\BIN\CMAKEFILES\0FD4A0B0FDC8A776B3AE802902973E8F\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
