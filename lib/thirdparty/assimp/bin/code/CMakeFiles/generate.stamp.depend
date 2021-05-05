@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/Github/crynn/lib/thirdparty/assimp/cmake-modules/FindRT.cmake
+C:/Github/crynn/lib/thirdparty/assimp/code/CMakeLists.txt
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindPackageMessage.cmake

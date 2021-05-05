@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Github\crynn\lib\thirdparty\assimp\bin\CMakeFiles\0fd4a0b0fdc8a776b3ae802902973e8f\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D4164C85-A61C-365C-9C48-1F6A6DBDAED0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
