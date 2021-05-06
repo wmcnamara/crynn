@@ -15,8 +15,6 @@
 
 # Mono auto generated files
 mono_crash.*
-!lib/thirdparty/assimp/*
-
 
 # Build results
 [Bb]inint/
