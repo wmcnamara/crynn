@@ -56,10 +56,7 @@ Crynn previously supported Premake for building the engine, but now only support
 You can download Visual Studio [here.](https://visualstudio.microsoft.com/downloads/)
 Visual Studio 2019 is officially recommended.
 
-Once everything is installed, you can follow these steps to build Crynn:
-1. Clone Crynn
-2. Open `Crynn.sln` in Visual Studio
-3. Right click the Crynn solution in the solution explorer, and select build. Do not launch the debugger, as it builds Crynn to a lib file by default, not an executable.
+Once everything is installed, you can follow [these steps](https://github.com/wmcnamara/crynn/wiki/Building-In-Crynn) to build Crynn.
 
 ## Using Crynn:
 Navigate to the [Github Wiki Page](https://github.com/wmcnamara/crynn/wiki). It will bring you to the introduction page, explaining how to use Crynn.
