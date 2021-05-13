@@ -12,7 +12,7 @@ namespace crynn
 	{
 		//calculate the deltaTime
 		currentFrameTime = glfwGetTime();
-		double deltaTime = currentFrameTime - previousFrameTime;
+		float deltaTime = currentFrameTime - previousFrameTime;
 		previousFrameTime = currentFrameTime; //Update the previousFrameTime
 
 		//Invoke update and OnBeforeUpdate
@@ -28,7 +28,7 @@ namespace crynn
 		OnStart.Invoke();
 	}
 
-	double Application::GetTime()
+	float Application::GetTime()
 	{
 		return glfwGetTime();
 	}

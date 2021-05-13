@@ -38,8 +38,8 @@ namespace crynn
 		inline static Event<GLFWwindow*, int, int, int, int> OnInput;
 
 		inline static Event<void> OnBeforeClose; ///Called once before quitting to desktop using Application::Quit();///
-		inline static Event<double> OnUpdate; ///Called once every frame///
-		inline static Event<double> OnBeforeUpdate; ///Used to set uniform buffer data before rendering///
+		inline static Event<float> OnUpdate; ///Called once every frame///
+		inline static Event<float> OnBeforeUpdate; ///Used to set uniform buffer data before rendering///
 		inline static Event<void> OnStart; ///Called once before entering the main loop. Called before update.///
 		inline static Event<void> OnRender; ///Called when the engine is going to render a frame.
 		inline static Event<int, int> OnWindowResize; ///Invoked when the window is resized. Contains the width and height of new window.///
@@ -60,10 +60,10 @@ namespace crynn
 		static void Initialise();
 
 		///Returns the time elapsed since the application was launched.
-		static double GetTime();
+		static float GetTime();
 
 		//Multiplied by deltaTime before being passed to Update. Used to speed up and slowdown time.
-		inline static double TimeScale = 1.0;
+		inline static float TimeScale = 1.0;
 
 		//Calls OnRender immediatly.
 		//OnRender will still be called during this frame even if this is called before.
@@ -71,7 +71,7 @@ namespace crynn
 		void static ForceSceneRender();
 	private:
 		//Used to get deltaTimes.
-		inline static double currentFrameTime = 0;
-		inline static double previousFrameTime = 0;
+		inline static float currentFrameTime = 0;
+		inline static float previousFrameTime = 0;
 	};
 }

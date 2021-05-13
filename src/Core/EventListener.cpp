@@ -17,9 +17,9 @@ namespace crynn
 		//TODO move away from lambdas, as thaey dont look very nice here.
 		//Subscribe events. 	
 
-		updateHandlerID = Application::OnUpdate.AddHandler([this](double deltaTime) { Update(deltaTime); });
+		updateHandlerID = Application::OnUpdate.AddHandler([this](float deltaTime) { Update(deltaTime); });
 		startHandlerID = Application::OnStart.AddHandler([this]() { Start(); });		
-		beforeUpdateHandlerID = Application::OnBeforeUpdate.AddHandler([this](double deltaTime) { BeforeUpdate(deltaTime); });
+		beforeUpdateHandlerID = Application::OnBeforeUpdate.AddHandler([this](float deltaTime) { BeforeUpdate(deltaTime); });
 		beforeCloseHandlerID = Application::OnBeforeClose.AddHandler([this]() { BeforeClose(); });
 		renderID = Application::OnRender.AddHandler([this]() {Render(); });
 	}
