@@ -70,16 +70,15 @@
       <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;$(ProjectDir)lib\thirdparty\assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;$(ProjectDir)lib\thirdparty\assimp\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)Shaders\"
 mkdir "$(OutDir)Assets\"
 
 xcopy "$(SolutionDir)src\Shaders\" "$(OutDir)Shaders\" /y /e
-xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e
-xcopy "$(SolutionDir)lib\thirdparty\dll\$(Configuration)" "$(OutDir)" /y /e</Command>
+xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e</Command>
       <Message>Copy assets, shaders and assimp DLL files to output.</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -101,18 +100,21 @@ xcopy "$(SolutionDir)lib\thirdparty\dll\$(Configuration)" "$(OutDir)" /y /e</Com
       <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;$(ProjectDir)lib\thirdparty\assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\thirdparty\glfw;$(ProjectDir)lib\thirdparty\sfml\lib;$(ProjectDir)lib\thirdparty\assimp\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)Shaders\"
 mkdir "$(OutDir)Assets\"
 
 xcopy "$(SolutionDir)src\Shaders\" "$(OutDir)Shaders\" /y /e
-xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e
-xcopy "$(SolutionDir)lib\thirdparty\dll\$(Configuration)" "$(OutDir)" /y /e</Command>
+xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e</Command>
       <Message>Copy assets, shaders and assimp DLL files to output.</Message>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="lib\thirdparty\imgui\include\imgui\imconfig.h" />
@@ -133,15 +135,16 @@ xcopy "$(SolutionDir)lib\thirdparty\dll\$(Configuration)" "$(OutDir)" /y /e</Com
     <ClInclude Include="src\Core\Camera.h" />
     <ClInclude Include="src\Core\Event.h" />
     <ClInclude Include="src\Core\Input.h" />
-    <ClInclude Include="src\Core\Lighting\Light.h" />
     <ClInclude Include="src\Core\Math\Math.h" />
     <ClInclude Include="src\Core\Mesh.h" />
-    <ClInclude Include="src\Core\MeshRenderer.h" />
     <ClInclude Include="src\Core\Physics\Collision\AABB.h" />
     <ClInclude Include="src\Core\Physics\Physics.h" />
     <ClInclude Include="src\Core\Physics\Rigidbody.h" />
+    <ClInclude Include="src\Core\Rendering\Light.h" />
+    <ClInclude Include="src\Core\Rendering\Material.h" />
+    <ClInclude Include="src\Core\Rendering\MeshRenderer.h" />
+    <ClInclude Include="src\Core\Rendering\Shader.h" />
     <ClInclude Include="src\Core\Scene.h" />
-    <ClInclude Include="src\Core\Shader.h" />
     <ClInclude Include="src\Core\Skybox.h" />
     <ClInclude Include="src\Core\Texture.h" />
     <ClInclude Include="src\Core\Transform.h" />
@@ -171,15 +174,16 @@ xcopy "$(SolutionDir)lib\thirdparty\dll\$(Configuration)" "$(OutDir)" /y /e</Com
     <ClCompile Include="src\Core\EventListener.cpp" />
     <ClCompile Include="src\Core\Camera.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
-    <ClCompile Include="src\Core\Lighting\Light.cpp" />
     <ClCompile Include="src\Core\Math\Math.cpp" />
     <ClCompile Include="src\Core\Mesh.cpp" />
-    <ClCompile Include="src\Core\MeshRenderer.cpp" />
     <ClCompile Include="src\Core\Physics\Collision\AABB.cpp" />
     <ClCompile Include="src\Core\Physics\Physics.cpp" />
     <ClCompile Include="src\Core\Physics\Rigidbody.cpp" />
+    <ClCompile Include="src\Core\Rendering\Light.cpp" />
+    <ClCompile Include="src\Core\Rendering\Material.cpp" />
+    <ClCompile Include="src\Core\Rendering\MeshRenderer.cpp" />
+    <ClCompile Include="src\Core\Rendering\Shader.cpp" />
     <ClCompile Include="src\Core\Scene.cpp" />
-    <ClCompile Include="src\Core\Shader.cpp" />
     <ClCompile Include="src\Core\Skybox.cpp" />
     <ClCompile Include="src\Core\Texture.cpp" />
     <ClCompile Include="src\Core\Transform.cpp" />
@@ -205,9 +209,6 @@ xcopy "$(SolutionDir)lib\thirdparty\dll\$(Configuration)" "$(OutDir)" /y /e</Com
     <None Include="src\Shaders\Standard.vert" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="lib\thirdparty\assimp\bin\code\assimp.vcxproj">
-      <Project>{3d56baf3-a1a7-36e5-94da-075917e1b51a}</Project>
-    </ProjectReference>
     <ProjectReference Include="lib\thirdparty\physics\Physics\Physics.vcxproj">
       <Project>{956f9f8b-7fcb-4f31-b804-95daec164d27}</Project>
     </ProjectReference>

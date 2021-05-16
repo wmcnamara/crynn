@@ -49,8 +49,8 @@
     <Filter Include="src\Shaders">
       <UniqueIdentifier>{440f7e93-c3c1-4d86-8b00-57728be55e5e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Core\Lighting">
-      <UniqueIdentifier>{0973cff2-26e5-429d-a953-da9d8f0f7cd2}</UniqueIdentifier>
+    <Filter Include="src\Core\Rendering">
+      <UniqueIdentifier>{ebb73bbe-a7c6-4b43-a7ec-86fee279ab75}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -67,12 +67,6 @@
       <Filter>src\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Mesh.h">
-      <Filter>src\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\MeshRenderer.h">
-      <Filter>src\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\Shader.h">
       <Filter>src\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Texture.h">
@@ -141,9 +135,6 @@
     <ClInclude Include="src\Core\Physics\Rigidbody.h">
       <Filter>src\Core\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Lighting\Light.h">
-      <Filter>src\Core\Lighting</Filter>
-    </ClInclude>
     <ClInclude Include="lib\thirdparty\stb\stb_image.h">
       <Filter>lib\thirdparty</Filter>
     </ClInclude>
@@ -174,6 +165,18 @@
     <ClInclude Include="lib\thirdparty\imgui\include\imgui\imstb_truetype.h">
       <Filter>lib\thirdparty\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Rendering\Light.h">
+      <Filter>src\Core\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Rendering\MeshRenderer.h">
+      <Filter>src\Core\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Rendering\Shader.h">
+      <Filter>src\Core\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Rendering\Material.h">
+      <Filter>src\Core\Rendering</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Camera.cpp">
@@ -183,12 +186,6 @@
       <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Mesh.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\MeshRenderer.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Shader.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Texture.cpp">
@@ -257,9 +254,6 @@
     <ClCompile Include="src\Core\Physics\Rigidbody.cpp">
       <Filter>src\Core\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Lighting\Light.cpp">
-      <Filter>src\Core\Lighting</Filter>
-    </ClCompile>
     <ClCompile Include="lib\thirdparty\imgui\include\imgui\imgui.cpp">
       <Filter>lib\thirdparty\imgui</Filter>
     </ClCompile>
@@ -280,6 +274,18 @@
     </ClCompile>
     <ClCompile Include="lib\thirdparty\glad\src\glad.c">
       <Filter>lib\thirdparty\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Rendering\Light.cpp">
+      <Filter>src\Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Rendering\MeshRenderer.cpp">
+      <Filter>src\Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Rendering\Shader.cpp">
+      <Filter>src\Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Rendering\Material.cpp">
+      <Filter>src\Core\Rendering</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
