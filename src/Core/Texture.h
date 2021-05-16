@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "Shader.h"
+#include "Rendering/Shader.h"
 #include "Window.h"
 #include "../Utility/Debug.h"
 #include "../Utility/Timer.h"

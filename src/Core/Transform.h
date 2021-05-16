@@ -53,7 +53,7 @@ namespace crynn
 		Vec3 m_scale = Vec3(1, 1, 1);
 
 		mutable Vec3 m_eulerRotation = Vec3(0, 0, 0); //Cache for the euler rotation of the object. Not used in any calculation. Degrees
-		mutable Mat4 m_matrix = Mat4(1.0f); //model matrix with transformations relative to the world origin
+		mutable Mat4 m_worldMatrix = Mat4(1.0f); //model matrix with transformations relative to the world origin
 		mutable Mat4 m_localMatrix = Mat4(1.0f); //model matrix with transformations relative to the parents of this transform.
 
 		//Recursively computes a matrix that applies transformations from this matrice's parents, instead of the world.

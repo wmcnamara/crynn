@@ -4,9 +4,13 @@ namespace crynn
 {
 	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 	{
+		if (key > KEYSTATE_BUFFER_SIZE)
+			return;
+
 		//Update keystate according to action
 		if (action == GLFW_PRESS)
 			crynn::Input::currentKeyStates[key] = true;
+
 		else if (action == GLFW_RELEASE)
 		{
 			crynn::Input::currentKeyStates[key] = false;

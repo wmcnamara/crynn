@@ -11,18 +11,25 @@ namespace crynn
 
 	void Engine::Run()
 	{
-		Application::Initialise();
-
-		while (!m_window.ShouldClose())
+		try 
 		{
-			m_window.BeforeRender();
-			Application::Tick();
-			m_window.AfterRender();
+			Application::Initialise();
 
-			Scene::Clean();
+			while (!m_window.ShouldClose())
+			{
+				m_window.BeforeRender();
+				Application::Tick();
+				m_window.AfterRender();
+
+				Scene::Clean();
+			}
+
+			Scene::ClearObjects();
 		}
-
-		Scene::ClearObjects();
+		catch (std::exception e) 
+		{
+			std::cout << "Exception thrown: " << e.what() << "\n";
+		}
 	}
 
 	void Engine::SetClearColor(float r, float g, float b, float a) const

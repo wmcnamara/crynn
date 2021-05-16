@@ -3,9 +3,8 @@
 #include "../Utility/Debug.h"
 #include "../Utility/Timer.h"
 #include "Buffers/Buffers.h"
-#include "../Utility/Parsers/STLParser.h"
 #include "glad/glad.h"
-#include "Shader.h"
+#include "Rendering/Shader.h"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>

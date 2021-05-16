@@ -73,7 +73,7 @@ namespace crynn
 
 	Vec3 Transform::GetRotationEuler() const
 	{
-		return m_eulerRotation;
+		return m_eulerRotation * RAD2DEG;
 	}
 
 	//My own little implementation of a transformation hierarchy.
@@ -81,15 +81,15 @@ namespace crynn
 	//TODO implement matrix caching
 
 	Mat4& Transform::GetMatrix() const
-	{
+	{  
 		//Apply this matrices world transformations
-		m_matrix = Mat4(1.0f);
-		m_matrix = glm::scale(m_matrix, m_scale);
-		m_matrix *= glm::mat4_cast(m_rotation);
-		m_matrix = glm::translate(m_matrix, m_position);
+		m_worldMatrix = Mat4(1.0f);
+		m_worldMatrix = glm::scale(m_worldMatrix, m_scale);
+		m_worldMatrix *= glm::mat4_cast(m_rotation);
+		m_worldMatrix = glm::translate(m_worldMatrix, m_position);
 
 		//Apply parent transformations to it aswell
-		m_localMatrix = std::move(ComputeLocalMatrixRecursive(m_matrix, this));
+		m_localMatrix = std::move(ComputeLocalMatrixRecursive(m_worldMatrix, this));
 
 		return m_localMatrix;
 	}
@@ -108,6 +108,6 @@ namespace crynn
 		if (transform->m_parent == nullptr)
 			return matrix;
 
-		return ComputeLocalMatrixRecursive(matrix *= m_parent->m_matrix, transform->m_parent);
+		return ComputeLocalMatrixRecursive(matrix *= m_parent->m_worldMatrix, transform->m_parent);
 	}
 }

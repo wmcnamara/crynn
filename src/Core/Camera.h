@@ -6,7 +6,7 @@
 
 #include "EventListener.h"
 #include "Window.h"
-#include "Shader.h"
+#include "Rendering/Shader.h"
 #include "Input.h"
 #include "Transform.h"
 
@@ -47,7 +47,7 @@ namespace crynn
 		//Sets the camera FOV in degrees. Clamped between 0 and 180
 		void SetFOV(float newFOV);
 	private:
-		void BeforeUpdate(double deltaTime) override;
+		void BeforeUpdate(float deltaTime) override;
 
 		Mat4 m_projection = Mat4(1.0f);
 		Projection m_projType = Projection::Perspective;

@@ -27,7 +27,7 @@ namespace crynn
 		m_fov = newFOV;
 	}
 
-	void Camera::BeforeUpdate(double deltaTime)
+	void Camera::BeforeUpdate(float deltaTime)
 	{
 		UpdateProjectionData();
 		SetUniformData();
