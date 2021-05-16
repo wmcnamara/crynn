@@ -1,6 +1,3 @@
 [submodule "lib/thirdparty/physics"]
 	path = lib/thirdparty/physics
 	url = https://github.com/wmcnamara/physics
-[submodule "lib/thirdparty/assimp"]
-	path = lib/thirdparty/assimp
-	url = https://github.com/assimp/assimp
