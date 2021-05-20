@@ -108,6 +108,7 @@ namespace crynn
 		if (transform->m_parent == nullptr)
 			return matrix;
 
+		//Recursively walk parent model matrices and multiply them along the way
 		return ComputeLocalMatrixRecursive(matrix *= m_parent->m_worldMatrix, transform->m_parent);
 	}
 }
