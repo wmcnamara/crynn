@@ -2,7 +2,7 @@
 #include "Buffers/Buffers.h"
 #include <array>
 #include "stb_image.h"
-#include "Shader.h"
+#include "Rendering/Shader.h"
 #include "EventListener.h"
 #include "../Utility/Shapes.h" //skybox vertices
 #include "../Core/Mesh.h"
