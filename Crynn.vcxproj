@@ -19,13 +19,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
@@ -42,15 +42,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>Crynn</TargetName>
-    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)bin\binint\$(Platform)\$(Configuration)\</IntDir>
-    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\binint\$(Configuration)\</IntDir>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>Crynn</TargetName>
-    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)bin\binint\$(Platform)\$(Configuration)\</IntDir>
-    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\binint\$(Configuration)\</IntDir>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -66,7 +66,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\thirdparty\glfw;$(SolutionDir)lib\thirdparty\assimp\lib;$(SolutionDir)lib\thirdparty\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\thirdparty\glfw;$(SolutionDir)lib\thirdparty\assimp\lib\$(Configuration);$(SolutionDir)lib\thirdparty\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
@@ -78,7 +78,9 @@
 mkdir "$(OutDir)Assets\"
 
 xcopy "$(SolutionDir)src\Shaders\" "$(OutDir)Shaders\" /y /e
-xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e</Command>
+xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e
+
+xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Command>
       <Message>Copy assets, shaders and assimp DLL files to output.</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -96,7 +98,7 @@ xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e</Command>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\thirdparty\glfw;$(SolutionDir)lib\thirdparty\assimp\lib;$(SolutionDir)lib\thirdparty\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\thirdparty\glfw;$(SolutionDir)lib\thirdparty\assimp\lib\$(Configuration);$(SolutionDir)lib\thirdparty\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
@@ -108,7 +110,9 @@ xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e</Command>
 mkdir "$(OutDir)Assets\"
 
 xcopy "$(SolutionDir)src\Shaders\" "$(OutDir)Shaders\" /y /e
-xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e</Command>
+xcopy "$(SolutionDir)src\Assets\" "$(OutDir)Assets\" /y /e
+
+xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Command>
       <Message>Copy assets, shaders and assimp DLL files to output.</Message>
     </PostBuildEvent>
     <PreBuildEvent>
