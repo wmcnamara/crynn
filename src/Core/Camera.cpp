@@ -1,4 +1,13 @@
 #include "Camera.h"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
+#include "Window.h"
+#include "Rendering/Shader.h"
+#include "Input.h"
+
 namespace crynn
 {
 	Camera::Camera(Vec3 position, Projection projType) : m_projType(projType)

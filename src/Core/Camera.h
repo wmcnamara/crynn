@@ -1,20 +1,9 @@
 #pragma once
 #pragma warning (disable : 4005)
 
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-
-#include "EventListener.h"
-#include "Window.h"
-#include "Rendering/Shader.h"
-#include "Input.h"
-#include "Transform.h"
-
 #include "Math/Math.h"
-
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
-
+#include "EventListener.h"
+#include "Transform.h"
 #include "../Utility/Defines.h"
 
 namespace crynn 
