@@ -5,7 +5,7 @@
 
 ## Introduction
    Crynn is an open source game engine created with C++20 and OpenGL.
-   Crynn is not overtly user friendly. Knowledge of matrix math, OpenGL and GLFW is required.
+   Crynn is a beginner engine. Knowledge of matrix math, OpenGL, C++ and Visual Studio is required.
    Currently only supports building to Windows.
 
 ## Features
