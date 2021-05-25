@@ -23,8 +23,6 @@ namespace crynn
 		CrynnObject(CrynnObject&& other) noexcept;
 		CrynnObject& operator=(CrynnObject&& other) noexcept;
 
-		Transform& GetTransform() { return *this; }
-
 		inline bool operator== (CrynnObject& other) const { return ID == other.ID; }
 		bool Compare(CrynnObject& other) const { return ID == other.ID; }
 
