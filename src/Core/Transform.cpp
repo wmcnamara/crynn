@@ -96,7 +96,7 @@ namespace crynn
 
 	void Transform::SetParent(Transform* parent)
 	{
-		if (parent == nullptr)
+		if (parent == nullptr || parent == this)
 			return;
 
 		m_parent = parent;
