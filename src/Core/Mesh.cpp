@@ -54,7 +54,7 @@ namespace crynn
 		unsigned char* data = stbi_load(filename.c_str(), &width, &height, &nrComponents, 0);
 		if (data)
 		{
-			GLenum format;
+			GLenum format = 0;
 			if (nrComponents == 1)
 				format = GL_RED;
 			else if (nrComponents == 3)
