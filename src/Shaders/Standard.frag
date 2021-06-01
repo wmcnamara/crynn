@@ -1,3 +1,8 @@
+/*
+	This is the Crynn standard shader.
+	It is a simple, fast blinn phong implemtation that should make it easier to get up and running with crynn.
+*/
+
 #version 330 core
 out vec4 FragColor;
 
@@ -9,7 +14,7 @@ uniform sampler2D texture_diffuse1;
 uniform float time;
 uniform vec3 cameraPos;
 
-struct Material 
+struct Material
 {
     vec3 ambient;
     vec3 diffuse;
@@ -30,26 +35,41 @@ struct Light
 
 uniform Light light;  
 
+//adapted from: https://learnopengl.com/Lighting/Light-casters
+float attenuation (vec3 fragPos, vec3 lightPos) 
+{
+	float kC = 1.0f;
+	float kL = 0.7f;
+	float kQ = 1.8f;
+
+	float dist = length(fragPos - lightPos);
+	float distSqr = dist * dist;
+
+	float fAtt = 1.0 / (kC + kL * dist + kQ * distSqr);
+	return fAtt;
+}
+
 void main()
 {	
 	//ambient
 	vec3 ambient = material.ambient * light.ambient;
 
+	//attenuation
+	float attenuation = attenuation(fragPos, light.position);
+
 	//diffuse
 	vec3 norm = normalize(normal);
 	vec3 lightToFragDir = normalize(light.position - fragPos);
 	float diff = max(dot(norm, lightToFragDir), 0.0);
-	vec3 diffuse = light.diffuse * (diff * material.diffuse); //red
+	vec3 diffuse = (diff * material.diffuse) * light.diffuse * attenuation;
 
 	//specular
 	vec3 viewDir = normalize(cameraPos - fragPos);
-	vec3 reflection = reflect(-viewDir, norm);
 	vec3 lightDir = normalize(light.position - fragPos);
-
 	vec3 halfwayDir = normalize(lightDir + viewDir);
 
 	float spec = pow(max(dot(normal, halfwayDir), 0.0), material.shininess);
-	vec3 specular = (material.specular * spec) * light.specular;
+	vec3 specular = (material.specular * spec) * light.specular  * attenuation;
 
 	vec3 result = (ambient + diffuse + specular);
 
