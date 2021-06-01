@@ -19,25 +19,37 @@ struct Material
 
 uniform Material material;
 
+struct Light 
+{
+    vec3 position;
+  
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+};
+
+uniform Light light;  
+
 void main()
 {	
-	vec3 lightPos = vec3(1, 5, 1);
-	vec3 lightColor = vec3(1.0, 0.0, 0.0);
-
 	//ambient
-	vec3 ambient = material.ambient * lightColor;
+	vec3 ambient = material.ambient * light.ambient;
 
 	//diffuse
 	vec3 norm = normalize(normal);
-	vec3 lightToFragDir = normalize(lightPos - fragPos);
+	vec3 lightToFragDir = normalize(light.position - fragPos);
 	float diff = max(dot(norm, lightToFragDir), 0.0);
-	vec3 diffuse = lightColor * (diff * material.diffuse); //red
+	vec3 diffuse = light.diffuse * (diff * material.diffuse); //red
 
 	//specular
 	vec3 viewDir = normalize(cameraPos - fragPos);
 	vec3 reflection = reflect(-viewDir, norm);
-	float spec = pow(max(dot(viewDir, reflection), 0.0), material.shininess);
-	vec3 specular = (material.specular * spec) * lightColor;
+	vec3 lightDir = normalize(light.position - fragPos);
+
+	vec3 halfwayDir = normalize(lightDir + viewDir);
+
+	float spec = pow(max(dot(normal, halfwayDir), 0.0), material.shininess);
+	vec3 specular = (material.specular * spec) * light.specular;
 
 	vec3 result = (ambient + diffuse + specular);
 
