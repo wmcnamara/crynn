@@ -2,16 +2,18 @@
 
 namespace crynn 
 {
-	Light::Light() : depthShader("Shaders/DepthShader.vert", "Shaders/DepthShader.frag")
+	Light::Light(LightingColorData colorData) : depthShader("Shaders/DepthShader.vert", "Shaders/DepthShader.frag"), ColorData(colorData)
 	{
 		glGenTextures(1, &depthMap);
 		glGenFramebuffers(1, &m_FBO);
 
+		/*
 		glBindFramebuffer(GL_FRAMEBUFFER, m_FBO);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthMap, 0);
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		*/
 	}
 
 	Light::~Light()
@@ -35,6 +37,11 @@ namespace crynn
 			std::cout << "Use a higher shadowmap dimension.\n";
 
 		shadowMapDimensions = dim;
+	}
+
+	void Light::Update(float dt)
+	{
+		SetUniforms();
 	}
 
 	void Light::RenderDepthTexture()
@@ -68,5 +75,13 @@ namespace crynn
 		MeshRenderer::UseMemberShader = true;
 
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	}
+
+	void Light::SetUniforms()
+	{
+		Shader::SetVec3Current("light.position", GetPosition());
+		Shader::SetVec3Current("light.ambient", ColorData.ambient);
+		Shader::SetVec3Current("light.diffuse", ColorData.diffuse);
+		Shader::SetVec3Current("light.specular", ColorData.specular);
 	}
 }
