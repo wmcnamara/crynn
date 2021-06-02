@@ -1,11 +1,5 @@
 #pragma once
-#include "glad/glad.h"
-#include "glm/glm.hpp"
-#include "glm/matrix.hpp"
-#include "glm/gtc/matrix_transform.hpp"
-
 #include "../CrynnObject.h"
-#include "Shader.h"
 
 namespace crynn
 {	
@@ -17,37 +11,31 @@ namespace crynn
 		int shininess = 16;
 	};
 
-	enum struct LightingType
+	enum struct LightType
 	{
 		Point,
-		Directional
+		Directional,
+		Spotlight,
 	};
 
 	//https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping
 	class Light : public CrynnObject
 	{
 	public:
-		Light(LightingColorData colorData);
-		~Light();
+		Light() = delete;
+		virtual ~Light() = default;
 
-		Vec3 lightDir = Vec3(0.0, 0.0, 0.0);
+		LightingColorData colorData;
+		virtual LightType GetLightType();
 
-		Vec2Int GetShadowMapDimensions();
-		void SetShadowMapDimensions(Vec2Int dim);
+	protected: 
+		Light(LightingColorData _colorData, LightType _lightType);
 
-		LightingColorData ColorData;
-		LightingType LightType;
+		LightType lightType;
+		virtual void SetUniforms();
+
 	private:
-		void Update(float dt) override;
-		Vec2Int shadowMapDimensions = Vec2Int(1024, 1024);
-
-		void RenderDepthTexture();
-		void SetUniforms();
-
-		unsigned int m_FBO = 0;
-		unsigned int depthMap = 0;
-
-		Shader depthShader;
+		virtual void Update(float dt) override;
 	};
 
 }

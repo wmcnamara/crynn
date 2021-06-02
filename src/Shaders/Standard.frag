@@ -17,7 +17,7 @@ in vec3 normal;
 uniform sampler2D texture_diffuse1;
 uniform float time;
 uniform vec3 cameraPos;
-
+uniform bool sceneHasLights;
 
 struct Material
 {
@@ -58,16 +58,13 @@ float attenuation (vec3 fragPos, vec3 lightPos)
 void main()
 {	
 	//ambient
-	vec3 ambient = material.ambient * light.ambient;
-
-	//attenuation
-	float attenuation = attenuation(fragPos, light.position);
+	vec3 ambient = material.ambient;
 
 	//diffuse
 	vec3 norm = normalize(normal);
 	vec3 lightToFragDir = normalize(light.position - fragPos);
 	float diff = max(dot(norm, lightToFragDir), 0.0);
-	vec3 diffuse = (diff * material.diffuse) * light.diffuse * attenuation;
+	vec3 diffuse = (diff * material.diffuse);
 
 	//specular
 	vec3 viewDir = normalize(cameraPos - fragPos);
@@ -75,7 +72,20 @@ void main()
 	vec3 halfwayDir = normalize(lightDir + viewDir);
 
 	float spec = pow(max(dot(normal, halfwayDir), 0.0), material.shininess);
-	vec3 specular = (material.specular * spec) * light.specular  * attenuation;
+	vec3 specular = (material.specular * spec);
+
+	if (light.type == LIGHT_POINT && sceneHasLights) 
+	{	
+		//Apply point light attenuation
+		float attenuation = attenuation(fragPos, light.position);
+		diffuse *= attenuation;
+		specular *= attenuation;
+
+		//Apply light colors
+		ambient *= light.ambient;
+		diffuse *= light.diffuse;
+		specular *= light.specular;
+	}
 
 	vec3 result = (ambient + diffuse + specular);
 
