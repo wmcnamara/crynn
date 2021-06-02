@@ -4,6 +4,10 @@
 */
 
 #version 330 core
+
+#define LIGHT_POINT 0 
+#define LIGHT_DIRECTIONAL 1
+
 out vec4 FragColor;
 
 in vec2 texCoord;
@@ -13,6 +17,7 @@ in vec3 normal;
 uniform sampler2D texture_diffuse1;
 uniform float time;
 uniform vec3 cameraPos;
+
 
 struct Material
 {
@@ -27,10 +32,11 @@ uniform Material material;
 struct Light 
 {
     vec3 position;
-  
     vec3 ambient;
     vec3 diffuse;
     vec3 specular;
+
+	int type;
 };
 
 uniform Light light;  

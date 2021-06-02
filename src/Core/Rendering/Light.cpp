@@ -1,4 +1,5 @@
 #include "Light.h"
+#include "MeshRenderer.h"
 
 namespace crynn 
 {
@@ -79,6 +80,9 @@ namespace crynn
 
 	void Light::SetUniforms()
 	{
+		int lightTypeEnum = std::underlying_type<LightingType>::type(LightType);
+
+		Shader::SetIntCurrent("light.type", lightTypeEnum);
 		Shader::SetVec3Current("light.position", GetPosition());
 		Shader::SetVec3Current("light.ambient", ColorData.ambient);
 		Shader::SetVec3Current("light.diffuse", ColorData.diffuse);
