@@ -39,7 +39,7 @@ namespace crynn
 		virtual void BeforeUpdate(float deltaTime) {}
 		virtual void BeforeClose() {} ///Called before quitting to desktop with Application::Instance().Quit();
 	private:		
-		///Subscribes the events in this class to the Crynn event system. Call at the end of your constructor.
+		///Subscribes the events in this class to the Crynn event system.
 		void SubscribeEvents();
 
 		friend class CrynnObject;
