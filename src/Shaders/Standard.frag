@@ -37,6 +37,8 @@ struct Light
     vec3 specular;
 
 	int type;
+
+	vec3 direction; //directional light
 };
 
 uniform Light light;  
@@ -57,25 +59,31 @@ float attenuation (vec3 fragPos, vec3 lightPos)
 
 void main()
 {
-	//Surface normal
-	vec3 surfNorm = normalize(normal);
+	vec3 surfNorm = normalize(normal); //surface normal
+
+	vec3 lightDir = vec3(0); //direction of fragment to light
+
+	if (light.type == LIGHT_DIRECTIONAL) 
+		-light.direction;
+	else if (light.type == LIGHT_POINT)
+		lightDir = normalize(light.position - fragPos);
+
 
 	//ambient
 	vec3 ambient = material.ambient;
 
 	//diffuse
-	vec3 lightToFragDir = normalize(light.position - fragPos);
-	float diff = max(dot(surfNorm, lightToFragDir), 0.0);
+	float diff = max(dot(surfNorm, lightDir), 0.0);
 	vec3 diffuse = (diff * material.diffuse);
 
 	//specular
 	vec3 viewDir = normalize(cameraPos - fragPos);
-	vec3 lightDir = normalize(light.position - fragPos);
 	vec3 halfwayDir = normalize(lightDir + viewDir);
 
 	float spec = pow(max(dot(surfNorm, halfwayDir), 0.1), material.shininess);
 	vec3 specular = (material.specular * spec);
 
+	//Apply attenuation if its a point light
 	if (light.type == LIGHT_POINT && sceneHasLights) 
 	{	
 		//Apply point light attenuation
