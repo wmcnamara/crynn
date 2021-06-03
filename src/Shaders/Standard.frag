@@ -56,14 +56,16 @@ float attenuation (vec3 fragPos, vec3 lightPos)
 }
 
 void main()
-{	
+{
+	//Surface normal
+	vec3 surfNorm = normalize(normal);
+
 	//ambient
 	vec3 ambient = material.ambient;
 
 	//diffuse
-	vec3 norm = normalize(normal);
 	vec3 lightToFragDir = normalize(light.position - fragPos);
-	float diff = max(dot(norm, lightToFragDir), 0.0);
+	float diff = max(dot(surfNorm, lightToFragDir), 0.0);
 	vec3 diffuse = (diff * material.diffuse);
 
 	//specular
@@ -71,7 +73,7 @@ void main()
 	vec3 lightDir = normalize(light.position - fragPos);
 	vec3 halfwayDir = normalize(lightDir + viewDir);
 
-	float spec = pow(max(dot(normal, halfwayDir), 0.0), material.shininess);
+	float spec = pow(max(dot(surfNorm, halfwayDir), 0.1), material.shininess);
 	vec3 specular = (material.specular * spec);
 
 	if (light.type == LIGHT_POINT && sceneHasLights) 
