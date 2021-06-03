@@ -1,9 +1,10 @@
 #pragma once
 #include "../CrynnObject.h"
+#include <utility>
 
 namespace crynn
 {	
-	struct LightingColorData
+	struct LightColorData
 	{
 		Vec3 ambient = Vec3(0.2f, 0.2f, 0.2f);
 		Vec3 diffuse = Vec3(0.5, 0.5, 0.5);
@@ -18,24 +19,36 @@ namespace crynn
 		Spotlight,
 	};
 
-	//https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping
+	//Base class for a light source in the Crynn game engine
 	class Light : public CrynnObject
 	{
 	public:
-		Light() = delete;
+		Light() = delete; //use an implementation of Light like DirectionalLight
 		virtual ~Light() = default;
 
-		LightingColorData colorData;
+		LightColorData colorData;
 		virtual LightType GetLightType();
 
 	protected: 
-		Light(LightingColorData _colorData, LightType _lightType);
+		Light(LightColorData _colorData, LightType _lightType);
 
 		LightType lightType;
-		virtual void SetUniforms();
 
+		void SetUniforms(); //Sets the necessary color and position uniforms
+		virtual void SetExtraUniforms() = 0; //Used to set additional, light specific uniforms like a directional lights direction for instance.
 	private:
 		virtual void Update(float dt) override;
 	};
 
+	class DirectionalLight : public Light 
+	{
+	public:
+		DirectionalLight(LightColorData _colorData, Vec3 _lightDir);
+		~DirectionalLight() = default;
+
+		void SetLightDir(Vec3 _lightDir);
+		void SetExtraUniforms() override;
+	private:
+		Vec3 lightDir = Vec3(1.0f, 0.0, 0.0);
+	};
 }
