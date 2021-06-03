@@ -36,6 +36,16 @@ namespace crynn
 		glUniformBlockBinding(ID, UBI, 0);
 	}
 
+	Shader::Shader(GLuint _ID) : ID(_ID)
+	{
+		if (_ID == 0)
+			return;
+
+		//Setup block bindings
+		UBI = glGetUniformBlockIndex(ID, "CameraMatrices");
+		glUniformBlockBinding(ID, UBI, 0);
+	}
+
 	void Shader::ShaderLinkLog(unsigned int shaderProgram)
 	{
 		int success;
@@ -53,6 +63,14 @@ namespace crynn
 		{
 			std::cout << "Shader Program Linked Successfully\n";
 		}
+	}
+
+	Shader Shader::GetCurrentShaderProgram()
+	{
+		GLint currentID;
+		glGetIntegerv(GL_CURRENT_PROGRAM, &currentID);
+
+		return Shader(currentID);
 	}
 
 	void Shader::ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader)
