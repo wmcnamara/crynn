@@ -17,14 +17,11 @@ namespace crynn
 	class Shader
 	{
 	public:
-		// the program ID
-		GLuint ID;
+
+		inline GLuint GetID() { return ID; }
 
 		//Constructs a shader program from two relative paths to the corresponding shader files
 		Shader(const char* vertexPath, const char* fragmentPath);
-
-		//Constructs a shader object from an already created program ID
-		Shader(GLuint ID);
 
 		~Shader();
 
@@ -53,13 +50,9 @@ namespace crynn
 		static void SetMatrix3Current(const char* name, const glm::mat3* matrix);
 		static void SetMatrix4Current(const char* name, const glm::mat4* matrix);
 
-		//Returns a reference to the currently bound shader program.
-		//This function is DANGEROUS.
-		//If the shader program changes, this value will be wrong.
-		//It is recommended that you do not cache this value, and recalculate it every frame.
-		static Shader GetCurrentShaderProgram();
 	private:
 		GLuint UBI;
+		GLuint ID; // The shader program ID
 
 		void ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader);
 		void ShaderLinkLog(unsigned int shaderProgram);
