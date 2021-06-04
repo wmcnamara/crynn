@@ -64,7 +64,7 @@ void main()
 	vec3 lightDir = vec3(0); //direction of fragment to light
 
 	if (light.type == LIGHT_DIRECTIONAL) 
-		-light.direction;
+		lightDir = -light.direction;
 	else if (light.type == LIGHT_POINT)
 		lightDir = normalize(light.position - fragPos);
 
@@ -91,12 +91,15 @@ void main()
 		diffuse *= attenuation;
 		specular *= attenuation;
 
+	}
+
+	if (sceneHasLights) 
+	{
 		//Apply light colors
 		ambient *= light.ambient;
 		diffuse *= light.diffuse;
 		specular *= light.specular;
 	}
-
 	vec3 result = (ambient + diffuse + specular);
 
 	FragColor = texture(texture_diffuse1, texCoord) * vec4(result, 1.0);
