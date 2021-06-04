@@ -9,7 +9,6 @@ namespace crynn
 		Vec3 ambient = Vec3(0.2f, 0.2f, 0.2f);
 		Vec3 diffuse = Vec3(0.5, 0.5, 0.5);
 		Vec3 specular = Vec3(0.1);
-		int shininess = 16;
 	};
 
 	enum struct LightType
