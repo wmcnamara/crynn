@@ -39,21 +39,22 @@ struct Light
 	int type;
 
 	vec3 direction; //directional light
+	float pointLightDistance; //point light
 };
 
 uniform Light light;  
 
-//adapted from: https://learnopengl.com/Lighting/Light-casters
-float attenuation (vec3 fragPos, vec3 lightPos) 
+//equation adapted from: https://wiki.ogre3d.org/Light+Attenuation+Shortcut
+float attenuation (vec3 fragPos, vec3 lightPos, float pointDist) 
 {
 	float kC = 1.0f;
-	float kL = 0.7f;
-	float kQ = 1.8f;
+	float kL = 4.5f / pointDist;
+	float kQ = 75.0f / (pointDist * pointDist);
 
-	float dist = length(fragPos - lightPos);
-	float distSqr = dist * dist;
+	float lightToFragDist = length(fragPos - lightPos);
+	float distSqr = lightToFragDist * lightToFragDist;
 
-	float fAtt = 1.0 / (kC + kL * dist + kQ * distSqr);
+	float fAtt = 1.0 / (kC + kL * lightToFragDist + kQ * lightToFragDist);
 	return fAtt;
 }
 
@@ -65,6 +66,7 @@ void main()
 
 	if (light.type == LIGHT_DIRECTIONAL) 
 		lightDir = -light.direction;
+
 	else if (light.type == LIGHT_POINT)
 		lightDir = normalize(light.position - fragPos);
 
@@ -87,19 +89,19 @@ void main()
 	if (light.type == LIGHT_POINT && sceneHasLights) 
 	{	
 		//Apply point light attenuation
-		float attenuation = attenuation(fragPos, light.position);
+		float attenuation = attenuation(fragPos, light.position, light.pointLightDistance);
 		diffuse *= attenuation;
 		specular *= attenuation;
-
 	}
 
 	if (sceneHasLights) 
 	{
 		//Apply light colors
-		ambient *= light.ambient;
+		ambient += light.ambient;
 		diffuse *= light.diffuse;
 		specular *= light.specular;
 	}
+
 	vec3 result = (ambient + diffuse + specular);
 
 	FragColor = texture(texture_diffuse1, texCoord) * vec4(result, 1.0);
