@@ -23,7 +23,8 @@ namespace crynn
 		Shader::SetVec3Current("light.ambient", colorData.ambient);
 		Shader::SetVec3Current("light.diffuse", colorData.diffuse);
 		Shader::SetVec3Current("light.specular", colorData.specular);
-        Shader::SetBoolCurrent("sceneHasLights", true);
+		Shader::SetIntCurrent("light.type", std::underlying_type<LightType>::type(lightType));
+		Shader::SetBoolCurrent("sceneHasLights", true);
 
 		SetExtraUniforms();
 	}
@@ -41,6 +42,15 @@ namespace crynn
 	void DirectionalLight::SetExtraUniforms()
 	{
 		Shader::SetVec3Current("light.direction", lightDir);
-		Shader::SetIntCurrent("light.type", std::underlying_type<LightType>::type(lightType));
+	}
+
+	PointLight::PointLight(LightColorData _colorData, float _range) :
+		Light(_colorData, LightType::Point), 
+		range(_range)
+	{}
+
+	void PointLight::SetExtraUniforms()
+	{
+		Shader::SetFloatCurrent("light.pointLightDistance", range);
 	}
 }

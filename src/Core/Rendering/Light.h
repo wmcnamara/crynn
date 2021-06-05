@@ -46,8 +46,21 @@ namespace crynn
 		~DirectionalLight() = default;
 
 		void SetLightDir(Vec3 _lightDir);
-		void SetExtraUniforms() override;
+		inline Vec3 GetLightDir() { return lightDir; }
 	private:
+		void SetExtraUniforms() override;
 		Vec3 lightDir = Vec3(1.0f, 0.0, 0.0);
+	};
+
+	class PointLight : public Light 
+	{
+	public:
+		PointLight(LightColorData _colorData, float _range);
+		~PointLight() = default;
+
+		float range = 0;
+
+	private:
+		virtual void SetExtraUniforms() override;
 	};
 }
