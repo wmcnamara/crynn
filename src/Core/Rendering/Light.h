@@ -43,12 +43,12 @@ namespace crynn
 	{
 	public:
 		DirectionalLight(LightColorData _colorData, Vec3 _lightDir);
-		~DirectionalLight() = default;
+		virtual ~DirectionalLight() = default;
 
 		void SetLightDir(Vec3 _lightDir);
 		inline Vec3 GetLightDir() { return lightDir; }
 	private:
-		void SetExtraUniforms() override;
+		virtual void SetExtraUniforms() override;
 		Vec3 lightDir = Vec3(1.0f, 0.0, 0.0);
 	};
 
@@ -56,7 +56,7 @@ namespace crynn
 	{
 	public:
 		PointLight(LightColorData _colorData, float _range);
-		~PointLight() = default;
+		virtual ~PointLight() = default;
 
 		float range = 0;
 
