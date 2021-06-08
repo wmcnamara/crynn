@@ -35,6 +35,7 @@ struct Light
     vec3 ambient;
     vec3 diffuse;
     vec3 specular;
+	float intensity;
 
 	int type;
 
@@ -97,9 +98,9 @@ void main()
 	if (sceneHasLights) 
 	{
 		//Apply light colors
-		ambient += light.ambient;
-		diffuse *= light.diffuse;
-		specular *= light.specular;
+		ambient *= light.ambient;
+		diffuse *= light.diffuse * light.intensity;
+		specular *= light.specular * light.intensity;
 	}
 
 	vec3 result = (ambient + diffuse + specular);

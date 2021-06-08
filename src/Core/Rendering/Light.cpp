@@ -3,7 +3,10 @@
 
 namespace crynn
 {
-	Light::Light(LightColorData _colorData, LightType _lightType) : colorData(_colorData), lightType(_lightType) {}
+	Light::Light(LightColorData _colorData, LightType _lightType) : 
+		colorData(_colorData), 
+		lightType(_lightType) 
+	{}
 
 	LightType Light::GetLightType()
 	{
@@ -23,6 +26,7 @@ namespace crynn
 		Shader::SetVec3Current("light.ambient", colorData.ambient);
 		Shader::SetVec3Current("light.diffuse", colorData.diffuse);
 		Shader::SetVec3Current("light.specular", colorData.specular);
+		Shader::SetFloatCurrent("light.intensity", intensity);
 		Shader::SetIntCurrent("light.type", std::underlying_type<LightType>::type(lightType));
 		Shader::SetBoolCurrent("sceneHasLights", true);
 

@@ -6,7 +6,7 @@ namespace crynn
 {	
 	struct LightColorData
 	{
-		Vec3 ambient = Vec3(0.2f, 0.2f, 0.2f);
+		Vec3 ambient = Vec3(1.0f, 1.0f, 1.0f);
 		Vec3 diffuse = Vec3(0.5, 0.5, 0.5);
 		Vec3 specular = Vec3(0.1);
 	};
@@ -26,15 +26,16 @@ namespace crynn
 		virtual ~Light() = default;
 
 		LightColorData colorData;
-		virtual LightType GetLightType();
+		float intensity = 1.0f;
 
+		virtual LightType GetLightType();
 	protected: 
 		Light(LightColorData _colorData, LightType _lightType);
 
 		LightType lightType;
 
-		void SetUniforms(); //Sets the necessary color and position uniforms
-		virtual void SetExtraUniforms() = 0; //Used to set additional, light specific uniforms like a directional lights direction for instance.
+		virtual void SetUniforms() final; //Sets the necessary color and position uniforms
+		virtual void SetExtraUniforms() = 0; //Used to set additional, light caster specific uniforms like lights direction for instance.
 	private:
 		virtual void Update(float dt) override;
 	};
