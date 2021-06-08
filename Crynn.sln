@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Crynn", "Crynn.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Physics", "lib\thirdparty\physics\Physics\Physics.vcxproj", "{956F9F8B-7FCB-4F31-B804-95DAEC164D27}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tests", "src\Tests\Tests.vcxproj", "{3FA1DC37-29D8-4036-AFB1-819D3E6A3BEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Debug|x64.Build.0 = Debug|x64
 		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Release|x64.ActiveCfg = Release|x64
 		{956F9F8B-7FCB-4F31-B804-95DAEC164D27}.Release|x64.Build.0 = Release|x64
+		{3FA1DC37-29D8-4036-AFB1-819D3E6A3BEA}.Debug|x64.ActiveCfg = Debug|x64
+		{3FA1DC37-29D8-4036-AFB1-819D3E6A3BEA}.Debug|x64.Build.0 = Debug|x64
+		{3FA1DC37-29D8-4036-AFB1-819D3E6A3BEA}.Release|x64.ActiveCfg = Release|x64
+		{3FA1DC37-29D8-4036-AFB1-819D3E6A3BEA}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
