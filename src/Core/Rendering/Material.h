@@ -21,7 +21,7 @@ namespace crynn
 	/// A material wraps rendering settings in a simple to use data structure.
 	/// It contains a shader, and a set of configurable rendering options.
 	/// 
-	/// To access data from this class, declare a struct called Materials, with the 
+	/// To access data from this class inside a shader, declare a struct called Materials, with the 
 	/// 
 	/// ambient
 	/// diffuse
@@ -32,6 +32,7 @@ namespace crynn
 	/// uniform Material material;
 	/// 
 	/// The variables will be set by this class.
+	/// An example can be found in the Shaders/Standard.frag file
 	/// </summary>
 	class Material
 	{
@@ -49,7 +50,6 @@ namespace crynn
 		void SetUniforms() const;
 
 		const Shader& m_shader;
-
 		friend class MeshRenderer;
 	};
 }
