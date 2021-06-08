@@ -10,6 +10,8 @@
 #include "Core/Input.h"
 #include "Core/Rendering/MeshRenderer.h"
 #include "Core/Rendering/Shader.h"
+#include "Core/Rendering/Light.h"
+#include "Core/Rendering/Material.h"
 #include "Core/EventListener.h"
 #include "Core/Application.h"
 #include "Core/Transform.h"
