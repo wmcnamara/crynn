@@ -20,14 +20,14 @@ namespace crynn
 	Vec2 crynn::ParseVec2(const char* textStart)
 	{
 		//Get vector components
-		float x = 0.0f, y = 0.0f, z = 0.0f;
+		float x = 0.0f, y = 0.0f;
 		char* nextFloatEnd; //used in strtof. check strtof docs to understand
 
 		//Parse the vertex values
-		x = (int)strtof(textStart, &nextFloatEnd);
-		y = (int)strtof(nextFloatEnd, NULL);
+		x = strtof(textStart, &nextFloatEnd);
+		y = strtof(nextFloatEnd, NULL);
 
-		//Create Vec3
+		//Create Vec2
 		return Vec2(x, y);
 	}
 }
