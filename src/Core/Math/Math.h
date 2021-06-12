@@ -27,7 +27,7 @@ namespace crynn
 		Should not have other text inside of it. Only the numbers, and spaces between them.
 		Will place a value of 0 for any component that fails to parse.
 	*/	
-	static Vec3 ParseVec3(const char* textStart);
+	Vec3 ParseVec3(const char* textStart);
 
 	/*
 		Creates a glm::vec2 from a string starting at parameter textStart.
@@ -35,7 +35,7 @@ namespace crynn
 		Should not have other text inside of it. Only the numbers, and spaces between them.
 		Will place a value of 0 for any component that fails to parse.
 	*/
-	static Vec2 ParseVec2(const char* textStart);
+	Vec2 ParseVec2(const char* textStart);
 
 	/// <summary>
 	/// Collection of floating point math functions
