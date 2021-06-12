@@ -5,7 +5,7 @@
 */
 
 //Vertex data for a cube with texture coordinates
-static inline float cubeVerticesTexCoords[] =
+inline float cubeVerticesTexCoords[] =
 {
     // positions          // texture Coords
     -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -51,8 +51,8 @@ static inline float cubeVerticesTexCoords[] =
     -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
 };
 
-static inline const size_t skyboxVerticesSize = 108;
-static inline float skyboxVertices[108] = 
+inline const size_t skyboxVerticesSize = 108;
+inline float skyboxVertices[108] = 
 {
     // positions          
     -1.0f,  1.0f, -1.0f,
@@ -99,7 +99,7 @@ static inline float skyboxVertices[108] =
 };
 
 //Vertex data for a cube
-static inline float cubeVertices[] =
+inline float cubeVertices[] =
 {
     // positions
     -0.5f, -0.5f, -0.5f,
