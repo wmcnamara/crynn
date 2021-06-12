@@ -32,6 +32,8 @@ namespace crynn
 		Window(const char* name, unsigned int width, unsigned int height);
 		Window(const Window& other) = delete; //There should only ever be one window.
 		Window(const Window&& other) = delete; //There should only ever be one window.
+		Window operator=(const Window& other) = delete; //There should only ever be one window.
+		Window operator=(const Window&& other) = delete; //There should only ever be one window.
 		~Window();
 
 		/// <summary>

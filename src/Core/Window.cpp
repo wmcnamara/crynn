@@ -17,7 +17,7 @@ namespace crynn
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		glfwWindowHint(GLFW_SAMPLES, 4);
-
+		
 		//Window
 		//Set the glfwWindow.
 		glfwWindow = glfwCreateWindow(width, height, name, NULL, NULL);
