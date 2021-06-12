@@ -103,6 +103,16 @@ namespace crynn
 		parent->m_children.insert(this);
 	}
 
+	Transform* Transform::GetParent()
+	{
+		return m_parent;
+	}
+
+	void Transform::RemoveParent()
+	{
+		m_parent = nullptr;
+	}
+
 	Mat4& Transform::ComputeLocalMatrixRecursive(Mat4& matrix, const Transform* const transform) const
 	{
 		if (transform->m_parent == nullptr)

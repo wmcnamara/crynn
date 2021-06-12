@@ -47,6 +47,9 @@ namespace crynn
 		Mat4& GetMatrix() const;
 
 		void SetParent(Transform* parent);
+		Transform* GetParent();
+
+		void RemoveParent();
 	private:
 		Vec3 m_position = Vec3(0, 0, 0);
 		Quat m_rotation = Quat(Vec3(0.0f, 0.0f, 0.0f));
