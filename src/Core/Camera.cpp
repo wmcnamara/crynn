@@ -29,6 +29,12 @@ namespace crynn
 		glDeleteBuffers(1, &m_matrixUBO);
 	}
 
+	void Camera::SetClipPlanes(float farClipPlane, float nearClipPlane)
+	{
+		m_nearClipPlane = nearClipPlane;
+		m_farClipPlane = farClipPlane;
+	}
+
 	void Camera::SetFOV(float newFOV)
 	{
 		assert(Math::Between(0, 180, newFOV));
@@ -62,10 +68,10 @@ namespace crynn
 		glGetFloatv(GL_VIEWPORT, viewportDat);
 
 		//Dont construct a projection with a zero size width/height
-		if (viewportDat[2] < 1 || viewportDat[3] < 1)
+		if (viewportDat[2] <= 0 || viewportDat[3] <= 0)
 		{
-			viewportDat[2] = 1; 
-			viewportDat[3] = 1;
+			m_projection = Mat4(1.0f); //If its <= 0 just give an identity matrix
+			return;
 		}
 
 		if (m_projType == Projection::Perspective)
@@ -74,16 +80,16 @@ namespace crynn
 			m_projection = glm::perspective(
 				glm::radians(m_fov),
 				viewportDat[2] / viewportDat[3], //The first 2 elements of GL_VIEWPORT are irrelevant here.
-				nearClipPlane,
-				farClipPlane);
+				m_nearClipPlane,
+				m_farClipPlane);
 		}
 		else if (m_projType == Projection::Orthographic)
 		{
 			m_projection = glm::ortho(
 				glm::radians(m_fov),
 				viewportDat[2] / viewportDat[3], //The first 2 elements of GL_VIEWPORT are irrelevant here.
-				nearClipPlane,
-				farClipPlane);
+				m_nearClipPlane,
+				m_farClipPlane);
 		}
 	}
 }

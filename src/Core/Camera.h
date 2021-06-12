@@ -30,8 +30,7 @@ namespace crynn
 
 		Mat4 GetProjection() const { return m_projection; }
 
-		float farClipPlane = 100.0f;
-		float nearClipPlane = 0.1f;
+		void SetClipPlanes(float farClipPlane, float nearClipPlane);
 
 		//Sets the camera FOV in degrees. Clamped between 0 and 180
 		void SetFOV(float newFOV);
@@ -47,5 +46,7 @@ namespace crynn
 		void UpdateProjectionData();
 
 		float m_fov = 60.0f;
+		float m_nearClipPlane = 0.1f;
+		float m_farClipPlane = 100.0f;
 	};
 }
