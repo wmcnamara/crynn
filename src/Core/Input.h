@@ -1,7 +1,7 @@
 #pragma once
 #include "Window.h"
 
-#define KEYSTATE_BUFFER_SIZE 350
+#define KEYSTATE_BUFFER_MAX_SIZE 350
 
 namespace crynn
 {
@@ -53,8 +53,8 @@ namespace crynn
 		friend void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 		friend void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 
-		inline static bool currentKeyStates[KEYSTATE_BUFFER_SIZE]; //The states of each key in the current frame.
-		inline static bool getKeyDownStates[KEYSTATE_BUFFER_SIZE]; //The states of each key for GetKeyDown.
+		inline static bool currentKeyStates[KEYSTATE_BUFFER_MAX_SIZE]; //The states of each key in the current frame.
+		inline static bool getKeyDownStates[KEYSTATE_BUFFER_MAX_SIZE]; //The states of each key for GetKeyDown.
 
 		inline static bool m_initialised = false; //Is input initialised?
 

@@ -4,7 +4,7 @@ namespace crynn
 {
 	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 	{
-		if (key > KEYSTATE_BUFFER_SIZE)
+		if (key >= KEYSTATE_BUFFER_MAX_SIZE)
 			return;
 
 		//Update keystate according to action
@@ -40,7 +40,7 @@ namespace crynn
 		//Cast keycode to its underlying int type because it is a strong enum.
 		int keyCode = std::underlying_type<KeyCode>::type(key);
 		
-		if (keyCode >= KEYSTATE_BUFFER_SIZE) //prevent out of bounds
+		if (keyCode >= KEYSTATE_BUFFER_MAX_SIZE) //prevent out of bounds
 			return false;
 
 		return currentKeyStates[keyCode];
@@ -51,7 +51,7 @@ namespace crynn
 		//Cast keycode to its underlying int type because it is a strong enum.
 		int keyCode = std::underlying_type<KeyCode>::type(key);
 
-		if (keyCode >= KEYSTATE_BUFFER_SIZE) //prevent out of bounds
+		if (keyCode >= KEYSTATE_BUFFER_MAX_SIZE) //prevent out of bounds
 			return false;
 
 		bool keyCurrentlyPressed = currentKeyStates[keyCode];
