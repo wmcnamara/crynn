@@ -6,6 +6,7 @@ namespace crynn
 	Engine::Engine(int windowWidth, int windowHeight, const char* windowName) :
 		m_window(Window(windowName, windowWidth, windowHeight)) 
 	{
+		static_assert(__STDCPP_THREADS__, "Crynn requires multiple threads to function");
 		Physics::Init(); //initialise physics
 	}
 

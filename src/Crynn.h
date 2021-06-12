@@ -21,6 +21,7 @@
 #include "Core/Physics/Collision/AABB.h"
 #include "Core/Skybox.h"
 #include "Core/Physics/Rigidbody.h"
+#include "Core/Math/Math.h"
 
 #include "Utility/Debug.h"
 #include "Utility/IO.h"
@@ -32,7 +33,7 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_internal.h"
 
-#include "Core/Math/Math.h"
+
 
 #include <memory>
 #include <future>
