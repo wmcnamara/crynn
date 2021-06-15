@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include "../Core/Math/Math.cpp"
-#include "../Core/Transform.h"
+//#include "../Core/Transform.cpp"
 
 #pragma warning( disable : 4244)
 
@@ -61,7 +61,7 @@ namespace CrynnTests
 			Assert::AreEqual(vec, Vec2(-1.0, 1.0));
 		}
 	};
-
+	/*
 	TEST_CLASS(TransformTest) 
 	{
 	public:
@@ -75,4 +75,5 @@ namespace CrynnTests
 			Assert::AreEqual(tr.GetParent(), &tr2);		
 		}
 	};
+	*/
 }
