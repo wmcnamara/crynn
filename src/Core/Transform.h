@@ -5,7 +5,6 @@
 #include <iostream>
 #include <memory>
 #include <unordered_set>
-#include "../Utility/Debug.h"
 #include "Math/Math.h"
 #include <memory>
 
@@ -43,11 +42,15 @@ namespace crynn
 		const Quat& GetRotation() const; //Returns a quaternion representing the objects rotation. If you would like euler angles, use GetRotationEuler().
 		Vec3 GetRotationEuler() const; //Returns a Vec3 with the euler angle rotation state.
 
+		Vec3 GetForwardVector() const;
+		Vec3 GetRightVector() const;
+		Vec3 GetUpVector() const;
+
 		//Returns a non-const reference to the model matrix struct this class is represented with.
 		Mat4& GetMatrix() const;
 
 		void SetParent(Transform* parent);
-		Transform* GetParent();
+		Transform& GetParent();
 
 		void RemoveParent();
 	private:
@@ -55,7 +58,7 @@ namespace crynn
 		Quat m_rotation = Quat(Vec3(0.0f, 0.0f, 0.0f));
 		Vec3 m_scale = Vec3(1, 1, 1);
 
-		mutable Vec3 m_eulerRotation = Vec3(0, 0, 0); //Cache for the euler rotation of the object. Not used in any calculation. Degrees
+		Vec3 m_eulerRotation = Vec3(0, 0, 0); //Cache for the euler rotation of the object. Not used in any calculation. Degrees
 		mutable Mat4 m_worldMatrix = Mat4(1.0f); //model matrix with transformations relative to the world origin
 		mutable Mat4 m_localMatrix = Mat4(1.0f); //model matrix with transformations relative to the parents of this transform.
 
@@ -65,5 +68,7 @@ namespace crynn
 
 		Transform* m_parent = nullptr;
 		std::unordered_set<Transform*> m_children; //pointers to this objects children.
+
+		mutable std::atomic_bool m_recalculateMatrix = true; //set to true after moving/rotating/scaling. Indicates model matrix needs to be recalculated.
 	};
 }

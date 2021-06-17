@@ -23,11 +23,15 @@ namespace crynn
 	void Transform::Translate(Vec3 translation)
 	{
 		m_position += translation;
+
+		m_recalculateMatrix = true;
 	}	
 
 	void Transform::Scale(Vec3 scale)
 	{
 		m_scale += scale;
+
+		m_recalculateMatrix = true;
 	}
 
 	void Transform::Rotate(Vec3 rot)
@@ -36,11 +40,15 @@ namespace crynn
 		m_rotation *= glm::quat(rot);
 
 		m_eulerRotation += rot;
+
+		m_recalculateMatrix = true;
 	}
 
 	void Transform::SetPosition(Vec3 pos)
 	{
 		m_position = pos; //Update currentPos
+
+		m_recalculateMatrix = true;
 	}
 
 	Vec3 Transform::GetPosition() const
@@ -51,6 +59,8 @@ namespace crynn
 	void Transform::SetScale(Vec3 newScale)
 	{
 		m_scale = newScale;
+
+		m_recalculateMatrix = true;
 	}
 
 	Vec3 Transform::GetScale() const
@@ -64,6 +74,8 @@ namespace crynn
 		m_rotation = glm::quat(rot);
 
 		m_eulerRotation = rot;
+
+		m_recalculateMatrix = true;
 	}
 
 	const Quat& Transform::GetRotation() const
@@ -76,17 +88,41 @@ namespace crynn
 		return m_eulerRotation * RAD2DEG;
 	}
 
+	Vec3 Transform::GetForwardVector() const
+	{
+		Vec3 forward = Vec3(0, 0, 1);
+
+		return glm::normalize(m_rotation * forward);
+	}
+
+	Vec3 Transform::GetRightVector() const
+	{
+		Vec3 up = Vec3(0, 1, 0);
+		return glm::normalize(glm::cross(GetForwardVector(), up));
+	}
+
+	Vec3 Transform::GetUpVector() const
+	{
+		return glm::normalize(glm::cross(GetRightVector(), GetForwardVector()));
+	}
+
 	//My own little implementation of a transformation hierarchy.
 	//Its a bit complicated, so take a moment to look through if you're confused.
 	//TODO implement matrix caching
 
 	Mat4& Transform::GetMatrix() const
 	{  
-		//Apply this matrices world transformations
-		m_worldMatrix = Mat4(1.0f);
-		m_worldMatrix = glm::scale(m_worldMatrix, m_scale);
-		m_worldMatrix *= glm::mat4_cast(m_rotation);
-		m_worldMatrix = glm::translate(m_worldMatrix, m_position);
+		if (m_recalculateMatrix) 
+		{		
+			//Apply this matrices world transformations
+			m_worldMatrix = Mat4(1.0f);
+			m_worldMatrix = glm::scale(m_worldMatrix, m_scale);
+
+			//This seems a bit weird, but basically we use the forward vector to construct a lookat matrix (view matrix) and then take the inverse of it to give the model matrix.
+			m_worldMatrix *= glm::inverse(glm::lookAt(m_position, m_position + GetForwardVector(), Vec3(0, 1, 0)));		
+
+			m_recalculateMatrix = false;
+		}
 
 		//Apply parent transformations to it aswell
 		m_localMatrix = std::move(ComputeLocalMatrixRecursive(m_worldMatrix, this));
@@ -101,11 +137,13 @@ namespace crynn
 
 		m_parent = parent;
 		parent->m_children.insert(this);
+
+		m_recalculateMatrix = true;
 	}
 
-	Transform* Transform::GetParent()
+	Transform& Transform::GetParent()
 	{
-		return m_parent;
+		return *m_parent;
 	}
 
 	void Transform::RemoveParent()
