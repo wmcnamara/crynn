@@ -1,6 +1,8 @@
 #pragma once
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
+#include <iostream>
+#include <cmath>
 
 #define PI 3.14159f
 #define DEG2RAD PI / 180.0f //Converts an angle in degrees to radians
@@ -20,6 +22,16 @@ namespace crynn
 	using Vec2Int = glm::ivec2;
 
 	using Quat = glm::quat;
+
+	inline std::ostream& operator<<(std::ostream& os, const Vec3& vec) 
+	{
+		return os << "X: " << vec.x << " Y: " << vec.y << " Z: " << vec.z << "\n";
+	}
+
+	inline std::ostream& operator<<(std::ostream& os, const Vec2& vec)
+	{
+		return os << "X: " << vec.x << " Y: " << vec.y << "\n";
+	}
 
 	/*
 		Creates a glm::vec3 from a string starting at parameter textStart.
@@ -43,12 +55,29 @@ namespace crynn
 	class Math
 	{
 	public:
+		//Returns the absolute value of floating point number n
+		//constexpr implementation of fabs.
+		static constexpr float fabs(float n) 
+		{
+			return n > 0 ? n : -n;
+		}
+
+		//Returns the absolute value of integer n
+		//constexpr implementation of abs.
+		static constexpr int abs(int n)
+		{
+			return n > 0 ? n : -n;
+		}
+
 		//Performs a linear interpolation of min and max with t.
 		static constexpr float Lerp(float min, float max, float t)
 		{
 			return ((max - min) * t) + min;
 		}
 
+		//Normalizes angle a so that it stays between 0 and 360.
+		//Not a clamp. The value "wraps around" 0 and 360 to always represent a valid rotation between 0 and 360.
+		//Example: NormalizeAngle(380) == 20
 		static constexpr float NormalizeAngle(float a)
 		{
 			if (a > 360)
@@ -77,6 +106,27 @@ namespace crynn
 				return min;
 
 			return val;
+		}
+
+		static constexpr bool Vec3ApproxEqual(const Vec3& vec1, const Vec3& vec2) 
+		{
+			float epsilon = 0.0001f;
+
+			bool xEqual = Math::fabs(vec1.x - vec2.x) < epsilon;
+			bool yEqual = Math::fabs(vec1.y - vec2.y) < epsilon;
+			bool zEqual = Math::fabs(vec1.z - vec2.z) < epsilon;
+
+			return xEqual && yEqual && zEqual;
+		}
+
+		static constexpr bool Vec2ApproxEqual(const Vec2& vec1, const Vec2& vec2) 
+		{
+			float epsilon = 0.0001f;
+
+			bool xEqual = Math::fabs(vec1.x - vec2.x) < epsilon;
+			bool yEqual = Math::fabs(vec1.y - vec2.y) < epsilon;
+
+			return xEqual && yEqual;
 		}
 
 		//Returns a bool indicating if n is between min and max.
