@@ -52,6 +52,9 @@
     <Filter Include="src\Core\Rendering">
       <UniqueIdentifier>{ebb73bbe-a7c6-4b43-a7ec-86fee279ab75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lib\thirdparty\glm">
+      <UniqueIdentifier>{dc415009-eadb-4bcf-9c5e-4af4285c4f72}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Application.h">
@@ -176,6 +179,75 @@
     </ClInclude>
     <ClInclude Include="src\Core\Rendering\Material.h">
       <Filter>src\Core\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\common.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\exponential.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\ext.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\fwd.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\geometric.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\glm.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\integer.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat2x2.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat2x3.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat2x4.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat3x2.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat3x3.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat3x4.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat4x2.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat4x3.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat4x4.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\matrix.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\packing.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\trigonometric.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\vec2.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\vec3.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\vec4.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\vector_relational.hpp">
+      <Filter>lib\thirdparty\glm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -121,6 +121,29 @@ xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Com
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="lib\thirdparty\glm\include\glm\common.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\exponential.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\ext.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\fwd.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\geometric.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\glm.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\integer.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat2x2.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat2x3.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat2x4.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat3x2.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat3x3.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat3x4.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat4x2.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat4x3.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\mat4x4.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\matrix.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\packing.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\trigonometric.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\vec2.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\vec3.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\vec4.hpp" />
+    <ClInclude Include="lib\thirdparty\glm\include\glm\vector_relational.hpp" />
     <ClInclude Include="lib\thirdparty\imgui\include\imgui\imconfig.h" />
     <ClInclude Include="lib\thirdparty\imgui\include\imgui\imgui.h" />
     <ClInclude Include="lib\thirdparty\imgui\include\imgui\imgui_impl_glfw.h" />
