@@ -4,7 +4,7 @@ namespace crynn
 {
 	void Physics::Init()
 	{
-		scene = new q3Scene(1.0 / 60.0);
+		scene = new q3Scene(1.0f / 60.0f);
 
 		stepID = Application::OnBeforeUpdate.AddHandler([](double dt) { Physics::Step(); }); //step the physics engine
 
