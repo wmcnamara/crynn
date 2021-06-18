@@ -94,6 +94,16 @@ namespace crynn
 		return Vec2Int(m_xPos, m_yPos);
 	}
 
+	void Input::LockMouse()
+	{
+		glfwSetInputMode(Window::GetGLFWWin(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	}
+
+	void Input::UnlockMouse()
+	{
+		glfwSetInputMode(Window::GetGLFWWin(), GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+	}
+
 	void Input::Init()
 	{
 		if (m_initialised)
@@ -102,7 +112,6 @@ namespace crynn
 		glfwSetKeyCallback(Window::GetGLFWWin(), key_callback);
 		glfwSetScrollCallback(Window::GetGLFWWin(), scroll_callback);
 		glfwSetMouseButtonCallback(Window::GetGLFWWin(), mouse_button_callback);
-		
 		m_initialised = true;
 
 		std::cout << "Input Initialised\n";

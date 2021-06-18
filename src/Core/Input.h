@@ -44,6 +44,12 @@ namespace crynn
 		//Returns a Vec2 with the current xy coordinate of the mouse in screen space.
 		static Vec2Int GetMousePosition();
 
+		//Locks the mouse to the center of the screen, hides it and allows movement.
+		static void LockMouse();
+
+		//Allows the mouse to move freely.
+		static void UnlockMouse();
+
 		//Dispatched when the user scrolls the mouse wheel.
 		inline static Event<float> OnMouseScroll;
 
@@ -56,7 +62,7 @@ namespace crynn
 		inline static bool currentKeyStates[KEYSTATE_BUFFER_MAX_SIZE]; //The states of each key in the current frame.
 		inline static bool getKeyDownStates[KEYSTATE_BUFFER_MAX_SIZE]; //The states of each key for GetKeyDown.
 
-		inline static bool m_initialised = false; //Is input initialised?
+		inline static std::atomic_bool m_initialised = false; //Is input initialised?
 
 		inline static double m_xPos = 0; //Current x pixel coordinate position of the cursor
 		inline static double m_prevXPos = 0; //x pixel coordinate position of the cursor in the previous frame
