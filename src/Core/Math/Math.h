@@ -69,6 +69,11 @@ namespace crynn
 			return n > 0 ? n : -n;
 		}
 
+		static constexpr float fApproxEqual(float n, float a, float epsilon = 0.00001f) 
+		{
+			return Math::fabs(n - a) < epsilon;
+		}
+
 		//Performs a linear interpolation of min and max with t.
 		static constexpr float Lerp(float min, float max, float t)
 		{
@@ -108,23 +113,31 @@ namespace crynn
 			return val;
 		}
 
-		static constexpr bool Vec3ApproxEqual(const Vec3& vec1, const Vec3& vec2) 
+		//Returns val clamped between min and max.
+		static constexpr int Clamp(int min, int max, int val)
 		{
-			float epsilon = 0.0001f;
+			if (val > max)
+				return max;
 
-			bool xEqual = Math::fabs(vec1.x - vec2.x) < epsilon;
-			bool yEqual = Math::fabs(vec1.y - vec2.y) < epsilon;
-			bool zEqual = Math::fabs(vec1.z - vec2.z) < epsilon;
+			if (val < min)
+				return min;
+
+			return val;
+		}
+
+		static constexpr bool Vec3ApproxEqual(const Vec3& vec1, const Vec3& vec2, float epsilon = 0.0001f) 
+		{
+			bool xEqual = fApproxEqual(vec1.x, vec2.x, epsilon);
+			bool yEqual = fApproxEqual(vec1.y, vec2.y, epsilon);
+			bool zEqual = fApproxEqual(vec1.z, vec2.z, epsilon);
 
 			return xEqual && yEqual && zEqual;
 		}
 
-		static constexpr bool Vec2ApproxEqual(const Vec2& vec1, const Vec2& vec2) 
+		static constexpr bool Vec2ApproxEqual(const Vec2& vec1, const Vec2& vec2, float epsilon = 0.0001f)
 		{
-			float epsilon = 0.0001f;
-
-			bool xEqual = Math::fabs(vec1.x - vec2.x) < epsilon;
-			bool yEqual = Math::fabs(vec1.y - vec2.y) < epsilon;
+			bool xEqual = fApproxEqual(vec1.x, vec2.x, epsilon);
+			bool yEqual = fApproxEqual(vec1.y, vec2.y, epsilon);
 
 			return xEqual && yEqual;
 		}
