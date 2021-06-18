@@ -11,7 +11,9 @@ namespace crynn
 	{			
 		//Remove this node from the parent transforms children
 		if (m_parent != nullptr)
+		{
 			m_parent->m_children.erase(this);
+		}
 		
 		//Remove links in children
 		for (Transform* child : m_children)
@@ -36,9 +38,8 @@ namespace crynn
 
 	void Transform::Rotate(Vec3 rot)
 	{		
-		rot *= DEG2RAD; //convert to radians
-		m_rotation *= glm::quat(rot);
-
+		//Calculate quaternion
+		m_rotation *= glm::quat(glm::radians(rot));
 		m_eulerRotation += rot;
 
 		m_recalculateMatrix = true;
@@ -69,10 +70,8 @@ namespace crynn
 	}
 
 	void Transform::SetRotation(Vec3 rot)
-	{
-		rot *= DEG2RAD; //convert to radians
-		m_rotation = glm::quat(rot);
-
+	{		
+		m_rotation = glm::quat(glm::radians(rot));
 		m_eulerRotation = rot;
 
 		m_recalculateMatrix = true;
@@ -85,20 +84,23 @@ namespace crynn
 
 	Vec3 Transform::GetRotationEuler() const
 	{
-		return m_eulerRotation * RAD2DEG;
+		return m_eulerRotation;
 	}
 
 	Vec3 Transform::GetForwardVector() const
 	{
-		Vec3 forward = Vec3(0, 0, 1);
+		const Vec3 forward = Vec3(0, 0, 1);
 
 		return glm::normalize(m_rotation * forward);
 	}
 
 	Vec3 Transform::GetRightVector() const
 	{
+		const Vec3 forward = GetForwardVector();
+
 		Vec3 up = Vec3(0, 1, 0);
-		return glm::normalize(glm::cross(GetForwardVector(), up));
+
+		return glm::normalize(glm::cross(up, -forward));
 	}
 
 	Vec3 Transform::GetUpVector() const
@@ -114,12 +116,11 @@ namespace crynn
 	{  
 		if (m_recalculateMatrix) 
 		{		
-			//Apply this matrices world transformations
+			//Start with a scale matrix
 			m_worldMatrix = Mat4(1.0f);
 			m_worldMatrix = glm::scale(m_worldMatrix, m_scale);
-
-			//This seems a bit weird, but basically we use the forward vector to construct a lookat matrix (view matrix) and then take the inverse of it to give the model matrix.
-			m_worldMatrix *= glm::inverse(glm::lookAt(m_position, m_position + GetForwardVector(), Vec3(0, 1, 0)));		
+			m_worldMatrix = glm::translate(m_worldMatrix, m_position);
+			m_worldMatrix *= glm::mat4_cast(m_rotation);
 
 			m_recalculateMatrix = false;
 		}

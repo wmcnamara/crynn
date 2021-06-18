@@ -53,6 +53,9 @@ namespace crynn
 		Transform& GetParent();
 
 		void RemoveParent();
+
+	protected:
+		bool ShouldRecalculateMatrices() const { return m_recalculateMatrix; }
 	private:
 		Vec3 m_position = Vec3(0, 0, 0);
 		Quat m_rotation = Quat(Vec3(0.0f, 0.0f, 0.0f));
