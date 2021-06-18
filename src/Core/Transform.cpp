@@ -115,7 +115,7 @@ namespace crynn
 	{  
 		if (m_recalculateMatrix) 
 		{		
-			//Start with a scale matrix
+			//Apply world space transformations (model matrix)
 			m_worldMatrix = Mat4(1.0f);
 			m_worldMatrix = glm::scale(m_worldMatrix, m_scale);
 			m_worldMatrix = glm::translate(m_worldMatrix, m_position);
