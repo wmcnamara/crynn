@@ -110,7 +110,6 @@ namespace crynn
 
 	//My own little implementation of a transformation hierarchy.
 	//Its a bit complicated, so take a moment to look through if you're confused.
-	//TODO implement matrix caching
 
 	Mat4& Transform::GetMatrix() const
 	{  
