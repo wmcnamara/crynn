@@ -3,8 +3,8 @@
 namespace crynn
 {
 	Material::Material(MaterialData data, const Shader& shader) : 
-		m_shader(shader), 
-		properties(data)
+		properties(data),
+		m_shader(shader)
 	{}
 
 	void Material::SetUniforms() const
