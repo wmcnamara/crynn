@@ -27,7 +27,7 @@ namespace crynn
 		Shader::SetVec3Current("light.diffuse", colorData.diffuse);
 		Shader::SetVec3Current("light.specular", colorData.specular);
 		Shader::SetFloatCurrent("light.intensity", intensity);
-		Shader::SetIntCurrent("light.type", std::underlying_type<LightType>::type(lightType));
+		Shader::SetIntCurrent("light.type", lightTypeEnum);
 		Shader::SetBoolCurrent("sceneHasLights", true);
 
 		SetExtraUniforms();
