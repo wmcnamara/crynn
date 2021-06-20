@@ -6,16 +6,11 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
-
 #include "Event.h"
 #include "../Utility/Debug.h"
 
-#include "Application.h"
-
 namespace crynn
 {
-	class Input;
-
 	/// <summary>
 	/// The window everything is rendered on.
 	/// Crynn does not support more than 1 monitor.
@@ -30,23 +25,25 @@ namespace crynn
 		/// <param name="width">Width of the window</param>
 		/// <param name="height">Height of the window</param>
 		Window(const char* name, unsigned int width, unsigned int height);
-		Window(const Window& other) = delete; //There should only ever be one window.
-		Window(const Window&& other) = delete; //There should only ever be one window.
-		Window operator=(const Window& other) = delete; //There should only ever be one window.
-		Window operator=(const Window&& other) = delete; //There should only ever be one window.
+
+		//It makes very little sense to copy/move a window, so I am disabling these to prevent shallow copying the glfwWindow
+		Window(const Window& other) = delete; 
+		Window(const Window&& other) = delete;
+		Window operator=(const Window& other) = delete;
+		Window operator=(const Window&& other) = delete;
 		~Window();
 
 		/// <summary>
 		/// Gets the size of the window.
 		/// </summary>
 		/// <returns> ImVec2 object with x as the width, and y as the height</returns>
-		static const ImVec2& GetSize();
+		const Vec2Int& GetSize();
 
 		/// <summary>
 		/// Gets the size of the framebuffer.
 		/// </summary>
 		/// <returns> ImVec2 object with x as the width, and y as the height</returns>
-		static const ImVec2& GetFrameBufSize();
+		const Vec2Int& GetFrameBufSize();
 
 		/// <summary>
 		/// Called before rendering to clear buffers, poll events and setup IMGUI data.
@@ -70,19 +67,23 @@ namespace crynn
 		/// <returns>True if the window should close. Used to hold a game loop.</returns>
 		bool ShouldClose();
 
-		static GLFWwindow* GetGLFWWin() 
-		{ 
-			assert(glfwWindow != NULL);
-			return glfwWindow; 
-		}
+		//Sets this window as the current, focused window and input and other events will be dispatched from this window
+		//The window constructor automatically sets this
+		static void SetCurrentWindow(Window* window);
+		static Window* GetCurrentWindow();
+
+		//Returns a raw pointer to the underlying GLFWwindow in this object
+		GLFWwindow* GetGLFWWindow();
 	private:
 		/// <summary>
 		/// Raw GLFW window.
 		/// </summary>
-		inline static GLFWwindow* glfwWindow = NULL;
+		GLFWwindow* m_glfwWindow = NULL;
 
 		//TODO change constructor
-		static inline ImVec2 m_screenSize = ImVec2(0, 0); ///Size of the window///
-		static inline ImVec2 m_frameBufSize = ImVec2(0, 0); ///Size of the framebuffer///
+		Vec2Int m_screenSize = Vec2Int(0, 0); ///Size of the window///
+		Vec2Int m_frameBufSize = Vec2Int(0, 0); ///Size of the framebuffer///
+
+		static inline Window* m_currentWindow;
 	};
 }

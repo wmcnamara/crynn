@@ -2,9 +2,6 @@
 #pragma warning (disable : 4005)
 
 #include "Event.h"
-#include "Window.h"
-
-#include "glad/glad.h"
 #include <GLFW/glfw3.h>
 
 
@@ -15,7 +12,7 @@
 /// <summary>
 /// Main Engine Namespace
 /// </summary>
-namespace crynn 
+namespace crynn
 {
 	class Window;
 
@@ -69,9 +66,15 @@ namespace crynn
 		//OnRender will still be called during this frame even if this is called before.
 		//Useful for lighting passes
 		void static ForceSceneRender();
+
+		//Returns a boolean indicating if Crynn has been fully initialized
+		static bool IsInitialized();
+
 	private:
 		//Used to get deltaTimes.
 		inline static float currentFrameTime = 0;
 		inline static float previousFrameTime = 0;
+
+		static inline std::atomic_bool m_initialised = false;
 	};
 }

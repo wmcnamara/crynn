@@ -1,12 +1,13 @@
-#include "Application.h"
 #include "Rendering/RenderConfig.h"
+#include "Window.h"
+#include "Application.h"
 
 namespace crynn
 {
 	void Application::Quit()
 	{
 		OnBeforeClose.Invoke();
-		glfwSetWindowShouldClose(Window::GetGLFWWin(), true);
+		glfwSetWindowShouldClose(Window::GetCurrentWindow()->GetGLFWWindow(), true);
 	}
 
 	void Application::Tick()
@@ -24,10 +25,14 @@ namespace crynn
 
 	void Application::Initialise()
 	{
+		if (m_initialised) 
+			return;
+
 		//This is done to prevent long startup times from affecting the first frame deltaTime
 		glfwSetTime(0); 
 		OnStart.Invoke();
 		RenderConfig::EnableDepthTest();
+		m_initialised = true;
 	}
 
 	float Application::GetTime()
@@ -39,4 +44,10 @@ namespace crynn
 	{
 		OnRender.Invoke();
 	}
+
+	bool Application::IsInitialized()
+	{
+		return m_initialised;
+	}
+
 }

@@ -1,5 +1,7 @@
 #pragma once
-#include "Window.h"
+#include <GLFW/glfw3.h>
+#include "Math/Math.h"
+#include "Event.h"
 
 #define KEYSTATE_BUFFER_MAX_SIZE 350
 

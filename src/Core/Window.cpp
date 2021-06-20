@@ -1,6 +1,7 @@
 #include "Window.h"
 #include "Input.h"
 #include "../Utility/IO.h"
+#include "Application.h"
 
 namespace crynn
 {
@@ -9,8 +10,6 @@ namespace crynn
 
 	Window::Window(const char* name, unsigned int width, unsigned int height)
 	{
-		Debug::ClearOutputLogs();
-
 		//Glfw
 		glfwInit();
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -18,29 +17,35 @@ namespace crynn
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		glfwWindowHint(GLFW_SAMPLES, 4);
 		
-		//Window
-		//Set the glfwWindow.
-		glfwWindow = glfwCreateWindow(width, height, name, NULL, NULL);
+		m_glfwWindow = glfwCreateWindow(width, height, name, NULL, NULL);
 		
-		if (glfwWindow == NULL)
+		if (m_glfwWindow == NULL)
 		{
 			Debug::Log("Failed to create GLFW window");
 			glfwTerminate();
 			return;
 		}
 
-		glfwMakeContextCurrent(glfwWindow);
-		glfwSetWindowUserPointer(glfwWindow, this); //Set this as the user pointer
+		glfwMakeContextCurrent(m_glfwWindow);
+		glfwSetFramebufferSizeCallback(m_glfwWindow, SizeCallback);
 
-		glfwSetFramebufferSizeCallback(glfwWindow, SizeCallback);
+		SetCurrentWindow(this);
+		UpdateWindowSize();
 
-		//Retrieve and set window size data
-		m_screenSize = ImVec2(width, height);
+		//Subscribe the window resize event. 
+		Application::OnWindowResize.AddHandler([this](int width, int height)
+			{
+				UpdateWindowSize();
+			});
 
-		//Retrieve and set framebuffer size data
-		int frameBufWidth = 0, frameBufHeight = 0;
-		glfwGetFramebufferSize(glfwWindow, &frameBufWidth, &frameBufHeight);
-		m_frameBufSize = ImVec2(frameBufWidth, frameBufHeight);
+		//Lambda for OnBeforeClose
+		//This is a workaround the C style function pointers GLFW requires I pass
+		auto func = [](GLFWwindow* w)
+		{
+			static_cast<Application*>(glfwGetWindowUserPointer(w))->OnBeforeClose.Invoke();
+		};
+
+		glfwSetWindowCloseCallback(m_glfwWindow, func);
 
 		//Load glad
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -56,45 +61,44 @@ namespace crynn
 		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
 		// Setup Platform/Renderer bindings
-		ImGui_ImplGlfw_InitForOpenGL(glfwWindow, true);
+		ImGui_ImplGlfw_InitForOpenGL(m_glfwWindow, true);
 		ImGui_ImplOpenGL3_Init("#version 330 core");
 		// Setup Dear ImGui style
 		ImGui::StyleColorsDark();
 
-		//Subscribe the window resize event. 
-		Application::OnWindowResize.AddHandler([this](int width, int height)
-		{
-			UpdateWindowSize();
-		});
-
-		//Lambda for OnBeforeClose
-		//This is a workaround the C style function pointers GLFW requires I pass
-		auto func = [](GLFWwindow* w)
-		{
-			static_cast<Application*>(glfwGetWindowUserPointer(w))->OnBeforeClose.Invoke();
-		};
-
-		glfwSetWindowCloseCallback(glfwWindow, func);
-
 		Debug::Log("Window Created");
 	}
 
+	void Window::SetCurrentWindow(Window* window)
+	{
+		m_currentWindow = window;
+	}
+
+	Window* Window::GetCurrentWindow()
+	{
+		return m_currentWindow;
+	}
+
+	GLFWwindow* Window::GetGLFWWindow()
+	{
+		return m_glfwWindow;
+	}
 
 	Window::~Window()
 	{
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
-		glfwDestroyWindow(glfwWindow);
+		glfwDestroyWindow(m_glfwWindow);
 		glfwTerminate();
 	}
 
-	const ImVec2& Window::GetSize()
+	const Vec2Int& Window::GetSize()
 	{
 		return m_screenSize;
 	}
 
-	const ImVec2& Window::GetFrameBufSize()
+	const Vec2Int& Window::GetFrameBufSize()
 	{
 		return m_frameBufSize;
 	}
@@ -128,22 +132,22 @@ namespace crynn
 		// Render dear imgui into screen
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-		glfwSwapBuffers(glfwWindow);
+		glfwSwapBuffers(m_glfwWindow);
 	}
 
 	void Window::UpdateWindowSize()
 	{
 		int width, height, frameBufWidth, frameBufHeight;
-		glfwGetWindowSize(glfwWindow, &width, &height);
-		glfwGetFramebufferSize(glfwWindow, &frameBufWidth, &frameBufHeight);
+		glfwGetWindowSize(m_glfwWindow, &width, &height);
+		glfwGetFramebufferSize(m_glfwWindow, &frameBufWidth, &frameBufHeight);
 
-		m_screenSize = ImVec2(width, height);
-		m_frameBufSize = ImVec2(frameBufWidth, frameBufHeight);
+		m_screenSize = Vec2Int(width, height);
+		m_frameBufSize = Vec2Int(frameBufWidth, frameBufHeight);
 	}
 
 	bool Window::ShouldClose()
 	{
-		return glfwWindowShouldClose(glfwWindow);
+		return glfwWindowShouldClose(m_glfwWindow);
 	}
 
 	void SizeCallback(GLFWwindow* window, int width, int height)

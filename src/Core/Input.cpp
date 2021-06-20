@@ -1,5 +1,5 @@
+#include "Window.h"
 #include "Input.h"
-
 namespace crynn
 {
 	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -61,8 +61,8 @@ namespace crynn
 			getKeyDownStates[keyCode] = true;
 			return true;
 		}
-		else
-			return false;
+
+		return false;
 	}
 
 	void Input::UpdateMousePosInternal()
@@ -71,7 +71,7 @@ namespace crynn
 			return;
 
 		double xPos = 0, yPos = 0;
-		glfwGetCursorPos(Window::GetGLFWWin(), &xPos, &yPos);
+		glfwGetCursorPos(Window::GetCurrentWindow()->GetGLFWWindow(), &xPos, &yPos);
 
 		m_prevXPos = m_xPos;
 		m_prevYPos = m_yPos;
@@ -96,12 +96,12 @@ namespace crynn
 
 	void Input::LockMouse()
 	{
-		glfwSetInputMode(Window::GetGLFWWin(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+		glfwSetInputMode(Window::GetCurrentWindow()->GetGLFWWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	}
 
 	void Input::UnlockMouse()
 	{
-		glfwSetInputMode(Window::GetGLFWWin(), GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+		glfwSetInputMode(Window::GetCurrentWindow()->GetGLFWWindow(), GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 	}
 
 	void Input::Init()
@@ -109,9 +109,9 @@ namespace crynn
 		if (m_initialised)
 			return;
 
-		glfwSetKeyCallback(Window::GetGLFWWin(), key_callback);
-		glfwSetScrollCallback(Window::GetGLFWWin(), scroll_callback);
-		glfwSetMouseButtonCallback(Window::GetGLFWWin(), mouse_button_callback);
+		glfwSetKeyCallback(Window::GetCurrentWindow()->GetGLFWWindow(), key_callback);
+		glfwSetScrollCallback(Window::GetCurrentWindow()->GetGLFWWindow(), scroll_callback);
+		glfwSetMouseButtonCallback(Window::GetCurrentWindow()->GetGLFWWindow(), mouse_button_callback);
 		m_initialised = true;
 
 		std::cout << "Input Initialised\n";

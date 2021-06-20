@@ -15,7 +15,7 @@ namespace crynn
 
 	void IO::Init()
 	{
-		glfwSetDropCallback(Window::GetGLFWWin(), drop_callback);
+		glfwSetDropCallback(Window::GetCurrentWindow()->GetGLFWWindow(), drop_callback);
 		Debug::Log("IO Initialised");
 	}
 
