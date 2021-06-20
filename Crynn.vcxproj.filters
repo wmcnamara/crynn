@@ -249,12 +249,6 @@
     <ClInclude Include="lib\thirdparty\glm\include\glm\vector_relational.hpp">
       <Filter>lib\thirdparty\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Rendering\RenderConfig.h">
-      <Filter>src\Core\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\Rendering\Renderer.h">
-      <Filter>src\Core\Rendering</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Camera.cpp">
@@ -363,12 +357,6 @@
       <Filter>src\Core\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Rendering\Material.cpp">
-      <Filter>src\Core\Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Rendering\RenderConfig.cpp">
-      <Filter>src\Core\Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Rendering\Renderer.cpp">
       <Filter>src\Core\Rendering</Filter>
     </ClCompile>
   </ItemGroup>

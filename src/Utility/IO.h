@@ -43,14 +43,14 @@ namespace crynn
 		static void Init();
 
 		//Returns a boolean indicating whether a file at a given path exists
-		[[nodiscard]] static bool FileExists(const char* relativePath);
+		static [[nodiscard]] bool FileExists(const char* relativePath);
 
 		/// <summary>
 		/// Opens a picker that allows the user to select an image.
 		/// Works on windows exclusively.
 		/// </summary>
 		/// <returns>string containing the selected image filepath.</returns>
-		[[nodiscard]] static std::string OpenImageFilePicker();
+		static [[nodiscard]] std::string OpenImageFilePicker();
 
 		/// <summary>
 		/// Event called when the user drags files from the operating system into the application. Useful for imports.
@@ -61,7 +61,7 @@ namespace crynn
 		 
 		//Allocates and loads a file into a string.
 		//Returns an empty string if the file fails to load
-		[[nodiscard]] static std::string LoadFileStr(const char* relativePath);
+		static [[nodiscard]] std::string LoadFileStr(const char* relativePath);
 
 		//Adds a directory that will be searched for a file
 		//Expects a path relative to the exe / working directory.
@@ -72,7 +72,7 @@ namespace crynn
 		//Returns the first file found matching the given name.
 		//Avoid duplicate filenames to avoid clashes from this function
 		//Returnsa GetFileData object with info about the requested file.
-		[[nodiscard]] static GetFileData GetMediaFile(const char* name) = delete;
+		static [[nodiscard]] GetFileData GetMediaFile(const char* name) = delete;
 
 	private:
 		static inline std::vector<fs::path> mediaPaths;

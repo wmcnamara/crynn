@@ -4,6 +4,7 @@
 #include "Event.h"
 #include "Window.h"
 
+#include "glad/glad.h"
 #include <GLFW/glfw3.h>
 
 
@@ -72,7 +73,5 @@ namespace crynn
 		//Used to get deltaTimes.
 		inline static float currentFrameTime = 0;
 		inline static float previousFrameTime = 0;
-
-		static inline std::atomic_bool initialised = false;
 	};
 }

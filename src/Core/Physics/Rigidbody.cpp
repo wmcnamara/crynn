@@ -50,6 +50,7 @@ namespace crynn
 	{
 		const q3Transform& tr = body->GetTransform();
 		m_transform.SetPosition(tr.position);
+		m_transform.GetMatrix() *= (Mat4)tr.rotation;
 	}
 
 	void Rigidbody::AddForceWorld(Vec3 worldForceVector)
