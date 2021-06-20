@@ -1,4 +1,5 @@
 #include "Application.h"
+#include "Rendering/RenderConfig.h"
 
 namespace crynn
 {
@@ -26,6 +27,7 @@ namespace crynn
 		//This is done to prevent long startup times from affecting the first frame deltaTime
 		glfwSetTime(0); 
 		OnStart.Invoke();
+		RenderConfig::EnableDepthTest();
 	}
 
 	float Application::GetTime()

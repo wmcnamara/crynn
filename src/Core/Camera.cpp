@@ -45,7 +45,6 @@ namespace crynn
 
 		if (m_projType == Projection::Perspective)
 		{
-			glEnable(GL_DEPTH_TEST);
 			return glm::perspective(
 				glm::radians(m_fov),
 				viewportDat[2] / viewportDat[3], //The first 2 elements of GL_VIEWPORT are irrelevant here.
@@ -60,6 +59,9 @@ namespace crynn
 				m_nearClipPlane,
 				m_farClipPlane);
 		}
+
+		std::cout << "Projection matrix is identity matrix. Please set a proper projection type.\n";
+		return Mat4(1.0f);
 	}
 
 	Mat4 Camera::CalculateView() const
