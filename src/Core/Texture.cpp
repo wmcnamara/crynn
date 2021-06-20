@@ -8,7 +8,7 @@ namespace crynn
 {
 	Texture::Texture(const char* path)
 	{
-		if (path == NULL || path == "")
+		if (path == NULL || strcmp(path, "") == 0)
 		{
 			std::cout << "Texture path is null";
 			return;
