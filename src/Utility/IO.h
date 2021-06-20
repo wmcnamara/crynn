@@ -24,7 +24,7 @@ namespace crynn
 	namespace fs = std::filesystem;
 
 	//Relevant file data returned from GetMediaFile.
-	struct GetFileData 
+	struct GetFileData
 	{
 		bool succeeded = false; //does the file exist?
 		std::string absoluteFilePath = "";
@@ -34,8 +34,8 @@ namespace crynn
 	/// IO related functions to allow user to open and manipulate files
 	/// </summary>
 	class IO
-	{		
-	public:	
+	{
+	public:
 		/// <summary>
 		/// Initialises IO events like OnFileDrop, and must be called before they work.
 		/// Called in the constructor for the window.
@@ -43,14 +43,14 @@ namespace crynn
 		static void Init();
 
 		//Returns a boolean indicating whether a file at a given path exists
-		static [[nodiscard]] bool FileExists(const char* relativePath);
+		[[nodiscard]] static bool FileExists(const char* relativePath);
 
 		/// <summary>
 		/// Opens a picker that allows the user to select an image.
 		/// Works on windows exclusively.
 		/// </summary>
 		/// <returns>string containing the selected image filepath.</returns>
-		static [[nodiscard]] std::string OpenImageFilePicker();
+		[[nodiscard]] static std::string OpenImageFilePicker();
 
 		/// <summary>
 		/// Event called when the user drags files from the operating system into the application. Useful for imports.
@@ -58,10 +58,10 @@ namespace crynn
 		/// For exmaple, if the user drops 3 files, OnFileDrop will be invoked 3 times with the corresponding paths.
 		/// </summary>
 		static inline Event<const char*> OnFileDrop;
-		 
+
 		//Allocates and loads a file into a string.
 		//Returns an empty string if the file fails to load
-		static [[nodiscard]] std::string LoadFileStr(const char* relativePath);
+		[[nodiscard]] static std::string LoadFileStr(const char* relativePath);
 
 		//Adds a directory that will be searched for a file
 		//Expects a path relative to the exe / working directory.
@@ -72,7 +72,7 @@ namespace crynn
 		//Returns the first file found matching the given name.
 		//Avoid duplicate filenames to avoid clashes from this function
 		//Returnsa GetFileData object with info about the requested file.
-		static [[nodiscard]] GetFileData GetMediaFile(const char* name) = delete;
+		[[nodiscard]] static GetFileData GetMediaFile(const char* name) = delete;
 
 	private:
 		static inline std::vector<fs::path> mediaPaths;
