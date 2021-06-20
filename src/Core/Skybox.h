@@ -1,3 +1,4 @@
+/*
 #pragma once
 #include "Buffers/Buffers.h"
 #include <array>
@@ -9,7 +10,7 @@
 
 namespace crynn
 {
-	/*
+
 	/// <summary>
 	/// Filepaths to the corresponding skybox texture
 	/// </summary>
@@ -31,5 +32,6 @@ namespace crynn
 		const Shader& m_shader;
 		GLuint m_id;
 	};
-	*/
+
 }
+*/

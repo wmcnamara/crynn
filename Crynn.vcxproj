@@ -45,12 +45,16 @@
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\binint\$(Configuration)\</IntDir>
     <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>Crynn</TargetName>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\binint\$(Configuration)\</IntDir>
     <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -170,6 +174,8 @@ xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Com
     <ClInclude Include="src\Core\Rendering\Light.h" />
     <ClInclude Include="src\Core\Rendering\Material.h" />
     <ClInclude Include="src\Core\Rendering\MeshRenderer.h" />
+    <ClInclude Include="src\Core\Rendering\RenderConfig.h" />
+    <ClInclude Include="src\Core\Rendering\Renderer.h" />
     <ClInclude Include="src\Core\Rendering\Shader.h" />
     <ClInclude Include="src\Core\Scene.h" />
     <ClInclude Include="src\Core\Skybox.h" />
@@ -209,6 +215,8 @@ xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Com
     <ClCompile Include="src\Core\Rendering\Light.cpp" />
     <ClCompile Include="src\Core\Rendering\Material.cpp" />
     <ClCompile Include="src\Core\Rendering\MeshRenderer.cpp" />
+    <ClCompile Include="src\Core\Rendering\RenderConfig.cpp" />
+    <ClCompile Include="src\Core\Rendering\Renderer.cpp" />
     <ClCompile Include="src\Core\Rendering\Shader.cpp" />
     <ClCompile Include="src\Core\Scene.cpp" />
     <ClCompile Include="src\Core\Skybox.cpp" />
