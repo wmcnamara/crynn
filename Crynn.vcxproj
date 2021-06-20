@@ -175,7 +175,6 @@ xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Com
     <ClInclude Include="src\Core\Rendering\Material.h" />
     <ClInclude Include="src\Core\Rendering\MeshRenderer.h" />
     <ClInclude Include="src\Core\Rendering\RenderConfig.h" />
-    <ClInclude Include="src\Core\Rendering\Renderer.h" />
     <ClInclude Include="src\Core\Rendering\Shader.h" />
     <ClInclude Include="src\Core\Scene.h" />
     <ClInclude Include="src\Core\Skybox.h" />
@@ -216,7 +215,6 @@ xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Com
     <ClCompile Include="src\Core\Rendering\Material.cpp" />
     <ClCompile Include="src\Core\Rendering\MeshRenderer.cpp" />
     <ClCompile Include="src\Core\Rendering\RenderConfig.cpp" />
-    <ClCompile Include="src\Core\Rendering\Renderer.cpp" />
     <ClCompile Include="src\Core\Rendering\Shader.cpp" />
     <ClCompile Include="src\Core\Scene.cpp" />
     <ClCompile Include="src\Core\Skybox.cpp" />
