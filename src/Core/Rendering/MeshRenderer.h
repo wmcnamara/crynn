@@ -34,7 +34,6 @@ namespace crynn
 
 		const Transform& m_transform; //Used to retrieve model matrix data
 		 
-		Mat3 m_normalMat;
 		const Model& m_model;
 		const Material& m_material;
 	};

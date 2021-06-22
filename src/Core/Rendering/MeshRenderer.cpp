@@ -5,19 +5,23 @@ namespace crynn
 	MeshRenderer::MeshRenderer(const Model& mesh, const Material& material, const Transform& transform) :
 		m_model(mesh),
 		m_material(material),
-		m_transform(transform),
-		m_normalMat(Mat4(transpose(inverse(transform.GetMatrix())))) //World space normal matrix
+		m_transform(transform)
 	{}
 
 	void MeshRenderer::Render()
 	{
 		const Shader& shader = m_material.m_shader;
 
+		Mat4 modelMatrix = m_transform.GetMatrix();
+		Mat3 normalMatrix = glm::transpose(glm::inverse(modelMatrix));
+
 		shader.Use();
 
-		shader.SetFloat("time", (float)glfwGetTime()); //Set time uniform on current shader
-		shader.SetMatrix4("model", &m_transform.GetMatrix());
-		shader.SetMatrix3("normalMatrix", &m_normalMat);
+		shader.SetFloat("time", (float)glfwGetTime());
+		shader.SetMatrix4("model", &modelMatrix);
+		shader.SetMatrix3("normalMatrix", &normalMatrix);
+
+
 		m_material.SetUniforms();
 
 		m_model.Render(shader);
