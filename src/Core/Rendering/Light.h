@@ -7,8 +7,8 @@ namespace crynn
 	struct LightColorData
 	{
 		Vec3 ambient = Vec3(1.0f, 1.0f, 1.0f);
-		Vec3 diffuse = Vec3(0.5, 0.5, 0.5);
-		Vec3 specular = Vec3(0.1);
+		Vec3 diffuse = Vec3(0.5f, 0.5f, 0.5f);
+		Vec3 specular = Vec3(0.1f);
 	};
 
 	enum struct LightType
@@ -37,7 +37,7 @@ namespace crynn
 		virtual void SetUniforms() final; //Sets the necessary color and position uniforms
 		virtual void SetExtraUniforms() = 0; //Used to set additional, light caster specific uniforms like lights direction for instance.
 	private:
-		virtual void Update(float dt) override;
+		virtual void Update(float dt) override; //Update will call SetUniforms
 	};
 
 	class DirectionalLight : public Light 
@@ -49,8 +49,9 @@ namespace crynn
 		void SetLightDir(Vec3 _lightDir);
 		inline Vec3 GetLightDir() { return lightDir; }
 	private:
-		virtual void SetExtraUniforms() override;
 		Vec3 lightDir = Vec3(1.0f, 0.0, 0.0);
+
+		virtual void SetExtraUniforms() override;
 	};
 
 	class PointLight : public Light 
@@ -58,10 +59,17 @@ namespace crynn
 	public:
 		PointLight(LightColorData _colorData, float _range);
 		virtual ~PointLight() = default;
+		
+		//Sets the attenuation range of the point light
+		//Does nothing if range is less than 0
+		void SetAttenuationRange(float range);
 
-		float range = 0;
+		//Returns the attenuation range of the point light
+		float GetAttenuationRange();
 
 	private:
+		float m_range = 10.0f;
+
 		virtual void SetExtraUniforms() override;
 	};
 }

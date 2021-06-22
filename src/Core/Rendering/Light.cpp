@@ -50,11 +50,22 @@ namespace crynn
 
 	PointLight::PointLight(LightColorData _colorData, float _range) :
 		Light(_colorData, LightType::Point), 
-		range(_range)
+		m_range(_range)
 	{}
+
+	float PointLight::GetAttenuationRange()
+	{
+		return m_range;
+	}
+
+	void PointLight::SetAttenuationRange(float range)
+	{
+		if (range > 0)
+			m_range = range;
+	}
 
 	void PointLight::SetExtraUniforms()
 	{
-		Shader::SetFloatCurrent("light.pointLightDistance", range);
+		Shader::SetFloatCurrent("light.pointLightDistance", m_range);
 	}
 }
