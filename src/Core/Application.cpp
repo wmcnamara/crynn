@@ -33,6 +33,8 @@ namespace crynn
 		OnStart.Invoke();
 		RenderConfig::EnableDepthTest();
 		m_initialised = true;
+
+		std::cout << "Crynn Initialized Successfully!\n";
 	}
 
 	float Application::GetTime()
