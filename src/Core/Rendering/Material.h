@@ -39,17 +39,20 @@ namespace crynn
 	public:
 		//Constructs a material with the desired MaterialData and shader.
 		//Rendering materials will set uniforms in the shader you pass here.
-		Material(MaterialData data, const Shader& shader);
+		Material(MaterialData data, Shader shader);
 		~Material() = default;
 
-		MaterialData properties;
+		Shader& GetShader();
+
+		const MaterialData& GetProperties() const;
+		void SetProperties(MaterialData data);
 
 	private:
 		//Binds m_shader and sets the uniforms for MaterialData.
-		//This should be called just before rendering the object.
+		//This should be called just before rendering the object, and after binding the shader.
 		void SetUniforms() const;
 
-		const Shader& m_shader;
-		friend class MeshRenderer;
+		Shader m_shader;
+		MaterialData m_properties;
 	};
 }
