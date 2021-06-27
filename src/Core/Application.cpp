@@ -31,7 +31,6 @@ namespace crynn
 		//This is done to prevent long startup times from affecting the first frame deltaTime
 		glfwSetTime(0); 
 		OnStart.Invoke();
-		RenderConfig::EnableDepthTest();
 		m_initialised = true;
 
 		std::cout << "Crynn Initialized Successfully!\n";

@@ -1,6 +1,5 @@
 #pragma once
 #include "../Utility/Debug.h"
-#include "../Utility/Timer.h"
 #include "Application.h"
 #include <assert.h>
 
@@ -29,7 +28,7 @@ namespace crynn
 		virtual void Start() {} ///Called once before the game enters its main loop. Will be called before the first Update.
 
 		//Called when the engine is going to render a frame
-		virtual void Render() {}
+		virtual void OnRender() {}
 
 		/// <summary>
 		/// Called once every frame before Update.
