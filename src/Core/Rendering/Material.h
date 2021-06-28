@@ -42,7 +42,7 @@ namespace crynn
 		Material(MaterialData data, Shader shader);
 		~Material() = default;
 
-		Shader& GetShader();
+		const Shader& GetShader() const;
 
 		const MaterialData& GetProperties() const;
 		void SetProperties(MaterialData data);

@@ -7,7 +7,7 @@ namespace crynn
 		m_shader(shader)
 	{}
 
-	Shader& Material::GetShader()
+	const Shader& Material::GetShader() const
 	{
 		return m_shader;
 	}
