@@ -10,7 +10,7 @@
 
 namespace crynn
 {
-	Camera::Camera(Vec3 position, Projection projType) : m_projType(projType)
+	Camera::Camera(Vec3 position, Projection projType, bool setAsCurrent) : m_projType(projType)
 	{
 		Translate(position);
 
@@ -22,6 +22,9 @@ namespace crynn
 
 		// Set camera matrix ubo to bind point 0
 		glBindBufferRange(GL_UNIFORM_BUFFER, 0, m_matrixUBO, 0, 2 * sizeof(glm::mat4));
+
+		if (setAsCurrent)
+			SetAsCurrentCamera();
 	}
 
 	Camera::~Camera()
@@ -69,7 +72,7 @@ namespace crynn
 		return glm::inverse(GetMatrix());
 	}
 
-	void Camera::SetClipPlanes(float farClipPlane, float nearClipPlane)
+	void Camera::SetClipPlanes(float nearClipPlane, float farClipPlane)
 	{
 		m_nearClipPlane = nearClipPlane;
 		m_farClipPlane = farClipPlane;
@@ -77,9 +80,20 @@ namespace crynn
 
 	void Camera::SetFOV(float newFOV)
 	{
-		assert(Math::Between(0, 180, newFOV));
+		Math::Clamp(10.0f, 180.0f, newFOV);
 
 		m_fov = newFOV;
+	}
+
+	void Camera::SetAsCurrentCamera()
+	{
+		std::lock_guard<std::mutex> lock(currentCameraMutex);
+		currentlyRenderingCam = this;
+	}
+
+	const Camera* const Camera::GetCurrentCamera()
+	{
+		return currentlyRenderingCam;
 	}
 
 	void Camera::BeforeUpdate(float deltaTime)
