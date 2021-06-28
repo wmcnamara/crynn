@@ -103,6 +103,9 @@ namespace crynn
 
 	void Camera::SetUniformData()
 	{
+		if (currentlyRenderingCam != this)
+			return;
+
 		//Bind the UBO, fill and unbind.
 		glBindBuffer(GL_UNIFORM_BUFFER, m_matrixUBO);
 		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(CalculateProjection()));
