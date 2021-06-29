@@ -10,7 +10,7 @@
 
 namespace crynn
 {
-	Camera::Camera(Vec3 position, Projection projType, bool setAsCurrent) : m_projType(projType)
+	Camera::Camera(Vec3 position, Projection projType) : m_projType(projType)
 	{
 		Translate(position);
 
@@ -22,9 +22,6 @@ namespace crynn
 
 		// Set camera matrix ubo to bind point 0
 		glBindBufferRange(GL_UNIFORM_BUFFER, 0, m_matrixUBO, 0, 2 * sizeof(glm::mat4));
-
-		if (setAsCurrent)
-			SetAsCurrentCamera();
 	}
 
 	Camera::~Camera()
@@ -85,17 +82,6 @@ namespace crynn
 		m_fov = newFOV;
 	}
 
-	void Camera::SetAsCurrentCamera()
-	{
-		std::lock_guard<std::mutex> lock(currentCameraMutex);
-		currentlyRenderingCam = this;
-	}
-
-	const Camera* const Camera::GetCurrentCamera()
-	{
-		return currentlyRenderingCam;
-	}
-
 	void Camera::BeforeUpdate(float deltaTime)
 	{
 		SetUniformData();
@@ -103,9 +89,6 @@ namespace crynn
 
 	void Camera::SetUniformData()
 	{
-		if (currentlyRenderingCam != this)
-			return;
-
 		//Bind the UBO, fill and unbind.
 		glBindBuffer(GL_UNIFORM_BUFFER, m_matrixUBO);
 		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(CalculateProjection()));
