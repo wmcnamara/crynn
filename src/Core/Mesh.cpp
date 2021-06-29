@@ -119,8 +119,12 @@ namespace crynn
 
 	void Model::Render(const Shader& shader) const
 	{
+		glEnable(GL_DEPTH_TEST);
+
 		for (const auto& mesh : m_meshes)
 			mesh.Render(shader);
+
+		glDisable(GL_DEPTH_TEST);
 	}
 
 	void Model::LoadModel(std::string path)
