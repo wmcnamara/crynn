@@ -114,7 +114,7 @@ namespace crynn
 		glfwSetMouseButtonCallback(Window::GetCurrentWindow()->GetGLFWWindow(), mouse_button_callback);
 		m_initialised = true;
 
-		Debug::Log("Input Initialised\n");
+		std::cout << "Input Initialised\n";
 	}
 
 	void Input::StartPoll()

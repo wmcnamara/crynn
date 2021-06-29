@@ -30,7 +30,7 @@ namespace crynn
 		static inline bool UseMemberShader = true; 
 	private:		
 		/// Draws a mesh to the screen with the objects specified int the constructor.
-		void Render() override;
+		void OnRender() override;
 
 		const Transform& m_transform; //Used to retrieve model matrix data
 		 

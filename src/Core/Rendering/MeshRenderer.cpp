@@ -8,9 +8,9 @@ namespace crynn
 		m_transform(transform)
 	{}
 
-	void MeshRenderer::Render()
+	void MeshRenderer::OnRender()
 	{
-		const Shader& shader = m_material.m_shader;
+		const Shader& shader = m_material.GetShader();
 
 		Mat4 modelMatrix = m_transform.GetMatrix();
 		Mat3 normalMatrix = glm::transpose(glm::inverse(modelMatrix));

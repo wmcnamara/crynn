@@ -2,7 +2,7 @@
 
 namespace crynn
 {
-	Material::Material(MaterialData data, Shader shader) :
+	Material::Material(MaterialData data, Shader& shader) :
 		m_properties(data),
 		m_shader(shader)
 	{}
@@ -17,10 +17,6 @@ namespace crynn
 		return m_properties;
 	}
 
-	void Material::SetProperties(MaterialData data)
-	{
-		m_properties = data;
-	}
 
 	void Material::SetUniforms() const
 	{
