@@ -2,8 +2,7 @@
 #pragma warning (disable : 4005)
 
 #include <Windows.h>
-#include "stb_image.h"
-#include "imgui/imgui.h"
+
 #include <string>
 #include <iostream>
 
@@ -17,7 +16,7 @@
 #include <filesystem>
 #include "../Core/Event.h"
 #include "../Core/Window.h"
-#include "GLFW/glfw3.h"
+
 
 namespace crynn
 {
@@ -73,6 +72,11 @@ namespace crynn
 		//Avoid duplicate filenames to avoid clashes from this function
 		//Returnsa GetFileData object with info about the requested file.
 		[[nodiscard]] static GetFileData GetMediaFile(const char* name) = delete;
+
+		//Returns the text between the beginning of start, and endDelimiter.
+		//Effectively a substring from the beginning of the string up until it finds endDelimiter.
+		//Returns empty string if endDelimter does not exist in the start string
+		[[nodiscard]] static std::string GetTextUntil(std::string_view start, const char* endDelimiter);
 
 	private:
 		static inline std::vector<fs::path> mediaPaths;

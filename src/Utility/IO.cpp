@@ -1,4 +1,8 @@
 #include "IO.h"
+#include <algorithm>
+#include "../../lib/thirdparty/stb/stb_image.h"
+#include "../../lib/thirdparty/imgui/include/imgui/imgui.h"
+#include "GLFW/glfw3.h"
 
 namespace crynn
 {
@@ -16,7 +20,7 @@ namespace crynn
 	void IO::Init()
 	{
 		glfwSetDropCallback(Window::GetCurrentWindow()->GetGLFWWindow(), drop_callback);
-		Debug::Log("IO Initialised");
+		std::cout << "IO Initialised\n";
 	}
 
 	bool IO::FileExists(const char* relativePath)
@@ -120,6 +124,25 @@ namespace crynn
 		}
 		else
 			return false;
+	}
+
+	std::string IO::GetTextUntil(std::string_view start, const char* endDelimiter)
+	{
+		const char* cursor = start.data();
+		const char* endOfFile = &start.back();
+
+		int delimiterIndex = 0;
+
+		while (cursor != endOfFile - sizeof(endDelimiter)) 
+		{
+			if (strcmp(cursor, endDelimiter) == 0) 
+			{
+				return std::string(start.substr(0, delimiterIndex));
+			}
+
+			cursor++;
+			delimiterIndex++;
+		}
 	}
 
 	/*
