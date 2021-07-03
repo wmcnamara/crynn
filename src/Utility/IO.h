@@ -76,7 +76,7 @@ namespace crynn
 		//Returns the text between the beginning of start, and endDelimiter.
 		//Effectively a substring from the beginning of the string up until it finds endDelimiter.
 		//Returns empty string if endDelimter does not exist in the start string
-		[[nodiscard]] static std::string GetTextUntil(std::string_view start, const char* endDelimiter);
+		[[nodiscard]] static std::string GetTextUntil(std::string_view start, std::string_view endDelimiter);
 
 	private:
 		static inline std::vector<fs::path> mediaPaths;

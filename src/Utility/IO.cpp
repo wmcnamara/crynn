@@ -95,8 +95,6 @@ namespace crynn
 
 	std::string IO::LoadFileStr(const char* relativePath)
 	{
-		std::string str; //declare here to enable RVO
-
 		//Error check
 		if (!FileExists(relativePath))
 		{
@@ -108,7 +106,7 @@ namespace crynn
 		std::ifstream t(relativePath);
 
 		//This looks funky but its just constructing an std::string with a streambuf iterator in the file
-		str = std::string(std::istreambuf_iterator<char>(t), std::istreambuf_iterator<char>());
+		std::string str = std::string(std::istreambuf_iterator<char>(t), std::istreambuf_iterator<char>());
 
 		return str;
 	}
@@ -126,23 +124,19 @@ namespace crynn
 			return false;
 	}
 
-	std::string IO::GetTextUntil(std::string_view start, const char* endDelimiter)
+	std::string IO::GetTextUntil(std::string_view start, std::string_view endDelimiter)
 	{
-		const char* cursor = start.data();
-		const char* endOfFile = &start.back();
+		if (start.empty() || endDelimiter.empty())
+			return "";
 
-		int delimiterIndex = 0;
+		//Find the delimiter
+		size_t delimiterPosition = start.find(endDelimiter);
 
-		while (cursor != endOfFile - sizeof(endDelimiter)) 
-		{
-			if (strcmp(cursor, endDelimiter) == 0) 
-			{
-				return std::string(start.substr(0, delimiterIndex));
-			}
+		//error check
+		if (delimiterPosition == std::string_view::npos)
+			return "";
 
-			cursor++;
-			delimiterIndex++;
-		}
+		return std::string(start.begin(), start.begin() + delimiterPosition);
 	}
 
 	/*
