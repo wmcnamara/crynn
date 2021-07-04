@@ -9,21 +9,27 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include "../../Utility/Debug.h"
-#include "../../Utility/IO.h"
+
 
 namespace crynn
 {
 	class Shader
 	{
 	public:
-
-		inline GLuint GetID() { return ID; }
-
 		//Constructs a shader program from two relative paths to the corresponding shader files
 		Shader(const char* vertexPath, const char* fragmentPath);
 
+		//Constructs a shader program from a Crynn shader file (.shader)
+		Shader(const char* crynnShaderPath);
+		
 		~Shader();
+
+		//Returns the underlying GLuint ID for the shader program
+		inline GLuint GetID() { return ID; }
+
+		//Compiles and links the shader from a path to a Crynn shader file (.shader)
+		//Returns a boolean indicating if the operation was successful or not.
+		bool Rebuild(std::string_view crynnShaderPath);
 
 		// use/activate the shader
 		void Use() const;
@@ -51,10 +57,16 @@ namespace crynn
 		static void SetMatrix4Current(const char* name, const glm::mat4* matrix);
 
 	private:
-		GLuint UBI;
-		GLuint ID; // The shader program ID
+		//Compiles and links the shader from a two strings with the vertex and fragment shader code.
+		//Returns a boolean indicating if the operation was successful or not.
+		bool Rebuild(std::string_view vertexCode, std::string_view fragmentCode);
 
-		void ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader);
-		void ShaderLinkLog(unsigned int shaderProgram);
+		bool shaderIsBuilt = false;
+
+		GLuint UBI = 0;
+		GLuint ID = 0; // The shader program ID
+
+		bool ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader) const;
+		bool ShaderLinkLog(unsigned int shaderProgram) const;
 	};
 }

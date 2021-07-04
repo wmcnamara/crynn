@@ -1,4 +1,7 @@
 #include "Shader.h"
+#include "../../Utility/Debug.h"
+#include "../../Utility/IO.h"
+#include <algorithm>
 
 namespace crynn
 {
@@ -7,36 +10,53 @@ namespace crynn
 		std::string vertCode = IO::LoadFileStr(vertexPath);
 		std::string fragCode = IO::LoadFileStr(fragmentPath);
 
-		unsigned int vertex, fragment;
+		bool succeeded = Rebuild(vertCode, fragCode);
 
-		const char* vertCodePtr = vertCode.c_str();
-		const char* fragCodePtr = fragCode.c_str();
-
-		//compile
-		vertex = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(vertex, 1, &vertCodePtr, NULL);
-		glCompileShader(vertex);
-
-		fragment = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(fragment, 1, &fragCodePtr, NULL);
-		glCompileShader(fragment);
-
-		//link shader program
-		ID = glCreateProgram();
-		glAttachShader(ID, vertex);
-		glAttachShader(ID, fragment);
-		glLinkProgram(ID);
-
-		//debugging
-		ShaderLinkLog(ID);
-		ShaderCompileLog(vertex, fragment);
-
-		//Setup block bindings
-		UBI = glGetUniformBlockIndex(ID, "CameraMatrices");
-		glUniformBlockBinding(ID, UBI, 0);
+		if (!succeeded) 
+		{
+			throw std::exception("Shader creation failed");
+		}
 	}
 
-	void Shader::ShaderLinkLog(unsigned int shaderProgram)
+	Shader::Shader(const char* crynnShaderPath)
+	{
+		std::cout << "Loading shader from: " << crynnShaderPath << "\n";
+
+		//load shader file
+		std::string shaderCodeText = IO::LoadFileStr(crynnShaderPath);
+
+		//Actual vertex and fragment shader code that will be attempted to be parsed will be put in these
+		std::string vertexShaderCodeText, fragmentShaderCodeText;
+
+		//Parse the vertex shader
+		{
+			//Find the vertex shader code start symbol
+			size_t vertexCodeStart = shaderCodeText.find("@VERTEXSTART");
+
+			if (vertexCodeStart == std::string::npos)
+			{
+				std::stringstream errorMessage;
+				errorMessage << "SHADER PARSING ERROR. @VERTEXSTART not defined in the shader file: " << crynnShaderPath << "\n";
+
+				std::cout << errorMessage.str();
+				throw std::exception(errorMessage.str().c_str());
+			}
+		}
+		
+		//Parse the fragment shader
+		{
+			//Find the fragment shader code start symbol
+			size_t fragmentCodeStart = shaderCodeText.find("@FRAGMENTSTART");
+
+			if (fragmentCodeStart == std::string::npos)
+			{
+				std::stringstream errorMessage;
+				errorMessage << "SHADER PARSING ERROR. @FRAGMENTSTART not defined in the shader file: " << crynnShaderPath << "\n";
+			}
+		}
+	}
+
+	bool Shader::ShaderLinkLog(unsigned int shaderProgram) const
 	{
 		int success;
 		char infoLog[512];
@@ -53,9 +73,11 @@ namespace crynn
 		{
 			std::cout << "Shader Program Linked Successfully\n";
 		}
+
+		return success;
 	}
 
-	void Shader::ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader)
+	bool Shader::ShaderCompileLog(unsigned int vertexShader, unsigned int fragmentShader) const
 	{
 		int success;
 		char infoLog[512];
@@ -82,6 +104,8 @@ namespace crynn
 		}
 		else
 			std::cout << "Fragment Shader Compiled Successfully\n";
+
+		return success;
 	}
 
 	void Shader::SetBool(const char* name, bool value) const
@@ -184,4 +208,53 @@ namespace crynn
 	{
 		glDeleteProgram(ID);
 	}
+
+	bool Shader::Rebuild(std::string_view crynnShaderPath)
+	{
+		return false;
+	}
+
+	bool Shader::Rebuild(std::string_view vertexCode, std::string_view fragmentCode)
+	{
+		unsigned int vertex, fragment;
+
+		const char* vertCodePtr = vertexCode.data();
+		const char* fragCodePtr = fragmentCode.data();
+
+		//compile
+		vertex = glCreateShader(GL_VERTEX_SHADER);
+		glShaderSource(vertex, 1, &vertCodePtr, NULL);
+		glCompileShader(vertex);
+
+		fragment = glCreateShader(GL_FRAGMENT_SHADER);
+		glShaderSource(fragment, 1, &fragCodePtr, NULL);
+		glCompileShader(fragment);
+
+		//link shader program
+		ID = glCreateProgram();
+		glAttachShader(ID, vertex);
+		glAttachShader(ID, fragment);
+		glLinkProgram(ID);
+
+		//debugging
+		ShaderLinkLog(ID);
+		ShaderCompileLog(vertex, fragment);
+
+		//Setup block bindings
+		UBI = glGetUniformBlockIndex(ID, "CameraMatrices");
+		glUniformBlockBinding(ID, UBI, 0);
+
+		//debugging
+		bool linkSucceeded = ShaderLinkLog(ID);
+		bool compileSucceeded = ShaderCompileLog(vertex, fragment);
+		bool succeeded = linkSucceeded && compileSucceeded;
+
+		if (!succeeded)
+		{
+			glDeleteProgram(ID);
+		}
+
+		return succeeded;
+	}
+
 }
