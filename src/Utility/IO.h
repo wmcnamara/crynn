@@ -42,7 +42,7 @@ namespace crynn
 		static void Init();
 
 		//Returns a boolean indicating whether a file at a given path exists
-		[[nodiscard]] static bool FileExists(const char* relativePath);
+		[[nodiscard]] static bool FileExists(std::string_view relativePath);
 
 		/// <summary>
 		/// Opens a picker that allows the user to select an image.
@@ -60,7 +60,7 @@ namespace crynn
 
 		//Allocates and loads a file into a string.
 		//Returns an empty string if the file fails to load
-		[[nodiscard]] static std::string LoadFileStr(const char* relativePath);
+		[[nodiscard]] static std::string LoadFileStr(std::string_view relativePath);
 
 		//Adds a directory that will be searched for a file
 		//Expects a path relative to the exe / working directory.
@@ -71,13 +71,33 @@ namespace crynn
 		//Returns the first file found matching the given name.
 		//Avoid duplicate filenames to avoid clashes from this function
 		//Returnsa GetFileData object with info about the requested file.
-		[[nodiscard]] static GetFileData GetMediaFile(const char* name) = delete;
+		static GetFileData GetMediaFile(const char* name) = delete;
 
 		//Returns the text between the beginning of start, and endDelimiter.
 		//Effectively a substring from the beginning of the string up until it finds endDelimiter.
 		//Returns empty string if endDelimter does not exist in the start string
 		[[nodiscard]] static std::string GetTextUntil(std::string_view start, std::string_view endDelimiter);
 
+		//Searches for the string str for the strings in a set of iterators
+		//Searches in the order of begin to end
+		//Returns an iterator to the string that was first found
+		template <typename Iterator>
+		static Iterator GetFirstInstanceInString(std::string_view str, Iterator begin, Iterator end) = delete; //deleted until further testing
+		/*
+		{
+			auto it = begin;
+
+			while (it != end)
+			{
+				size_t pos = str.find(*begin);
+
+				if (pos != std::string_view::npos)
+					return begin;
+
+				it++;
+			}
+		}
+		*/
 	private:
 		static inline std::vector<fs::path> mediaPaths;
 	};

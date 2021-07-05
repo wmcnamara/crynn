@@ -23,7 +23,7 @@ namespace crynn
 		std::cout << "IO Initialised\n";
 	}
 
-	bool IO::FileExists(const char* relativePath)
+	bool IO::FileExists(std::string_view relativePath)
 	{
 		return std::filesystem::exists(relativePath);
 	}
@@ -93,7 +93,7 @@ namespace crynn
 		return filePath; //Create a GetFileArgs object and return it.
 	}
 
-	std::string IO::LoadFileStr(const char* relativePath)
+	std::string IO::LoadFileStr(std::string_view relativePath)
 	{
 		//Error check
 		if (!FileExists(relativePath))
