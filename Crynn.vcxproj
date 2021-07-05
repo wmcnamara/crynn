@@ -165,6 +165,7 @@ xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Com
     <ClInclude Include="src\Core\EventListener.h" />
     <ClInclude Include="src\Core\Camera.h" />
     <ClInclude Include="src\Core\Event.h" />
+    <ClInclude Include="src\Core\External\GLFWManager.h" />
     <ClInclude Include="src\Core\Input.h" />
     <ClInclude Include="src\Core\Math\Math.h" />
     <ClInclude Include="src\Core\Mesh.h" />
@@ -205,6 +206,7 @@ xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Com
     <ClCompile Include="src\Core\CrynnObject.cpp" />
     <ClCompile Include="src\Core\EventListener.cpp" />
     <ClCompile Include="src\Core\Camera.cpp" />
+    <ClCompile Include="src\Core\External\GLFWManager.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\Math\Math.cpp" />
     <ClCompile Include="src\Core\Mesh.cpp" />
@@ -245,6 +247,9 @@ xcopy "$(SolutionDir)lib/thirdparty/dll/$(Configuration)" "$(OutDir)" /y /e</Com
     <ProjectReference Include="lib\thirdparty\physics\Physics\Physics.vcxproj">
       <Project>{956f9f8b-7fcb-4f31-b804-95daec164d27}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\Shaders\Standard.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

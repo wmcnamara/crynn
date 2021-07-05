@@ -55,6 +55,9 @@
     <Filter Include="lib\thirdparty\glm">
       <UniqueIdentifier>{dc415009-eadb-4bcf-9c5e-4af4285c4f72}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Core\External">
+      <UniqueIdentifier>{c9cfd588-e248-43f7-a732-bd504d816ff7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Application.h">
@@ -252,6 +255,9 @@
     <ClInclude Include="src\Core\Rendering\RenderConfig.h">
       <Filter>src\Core\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\External\GLFWManager.h">
+      <Filter>src\Core\External</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Camera.cpp">
@@ -365,6 +371,9 @@
     <ClCompile Include="src\Core\Rendering\RenderConfig.cpp">
       <Filter>src\Core\Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\External\GLFWManager.cpp">
+      <Filter>src\Core\External</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -392,5 +401,10 @@
     <None Include="src\Shaders\DepthShader.vert">
       <Filter>src\Shaders</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\Shaders\Standard.shader">
+      <Filter>src\Shaders</Filter>
+    </Text>
   </ItemGroup>
 </Project>
