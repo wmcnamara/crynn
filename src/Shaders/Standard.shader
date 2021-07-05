@@ -1,23 +1,20 @@
 /*
 	This is the Crynn standard shader.
 	It is a simple, fast blinn phong implemtation that should make it easier to get up and running with crynn.
-
-	The vertex and fragment shader are composed with a set of flags that the shader parser will look for when parsing your shader.
-	
-	Vertex shaders should be defined between @VERTEXSTART and @VERTEXEND
-
-	Fragment shaders should be defined between @FRAGMENTSTART and @FRAGMENTEND
 */
 
 @VERTEXSTART
 #version 330 core
-
 layout(location = 0) in vec3 aPos;
-layout(location = 1) in vec2 aTexCoord;
+layout(location = 1) in vec3 aNormal;
+layout(location = 2) in vec2 aTexCoords;
 
 out vec2 texCoord;
+out vec3 normal;
+out vec3 fragPos;
 
 uniform mat4 model;
+uniform mat3 normalMatrix;
 
 layout(std140) uniform Matrices
 {
@@ -27,7 +24,9 @@ layout(std140) uniform Matrices
 
 void main()
 {
-	texCoord = aTexCoord;
+	fragPos = vec3(model * vec4(aPos, 1.0f));
+	normal = normalMatrix * aNormal;
+	texCoord = aTexCoords;
 	gl_Position = projection * view * model * vec4(aPos, 1.0);
 }
 @VERTEXEND
