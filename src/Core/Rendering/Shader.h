@@ -27,9 +27,7 @@ namespace crynn
 		//Returns the underlying GLuint ID for the shader program
 		inline GLuint GetID() { return ID; }
 
-		//Compiles and links the shader from a path to a Crynn shader file (.shader)
-		//Returns a boolean indicating if the operation was successful or not.
-		bool Rebuild(std::string_view crynnShaderPath);
+
 
 		// use/activate the shader
 		void Use() const;
@@ -57,9 +55,20 @@ namespace crynn
 		static void SetMatrix4Current(const char* name, const glm::mat4* matrix);
 
 	private:
+		struct ShaderParseResult
+		{
+			std::string vertexCode;
+			std::string fragmentCode;
+
+			bool succeeded = false;
+		};
+
 		//Compiles and links the shader from a two strings with the vertex and fragment shader code.
 		//Returns a boolean indicating if the operation was successful or not.
-		bool Rebuild(std::string_view vertexCode, std::string_view fragmentCode);
+		bool Recompile(std::string_view vertexCode, std::string_view fragmentCode);
+
+		//Parses a crynn shader file (.shader) and returns a ShaderParseResult object containing the shader code and a result boolean.
+		static ShaderParseResult ParseShaderFile(std::string_view pathToShaderFile, bool logDebugOuput = true);
 
 		bool shaderIsBuilt = false;
 

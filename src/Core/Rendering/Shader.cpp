@@ -10,7 +10,7 @@ namespace crynn
 		std::string vertCode = IO::LoadFileStr(vertexPath);
 		std::string fragCode = IO::LoadFileStr(fragmentPath);
 
-		bool succeeded = Rebuild(vertCode, fragCode);
+		bool succeeded = Recompile(vertCode, fragCode);
 
 		if (!succeeded) 
 		{
@@ -22,38 +22,23 @@ namespace crynn
 	{
 		std::cout << "Loading shader from: " << crynnShaderPath << "\n";
 
-		//load shader file
-		std::string shaderCodeText = IO::LoadFileStr(crynnShaderPath);
+		//Parse shader file
+		ShaderParseResult result = ParseShaderFile(crynnShaderPath);
 
-		//Actual vertex and fragment shader code that will be attempted to be parsed will be put in these
-		std::string vertexShaderCodeText, fragmentShaderCodeText;
-
-		//Parse the vertex shader
+		if (result.succeeded) 
 		{
-			//Find the vertex shader code start symbol
-			size_t vertexCodeStart = shaderCodeText.find("@VERTEXSTART");
+			bool compileSucceeded = Recompile(result.vertexCode, result.fragmentCode);
 
-			if (vertexCodeStart == std::string::npos)
+			if (!compileSucceeded)
 			{
-				std::stringstream errorMessage;
-				errorMessage << "SHADER PARSING ERROR. @VERTEXSTART not defined in the shader file: " << crynnShaderPath << "\n";
-
-				std::cout << errorMessage.str();
-				throw std::exception(errorMessage.str().c_str());
+				throw std::exception("Shader compilation failed. Check console for more info");
 			}
 		}
-		
-		//Parse the fragment shader
+		else 
 		{
-			//Find the fragment shader code start symbol
-			size_t fragmentCodeStart = shaderCodeText.find("@FRAGMENTSTART");
-
-			if (fragmentCodeStart == std::string::npos)
-			{
-				std::stringstream errorMessage;
-				errorMessage << "SHADER PARSING ERROR. @FRAGMENTSTART not defined in the shader file: " << crynnShaderPath << "\n";
-			}
+			throw std::exception("Shader parsing failed. Check console for more info");
 		}
+
 	}
 
 	bool Shader::ShaderLinkLog(unsigned int shaderProgram) const
@@ -209,12 +194,7 @@ namespace crynn
 		glDeleteProgram(ID);
 	}
 
-	bool Shader::Rebuild(std::string_view crynnShaderPath)
-	{
-		return false;
-	}
-
-	bool Shader::Rebuild(std::string_view vertexCode, std::string_view fragmentCode)
+	bool Shader::Recompile(std::string_view vertexCode, std::string_view fragmentCode)
 	{
 		unsigned int vertex, fragment;
 
@@ -255,6 +235,101 @@ namespace crynn
 		}
 
 		return succeeded;
+	}
+
+	Shader::ShaderParseResult Shader::ParseShaderFile(std::string_view pathToShaderFile, bool logDebugOutput)
+	{
+		//load shader file
+		std::string shaderCodeText = IO::LoadFileStr(pathToShaderFile);
+
+		//Actual vertex and fragment shader code that will be attempted to be parsed will be put in these
+		std::string vertexShaderCodeText, fragmentShaderCodeText;
+
+		/*
+		//Parse the vertex shader
+		*/
+		{
+			//Find the vertex shader code start symbol
+			size_t vertexCodeStart = shaderCodeText.find("@VERTEXSTART") + sizeof("@VERTEXSTART");
+
+			//Error check
+			if (vertexCodeStart == std::string::npos)
+			{
+				if (logDebugOutput) 
+				{
+					std::stringstream errorMessage;
+					errorMessage << "SHADER PARSING ERROR. @VERTEXSTART not defined in the shader file: " << pathToShaderFile << "\n";
+
+					std::cout << errorMessage.str();
+					throw std::exception(errorMessage.str().c_str());
+				}
+
+				return { "", "", false };
+			}
+
+			//Parse the actual code
+			const char* strStart = shaderCodeText.data() + vertexCodeStart;
+			vertexShaderCodeText = IO::GetTextUntil(strStart, "@VERTEXEND");
+
+			//Error check
+			if (vertexShaderCodeText == "")
+			{
+				if (logDebugOutput) 
+				{
+					std::stringstream errorMessage;
+					errorMessage << "SHADER PARSING ERROR. @VERTEXEND not defined in the shader file: " << pathToShaderFile << "\n";
+
+					std::cout << errorMessage.str();
+					throw std::exception(errorMessage.str().c_str());
+				}
+
+				return { "", "", false };
+			}
+		}
+
+		/*
+		//Parse the fragment shader
+		*/
+		{
+			//Find the fragment shader code start symbol
+			size_t fragmentCodeStart = shaderCodeText.find("@FRAGMENTSTART") + sizeof("@FRAGMENTSTART");
+
+			//Error check
+			if (fragmentCodeStart == std::string::npos)
+			{
+				if (logDebugOutput) 
+				{
+					std::stringstream errorMessage;
+					errorMessage << "SHADER PARSING ERROR. @FRAGMENTSTART not defined in the shader file: " << pathToShaderFile << "\n";
+
+					std::cout << errorMessage.str();
+					throw std::exception(errorMessage.str().c_str());
+				}
+
+				return { "", "", false };
+			}
+
+			//Parse the actual code
+			const char* strStart = shaderCodeText.data() + fragmentCodeStart;
+			fragmentShaderCodeText = IO::GetTextUntil(strStart, "@FRAGMENTEND");
+
+			//Error check
+			if (fragmentShaderCodeText == "")
+			{
+				if (logDebugOutput) 
+				{
+					std::stringstream errorMessage;
+					errorMessage << "SHADER PARSING ERROR. @FRAGMENTEND not defined in the shader file: " << pathToShaderFile << "\n";
+
+					std::cout << errorMessage.str();
+					throw std::exception(errorMessage.str().c_str());
+				}
+
+				return { "", "", false };
+			}
+		}
+
+		return { vertexShaderCodeText, fragmentShaderCodeText, true };
 	}
 
 }
