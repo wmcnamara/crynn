@@ -1,6 +1,7 @@
 #include "Rendering/RenderConfig.h"
 #include "Window.h"
 #include "Application.h"
+#include "../Utility/Defines.h"
 
 namespace crynn
 {
@@ -21,6 +22,12 @@ namespace crynn
 		OnBeforeUpdate.Invoke(deltaTime * Application::TimeScale);
 		OnUpdate.Invoke(deltaTime * Application::TimeScale);
 		OnRender.Invoke();
+
+#ifdef CRYNN_SHOW_FPS
+		std::stringstream str;
+		str << "Crynn Game Engine | FPS: " << static_cast<int>(1.0f / deltaTime);
+		glfwSetWindowTitle(Window::GetCurrentWindow()->GetGLFWWindow(), str.str().c_str());
+#endif
 	}
 
 	void Application::Initialise()
