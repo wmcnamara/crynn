@@ -7,24 +7,6 @@
 
 using namespace crynn;
 
-q3Body* AddDefaultPlaneCollider()
-{
-	q3BodyDef bodyDef;
-	q3Body* body = Physics::GetScene()->CreateBody(bodyDef);
-
-	q3BoxDef boxDef; // See q3Box.h for settings details
-	q3Transform tr; // Contains position and orientation, see q3Transform.h for details
-	q3Identity(tr);
-	tr.position = Vec3(0, 1, 0);
-
-	// Create a box at the origin with width, height, depth = (1.0, 1.0, 1.0)
-	// and add it to a rigid body. The transform is defined relative to the owning body
-	boxDef.Set(tr, q3Vec3(100.0, 1.0, 100.0));
-	body->AddBox(boxDef);
-
-	return body;
-}
-
 int main()
 {
 	Engine engine(800, 600, "Test");
@@ -32,7 +14,7 @@ int main()
 	engine.SetClearColor(.2f, .2f, .2f, 1.0f);
 
 	Camera cam(Vec3(0, 0, -6), Projection::Perspective);
-	cam.SetPosition(Vec3(0, 2, 0));
+	cam.SetPosition(Vec3(0, 2, 5));
 
 	LightColorData data;
 	data.diffuse = Vec3(0.4, 0, 0);
@@ -42,7 +24,7 @@ int main()
 	light.intensity = 10.0f;
 	light.SetPosition(Vec3(-8, 20, 7));
 
-	Shader shader("Shaders/Standard.vert", "Shaders/Standard.frag");
+	Shader shader("Shaders/Standard.shader");
 
 	MaterialData matData;
 	matData.ambient = Vec3(0.2);
@@ -54,31 +36,16 @@ int main()
 
 	Model model("Assets/backpack/backpack.obj");
 
-	/*
-	std::shared_ptr<TestGUI> gui = std::make_shared<TestGUI>();
-	std::shared_ptr<TestMesh> mesh = std::make_shared<TestMesh>();
-	std::shared_ptr<TestSkybox> box = std::make_shared<TestSkybox>();
-
-	Renderer::AddToRenderList(gui);
-	Renderer::AddToRenderList(mesh);
-	Renderer::AddToRenderList(box);
-
-	Renderer::Render();
-	*/
-
 	Transform tr;
-	tr.SetScale(Vec3(0.5f, 0.5f, 0.5f));
-	tr.Rotate(Vec3(1, 0, 0)  * -90.0f);
 
 	float yRot = 0;
 	const float defaultSpeed = 6.0f;
 	const float fastSpeed = 12.0f;
 
+	MeshRenderer renderer(model, mat, tr);
 #define SENSITIVTY -3.0f
 	Application::OnUpdate.AddHandler([&](float dt)
 		{
-			//light.SetPosition(Vec3(10 * sin(dt), 0, 3 * cos(dt)));
-
 			const float SPEED = Input::GetKey(KeyCode::LSHIFT) ? fastSpeed : defaultSpeed;
 
 			if (Input::GetKey(KeyCode::W))
