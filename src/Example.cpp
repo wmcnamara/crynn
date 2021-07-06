@@ -21,7 +21,7 @@ int main()
 
 	PointLight light(data, 30.0f);
 	light.SetAttenuationRange(20.0f);
-	light.intensity = 10.0f;
+	light.SetIntensity(10.0f);
 	light.SetPosition(Vec3(-8, 20, 7));
 
 	Shader shader("Shaders/Standard.shader");

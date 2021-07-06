@@ -22,17 +22,21 @@ namespace crynn
 	class Light : public CrynnObject
 	{
 	public:
-		Light() = delete; //use an implementation of Light like DirectionalLight
+		Light() = delete; //use an implementation of Light like DirectionalLight or PointLight
 		virtual ~Light() = default;
 
 		LightColorData colorData;
-		float intensity = 1.0f;
 
 		virtual LightType GetLightType();
+
+		void SetIntensity(float intensity);
+		float GetIntensity();
+
 	protected: 
 		Light(LightColorData _colorData, LightType _lightType);
 
-		LightType lightType;
+		LightType m_lightType;
+		float m_intensity = 1.0f;
 
 		virtual void SetUniforms() final; //Sets the necessary color and position uniforms
 		virtual void SetExtraUniforms() = 0; //Used to set additional, light caster specific uniforms like lights direction for instance.

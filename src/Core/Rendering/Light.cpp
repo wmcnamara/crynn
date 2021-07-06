@@ -5,12 +5,29 @@ namespace crynn
 {
 	Light::Light(LightColorData _colorData, LightType _lightType) : 
 		colorData(_colorData), 
-		lightType(_lightType) 
+		m_lightType(_lightType) 
 	{}
 
 	LightType Light::GetLightType()
 	{
-		return lightType;
+		return m_lightType;
+	}
+
+	void Light::SetIntensity(float intensity)
+	{
+		if (intensity > 0)
+		{
+			m_intensity = intensity;
+		}
+		else 
+		{
+			std::cout << "You're setting the intensity to a negative value\n";
+		}
+	}
+
+	float Light::GetIntensity()
+	{
+		return m_intensity;
 	}
 
 	void Light::Update(float dt)
@@ -20,13 +37,13 @@ namespace crynn
 
 	void Light::SetUniforms()
 	{
-		int lightTypeEnum = std::underlying_type<LightType>::type(lightType);
+		int lightTypeEnum = std::underlying_type<LightType>::type(m_lightType);
 
 		Shader::SetVec3Current("light.position", GetPosition());
 		Shader::SetVec3Current("light.ambient", colorData.ambient);
 		Shader::SetVec3Current("light.diffuse", colorData.diffuse);
 		Shader::SetVec3Current("light.specular", colorData.specular);
-		Shader::SetFloatCurrent("light.intensity", intensity);
+		Shader::SetFloatCurrent("light.intensity", m_intensity);
 		Shader::SetIntCurrent("light.type", lightTypeEnum);
 		Shader::SetBoolCurrent("sceneHasLights", true);
 
