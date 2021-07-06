@@ -34,16 +34,18 @@ int main()
 
 	Material mat = Material(matData, shader);
 
-	Model model("Assets/backpack/backpack.obj");
+	Model model("Assets/floor.fbx");
 
 	Transform tr;
+	tr.Rotate(Vec3(1.0f, 0.0f, 0.0f) * 90.0f);
+	tr.SetScale(Vec3(5.0f));
 
 	float yRot = 0;
 	const float defaultSpeed = 6.0f;
 	const float fastSpeed = 12.0f;
 
 	MeshRenderer renderer(model, mat, tr);
-#define SENSITIVTY -3.0f
+	const float sensitivity = -3.0f;
 	Application::OnUpdate.AddHandler([&](float dt)
 		{
 			const float SPEED = Input::GetKey(KeyCode::LSHIFT) ? fastSpeed : defaultSpeed;
@@ -82,7 +84,7 @@ int main()
 					Input::UnlockMouse();
 
 			}
-			Vec2 mouse = Input::GetMouseDelta() * dt * SENSITIVTY;
+			Vec2 mouse = Input::GetMouseDelta() * dt * sensitivity;
 			yRot += mouse.y;
 
 			cam.Rotate(Vec3(0, 1, 0) * mouse.x);
