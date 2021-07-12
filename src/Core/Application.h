@@ -70,11 +70,17 @@ namespace crynn
 		//Returns a boolean indicating if Crynn has been fully initialized
 		static bool IsInitialized();
 
+		//If state is true the window title will display the apps current FPS
+		static void SetShowFPSTitle(bool state);
+
+		//Returns true if the FPS title is currently being displayed can be set with SetShowFPSTitle
+		static bool GetShowFPSTitle();
 	private:
 		//Used to get deltaTimes.
 		inline static float currentFrameTime = 0;
 		inline static float previousFrameTime = 0;
 
 		static inline std::atomic_bool m_initialised = false;
+		static inline std::atomic_bool m_showFPS = false;
 	};
 }

@@ -23,11 +23,12 @@ namespace crynn
 		OnUpdate.Invoke(deltaTime * Application::TimeScale);
 		OnRender.Invoke();
 
-#ifdef CRYNN_SHOW_FPS
-		std::stringstream str;
-		str << "Crynn Game Engine | FPS: " << static_cast<int>(1.0f / deltaTime);
-		glfwSetWindowTitle(Window::GetCurrentWindow()->GetGLFWWindow(), str.str().c_str());
-#endif
+		if (m_showFPS)
+		{
+			std::stringstream str;
+			str << "Crynn Game Engine | FPS: " << static_cast<int>(1.0f / deltaTime);
+			glfwSetWindowTitle(Window::GetCurrentWindow()->GetGLFWWindow(), str.str().c_str());
+		}
 	}
 
 	void Application::Initialise()
@@ -56,6 +57,16 @@ namespace crynn
 	bool Application::IsInitialized()
 	{
 		return m_initialised;
+	}
+
+	void Application::SetShowFPSTitle(bool state)
+	{
+		m_showFPS = state;
+	}
+
+	bool Application::GetShowFPSTitle()
+	{
+		return m_showFPS;
 	}
 
 }
