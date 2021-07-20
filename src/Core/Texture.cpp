@@ -92,11 +92,8 @@ namespace crynn
 
 	Color Texture::GetPixelColor(unsigned int x, unsigned int y)
 	{
-		assert(x < m_width || y < m_height); //assert in bounds
-		
-		//If they input an out of bounds data, return a black pixel
-		if (x > m_width || y > m_height) 
-			return Color{ 0, 0, 0, 1 }; 
+		//assert that the pixel coord is in bounds
+		assert(x < m_width || y < m_height); 
 
 		unsigned bytePerPixel = m_nrChannels;
 		unsigned char* pixelOffset = m_textureData + (x + m_height * y) * bytePerPixel;
