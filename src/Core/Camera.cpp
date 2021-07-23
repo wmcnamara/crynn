@@ -10,7 +10,7 @@
 
 namespace crynn
 {
-	Camera::Camera(Vec3 position, Projection projType) : m_projType(projType)
+	Camera::Camera(Vec3 position, Projection projType, bool setAsCurrent) : m_projType(projType)
 	{
 		Translate(position);
 
@@ -22,6 +22,10 @@ namespace crynn
 
 		// Set camera matrix ubo to bind point 0
 		glBindBufferRange(GL_UNIFORM_BUFFER, 0, m_matrixUBO, 0, 2 * sizeof(glm::mat4));
+
+		//TODO
+		//if (setAsCurrent)
+		//	SetAsCurrentCamera();
 	}
 
 	Camera::~Camera()
@@ -34,11 +38,15 @@ namespace crynn
 		//Get information about the viewport, to make sure the projection is configured correctly.
 		//https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/glViewport.xml
 		//viewportDat[2] and [3] will have the width and height of the viewport
+
 		float viewportDat[4] = { 0, 0, 0, 0 };
 		glGetFloatv(GL_VIEWPORT, viewportDat);
 
+		const float xHeight = viewportDat[2];
+		const float yHeight = viewportDat[3];
+
 		//Dont construct a projection with a zero size width/height
-		if (viewportDat[2] <= 0 || viewportDat[3] <= 0)
+		if (xHeight <= 0 || yHeight <= 0)
 		{
 			return Mat4(1.0f); //If its <= 0 just give an identity matrix
 		}
@@ -47,7 +55,7 @@ namespace crynn
 		{
 			return glm::perspective(
 				glm::radians(m_fov),
-				viewportDat[2] / viewportDat[3], //The first 2 elements of GL_VIEWPORT are irrelevant here.
+				xHeight / yHeight, //The first 2 elements of GL_VIEWPORT are irrelevant here.
 				m_nearClipPlane,
 				m_farClipPlane);
 		}
@@ -55,7 +63,7 @@ namespace crynn
 		{
 			return glm::ortho(
 				glm::radians(m_fov),
-				viewportDat[2] / viewportDat[3], //The first 2 elements of GL_VIEWPORT are irrelevant here.
+				xHeight / yHeight, //The first 2 elements of GL_VIEWPORT are irrelevant here.
 				m_nearClipPlane,
 				m_farClipPlane);
 		}
