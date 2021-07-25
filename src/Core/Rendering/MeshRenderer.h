@@ -20,7 +20,7 @@ namespace crynn
 		MeshRenderer(const Model& mesh, const Material& material, const Transform& transform);
 
 		inline const Model& GetModel() const { return m_model; }
-		inline const Material& GetSMaterial() const { return m_material; }
+		inline const Material& GetMaterial() const { return m_material; }
 
 		bool active = true; ///Toggle rendering
 
