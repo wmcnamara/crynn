@@ -44,6 +44,7 @@ namespace crynn
 
 		const float xHeight = viewportDat[2];
 		const float yHeight = viewportDat[3];
+		const float aspectRatio = xHeight / yHeight;
 
 		//Dont construct a projection with a zero size width/height
 		if (xHeight <= 0 || yHeight <= 0)
@@ -55,17 +56,18 @@ namespace crynn
 		{
 			return glm::perspective(
 				glm::radians(m_fov),
-				xHeight / yHeight, //The first 2 elements of GL_VIEWPORT are irrelevant here.
+				aspectRatio,
 				m_nearClipPlane,
 				m_farClipPlane);
 		}
 		else if (m_projType == Projection::Orthographic)
 		{
+			throw std::exception("Orthogonal Projections are not yet supported");
 			return glm::ortho(
-				glm::radians(m_fov),
-				xHeight / yHeight, //The first 2 elements of GL_VIEWPORT are irrelevant here.
-				m_nearClipPlane,
-				m_farClipPlane);
+				0.0f,
+				aspectRatio, //The first 2 elements of GL_VIEWPORT are irrelevant here.
+				aspectRatio,
+				0.0f);
 		}
 
 		std::cout << "Projection matrix is identity matrix. Please set a proper projection type.\n";
