@@ -10,7 +10,7 @@
 namespace crynn 
 {
 	/// <summary>
-	/// Projection type.
+	/// Camera projection type.
 	/// </summary>
 	enum class Projection
 	{
@@ -26,10 +26,14 @@ namespace crynn
 	class Camera : protected EventListener, public Transform
 	{
 	public:
-		Camera(Vec3 position, Projection projType);
+		Camera(Vec3 position, Projection projType, bool setAsCurrent = true);
 		~Camera();
 
+		//Calculates a projection matrix from the nearand far clip plane, FOV and viewport data.
+		//Returns identity matrix if viewport width or height is <= 0
 		Mat4 CalculateProjection() const;
+
+		//Calculates a view matrix for this camera.
 		Mat4 CalculateView() const;
 
 		//Sets the near and far clipping planes for this camera
@@ -44,7 +48,6 @@ namespace crynn
 		Projection m_projType = Projection::Perspective;
 
 		GLuint m_matrixUBO = 0;
-
 		void SetUniformData();
 
 		float m_fov = 60.0f;
