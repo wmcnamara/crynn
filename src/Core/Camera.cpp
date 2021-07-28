@@ -65,7 +65,7 @@ namespace crynn
 			throw std::exception("Orthogonal Projections are not yet supported");
 			return glm::ortho(
 				0.0f,
-				aspectRatio, //The first 2 elements of GL_VIEWPORT are irrelevant here.
+				aspectRatio,
 				aspectRatio,
 				0.0f);
 		}
