@@ -26,7 +26,7 @@ namespace crynn
 		if (m_showFPS)
 		{
 			std::string fpsText = "Crynn Game Engine | FPS: ";
-			fpsText += static_cast<int>(1.0f / deltaTime);
+			fpsText += std::to_string(static_cast<int>(1.0f / deltaTime));
 
 			glfwSetWindowTitle(Window::GetCurrentWindow()->GetGLFWWindow(), fpsText.c_str());
 		}
