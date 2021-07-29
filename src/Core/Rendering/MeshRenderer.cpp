@@ -3,9 +3,9 @@
 namespace crynn
 {
 	MeshRenderer::MeshRenderer(const Model& mesh, const Material& material, const Transform& transform) :
+		m_transform(transform),
 		m_model(mesh),
-		m_material(material),
-		m_transform(transform)
+		m_material(material)
 	{}
 
 	void MeshRenderer::OnRender()
