@@ -16,7 +16,7 @@ out vec3 fragPos;
 uniform mat4 model;
 uniform mat3 normalMatrix;
 
-layout(std140) uniform Matrices
+layout(std140) uniform CameraMatrices
 {
 	mat4 projection;
 	mat4 view;
