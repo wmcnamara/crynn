@@ -58,7 +58,7 @@ namespace crynn
 		/// </summary>
 		static inline Event<const char*> OnFileDrop;
 
-		//Allocates and loads a file into a string.
+		//Loads a file into a string.
 		//Returns an empty string if the file fails to load
 		[[nodiscard]] static std::string LoadFileStr(std::string_view relativePath);
 
