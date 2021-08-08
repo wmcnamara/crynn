@@ -23,10 +23,10 @@ namespace crynn
 		Transform();
 		virtual ~Transform();
 
-		Transform(const Transform& other) = default;
-		Transform& operator=(const Transform& other) = default;
-		Transform(Transform&& other) = default;
-		Transform& operator=(Transform&& other) = default;
+		Transform(const Transform& other) = delete;
+		Transform& operator=(const Transform & other) = delete;
+		Transform(Transform && other) = delete;
+		Transform& operator=(Transform && other) = delete;
 
 	    void Translate(Vec3 translation); //Applies a translation to this object.
 	    void Scale(Vec3 scale); //Applies a scale to the object
@@ -46,8 +46,8 @@ namespace crynn
 		Vec3 GetRightVector() const;
 		Vec3 GetUpVector() const;
 
-		//Returns a non-const reference to the model matrix struct this class is represented with.
-		Mat4& GetMatrix() const;
+		//Creates a transformation matrix from the position, rotation and scale of this transform.
+		Mat4 GetMatrix() const;
 
 		void SetParent(Transform* parent);
 		Transform& GetParent();
@@ -63,7 +63,6 @@ namespace crynn
 
 		Vec3 m_eulerRotation = Vec3(0, 0, 0); //Cache for the euler rotation of the object. Not used in any calculation. Degrees
 		mutable Mat4 m_worldMatrix = Mat4(1.0f); //model matrix with transformations relative to the world origin
-		mutable Mat4 m_localMatrix = Mat4(1.0f); //model matrix with transformations relative to the parents of this transform.
 
 		//Recursively computes a matrix that applies transformations from this matrice's parents, instead of the world.
 		//The matrix parameter passed to this function will have all the transformations from its parent transforms applied to it.

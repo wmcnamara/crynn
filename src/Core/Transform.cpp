@@ -110,8 +110,9 @@ namespace crynn
 
 	//My own little implementation of a transformation hierarchy.
 	//Its a bit complicated, so take a moment to look through if you're confused.
+	//Basically the idea is to compute a matrix for the current pos/rot/scale, and then multiply that matrix with the parent matrices recursively.
 
-	Mat4& Transform::GetMatrix() const
+	Mat4 Transform::GetMatrix() const
 	{  
 		if (m_recalculateMatrix) 
 		{		
@@ -125,9 +126,7 @@ namespace crynn
 		}
 
 		//Apply parent transformations to it aswell
-		m_localMatrix = std::move(ComputeLocalMatrixRecursive(m_worldMatrix, this));
-
-		return m_localMatrix;
+		return ComputeLocalMatrixRecursive(m_worldMatrix, this);
 	}
 
 	void Transform::SetParent(Transform* parent)
