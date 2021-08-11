@@ -23,10 +23,10 @@ namespace crynn
 		Transform();
 		virtual ~Transform();
 
-		Transform(const Transform& other) = delete;
-		Transform& operator=(const Transform & other) = delete;
-		Transform(Transform && other) = delete;
-		Transform& operator=(Transform && other) = delete;
+		Transform(const Transform& other);
+		Transform& operator=(const Transform& other);
+		Transform(Transform&& other) noexcept;
+		Transform& operator=(Transform&& other) noexcept;
 
 	    void Translate(Vec3 translation); //Applies a translation to this object.
 	    void Scale(Vec3 scale); //Applies a scale to the object
@@ -54,23 +54,22 @@ namespace crynn
 
 		void RemoveParent();
 
-	protected:
-		bool ShouldRecalculateMatrices() const { return m_recalculateMatrix; }
 	private:
 		Vec3 m_position = Vec3(0, 0, 0);
 		Quat m_rotation = Quat(Vec3(0.0f, 0.0f, 0.0f));
 		Vec3 m_scale = Vec3(1, 1, 1);
 
 		Vec3 m_eulerRotation = Vec3(0, 0, 0); //Cache for the euler rotation of the object. Not used in any calculation. Degrees
-		mutable Mat4 m_worldMatrix = Mat4(1.0f); //model matrix with transformations relative to the world origin
+
+		Transform* m_parent = nullptr;
+		std::unordered_set<Transform*> m_children; //pointers to this objects children.
 
 		//Recursively computes a matrix that applies transformations from this matrice's parents, instead of the world.
 		//The matrix parameter passed to this function will have all the transformations from its parent transforms applied to it.
 		Mat4& ComputeLocalMatrixRecursive(Mat4& matrix, const Transform* const transform) const;
 
-		Transform* m_parent = nullptr;
-		std::unordered_set<Transform*> m_children; //pointers to this objects children.
-
-		mutable std::atomic_bool m_recalculateMatrix = true; //set to true after moving/rotating/scaling. Indicates model matrix needs to be recalculated.
+		//Caching variables
+		mutable Mat4 m_worldMatrixCache = Mat4(1.0f); //Cached model matrix with transformations relative to the world origin
+		mutable std::atomic_bool m_recalculateMatrix = true; // Indicates model matrix needs to be recalculated. set to true after translating/rotating/scaling.
 	};
 }

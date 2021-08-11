@@ -22,6 +22,96 @@ namespace crynn
 		}
 	}
 
+	Transform::Transform(const Transform& other)
+	{
+		m_position = other.m_position;
+		m_rotation = other.m_rotation;
+		m_scale = other.m_scale;
+
+		m_eulerRotation = other.m_eulerRotation;
+
+		//Add this as a child to other parent
+		m_parent = other.m_parent;
+		other.m_parent->m_children.insert(this);
+
+		m_children = std::unordered_set<Transform*>();
+
+		m_worldMatrixCache = Mat4(1.0f);
+		m_recalculateMatrix = true;
+	}
+
+	Transform& Transform::operator=(const Transform& other)
+	{
+		m_position = other.m_position;
+		m_rotation = other.m_rotation;
+		m_scale = other.m_scale;
+
+		m_eulerRotation = other.m_eulerRotation;
+
+		//Add this as a child to other parent
+		m_parent = other.m_parent;
+		other.m_parent->m_children.insert(this);
+
+		m_children = std::unordered_set<Transform*>();
+
+		m_worldMatrixCache = Mat4(1.0f);
+		m_recalculateMatrix = true;
+
+		return *this;
+	}
+
+	Transform::Transform(Transform&& other) noexcept
+	{
+		if (&other != this) 
+		{
+			m_position = other.m_position;
+			m_rotation = other.m_rotation;
+			m_scale = other.m_scale;
+
+			m_eulerRotation = other.m_eulerRotation;
+			m_parent = other.m_parent;
+
+			m_children = std::move(other.m_children);
+
+			m_worldMatrixCache = std::move(other.m_worldMatrixCache);
+			m_recalculateMatrix = true;
+
+
+			other.m_position = Vec3(0.0f);
+			other.m_rotation = Vec3(0.0f);
+			other.m_scale = Vec3(0.0f);
+			other.m_eulerRotation = Vec3(0.0f);
+			other.m_parent = nullptr;
+		}		
+	}
+
+	Transform& Transform::operator=(Transform&& other) noexcept
+	{
+		if (&other != this) 
+		{
+			m_position = other.m_position;
+			m_rotation = other.m_rotation;
+			m_scale = other.m_scale;
+
+			m_eulerRotation = other.m_eulerRotation;
+			m_parent = other.m_parent;
+
+			m_children = std::move(other.m_children);
+
+			m_worldMatrixCache = std::move(other.m_worldMatrixCache);
+			m_recalculateMatrix = true;
+
+
+			other.m_position = Vec3(0.0f);
+			other.m_rotation = Vec3(0.0f);
+			other.m_scale = Vec3(0.0f);
+			other.m_eulerRotation = Vec3(0.0f);
+			other.m_parent = nullptr;
+		}
+
+		return *this;
+	}
+
 	void Transform::Translate(Vec3 translation)
 	{
 		m_position += translation;
@@ -116,17 +206,17 @@ namespace crynn
 	{  
 		if (m_recalculateMatrix) 
 		{		
-			//Apply world space transformations (model matrix)
-			m_worldMatrix = Mat4(1.0f);
-			m_worldMatrix = glm::scale(m_worldMatrix, m_scale);
-			m_worldMatrix = glm::translate(m_worldMatrix, m_position);
-			m_worldMatrix *= glm::mat4_cast(m_rotation);
+			//Apply world space transformations
+			m_worldMatrixCache = Mat4(1.0f);
+			m_worldMatrixCache = glm::scale(m_worldMatrixCache, m_scale);
+			m_worldMatrixCache = glm::translate(m_worldMatrixCache, m_position);
+			m_worldMatrixCache *= glm::mat4_cast(m_rotation);
 
 			m_recalculateMatrix = false;
 		}
 
 		//Apply parent transformations to it aswell
-		return ComputeLocalMatrixRecursive(m_worldMatrix, this);
+		return ComputeLocalMatrixRecursive(m_worldMatrixCache, this);
 	}
 
 	void Transform::SetParent(Transform* parent)
@@ -156,6 +246,6 @@ namespace crynn
 			return matrix;
 
 		//Recursively walk parent model matrices and multiply them along the way
-		return ComputeLocalMatrixRecursive(matrix *= m_parent->m_worldMatrix, transform->m_parent);
+		return ComputeLocalMatrixRecursive(matrix *= m_parent->m_worldMatrixCache, transform->m_parent);
 	}
 }
