@@ -1,6 +1,5 @@
 #pragma once
 #include <Windows.h>
-#include <glad/glad.h>
 #pragma warning (disable : 4005)
 
 #include "imgui/imgui.h"
@@ -8,7 +7,8 @@
 #include "imgui/imgui_impl_opengl3.h"
 #include "Event.h"
 #include "../Utility/Debug.h"
-
+#include <glad/glad.h>
+#include "GLFW/glfw3.h"
 namespace crynn
 {
 	/// <summary>
