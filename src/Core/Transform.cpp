@@ -237,7 +237,13 @@ namespace crynn
 
 	void Transform::RemoveParent()
 	{
+		m_parent->m_children.erase(this);
 		m_parent = nullptr;
+	}
+
+	const std::unordered_set<Transform*>& Transform::GetChildren()
+	{
+		return m_children;
 	}
 
 	Mat4& Transform::ComputeLocalMatrixRecursive(Mat4& matrix, const Transform* const transform) const

@@ -54,6 +54,8 @@ namespace crynn
 
 		void RemoveParent();
 
+		//Returns a reference to the set of children this transform has
+		const std::unordered_set<Transform*>& GetChildren();
 	private:
 		Vec3 m_position = Vec3(0, 0, 0);
 		Quat m_rotation = Quat(Vec3(0.0f, 0.0f, 0.0f));
