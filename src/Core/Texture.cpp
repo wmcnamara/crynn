@@ -49,7 +49,6 @@ namespace crynn
 			glGenerateMipmap(GL_TEXTURE_2D);
 
 #ifdef CRYNN_DEBUG
-			//Debug logging
 			std::cout << path << " Loaded Successfully\n";
 #endif
 		}
@@ -75,12 +74,12 @@ namespace crynn
 		return m_textureData;
 	}
 
-	unsigned int Texture::Width()
+	unsigned int Texture::GetWidth()
 	{
 		return m_width;
 	}
 
-	unsigned int Texture::Height()
+	unsigned int Texture::GetHeight()
 	{
 		return m_height;
 	}
@@ -95,13 +94,14 @@ namespace crynn
 		//assert that the pixel coord is in bounds
 		assert(x < m_width || y < m_height); 
 
-		unsigned bytePerPixel = m_nrChannels;
-		unsigned char* pixelOffset = m_textureData + (x + m_height * y) * bytePerPixel;
+		unsigned int bytePerPixel = m_nrChannels;
+		unsigned int pixelOffset = m_width * m_height * bytePerPixel;
+		
 
-		unsigned char r = pixelOffset[0];
-		unsigned char g = pixelOffset[1];
-		unsigned char b = pixelOffset[2];
-		unsigned char a = m_nrChannels >= 4 ? pixelOffset[3] : 0xff;
+		unsigned char r = m_textureData[0];
+		unsigned char g = pixelOffset + (pixelOffset * 2);
+		unsigned char b = pixelOffset + (pixelOffset * 3);
+		unsigned char a = m_nrChannels >= 4 ? +(pixelOffset * 4) : 0xff;
 
 		return Color{ r, g, b, a };
 	}
