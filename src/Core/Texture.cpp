@@ -101,7 +101,7 @@ namespace crynn
 		unsigned char r = m_textureData[0];
 		unsigned char g = pixelOffset + (pixelOffset * 2);
 		unsigned char b = pixelOffset + (pixelOffset * 3);
-		unsigned char a = m_nrChannels >= 4 ? +(pixelOffset * 4) : 0xff;
+		unsigned char a = m_nrChannels >= 4 ? + (pixelOffset * 4) : 0xff;
 
 		return Color{ r, g, b, a };
 	}
