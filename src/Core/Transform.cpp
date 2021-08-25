@@ -21,7 +21,7 @@ namespace crynn
 			child->m_parent = nullptr;
 		}
 	}
-
+	/*
 	Transform::Transform(const Transform& other)
 	{
 		m_position = other.m_position;
@@ -111,7 +111,7 @@ namespace crynn
 
 		return *this;
 	}
-
+	*/
 	void Transform::Translate(Vec3 translation)
 	{
 		m_position += translation;

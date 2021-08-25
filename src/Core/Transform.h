@@ -23,10 +23,10 @@ namespace crynn
 		Transform();
 		virtual ~Transform();
 
-		Transform(const Transform& other);
-		Transform& operator=(const Transform& other);
-		Transform(Transform&& other) noexcept;
-		Transform& operator=(Transform&& other) noexcept;
+		Transform(const Transform& other) = delete;
+		Transform& operator=(const Transform& other) = delete;
+		Transform(Transform&& other) noexcept = delete;
+		Transform& operator=(Transform&& other) noexcept = delete;
 
 	    void Translate(Vec3 translation); //Applies a translation to this object.
 	    void Scale(Vec3 scale); //Applies a scale to the object

@@ -3,7 +3,7 @@
 #include "../Core/Math/Math.h"
 #include "../Core/Math/Math.cpp"
 #include "../Core/Transform.cpp"
-
+#include "GLFW/glfw3.h"
 #pragma warning( disable : 4244)
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -135,9 +135,65 @@ namespace CrynnTests
 			Transform tr2;
 
 			tr.SetParent(&tr2);
-
+			
 			Assert::AreSame(tr.GetParent(), tr2);
 		}
+/*
+		TEST_METHOD(SetParentReassignment) 
+		{
+			Transform tr1;
+			Transform tr2;
+
+			tr1.SetParent(&tr2);
+			Assert::AreSame(tr1.GetParent(), tr2);
+
+			//switch the parents
+			tr2.SetParent(&tr1);
+			Assert::AreSame(tr2.GetParent(), tr1);
+
+			//Make sure that tr1 is no longer a child of tr2
+			//Edge case where you setparent of tr1 to tr2, and then setparent of tr2 to tr1.
+			bool containsTr1 = tr2.GetChildren().find(&tr1) != tr2.GetChildren().end();
+
+			Assert::IsFalse(containsTr1);
+		}
+
+		TEST_METHOD(RemoveParentTest) 
+		{
+			Transform tr1;
+			Transform tr2;
+
+			tr2.SetParent(&tr1);
+			tr2.RemoveParent();
+
+
+			bool containsTr1 = tr2.GetChildren().find(&tr1) != tr2.GetChildren().end();
+
+			Assert::IsFalse(containsTr1);
+		}
+
+		TEST_METHOD(TransformNullptrTests) 
+		{
+			bool threwException = false;
+			try 
+			{
+				Transform tr1;
+				Transform tr2;
+
+				tr2.SetParent(nullptr);
+
+
+				bool containsTr1 = tr2.GetChildren().find(&tr1) != tr2.GetChildren().end();
+
+				Assert::IsFalse(containsTr1);
+			}
+			catch(...) 
+			{
+				threwException = true;
+			}
+
+			Assert::IsFalse(threwException);
+		}
+			*/
 	};
-	
 }
