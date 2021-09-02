@@ -55,7 +55,7 @@ namespace crynn
 		lightDir(glm::normalize(_lightDir))
 	{}
 
-	void DirectionalLight::SetLightDir(glm::vec3 _lightDir)
+	void DirectionalLight::SetLightDir(Vec3 _lightDir)
 	{
 		lightDir = glm::normalize(_lightDir);
 	}
