@@ -27,7 +27,11 @@ namespace crynn
 		//Returns the underlying GLuint ID for the shader program
 		inline GLuint GetID() { return ID; }
 
+		Shader(const Shader& other) = delete;
+		Shader operator=(const Shader& other) = delete;
 
+		Shader(Shader&& other) = delete;
+		Shader operator=(Shader&& other) = delete;
 
 		// use/activate the shader
 		void Use() const;
