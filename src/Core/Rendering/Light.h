@@ -27,10 +27,10 @@ namespace crynn
 
 		LightColorData colorData;
 
-		virtual LightType GetLightType();
+		virtual LightType GetLightType() const;
 
 		void SetIntensity(float intensity);
-		float GetIntensity();
+		float GetIntensity() const;
 
 	protected: 
 		Light(LightColorData _colorData, LightType _lightType);
@@ -51,7 +51,7 @@ namespace crynn
 		virtual ~DirectionalLight() = default;
 
 		void SetLightDir(Vec3 _lightDir);
-		inline Vec3 GetLightDir() { return lightDir; }
+		inline Vec3 GetLightDir() const { return lightDir; }
 	private:
 		Vec3 lightDir = Vec3(1.0f, 0.0, 0.0);
 
@@ -69,7 +69,7 @@ namespace crynn
 		void SetAttenuationRange(float range);
 
 		//Returns the attenuation range of the point light
-		float GetAttenuationRange();
+		float GetAttenuationRange() const;
 
 	private:
 		float m_range = 10.0f;

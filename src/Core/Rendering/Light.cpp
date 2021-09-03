@@ -8,7 +8,7 @@ namespace crynn
 		m_lightType(_lightType) 
 	{}
 
-	LightType Light::GetLightType()
+	LightType Light::GetLightType() const
 	{
 		return m_lightType;
 	}
@@ -25,7 +25,7 @@ namespace crynn
 		}
 	}
 
-	float Light::GetIntensity()
+	float Light::GetIntensity() const
 	{
 		return m_intensity;
 	}
@@ -70,7 +70,7 @@ namespace crynn
 		m_range(_range)
 	{}
 
-	float PointLight::GetAttenuationRange()
+	float PointLight::GetAttenuationRange() const
 	{
 		return m_range;
 	}
