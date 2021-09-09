@@ -10,7 +10,7 @@ using namespace crynn;
 int main()
 {
 	Engine engine(800, 600, "Test");
-
+	Application::SetShowFPSTitle(true);
 	engine.SetClearColor(.2f, .2f, .2f, 1.0f);
 
 	Camera cam(Vec3(0, 0, -6), Projection::Perspective);
