@@ -25,9 +25,12 @@ namespace crynn
 	public:
 		//This class is totally static. You cannot copy this class, or instantiate it.
 		Application() = delete;
-		~Application() = default;
+		~Application() = delete;
 		Application(const Application& other) = delete;
 		Application(const Application&& other) = delete;
+		
+		Application operator=(const Application& other) = delete;
+		Application operator=(Application&& other) = delete;
 
 		///Used by Input to subscribe input events. Do not manually invoke().
 		///Parameters determined by the glfwSetKeyCallback parameters.
@@ -40,6 +43,7 @@ namespace crynn
 		inline static Event<void> OnStart; ///Called once before entering the main loop. Called before update.///
 		inline static Event<void> OnRender; ///Called when the engine is going to render a frame.
 		inline static Event<int, int> OnWindowResize; ///Invoked when the window is resized. Contains the width and height of new window.///
+
 
 		/// <summary>
 		/// Invokes OnBeforeClose, and quits to desktop.
