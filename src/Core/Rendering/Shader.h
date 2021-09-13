@@ -27,17 +27,10 @@ namespace crynn
 		//Returns the underlying GLuint ID for the shader program
 		inline GLuint GetID() { return ID; }
 
-		Shader(const Shader& other) = delete;
-		Shader operator=(const Shader& other) = delete;
-
-		Shader(Shader&& other) = delete;
-		Shader operator=(Shader&& other) = delete;
-
-		// use/activate the shader
+		//Binds this shader to the openGL context.
 		void Use() const;
 
 		// Set Uniforms
-
 		void SetBool(const char* name, bool value) const;
 		void SetInt(const char* name, int value) const;
 		void SetFloat(const char* name, float value) const;
@@ -48,7 +41,6 @@ namespace crynn
 
 		//Static uniform functions. Will set value for the currently bound shader.
 		//These are not nearly as fast as the non static versions of these. 
-		//If you're calling these frequently, consider using GetCurrentShaderProgram() and setting on that.
 
 		static void SetBoolCurrent(const char* name, bool value);
 		static void SetIntCurrent(const char* name, int value);
@@ -58,6 +50,12 @@ namespace crynn
 		static void SetMatrix3Current(const char* name, const glm::mat3* matrix);
 		static void SetMatrix4Current(const char* name, const glm::mat4* matrix);
 
+
+		//TODO implement copy and move constructors for Shader class
+		Shader(const Shader& other) = delete;
+		Shader operator=(const Shader& other) = delete;
+		Shader(Shader&& other) = delete;
+		Shader operator=(Shader&& other) = delete;
 	private:
 		struct ShaderParseResult
 		{
