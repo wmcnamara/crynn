@@ -31,14 +31,15 @@ namespace crynn
 	{
 		//Sort based on distance to camera for additive blending
 		//This is also called the "Painters algorithm"
-		Vec3 cameraPos = Camera::GetCurrentCamera()->GetPosition();
+		//std::weak_ptr<Camera> camera_ptr = Camera::GetCurrentCamera()->GetPosition();
+		//Vec3 cameraPos = Camera::GetCurrentCamera()->GetPosition();
 
-		auto CompareRenderableDistance = [&cameraPos](Renderable* a, Renderable* b)
+		//	auto CompareRenderableDistance = [&cameraPos](Renderable* a, Renderable* b)
 		{
-			float distToA = glm::distance(cameraPos, a->GetPosition());
-			float distToB = glm::distance(cameraPos, b->GetPosition());
+		//	float distToA = glm::distance(cameraPos, a->GetPosition());
+		//	float distToB = glm::distance(cameraPos, b->GetPosition());
 
-			return distToA < distToB;
+		//	return distToA < distToB;
 		};
 		
 		//std::sort(m_renderables.begin(), m_renderables.end(), CompareRenderableDistance);
