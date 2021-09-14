@@ -1,4 +1,6 @@
 #include "Timer.h"
+#include <iostream>
+
 namespace crynn
 {
 	ScopedTimer::ScopedTimer(const char* funcName, TimeFormat format) :
@@ -56,6 +58,6 @@ namespace crynn
 			break;
 		}
 
-		Debug::Log(output);
+		std::cout << output.str() << "\n";
 	}
 }
