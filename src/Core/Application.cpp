@@ -14,7 +14,8 @@ namespace crynn
 	void Application::Tick()
 	{
 		//calculate the deltaTime
-		currentFrameTime = glfwGetTime();
+		currentFrameTime = static_cast<float>(glfwGetTime());
+
 		float deltaTime = currentFrameTime - previousFrameTime;
 		previousFrameTime = currentFrameTime; //Update the previousFrameTime
 
