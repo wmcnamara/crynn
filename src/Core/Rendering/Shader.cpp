@@ -22,23 +22,20 @@ namespace crynn
 	{
 		std::cout << "Loading shader from: " << crynnShaderPath << "\n";
 
-		//Parse shader file
+		//Parse
 		ShaderParseResult result = ParseShaderFile(crynnShaderPath);
 
-		if (result.succeeded) 
-		{
-			bool compileSucceeded = Recompile(result.vertexCode, result.fragmentCode);
-
-			if (!compileSucceeded)
-			{
-				throw std::exception("Shader compilation failed. Check console for more info");
-			}
-		}
-		else 
-		{
+		if (!result.succeeded)
 			throw std::exception("Shader parsing failed. Check console for more info");
-		}
 
+
+		//Compile
+		bool compileSucceeded = Recompile(result.vertexCode, result.fragmentCode);
+
+		if (!compileSucceeded)
+		{
+			throw std::exception("Shader compilation failed. Check console for more info");
+		}
 	}
 
 	bool Shader::ShaderLinkLog(unsigned int shaderProgram) const

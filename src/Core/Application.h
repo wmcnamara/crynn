@@ -25,14 +25,18 @@ namespace crynn
 	public:
 		//This class is totally static. You cannot copy this class, or instantiate it.
 		Application() = delete;
-		~Application() = default;
+		~Application() = delete;
 		Application(const Application& other) = delete;
 		Application(const Application&& other) = delete;
+		
+		Application operator=(const Application& other) = delete;
+		Application operator=(Application&& other) = delete;
 
 		///Used by Input to subscribe input events. Do not manually invoke().
 		///Parameters determined by the glfwSetKeyCallback parameters.
 		///https://www.glfw.org/docs/latest/group__input.html#ga1caf18159767e761185e49a3be019f8d
 		inline static Event<GLFWwindow*, int, int, int, int> OnInput;
+
 
 
 		/// <summary>
