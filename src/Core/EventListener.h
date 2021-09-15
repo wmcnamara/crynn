@@ -5,6 +5,15 @@
 
 namespace crynn 
 {
+	//Contains data relevant to the current frame, like delta time and input information.
+	struct FrameEventData
+	{
+		float deltaTime = 0.0f;
+		std::shared_ptr<InputComponent> inputComponent; //The currently bound input component
+		std::shared_ptr<Window> window; //Data about the window currently being rendered to
+	};
+
+
 	/// <summary>
 	/// Allows interfacing with the Crynn event system.
 	/// Inherit from this class, and override any function you may need.
