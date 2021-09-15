@@ -69,6 +69,8 @@ namespace crynn
 			return n > 0 ? n : -n;
 		}
 
+		//Checks if two floating point numbers are "approximately" equal.
+		//Used to get around floating point math innacuracy
 		static constexpr float fApproxEqual(float n, float a, float epsilon = 0.00001f) 
 		{
 			return Math::fabs(n - a) < epsilon;
@@ -125,6 +127,8 @@ namespace crynn
 			return val;
 		}
 
+		//Compares approximate equality of two Vec3's.
+		//Returns true if all three axis are approximately equal to each other with fApproxEqual
 		static constexpr bool Vec3ApproxEqual(const Vec3& vec1, const Vec3& vec2, float epsilon = 0.0001f) 
 		{
 			bool xEqual = fApproxEqual(vec1.x, vec2.x, epsilon);
@@ -134,6 +138,8 @@ namespace crynn
 			return xEqual && yEqual && zEqual;
 		}
 
+		//Compares approximate equality of two Vec2's.
+		//Returns true if btoh axis are approximately equal to each other with fApproxEqual
 		static constexpr bool Vec2ApproxEqual(const Vec2& vec1, const Vec2& vec2, float epsilon = 0.0001f)
 		{
 			bool xEqual = fApproxEqual(vec1.x, vec2.x, epsilon);
