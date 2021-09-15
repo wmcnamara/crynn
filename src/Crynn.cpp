@@ -3,11 +3,12 @@
 
 namespace crynn
 {
-	Engine::Engine(int windowWidth, int windowHeight, const char* windowName) :
-		m_window(Window(windowName, windowWidth, windowHeight)) 
+	Engine::Engine(int windowWidth, int windowHeight, const char* windowName)
 	{
+		m_window = std::make_shared<Window>(windowWidth, windowHeight, windowName);
+		m_inputComponent = std::make_shared<InputComponent>();
+		
 		Physics::Init();
-		Input::Init();
 		IO::Init();
 	}
 
@@ -17,11 +18,11 @@ namespace crynn
 		{
 			Application::Initialise();
 
-			while (!m_window.ShouldClose())
+			while (!m_window->ShouldClose())
 			{
-				m_window.BeforeRender();
+				m_window->BeforeRender();
 				Application::Tick();
-				m_window.AfterRender();
+				m_window->AfterRender();
 
 				Scene::Clean();
 			}

@@ -43,6 +43,7 @@
 
 namespace crynn
 {
+
 	//Encapsulates the Crynn game engine.
 	class Engine
 	{
@@ -66,7 +67,18 @@ namespace crynn
 		void Run();
 		void SetClearColor(float r, float g, float b, float a) const;
 
+		Event<void> OnBeforeClose; ///Called once before quitting to desktop using Application::Quit();///
+		Event<FrameEventData> OnUpdate; ///Called once every frame///
+		Event<FrameEventData> OnBeforeUpdate; ///Used to set uniform buffer data before rendering///
+		Event<void> OnStart; ///Called once before entering the main loop. Called before update.///
+		Event<void> OnRender; ///Called when the engine is going to render a frame.
+		Event<int, int> OnWindowResize; ///Invoked when the window is resized. Contains the width and height of new window.///
+
 	private:
-		Window m_window;
+		std::shared_ptr<Window> m_window;
+		std::shared_ptr<InputComponent> m_inputComponent;
+
+		float currentFrameTime = 0;
+		float previousFrameTime = 0;
 	};
 }
