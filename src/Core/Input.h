@@ -1,7 +1,7 @@
 #pragma once
 #include <GLFW/glfw3.h>
-#include "Math/Math.h"
 #include "Event.h"
+#include "Math/Math.h"
 
 #define KEYSTATE_BUFFER_MAX_SIZE 350
 
@@ -9,68 +9,76 @@ namespace crynn
 {
 	enum class KeyCode; //forward declare
 
-	/// <summary>
-	/// Simple input component that allows interfacing with the Crynn input system.
-	/// </summary>
-	class Input
+	/*
+		The input component provides access to input data like key states, mouse deltas and scroll deltas.
+	*/
+	class InputComponent
 	{
 	public:
-		//Initialises input, and sets up polling events.
-		static void Init();
+		//Allocates buffers for keystates, and sets up events.
+		InputComponent();
+		~InputComponent();
 
 		//Call after glfwPollevents, and before accepting input.
-		static void StartPoll();
+		void PollInput();
 
 		/// <summary>
 		/// Returns the state of a key.
 		/// </summary>
 		/// <param name="key">KeyCode of the key you would like the state of</param>
 		/// <returns>True if the key is pressed</returns>
-		static bool GetKey(KeyCode key);
+		bool GetKey(KeyCode key);
 
 		/// <summary>
 		/// Returns the state of a key once per press, in a toggle style.
 		/// </summary>
 		/// <param name="key">KeyCode of the key you would like the state of</param>
 		/// <returns>True if the key has been toggled.</returns>
-		static bool GetKeyDown(KeyCode key);
+		bool GetKeyDown(KeyCode key);
 
 		//Internally sets the mouse position for tracking
 		//Only call if you really know what you're doing.
-		static void UpdateMousePosInternal();
+		void UpdateMousePosInternal();
 		
 		//Returns a Vector2 representing the difference in mouse position from the previous frame.
 		//In screen coordinates.
-		static Vec2 GetMouseDelta();
+		Vec2 GetMouseDelta();
 
 		//Returns a Vec2 with the current xy coordinate of the mouse in screen space.
-		static Vec2Int GetMousePosition();
+		Vec2Int GetMousePosition();
 
 		//Locks the mouse to the center of the screen, hides it and allows movement.
-		static void LockMouse();
+		void LockMouse();
 
 		//Allows the mouse to move freely.
-		static void UnlockMouse();
+		void UnlockMouse();
 
 		//Dispatched when the user scrolls the mouse wheel.
 		inline static Event<float> OnMouseScroll;
 
 	private:
+		InputComponent(InputComponent&& other) = delete;
+		InputComponent operator=(InputComponent&& other) = delete;
+
+		InputComponent(const InputComponent& other) = delete;
+		InputComponent operator=(const InputComponent& other) = delete;
+
+		void UpdateKeyboardState(GLFWwindow* window, int key, int scancode, int action, int mods);
+		void UpdateMouseState(double yoffset);
+
 		//glfw friend function callbacks
 		friend void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 		friend void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 		friend void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 
-		inline static bool currentKeyStates[KEYSTATE_BUFFER_MAX_SIZE]; //The states of each key in the current frame.
-		inline static bool getKeyDownStates[KEYSTATE_BUFFER_MAX_SIZE]; //The states of each key for GetKeyDown.
+		std::unique_ptr<bool[]> m_currentKeyStatesBuffer; //The states of each key in the current frame.
+		std::unique_ptr<bool[]> m_getKeyDownStatesBuffer; //The states of each key for GetKeyDown.
 
-		inline static std::atomic_bool m_initialised = false; //Is input initialised?
-
-		inline static double m_xPos = 0; //Current x pixel coordinate position of the cursor
-		inline static double m_prevXPos = 0; //x pixel coordinate position of the cursor in the previous frame
-					  
-		inline static double m_yPos = 0; //Current y pixel coordinate position of the cursor
-		inline static double m_prevYPos = 0; //y pixel coordinate position of the cursor in the previous frame
+		double m_xPos = 0; //Current x pixel coordinate position of the cursor
+		double m_prevXPos = 0; //x pixel coordinate position of the cursor in the previous frame
+		
+		double m_yPos = 0; //Current y pixel coordinate position of the cursor
+		double m_prevYPos = 0; //y pixel coordinate position of the cursor in the previous frame
 	};
 
 	/// <summary>

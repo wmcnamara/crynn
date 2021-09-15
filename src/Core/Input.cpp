@@ -4,38 +4,29 @@ namespace crynn
 {
 	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 	{
-		if (key >= KEYSTATE_BUFFER_MAX_SIZE)
-			return;
-
-		//Update keystate according to action
-		if (action == GLFW_PRESS)
-			crynn::Input::currentKeyStates[key] = true;
-
-		else if (action == GLFW_RELEASE)
-		{
-			crynn::Input::currentKeyStates[key] = false;
-			crynn::Input::getKeyDownStates[key] = false;
-		}
+		
 	}
 	
 	void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 	{
-		Input::OnMouseScroll.Invoke(yoffset); //Invoke the OnMouseScroll when GLFW reports a mouse scroll
 	}
 
 	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) 
 	{
-		//Update mousebutton keystate according to action
-		if (action == GLFW_PRESS)
-			crynn::Input::currentKeyStates[button] = true;
-		else if (action == GLFW_RELEASE)
-		{
-			crynn::Input::currentKeyStates[button] = true;
-			crynn::Input::getKeyDownStates[button] = false;
-		}
 	}
 
-	bool Input::GetKey(KeyCode key)
+	InputComponent::InputComponent()
+	{
+		//Allocate buffers to store keystates
+		m_currentKeyStatesBuffer = std::unique_ptr<bool[]>(new bool[KEYSTATE_BUFFER_MAX_SIZE]);
+		m_getKeyDownStatesBuffer = std::unique_ptr<bool[]>(new bool[KEYSTATE_BUFFER_MAX_SIZE]);
+	}
+
+	InputComponent::~InputComponent()
+	{
+	}
+
+	bool InputComponent::GetKey(KeyCode key)
 	{
 		//Cast keycode to its underlying int type because it is a strong enum.
 		int keyCode = std::underlying_type<KeyCode>::type(key);
@@ -43,10 +34,10 @@ namespace crynn
 		if (keyCode >= KEYSTATE_BUFFER_MAX_SIZE) //prevent out of bounds
 			return false;
 
-		return currentKeyStates[keyCode];
+		return m_currentKeyStatesBuffer[keyCode];
 	}
 
-	bool Input::GetKeyDown(KeyCode key)
+	bool InputComponent::GetKeyDown(KeyCode key)
 	{
 		//Cast keycode to its underlying int type because it is a strong enum.
 		int keyCode = std::underlying_type<KeyCode>::type(key);
@@ -54,22 +45,19 @@ namespace crynn
 		if (keyCode >= KEYSTATE_BUFFER_MAX_SIZE) //prevent out of bounds
 			return false;
 
-		bool keyCurrentlyPressed = currentKeyStates[keyCode];
+		bool keyCurrentlyPressed = m_currentKeyStatesBuffer[keyCode];
 
-		if (keyCurrentlyPressed && !getKeyDownStates[keyCode])
+		if (keyCurrentlyPressed && !m_getKeyDownStatesBuffer[keyCode])
 		{
-			getKeyDownStates[keyCode] = true;
+			m_getKeyDownStatesBuffer[keyCode] = true;
 			return true;
 		}
 
 		return false;
 	}
 
-	void Input::UpdateMousePosInternal()
+	void InputComponent::UpdateMousePosInternal()
 	{
-		if (!Input::m_initialised)
-			return;
-
 		double xPos = 0, yPos = 0;
 		glfwGetCursorPos(Window::GetCurrentWindow()->GetGLFWWindow(), &xPos, &yPos);
 
@@ -80,7 +68,7 @@ namespace crynn
 		m_yPos = yPos;
 	}
 
-	Vec2 Input::GetMouseDelta()
+	Vec2 InputComponent::GetMouseDelta()
 	{
 		return Vec2
 		(
@@ -89,36 +77,41 @@ namespace crynn
 		);
 	}
 
-	Vec2Int Input::GetMousePosition()
+	Vec2Int InputComponent::GetMousePosition()
 	{
 		return Vec2Int(m_xPos, m_yPos);
 	}
 
-	void Input::LockMouse()
+	void InputComponent::LockMouse()
 	{
 		glfwSetInputMode(Window::GetCurrentWindow()->GetGLFWWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	}
 
-	void Input::UnlockMouse()
+	void InputComponent::UnlockMouse()
 	{
 		glfwSetInputMode(Window::GetCurrentWindow()->GetGLFWWindow(), GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 	}
 
-	void Input::Init()
+	void InputComponent::UpdateKeyboardState(GLFWwindow* window, int key, int scancode, int action, int mods)
 	{
-		if (m_initialised)
+		if (key >= KEYSTATE_BUFFER_MAX_SIZE) //out of bounds check
 			return;
 
-		glfwSetKeyCallback(Window::GetCurrentWindow()->GetGLFWWindow(), key_callback);
-		glfwSetScrollCallback(Window::GetCurrentWindow()->GetGLFWWindow(), scroll_callback);
-		glfwSetMouseButtonCallback(Window::GetCurrentWindow()->GetGLFWWindow(), mouse_button_callback);
-		m_initialised = true;
-
-		std::cout << "Input Initialised\n";
+		//Update keystate according to action
+		if (action == GLFW_PRESS)
+		{
+			m_currentKeyStatesBuffer[key] = true;
+		}
+		else if (action == GLFW_RELEASE)
+		{
+			m_currentKeyStatesBuffer[key] = false;
+			m_getKeyDownStatesBuffer[key] = false;
+		}
 	}
 
-	void Input::StartPoll()
+	void InputComponent::UpdateMouseState(double yoffset)
 	{
-		Input::UpdateMousePosInternal(); //update mouse data	
+		OnMouseScroll.Invoke(static_cast<float>(yoffset)); //Invoke the OnMouseScroll when GLFW reports a mouse scroll
+
 	}
 }
