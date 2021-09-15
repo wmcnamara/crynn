@@ -34,12 +34,6 @@ namespace crynn
 		///https://www.glfw.org/docs/latest/group__input.html#ga1caf18159767e761185e49a3be019f8d
 		inline static Event<GLFWwindow*, int, int, int, int> OnInput;
 
-		inline static Event<void> OnBeforeClose; ///Called once before quitting to desktop using Application::Quit();///
-		inline static Event<float> OnUpdate; ///Called once every frame///
-		inline static Event<float> OnBeforeUpdate; ///Used to set uniform buffer data before rendering///
-		inline static Event<void> OnStart; ///Called once before entering the main loop. Called before update.///
-		inline static Event<void> OnRender; ///Called when the engine is going to render a frame.
-		inline static Event<int, int> OnWindowResize; ///Invoked when the window is resized. Contains the width and height of new window.///
 
 		/// <summary>
 		/// Invokes OnBeforeClose, and quits to desktop.
