@@ -26,7 +26,7 @@ namespace crynn
 	{
 	}
 
-	bool InputComponent::GetKey(KeyCode key)
+	bool InputComponent::GetKey(KeyCode key) const
 	{
 		//Cast keycode to its underlying int type because it is a strong enum.
 		int keyCode = std::underlying_type<KeyCode>::type(key);
@@ -37,7 +37,7 @@ namespace crynn
 		return m_currentKeyStatesBuffer[keyCode];
 	}
 
-	bool InputComponent::GetKeyDown(KeyCode key)
+	bool InputComponent::GetKeyDown(KeyCode key) const
 	{
 		//Cast keycode to its underlying int type because it is a strong enum.
 		int keyCode = std::underlying_type<KeyCode>::type(key);
@@ -68,7 +68,7 @@ namespace crynn
 		m_yPos = yPos;
 	}
 
-	Vec2 InputComponent::GetMouseDelta()
+	Vec2 InputComponent::GetMouseDelta() const
 	{
 		return Vec2
 		(
@@ -82,12 +82,12 @@ namespace crynn
 		return Vec2Int(m_xPos, m_yPos);
 	}
 
-	void InputComponent::LockMouse()
+	void InputComponent::LockMouse() const
 	{
 		glfwSetInputMode(Window::GetCurrentWindow()->GetGLFWWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	}
 
-	void InputComponent::UnlockMouse()
+	void InputComponent::UnlockMouse() const
 	{
 		glfwSetInputMode(Window::GetCurrentWindow()->GetGLFWWindow(), GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 	}

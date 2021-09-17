@@ -20,21 +20,21 @@ namespace crynn
 		~InputComponent();
 
 		//Call after glfwPollevents, and before accepting input.
-		void PollInput();
+		void PollInput() const;
 
 		/// <summary>
 		/// Returns the state of a key.
 		/// </summary>
 		/// <param name="key">KeyCode of the key you would like the state of</param>
 		/// <returns>True if the key is pressed</returns>
-		bool GetKey(KeyCode key);
+		bool GetKey(KeyCode key) const;
 
 		/// <summary>
 		/// Returns the state of a key once per press, in a toggle style.
 		/// </summary>
 		/// <param name="key">KeyCode of the key you would like the state of</param>
 		/// <returns>True if the key has been toggled.</returns>
-		bool GetKeyDown(KeyCode key);
+		bool GetKeyDown(KeyCode key) const;
 
 		//Internally sets the mouse position for tracking
 		//Only call if you really know what you're doing.
@@ -42,16 +42,16 @@ namespace crynn
 		
 		//Returns a Vector2 representing the difference in mouse position from the previous frame.
 		//In screen coordinates.
-		Vec2 GetMouseDelta();
+		Vec2 GetMouseDelta() const;
 
 		//Returns a Vec2 with the current xy coordinate of the mouse in screen space.
 		Vec2Int GetMousePosition();
 
 		//Locks the mouse to the center of the screen, hides it and allows movement.
-		void LockMouse();
+		void LockMouse() const;
 
 		//Allows the mouse to move freely.
-		void UnlockMouse();
+		void UnlockMouse() const;
 
 		//Dispatched when the user scrolls the mouse wheel.
 		inline static Event<float> OnMouseScroll;
