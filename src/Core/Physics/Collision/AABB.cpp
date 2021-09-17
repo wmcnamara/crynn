@@ -1,4 +1,6 @@
 #include "AABB.h"
+#include "../../Transform.h"
+
 namespace crynn
 {
     bool AABB::Compare(const AABB& one, const AABB& two)

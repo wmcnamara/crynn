@@ -1,10 +1,11 @@
 #pragma once
-#include "../../../Core/EventListener.h"
-#include "../../../Core/Transform.h"
-#include "glm/glm.hpp"
+#include <functional>
+#include "../../Math/Math.h"
 
 namespace crynn
 {
+	class Transform;
+
 	/// <summary>
 	/// Represents an aligned axis bounding box, and provides a set of functions to compare collisions.
 	/// Useful for simple, rudimentary and fast AABB collision detection in simple use cases.
