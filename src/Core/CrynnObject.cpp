@@ -16,13 +16,13 @@ namespace crynn
 	//move constructors
 	CrynnObject::CrynnObject(CrynnObject&& other) noexcept
 	{
-		std::swap(ID, other.ID);
+		ID = other.ID;
 		other.ID = 0;
 	}
 
 	CrynnObject& CrynnObject::operator=(CrynnObject&& other) noexcept
 	{
-		std::swap(ID, other.ID);
+		ID = other.ID;
 		other.ID = 0;
 
 		return *this;
