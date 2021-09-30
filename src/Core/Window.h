@@ -9,6 +9,7 @@
 #include "../Utility/Debug.h"
 #include <glad/glad.h>
 #include "GLFW/glfw3.h"
+#include "EventListener.h"
 namespace crynn
 {
 	/// <summary>
@@ -48,7 +49,7 @@ namespace crynn
 		/// <summary>
 		/// Called before rendering to clear buffers, poll events and setup IMGUI data.
 		/// </summary>
-		void BeforeRender();
+		void BeforeRender(FrameEventData data);
 
 		/// <summary>
 		/// Called after rendering to render IMGUI data and swap buffers.
@@ -67,13 +68,17 @@ namespace crynn
 		/// <returns>True if the window should close. Used to hold a game loop.</returns>
 		bool ShouldClose();
 
-		//Sets this window as the current, focused window and input and other events will be dispatched from this window
-		//The window constructor automatically sets this
-		static void SetCurrentWindow(Window* window);
-		static Window* GetCurrentWindow();
-
 		//Returns a raw pointer to the underlying GLFWwindow in this object
 		GLFWwindow* GetGLFWWindow();
+
+		Event<int, int> OnWindowResize; ///Invoked when the window is resized. Contains the width and height of new window.///
+		Event<void> OnBeforeClose;
+
+		static Window& instance()
+		{
+			static Window s;
+			return s;
+		}
 	private:
 		/// <summary>
 		/// Raw GLFW window.
@@ -83,7 +88,5 @@ namespace crynn
 		//TODO change constructor
 		Vec2Int m_screenSize = Vec2Int(0, 0); ///Size of the window///
 		Vec2Int m_frameBufSize = Vec2Int(0, 0); ///Size of the framebuffer///
-
-		static inline Window* m_currentWindow;
 	};
 }

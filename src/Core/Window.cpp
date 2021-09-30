@@ -29,23 +29,16 @@ namespace crynn
 		glfwMakeContextCurrent(m_glfwWindow);
 		glfwSetFramebufferSizeCallback(m_glfwWindow, SizeCallback);
 
-		SetCurrentWindow(this);
 		UpdateWindowSize();
 
 		//Subscribe the window resize event. 
-		Application::OnWindowResize.AddHandler([this](int width, int height)
+		OnWindowResize.AddHandler([this](int width, int height)
 			{
 				UpdateWindowSize();
 			});
 
-		//Lambda for OnBeforeClose
-		//This is a workaround the C style function pointers GLFW requires I pass
-		auto func = [](GLFWwindow* w)
-		{
-			static_cast<Application*>(glfwGetWindowUserPointer(w))->OnBeforeClose.Invoke();
-		};
 
-		glfwSetWindowCloseCallback(m_glfwWindow, func);
+		glfwSetWindowCloseCallback(m_glfwWindow, [&]() {	OnBeforeClose.Invoke(); });
 
 		//Load glad
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -104,10 +97,10 @@ namespace crynn
 	}
 
 	//Processes input, runs glClear and creates an IMGUI frame.
-	void Window::BeforeRender()
+	void Window::BeforeRender(FrameEventData data)
 	{		
 		glfwPollEvents();
-		Input::StartPoll();
+		data.inputComponent->PollInput();
 
 		//setup IMGUI
 		ImGui_ImplOpenGL3_NewFrame();
