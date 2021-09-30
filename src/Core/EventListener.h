@@ -1,10 +1,13 @@
 #pragma once
-#include "../Utility/Debug.h"
-#include "Application.h"
-#include <assert.h>
+#include <memory>
+#include <cstdint>
 
 namespace crynn 
 {
+	class Window;
+	class InputComponent;
+	class Engine;
+
 	//Contains data relevant to the current frame, like delta time and input information.
 	struct FrameEventData
 	{
@@ -33,7 +36,7 @@ namespace crynn
 		/// Called once every frame.
 		/// </summary>
 		/// <param name="deltaTime">The time it took the previous frame to render.</param>
-		virtual void Update(float deltaTime) {}
+		virtual void Update(FrameEventData deltaTime) {}
 		virtual void Start() {} ///Called once before the game enters its main loop. Will be called before the first Update.
 
 		//Called when the engine is going to render a frame
@@ -44,13 +47,15 @@ namespace crynn
 		/// Generally used for setting uniforms, or other things that need to be set before any render calls.
 		/// </summary>
 		/// <param name="deltaTime">The time it took the previous frame to render.</param>
-		virtual void BeforeUpdate(float deltaTime) {}
+		virtual void BeforeUpdate(FrameEventData deltaTime) {}
 		virtual void BeforeClose() {} ///Called before quitting to desktop with Application::Instance().Quit();
 	private:		
 		///Subscribes the events in this class to the Crynn event system.
 		void SubscribeEvents();
 
 		friend class CrynnObject;
+
+		std::shared_ptr<Engine> m_engine;
 
 		//Used to remove handlers when this object is destructed.
 		uint64_t updateHandlerID = 0; 

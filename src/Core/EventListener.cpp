@@ -1,4 +1,5 @@
 #include "EventListener.h"
+#include "../Engine.h"
 
 namespace crynn
 {
@@ -17,20 +18,20 @@ namespace crynn
 		//TODO move away from lambdas, as thaey dont look very nice here.
 		//Subscribe events. 	
 
-		updateHandlerID = Application::OnUpdate.AddHandler([this](float deltaTime) { Update(deltaTime); });
-		startHandlerID = Application::OnStart.AddHandler([this]() { Start(); });		
-		beforeUpdateHandlerID = Application::OnBeforeUpdate.AddHandler([this](float deltaTime) { BeforeUpdate(deltaTime); });
-		beforeCloseHandlerID = Application::OnBeforeClose.AddHandler([this]() { BeforeClose(); });
-		renderID = Application::OnRender.AddHandler([this]() {OnRender(); });
+		updateHandlerID = m_engine->events.OnUpdate.AddHandler([this](FrameEventData eventData) { Update(eventData); });
+		startHandlerID = m_engine->events.OnStart.AddHandler([this]() { Start(); });		
+		beforeUpdateHandlerID = m_engine->events.OnBeforeUpdate.AddHandler([this](FrameEventData eventData) { BeforeUpdate(eventData); });
+		beforeCloseHandlerID = m_engine->events.OnBeforeClose.AddHandler([this]() { BeforeClose(); });
+		renderID = m_engine->events.OnRender.AddHandler([this]() {OnRender(); });
 	}
 
 	void EventListener::UnsubscribeEvents()
 	{
 		//Unsubscribe events
-		Application::OnUpdate.RemoveHandler(updateHandlerID);
-		Application::OnStart.RemoveHandler(startHandlerID);
-		Application::OnBeforeUpdate.RemoveHandler(beforeUpdateHandlerID);
-		Application::OnBeforeClose.RemoveHandler(beforeCloseHandlerID);
-		Application::OnRender.RemoveHandler(renderID);
+		m_engine->events.OnUpdate.RemoveHandler(updateHandlerID);
+		m_engine->events.OnStart.RemoveHandler(startHandlerID);
+		m_engine->events.OnBeforeUpdate.RemoveHandler(beforeUpdateHandlerID);
+		m_engine->events.OnBeforeClose.RemoveHandler(beforeCloseHandlerID);
+		m_engine->events.OnRender.RemoveHandler(renderID);
 	}
 }
