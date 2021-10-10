@@ -10,9 +10,9 @@
 ## Features
 - Easy Setup
 - Transformation hierarchy (parent child relationships)
-- Quaternion rotations. 
+- Quaternion rotations.
 - 3D Model loading with [assimp](https://assimp.org/)
-- Rigidbody dynamics with [qu3e](https://github.com/RandyGaul/qu3e).
+- Rigidbody dynamics with [qu3e](https://github.com/RandyGaul/qu3e)
 - Built in Blinn Phong lighting/shading with easily extendable shading options
 - Light Casters (Point and Directional)
 - Skybox/Cubemapping
