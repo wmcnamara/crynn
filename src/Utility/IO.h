@@ -78,26 +78,6 @@ namespace crynn
 		//Returns empty string if endDelimter does not exist in the start string
 		[[nodiscard]] static std::string GetTextUntil(std::string_view start, std::string_view endDelimiter);
 
-		//Searches for the string str for the strings in a set of iterators
-		//Searches in the order of begin to end
-		//Returns an iterator to the string that was first found
-		template <typename Iterator>
-		static Iterator GetFirstInstanceInString(std::string_view str, Iterator begin, Iterator end) = delete; //deleted until further testing
-		/*
-		{
-			auto it = begin;
-
-			while (it != end)
-			{
-				size_t pos = str.find(*begin);
-
-				if (pos != std::string_view::npos)
-					return begin;
-
-				it++;
-			}
-		}
-		*/
 	private:
 		static inline std::vector<fs::path> mediaPaths;
 	};
