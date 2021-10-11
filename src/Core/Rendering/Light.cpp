@@ -15,14 +15,13 @@ namespace crynn
 
 	void Light::SetIntensity(float intensity)
 	{
-		if (intensity > 0)
+		if (intensity < 0)
 		{
-			m_intensity = intensity;
+			std::cout << "You may not set the intensity to a negative value\n";
+			return;
 		}
-		else 
-		{
-			std::cout << "You're setting the intensity to a negative value\n";
-		}
+
+		m_intensity = intensity;
 	}
 
 	float Light::GetIntensity() const
