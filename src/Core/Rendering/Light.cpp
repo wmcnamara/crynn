@@ -30,7 +30,7 @@ namespace crynn
 		return m_intensity;
 	}
 
-	void Light::Update(float dt)
+	void Light::Update(FrameEventData dt)
 	{
 		SetUniforms();
 	}

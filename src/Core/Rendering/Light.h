@@ -1,6 +1,7 @@
 #pragma once
 #include "../CrynnObject.h"
 #include <utility>
+#include "../../Core/EventListener.h"
 
 namespace crynn
 {	
@@ -41,7 +42,7 @@ namespace crynn
 		virtual void SetUniforms() final; //Sets the necessary color and position uniforms
 		virtual void SetExtraUniforms() = 0; //Used to set additional, light caster specific uniforms like lights direction for instance.
 	private:
-		virtual void Update(float dt) override; //Update will call SetUniforms
+		virtual void Update(FrameEventData dt) override; //Update will call SetUniforms
 	};
 
 	class DirectionalLight : public Light 
