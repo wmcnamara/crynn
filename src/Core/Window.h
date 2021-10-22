@@ -10,8 +10,15 @@
 #include <glad/glad.h>
 #include "GLFW/glfw3.h"
 #include "EventListener.h"
+#include "Application.h"
+
 namespace crynn
 {
+
+	static inline const char* defaultName = "Crynn Game Engine";
+	static inline const uint32_t defaultXSize = 800;
+	static inline const uint32_t defaultYSize = 600;
+
 	/// <summary>
 	/// The window everything is rendered on.
 	/// Crynn does not support more than 1 monitor.
@@ -19,16 +26,9 @@ namespace crynn
 	class Window
 	{
 	public:
-		/// <summary>
-		/// Create a new window and display it.
-		/// </summary>
-		/// <param name="name">Window title seen in the top left</param>
-		/// <param name="width">Width of the window</param>
-		/// <param name="height">Height of the window</param>
-		Window(const char* name, unsigned int width, unsigned int height);
 
 		//It makes very little sense to copy/move a window, so I am disabling these to prevent shallow copying the glfwWindow
-		Window(const Window& other) = delete; 
+		Window(const Window& other) = delete;
 		Window(const Window&& other) = delete;
 		Window operator=(const Window& other) = delete;
 		Window operator=(const Window&& other) = delete;
@@ -45,6 +45,12 @@ namespace crynn
 		/// </summary>
 		/// <returns> ImVec2 object with x as the width, and y as the height</returns>
 		const Vec2Int& GetFrameBufSize();
+
+		//Sets the title of the game window
+		void SetWindowName(std::string_view str);
+
+		//Sets the x and y size of the window in pixel coordinates
+		void SetWindowSize(int x, int y);
 
 		/// <summary>
 		/// Called before rendering to clear buffers, poll events and setup IMGUI data.
@@ -72,14 +78,24 @@ namespace crynn
 		GLFWwindow* GetGLFWWindow();
 
 		Event<int, int> OnWindowResize; ///Invoked when the window is resized. Contains the width and height of new window.///
-		Event<void> OnBeforeClose;
 
 		static Window& instance()
 		{
-			static Window s;
+			static Window s(defaultName, defaultXSize, defaultYSize);
 			return s;
 		}
+
+
 	private:
+
+		/// <summary>
+		/// Create a new window and display it.
+		/// </summary>
+		/// <param name="name">Window title seen in the top left</param>
+		/// <param name="width">Width of the window</param>
+		/// <param name="height">Height of the window</param>
+		Window(const char* name, unsigned int width, unsigned int height);
+
 		/// <summary>
 		/// Raw GLFW window.
 		/// </summary>
@@ -88,5 +104,7 @@ namespace crynn
 		//TODO change constructor
 		Vec2Int m_screenSize = Vec2Int(0, 0); ///Size of the window///
 		Vec2Int m_frameBufSize = Vec2Int(0, 0); ///Size of the framebuffer///
+
+
 	};
 }

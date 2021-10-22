@@ -10,10 +10,13 @@ namespace crynn
 {
 	Engine::Engine(int windowWidth, int windowHeight, const char* windowName)
 	{
-		m_window = std::make_shared<Window>(windowWidth, windowHeight, windowName);
+		Window& win = Window::instance();
+		win.SetWindowSize(windowWidth, windowHeight);
+		win.SetWindowName(windowName);
+		
 		m_inputComponent = std::make_shared<InputComponent>();
 
-		Physics::Init();
+		//Physics::Init();
 		IO::Init();
 	}
 
@@ -23,11 +26,22 @@ namespace crynn
 		{
 			Application::Initialise();
 
-			while (!m_window->ShouldClose())
+			while (!Window::instance().ShouldClose())
 			{
-				m_window->BeforeRender();
-				Tick();
-				m_window->AfterRender();
+				//Calculate deltatime
+				m_currentFrameTime = static_cast<float>(glfwGetTime());
+
+				float deltaTime = m_currentFrameTime - m_previousFrameTime;
+				m_previousFrameTime = m_currentFrameTime; //Update the previousFrameTime
+
+				//Create the FrameEventData object
+				FrameEventData data;
+				data.deltaTime = deltaTime * Application::TimeScale;
+				data.inputComponent = m_inputComponent;
+
+				Window::instance().BeforeRender(data);
+				Tick(data);
+				Window::instance().AfterRender();
 
 				Scene::Clean();
 			}
@@ -45,19 +59,8 @@ namespace crynn
 		glClearColor(r, g, b, a);
 	}
 
-	void Engine::Tick()
+	void Engine::Tick(FrameEventData data)
 	{		
-		//calculate the deltaTime
-		m_currentFrameTime = static_cast<float>(glfwGetTime());
-
-		float deltaTime = m_currentFrameTime - m_previousFrameTime;
-		m_previousFrameTime = m_currentFrameTime; //Update the previousFrameTime
-
-		FrameEventData data;
-		data.deltaTime = deltaTime * Application::TimeScale;
-		data.inputComponent = m_inputComponent;
-		data.window = m_window;
-
 		//Invoke update and OnBeforeUpdate
 		events.OnBeforeUpdate.Invoke(data);
 		events.OnUpdate.Invoke(data);
@@ -66,10 +69,15 @@ namespace crynn
 		if (m_showFPS)
 		{
 			std::string fpsText = "Crynn Game Engine | FPS: ";
-			fpsText += std::to_string(static_cast<int>(1.0f / deltaTime));
+			fpsText += std::to_string(static_cast<int>(1.0f / data.deltaTime));
 
-			glfwSetWindowTitle(Window::GetCurrentWindow()->GetGLFWWindow(), fpsText.c_str());
+			glfwSetWindowTitle(Window::instance().GetGLFWWindow(), fpsText.c_str());
 		}
+	}
+
+	std::shared_ptr<Engine> Engine::DefaultEngineReference()
+	{
+		return m_defaultEngineReference;
 	}
 
 	Engine::~Engine()

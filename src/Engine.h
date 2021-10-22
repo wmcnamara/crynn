@@ -7,7 +7,6 @@
 
 namespace crynn
 {
-	class Window;
 	class InputComponent;
 	struct FrameEventData;
 	
@@ -43,13 +42,14 @@ namespace crynn
 		void Run();
 		void SetClearColor(float r, float g, float b, float a) const;
 
-		void Tick();
+		void Tick(FrameEventData data);
 
 		EngineEvents events;
 
+		static std::shared_ptr<Engine> DefaultEngineReference();
 	private:
-		std::shared_ptr<Window> m_window;
 		std::shared_ptr<InputComponent> m_inputComponent;
+		std::shared_ptr<Engine> m_defaultEngineReference;
 
 		float m_currentFrameTime = 0;
 		float m_previousFrameTime = 0;

@@ -1,12 +1,18 @@
 #include "Window.h"
 #include "Input.h"
 #include "../Utility/IO.h"
-#include "Application.h"
 
 namespace crynn
 {
-	//Forward declarations of GLFW event functions
-	void SizeCallback(GLFWwindow* window, int width, int height);
+	void SizeCallback(GLFWwindow* window, int width, int height)
+	{
+		Window::instance().OnWindowResize.Invoke(width, height);
+	}
+
+	void CloseCallback(GLFWwindow* window) 
+	{
+		Application::OnBeforeClose.Invoke();
+	}
 
 	Window::Window(const char* name, unsigned int width, unsigned int height)
 	{
@@ -38,7 +44,7 @@ namespace crynn
 			});
 
 
-		glfwSetWindowCloseCallback(m_glfwWindow, [&]() {	OnBeforeClose.Invoke(); });
+		glfwSetWindowCloseCallback(m_glfwWindow, [](GLFWwindow* window) { Application::OnBeforeClose.Invoke(); });
 
 		//Load glad
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -61,17 +67,7 @@ namespace crynn
 
 		Debug::Log("Window Created");
 	}
-
-	void Window::SetCurrentWindow(Window* window)
-	{
-		m_currentWindow = window;
-	}
-
-	Window* Window::GetCurrentWindow()
-	{
-		return m_currentWindow;
-	}
-
+	
 	GLFWwindow* Window::GetGLFWWindow()
 	{
 		return m_glfwWindow;
@@ -94,6 +90,22 @@ namespace crynn
 	const Vec2Int& Window::GetFrameBufSize()
 	{
 		return m_frameBufSize;
+	}
+
+	void Window::SetWindowName(std::string_view str)
+	{
+		glfwSetWindowTitle(m_glfwWindow, str.data());
+	}
+
+	void Window::SetWindowSize(int x, int y)
+	{
+		glfwSetWindowSize(m_glfwWindow, x, y);
+
+		int fbX, fbY;
+		glfwGetFramebufferSize(m_glfwWindow, &fbX, &fbY);
+
+		m_screenSize = Vec2Int(x, y);
+		m_frameBufSize = Vec2Int(fbX, fbY);
 	}
 
 	//Processes input, runs glClear and creates an IMGUI frame.
@@ -143,8 +155,4 @@ namespace crynn
 		return glfwWindowShouldClose(m_glfwWindow);
 	}
 
-	void SizeCallback(GLFWwindow* window, int width, int height)
-	{
-		Application::OnWindowResize.Invoke(width, height);
-	}
 }
