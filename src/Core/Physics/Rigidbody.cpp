@@ -1,18 +1,22 @@
 #include "Rigidbody.h"
+#include "../../Engine.h"
+#include "../Transform.h"
+#include "../EventListener.h"
+
 namespace crynn
 {
-	Rigidbody::Rigidbody(q3BodyType bodyT, Transform& transform, Box defaultBox) : m_transform(transform)
+	Rigidbody::Rigidbody(q3BodyType bodyT, Transform& transform, Box defaultBox, std::shared_ptr<Engine> engine) : m_transform(transform), m_engine(engine)
 	{
 		assert(Physics::IsInit()); //Please initialise the physics engine with Physics::Init()
 
 		//Add state update event
-		eventID = Application::OnBeforeUpdate.AddHandler([this](double dt) { Rigidbody::UpdateTransformData(); });
+		m_eventID = engine->events.OnUpdate.AddHandler([this](FrameEventData data) { this->UpdateTransformData(); });
 
 		//Create the q3Body
 		q3BodyDef def;
 		def.position = transform.GetPosition();
 		def.bodyType = bodyT;
-		body = Physics::GetScene()->CreateBody(def);
+		m_body = Physics::GetScene()->CreateBody(def);
 
 		//Create the q3Box
 		q3BoxDef bdef;
@@ -23,15 +27,15 @@ namespace crynn
 
 		bdef.Set(tr, defaultBox.extents);
 
-		body->AddBox(bdef);
+		m_body->AddBox(bdef);
 	}
 
 	Rigidbody::~Rigidbody()
 	{
-		Application::OnBeforeUpdate.RemoveHandler(eventID);
+		m_engine->events.OnBeforeUpdate.RemoveHandler(m_eventID);
 
-		body->RemoveAllBoxes();
-		Physics::GetScene()->RemoveBody(body);
+		m_body->RemoveAllBoxes();
+		Physics::GetScene()->RemoveBody(m_body);
 	}
 
 	void Rigidbody::AddBox(const Box& box)
@@ -43,17 +47,17 @@ namespace crynn
 		tx.rotation = box.defaultRotation;
 		def.Set(tx, box.extents);
 
-		body->AddBox(def);
+		m_body->AddBox(def);
 	}
 
 	void Rigidbody::UpdateTransformData()
 	{
-		const q3Transform& tr = body->GetTransform();
+		const q3Transform& tr = m_body->GetTransform();
 		m_transform.SetPosition(tr.position);
 	}
 
 	void Rigidbody::AddForceWorld(Vec3 worldForceVector)
 	{
-		body->ApplyLinearForce(worldForceVector);
+		m_body->ApplyLinearForce(worldForceVector);
 	}
 }

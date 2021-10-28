@@ -1,12 +1,16 @@
 #include "Physics.h"
+#include "../../Engine.h"
+#include <memory>
+#include "../EventListener.h"
 
 namespace crynn
 {
-	void Physics::Init()
+	void Physics::Init(std::shared_ptr<Engine> engine)
 	{
+		m_engine = engine;
 		scene = new q3Scene(1.0f / 60.0f);
 
-		stepID = Application::OnBeforeUpdate.AddHandler([](double dt) { Physics::Step(); }); //step the physics engine
+		stepID = engine->events.OnBeforeUpdate.AddHandler([](FrameEventData dt) { Physics::Step(); }); //step the physics engine
 
 		initialised = true;
 	}
@@ -17,7 +21,7 @@ namespace crynn
 
 		delete scene;
 
-		Application::OnBeforeUpdate.RemoveHandler(stepID);
+		m_engine->events.OnBeforeUpdate.RemoveHandler(stepID);
 		initialised = false;
 	}
 

@@ -22,12 +22,14 @@ namespace crynn
 			defaultRotation(_defaultRot) {}
 	};
 
+	class Engine;
+
 	class Rigidbody
 	{
 	public:
 		//Constructs a rigidbody. The transform paramater should be the transform of the object you're simulating. It also acts as default values.
 		//defaultBox is the default collision object.
-		Rigidbody(q3BodyType bodyT, Transform& transform, Box defaultBox);
+		Rigidbody(q3BodyType bodyT, Transform& transform, Box defaultBox, std::shared_ptr<Engine> engine);
  		virtual ~Rigidbody();
 
 		//Adds a box collider to the rigidbody.
@@ -47,9 +49,11 @@ namespace crynn
 
 	
 	private:
-		unsigned int eventID = 0;
+		unsigned int m_eventID = 0;
 
-		q3Body* body;
+		q3Body* m_body;
 		Transform& m_transform;
+
+		std::shared_ptr<Engine> m_engine;
 	};
 }
