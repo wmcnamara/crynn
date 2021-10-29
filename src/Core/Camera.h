@@ -4,8 +4,7 @@
 #include "Math/Math.h"
 #include "EventListener.h"
 #include "Transform.h"
-#include "../Utility/Defines.h"
-#include <optional>
+#include "glad/glad.h"
 
 namespace crynn 
 {
@@ -26,7 +25,7 @@ namespace crynn
 	class Camera : protected EventListener, public Transform
 	{
 	public:
-		Camera(Vec3 position, Projection projType, bool setAsCurrent = true);
+		Camera(Vec3 position, Projection projType, bool setAsCurrent = true, float FOV = 90.0f, float nearClipPlane = 0.3f, float farClipPlane = 100.0f);
 		~Camera();
 
 		//Calculates a projection matrix from the nearand far clip plane, FOV and viewport data.
@@ -43,7 +42,7 @@ namespace crynn
 		void SetFOV(float newFOV);
 
 	private:
-		virtual void BeforeUpdate(float deltaTime) override;
+		virtual void BeforeUpdate(FrameEventData deltaTime) override;
 
 		Projection m_projType = Projection::Perspective;
 

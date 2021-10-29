@@ -10,7 +10,12 @@
 
 namespace crynn
 {
-	Camera::Camera(Vec3 position, Projection projType, bool setAsCurrent) : m_projType(projType)
+	Camera::Camera(Vec3 position, Projection projType, bool setAsCurrent, float FOV, float nearClipPlane, float farClipPlane) : 
+		m_projType(projType), 
+		m_matrixUBO(0),
+		m_fov(FOV),
+		m_nearClipPlane(nearClipPlane),
+		m_farClipPlane(farClipPlane)
 	{
 		Translate(position);
 
@@ -23,9 +28,9 @@ namespace crynn
 		// Set camera matrix ubo to bind point 0
 		glBindBufferRange(GL_UNIFORM_BUFFER, 0, m_matrixUBO, 0, 2 * sizeof(glm::mat4));
 
-		//TODO
-		//if (setAsCurrent)
-		//	SetAsCurrentCamera();
+		if (projType == Projection::Orthographic)
+			throw std::exception("Orthogonal Projections have not been implemented.");
+
 	}
 
 	Camera::~Camera()
@@ -92,7 +97,7 @@ namespace crynn
 		m_fov = newFOV;
 	}
 
-	void Camera::BeforeUpdate(float deltaTime)
+	void Camera::BeforeUpdate(FrameEventData deltaTime)
 	{
 		SetUniformData();
 	}
