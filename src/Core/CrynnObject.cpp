@@ -30,8 +30,9 @@ namespace crynn
 
 	OBJID CrynnObject::GenerateID()
 	{
-		Debug::Log("Crynn Object Created");
-
+#ifdef CRYNN_GENID_LOG
+		std::cout << "Crynn Object Created\n";
+#endif
 		static std::atomic_uint64_t nextID = 0;
 		return nextID++;
 	}
