@@ -1,70 +1,146 @@
 #include "Buffers.h"
 
-crynn::VBO::VBO(void* vertices, size_t numOfVertices) : m_size(numOfVertices)
+namespace crynn
 {
-	glGenBuffers(1, &ID);
-	glBindBuffer(GL_ARRAY_BUFFER, ID);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices) * numOfVertices, vertices, GL_STATIC_DRAW);
+	VBO::~VBO()
+	{
+		glDeleteBuffers(1, &m_id);
+	}
 
-	initialized = true;
-}
+	GLuint VBO::ID() const
+	{
+		return m_id;
+	}
 
-crynn::VBO::~VBO()
-{
-	glDeleteBuffers(1, &ID);
-}
+	void VBO::Bind() const
+	{
+		glBindBuffer(GL_ARRAY_BUFFER, m_id);
+	}
 
-void crynn::VBO::Set(void* vertices, size_t numOfVertices)
-{
-	//DO NOT call Set unless the object was constructed with the default constructor. 
-	//DO NOT call Set twice.
-	assert(!initialized);
+	void VBO::Unbind() const
+	{
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+	}
 
-	m_size = numOfVertices;
+	VBO::VBO(VBO&& other) noexcept
+	{
+		glDeleteBuffers(1, &m_id); //Delete the current buffer
 
-	glGenBuffers(1, &ID);
-	glBindBuffer(GL_ARRAY_BUFFER, ID);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices) * numOfVertices, vertices, GL_STATIC_DRAW);
+		m_id = other.m_id;
 
-	initialized = true;
-}
+		other.m_id = 0;
+	}
 
-crynn::VAO::VAO()
-{
-	glGenVertexArrays(1, &ID);
-	glBindVertexArray(ID); //bind 
-}
+	VBO& VBO::operator=(VBO&& other) noexcept
+	{
+		if (this == &other)
+			return *this;
 
-crynn::VAO::~VAO()
-{
-	glDeleteVertexArrays(1, &ID);
-}
+		glDeleteBuffers(1, &m_id); //Delete the current buffer
 
-crynn::EBO::EBO(unsigned int* indices, size_t numOfIndices)
-{
-	glGenBuffers(1, &ID);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ID);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices) * numOfIndices, indices, GL_STATIC_DRAW);
+		m_id = other.m_id;
 
-	initialized = true;
-}
+		other.m_id = 0;
 
-crynn::EBO::~EBO()
-{
-	glDeleteBuffers(1, &ID);
-}
+		return *this;
+	}
 
-void crynn::EBO::Set(unsigned int* indices, size_t numOfIndices)
-{
-	//DO NOT call Set unless the object was constructed with the default constructor. 
-	//DO NOT call Set twice.
-	assert(!initialized);
+	VAO::VAO(bool bindAfterConstruction)
+	{
+		glGenVertexArrays(1, &m_id);
 
-	m_size = numOfIndices;
+		if (bindAfterConstruction)
+			glBindVertexArray(m_id);
+	}
 
-	glGenBuffers(1, &ID);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ID);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices) * numOfIndices, indices, GL_STATIC_DRAW);
+	VAO::~VAO()
+	{
+		glDeleteVertexArrays(1, &m_id);
+	}
 
-	initialized = true;
+	VAO::VAO(VAO&& other) noexcept
+	{
+		m_id = other.m_id;
+
+		other.m_id = 0;
+	}
+
+	VAO& VAO::operator=(VAO&& other) noexcept
+	{
+		if (this == &other)
+			return *this;
+
+		glDeleteBuffers(1, &m_id); //Delete the current buffer
+
+		m_id = other.m_id;
+
+		other.m_id = 0;
+
+		return *this;
+	}
+
+	GLuint VAO::ID() const
+	{
+		return m_id;
+	}
+
+	void VAO::Bind() const
+	{
+		glBindVertexArray(m_id);
+	}
+
+	void VAO::Unbind() const
+	{
+		glBindVertexArray(0);
+	}
+
+	EBO::EBO(const std::vector<GLuint>& indices)
+	{
+		glGenBuffers(1, &m_id);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_id);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * indices.size(), indices.data(), GL_STATIC_DRAW);
+	}
+
+	EBO::~EBO()
+	{
+		glDeleteBuffers(1, &m_id);
+	}
+
+	void EBO::Bind() const
+	{
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_id);
+	}
+
+	void EBO::Unbind() const
+	{
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	}
+
+	GLuint EBO::ID() const
+	{
+		return m_id;
+	}
+
+	EBO::EBO(EBO&& other) noexcept
+	{
+		glDeleteBuffers(1, &m_id); //Delete the current buffer
+
+		m_id = other.m_id;
+
+		other.m_id = 0;
+	}
+
+	EBO& EBO::operator=(EBO&& other) noexcept
+	{
+		if (this == &other)
+			return *this;
+
+		glDeleteBuffers(1, &m_id); //Delete the current buffer
+
+		m_id = other.m_id;
+
+		other.m_id = 0;
+
+		return *this;
+	}
 }

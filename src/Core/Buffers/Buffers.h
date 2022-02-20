@@ -2,6 +2,7 @@
 #include "glad/glad.h"
 #include <memory>
 #include <cassert>
+#include <vector>
 
 #pragma warning( disable : 26812)
 
@@ -18,86 +19,93 @@
 
 namespace crynn
 {
-	//A vertex buffer object with simple memory management functions.
+	/*
+		RAII wrapper for a Vertex Buffer Object
+
+		Requires a valid instance of Crynn to be active to work.
+	*/
 	class VBO
 	{
 	public:
-		VBO(void* vertices, size_t numOfVertices);
-		VBO() = default;
+		/*
+			Constructs a vertex buffer object from a std::vector of a chosen vertex data structure.
+		*/
+		template<typename VertexType>
+		VBO(const std::vector<VertexType>& vertices)
+		{
+			glGenBuffers(1, &m_id);
+			glBindBuffer(GL_ARRAY_BUFFER, m_id);
+
+			glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(VertexType), vertices.data(), GL_STATIC_DRAW);
+		}
+
+
 		~VBO();
 
-		//No copying or moving
 		VBO(const VBO& other) = delete;
-		VBO operator=(const VBO& other) = delete;
-		VBO(VBO&& other) = delete;
-		VBO operator=(VBO&& other) = delete;
+		VBO& operator=(const VBO& other) = delete;
 
-		//Returns the number of vertices stored in this VBO object. Equal to numOfVertices passed in the constructor
-		size_t VertexCount() const { return m_size; }
+		VBO(VBO&& other) noexcept;
+		VBO& operator=(VBO&& other) noexcept;
 
-		//Constructs the VBO with the data provided by the two parameters.
-		//Intended to allow delayed construction if you used the default constructor.
-		//Do not call Set unless you used the default constructor to create this object, it may result in memory leaks.
-		void Set(void* vertices, size_t numOfVertices);
+		GLuint ID() const;
 
-		GLuint GetID() const { return ID; }
-		void Bind() const { glBindBuffer(GL_ARRAY_BUFFER, ID); } //Calls glBindBuffer
+		void Bind() const;
+		void Unbind() const;
+
 	private:
-		size_t m_size = 0;
-		GLuint ID = 0;
-
-		bool initialized = false;
+		GLuint m_id = 0;
 	};
 
-	//A vertex array object with simple memory management functions. This class's default constructor will allocate memory, and bind the VAO.
+	/*
+		RAII wrapper for a Vertex Buffer Object
+
+		Requires a valid instance of Crynn to be active to work.
+	*/
 	class VAO
 	{
 	public:
-		VAO();
+		VAO(bool bindAfterConstruction = false);
 		~VAO();
 
-		//No copying or moving
 		VAO(const VAO& other) = delete;
-		VAO operator=(const VAO& other) = delete;
-		VAO(VAO&& other) = delete;
-		VAO operator=(VAO&& other) = delete;
+		VAO& operator=(const VAO& other) = delete;
 
-		GLuint GetID() const { return ID; }
-		void Bind() const { glBindVertexArray(ID); } //Calls glBindBuffer
+		VAO(VAO&& other) noexcept;
+		VAO& operator=(VAO&& other) noexcept;
+
+		GLuint ID() const;
+
+		void Bind() const;
+		void Unbind() const;
+
 	private:
-		GLuint ID = 0;
-
-		bool initialized = false;
+		GLuint m_id = 0;
 	};
 
-	//An element array buffer object with simple memory managment functions.
+	/*
+		RAII wrapper for a Element Array Buffer Object
+
+		Requires a valid instance of Crynn to be active to work.
+	*/
 	class EBO
 	{
 	public:
-		EBO(unsigned int* indices, size_t numOfIndices);
-		EBO() = default;
+		EBO(const std::vector<GLuint>& indices);
 		~EBO();
-	
-		//No copying or moving
+
 		EBO(const EBO& other) = delete;
-		EBO operator=(const EBO& other) = delete;
-		EBO(EBO&& other) = delete;
-		EBO operator=(EBO&& other) = delete;
+		EBO& operator=(const EBO& other) = delete;
 
-		//Returns the number of indices stored in this EBO object. Equal to numOfIndices passed in the constructor
-		size_t IndexCount() const { return m_size; }
+		EBO(EBO&& other) noexcept;
+		EBO& operator=(EBO&& other) noexcept;
 
-		//Constructs the EBO with the data provided by the two parameters.
-		//Intended to allow delayed construction if you used the default constructor.
-		//Do not call Set unless you used the default constructor to create this object, it may result in memory leaks.
-		void Set(unsigned int* indices, size_t numOfIndices);
+		GLuint ID() const;
 
-		GLuint GetID() const { return ID; }
-		void Bind() const { glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ID); }
+		void Bind() const;
+		void Unbind() const;
+
 	private:
-		GLuint ID = 0;
-		size_t m_size = 0;
-
-		bool initialized = false;
+		GLuint m_id = 0;
 	};
 }
